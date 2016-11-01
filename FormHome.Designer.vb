@@ -19,13 +19,17 @@ Partial Class FormHome
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim TileItemElement19 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement20 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement21 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement22 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement23 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement24 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement37 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement38 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement39 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement40 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement41 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement42 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement43 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement44 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement45 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormHome))
+        Me.NavButton3 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.TileControl1 = New DevExpress.XtraEditors.TileControl()
         Me.TileGroup2 = New DevExpress.XtraEditors.TileGroup()
         Me.TileItem1 = New DevExpress.XtraEditors.TileItem()
@@ -36,27 +40,49 @@ Partial Class FormHome
         Me.TileItem7 = New DevExpress.XtraEditors.TileItem()
         Me.TileItem6 = New DevExpress.XtraEditors.TileItem()
         Me.TileGroup4 = New DevExpress.XtraEditors.TileGroup()
-        Me.NavButton3 = New DevExpress.XtraBars.Navigation.NavButton()
+        Me.TileItem3 = New DevExpress.XtraEditors.TileItem()
+        Me.TileItem8 = New DevExpress.XtraEditors.TileItem()
+        Me.TileItem10 = New DevExpress.XtraEditors.TileItem()
         Me.NavButton2 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.NavButton4 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.SuspendLayout()
         '
+        'NavButton3
+        '
+        Me.NavButton3.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Right
+        Me.NavButton3.Appearance.ForeColor = System.Drawing.Color.Black
+        Me.NavButton3.Appearance.Options.UseForeColor = True
+        Me.NavButton3.Caption = "Logout"
+        Me.NavButton3.Name = "NavButton3"
+        '
         'TileControl1
         '
+        Me.TileControl1.AppearanceGroupText.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TileControl1.AppearanceGroupText.ForeColor = System.Drawing.Color.White
+        Me.TileControl1.AppearanceGroupText.Options.UseFont = True
+        Me.TileControl1.AppearanceGroupText.Options.UseForeColor = True
+        Me.TileControl1.AppearanceItem.Normal.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TileControl1.AppearanceItem.Normal.Options.UseFont = True
+        Me.TileControl1.AppearanceText.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TileControl1.AppearanceText.ForeColor = System.Drawing.Color.White
+        Me.TileControl1.AppearanceText.Options.UseFont = True
+        Me.TileControl1.AppearanceText.Options.UseForeColor = True
+        Me.TileControl1.BackColor = System.Drawing.Color.Teal
         Me.TileControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.TileControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TileControl1.DragSize = New System.Drawing.Size(0, 0)
         Me.TileControl1.Groups.Add(Me.TileGroup2)
         Me.TileControl1.Groups.Add(Me.TileGroup3)
         Me.TileControl1.Groups.Add(Me.TileGroup4)
-        Me.TileControl1.ItemSize = 150
+        Me.TileControl1.ItemSize = 200
         Me.TileControl1.Location = New System.Drawing.Point(0, 0)
-        Me.TileControl1.MaxId = 16
+        Me.TileControl1.MaxId = 21
         Me.TileControl1.Name = "TileControl1"
+        Me.TileControl1.Position = 538
         Me.TileControl1.ShowGroupText = True
         Me.TileControl1.Size = New System.Drawing.Size(834, 562)
         Me.TileControl1.TabIndex = 0
-        Me.TileControl1.Text = "TileControl1"
+        Me.TileControl1.Text = "POINT OF SALE"
         '
         'TileGroup2
         '
@@ -67,16 +93,16 @@ Partial Class FormHome
         '
         'TileItem1
         '
-        TileItemElement19.Text = "Master Product"
-        Me.TileItem1.Elements.Add(TileItemElement19)
+        TileItemElement37.Text = "Master Product"
+        Me.TileItem1.Elements.Add(TileItemElement37)
         Me.TileItem1.Id = 4
         Me.TileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TileItem1.Name = "TileItem1"
         '
         'TileItem2
         '
-        TileItemElement20.Text = "User Management"
-        Me.TileItem2.Elements.Add(TileItemElement20)
+        TileItemElement38.Text = "User Management"
+        Me.TileItem2.Elements.Add(TileItemElement38)
         Me.TileItem2.Id = 5
         Me.TileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem2.Name = "TileItem2"
@@ -92,48 +118,67 @@ Partial Class FormHome
         '
         'TileItem4
         '
-        TileItemElement21.Text = "Receive"
-        Me.TileItem4.Elements.Add(TileItemElement21)
+        TileItemElement39.Text = "Receive"
+        Me.TileItem4.Elements.Add(TileItemElement39)
         Me.TileItem4.Id = 11
         Me.TileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem4.Name = "TileItem4"
         '
         'TileItem5
         '
-        TileItemElement22.Text = "Return"
-        Me.TileItem5.Elements.Add(TileItemElement22)
+        TileItemElement40.Text = "Return"
+        Me.TileItem5.Elements.Add(TileItemElement40)
         Me.TileItem5.Id = 12
         Me.TileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem5.Name = "TileItem5"
         '
         'TileItem7
         '
-        TileItemElement23.Text = "Transfer"
-        Me.TileItem7.Elements.Add(TileItemElement23)
+        TileItemElement41.Text = "Transfer"
+        Me.TileItem7.Elements.Add(TileItemElement41)
         Me.TileItem7.Id = 15
         Me.TileItem7.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem7.Name = "TileItem7"
         '
         'TileItem6
         '
-        TileItemElement24.Text = "Sales"
-        Me.TileItem6.Elements.Add(TileItemElement24)
+        TileItemElement42.Text = "Sales"
+        Me.TileItem6.Elements.Add(TileItemElement42)
         Me.TileItem6.Id = 14
         Me.TileItem6.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem6.Name = "TileItem6"
         '
         'TileGroup4
         '
+        Me.TileGroup4.Items.Add(Me.TileItem3)
+        Me.TileGroup4.Items.Add(Me.TileItem8)
+        Me.TileGroup4.Items.Add(Me.TileItem10)
         Me.TileGroup4.Name = "TileGroup4"
         Me.TileGroup4.Text = "Report"
         '
-        'NavButton3
+        'TileItem3
         '
-        Me.NavButton3.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Right
-        Me.NavButton3.Appearance.ForeColor = System.Drawing.Color.Black
-        Me.NavButton3.Appearance.Options.UseForeColor = True
-        Me.NavButton3.Caption = "Logout"
-        Me.NavButton3.Name = "NavButton3"
+        TileItemElement43.Text = "TileItem3"
+        Me.TileItem3.Elements.Add(TileItemElement43)
+        Me.TileItem3.Id = 16
+        Me.TileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
+        Me.TileItem3.Name = "TileItem3"
+        '
+        'TileItem8
+        '
+        TileItemElement44.Text = "TileItem8"
+        Me.TileItem8.Elements.Add(TileItemElement44)
+        Me.TileItem8.Id = 17
+        Me.TileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
+        Me.TileItem8.Name = "TileItem8"
+        '
+        'TileItem10
+        '
+        TileItemElement45.Text = "TileItem10"
+        Me.TileItem10.Elements.Add(TileItemElement45)
+        Me.TileItem10.Id = 19
+        Me.TileItem10.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
+        Me.TileItem10.Name = "TileItem10"
         '
         'NavButton2
         '
@@ -161,15 +206,18 @@ Partial Class FormHome
         '
         'FormHome
         '
+        Me.Appearance.BackColor = System.Drawing.Color.White
+        Me.Appearance.Options.UseBackColor = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(834, 562)
         Me.Controls.Add(Me.TileControl1)
+        Me.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.LookAndFeel.SkinName = "Metropolis"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "FormHome"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Point of Sale"
         Me.ResumeLayout(False)
 
     End Sub
@@ -187,4 +235,7 @@ Partial Class FormHome
     Friend WithEvents NavButton3 As DevExpress.XtraBars.Navigation.NavButton
     Friend WithEvents NavButton2 As DevExpress.XtraBars.Navigation.NavButton
     Friend WithEvents NavButton4 As DevExpress.XtraBars.Navigation.NavButton
+    Friend WithEvents TileItem3 As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TileItem8 As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TileItem10 As DevExpress.XtraEditors.TileItem
 End Class

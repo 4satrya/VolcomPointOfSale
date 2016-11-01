@@ -121,4 +121,7 @@
   <data name="blurred_purple-wallpaper-1366x768" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blurred_purple-wallpaper-1366x768.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minimalist_green_iii-wallpaper-1366x768" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimalist_green_iii-wallpaper-1366x768.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
