@@ -19,15 +19,15 @@ Partial Class FormHome
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim TileItemElement37 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement38 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement39 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement40 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement41 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement42 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement43 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement44 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement45 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement10 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement11 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement12 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement13 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement14 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement15 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement16 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement17 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement18 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormHome))
         Me.NavButton3 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.TileControl1 = New DevExpress.XtraEditors.TileControl()
@@ -45,6 +45,9 @@ Partial Class FormHome
         Me.TileItem10 = New DevExpress.XtraEditors.TileItem()
         Me.NavButton2 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.NavButton4 = New DevExpress.XtraBars.Navigation.NavButton()
+        Me.TileNavPane1 = New DevExpress.XtraBars.Navigation.TileNavPane()
+        Me.NavButton5 = New DevExpress.XtraBars.Navigation.NavButton()
+        Me.NavButton6 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.SuspendLayout()
         '
         'NavButton3
@@ -93,16 +96,16 @@ Partial Class FormHome
         '
         'TileItem1
         '
-        TileItemElement37.Text = "Master Product"
-        Me.TileItem1.Elements.Add(TileItemElement37)
+        TileItemElement10.Text = "Master Product"
+        Me.TileItem1.Elements.Add(TileItemElement10)
         Me.TileItem1.Id = 4
         Me.TileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TileItem1.Name = "TileItem1"
         '
         'TileItem2
         '
-        TileItemElement38.Text = "User Management"
-        Me.TileItem2.Elements.Add(TileItemElement38)
+        TileItemElement11.Text = "User Management"
+        Me.TileItem2.Elements.Add(TileItemElement11)
         Me.TileItem2.Id = 5
         Me.TileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem2.Name = "TileItem2"
@@ -118,32 +121,32 @@ Partial Class FormHome
         '
         'TileItem4
         '
-        TileItemElement39.Text = "Receive"
-        Me.TileItem4.Elements.Add(TileItemElement39)
+        TileItemElement12.Text = "Receive"
+        Me.TileItem4.Elements.Add(TileItemElement12)
         Me.TileItem4.Id = 11
         Me.TileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem4.Name = "TileItem4"
         '
         'TileItem5
         '
-        TileItemElement40.Text = "Return"
-        Me.TileItem5.Elements.Add(TileItemElement40)
+        TileItemElement13.Text = "Return"
+        Me.TileItem5.Elements.Add(TileItemElement13)
         Me.TileItem5.Id = 12
         Me.TileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem5.Name = "TileItem5"
         '
         'TileItem7
         '
-        TileItemElement41.Text = "Transfer"
-        Me.TileItem7.Elements.Add(TileItemElement41)
+        TileItemElement14.Text = "Transfer"
+        Me.TileItem7.Elements.Add(TileItemElement14)
         Me.TileItem7.Id = 15
         Me.TileItem7.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem7.Name = "TileItem7"
         '
         'TileItem6
         '
-        TileItemElement42.Text = "Sales"
-        Me.TileItem6.Elements.Add(TileItemElement42)
+        TileItemElement15.Text = "Sales"
+        Me.TileItem6.Elements.Add(TileItemElement15)
         Me.TileItem6.Id = 14
         Me.TileItem6.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem6.Name = "TileItem6"
@@ -158,24 +161,24 @@ Partial Class FormHome
         '
         'TileItem3
         '
-        TileItemElement43.Text = "TileItem3"
-        Me.TileItem3.Elements.Add(TileItemElement43)
+        TileItemElement16.Text = "TileItem3"
+        Me.TileItem3.Elements.Add(TileItemElement16)
         Me.TileItem3.Id = 16
         Me.TileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem3.Name = "TileItem3"
         '
         'TileItem8
         '
-        TileItemElement44.Text = "TileItem8"
-        Me.TileItem8.Elements.Add(TileItemElement44)
+        TileItemElement17.Text = "TileItem8"
+        Me.TileItem8.Elements.Add(TileItemElement17)
         Me.TileItem8.Id = 17
         Me.TileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem8.Name = "TileItem8"
         '
         'TileItem10
         '
-        TileItemElement45.Text = "TileItem10"
-        Me.TileItem10.Elements.Add(TileItemElement45)
+        TileItemElement18.Text = "TileItem10"
+        Me.TileItem10.Elements.Add(TileItemElement18)
         Me.TileItem10.Id = 19
         Me.TileItem10.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TileItem10.Name = "TileItem10"
@@ -204,6 +207,48 @@ Partial Class FormHome
         Me.NavButton4.IsMain = True
         Me.NavButton4.Name = "NavButton4"
         '
+        'TileNavPane1
+        '
+        Me.TileNavPane1.Appearance.BackColor = System.Drawing.Color.Teal
+        Me.TileNavPane1.Appearance.Options.UseBackColor = True
+        Me.TileNavPane1.ButtonPadding = New System.Windows.Forms.Padding(12)
+        Me.TileNavPane1.Buttons.Add(Me.NavButton5)
+        Me.TileNavPane1.Buttons.Add(Me.NavButton6)
+        '
+        'TileNavCategory1
+        '
+        Me.TileNavPane1.DefaultCategory.Name = "TileNavCategory1"
+        Me.TileNavPane1.DefaultCategory.OptionsDropDown.BackColor = System.Drawing.Color.Empty
+        Me.TileNavPane1.DefaultCategory.OwnerCollection = Nothing
+        '
+        '
+        '
+        Me.TileNavPane1.DefaultCategory.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty
+        Me.TileNavPane1.DefaultCategory.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.[Default]
+        Me.TileNavPane1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TileNavPane1.Location = New System.Drawing.Point(0, 0)
+        Me.TileNavPane1.Name = "TileNavPane1"
+        Me.TileNavPane1.OptionsPrimaryDropDown.BackColor = System.Drawing.Color.Empty
+        Me.TileNavPane1.OptionsSecondaryDropDown.BackColor = System.Drawing.Color.Empty
+        Me.TileNavPane1.Size = New System.Drawing.Size(834, 40)
+        Me.TileNavPane1.TabIndex = 1
+        Me.TileNavPane1.Text = "TileNavPane1"
+        '
+        'NavButton5
+        '
+        Me.NavButton5.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Left
+        Me.NavButton5.Caption = "Catur Anas"
+        Me.NavButton5.Glyph = CType(resources.GetObject("NavButton5.Glyph"), System.Drawing.Image)
+        Me.NavButton5.IsMain = True
+        Me.NavButton5.Name = "NavButton5"
+        '
+        'NavButton6
+        '
+        Me.NavButton6.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Right
+        Me.NavButton6.Caption = ""
+        Me.NavButton6.Glyph = CType(resources.GetObject("NavButton6.Glyph"), System.Drawing.Image)
+        Me.NavButton6.Name = "NavButton6"
+        '
         'FormHome
         '
         Me.Appearance.BackColor = System.Drawing.Color.White
@@ -211,6 +256,7 @@ Partial Class FormHome
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(834, 562)
+        Me.Controls.Add(Me.TileNavPane1)
         Me.Controls.Add(Me.TileControl1)
         Me.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -238,4 +284,7 @@ Partial Class FormHome
     Friend WithEvents TileItem3 As DevExpress.XtraEditors.TileItem
     Friend WithEvents TileItem8 As DevExpress.XtraEditors.TileItem
     Friend WithEvents TileItem10 As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TileNavPane1 As DevExpress.XtraBars.Navigation.TileNavPane
+    Friend WithEvents NavButton5 As DevExpress.XtraBars.Navigation.NavButton
+    Friend WithEvents NavButton6 As DevExpress.XtraBars.Navigation.NavButton
 End Class
