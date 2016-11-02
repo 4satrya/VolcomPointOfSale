@@ -24,6 +24,12 @@ Public Class FormHome
             FormDatabase.Focus()
             FormDatabase.TopMost = False
         End Try
+
+        'db conn info
+        Dim el As DevExpress.XtraEditors.TileItemElement = TIDB.Elements(1)
+        el.Text = app_host
+        el = TIDB.Elements(2)
+        el.Text = app_database
     End Sub
 
     Private Sub NavButton6_ElementClick(sender As Object, e As DevExpress.XtraBars.Navigation.NavElementEventArgs)
