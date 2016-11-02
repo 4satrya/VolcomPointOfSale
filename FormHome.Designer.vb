@@ -21,15 +21,16 @@ Partial Class FormHome
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormHome))
+        Dim TileItemElement1 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement6 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement2 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement3 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement4 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement5 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement7 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement8 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement9 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement10 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement11 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement12 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement13 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement14 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement15 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement16 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement17 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement18 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Me.NavButton3 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.TileControl1 = New DevExpress.XtraEditors.TileControl()
         Me.TileGroup2 = New DevExpress.XtraEditors.TileGroup()
@@ -61,6 +62,7 @@ Partial Class FormHome
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.BtnLogout = New DevExpress.XtraBars.BarButtonItem()
+        Me.TileItem10 = New DevExpress.XtraEditors.TileItem()
         CType(Me.PanelControlTop, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlTop.SuspendLayout()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,7 +103,7 @@ Partial Class FormHome
         Me.TileControl1.Groups.Add(Me.TileGroup2)
         Me.TileControl1.ItemSize = 125
         Me.TileControl1.Location = New System.Drawing.Point(0, 81)
-        Me.TileControl1.MaxId = 29
+        Me.TileControl1.MaxId = 30
         Me.TileControl1.Name = "TileControl1"
         Me.TileControl1.Size = New System.Drawing.Size(1366, 687)
         Me.TileControl1.TabIndex = 0
@@ -118,6 +120,7 @@ Partial Class FormHome
         Me.TileGroup2.Items.Add(Me.TileItem9)
         Me.TileGroup2.Items.Add(Me.TileItem3)
         Me.TileGroup2.Items.Add(Me.TileItem8)
+        Me.TileGroup2.Items.Add(Me.TileItem10)
         Me.TileGroup2.Name = "TileGroup2"
         Me.TileGroup2.Text = "General"
         '
@@ -129,9 +132,9 @@ Partial Class FormHome
         Me.TileItem1.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TileItem1.BackgroundImage = CType(resources.GetObject("TileItem1.BackgroundImage"), System.Drawing.Image)
         Me.TileItem1.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement10.Text = "Master Product"
-        TileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem1.Elements.Add(TileItemElement10)
+        TileItemElement1.Text = "Master Product"
+        TileItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem1.Elements.Add(TileItemElement1)
         Me.TileItem1.Id = 4
         Me.TileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TileItem1.Name = "TileItem1"
@@ -142,9 +145,9 @@ Partial Class FormHome
         Me.TileItem6.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TileItem6.BackgroundImage = CType(resources.GetObject("TileItem6.BackgroundImage"), System.Drawing.Image)
         Me.TileItem6.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement11.Text = "Account Setting"
-        TileItemElement11.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem6.Elements.Add(TileItemElement11)
+        TileItemElement6.Text = "Account Setting"
+        TileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem6.Elements.Add(TileItemElement6)
         Me.TileItem6.Id = 14
         Me.TileItem6.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TileItem6.Name = "TileItem6"
@@ -156,9 +159,9 @@ Partial Class FormHome
         Me.TileItem4.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TileItem4.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TileItem4.BackgroundImage = CType(resources.GetObject("TileItem4.BackgroundImage"), System.Drawing.Image)
-        TileItemElement12.Text = "Receive"
-        TileItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem4.Elements.Add(TileItemElement12)
+        TileItemElement2.Text = "Receive"
+        TileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem4.Elements.Add(TileItemElement2)
         Me.TileItem4.Id = 11
         Me.TileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem4.Name = "TileItem4"
@@ -170,9 +173,9 @@ Partial Class FormHome
         Me.TileItem5.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TileItem5.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TileItem5.BackgroundImage = CType(resources.GetObject("TileItem5.BackgroundImage"), System.Drawing.Image)
-        TileItemElement13.Text = "Return"
-        TileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem5.Elements.Add(TileItemElement13)
+        TileItemElement3.Text = "Return"
+        TileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem5.Elements.Add(TileItemElement3)
         Me.TileItem5.Id = 12
         Me.TileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem5.Name = "TileItem5"
@@ -180,9 +183,9 @@ Partial Class FormHome
         'TileItem7
         '
         Me.TileItem7.BackgroundImage = CType(resources.GetObject("TileItem7.BackgroundImage"), System.Drawing.Image)
-        TileItemElement14.Text = "Transfer"
-        TileItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem7.Elements.Add(TileItemElement14)
+        TileItemElement4.Text = "Transfer"
+        TileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem7.Elements.Add(TileItemElement4)
         Me.TileItem7.Id = 15
         Me.TileItem7.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem7.Name = "TileItem7"
@@ -192,9 +195,9 @@ Partial Class FormHome
         Me.TileItem2.AppearanceItem.Normal.BackColor = System.Drawing.Color.Teal
         Me.TileItem2.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TileItem2.BackgroundImage = CType(resources.GetObject("TileItem2.BackgroundImage"), System.Drawing.Image)
-        TileItemElement15.Text = "User Management"
-        TileItemElement15.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem2.Elements.Add(TileItemElement15)
+        TileItemElement5.Text = "User Management"
+        TileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem2.Elements.Add(TileItemElement5)
         Me.TileItem2.Id = 5
         Me.TileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem2.Name = "TileItem2"
@@ -203,9 +206,9 @@ Partial Class FormHome
         '
         Me.TileItem9.BackgroundImage = CType(resources.GetObject("TileItem9.BackgroundImage"), System.Drawing.Image)
         Me.TileItem9.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement16.Text = "Point of Sale"
-        TileItemElement16.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem9.Elements.Add(TileItemElement16)
+        TileItemElement7.Text = "Point of Sale"
+        TileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem9.Elements.Add(TileItemElement7)
         Me.TileItem9.Id = 23
         Me.TileItem9.ItemSize = DevExpress.XtraEditors.TileItemSize.Large
         Me.TileItem9.Name = "TileItem9"
@@ -272,9 +275,9 @@ Partial Class FormHome
         '
         Me.TileItem3.BackgroundImage = CType(resources.GetObject("TileItem3.BackgroundImage"), System.Drawing.Image)
         Me.TileItem3.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement17.Text = "Notification"
-        TileItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem3.Elements.Add(TileItemElement17)
+        TileItemElement8.Text = "Notification"
+        TileItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem3.Elements.Add(TileItemElement8)
         Me.TileItem3.Id = 27
         Me.TileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TileItem3.Name = "TileItem3"
@@ -283,11 +286,11 @@ Partial Class FormHome
         '
         Me.TileItem8.BackgroundImage = CType(resources.GetObject("TileItem8.BackgroundImage"), System.Drawing.Image)
         Me.TileItem8.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement18.Text = "About"
-        TileItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem8.Elements.Add(TileItemElement18)
+        TileItemElement9.Text = "Logout"
+        TileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TileItem8.Elements.Add(TileItemElement9)
         Me.TileItem8.Id = 28
-        Me.TileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
+        Me.TileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem8.Name = "TileItem8"
         '
         'LabelControl1
@@ -417,6 +420,20 @@ Partial Class FormHome
         Me.BtnLogout.Id = 0
         Me.BtnLogout.Name = "BtnLogout"
         '
+        'TileItem10
+        '
+        Me.TileItem10.AppearanceItem.Normal.BackColor = System.Drawing.Color.Firebrick
+        Me.TileItem10.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Firebrick
+        Me.TileItem10.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TileItem10.AppearanceItem.Normal.Options.UseBorderColor = True
+        Me.TileItem10.BackgroundImage = CType(resources.GetObject("TileItem10.BackgroundImage"), System.Drawing.Image)
+        TileItemElement10.Text = "Exit"
+        TileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TileItem10.Elements.Add(TileItemElement10)
+        Me.TileItem10.Id = 29
+        Me.TileItem10.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
+        Me.TileItem10.Name = "TileItem10"
+        '
         'FormHome
         '
         Me.Appearance.BackColor = System.Drawing.Color.DarkSlateBlue
@@ -486,4 +503,5 @@ Partial Class FormHome
     Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents BtnLogout As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents PopupMenu1 As DevExpress.XtraBars.PopupMenu
+    Friend WithEvents TileItem10 As DevExpress.XtraEditors.TileItem
 End Class
