@@ -66,4 +66,10 @@ Public Class FormHome
         app_password = xmlnode(0).ChildNodes.Item(2).InnerText
         app_database = xmlnode(0).ChildNodes.Item(3).InnerText.Trim()
     End Sub
+
+    Private Sub TileItem2_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem2.ItemClick
+        Cursor = Cursors.WaitCursor
+        FormUser.ShowDialog()
+        Cursor = Cursors.Default
+    End Sub
 End Class
