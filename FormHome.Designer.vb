@@ -22,11 +22,11 @@ Partial Class FormHome
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormHome))
         Dim TileItemElement1 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement6 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement2 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement3 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement4 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement5 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement6 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement7 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement8 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement9 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
@@ -35,26 +35,27 @@ Partial Class FormHome
         Me.TileControl1 = New DevExpress.XtraEditors.TileControl()
         Me.TileGroup2 = New DevExpress.XtraEditors.TileGroup()
         Me.TileItem1 = New DevExpress.XtraEditors.TileItem()
-        Me.TileItem6 = New DevExpress.XtraEditors.TileItem()
         Me.TileItem4 = New DevExpress.XtraEditors.TileItem()
         Me.TileItem5 = New DevExpress.XtraEditors.TileItem()
         Me.TileItem7 = New DevExpress.XtraEditors.TileItem()
         Me.TileItem2 = New DevExpress.XtraEditors.TileItem()
+        Me.TileItem6 = New DevExpress.XtraEditors.TileItem()
         Me.TileItem9 = New DevExpress.XtraEditors.TileItem()
+        Me.TileItem3 = New DevExpress.XtraEditors.TileItem()
+        Me.TileItem8 = New DevExpress.XtraEditors.TileItem()
+        Me.TileItem10 = New DevExpress.XtraEditors.TileItem()
         Me.NavButton2 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.NavButton4 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.NavButton5 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.TileNavCategory1 = New DevExpress.XtraBars.Navigation.TileNavCategory()
         Me.PanelControlTop = New DevExpress.XtraEditors.PanelControl()
-        Me.TileItem3 = New DevExpress.XtraEditors.TileItem()
-        Me.TileItem8 = New DevExpress.XtraEditors.TileItem()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
-        Me.PanelControlUserTitle = New DevExpress.XtraEditors.PanelControl()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
+        Me.PanelControlUserTitle = New DevExpress.XtraEditors.PanelControl()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
+        Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.PopupMenu1 = New DevExpress.XtraBars.PopupMenu(Me.components)
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
@@ -62,16 +63,15 @@ Partial Class FormHome
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.BtnLogout = New DevExpress.XtraBars.BarButtonItem()
-        Me.TileItem10 = New DevExpress.XtraEditors.TileItem()
         CType(Me.PanelControlTop, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlTop.SuspendLayout()
-        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
-        CType(Me.PanelControlUserTitle, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControlUserTitle.SuspendLayout()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
+        CType(Me.PanelControlUserTitle, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControlUserTitle.SuspendLayout()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -139,19 +139,6 @@ Partial Class FormHome
         Me.TileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TileItem1.Name = "TileItem1"
         '
-        'TileItem6
-        '
-        Me.TileItem6.AppearanceItem.Normal.BackColor = System.Drawing.Color.Teal
-        Me.TileItem6.AppearanceItem.Normal.Options.UseBackColor = True
-        Me.TileItem6.BackgroundImage = CType(resources.GetObject("TileItem6.BackgroundImage"), System.Drawing.Image)
-        Me.TileItem6.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement6.Text = "Account Setting"
-        TileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem6.Elements.Add(TileItemElement6)
-        Me.TileItem6.Id = 14
-        Me.TileItem6.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
-        Me.TileItem6.Name = "TileItem6"
-        '
         'TileItem4
         '
         Me.TileItem4.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -202,6 +189,19 @@ Partial Class FormHome
         Me.TileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem2.Name = "TileItem2"
         '
+        'TileItem6
+        '
+        Me.TileItem6.AppearanceItem.Normal.BackColor = System.Drawing.Color.Teal
+        Me.TileItem6.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TileItem6.BackgroundImage = CType(resources.GetObject("TileItem6.BackgroundImage"), System.Drawing.Image)
+        Me.TileItem6.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        TileItemElement6.Text = "Account Setting"
+        TileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem6.Elements.Add(TileItemElement6)
+        Me.TileItem6.Id = 14
+        Me.TileItem6.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
+        Me.TileItem6.Name = "TileItem6"
+        '
         'TileItem9
         '
         Me.TileItem9.BackgroundImage = CType(resources.GetObject("TileItem9.BackgroundImage"), System.Drawing.Image)
@@ -212,6 +212,42 @@ Partial Class FormHome
         Me.TileItem9.Id = 23
         Me.TileItem9.ItemSize = DevExpress.XtraEditors.TileItemSize.Large
         Me.TileItem9.Name = "TileItem9"
+        '
+        'TileItem3
+        '
+        Me.TileItem3.BackgroundImage = CType(resources.GetObject("TileItem3.BackgroundImage"), System.Drawing.Image)
+        Me.TileItem3.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        TileItemElement8.Text = "Notification"
+        TileItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem3.Elements.Add(TileItemElement8)
+        Me.TileItem3.Id = 27
+        Me.TileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
+        Me.TileItem3.Name = "TileItem3"
+        '
+        'TileItem8
+        '
+        Me.TileItem8.BackgroundImage = CType(resources.GetObject("TileItem8.BackgroundImage"), System.Drawing.Image)
+        Me.TileItem8.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        TileItemElement9.Text = "Logout"
+        TileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TileItem8.Elements.Add(TileItemElement9)
+        Me.TileItem8.Id = 28
+        Me.TileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
+        Me.TileItem8.Name = "TileItem8"
+        '
+        'TileItem10
+        '
+        Me.TileItem10.AppearanceItem.Normal.BackColor = System.Drawing.Color.Firebrick
+        Me.TileItem10.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Firebrick
+        Me.TileItem10.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TileItem10.AppearanceItem.Normal.Options.UseBorderColor = True
+        Me.TileItem10.BackgroundImage = CType(resources.GetObject("TileItem10.BackgroundImage"), System.Drawing.Image)
+        TileItemElement10.Text = "Exit"
+        TileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TileItem10.Elements.Add(TileItemElement10)
+        Me.TileItem10.Id = 29
+        Me.TileItem10.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
+        Me.TileItem10.Name = "TileItem10"
         '
         'NavButton2
         '
@@ -271,51 +307,6 @@ Partial Class FormHome
         Me.PanelControlTop.Size = New System.Drawing.Size(1366, 81)
         Me.PanelControlTop.TabIndex = 1
         '
-        'TileItem3
-        '
-        Me.TileItem3.BackgroundImage = CType(resources.GetObject("TileItem3.BackgroundImage"), System.Drawing.Image)
-        Me.TileItem3.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement8.Text = "Notification"
-        TileItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem3.Elements.Add(TileItemElement8)
-        Me.TileItem3.Id = 27
-        Me.TileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
-        Me.TileItem3.Name = "TileItem3"
-        '
-        'TileItem8
-        '
-        Me.TileItem8.BackgroundImage = CType(resources.GetObject("TileItem8.BackgroundImage"), System.Drawing.Image)
-        Me.TileItem8.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement9.Text = "Logout"
-        TileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
-        Me.TileItem8.Elements.Add(TileItemElement9)
-        Me.TileItem8.Id = 28
-        Me.TileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
-        Me.TileItem8.Name = "TileItem8"
-        '
-        'LabelControl1
-        '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelControl1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.LabelControl1.Location = New System.Drawing.Point(20, 20)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(186, 47)
-        Me.LabelControl1.TabIndex = 0
-        Me.LabelControl1.Text = "Volcom POS"
-        '
-        'PanelControl1
-        '
-        Me.PanelControl1.Appearance.BackColor = System.Drawing.Color.Gray
-        Me.PanelControl1.Appearance.Options.UseBackColor = True
-        Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControl1.ContentImage = CType(resources.GetObject("PanelControl1.ContentImage"), System.Drawing.Image)
-        Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControl1.Location = New System.Drawing.Point(1301, 20)
-        Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(45, 41)
-        Me.PanelControl1.TabIndex = 1
-        '
         'PanelControl2
         '
         Me.PanelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
@@ -326,6 +317,28 @@ Partial Class FormHome
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Size = New System.Drawing.Size(200, 41)
         Me.PanelControl2.TabIndex = 2
+        '
+        'PanelControl3
+        '
+        Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl3.Controls.Add(Me.LabelControl4)
+        Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PanelControl3.Location = New System.Drawing.Point(0, 23)
+        Me.PanelControl3.Name = "PanelControl3"
+        Me.PanelControl3.Size = New System.Drawing.Size(200, 18)
+        Me.PanelControl3.TabIndex = 6
+        '
+        'LabelControl4
+        '
+        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl4.Appearance.ForeColor = System.Drawing.Color.White
+        Me.LabelControl4.Dock = System.Windows.Forms.DockStyle.Right
+        Me.LabelControl4.Location = New System.Drawing.Point(120, 0)
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.LabelControl4.Padding = New System.Windows.Forms.Padding(0, 0, 10, 0)
+        Me.LabelControl4.Size = New System.Drawing.Size(80, 13)
+        Me.LabelControl4.TabIndex = 4
+        Me.LabelControl4.Text = "Administrator"
         '
         'PanelControlUserTitle
         '
@@ -349,27 +362,28 @@ Partial Class FormHome
         Me.LabelControl2.TabIndex = 4
         Me.LabelControl2.Text = "Catur Satriya Annas"
         '
-        'PanelControl3
+        'PanelControl1
         '
-        Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControl3.Controls.Add(Me.LabelControl4)
-        Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl3.Location = New System.Drawing.Point(0, 23)
-        Me.PanelControl3.Name = "PanelControl3"
-        Me.PanelControl3.Size = New System.Drawing.Size(200, 18)
-        Me.PanelControl3.TabIndex = 6
+        Me.PanelControl1.Appearance.BackColor = System.Drawing.Color.Gray
+        Me.PanelControl1.Appearance.Options.UseBackColor = True
+        Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl1.ContentImage = CType(resources.GetObject("PanelControl1.ContentImage"), System.Drawing.Image)
+        Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PanelControl1.Location = New System.Drawing.Point(1301, 20)
+        Me.PanelControl1.Name = "PanelControl1"
+        Me.PanelControl1.Size = New System.Drawing.Size(45, 41)
+        Me.PanelControl1.TabIndex = 1
         '
-        'LabelControl4
+        'LabelControl1
         '
-        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.LabelControl4.Location = New System.Drawing.Point(120, 0)
-        Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Padding = New System.Windows.Forms.Padding(0, 0, 10, 0)
-        Me.LabelControl4.Size = New System.Drawing.Size(80, 13)
-        Me.LabelControl4.TabIndex = 4
-        Me.LabelControl4.Text = "Administrator"
+        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl1.Appearance.ForeColor = System.Drawing.Color.White
+        Me.LabelControl1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.LabelControl1.Location = New System.Drawing.Point(20, 20)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(186, 47)
+        Me.LabelControl1.TabIndex = 0
+        Me.LabelControl1.Text = "Volcom POS"
         '
         'PopupMenu1
         '
@@ -420,20 +434,6 @@ Partial Class FormHome
         Me.BtnLogout.Id = 0
         Me.BtnLogout.Name = "BtnLogout"
         '
-        'TileItem10
-        '
-        Me.TileItem10.AppearanceItem.Normal.BackColor = System.Drawing.Color.Firebrick
-        Me.TileItem10.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Firebrick
-        Me.TileItem10.AppearanceItem.Normal.Options.UseBackColor = True
-        Me.TileItem10.AppearanceItem.Normal.Options.UseBorderColor = True
-        Me.TileItem10.BackgroundImage = CType(resources.GetObject("TileItem10.BackgroundImage"), System.Drawing.Image)
-        TileItemElement10.Text = "Exit"
-        TileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
-        Me.TileItem10.Elements.Add(TileItemElement10)
-        Me.TileItem10.Id = 29
-        Me.TileItem10.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
-        Me.TileItem10.Name = "TileItem10"
-        '
         'FormHome
         '
         Me.Appearance.BackColor = System.Drawing.Color.DarkSlateBlue
@@ -456,15 +456,15 @@ Partial Class FormHome
         CType(Me.PanelControlTop, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlTop.ResumeLayout(False)
         Me.PanelControlTop.PerformLayout()
-        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
-        CType(Me.PanelControlUserTitle, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControlUserTitle.ResumeLayout(False)
-        Me.PanelControlUserTitle.PerformLayout()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl3.ResumeLayout(False)
         Me.PanelControl3.PerformLayout()
+        CType(Me.PanelControlUserTitle, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControlUserTitle.ResumeLayout(False)
+        Me.PanelControlUserTitle.PerformLayout()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
