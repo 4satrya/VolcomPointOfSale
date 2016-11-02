@@ -1,7 +1,29 @@
-﻿Public Class FormHome
+﻿Imports System.Security.Cryptography
+Imports System.Security.Cryptography.Xml
+Imports System.Xml
+
+Public Class FormHome
+    Public connection_problem As Boolean = False
+    Dim id_super_user As String = "0"
+
     Private Sub FormHome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         apply_skin()
         WindowState = FormWindowState.Maximized
+        SplashScreen1.Show()
+        Try
+            read_database_configuration()
+            check_connection(True, "", "", "", "")
+            SplashScreen1.Close()
+            FormLogin.ShowDialog()
+        Catch ex As Exception
+            SplashScreen1.Close()
+            connection_problem = True
+            FormDatabase.id_type = "2"
+            FormDatabase.TopMost = True
+            FormDatabase.Show()
+            FormDatabase.Focus()
+            FormDatabase.TopMost = False
+        End Try
     End Sub
 
     Private Sub NavButton6_ElementClick(sender As Object, e As DevExpress.XtraBars.Navigation.NavElementEventArgs)
@@ -9,6 +31,33 @@
     End Sub
 
     Private Sub TileItem10_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem10.ItemClick
-        Dispose()
+        End
+    End Sub
+
+    Sub read_database_configuration()
+        Dim path As String = My.Application.Info.DirectoryPath.ToString & "\DatabaseConfiguration.xml"
+        Dim sharedkey As New TripleDESCryptoServiceProvider()
+        Dim md5 As New MD5CryptoServiceProvider()
+        sharedkey.Key = md5.ComputeHash(System.Text.Encoding.Unicode.GetBytes("csmtafc"))
+
+        Dim encryptedDoc As New XmlDocument()
+        encryptedDoc.Load(path)
+
+        Dim EncryptedElement As XmlElement = CType(encryptedDoc.GetElementsByTagName("EncryptedData")(0), XmlElement)
+
+        Dim ed As New EncryptedData()
+        ed.LoadXml(EncryptedElement)
+
+        Dim encryptXML As New EncryptedXml()
+        Dim decryptedXML As Byte() = encryptXML.DecryptData(ed, sharedkey)
+
+        encryptXML.ReplaceData(EncryptedElement, decryptedXML)
+
+        Dim xmlnode As XmlNodeList
+        xmlnode = encryptedDoc.GetElementsByTagName("database_config")
+        app_host = xmlnode(0).ChildNodes.Item(0).InnerText.Trim()
+        app_username = xmlnode(0).ChildNodes.Item(1).InnerText
+        app_password = xmlnode(0).ChildNodes.Item(2).InnerText
+        app_database = xmlnode(0).ChildNodes.Item(3).InnerText.Trim()
     End Sub
 End Class
