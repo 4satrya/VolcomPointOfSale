@@ -131,6 +131,12 @@
     <Compile Include="FormUser.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormUserRole.Designer.vb">
+      <DependentUpon>FormUserRole.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormUserRole.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Library\Common.vb" />
     <Compile Include="Library\Database.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUser.resx">
       <DependentUpon>FormUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUserRole.resx">
+      <DependentUpon>FormUserRole.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">

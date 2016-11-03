@@ -20,13 +20,17 @@ Partial Class FormUser
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.XTCUser = New DevExpress.XtraTab.XtraTabControl()
-        Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
+        Me.XTPRole = New DevExpress.XtraTab.XtraTabPage()
+        Me.GCRole = New DevExpress.XtraGrid.GridControl()
+        Me.GVRole = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnId = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.XTPUser = New DevExpress.XtraTab.XtraTabPage()
         Me.GCUser = New DevExpress.XtraGrid.GridControl()
         Me.GVUser = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
@@ -39,7 +43,10 @@ Partial Class FormUser
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.XTCUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTCUser.SuspendLayout()
-        Me.XtraTabPage1.SuspendLayout()
+        Me.XTPRole.SuspendLayout()
+        CType(Me.GCRole, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GVRole, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XTPUser.SuspendLayout()
         CType(Me.GCUser, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GVUser, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,17 +60,57 @@ Partial Class FormUser
         Me.XTCUser.Dock = System.Windows.Forms.DockStyle.Fill
         Me.XTCUser.Location = New System.Drawing.Point(20, 20)
         Me.XTCUser.Name = "XTCUser"
-        Me.XTCUser.SelectedTabPage = Me.XtraTabPage1
+        Me.XTCUser.SelectedTabPage = Me.XTPRole
         Me.XTCUser.Size = New System.Drawing.Size(589, 316)
         Me.XTCUser.TabIndex = 0
-        Me.XTCUser.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1, Me.XtraTabPage2})
+        Me.XTCUser.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPRole, Me.XTPUser})
         '
-        'XtraTabPage1
+        'XTPRole
         '
-        Me.XtraTabPage1.Controls.Add(Me.GCUser)
-        Me.XtraTabPage1.Name = "XtraTabPage1"
-        Me.XtraTabPage1.Size = New System.Drawing.Size(587, 291)
-        Me.XtraTabPage1.Text = "User"
+        Me.XTPRole.Controls.Add(Me.GCRole)
+        Me.XTPRole.Name = "XTPRole"
+        Me.XTPRole.Size = New System.Drawing.Size(587, 291)
+        Me.XTPRole.Text = "Role"
+        '
+        'GCRole
+        '
+        Me.GCRole.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GCRole.Location = New System.Drawing.Point(0, 0)
+        Me.GCRole.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.GCRole.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.GCRole.MainView = Me.GVRole
+        Me.GCRole.Name = "GCRole"
+        Me.GCRole.Size = New System.Drawing.Size(587, 291)
+        Me.GCRole.TabIndex = 1
+        Me.GCRole.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVRole})
+        '
+        'GVRole
+        '
+        Me.GVRole.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn6, Me.GridColumnId})
+        Me.GVRole.GridControl = Me.GCRole
+        Me.GVRole.Name = "GVRole"
+        Me.GVRole.OptionsView.ShowGroupPanel = False
+        '
+        'GridColumn6
+        '
+        Me.GridColumn6.Caption = "Role"
+        Me.GridColumn6.FieldName = "role"
+        Me.GridColumn6.Name = "GridColumn6"
+        Me.GridColumn6.Visible = True
+        Me.GridColumn6.VisibleIndex = 0
+        '
+        'GridColumnId
+        '
+        Me.GridColumnId.Caption = "Role"
+        Me.GridColumnId.FieldName = "id_role"
+        Me.GridColumnId.Name = "GridColumnId"
+        '
+        'XTPUser
+        '
+        Me.XTPUser.Controls.Add(Me.GCUser)
+        Me.XTPUser.Name = "XTPUser"
+        Me.XTPUser.Size = New System.Drawing.Size(587, 291)
+        Me.XTPUser.Text = "User"
         '
         'GCUser
         '
@@ -107,12 +154,6 @@ Partial Class FormUser
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 2
-        '
-        'XtraTabPage2
-        '
-        Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(587, 291)
-        Me.XtraTabPage2.Text = "XtraTabPage2"
         '
         'PanelControl1
         '
@@ -234,7 +275,10 @@ Partial Class FormUser
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.XTCUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTCUser.ResumeLayout(False)
-        Me.XtraTabPage1.ResumeLayout(False)
+        Me.XTPRole.ResumeLayout(False)
+        CType(Me.GCRole, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GVRole, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XTPUser.ResumeLayout(False)
         CType(Me.GCUser, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GVUser, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -247,8 +291,8 @@ Partial Class FormUser
     End Sub
 
     Friend WithEvents XTCUser As DevExpress.XtraTab.XtraTabControl
-    Friend WithEvents XtraTabPage1 As DevExpress.XtraTab.XtraTabPage
-    Friend WithEvents XtraTabPage2 As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents XTPUser As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents XTPRole As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents GCUser As DevExpress.XtraGrid.GridControl
     Friend WithEvents GVUser As DevExpress.XtraGrid.Views.Grid.GridView
@@ -264,4 +308,8 @@ Partial Class FormUser
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GCRole As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GVRole As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumn6 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumnId As DevExpress.XtraGrid.Columns.GridColumn
 End Class

@@ -22,15 +22,59 @@
         Return query
     End Function
 
+    Public Function queryRole(ByVal condition As String, ByVal order_type As String) As String
+        If order_type = "1" Then
+            order_type = "ASC "
+        ElseIf order_type = "2" Then
+            order_type = "DESC "
+        End If
+
+        If condition <> "-1" Then
+            condition = condition
+        Else
+            condition = ""
+        End If
+
+        Dim query As String = "SELECT * FROM tb_role r 
+        WHERE r.id_role >0 "
+        query += condition + " "
+        query += "ORDER BY r.id_role " + order_type
+        Return query
+    End Function
+
     Public Sub access(e As KeyEventArgs, form As DevExpress.XtraEditors.XtraForm)
+        Dim form_name As String = form.Name.ToString
+        Dim is_allow_view As Boolean = False
+        Dim is_allow_new As Boolean = True
+        Dim is_allow_edit As Boolean = True
+        Dim is_allow_delete As Boolean = False
+
         If e.KeyCode = Keys.Escape Then 'close
             form.Close()
-        ElseIf e.KeyCode = Keys.Insert Then 'new
-            MsgBox("new")
-        ElseIf e.KeyCode = Keys.Enter Then 'edit
-            MsgBox("edit")
-        ElseIf e.KeyCode = Keys.Delete Then 'delete
-            MsgBox("delete")
+        ElseIf e.KeyCode = Keys.Insert And is_allow_new Then 'new
+            If form_name = "FormUser" Then
+                If FormUser.XTCUser.SelectedTabPageIndex = 0 Then 'role
+                    FormUserRole.action = "ins"
+                    FormUserRole.ShowDialog()
+                Else
+
+                End If
+            End If
+        ElseIf e.KeyCode = Keys.Enter And is_allow_edit Then 'edit
+            If form_name = "FormUser" Then
+                If FormUser.XTCUser.SelectedTabPageIndex = 0 Then 'role
+                    FormUserRole.id = FormUser.GVRole.GetFocusedRowCellValue("id_role").ToString
+                    FormUserRole.action = "upd"
+                    FormUserRole.ShowDialog()
+                Else 'user
+
+                End If
+            End If
+
+        ElseIf e.KeyCode = Keys.Delete And is_allow_delete Then 'delete
+            If form_name = "FormUser" Then
+
+            End If
         End If
     End Sub
 
