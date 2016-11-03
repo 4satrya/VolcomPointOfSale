@@ -13,6 +13,7 @@ Module Common
     Public id_comp_user As String
     Public id_employee_user As String
     Public id_role_login As String
+    Public role_login As String
     Public id_departement_user As String
     Public username_user As String
     Public name_user As String

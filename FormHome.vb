@@ -67,9 +67,14 @@ Public Class FormHome
         app_database = xmlnode(0).ChildNodes.Item(3).InnerText.Trim()
     End Sub
 
-    Private Sub TileItem2_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem2.ItemClick
+    Private Sub TileItem2_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIUser.ItemClick
         Cursor = Cursors.WaitCursor
         FormUser.ShowDialog()
         Cursor = Cursors.Default
+    End Sub
+
+    Sub setLabelUser()
+        LabelEmployeeLogin.Text = name_user
+        LabelRoleLogin.Text = role_login
     End Sub
 End Class
