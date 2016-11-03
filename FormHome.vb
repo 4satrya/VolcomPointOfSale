@@ -7,6 +7,9 @@ Public Class FormHome
     Dim id_super_user As String = "0"
 
     Private Sub FormHome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim m As New ClassUser()
+        m.hideMenu()
+
         apply_skin()
         WindowState = FormWindowState.Maximized
         SplashScreen1.Show()
@@ -36,7 +39,7 @@ Public Class FormHome
         Dispose()
     End Sub
 
-    Private Sub TileItem10_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem10.ItemClick
+    Private Sub TileItem10_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIExit.ItemClick
         End
     End Sub
 
@@ -76,5 +79,13 @@ Public Class FormHome
     Sub setLabelUser()
         LabelEmployeeLogin.Text = name_user
         LabelRoleLogin.Text = role_login
+    End Sub
+
+    Private Sub TILogout_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TILogout.ItemClick
+        Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure to logout this system?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+        If confirm = DialogResult.Yes Then
+            Dim lg As New ClassUser()
+            lg.logout()
+        End If
     End Sub
 End Class

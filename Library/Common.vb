@@ -21,6 +21,7 @@ Module Common
     Public emp_image_path As String = ""
     Public is_change_pass_user As String = ""
     Public again_awb As String = ""
+    Public dt_acc As DataTable
 
     Sub loadImgPath()
         product_image_path = get_setup_field("pic_path_design") & "\"
@@ -747,7 +748,7 @@ Module Common
         DevExpress.Skins.SkinManager.EnableFormSkins()
         DevExpress.UserSkins.BonusSkins.Register()
         UserLookAndFeel.Default.UseWindowsXPTheme = False
-        UserLookAndFeel.Default.SkinName = "Office 2010 Blue"
+        UserLookAndFeel.Default.SkinName = "Metropolis"
     End Sub
 
     Public Sub RunAtStartup(ByVal ApplicationName As String, ByVal ApplicationPath As String)

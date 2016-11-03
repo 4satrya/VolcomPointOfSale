@@ -33,4 +33,61 @@
             MsgBox("delete")
         End If
     End Sub
+
+    Public Sub hideMenu()
+        For m As Integer = 0 To FormHome.TileControl1.Groups.Count - 1
+            Dim group As DevExpress.XtraEditors.TileGroup = TryCast(FormHome.TileControl1.Groups(m), DevExpress.XtraEditors.TileGroup)
+            For i As Integer = 0 To group.Items.Count - 1
+                If TypeOf group.Items(i) Is DevExpress.XtraEditors.TileItem Then
+                    Dim item As DevExpress.XtraEditors.TileItem = TryCast(group.Items(i), DevExpress.XtraEditors.TileItem)
+                    If item.Name.ToString <> "TIExit" And item.Name.ToString <> "TILogout" Then
+                        item.Visible = False
+                    End If
+                End If
+            Next i
+        Next
+    End Sub
+
+    Public Sub setMenuAccess()
+        For m As Integer = 0 To FormHome.TileControl1.Groups.Count - 1
+            Dim group As DevExpress.XtraEditors.TileGroup = TryCast(FormHome.TileControl1.Groups(m), DevExpress.XtraEditors.TileGroup)
+            For i As Integer = 0 To group.Items.Count - 1
+                If TypeOf group.Items(i) Is DevExpress.XtraEditors.TileItem Then
+                    Dim item As DevExpress.XtraEditors.TileItem = TryCast(group.Items(i), DevExpress.XtraEditors.TileItem)
+                    Dim data_filter As DataRow() = dt_acc.Select("[menu]='" + item.Name.ToString + "'")
+                    If data_filter.Length > 0 Then
+                        item.Visible = True
+                    End If
+                End If
+            Next i
+        Next
+    End Sub
+
+    Public Sub setDataAccess()
+        Dim query As String = "SELECT * FROM tb_menu_access a
+        INNER JOIN tb_menu m ON m.id_menu = a.id_menu
+        WHERE a.id_role = '" + id_role_login + "'"
+        dt_acc = execute_query(query, -1, True, "", "", "", "")
+    End Sub
+
+    Public Sub clearDataAccess()
+        dt_acc.Clear()
+    End Sub
+
+    Public Sub logout()
+        Try
+            id_user = Nothing
+            id_role_login = Nothing
+            role_login = Nothing
+            username_user = Nothing
+            name_user = Nothing
+            is_change_pass_user = Nothing
+            clearDataAccess()
+            hideMenu()
+            FormHome.Opacity = 0
+            FormLogin.ShowDialog()
+        Catch ex As Exception
+            stopCustom(ex.ToString)
+        End Try
+    End Sub
 End Class

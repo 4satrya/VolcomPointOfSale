@@ -42,6 +42,8 @@ Public Class FormLogin
                     id_employee_user = data.Rows(0)("id_employee").ToString
                     is_change_pass_user = data.Rows(0)("is_change").ToString
                     Close()
+                    u.setDataAccess()
+                    u.setMenuAccess()
                     FormHome.setLabelUser()
                     FormHome.Opacity = 100
                     FormHome.BringToFront()

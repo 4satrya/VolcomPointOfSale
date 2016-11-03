@@ -39,17 +39,17 @@ Partial Class FormHome
         Me.NavButton3 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.TileControl1 = New DevExpress.XtraEditors.TileControl()
         Me.TGGeneral = New DevExpress.XtraEditors.TileGroup()
-        Me.TileItem1 = New DevExpress.XtraEditors.TileItem()
-        Me.TileItem4 = New DevExpress.XtraEditors.TileItem()
-        Me.TileItem5 = New DevExpress.XtraEditors.TileItem()
-        Me.TileItem7 = New DevExpress.XtraEditors.TileItem()
-        Me.TileItem6 = New DevExpress.XtraEditors.TileItem()
-        Me.TileItem9 = New DevExpress.XtraEditors.TileItem()
-        Me.TileItem3 = New DevExpress.XtraEditors.TileItem()
-        Me.TileItem8 = New DevExpress.XtraEditors.TileItem()
-        Me.TileItem10 = New DevExpress.XtraEditors.TileItem()
+        Me.TIProduct = New DevExpress.XtraEditors.TileItem()
+        Me.TIRec = New DevExpress.XtraEditors.TileItem()
+        Me.TIRet = New DevExpress.XtraEditors.TileItem()
+        Me.TITrf = New DevExpress.XtraEditors.TileItem()
+        Me.TIAccount = New DevExpress.XtraEditors.TileItem()
+        Me.TIPOS = New DevExpress.XtraEditors.TileItem()
+        Me.TINotif = New DevExpress.XtraEditors.TileItem()
+        Me.TILogout = New DevExpress.XtraEditors.TileItem()
+        Me.TIExit = New DevExpress.XtraEditors.TileItem()
         Me.TGAdmin = New DevExpress.XtraEditors.TileGroup()
-        Me.TileItem11 = New DevExpress.XtraEditors.TileItem()
+        Me.TISetup = New DevExpress.XtraEditors.TileItem()
         Me.TIUser = New DevExpress.XtraEditors.TileItem()
         Me.TIDB = New DevExpress.XtraEditors.TileItem()
         Me.NavButton2 = New DevExpress.XtraBars.Navigation.NavButton()
@@ -120,153 +120,153 @@ Partial Class FormHome
         '
         'TGGeneral
         '
-        Me.TGGeneral.Items.Add(Me.TileItem1)
-        Me.TGGeneral.Items.Add(Me.TileItem4)
-        Me.TGGeneral.Items.Add(Me.TileItem5)
-        Me.TGGeneral.Items.Add(Me.TileItem7)
-        Me.TGGeneral.Items.Add(Me.TileItem6)
-        Me.TGGeneral.Items.Add(Me.TileItem9)
-        Me.TGGeneral.Items.Add(Me.TileItem3)
-        Me.TGGeneral.Items.Add(Me.TileItem8)
-        Me.TGGeneral.Items.Add(Me.TileItem10)
+        Me.TGGeneral.Items.Add(Me.TIProduct)
+        Me.TGGeneral.Items.Add(Me.TIRec)
+        Me.TGGeneral.Items.Add(Me.TIRet)
+        Me.TGGeneral.Items.Add(Me.TITrf)
+        Me.TGGeneral.Items.Add(Me.TIAccount)
+        Me.TGGeneral.Items.Add(Me.TIPOS)
+        Me.TGGeneral.Items.Add(Me.TINotif)
+        Me.TGGeneral.Items.Add(Me.TILogout)
+        Me.TGGeneral.Items.Add(Me.TIExit)
         Me.TGGeneral.Name = "TGGeneral"
         Me.TGGeneral.Text = "General"
         '
-        'TileItem1
+        'TIProduct
         '
-        Me.TileItem1.AppearanceItem.Normal.BackColor = System.Drawing.Color.DodgerBlue
-        Me.TileItem1.AppearanceItem.Normal.BorderColor = System.Drawing.Color.DodgerBlue
-        Me.TileItem1.AppearanceItem.Normal.Options.UseBackColor = True
-        Me.TileItem1.AppearanceItem.Normal.Options.UseBorderColor = True
-        Me.TileItem1.BackgroundImage = CType(resources.GetObject("TileItem1.BackgroundImage"), System.Drawing.Image)
-        Me.TileItem1.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        Me.TIProduct.AppearanceItem.Normal.BackColor = System.Drawing.Color.DodgerBlue
+        Me.TIProduct.AppearanceItem.Normal.BorderColor = System.Drawing.Color.DodgerBlue
+        Me.TIProduct.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TIProduct.AppearanceItem.Normal.Options.UseBorderColor = True
+        Me.TIProduct.BackgroundImage = CType(resources.GetObject("TIProduct.BackgroundImage"), System.Drawing.Image)
+        Me.TIProduct.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement1.Text = "Master Product"
         TileItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem1.Elements.Add(TileItemElement1)
-        Me.TileItem1.Id = 4
-        Me.TileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
-        Me.TileItem1.Name = "TileItem1"
+        Me.TIProduct.Elements.Add(TileItemElement1)
+        Me.TIProduct.Id = 4
+        Me.TIProduct.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
+        Me.TIProduct.Name = "TIProduct"
         '
-        'TileItem4
+        'TIRec
         '
-        Me.TileItem4.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.TileItem4.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.TileItem4.AppearanceItem.Normal.Options.UseBackColor = True
-        Me.TileItem4.AppearanceItem.Normal.Options.UseBorderColor = True
-        Me.TileItem4.BackgroundImage = CType(resources.GetObject("TileItem4.BackgroundImage"), System.Drawing.Image)
+        Me.TIRec.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.TIRec.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.TIRec.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TIRec.AppearanceItem.Normal.Options.UseBorderColor = True
+        Me.TIRec.BackgroundImage = CType(resources.GetObject("TIRec.BackgroundImage"), System.Drawing.Image)
         TileItemElement2.Text = "Receive"
         TileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem4.Elements.Add(TileItemElement2)
-        Me.TileItem4.Id = 11
-        Me.TileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
-        Me.TileItem4.Name = "TileItem4"
+        Me.TIRec.Elements.Add(TileItemElement2)
+        Me.TIRec.Id = 11
+        Me.TIRec.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
+        Me.TIRec.Name = "TIRec"
         '
-        'TileItem5
+        'TIRet
         '
-        Me.TileItem5.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.TileItem5.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.TileItem5.AppearanceItem.Normal.Options.UseBackColor = True
-        Me.TileItem5.AppearanceItem.Normal.Options.UseBorderColor = True
-        Me.TileItem5.BackgroundImage = CType(resources.GetObject("TileItem5.BackgroundImage"), System.Drawing.Image)
+        Me.TIRet.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.TIRet.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.TIRet.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TIRet.AppearanceItem.Normal.Options.UseBorderColor = True
+        Me.TIRet.BackgroundImage = CType(resources.GetObject("TIRet.BackgroundImage"), System.Drawing.Image)
         TileItemElement3.Text = "Return"
         TileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem5.Elements.Add(TileItemElement3)
-        Me.TileItem5.Id = 12
-        Me.TileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
-        Me.TileItem5.Name = "TileItem5"
+        Me.TIRet.Elements.Add(TileItemElement3)
+        Me.TIRet.Id = 12
+        Me.TIRet.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
+        Me.TIRet.Name = "TIRet"
         '
-        'TileItem7
+        'TITrf
         '
-        Me.TileItem7.BackgroundImage = CType(resources.GetObject("TileItem7.BackgroundImage"), System.Drawing.Image)
-        Me.TileItem7.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        Me.TITrf.BackgroundImage = CType(resources.GetObject("TITrf.BackgroundImage"), System.Drawing.Image)
+        Me.TITrf.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement4.Text = "Transfer"
         TileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem7.Elements.Add(TileItemElement4)
-        Me.TileItem7.Id = 15
-        Me.TileItem7.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
-        Me.TileItem7.Name = "TileItem7"
+        Me.TITrf.Elements.Add(TileItemElement4)
+        Me.TITrf.Id = 15
+        Me.TITrf.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
+        Me.TITrf.Name = "TITrf"
         '
-        'TileItem6
+        'TIAccount
         '
-        Me.TileItem6.AppearanceItem.Normal.BackColor = System.Drawing.Color.Teal
-        Me.TileItem6.AppearanceItem.Normal.Options.UseBackColor = True
-        Me.TileItem6.BackgroundImage = CType(resources.GetObject("TileItem6.BackgroundImage"), System.Drawing.Image)
-        Me.TileItem6.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        Me.TIAccount.AppearanceItem.Normal.BackColor = System.Drawing.Color.Teal
+        Me.TIAccount.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TIAccount.BackgroundImage = CType(resources.GetObject("TIAccount.BackgroundImage"), System.Drawing.Image)
+        Me.TIAccount.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement5.Text = "Account Setting"
         TileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem6.Elements.Add(TileItemElement5)
-        Me.TileItem6.Id = 14
-        Me.TileItem6.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
-        Me.TileItem6.Name = "TileItem6"
+        Me.TIAccount.Elements.Add(TileItemElement5)
+        Me.TIAccount.Id = 14
+        Me.TIAccount.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
+        Me.TIAccount.Name = "TIAccount"
         '
-        'TileItem9
+        'TIPOS
         '
-        Me.TileItem9.BackgroundImage = CType(resources.GetObject("TileItem9.BackgroundImage"), System.Drawing.Image)
-        Me.TileItem9.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        Me.TIPOS.BackgroundImage = CType(resources.GetObject("TIPOS.BackgroundImage"), System.Drawing.Image)
+        Me.TIPOS.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement6.Text = "Point of Sale"
         TileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem9.Elements.Add(TileItemElement6)
-        Me.TileItem9.Id = 23
-        Me.TileItem9.ItemSize = DevExpress.XtraEditors.TileItemSize.Large
-        Me.TileItem9.Name = "TileItem9"
+        Me.TIPOS.Elements.Add(TileItemElement6)
+        Me.TIPOS.Id = 23
+        Me.TIPOS.ItemSize = DevExpress.XtraEditors.TileItemSize.Large
+        Me.TIPOS.Name = "TIPOS"
         '
-        'TileItem3
+        'TINotif
         '
-        Me.TileItem3.BackgroundImage = CType(resources.GetObject("TileItem3.BackgroundImage"), System.Drawing.Image)
-        Me.TileItem3.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        Me.TINotif.BackgroundImage = CType(resources.GetObject("TINotif.BackgroundImage"), System.Drawing.Image)
+        Me.TINotif.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement7.Text = "Notification"
         TileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem3.Elements.Add(TileItemElement7)
-        Me.TileItem3.Id = 27
-        Me.TileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
-        Me.TileItem3.Name = "TileItem3"
+        Me.TINotif.Elements.Add(TileItemElement7)
+        Me.TINotif.Id = 27
+        Me.TINotif.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
+        Me.TINotif.Name = "TINotif"
         '
-        'TileItem8
+        'TILogout
         '
-        Me.TileItem8.BackgroundImage = CType(resources.GetObject("TileItem8.BackgroundImage"), System.Drawing.Image)
-        Me.TileItem8.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        Me.TILogout.BackgroundImage = CType(resources.GetObject("TILogout.BackgroundImage"), System.Drawing.Image)
+        Me.TILogout.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement8.Text = "Logout"
         TileItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
-        Me.TileItem8.Elements.Add(TileItemElement8)
-        Me.TileItem8.Id = 28
-        Me.TileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
-        Me.TileItem8.Name = "TileItem8"
+        Me.TILogout.Elements.Add(TileItemElement8)
+        Me.TILogout.Id = 28
+        Me.TILogout.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
+        Me.TILogout.Name = "TILogout"
         '
-        'TileItem10
+        'TIExit
         '
-        Me.TileItem10.AppearanceItem.Normal.BackColor = System.Drawing.Color.Firebrick
-        Me.TileItem10.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Firebrick
-        Me.TileItem10.AppearanceItem.Normal.Options.UseBackColor = True
-        Me.TileItem10.AppearanceItem.Normal.Options.UseBorderColor = True
-        Me.TileItem10.BackgroundImage = CType(resources.GetObject("TileItem10.BackgroundImage"), System.Drawing.Image)
+        Me.TIExit.AppearanceItem.Normal.BackColor = System.Drawing.Color.Firebrick
+        Me.TIExit.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Firebrick
+        Me.TIExit.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TIExit.AppearanceItem.Normal.Options.UseBorderColor = True
+        Me.TIExit.BackgroundImage = CType(resources.GetObject("TIExit.BackgroundImage"), System.Drawing.Image)
         TileItemElement9.Text = "Exit"
         TileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
-        Me.TileItem10.Elements.Add(TileItemElement9)
-        Me.TileItem10.Id = 29
-        Me.TileItem10.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
-        Me.TileItem10.Name = "TileItem10"
+        Me.TIExit.Elements.Add(TileItemElement9)
+        Me.TIExit.Id = 29
+        Me.TIExit.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
+        Me.TIExit.Name = "TIExit"
         '
         'TGAdmin
         '
-        Me.TGAdmin.Items.Add(Me.TileItem11)
+        Me.TGAdmin.Items.Add(Me.TISetup)
         Me.TGAdmin.Items.Add(Me.TIUser)
         Me.TGAdmin.Items.Add(Me.TIDB)
         Me.TGAdmin.Name = "TGAdmin"
         '
-        'TileItem11
+        'TISetup
         '
-        Me.TileItem11.AppearanceItem.Normal.BackColor = System.Drawing.Color.Firebrick
-        Me.TileItem11.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Firebrick
-        Me.TileItem11.AppearanceItem.Normal.Options.UseBackColor = True
-        Me.TileItem11.AppearanceItem.Normal.Options.UseBorderColor = True
-        Me.TileItem11.BackgroundImage = CType(resources.GetObject("TileItem11.BackgroundImage"), System.Drawing.Image)
-        Me.TileItem11.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        Me.TISetup.AppearanceItem.Normal.BackColor = System.Drawing.Color.Firebrick
+        Me.TISetup.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Firebrick
+        Me.TISetup.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TISetup.AppearanceItem.Normal.Options.UseBorderColor = True
+        Me.TISetup.BackgroundImage = CType(resources.GetObject("TISetup.BackgroundImage"), System.Drawing.Image)
+        Me.TISetup.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement10.Text = "General Setup"
         TileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem11.Elements.Add(TileItemElement10)
-        Me.TileItem11.Id = 30
-        Me.TileItem11.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
-        Me.TileItem11.Name = "TileItem11"
+        Me.TISetup.Elements.Add(TileItemElement10)
+        Me.TISetup.Id = 30
+        Me.TISetup.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
+        Me.TISetup.Name = "TISetup"
         '
         'TIUser
         '
@@ -593,21 +593,21 @@ Partial Class FormHome
 
     Friend WithEvents TileControl1 As DevExpress.XtraEditors.TileControl
     Friend WithEvents TGGeneral As DevExpress.XtraEditors.TileGroup
-    Friend WithEvents TileItem1 As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TIProduct As DevExpress.XtraEditors.TileItem
     Friend WithEvents TIUser As DevExpress.XtraEditors.TileItem
-    Friend WithEvents TileItem4 As DevExpress.XtraEditors.TileItem
-    Friend WithEvents TileItem5 As DevExpress.XtraEditors.TileItem
-    Friend WithEvents TileItem7 As DevExpress.XtraEditors.TileItem
-    Friend WithEvents TileItem6 As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TIRec As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TIRet As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TITrf As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TIAccount As DevExpress.XtraEditors.TileItem
     Friend WithEvents NavButton3 As DevExpress.XtraBars.Navigation.NavButton
     Friend WithEvents NavButton2 As DevExpress.XtraBars.Navigation.NavButton
     Friend WithEvents NavButton4 As DevExpress.XtraBars.Navigation.NavButton
     Friend WithEvents NavButton5 As DevExpress.XtraBars.Navigation.NavButton
     Friend WithEvents TileNavCategory1 As DevExpress.XtraBars.Navigation.TileNavCategory
     Friend WithEvents PanelControlTop As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents TileItem9 As DevExpress.XtraEditors.TileItem
-    Friend WithEvents TileItem3 As DevExpress.XtraEditors.TileItem
-    Friend WithEvents TileItem8 As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TIPOS As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TINotif As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TILogout As DevExpress.XtraEditors.TileItem
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents PanelControl2 As DevExpress.XtraEditors.PanelControl
@@ -622,8 +622,8 @@ Partial Class FormHome
     Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents BtnLogout As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents PopupMenu1 As DevExpress.XtraBars.PopupMenu
-    Friend WithEvents TileItem10 As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TIExit As DevExpress.XtraEditors.TileItem
     Friend WithEvents TGAdmin As DevExpress.XtraEditors.TileGroup
-    Friend WithEvents TileItem11 As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TISetup As DevExpress.XtraEditors.TileItem
     Friend WithEvents TIDB As DevExpress.XtraEditors.TileItem
 End Class
