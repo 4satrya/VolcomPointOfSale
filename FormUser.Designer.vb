@@ -89,6 +89,7 @@ Partial Class FormUser
         Me.GVRole.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn6, Me.GridColumnId})
         Me.GVRole.GridControl = Me.GCRole
         Me.GVRole.Name = "GVRole"
+        Me.GVRole.OptionsBehavior.Editable = False
         Me.GVRole.OptionsView.ShowGroupPanel = False
         '
         'GridColumn6
@@ -129,6 +130,7 @@ Partial Class FormUser
         Me.GVUser.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3})
         Me.GVUser.GridControl = Me.GCUser
         Me.GVUser.Name = "GVUser"
+        Me.GVUser.OptionsBehavior.Editable = False
         Me.GVUser.OptionsView.ShowGroupPanel = False
         '
         'GridColumn1

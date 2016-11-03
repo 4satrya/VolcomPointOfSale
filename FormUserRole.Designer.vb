@@ -29,12 +29,12 @@ Partial Class FormUserRole
         Me.GridColumnIdMenu = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnDesc = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
+        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
+        Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
+        Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         CType(Me.TxtRole.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControlTop, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -149,9 +149,15 @@ Partial Class FormUserRole
         Me.GridColumn1.ColumnEdit = Me.RepositoryItemCheckEdit1
         Me.GridColumn1.FieldName = "view"
         Me.GridColumn1.Name = "GridColumn1"
-        Me.GridColumn1.OptionsColumn.AllowEdit = False
         Me.GridColumn1.Visible = True
         Me.GridColumn1.VisibleIndex = 1
+        '
+        'RepositoryItemCheckEdit1
+        '
+        Me.RepositoryItemCheckEdit1.AutoHeight = False
+        Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
+        Me.RepositoryItemCheckEdit1.ValueChecked = "1"
+        Me.RepositoryItemCheckEdit1.ValueUnchecked = "2"
         '
         'GridColumn2
         '
@@ -162,6 +168,13 @@ Partial Class FormUserRole
         Me.GridColumn2.Visible = True
         Me.GridColumn2.VisibleIndex = 2
         '
+        'RepositoryItemCheckEdit2
+        '
+        Me.RepositoryItemCheckEdit2.AutoHeight = False
+        Me.RepositoryItemCheckEdit2.Name = "RepositoryItemCheckEdit2"
+        Me.RepositoryItemCheckEdit2.ValueChecked = "1"
+        Me.RepositoryItemCheckEdit2.ValueUnchecked = "2"
+        '
         'GridColumn3
         '
         Me.GridColumn3.Caption = "Edit"
@@ -170,6 +183,13 @@ Partial Class FormUserRole
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 3
+        '
+        'RepositoryItemCheckEdit3
+        '
+        Me.RepositoryItemCheckEdit3.AutoHeight = False
+        Me.RepositoryItemCheckEdit3.Name = "RepositoryItemCheckEdit3"
+        Me.RepositoryItemCheckEdit3.ValueChecked = "1"
+        Me.RepositoryItemCheckEdit3.ValueUnchecked = "2"
         '
         'GridColumn4
         '
@@ -180,33 +200,12 @@ Partial Class FormUserRole
         Me.GridColumn4.Visible = True
         Me.GridColumn4.VisibleIndex = 4
         '
-        'RepositoryItemCheckEdit1
-        '
-        Me.RepositoryItemCheckEdit1.AutoHeight = False
-        Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
-        Me.RepositoryItemCheckEdit1.ValueChecked = "Yes"
-        Me.RepositoryItemCheckEdit1.ValueUnchecked = "No"
-        '
-        'RepositoryItemCheckEdit2
-        '
-        Me.RepositoryItemCheckEdit2.AutoHeight = False
-        Me.RepositoryItemCheckEdit2.Name = "RepositoryItemCheckEdit2"
-        Me.RepositoryItemCheckEdit2.ValueChecked = "Yes"
-        Me.RepositoryItemCheckEdit2.ValueUnchecked = "No"
-        '
-        'RepositoryItemCheckEdit3
-        '
-        Me.RepositoryItemCheckEdit3.AutoHeight = False
-        Me.RepositoryItemCheckEdit3.Name = "RepositoryItemCheckEdit3"
-        Me.RepositoryItemCheckEdit3.ValueChecked = "Yes"
-        Me.RepositoryItemCheckEdit3.ValueUnchecked = "No"
-        '
         'RepositoryItemCheckEdit4
         '
         Me.RepositoryItemCheckEdit4.AutoHeight = False
         Me.RepositoryItemCheckEdit4.Name = "RepositoryItemCheckEdit4"
-        Me.RepositoryItemCheckEdit4.ValueChecked = "Yes"
-        Me.RepositoryItemCheckEdit4.ValueUnchecked = "No"
+        Me.RepositoryItemCheckEdit4.ValueChecked = "1"
+        Me.RepositoryItemCheckEdit4.ValueUnchecked = "2"
         '
         'FormUserRole
         '
