@@ -33,6 +33,14 @@
         Cursor = Cursors.Default
     End Sub
 
+    Sub editUser()
+        Cursor = Cursors.WaitCursor
+        FormUserDet.id = GVUser.GetFocusedRowCellValue("id_user").ToString
+        FormUserDet.action = "upd"
+        FormUserDet.ShowDialog()
+        Cursor = Cursors.Default
+    End Sub
+
     Private Sub FormUser_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         Cursor = Cursors.WaitCursor
         If e.KeyCode = Keys.Escape Then 'close
@@ -42,13 +50,14 @@
                 FormUserRole.action = "ins"
                 FormUserRole.ShowDialog()
             Else
-
+                FormUserDet.action = "ins"
+                FormUserDet.ShowDialog()
             End If
         ElseIf e.KeyCode = Keys.Enter Then 'edit
             If XTCUser.SelectedTabPageIndex = 0 Then 'role
                 editRole()
             Else 'user
-
+                editUser()
             End If
         ElseIf e.KeyCode = Keys.Delete Then 'delete
 
@@ -68,5 +77,9 @@
         If GVRole.FocusedRowHandle >= 0 And GVRole.RowCount > 0 Then
             editRole()
         End If
+    End Sub
+
+    Private Sub GVUser_DoubleClick(sender As Object, e As EventArgs) Handles GVUser.DoubleClick
+        editUser()
     End Sub
 End Class
