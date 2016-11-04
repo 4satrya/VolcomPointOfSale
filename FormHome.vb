@@ -90,4 +90,10 @@ Public Class FormHome
             lg.logout()
         End If
     End Sub
+
+    Private Sub FormHome_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.Escape Then 'close
+            Close()
+        End If
+    End Sub
 End Class

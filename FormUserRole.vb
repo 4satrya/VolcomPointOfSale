@@ -8,7 +8,7 @@
 
     Sub actionLoad()
         If action = "upd" Then
-            GCRole.Enabled = True
+            GCData.Enabled = True
             Dim r As New ClassUser()
             Dim query_main As String = r.queryRole("AND r.id_role=" + id + "", 1)
             Dim data_main As DataTable = execute_query(query_main, -1, True, "", "", "", "")
@@ -18,9 +18,9 @@
             FROM tb_menu m
             LEFT JOIN tb_menu_access a ON a.id_menu = m.id_menu AND a.id_role='" + id + "' "
             Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
-            GCRole.DataSource = data
+            GCData.DataSource = data
         Else
-            GCRole.Enabled = False
+            GCData.Enabled = False
         End If
     End Sub
 
@@ -40,44 +40,37 @@
         If action = "ins" Then
             Dim query As String = "INSERT INTO tb_m_role(role) VALUES('" + role + "'); SELECT LAST_INSERT_ID(); "
             id = execute_query(query, 0, True, "", "", "", "")
+            FormUser.viewRole()
+            FormUser.GVRole.FocusedRowHandle = find_row(FormUser.GVRole, "id_role", id)
+            action = "upd"
+            actionLoad()
         Else
             Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to give these access?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
             If confirm = DialogResult.Yes Then
                 'main
-                'Dim query As String = "UPDATE tb_role SET role='" + role + "' WHERE id_role='" + id + "' "
-                'execute_non_query(query, True, "", "", "", "")
+                Dim query As String = "UPDATE tb_role SET role='" + role + "' WHERE id_role='" + id + "' "
+                execute_non_query(query, True, "", "", "", "")
 
-                ''delete role
-                'Dim query_del As String = "DELETE FROM tb_menu_access WHERE id_role='" + id + "' "
-                'execute_non_query(query_del, True, "", "", "", "")
+                'delete role
+                Dim query_del As String = "DELETE FROM tb_menu_access WHERE id_role='" + id + "' "
+                execute_non_query(query_del, True, "", "", "", "")
 
-                GVRole.ActiveFilterString = "[is_allow]='Yes'"
-                'PBC.Properties.Minimum = 0
-                'PBC.Properties.Maximum = GVRole.RowCount - 1
-                'PBC.Properties.Step = 1
-                'PBC.Properties.PercentView = True
-                'For i As Integer = 0 To ((GVRole.RowCount - 1) - GetGroupRowCount(GVRole))
-                '    Dim id_menu As String = GVRole.GetRowCellValue(i, "id_menu").ToString
-                '    Dim query_acc As String = "INSERT INTO tb_menu_access('" + id + "', '" + id_menu + "') "
-                '    execute_non_query(query_acc, True, "", "", "", "")
-                '    PBC.PerformStep()
-                '    PBC.Update()
-                'Next
+                GVData.ActiveFilterString = "[is_allow]='Yes'"
+                PBC.Properties.Minimum = 0
+                PBC.Properties.Maximum = GVData.RowCount - 1
+                PBC.Properties.Step = 1
+                PBC.Properties.PercentView = True
+                For i As Integer = 0 To ((GVData.RowCount - 1) - GetGroupRowCount(GVData))
+                    Dim id_menu As String = GVData.GetRowCellValue(i, "id_menu").ToString
+                    Dim query_acc As String = "INSERT INTO tb_menu_access VALUES('" + id + "', '" + id_menu + "') "
+                    execute_non_query(query_acc, True, "", "", "", "")
+                    PBC.PerformStep()
+                    PBC.Update()
+                Next
             End If
-        End If
-        FormUser.viewRole()
-        FormUser.GVRole.FocusedRowHandle = find_row(FormUser.GVRole, "id_role", id)
-        action = "upd"
-        actionLoad()
-    End Sub
-
-    Private Sub GVRole_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GVRole.CellValueChanged
-        Dim rh As Integer = GVRole.FocusedRowHandle
-        Dim col As String = e.Column.FieldName.ToString
-        If col = "new" Or col = "edit" Or col = "delete" Then
-            If e.Value = "1" Then
-                GVRole.SetRowCellValue(rh, "view", "1")
-            End If
+            FormUser.viewRole()
+            FormUser.GVRole.FocusedRowHandle = find_row(FormUser.GVRole, "id_role", id)
+            Close()
         End If
     End Sub
 End Class

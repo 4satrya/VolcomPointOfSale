@@ -23,29 +23,23 @@ Partial Class FormUserRole
         Me.TxtRole = New DevExpress.XtraEditors.TextEdit()
         Me.PanelControlTop = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControlBottom = New DevExpress.XtraEditors.PanelControl()
-        Me.BtnSave = New DevExpress.XtraEditors.SimpleButton()
-        Me.GCRole = New DevExpress.XtraGrid.GridControl()
-        Me.GVRole = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.GridColumnIdMenu = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumnDesc = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
-        Me.RepositoryItemCheckEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
-        Me.RepositoryItemCheckEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
-        Me.RepositoryItemCheckEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.PBC = New DevExpress.XtraEditors.ProgressBarControl()
+        Me.BtnSave = New DevExpress.XtraEditors.SimpleButton()
+        Me.GCData = New DevExpress.XtraGrid.GridControl()
+        Me.GVData = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumnAllow = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
+        Me.GridColumnIdMenu = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColummMenu = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.TxtRole.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControlTop, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlTop.SuspendLayout()
         CType(Me.PanelControlBottom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlBottom.SuspendLayout()
-        CType(Me.GCRole, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GVRole, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemCheckEdit3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemCheckEdit4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBC.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GCData, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GVData, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -87,6 +81,14 @@ Partial Class FormUserRole
         Me.PanelControlBottom.Size = New System.Drawing.Size(632, 34)
         Me.PanelControlBottom.TabIndex = 3
         '
+        'PBC
+        '
+        Me.PBC.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PBC.Location = New System.Drawing.Point(0, 5)
+        Me.PBC.Name = "PBC"
+        Me.PBC.Size = New System.Drawing.Size(157, 29)
+        Me.PBC.TabIndex = 92
+        '
         'BtnSave
         '
         Me.BtnSave.Appearance.BackColor = System.Drawing.SystemColors.Highlight
@@ -107,50 +109,34 @@ Partial Class FormUserRole
         Me.BtnSave.TabIndex = 4
         Me.BtnSave.Text = "Save"
         '
-        'GCRole
+        'GCData
         '
-        Me.GCRole.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GCRole.Location = New System.Drawing.Point(5, 43)
-        Me.GCRole.LookAndFeel.SkinName = "Office 2010 Blue"
-        Me.GCRole.LookAndFeel.UseDefaultLookAndFeel = False
-        Me.GCRole.MainView = Me.GVRole
-        Me.GCRole.Name = "GCRole"
-        Me.GCRole.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1, Me.RepositoryItemCheckEdit2, Me.RepositoryItemCheckEdit3, Me.RepositoryItemCheckEdit4})
-        Me.GCRole.Size = New System.Drawing.Size(632, 286)
-        Me.GCRole.TabIndex = 4
-        Me.GCRole.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVRole})
+        Me.GCData.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GCData.Location = New System.Drawing.Point(5, 43)
+        Me.GCData.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.GCData.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.GCData.MainView = Me.GVData
+        Me.GCData.Name = "GCData"
+        Me.GCData.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
+        Me.GCData.Size = New System.Drawing.Size(632, 286)
+        Me.GCData.TabIndex = 4
+        Me.GCData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVData})
         '
-        'GVRole
+        'GVData
         '
-        Me.GVRole.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnIdMenu, Me.GridColumnDesc, Me.GridColumn1})
-        Me.GVRole.GridControl = Me.GCRole
-        Me.GVRole.Name = "GVRole"
-        Me.GVRole.OptionsView.ShowGroupPanel = False
+        Me.GVData.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnAllow, Me.GridColummMenu, Me.GridColumnIdMenu})
+        Me.GVData.GridControl = Me.GCData
+        Me.GVData.Name = "GVData"
+        Me.GVData.OptionsView.ShowGroupPanel = False
         '
-        'GridColumnIdMenu
+        'GridColumnAllow
         '
-        Me.GridColumnIdMenu.Caption = "Id Menu"
-        Me.GridColumnIdMenu.FieldName = "id_menu"
-        Me.GridColumnIdMenu.Name = "GridColumnIdMenu"
-        Me.GridColumnIdMenu.OptionsColumn.AllowEdit = False
-        '
-        'GridColumnDesc
-        '
-        Me.GridColumnDesc.Caption = "Description"
-        Me.GridColumnDesc.FieldName = "menu"
-        Me.GridColumnDesc.Name = "GridColumnDesc"
-        Me.GridColumnDesc.OptionsColumn.AllowEdit = False
-        Me.GridColumnDesc.Visible = True
-        Me.GridColumnDesc.VisibleIndex = 0
-        '
-        'GridColumn1
-        '
-        Me.GridColumn1.Caption = "Access"
-        Me.GridColumn1.ColumnEdit = Me.RepositoryItemCheckEdit1
-        Me.GridColumn1.FieldName = "is_allow"
-        Me.GridColumn1.Name = "GridColumn1"
-        Me.GridColumn1.Visible = True
-        Me.GridColumn1.VisibleIndex = 1
+        Me.GridColumnAllow.Caption = "Access"
+        Me.GridColumnAllow.ColumnEdit = Me.RepositoryItemCheckEdit1
+        Me.GridColumnAllow.FieldName = "is_allow"
+        Me.GridColumnAllow.Name = "GridColumnAllow"
+        Me.GridColumnAllow.Visible = True
+        Me.GridColumnAllow.VisibleIndex = 1
         '
         'RepositoryItemCheckEdit1
         '
@@ -159,34 +145,20 @@ Partial Class FormUserRole
         Me.RepositoryItemCheckEdit1.ValueChecked = "Yes"
         Me.RepositoryItemCheckEdit1.ValueUnchecked = "No"
         '
-        'RepositoryItemCheckEdit2
+        'GridColumnIdMenu
         '
-        Me.RepositoryItemCheckEdit2.AutoHeight = False
-        Me.RepositoryItemCheckEdit2.Name = "RepositoryItemCheckEdit2"
-        Me.RepositoryItemCheckEdit2.ValueChecked = "1"
-        Me.RepositoryItemCheckEdit2.ValueUnchecked = "2"
+        Me.GridColumnIdMenu.Caption = "Id Menu"
+        Me.GridColumnIdMenu.FieldName = "id_menu"
+        Me.GridColumnIdMenu.Name = "GridColumnIdMenu"
         '
-        'RepositoryItemCheckEdit3
+        'GridColummMenu
         '
-        Me.RepositoryItemCheckEdit3.AutoHeight = False
-        Me.RepositoryItemCheckEdit3.Name = "RepositoryItemCheckEdit3"
-        Me.RepositoryItemCheckEdit3.ValueChecked = "1"
-        Me.RepositoryItemCheckEdit3.ValueUnchecked = "2"
-        '
-        'RepositoryItemCheckEdit4
-        '
-        Me.RepositoryItemCheckEdit4.AutoHeight = False
-        Me.RepositoryItemCheckEdit4.Name = "RepositoryItemCheckEdit4"
-        Me.RepositoryItemCheckEdit4.ValueChecked = "1"
-        Me.RepositoryItemCheckEdit4.ValueUnchecked = "2"
-        '
-        'PBC
-        '
-        Me.PBC.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PBC.Location = New System.Drawing.Point(0, 5)
-        Me.PBC.Name = "PBC"
-        Me.PBC.Size = New System.Drawing.Size(157, 29)
-        Me.PBC.TabIndex = 92
+        Me.GridColummMenu.Caption = "Menu"
+        Me.GridColummMenu.FieldName = "menu"
+        Me.GridColummMenu.Name = "GridColummMenu"
+        Me.GridColummMenu.OptionsColumn.AllowEdit = False
+        Me.GridColummMenu.Visible = True
+        Me.GridColummMenu.VisibleIndex = 0
         '
         'FormUserRole
         '
@@ -194,7 +166,7 @@ Partial Class FormUserRole
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(637, 363)
-        Me.Controls.Add(Me.GCRole)
+        Me.Controls.Add(Me.GCData)
         Me.Controls.Add(Me.PanelControlBottom)
         Me.Controls.Add(Me.PanelControlTop)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -213,13 +185,10 @@ Partial Class FormUserRole
         Me.PanelControlTop.PerformLayout()
         CType(Me.PanelControlBottom, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlBottom.ResumeLayout(False)
-        CType(Me.GCRole, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GVRole, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemCheckEdit3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemCheckEdit4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PBC.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GCData, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GVData, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -229,14 +198,11 @@ Partial Class FormUserRole
     Friend WithEvents PanelControlTop As DevExpress.XtraEditors.PanelControl
     Friend WithEvents PanelControlBottom As DevExpress.XtraEditors.PanelControl
     Friend WithEvents BtnSave As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents GCRole As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GVRole As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents GridColumnIdMenu As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumnDesc As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
-    Friend WithEvents RepositoryItemCheckEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
-    Friend WithEvents RepositoryItemCheckEdit3 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
-    Friend WithEvents RepositoryItemCheckEdit4 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents PBC As DevExpress.XtraEditors.ProgressBarControl
+    Friend WithEvents GCData As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GVData As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumnAllow As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
+    Friend WithEvents GridColumnIdMenu As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColummMenu As DevExpress.XtraGrid.Columns.GridColumn
 End Class

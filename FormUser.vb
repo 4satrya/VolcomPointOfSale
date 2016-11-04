@@ -25,10 +25,34 @@
         Dispose()
     End Sub
 
+    Sub editRole()
+        Cursor = Cursors.WaitCursor
+        FormUserRole.id = GVRole.GetFocusedRowCellValue("id_role").ToString
+        FormUserRole.action = "upd"
+        FormUserRole.ShowDialog()
+        Cursor = Cursors.Default
+    End Sub
+
     Private Sub FormUser_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         Cursor = Cursors.WaitCursor
-        Dim u As New ClassUser()
-        u.access(e, Me)
+        If e.KeyCode = Keys.Escape Then 'close
+            Close()
+        ElseIf e.KeyCode = Keys.Insert Then 'new
+            If XTCUser.SelectedTabPageIndex = 0 Then 'role
+                FormUserRole.action = "ins"
+                FormUserRole.ShowDialog()
+            Else
+
+            End If
+        ElseIf e.KeyCode = Keys.Enter Then 'edit
+            If XTCUser.SelectedTabPageIndex = 0 Then 'role
+                editRole()
+            Else 'user
+
+            End If
+        ElseIf e.KeyCode = Keys.Delete Then 'delete
+
+        End If
         Cursor = Cursors.Default
     End Sub
 
@@ -37,6 +61,12 @@
             GVRole.Focus()
         ElseIf XTCUser.SelectedTabPageIndex = 1 Then
             GVUser.Focus()
+        End If
+    End Sub
+
+    Private Sub GVRole_DoubleClick(sender As Object, e As EventArgs) Handles GVRole.DoubleClick
+        If GVRole.FocusedRowHandle >= 0 And GVRole.RowCount > 0 Then
+            editRole()
         End If
     End Sub
 End Class
