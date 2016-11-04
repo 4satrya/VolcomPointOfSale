@@ -73,7 +73,8 @@ Public Class FormHome
 
     Private Sub TileItem2_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIUser.ItemClick
         Cursor = Cursors.WaitCursor
-        FormUser.ShowDialog()
+        FormLogin.menu_acc = "1"
+        FormLogin.ShowDialog()
         Cursor = Cursors.Default
     End Sub
 

@@ -126,12 +126,23 @@
             username_user = Nothing
             name_user = Nothing
             is_change_pass_user = Nothing
-            clearDataAccess()
-            hideMenu()
-            FormHome.Opacity = 0
-            FormLogin.ShowDialog()
         Catch ex As Exception
             stopCustom(ex.ToString)
         End Try
+    End Sub
+
+    'check access menu user
+    Public Sub checkAccess(ByVal id_menu As String)
+        Dim query As String = "SELECT COUNT(*) FROM tb_menu_access a
+        INNER JOIN tb_menu m ON m.id_menu = a.id_menu
+        WHERE a.id_role='" + id_role_login + "' AND m.id_menu='" + id_menu + "' "
+        Dim jum As String = execute_query(query, 0, True, "", "", "", "")
+        If jum > 0 Then
+            If id_menu = "1" Then
+                FormUser.ShowDialog()
+            End If
+        Else
+            stopCustom("Access denied")
+        End If
     End Sub
 End Class

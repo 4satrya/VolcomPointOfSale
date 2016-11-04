@@ -1,6 +1,8 @@
 ﻿Imports DevExpress.XtraEditors
 
 Public Class FormLogin
+    Public menu_acc As String = "-1"
+
     'Load
     Private Sub FormLogin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         TxtUsername.Focus()
@@ -41,19 +43,9 @@ Public Class FormLogin
                     username_user = data.Rows(0)("username").ToString
                     id_employee_user = data.Rows(0)("id_employee").ToString
                     is_change_pass_user = data.Rows(0)("is_change").ToString
+                    Opacity = 0
                     Close()
-                    u.setDataAccess()
-                    u.setMenuAccess()
-                    FormHome.setLabelUser()
-                    FormHome.Opacity = 100
-                    FormHome.BringToFront()
-                    FormHome.Focus()
-
-                    'FormMain.checkNumberNotif()
-                    'Dim interval As Integer = Integer.Parse(get_setup_field("load_notif").ToString)
-                    'FormMain.TimerNotif.Interval = interval
-                    'FormMain.TimerNotif.Enabled = True
-                    'FormMain.checkChangePass()
+                    u.checkAccess(menu_acc)
                 Else
                     XtraMessageBox.Show("Login failure, please check your input !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If

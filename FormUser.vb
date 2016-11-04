@@ -20,6 +20,8 @@
     End Sub
 
     Private Sub FormUser_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Dim acc As New ClassUser()
+        acc.logout()
         Dispose()
     End Sub
 

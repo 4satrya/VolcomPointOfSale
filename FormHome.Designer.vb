@@ -28,8 +28,8 @@ Partial Class FormHome
         Dim TileItemElement5 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement6 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement7 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement9 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement8 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement9 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement10 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement11 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement12 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
@@ -46,8 +46,8 @@ Partial Class FormHome
         Me.TIAccount = New DevExpress.XtraEditors.TileItem()
         Me.TIPOS = New DevExpress.XtraEditors.TileItem()
         Me.TINotif = New DevExpress.XtraEditors.TileItem()
-        Me.TIExit = New DevExpress.XtraEditors.TileItem()
         Me.TIUser = New DevExpress.XtraEditors.TileItem()
+        Me.TIExit = New DevExpress.XtraEditors.TileItem()
         Me.NavButton2 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.NavButton4 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.NavButton5 = New DevExpress.XtraBars.Navigation.NavButton()
@@ -220,20 +220,6 @@ Partial Class FormHome
         Me.TINotif.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TINotif.Name = "TINotif"
         '
-        'TIExit
-        '
-        Me.TIExit.AppearanceItem.Normal.BackColor = System.Drawing.Color.Firebrick
-        Me.TIExit.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Firebrick
-        Me.TIExit.AppearanceItem.Normal.Options.UseBackColor = True
-        Me.TIExit.AppearanceItem.Normal.Options.UseBorderColor = True
-        Me.TIExit.BackgroundImage = CType(resources.GetObject("TIExit.BackgroundImage"), System.Drawing.Image)
-        TileItemElement9.Text = "Exit"
-        TileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
-        Me.TIExit.Elements.Add(TileItemElement9)
-        Me.TIExit.Id = 29
-        Me.TIExit.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
-        Me.TIExit.Name = "TIExit"
-        '
         'TIUser
         '
         Me.TIUser.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -247,6 +233,20 @@ Partial Class FormHome
         Me.TIUser.Id = 5
         Me.TIUser.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TIUser.Name = "TIUser"
+        '
+        'TIExit
+        '
+        Me.TIExit.AppearanceItem.Normal.BackColor = System.Drawing.Color.Firebrick
+        Me.TIExit.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Firebrick
+        Me.TIExit.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TIExit.AppearanceItem.Normal.Options.UseBorderColor = True
+        Me.TIExit.BackgroundImage = CType(resources.GetObject("TIExit.BackgroundImage"), System.Drawing.Image)
+        TileItemElement9.Text = "Exit"
+        TileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TIExit.Elements.Add(TileItemElement9)
+        Me.TIExit.Id = 29
+        Me.TIExit.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
+        Me.TIExit.Name = "TIExit"
         '
         'NavButton2
         '

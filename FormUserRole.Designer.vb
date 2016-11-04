@@ -30,11 +30,8 @@ Partial Class FormUserRole
         Me.GridColumnDesc = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
-        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
-        Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
-        Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         CType(Me.TxtRole.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControlTop, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -122,7 +119,7 @@ Partial Class FormUserRole
         '
         'GVRole
         '
-        Me.GVRole.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnIdMenu, Me.GridColumnDesc, Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4})
+        Me.GVRole.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnIdMenu, Me.GridColumnDesc, Me.GridColumn1})
         Me.GVRole.GridControl = Me.GCRole
         Me.GVRole.Name = "GVRole"
         Me.GVRole.OptionsView.ShowGroupPanel = False
@@ -137,7 +134,7 @@ Partial Class FormUserRole
         'GridColumnDesc
         '
         Me.GridColumnDesc.Caption = "Description"
-        Me.GridColumnDesc.FieldName = "description"
+        Me.GridColumnDesc.FieldName = "menu"
         Me.GridColumnDesc.Name = "GridColumnDesc"
         Me.GridColumnDesc.OptionsColumn.AllowEdit = False
         Me.GridColumnDesc.Visible = True
@@ -145,9 +142,9 @@ Partial Class FormUserRole
         '
         'GridColumn1
         '
-        Me.GridColumn1.Caption = "View"
+        Me.GridColumn1.Caption = "Access"
         Me.GridColumn1.ColumnEdit = Me.RepositoryItemCheckEdit1
-        Me.GridColumn1.FieldName = "view"
+        Me.GridColumn1.FieldName = "is_allow"
         Me.GridColumn1.Name = "GridColumn1"
         Me.GridColumn1.Visible = True
         Me.GridColumn1.VisibleIndex = 1
@@ -159,15 +156,6 @@ Partial Class FormUserRole
         Me.RepositoryItemCheckEdit1.ValueChecked = "1"
         Me.RepositoryItemCheckEdit1.ValueUnchecked = "2"
         '
-        'GridColumn2
-        '
-        Me.GridColumn2.Caption = "New"
-        Me.GridColumn2.ColumnEdit = Me.RepositoryItemCheckEdit2
-        Me.GridColumn2.FieldName = "new"
-        Me.GridColumn2.Name = "GridColumn2"
-        Me.GridColumn2.Visible = True
-        Me.GridColumn2.VisibleIndex = 2
-        '
         'RepositoryItemCheckEdit2
         '
         Me.RepositoryItemCheckEdit2.AutoHeight = False
@@ -175,30 +163,12 @@ Partial Class FormUserRole
         Me.RepositoryItemCheckEdit2.ValueChecked = "1"
         Me.RepositoryItemCheckEdit2.ValueUnchecked = "2"
         '
-        'GridColumn3
-        '
-        Me.GridColumn3.Caption = "Edit"
-        Me.GridColumn3.ColumnEdit = Me.RepositoryItemCheckEdit3
-        Me.GridColumn3.FieldName = "edit"
-        Me.GridColumn3.Name = "GridColumn3"
-        Me.GridColumn3.Visible = True
-        Me.GridColumn3.VisibleIndex = 3
-        '
         'RepositoryItemCheckEdit3
         '
         Me.RepositoryItemCheckEdit3.AutoHeight = False
         Me.RepositoryItemCheckEdit3.Name = "RepositoryItemCheckEdit3"
         Me.RepositoryItemCheckEdit3.ValueChecked = "1"
         Me.RepositoryItemCheckEdit3.ValueUnchecked = "2"
-        '
-        'GridColumn4
-        '
-        Me.GridColumn4.Caption = "Delete"
-        Me.GridColumn4.ColumnEdit = Me.RepositoryItemCheckEdit4
-        Me.GridColumn4.FieldName = "delete"
-        Me.GridColumn4.Name = "GridColumn4"
-        Me.GridColumn4.Visible = True
-        Me.GridColumn4.VisibleIndex = 4
         '
         'RepositoryItemCheckEdit4
         '
@@ -253,10 +223,7 @@ Partial Class FormUserRole
     Friend WithEvents GridColumnDesc As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
-    Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemCheckEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
-    Friend WithEvents GridColumn3 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemCheckEdit3 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
-    Friend WithEvents GridColumn4 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemCheckEdit4 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
 End Class
