@@ -33,6 +33,7 @@ Partial Class FormUserRole
         Me.RepositoryItemCheckEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.RepositoryItemCheckEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.RepositoryItemCheckEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
+        Me.PBC = New DevExpress.XtraEditors.ProgressBarControl()
         CType(Me.TxtRole.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControlTop, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlTop.SuspendLayout()
@@ -44,6 +45,7 @@ Partial Class FormUserRole
         CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PBC.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -76,6 +78,7 @@ Partial Class FormUserRole
         'PanelControlBottom
         '
         Me.PanelControlBottom.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControlBottom.Controls.Add(Me.PBC)
         Me.PanelControlBottom.Controls.Add(Me.BtnSave)
         Me.PanelControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelControlBottom.Location = New System.Drawing.Point(5, 329)
@@ -153,8 +156,8 @@ Partial Class FormUserRole
         '
         Me.RepositoryItemCheckEdit1.AutoHeight = False
         Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
-        Me.RepositoryItemCheckEdit1.ValueChecked = "1"
-        Me.RepositoryItemCheckEdit1.ValueUnchecked = "2"
+        Me.RepositoryItemCheckEdit1.ValueChecked = "Yes"
+        Me.RepositoryItemCheckEdit1.ValueUnchecked = "No"
         '
         'RepositoryItemCheckEdit2
         '
@@ -176,6 +179,14 @@ Partial Class FormUserRole
         Me.RepositoryItemCheckEdit4.Name = "RepositoryItemCheckEdit4"
         Me.RepositoryItemCheckEdit4.ValueChecked = "1"
         Me.RepositoryItemCheckEdit4.ValueUnchecked = "2"
+        '
+        'PBC
+        '
+        Me.PBC.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PBC.Location = New System.Drawing.Point(0, 5)
+        Me.PBC.Name = "PBC"
+        Me.PBC.Size = New System.Drawing.Size(157, 29)
+        Me.PBC.TabIndex = 92
         '
         'FormUserRole
         '
@@ -208,6 +219,7 @@ Partial Class FormUserRole
         CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemCheckEdit3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemCheckEdit4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PBC.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -226,4 +238,5 @@ Partial Class FormUserRole
     Friend WithEvents RepositoryItemCheckEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents RepositoryItemCheckEdit3 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents RepositoryItemCheckEdit4 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
+    Friend WithEvents PBC As DevExpress.XtraEditors.ProgressBarControl
 End Class
