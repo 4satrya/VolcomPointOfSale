@@ -75,7 +75,8 @@ Public Class FormDatabase
             'FormMain.NotifyIconVI.ShowBalloonTip(2000, "Information", "You're already logout from system." + Environment.NewLine + "Right click here for more option.", ToolTipIcon.Info)
         ElseIf id_type = "2" Then
             Dispose()
-            FormLogin.ShowDialog()
+            FormHome.Opacity = 100
+            FormHome.setDBInfo()
         Else
             Close()
         End If

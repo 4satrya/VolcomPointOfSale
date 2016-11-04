@@ -7,9 +7,6 @@ Public Class FormHome
     Dim id_super_user As String = "0"
 
     Private Sub FormHome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim m As New ClassUser()
-        m.hideMenu()
-
         apply_skin()
         WindowState = FormWindowState.Maximized
         SplashScreen1.Show()
@@ -17,7 +14,7 @@ Public Class FormHome
             read_database_configuration()
             check_connection(True, "", "", "", "")
             SplashScreen1.Close()
-            FormLogin.ShowDialog()
+            Opacity = 100
         Catch ex As Exception
             SplashScreen1.Close()
             connection_problem = True
@@ -28,6 +25,10 @@ Public Class FormHome
             FormDatabase.TopMost = False
         End Try
 
+        setDBInfo()
+    End Sub
+
+    Sub setDBInfo()
         'db conn info
         Dim el As DevExpress.XtraEditors.TileItemElement = TIDB.Elements(1)
         el.Text = app_host
