@@ -25,7 +25,7 @@ Public Class FormHome
             FormDatabase.TopMost = False
         End Try
 
-        setDBInfo()
+        setLabelUser()
     End Sub
 
     Sub setDBInfo()
@@ -79,8 +79,9 @@ Public Class FormHome
     End Sub
 
     Sub setLabelUser()
-        LabelEmployeeLogin.Text = name_user
-        LabelRoleLogin.Text = role_login
+        Dim u As New ClassUser()
+        LabelEmployeeLogin.Text = u.getHostName()
+        LabelRoleLogin.Text = u.getIP()
     End Sub
 
     Private Sub TILogout_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TILogout.ItemClick
@@ -95,5 +96,12 @@ Public Class FormHome
         If e.KeyCode = Keys.Escape Then 'close
             Close()
         End If
+    End Sub
+
+    Private Sub TIProduct_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIProduct.ItemClick
+        Cursor = Cursors.WaitCursor
+        FormLogin.menu_acc = "2"
+        FormLogin.ShowDialog()
+        Cursor = Cursors.Default
     End Sub
 End Class

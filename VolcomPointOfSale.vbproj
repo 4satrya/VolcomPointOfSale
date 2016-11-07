@@ -87,6 +87,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassItem.vb" />
     <Compile Include="ClassUser.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
@@ -111,6 +112,12 @@
       <DependentUpon>FormHome.vb</DependentUpon>
     </Compile>
     <Compile Include="FormHome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormItem.Designer.vb">
+      <DependentUpon>FormItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormItem.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLogin.designer.vb">
@@ -182,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormHome.resx">
       <DependentUpon>FormHome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormItem.resx">
+      <DependentUpon>FormItem.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>

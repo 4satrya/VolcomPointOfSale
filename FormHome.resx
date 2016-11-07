@@ -483,7 +483,7 @@
   <data name="TIUser.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAvSSURBVHhe7Z1PaFzHHcfFYkwwJgRjQimhlGCMCaGEEEoo
+        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAvSSURBVHhe7Z1PaFzHHcfFYkwwJgRjQimhlGCMCaGEEEoo
         wZRQTCmhlBCCD6WUHnIopYeecsilhxxMKT315GMIoYceTIlLMLFs2cbIkoiluJYtyZJXfy1p5dXuane1
         Wq3T3/dpfuvf/jTz9u1aksO+3wd+zMzv9+a9efOdmZ232l31GYZhGIZhGIZhGIZhGIZhGIZhGIZhGIZh
         GIZhGIZhGIZhGIZhGIZhGIZhGEZSMi7VaL8sh+pocFzSYyW+OruuPzw8fGRlZeXdjY2NT8m+bDQa/eVy
@@ -652,7 +652,7 @@
   <metadata name="BarManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>162, 22</value>
   </metadata>
-  <data name="TileItemElement28.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="TileItemElement13.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAjXSURBVHhe7Z3Pa1zXFcfFYIQxxXRRsghelRBCySpknUUW
@@ -699,7 +699,7 @@
   <data name="TISetup.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAvSSURBVHhe7Z1PaFzHHcfFYkwwJgRjQimhlGCMCaGEEEoo
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAvSSURBVHhe7Z1PaFzHHcfFYkwwJgRjQimhlGCMCaGEEEoo
         wZRQTCmhlBCCD6WUHnIopYeecsilhxxMKT315GMIoYceTIlLMLFs2cbIkoiluJYtyZJXfy1p5dXuane1
         Wq3T3/dpfuvf/jTz9u1aksO+3wd+zMzv9+a9efOdmZ232l31GYZhGIZhGIZhGIZhGIZhGIZhGIZhGIZh
         GIZhGIZhGIZhGIZhGIZhGIZhGEZSMi7VaL8sh+pocFzSYyW+OruuPzw8fGRlZeXdjY2NT8m+bDQa/eVy

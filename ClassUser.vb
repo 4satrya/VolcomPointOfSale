@@ -139,10 +139,25 @@
         Dim jum As String = execute_query(query, 0, True, "", "", "", "")
         If jum > 0 Then
             If id_menu = "1" Then
+                'ADMIN SETUP
                 FormUser.ShowDialog()
+            ElseIf id_menu = "2" Then
+                'MASTER PRODUCT
+                FormItem.ShowDialog()
             End If
         Else
             stopCustom("Access denied")
         End If
     End Sub
+
+    Function getHostName() As String
+        Dim strHostName As String = System.Net.Dns.GetHostName()
+        Return strHostName
+    End Function
+
+    Function getIP() As String
+        Dim strHostName As String = System.Net.Dns.GetHostName()
+        Dim strIPAddress As String = System.Net.Dns.GetHostByName(strHostName).AddressList(0).ToString()
+        Return strIPAddress
+    End Function
 End Class
