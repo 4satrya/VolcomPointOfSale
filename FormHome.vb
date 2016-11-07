@@ -26,6 +26,10 @@ Public Class FormHome
         End Try
 
         setLabelUser()
+
+        My.Application.ChangeCulture("en-US")
+        My.Application.Culture.NumberFormat.NumberDecimalSeparator = ","
+        My.Application.Culture.NumberFormat.NumberGroupSeparator = "."
     End Sub
 
     Sub setDBInfo()

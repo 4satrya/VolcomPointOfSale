@@ -751,6 +751,13 @@ Module Common
         UserLookAndFeel.Default.SkinName = "Metropolis"
     End Sub
 
+    Sub apply_skin_print()
+        DevExpress.Skins.SkinManager.EnableFormSkins()
+        DevExpress.UserSkins.BonusSkins.Register()
+        UserLookAndFeel.Default.UseWindowsXPTheme = False
+        UserLookAndFeel.Default.SkinName = "Office 2010 Blue"
+    End Sub
+
     Public Sub RunAtStartup(ByVal ApplicationName As String, ByVal ApplicationPath As String)
         Dim CU As Microsoft.Win32.RegistryKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run")
         With CU
@@ -1618,6 +1625,7 @@ Module Common
         'End Try
     End Sub
     Sub print(ByVal GridControlHere As DevExpress.XtraGrid.GridControl, ByVal title_here As String)
+        apply_skin_print()
         title_print = ""
         title_print = title_here
         Dim componentLink As New PrintableComponentLink(New PrintingSystem())
@@ -1635,8 +1643,10 @@ Module Common
             {"Printed By: " + name_user + "", "", "Date: [Date Printed]"})
         phf.Footer.LineAlignment = BrickAlignment.Near
 
+        ' componentLink.
         componentLink.CreateDocument()
         componentLink.ShowPreview()
+        apply_skin()
     End Sub
     Sub print_tree(ByVal TreeHere As DevExpress.XtraTreeList.TreeList, ByVal title_here As String)
         title_print = ""

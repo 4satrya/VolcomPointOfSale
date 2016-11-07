@@ -13,7 +13,9 @@
     End Sub
 
     Sub edit()
-
+        FormItemDet.action = "upd"
+        FormItemDet.id = GVItem.GetFocusedRowCellValue("id_item").ToString
+        FormItemDet.ShowDialog()
     End Sub
 
     Sub delete()
@@ -36,8 +38,12 @@
 
     End Sub
 
-    Sub exit_form()
+    Sub exitForm()
         Close()
+    End Sub
+
+    Sub printPreview()
+        print(GCItem, "Product List")
     End Sub
 
     Sub viewItem()
@@ -61,7 +67,33 @@
             edit()
         ElseIf e.KeyCode = Keys.Delete Then 'delete
             delete()
+        ElseIf e.KeyCode = Keys.P AndAlso e.Modifiers = Keys.Control Then 'delete
+            printPreview()
         End If
         Cursor = Cursors.Default
+    End Sub
+
+    Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
+        insert()
+    End Sub
+
+    Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
+        edit()
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
+        delete()
+    End Sub
+
+    Private Sub ImportExcelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImportExcelToolStripMenuItem.Click
+        importExcel()
+    End Sub
+
+    Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
+        Close()
+    End Sub
+
+    Private Sub PrintPreviewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintPreviewToolStripMenuItem.Click
+        printPreview()
     End Sub
 End Class

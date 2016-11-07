@@ -106,6 +106,8 @@ Partial Class FormItemDet
         '
         Me.TxtPrice.Location = New System.Drawing.Point(103, 65)
         Me.TxtPrice.Name = "TxtPrice"
+        Me.TxtPrice.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtPrice.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TxtPrice.Properties.Mask.EditMask = "n2"
         Me.TxtPrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.TxtPrice.Properties.Mask.SaveLiteral = False

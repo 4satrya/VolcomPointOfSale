@@ -34,18 +34,25 @@
         Dim item_code As String = addSlashes(TxtCode.Text)
         Dim item_name As String = addSlashes(TxtDesc.Text)
         Dim price As String = decimalSQL(TxtPrice.EditValue.ToString)
-        Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save changes?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
-        If confirm = DialogResult.Yes Then
-            If action = "ins" Then
-                Dim query As String = "INSERT INTO tb_item(item_code, item_name, price) 
-                                    VALUES('" + item_code + "', '" + item_name + "', '" + price + "'); SELECT LAST_INSERT_ID(); "
-                id = execute_query(query, 0, True, "", "", "", "")
-            Else
 
+        If item_code = "" Or item_name = "" Or price = "" Then
+            stopCustom("Data can't blank")
+        Else
+            Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save changes?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+            If confirm = DialogResult.Yes Then
+                If action = "ins" Then
+                    Dim query As String = "INSERT INTO tb_item(item_code, item_name, price) 
+                                    VALUES('" + item_code + "', '" + item_name + "', '" + price + "'); SELECT LAST_INSERT_ID(); "
+                    id = execute_query(query, 0, True, "", "", "", "")
+                Else
+                    Dim query As String = "UPDATE tb_item SET item_code='" + item_code + "', 
+                item_name='" + item_name + "', price='" + price + "' WHERE id_item='" + id + "' "
+                    execute_non_query(query, True, "", "", "", "")
+                End If
+                FormItem.viewItem()
+                FormItem.GVItem.FocusedRowHandle = find_row(FormItem.GVItem, "id_item", id)
+                Close()
             End If
-            FormItem.viewItem()
-            FormItem.GVItem.FocusedRowHandle = find_row(FormItem.GVItem, "id_item", id)
-            Close()
         End If
     End Sub
 End Class
