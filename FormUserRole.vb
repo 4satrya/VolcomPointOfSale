@@ -35,10 +35,9 @@
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-        Console.WriteLine("awx")
         Dim role As String = addSlashes(TxtRole.Text)
         If action = "ins" Then
-            Dim query As String = "INSERT INTO tb_m_role(role) VALUES('" + role + "'); SELECT LAST_INSERT_ID(); "
+            Dim query As String = "INSERT INTO tb_role(role) VALUES('" + role + "'); SELECT LAST_INSERT_ID(); "
             id = execute_query(query, 0, True, "", "", "", "")
             FormUser.viewRole()
             FormUser.GVRole.FocusedRowHandle = find_row(FormUser.GVRole, "id_role", id)
