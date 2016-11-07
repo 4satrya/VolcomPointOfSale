@@ -8,7 +8,8 @@
     End Sub
 
     Sub insert()
-
+        FormItemDet.action = "ins"
+        FormItemDet.ShowDialog()
     End Sub
 
     Sub edit()

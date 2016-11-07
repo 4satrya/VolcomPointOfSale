@@ -120,6 +120,12 @@
     <Compile Include="FormItem.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormItemDet.Designer.vb">
+      <DependentUpon>FormItemDet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormItemDet.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormLogin.designer.vb">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormItem.resx">
       <DependentUpon>FormItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormItemDet.resx">
+      <DependentUpon>FormItemDet.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
