@@ -142,6 +142,8 @@ Partial Class FormImportExcel
         '
         'PanelControl1
         '
+        Me.PanelControl1.Appearance.BackColor = System.Drawing.SystemColors.Control
+        Me.PanelControl1.Appearance.Options.UseBackColor = True
         Me.PanelControl1.Controls.Add(Me.CBWorksheetName)
         Me.PanelControl1.Controls.Add(Me.LFileAddress)
         Me.PanelControl1.Controls.Add(Me.TBFileAddress)
@@ -164,7 +166,7 @@ Partial Class FormImportExcel
         '
         'LFileAddress
         '
-        Me.LFileAddress.Location = New System.Drawing.Point(12, 12)
+        Me.LFileAddress.Location = New System.Drawing.Point(10, 10)
         Me.LFileAddress.Name = "LFileAddress"
         Me.LFileAddress.Size = New System.Drawing.Size(83, 13)
         Me.LFileAddress.TabIndex = 85
@@ -188,7 +190,7 @@ Partial Class FormImportExcel
         '
         'LWorksheetName
         '
-        Me.LWorksheetName.Location = New System.Drawing.Point(12, 37)
+        Me.LWorksheetName.Location = New System.Drawing.Point(10, 35)
         Me.LWorksheetName.Name = "LWorksheetName"
         Me.LWorksheetName.Size = New System.Drawing.Size(81, 13)
         Me.LWorksheetName.TabIndex = 86

@@ -10,6 +10,9 @@ Public Class FormHome
         apply_skin()
         WindowState = FormWindowState.Maximized
         SplashScreen1.Show()
+        For i As Integer = 0 To 5000
+            Console.WriteLine(i)
+        Next
         Try
             read_database_configuration()
             check_connection(True, "", "", "", "")

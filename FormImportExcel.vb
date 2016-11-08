@@ -91,26 +91,34 @@ Public Class FormImportExcel
             Try
                 'size
                 Dim query_size As String = "SELECT * FROM tb_size"
-                Dim dt_size As String = execute_query(query_size, -1, True, "", "", "", "")
+                Dim dt_size As DataTable = execute_query(query_size, -1, True, "", "", "", "")
+
                 Dim dt As DataTable = execute_query("SELECT * FROM tb_item", -1, True, "", "", "", "")
                 Dim tb1 = data_temp.AsEnumerable()
                 Dim tb2 = dt.AsEnumerable()
                 Dim tb3 = dt_size.AsEnumerable()
-                Dim query = From table1 In tb1
-                            Group Join table_tmp In tb2 On table1("code").ToString Equals table_tmp("item_code").ToString
-                            Into Group
-                            From y1 In Group.DefaultIfEmpty()
+                Dim query = From xls In tb1 'left join xls dgn size menjadi sizejoin
+                            Group Join item In tb2
+                            On xls("code") Equals item("item_code") Into codejoin = Group
+                            From resultcode In codejoin.DefaultIfEmpty()
+                            Group Join size In tb3 'left join xls dgn color menjadi colorjoin 'On xls("color").ToString.ToLower Equals color("display_name").ToString.ToLower And New {ID = trans.id, Flow = (Byte)1} Into colorjoin = Group
+                            On xls("size").ToString Equals size("size").ToString Into sizejoin = Group
+                            From resultsize In sizejoin.DefaultIfEmpty()
                             Select New With
                             {
-                                .Code = table1.Field(Of String)("code").ToString,
-                                .Description = table1.Field(Of String)("description").ToString,
-                                .Price = table1("price"),
-                                .Status = If(y1 Is Nothing, "OK", "Product code is already exist")
+                                .Code = xls.Field(Of String)("code").ToString,
+                                .Description = xls.Field(Of String)("description").ToString,
+                                .IdSize = If(resultsize Is Nothing, 0, resultsize("id_size").ToString),
+                                .Size = xls("size"),
+                                .Price = xls("price"),
+                                .Status = If(resultcode Is Nothing, If(resultsize Is Nothing, "Size not registered", "OK"), "Product code is already exist")
                             }
                 GCData.DataSource = Nothing
                 GCData.DataSource = query.ToList()
                 GCData.RefreshDataSource()
                 GVData.PopulateColumns()
+
+                GVData.Columns("IdSize").Visible = False
             Catch ex As Exception
                 stopCustom("Incorrect format on table.")
             End Try
@@ -179,16 +187,16 @@ Public Class FormImportExcel
 
                         'ins
                         Dim l_i As Integer = 0
-                        Dim query_ins As String = "INSERT INTO tb_item(item_code, item_name, price) VALUES "
+                        Dim query_ins As String = "INSERT INTO tb_item(id_size, item_code, item_name, price) VALUES "
                         For l As Integer = 0 To ((GVData.RowCount - 1) - GetGroupRowCount(GVData))
-                            Dim item_code As String = GVData.GetRowCellValue(l, "Code").ToString
+                            Dim item_code As String = addSlashes(GVData.GetRowCellValue(l, "Code").ToString)
                             Dim item_name As String = addSlashes(GVData.GetRowCellValue(l, "Description").ToString)
                             Dim price As String = decimalSQL(GVData.GetRowCellValue(l, "Price").ToString)
-
+                            Dim id_size As String = addSlashes(GVData.GetRowCellValue(l, "IdSize").ToString)
                             If l_i > 0 Then
                                 query_ins += ", "
                             End If
-                            query_ins += "('" + item_code + "', '" + item_name + "', '" + price + "') "
+                            query_ins += "('" + id_size + "','" + item_code + "', '" + item_name + "', '" + price + "') "
                             l_i += 1
                             PBC.PerformStep()
                             PBC.Update()
