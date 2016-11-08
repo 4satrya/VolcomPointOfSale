@@ -89,9 +89,13 @@ Public Class FormImportExcel
             If id_pop_up = "1" Then
             'MASTER PRODUCT
             Try
+                'size
+                Dim query_size As String = "SELECT * FROM tb_size"
+                Dim dt_size As String = execute_query(query_size, -1, True, "", "", "", "")
                 Dim dt As DataTable = execute_query("SELECT * FROM tb_item", -1, True, "", "", "", "")
                 Dim tb1 = data_temp.AsEnumerable()
                 Dim tb2 = dt.AsEnumerable()
+                Dim tb3 = dt_size.AsEnumerable()
                 Dim query = From table1 In tb1
                             Group Join table_tmp In tb2 On table1("code").ToString Equals table_tmp("item_code").ToString
                             Into Group
