@@ -166,7 +166,6 @@ Public Class FormImportExcel
         Else
             If id_pop_up = "1" Then
                 'MASTER PRODUCT
-                ' MASTER SAMPLE PRICE
                 Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Please make sure :" + System.Environment.NewLine + "- Only 'OK' status will continue to next step." + System.Environment.NewLine + "- If this report is an important, please click 'No' button, and then click 'Print' button to export to multiple formats provided." + System.Environment.NewLine + "Are you sure you want to continue this process?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
                 If confirm = DialogResult.Yes Then
                     makeSafeGV(GVData)

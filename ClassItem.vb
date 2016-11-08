@@ -12,8 +12,9 @@
             condition = ""
         End If
 
-        Dim query As String = "SELECT i.id_item, i.item_code, i.item_name, i.price, i.id_product  
+        Dim query As String = "SELECT i.id_item, i.item_code, i.item_name, i.id_size, s.size, i.price, i.id_product  
         FROM tb_item i 
+        INNER JOIN tb_size s ON s.id_size = i.id_size
         WHERE i.id_item>0 "
         query += condition + " "
         query += "ORDER BY i.id_item " + order_type

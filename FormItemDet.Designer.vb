@@ -27,11 +27,18 @@ Partial Class FormItemDet
         Me.TxtCode = New DevExpress.XtraEditors.TextEdit()
         Me.TxtDesc = New DevExpress.XtraEditors.TextEdit()
         Me.TxtPrice = New DevExpress.XtraEditors.TextEdit()
+        Me.SLESize = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.SearchLookUpEdit1View = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumnIdSize = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnSize = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.PanelControlBottom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlBottom.SuspendLayout()
         CType(Me.TxtCode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtDesc.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtPrice.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SLESize.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SearchLookUpEdit1View, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelControlBottom
@@ -39,7 +46,7 @@ Partial Class FormItemDet
         Me.PanelControlBottom.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControlBottom.Controls.Add(Me.BtnSave)
         Me.PanelControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControlBottom.Location = New System.Drawing.Point(0, 99)
+        Me.PanelControlBottom.Location = New System.Drawing.Point(0, 125)
         Me.PanelControlBottom.Name = "PanelControlBottom"
         Me.PanelControlBottom.Size = New System.Drawing.Size(441, 34)
         Me.PanelControlBottom.TabIndex = 5
@@ -82,7 +89,7 @@ Partial Class FormItemDet
         '
         'LabelControl3
         '
-        Me.LabelControl3.Location = New System.Drawing.Point(23, 68)
+        Me.LabelControl3.Location = New System.Drawing.Point(23, 94)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(23, 13)
         Me.LabelControl3.TabIndex = 8
@@ -104,7 +111,7 @@ Partial Class FormItemDet
         '
         'TxtPrice
         '
-        Me.TxtPrice.Location = New System.Drawing.Point(103, 65)
+        Me.TxtPrice.Location = New System.Drawing.Point(103, 91)
         Me.TxtPrice.Name = "TxtPrice"
         Me.TxtPrice.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtPrice.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
@@ -113,7 +120,47 @@ Partial Class FormItemDet
         Me.TxtPrice.Properties.Mask.SaveLiteral = False
         Me.TxtPrice.Properties.Mask.ShowPlaceHolders = False
         Me.TxtPrice.Size = New System.Drawing.Size(313, 20)
-        Me.TxtPrice.TabIndex = 2
+        Me.TxtPrice.TabIndex = 3
+        '
+        'SLESize
+        '
+        Me.SLESize.Location = New System.Drawing.Point(103, 65)
+        Me.SLESize.Name = "SLESize"
+        Me.SLESize.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.SLESize.Properties.ShowClearButton = False
+        Me.SLESize.Properties.View = Me.SearchLookUpEdit1View
+        Me.SLESize.Size = New System.Drawing.Size(313, 20)
+        Me.SLESize.TabIndex = 2
+        '
+        'SearchLookUpEdit1View
+        '
+        Me.SearchLookUpEdit1View.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnIdSize, Me.GridColumnSize})
+        Me.SearchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.SearchLookUpEdit1View.Name = "SearchLookUpEdit1View"
+        Me.SearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.SearchLookUpEdit1View.OptionsView.ShowGroupPanel = False
+        '
+        'GridColumnIdSize
+        '
+        Me.GridColumnIdSize.Caption = "Id"
+        Me.GridColumnIdSize.FieldName = "id_size"
+        Me.GridColumnIdSize.Name = "GridColumnIdSize"
+        '
+        'GridColumnSize
+        '
+        Me.GridColumnSize.Caption = "Size"
+        Me.GridColumnSize.FieldName = "size"
+        Me.GridColumnSize.Name = "GridColumnSize"
+        Me.GridColumnSize.Visible = True
+        Me.GridColumnSize.VisibleIndex = 0
+        '
+        'LabelControl4
+        '
+        Me.LabelControl4.Location = New System.Drawing.Point(23, 68)
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.LabelControl4.Size = New System.Drawing.Size(19, 13)
+        Me.LabelControl4.TabIndex = 10
+        Me.LabelControl4.Text = "Size"
         '
         'FormItemDet
         '
@@ -121,7 +168,9 @@ Partial Class FormItemDet
         Me.Appearance.Options.UseFont = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(441, 133)
+        Me.ClientSize = New System.Drawing.Size(441, 159)
+        Me.Controls.Add(Me.LabelControl4)
+        Me.Controls.Add(Me.SLESize)
         Me.Controls.Add(Me.TxtPrice)
         Me.Controls.Add(Me.TxtDesc)
         Me.Controls.Add(Me.TxtCode)
@@ -143,6 +192,8 @@ Partial Class FormItemDet
         CType(Me.TxtCode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtDesc.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtPrice.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SLESize.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SearchLookUpEdit1View, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -156,4 +207,9 @@ Partial Class FormItemDet
     Friend WithEvents TxtCode As DevExpress.XtraEditors.TextEdit
     Friend WithEvents TxtDesc As DevExpress.XtraEditors.TextEdit
     Friend WithEvents TxtPrice As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents SLESize As DevExpress.XtraEditors.SearchLookUpEdit
+    Friend WithEvents SearchLookUpEdit1View As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GridColumnIdSize As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumnSize As DevExpress.XtraGrid.Columns.GridColumn
 End Class

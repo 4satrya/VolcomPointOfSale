@@ -47,6 +47,7 @@ Partial Class FormItem
         Me.GridColumnCode = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnDescription = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnPrice = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnSize = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -252,7 +253,7 @@ Partial Class FormItem
         '
         'GVItem
         '
-        Me.GVItem.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnIdItem, Me.GridColumnCode, Me.GridColumnDescription, Me.GridColumnPrice})
+        Me.GVItem.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnIdItem, Me.GridColumnCode, Me.GridColumnDescription, Me.GridColumnPrice, Me.GridColumnSize})
         Me.GVItem.GridControl = Me.GCItem
         Me.GVItem.Name = "GVItem"
         Me.GVItem.OptionsBehavior.Editable = False
@@ -288,7 +289,15 @@ Partial Class FormItem
         Me.GridColumnPrice.FieldName = "price"
         Me.GridColumnPrice.Name = "GridColumnPrice"
         Me.GridColumnPrice.Visible = True
-        Me.GridColumnPrice.VisibleIndex = 2
+        Me.GridColumnPrice.VisibleIndex = 3
+        '
+        'GridColumnSize
+        '
+        Me.GridColumnSize.Caption = "Size"
+        Me.GridColumnSize.FieldName = "size"
+        Me.GridColumnSize.Name = "GridColumnSize"
+        Me.GridColumnSize.Visible = True
+        Me.GridColumnSize.VisibleIndex = 2
         '
         'FormItem
         '
@@ -345,4 +354,5 @@ Partial Class FormItem
     Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PrintPreviewToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GridColumnSize As DevExpress.XtraGrid.Columns.GridColumn
 End Class
