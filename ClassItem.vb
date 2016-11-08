@@ -20,4 +20,9 @@
         query += "ORDER BY i.id_item " + order_type
         Return query
     End Function
+
+    Sub syncItem()
+        Dim query As String = "CALL get_product()"
+        execute_non_query(query, True, "", "", "", "")
+    End Sub
 End Class

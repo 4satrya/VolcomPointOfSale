@@ -35,7 +35,7 @@ Partial Class WaitSyncItem
         Me.progressPanel1.AppearanceCaption.Options.UseFont = True
         Me.progressPanel1.AppearanceDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.progressPanel1.AppearanceDescription.Options.UseFont = True
-        Me.progressPanel1.Caption = "Synchronize Product"
+        Me.progressPanel1.Caption = "Synchronize Data"
         Me.progressPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.progressPanel1.ImageHorzOffset = 20
         Me.progressPanel1.Location = New System.Drawing.Point(0, 17)

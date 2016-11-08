@@ -71,6 +71,7 @@ Partial Class FormHome
         Me.TISetup = New DevExpress.XtraEditors.TileItem()
         Me.TGAdmin = New DevExpress.XtraEditors.TileGroup()
         Me.TILogout = New DevExpress.XtraEditors.TileItem()
+        Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.VolcomPointOfSale.WaitSyncItem), True, True)
         CType(Me.PanelControlTop, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlTop.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -550,6 +551,10 @@ Partial Class FormHome
         Me.TILogout.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TILogout.Name = "TILogout"
         '
+        'SplashScreenManager1
+        '
+        Me.SplashScreenManager1.ClosingDelay = 500
+        '
         'FormHome
         '
         Me.Appearance.BackColor = System.Drawing.Color.DarkSlateBlue
@@ -625,4 +630,5 @@ Partial Class FormHome
     Friend WithEvents TISetup As DevExpress.XtraEditors.TileItem
     Friend WithEvents TGAdmin As DevExpress.XtraEditors.TileGroup
     Friend WithEvents TILogout As DevExpress.XtraEditors.TileItem
+    Friend WithEvents SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager
 End Class

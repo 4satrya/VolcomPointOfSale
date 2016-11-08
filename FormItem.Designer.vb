@@ -257,6 +257,7 @@ Partial Class FormItem
         Me.GVItem.GridControl = Me.GCItem
         Me.GVItem.Name = "GVItem"
         Me.GVItem.OptionsBehavior.Editable = False
+        Me.GVItem.OptionsFind.AlwaysVisible = True
         Me.GVItem.OptionsView.ShowGroupPanel = False
         '
         'GridColumnIdItem
