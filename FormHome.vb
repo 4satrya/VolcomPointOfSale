@@ -8,18 +8,20 @@ Public Class FormHome
 
     Private Sub FormHome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         apply_skin()
-        WindowState = FormWindowState.Maximized
-        SplashScreen1.Show()
-        For i As Integer = 0 To 5000
-            Console.WriteLine(i)
-        Next
+        SplashScreenManager1.ShowWaitForm()
         Try
             read_database_configuration()
             check_connection(True, "", "", "", "")
-            SplashScreen1.Close()
+
+            'sync product
+            Dim sc As New ClassItem
+            sc.syncItem()
+
+            SplashScreenManager1.CloseWaitForm()
+            WindowState = FormWindowState.Maximized
             Opacity = 100
         Catch ex As Exception
-            SplashScreen1.Close()
+            SplashScreenManager1.CloseWaitForm()
             connection_problem = True
             FormDatabase.id_type = "2"
             FormDatabase.TopMost = True
