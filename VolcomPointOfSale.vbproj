@@ -114,6 +114,12 @@
     <Compile Include="FormHome.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormImportExcel.designer.vb">
+      <DependentUpon>FormImportExcel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormImportExcel.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormItem.Designer.vb">
       <DependentUpon>FormItem.vb</DependentUpon>
     </Compile>
@@ -185,6 +191,12 @@
     <Compile Include="WaitForm1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="WaitSyncItem.Designer.vb">
+      <DependentUpon>WaitSyncItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaitSyncItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FormDashboard.resx">
@@ -195,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormHome.resx">
       <DependentUpon>FormHome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImportExcel.resx">
+      <DependentUpon>FormImportExcel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormItem.resx">
       <DependentUpon>FormItem.vb</DependentUpon>
@@ -229,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WaitForm1.resx">
       <DependentUpon>WaitForm1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitSyncItem.resx">
+      <DependentUpon>WaitSyncItem.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

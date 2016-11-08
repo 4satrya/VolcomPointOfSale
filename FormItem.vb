@@ -35,7 +35,8 @@
     End Sub
 
     Sub importExcel()
-
+        FormImportExcel.id_pop_up = "1"
+        FormImportExcel.ShowDialog()
     End Sub
 
     Sub exitForm()
@@ -67,6 +68,8 @@
             edit()
         ElseIf e.KeyCode = Keys.Delete Then 'delete
             delete()
+        ElseIf e.KeyCode = Keys.I Then 'delete
+            importExcel()
         ElseIf e.KeyCode = Keys.P AndAlso e.Modifiers = Keys.Control Then 'delete
             printPreview()
         End If
