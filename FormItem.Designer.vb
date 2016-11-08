@@ -22,6 +22,8 @@ Partial Class FormItem
         Me.components = New System.ComponentModel.Container()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
+        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
@@ -38,15 +40,13 @@ Partial Class FormItem
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImportExcelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PrintPreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GVItem = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumnIdItem = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnCode = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnDescription = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnPrice = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
-        Me.PrintPreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,6 +86,24 @@ Partial Class FormItem
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Size = New System.Drawing.Size(482, 35)
         Me.PanelControl2.TabIndex = 7
+        '
+        'LabelControl11
+        '
+        Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl11.Location = New System.Drawing.Point(255, 11)
+        Me.LabelControl11.Name = "LabelControl11"
+        Me.LabelControl11.Size = New System.Drawing.Size(66, 13)
+        Me.LabelControl11.TabIndex = 19
+        Me.LabelControl11.Text = "Print Preview"
+        '
+        'LabelControl12
+        '
+        Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl12.Location = New System.Drawing.Point(216, 11)
+        Me.LabelControl12.Name = "LabelControl12"
+        Me.LabelControl12.Size = New System.Drawing.Size(33, 13)
+        Me.LabelControl12.TabIndex = 18
+        Me.LabelControl12.Text = "Ctrl+P"
         '
         'LabelControl10
         '
@@ -182,7 +200,7 @@ Partial Class FormItem
         Me.GCItem.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GCItem.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCItem.Location = New System.Drawing.Point(20, 20)
-        Me.GCItem.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.GCItem.LookAndFeel.SkinName = "Office 2010 Silver"
         Me.GCItem.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCItem.MainView = Me.GVItem
         Me.GCItem.Name = "GCItem"
@@ -194,36 +212,42 @@ Partial Class FormItem
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.ImportExcelToolStripMenuItem, Me.PrintPreviewToolStripMenuItem, Me.CloseToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 158)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(144, 136)
         '
         'NewToolStripMenuItem
         '
         Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.NewToolStripMenuItem.Text = "New"
         '
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'DeleteToolStripMenuItem
         '
         Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.DeleteToolStripMenuItem.Text = "Delete"
         '
         'ImportExcelToolStripMenuItem
         '
         Me.ImportExcelToolStripMenuItem.Name = "ImportExcelToolStripMenuItem"
-        Me.ImportExcelToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.ImportExcelToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.ImportExcelToolStripMenuItem.Text = "Import Excel"
+        '
+        'PrintPreviewToolStripMenuItem
+        '
+        Me.PrintPreviewToolStripMenuItem.Name = "PrintPreviewToolStripMenuItem"
+        Me.PrintPreviewToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.PrintPreviewToolStripMenuItem.Text = "Print Preview"
         '
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
         'GVItem
@@ -265,30 +289,6 @@ Partial Class FormItem
         Me.GridColumnPrice.Name = "GridColumnPrice"
         Me.GridColumnPrice.Visible = True
         Me.GridColumnPrice.VisibleIndex = 2
-        '
-        'LabelControl11
-        '
-        Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl11.Location = New System.Drawing.Point(255, 11)
-        Me.LabelControl11.Name = "LabelControl11"
-        Me.LabelControl11.Size = New System.Drawing.Size(66, 13)
-        Me.LabelControl11.TabIndex = 19
-        Me.LabelControl11.Text = "Print Preview"
-        '
-        'LabelControl12
-        '
-        Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl12.Location = New System.Drawing.Point(216, 11)
-        Me.LabelControl12.Name = "LabelControl12"
-        Me.LabelControl12.Size = New System.Drawing.Size(33, 13)
-        Me.LabelControl12.TabIndex = 18
-        Me.LabelControl12.Text = "Ctrl+P"
-        '
-        'PrintPreviewToolStripMenuItem
-        '
-        Me.PrintPreviewToolStripMenuItem.Name = "PrintPreviewToolStripMenuItem"
-        Me.PrintPreviewToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.PrintPreviewToolStripMenuItem.Text = "Print Preview"
         '
         'FormItem
         '
