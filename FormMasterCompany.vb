@@ -35,7 +35,7 @@
 
     Sub edit()
         FormMasterCompanySingle.id_company = GVCompany.GetFocusedRowCellValue("id_comp").ToString
-        FormItemDet.ShowDialog()
+        FormMasterCompanySingle.ShowDialog()
     End Sub
 
     Sub delete()
@@ -81,7 +81,7 @@
         delete()
     End Sub
 
-    Private Sub ImportExcelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImportExcelToolStripMenuItem.Click
+    Private Sub ImportExcelToolStripMenuItem_Click(sender As Object, e As EventArgs)
         compContact()
     End Sub
 
@@ -91,5 +91,21 @@
 
     Private Sub PrintPreviewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintPreviewToolStripMenuItem.Click
         printPreview()
+    End Sub
+
+    Private Sub FormMasterCompany_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        Cursor = Cursors.WaitCursor
+        If e.KeyCode = Keys.Escape Then 'close
+            Close()
+        ElseIf e.KeyCode = Keys.Insert Then 'new
+            insert()
+        ElseIf e.KeyCode = Keys.Enter Then 'edit
+            edit()
+        ElseIf e.KeyCode = Keys.Delete Then 'delete
+            delete()
+        ElseIf e.KeyCode = Keys.P AndAlso e.Modifiers = Keys.Control Then 'delete
+            printPreview()
+        End If
+        Cursor = Cursors.Default
     End Sub
 End Class

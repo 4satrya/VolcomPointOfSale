@@ -1,5 +1,5 @@
 ﻿Public Class FormMasterCompanySingle
-    Public id_company As String
+    Public id_company As String = "-1"
     Public id_pop_up As String = "-1"
     Public id_def_drawer As String = "-1"
 
@@ -11,6 +11,7 @@
 
     Private Sub FormMasterCompanySingle_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         action_load()
+        TECompanyName.Focus()
     End Sub
 
     Sub action_load()
@@ -40,10 +41,12 @@
 
         If id_company = "-1" Then
             'new
+            BtnContact.Enabled = False
             XTPSetup.PageVisible = False
         Else
             'edit
-            XTPSetup.PageVisible = True
+            BtnContact.Enabled = True
+            'XTPSetup.PageVisible = True
             Dim query As String = String.Format("SELECT comp.*,drawer.wh_drawer FROM tb_m_comp comp LEFT JOIN tb_m_wh_drawer drawer ON drawer.id_wh_drawer=comp.id_drawer_def WHERE id_comp = '{0}'", id_company)
             Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
 
@@ -242,7 +245,12 @@
         Dim npwp As String = TENPWP.Text
         Dim fax As String = TEFax.Text
         Dim id_tax As String = LETax.EditValue.ToString
-        Dim id_dept As String = LEDepartement.EditValue.ToString
+        Dim id_dept As String = "0"
+        Try
+            id_dept = LEDepartement.EditValue.ToString
+        Catch ex As Exception
+
+        End Try
         Dim id_comp_group As String = SLEGroup.EditValue.ToString
         Dim id_baru As String = ""
         '
@@ -525,14 +533,14 @@
         End If
     End Sub
     Private Sub view_departement(ByVal lookup As DevExpress.XtraEditors.LookUpEdit)
-        Dim query As String = "SELECT '0' as id_departement,'-' as departement UNION SELECT id_departement,departement FROM tb_m_departement"
-        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        'Dim query As String = "SELECT '0' as id_departement,'-' as departement UNION SELECT id_departement,departement FROM tb_m_departement"
+        'Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
 
-        lookup.Properties.DataSource = data
+        'lookup.Properties.DataSource = data
 
-        lookup.Properties.DisplayMember = "departement"
-        lookup.Properties.ValueMember = "id_departement"
-        lookup.ItemIndex = 0
+        'lookup.Properties.DisplayMember = "departement"
+        'lookup.Properties.ValueMember = "id_departement"
+        'lookup.ItemIndex = 0
     End Sub
     Private Sub view_country(ByVal lookup As DevExpress.XtraEditors.LookUpEdit)
         Dim query As String = "SELECT id_country,country FROM tb_m_country"
@@ -621,7 +629,7 @@
         lookup.ItemIndex = 0
     End Sub
 
-    Private Sub BGroupComp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BGroupComp.Click
+    Private Sub BGroupComp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         'FormPopUpCompGroup.ShowDialog()
     End Sub
 
@@ -630,7 +638,7 @@
         viewSearchLookupQuery(SLEGroup, query, "id_comp_group", "comp_group", "id_comp_group")
     End Sub
 
-    Private Sub BRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BRefresh.Click
+    Private Sub BRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         view_comp_group()
     End Sub
 
@@ -663,21 +671,21 @@
     End Sub
 
     Sub view_mapping()
-        Dim query = "SELECT id_coa_map,coa_map FROM tb_coa_map"
-        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
-        GCCoaTrans.DataSource = data
-        If data.Rows.Count > 0 Then
-            view_mapping_acc(id_company, GVCoaTrans.GetFocusedRowCellValue("id_coa_map").ToString)
-        End If
+        'Dim query = "SELECT id_coa_map,coa_map FROM tb_coa_map"
+        'Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        'GCCoaTrans.DataSource = data
+        'If data.Rows.Count > 0 Then
+        '    view_mapping_acc(id_company, GVCoaTrans.GetFocusedRowCellValue("id_coa_map").ToString)
+        'End If
     End Sub
     Sub view_mapping_acc(ByVal id_comp As String, ByVal id_coa_map As String)
-        Dim query = "SELECT coa_map_d.id_coa_map_det,coa_map_d.coa_map_det,comp_coa.id_acc,comp_coa.id_comp_coa,coa.acc_name,coa.acc_description  FROM tb_coa_map_det coa_map_d"
-        query += " INNER JOIN tb_coa_map coa_map ON coa_map.id_coa_map=coa_map_d.id_coa_map"
-        query += " LEFT JOIN tb_m_comp_coa comp_coa ON comp_coa.id_coa_map_det=coa_map_d.id_coa_map_det AND id_comp='" + id_comp + "'"
-        query += " LEFT JOIN tb_a_acc coa ON coa.id_acc=comp_coa.id_acc"
-        query += " WHERE coa_map_d.id_coa_map='" + id_coa_map + "'"
-        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
-        GCCoaMapping.DataSource = data
+        'Dim query = "SELECT coa_map_d.id_coa_map_det,coa_map_d.coa_map_det,comp_coa.id_acc,comp_coa.id_comp_coa,coa.acc_name,coa.acc_description  FROM tb_coa_map_det coa_map_d"
+        'query += " INNER JOIN tb_coa_map coa_map ON coa_map.id_coa_map=coa_map_d.id_coa_map"
+        'query += " LEFT JOIN tb_m_comp_coa comp_coa ON comp_coa.id_coa_map_det=coa_map_d.id_coa_map_det AND id_comp='" + id_comp + "'"
+        'query += " LEFT JOIN tb_a_acc coa ON coa.id_acc=comp_coa.id_acc"
+        'query += " WHERE coa_map_d.id_coa_map='" + id_coa_map + "'"
+        'Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        'GCCoaMapping.DataSource = data
     End Sub
 
     Private Sub GVCoaMapping_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GVCoaMapping.DoubleClick
@@ -710,4 +718,10 @@
         id_def_drawer = "-1"
     End Sub
 
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles BtnContact.Click
+        Cursor = Cursors.WaitCursor
+        FormMasterCompanyContact.id_company = id_company
+        FormMasterCompanyContact.ShowDialog()
+        Cursor = Cursors.Default
+    End Sub
 End Class

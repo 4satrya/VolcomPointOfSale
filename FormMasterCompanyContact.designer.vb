@@ -19,33 +19,33 @@ Partial Class FormMasterCompanyContact
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMasterCompanyContact))
         Me.EPContact = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.LargeImageCollection = New DevExpress.Utils.ImageCollection(Me.components)
-        Me.GCCommand = New DevExpress.XtraEditors.GroupControl
-        Me.PDetail = New DevExpress.XtraEditors.PanelControl
-        Me.BSave = New DevExpress.XtraEditors.SimpleButton
-        Me.BCancel = New DevExpress.XtraEditors.SimpleButton
-        Me.LEDefault = New DevExpress.XtraEditors.LookUpEdit
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
-        Me.TEContactNumber = New DevExpress.XtraEditors.TextEdit
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
-        Me.TECP = New DevExpress.XtraEditors.TextEdit
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
-        Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl
-        Me.BDelete = New DevExpress.XtraEditors.SimpleButton
-        Me.BEdit = New DevExpress.XtraEditors.SimpleButton
-        Me.BNew = New DevExpress.XtraEditors.SimpleButton
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl
-        Me.GCCompanyContactList = New DevExpress.XtraGrid.GridControl
-        Me.GVCompanyContactList = New DevExpress.XtraGrid.Views.Grid.GridView
-        Me.id_contact = New DevExpress.XtraGrid.Columns.GridColumn
-        Me.contact_person = New DevExpress.XtraGrid.Columns.GridColumn
-        Me.number = New DevExpress.XtraGrid.Columns.GridColumn
-        Me.default_status = New DevExpress.XtraGrid.Columns.GridColumn
-        Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
-        Me.RepositoryItemCheckedComboBoxEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckedComboBoxEdit
+        Me.GCCommand = New DevExpress.XtraEditors.GroupControl()
+        Me.PDetail = New DevExpress.XtraEditors.PanelControl()
+        Me.BSave = New DevExpress.XtraEditors.SimpleButton()
+        Me.BCancel = New DevExpress.XtraEditors.SimpleButton()
+        Me.LEDefault = New DevExpress.XtraEditors.LookUpEdit()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.TEContactNumber = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
+        Me.TECP = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
+        Me.BDelete = New DevExpress.XtraEditors.SimpleButton()
+        Me.BEdit = New DevExpress.XtraEditors.SimpleButton()
+        Me.BNew = New DevExpress.XtraEditors.SimpleButton()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.GCCompanyContactList = New DevExpress.XtraGrid.GridControl()
+        Me.GVCompanyContactList = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.id_contact = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.contact_person = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.number = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.default_status = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
+        Me.RepositoryItemCheckedComboBoxEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckedComboBoxEdit()
         CType(Me.EPContact, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LargeImageCollection, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GCCommand, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,9 +109,9 @@ Partial Class FormMasterCompanyContact
         Me.PDetail.Controls.Add(Me.LabelControl1)
         Me.PDetail.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PDetail.Enabled = False
-        Me.PDetail.Location = New System.Drawing.Point(2, 22)
+        Me.PDetail.Location = New System.Drawing.Point(2, 20)
         Me.PDetail.Name = "PDetail"
-        Me.PDetail.Size = New System.Drawing.Size(456, 200)
+        Me.PDetail.Size = New System.Drawing.Size(456, 202)
         Me.PDetail.TabIndex = 9
         '
         'BSave
@@ -155,7 +155,7 @@ Partial Class FormMasterCompanyContact
         Me.TEContactNumber.Name = "TEContactNumber"
         Me.TEContactNumber.Properties.Appearance.Font = New System.Drawing.Font("Calibri", 10.0!)
         Me.TEContactNumber.Properties.Appearance.Options.UseFont = True
-        Me.TEContactNumber.Size = New System.Drawing.Size(412, 23)
+        Me.TEContactNumber.Size = New System.Drawing.Size(412, 22)
         Me.TEContactNumber.TabIndex = 12
         '
         'LabelControl2
@@ -173,7 +173,7 @@ Partial Class FormMasterCompanyContact
         Me.TECP.Name = "TECP"
         Me.TECP.Properties.Appearance.Font = New System.Drawing.Font("Calibri", 10.0!)
         Me.TECP.Properties.Appearance.Options.UseFont = True
-        Me.TECP.Size = New System.Drawing.Size(412, 23)
+        Me.TECP.Size = New System.Drawing.Size(412, 22)
         Me.TECP.TabIndex = 10
         '
         'LabelControl1
@@ -191,9 +191,9 @@ Partial Class FormMasterCompanyContact
         Me.PanelControl1.Controls.Add(Me.BEdit)
         Me.PanelControl1.Controls.Add(Me.BNew)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControl1.Location = New System.Drawing.Point(458, 22)
+        Me.PanelControl1.Location = New System.Drawing.Point(458, 20)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(145, 200)
+        Me.PanelControl1.Size = New System.Drawing.Size(145, 202)
         Me.PanelControl1.TabIndex = 6
         '
         'BDelete
@@ -203,7 +203,7 @@ Partial Class FormMasterCompanyContact
         Me.BDelete.ImageList = Me.LargeImageCollection
         Me.BDelete.Location = New System.Drawing.Point(2, 136)
         Me.BDelete.Name = "BDelete"
-        Me.BDelete.Size = New System.Drawing.Size(141, 62)
+        Me.BDelete.Size = New System.Drawing.Size(141, 64)
         Me.BDelete.TabIndex = 10
         Me.BDelete.Text = "Delete"
         '
@@ -242,11 +242,11 @@ Partial Class FormMasterCompanyContact
         'GCCompanyContactList
         '
         Me.GCCompanyContactList.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GCCompanyContactList.Location = New System.Drawing.Point(2, 22)
+        Me.GCCompanyContactList.Location = New System.Drawing.Point(2, 20)
         Me.GCCompanyContactList.MainView = Me.GVCompanyContactList
         Me.GCCompanyContactList.Name = "GCCompanyContactList"
         Me.GCCompanyContactList.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckedComboBoxEdit1, Me.RepositoryItemCheckEdit1})
-        Me.GCCompanyContactList.Size = New System.Drawing.Size(601, 204)
+        Me.GCCompanyContactList.Size = New System.Drawing.Size(601, 206)
         Me.GCCompanyContactList.TabIndex = 0
         Me.GCCompanyContactList.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVCompanyContactList})
         '
@@ -316,10 +316,11 @@ Partial Class FormMasterCompanyContact
         Me.Controls.Add(Me.GCCommand)
         Me.Controls.Add(Me.GroupControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormMasterCompanyContact"
-        Me.ShowInTaskbar = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Contact"

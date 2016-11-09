@@ -25,7 +25,6 @@ Partial Class FormMasterCompany
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ImportExcelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintPreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GVCompany = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -65,7 +64,7 @@ Partial Class FormMasterCompany
         Me.GCCompany.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GCCompany.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCCompany.Location = New System.Drawing.Point(20, 20)
-        Me.GCCompany.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCCompany.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCCompany.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCCompany.MainView = Me.GVCompany
         Me.GCCompany.Name = "GCCompany"
@@ -76,9 +75,9 @@ Partial Class FormMasterCompany
         '
         'ContextMenuStrip1
         '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.ImportExcelToolStripMenuItem, Me.PrintPreviewToolStripMenuItem, Me.CloseToolStripMenuItem})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.PrintPreviewToolStripMenuItem, Me.CloseToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 158)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(144, 114)
         '
         'NewToolStripMenuItem
         '
@@ -97,12 +96,6 @@ Partial Class FormMasterCompany
         Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
         Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.DeleteToolStripMenuItem.Text = "Delete"
-        '
-        'ImportExcelToolStripMenuItem
-        '
-        Me.ImportExcelToolStripMenuItem.Name = "ImportExcelToolStripMenuItem"
-        Me.ImportExcelToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ImportExcelToolStripMenuItem.Text = "Contact"
         '
         'PrintPreviewToolStripMenuItem
         '
@@ -217,9 +210,9 @@ Partial Class FormMasterCompany
         Me.PanelControl2.Controls.Add(Me.LabelControl2)
         Me.PanelControl2.Controls.Add(Me.LabelControl1)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControl2.Location = New System.Drawing.Point(214, 0)
+        Me.PanelControl2.Location = New System.Drawing.Point(226, 0)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(399, 35)
+        Me.PanelControl2.Size = New System.Drawing.Size(387, 35)
         Me.PanelControl2.TabIndex = 7
         '
         'LabelControl11
@@ -234,6 +227,7 @@ Partial Class FormMasterCompany
         'LabelControl12
         '
         Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl12.Appearance.ForeColor = System.Drawing.SystemColors.HotTrack
         Me.LabelControl12.Location = New System.Drawing.Point(216, 11)
         Me.LabelControl12.Name = "LabelControl12"
         Me.LabelControl12.Size = New System.Drawing.Size(33, 13)
@@ -243,7 +237,7 @@ Partial Class FormMasterCompany
         'LabelControl8
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(361, 11)
+        Me.LabelControl8.Location = New System.Drawing.Point(354, 11)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(28, 13)
         Me.LabelControl8.TabIndex = 15
@@ -252,7 +246,8 @@ Partial Class FormMasterCompany
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(338, 11)
+        Me.LabelControl9.Appearance.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.LabelControl9.Location = New System.Drawing.Point(335, 11)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(16, 13)
         Me.LabelControl9.TabIndex = 14
@@ -270,6 +265,7 @@ Partial Class FormMasterCompany
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl6.Appearance.ForeColor = System.Drawing.SystemColors.HotTrack
         Me.LabelControl6.Location = New System.Drawing.Point(146, 11)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(17, 13)
@@ -288,6 +284,7 @@ Partial Class FormMasterCompany
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl4.Appearance.ForeColor = System.Drawing.SystemColors.HotTrack
         Me.LabelControl4.Location = New System.Drawing.Point(77, 11)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(27, 13)
@@ -306,6 +303,7 @@ Partial Class FormMasterCompany
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl1.Appearance.ForeColor = System.Drawing.SystemColors.HotTrack
         Me.LabelControl1.Location = New System.Drawing.Point(16, 11)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(15, 13)
@@ -321,6 +319,7 @@ Partial Class FormMasterCompany
         Me.Controls.Add(Me.PanelControl1)
         Me.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.KeyPreview = True
         Me.LookAndFeel.SkinName = "Metropolis"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.MaximizeBox = False
@@ -358,7 +357,6 @@ Partial Class FormMasterCompany
     Friend WithEvents NewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ImportExcelToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PrintPreviewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
