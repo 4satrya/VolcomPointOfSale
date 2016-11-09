@@ -119,4 +119,10 @@ Public Class FormHome
         FormMasterCompany.ShowDialog()
         Cursor = Cursors.Default
     End Sub
+
+    Private Sub TIRec_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIRec.ItemClick
+        Cursor = Cursors.WaitCursor
+        FormRec.ShowDialog()
+        Cursor = Cursors.Default
+    End Sub
 End Class
