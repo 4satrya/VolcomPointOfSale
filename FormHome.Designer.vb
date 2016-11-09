@@ -557,7 +557,7 @@ Partial Class FormHome
         '
         'FormHome
         '
-        Me.Appearance.BackColor = System.Drawing.Color.DarkSlateBlue
+        Me.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Appearance.Options.UseBackColor = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font

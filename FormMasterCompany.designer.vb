@@ -20,6 +20,7 @@ Partial Class FormMasterCompany
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMasterCompany))
         Me.GCCompany = New DevExpress.XtraGrid.GridControl()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -48,6 +49,9 @@ Partial Class FormMasterCompany
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
+        Me.PCClose = New DevExpress.XtraEditors.PanelControl()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.GCCompany, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.GVCompany, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,19 +61,22 @@ Partial Class FormMasterCompany
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl3.SuspendLayout()
+        CType(Me.PCClose, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GCCompany
         '
         Me.GCCompany.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GCCompany.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GCCompany.Location = New System.Drawing.Point(20, 20)
-        Me.GCCompany.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.GCCompany.Location = New System.Drawing.Point(0, 24)
+        Me.GCCompany.LookAndFeel.SkinName = "Office 2010 Silver"
         Me.GCCompany.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCCompany.MainView = Me.GVCompany
         Me.GCCompany.Name = "GCCompany"
         Me.GCCompany.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.is_active_company, Me.RepositoryItemCheckEdit1})
-        Me.GCCompany.Size = New System.Drawing.Size(613, 287)
+        Me.GCCompany.Size = New System.Drawing.Size(653, 283)
         Me.GCCompany.TabIndex = 3
         Me.GCCompany.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVCompany})
         '
@@ -191,9 +198,9 @@ Partial Class FormMasterCompany
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl1.Controls.Add(Me.PanelControl2)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl1.Location = New System.Drawing.Point(20, 307)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 307)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(613, 35)
+        Me.PanelControl1.Size = New System.Drawing.Size(653, 35)
         Me.PanelControl1.TabIndex = 4
         '
         'PanelControl2
@@ -210,9 +217,9 @@ Partial Class FormMasterCompany
         Me.PanelControl2.Controls.Add(Me.LabelControl2)
         Me.PanelControl2.Controls.Add(Me.LabelControl1)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControl2.Location = New System.Drawing.Point(226, 0)
+        Me.PanelControl2.Location = New System.Drawing.Point(257, 0)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(387, 35)
+        Me.PanelControl2.Size = New System.Drawing.Size(396, 35)
         Me.PanelControl2.TabIndex = 7
         '
         'LabelControl11
@@ -227,7 +234,7 @@ Partial Class FormMasterCompany
         'LabelControl12
         '
         Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl12.Appearance.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.LabelControl12.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.LabelControl12.Location = New System.Drawing.Point(216, 11)
         Me.LabelControl12.Name = "LabelControl12"
         Me.LabelControl12.Size = New System.Drawing.Size(33, 13)
@@ -246,7 +253,7 @@ Partial Class FormMasterCompany
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Appearance.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.LabelControl9.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.LabelControl9.Location = New System.Drawing.Point(335, 11)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(16, 13)
@@ -265,7 +272,7 @@ Partial Class FormMasterCompany
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Appearance.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.LabelControl6.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.LabelControl6.Location = New System.Drawing.Point(146, 11)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(17, 13)
@@ -284,7 +291,7 @@ Partial Class FormMasterCompany
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Appearance.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.LabelControl4.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.LabelControl4.Location = New System.Drawing.Point(77, 11)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(27, 13)
@@ -303,12 +310,47 @@ Partial Class FormMasterCompany
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Appearance.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.LabelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.LabelControl1.Location = New System.Drawing.Point(16, 11)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(15, 13)
         Me.LabelControl1.TabIndex = 7
         Me.LabelControl1.Text = "Ins"
+        '
+        'PanelControl3
+        '
+        Me.PanelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanelControl3.Appearance.Options.UseBackColor = True
+        Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl3.Controls.Add(Me.PCClose)
+        Me.PanelControl3.Controls.Add(Me.LabelControl7)
+        Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelControl3.Location = New System.Drawing.Point(0, 0)
+        Me.PanelControl3.Name = "PanelControl3"
+        Me.PanelControl3.Padding = New System.Windows.Forms.Padding(7, 5, 0, 5)
+        Me.PanelControl3.Size = New System.Drawing.Size(653, 24)
+        Me.PanelControl3.TabIndex = 5
+        '
+        'PCClose
+        '
+        Me.PCClose.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PCClose.ContentImage = CType(resources.GetObject("PCClose.ContentImage"), System.Drawing.Image)
+        Me.PCClose.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PCClose.Location = New System.Drawing.Point(629, 5)
+        Me.PCClose.Name = "PCClose"
+        Me.PCClose.Size = New System.Drawing.Size(24, 14)
+        Me.PCClose.TabIndex = 1
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl7.Appearance.ForeColor = System.Drawing.Color.White
+        Me.LabelControl7.Dock = System.Windows.Forms.DockStyle.Left
+        Me.LabelControl7.Location = New System.Drawing.Point(7, 5)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(49, 13)
+        Me.LabelControl7.TabIndex = 0
+        Me.LabelControl7.Text = "Company"
         '
         'FormMasterCompany
         '
@@ -317,6 +359,7 @@ Partial Class FormMasterCompany
         Me.ClientSize = New System.Drawing.Size(653, 342)
         Me.Controls.Add(Me.GCCompany)
         Me.Controls.Add(Me.PanelControl1)
+        Me.Controls.Add(Me.PanelControl3)
         Me.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.KeyPreview = True
@@ -325,7 +368,6 @@ Partial Class FormMasterCompany
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormMasterCompany"
-        Me.Padding = New System.Windows.Forms.Padding(20, 20, 20, 0)
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Company"
@@ -340,6 +382,10 @@ Partial Class FormMasterCompany
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl3.ResumeLayout(False)
+        Me.PanelControl3.PerformLayout()
+        CType(Me.PCClose, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -371,4 +417,7 @@ Partial Class FormMasterCompany
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents PCClose As DevExpress.XtraEditors.PanelControl
 End Class
