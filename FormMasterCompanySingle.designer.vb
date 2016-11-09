@@ -1279,7 +1279,7 @@ Partial Class FormMasterCompanySingle
         Me.Controls.Add(Me.XTCCompany)
         Me.Controls.Add(Me.PanelControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.LookAndFeel.SkinName = "Office 2010 Silver"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.MaximizeBox = False
         Me.MinimizeBox = False

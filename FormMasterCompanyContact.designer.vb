@@ -109,9 +109,9 @@ Partial Class FormMasterCompanyContact
         Me.PDetail.Controls.Add(Me.LabelControl1)
         Me.PDetail.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PDetail.Enabled = False
-        Me.PDetail.Location = New System.Drawing.Point(2, 20)
+        Me.PDetail.Location = New System.Drawing.Point(2, 21)
         Me.PDetail.Name = "PDetail"
-        Me.PDetail.Size = New System.Drawing.Size(456, 202)
+        Me.PDetail.Size = New System.Drawing.Size(456, 201)
         Me.PDetail.TabIndex = 9
         '
         'BSave
@@ -191,9 +191,9 @@ Partial Class FormMasterCompanyContact
         Me.PanelControl1.Controls.Add(Me.BEdit)
         Me.PanelControl1.Controls.Add(Me.BNew)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControl1.Location = New System.Drawing.Point(458, 20)
+        Me.PanelControl1.Location = New System.Drawing.Point(458, 21)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(145, 202)
+        Me.PanelControl1.Size = New System.Drawing.Size(145, 201)
         Me.PanelControl1.TabIndex = 6
         '
         'BDelete
@@ -203,7 +203,7 @@ Partial Class FormMasterCompanyContact
         Me.BDelete.ImageList = Me.LargeImageCollection
         Me.BDelete.Location = New System.Drawing.Point(2, 136)
         Me.BDelete.Name = "BDelete"
-        Me.BDelete.Size = New System.Drawing.Size(141, 64)
+        Me.BDelete.Size = New System.Drawing.Size(141, 63)
         Me.BDelete.TabIndex = 10
         Me.BDelete.Text = "Delete"
         '
@@ -242,11 +242,11 @@ Partial Class FormMasterCompanyContact
         'GCCompanyContactList
         '
         Me.GCCompanyContactList.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GCCompanyContactList.Location = New System.Drawing.Point(2, 20)
+        Me.GCCompanyContactList.Location = New System.Drawing.Point(2, 21)
         Me.GCCompanyContactList.MainView = Me.GVCompanyContactList
         Me.GCCompanyContactList.Name = "GCCompanyContactList"
         Me.GCCompanyContactList.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckedComboBoxEdit1, Me.RepositoryItemCheckEdit1})
-        Me.GCCompanyContactList.Size = New System.Drawing.Size(601, 206)
+        Me.GCCompanyContactList.Size = New System.Drawing.Size(601, 205)
         Me.GCCompanyContactList.TabIndex = 0
         Me.GCCompanyContactList.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVCompanyContactList})
         '
@@ -316,7 +316,7 @@ Partial Class FormMasterCompanyContact
         Me.Controls.Add(Me.GCCommand)
         Me.Controls.Add(Me.GroupControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.LookAndFeel.SkinName = "Office 2010 Silver"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.MaximizeBox = False
         Me.MinimizeBox = False

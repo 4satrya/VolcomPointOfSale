@@ -68,7 +68,7 @@
             edit()
         ElseIf e.KeyCode = Keys.Delete Then 'delete
             delete()
-        ElseIf e.KeyCode = Keys.I Then 'delete
+        ElseIf e.KeyCode = Keys.I AndAlso e.Modifiers = Keys.Control Then 'delete
             importExcel()
         ElseIf e.KeyCode = Keys.P AndAlso e.Modifiers = Keys.Control Then 'delete
             printPreview()

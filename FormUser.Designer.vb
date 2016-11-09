@@ -41,6 +41,8 @@ Partial Class FormUser
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
+        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.XTCUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTCUser.SuspendLayout()
         Me.XTPRole.SuspendLayout()
@@ -53,15 +55,20 @@ Partial Class FormUser
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl3.SuspendLayout()
         Me.SuspendLayout()
         '
         'XTCUser
         '
         Me.XTCUser.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.XTCUser.Location = New System.Drawing.Point(20, 20)
+        Me.XTCUser.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Bottom
+        Me.XTCUser.Location = New System.Drawing.Point(20, 67)
+        Me.XTCUser.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.XTCUser.LookAndFeel.UseDefaultLookAndFeel = False
         Me.XTCUser.Name = "XTCUser"
         Me.XTCUser.SelectedTabPage = Me.XTPRole
-        Me.XTCUser.Size = New System.Drawing.Size(589, 316)
+        Me.XTCUser.Size = New System.Drawing.Size(589, 269)
         Me.XTCUser.TabIndex = 0
         Me.XTCUser.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPRole, Me.XTPUser})
         '
@@ -69,18 +76,18 @@ Partial Class FormUser
         '
         Me.XTPRole.Controls.Add(Me.GCRole)
         Me.XTPRole.Name = "XTPRole"
-        Me.XTPRole.Size = New System.Drawing.Size(587, 291)
+        Me.XTPRole.Size = New System.Drawing.Size(583, 241)
         Me.XTPRole.Text = "Role"
         '
         'GCRole
         '
         Me.GCRole.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCRole.Location = New System.Drawing.Point(0, 0)
-        Me.GCRole.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.GCRole.LookAndFeel.SkinName = "Office 2010 Silver"
         Me.GCRole.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCRole.MainView = Me.GVRole
         Me.GCRole.Name = "GCRole"
-        Me.GCRole.Size = New System.Drawing.Size(587, 291)
+        Me.GCRole.Size = New System.Drawing.Size(583, 241)
         Me.GCRole.TabIndex = 1
         Me.GCRole.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVRole})
         '
@@ -110,7 +117,7 @@ Partial Class FormUser
         '
         Me.XTPUser.Controls.Add(Me.GCUser)
         Me.XTPUser.Name = "XTPUser"
-        Me.XTPUser.Size = New System.Drawing.Size(587, 291)
+        Me.XTPUser.Size = New System.Drawing.Size(583, 248)
         Me.XTPUser.Text = "User"
         '
         'GCUser
@@ -121,7 +128,7 @@ Partial Class FormUser
         Me.GCUser.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCUser.MainView = Me.GVUser
         Me.GCUser.Name = "GCUser"
-        Me.GCUser.Size = New System.Drawing.Size(587, 291)
+        Me.GCUser.Size = New System.Drawing.Size(583, 248)
         Me.GCUser.TabIndex = 0
         Me.GCUser.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVUser})
         '
@@ -256,6 +263,27 @@ Partial Class FormUser
         Me.LabelControl1.TabIndex = 7
         Me.LabelControl1.Text = "Ins"
         '
+        'PanelControl3
+        '
+        Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl3.Controls.Add(Me.LabelControl13)
+        Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelControl3.Location = New System.Drawing.Point(20, 20)
+        Me.PanelControl3.Name = "PanelControl3"
+        Me.PanelControl3.Size = New System.Drawing.Size(589, 47)
+        Me.PanelControl3.TabIndex = 4
+        '
+        'LabelControl13
+        '
+        Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Segoe UI Light", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LabelControl13.Dock = System.Windows.Forms.DockStyle.Left
+        Me.LabelControl13.Location = New System.Drawing.Point(0, 0)
+        Me.LabelControl13.Name = "LabelControl13"
+        Me.LabelControl13.Size = New System.Drawing.Size(188, 32)
+        Me.LabelControl13.TabIndex = 1
+        Me.LabelControl13.Text = "Application Setting"
+        '
         'FormUser
         '
         Me.Appearance.Options.UseFont = True
@@ -264,6 +292,7 @@ Partial Class FormUser
         Me.ClientSize = New System.Drawing.Size(629, 371)
         Me.Controls.Add(Me.XTCUser)
         Me.Controls.Add(Me.PanelControl1)
+        Me.Controls.Add(Me.PanelControl3)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.KeyPreview = True
@@ -288,6 +317,9 @@ Partial Class FormUser
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl3.ResumeLayout(False)
+        Me.PanelControl3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -314,4 +346,6 @@ Partial Class FormUser
     Friend WithEvents GVRole As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridColumn6 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnId As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
 End Class
