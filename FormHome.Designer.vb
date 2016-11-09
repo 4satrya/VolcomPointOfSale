@@ -45,7 +45,7 @@ Partial Class FormHome
         Me.TITrf = New DevExpress.XtraEditors.TileItem()
         Me.TIAccount = New DevExpress.XtraEditors.TileItem()
         Me.TIPOS = New DevExpress.XtraEditors.TileItem()
-        Me.TINotif = New DevExpress.XtraEditors.TileItem()
+        Me.TICompany = New DevExpress.XtraEditors.TileItem()
         Me.TIUser = New DevExpress.XtraEditors.TileItem()
         Me.TIExit = New DevExpress.XtraEditors.TileItem()
         Me.NavButton2 = New DevExpress.XtraBars.Navigation.NavButton()
@@ -126,7 +126,7 @@ Partial Class FormHome
         Me.TGGeneral.Items.Add(Me.TITrf)
         Me.TGGeneral.Items.Add(Me.TIAccount)
         Me.TGGeneral.Items.Add(Me.TIPOS)
-        Me.TGGeneral.Items.Add(Me.TINotif)
+        Me.TGGeneral.Items.Add(Me.TICompany)
         Me.TGGeneral.Items.Add(Me.TIUser)
         Me.TGGeneral.Items.Add(Me.TIExit)
         Me.TGGeneral.Name = "TGGeneral"
@@ -192,7 +192,7 @@ Partial Class FormHome
         Me.TIAccount.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TIAccount.BackgroundImage = CType(resources.GetObject("TIAccount.BackgroundImage"), System.Drawing.Image)
         Me.TIAccount.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement5.Text = "Account Setting"
+        TileItemElement5.Text = "Login Setting"
         TileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
         Me.TIAccount.Elements.Add(TileItemElement5)
         Me.TIAccount.Id = 14
@@ -210,16 +210,16 @@ Partial Class FormHome
         Me.TIPOS.ItemSize = DevExpress.XtraEditors.TileItemSize.Large
         Me.TIPOS.Name = "TIPOS"
         '
-        'TINotif
+        'TICompany
         '
-        Me.TINotif.BackgroundImage = CType(resources.GetObject("TINotif.BackgroundImage"), System.Drawing.Image)
-        Me.TINotif.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement7.Text = "Notification"
+        Me.TICompany.BackgroundImage = CType(resources.GetObject("TICompany.BackgroundImage"), System.Drawing.Image)
+        Me.TICompany.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        TileItemElement7.Text = "Company"
         TileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TINotif.Elements.Add(TileItemElement7)
-        Me.TINotif.Id = 27
-        Me.TINotif.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
-        Me.TINotif.Name = "TINotif"
+        Me.TICompany.Elements.Add(TileItemElement7)
+        Me.TICompany.Id = 27
+        Me.TICompany.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
+        Me.TICompany.Name = "TICompany"
         '
         'TIUser
         '
@@ -610,7 +610,7 @@ Partial Class FormHome
     Friend WithEvents TileNavCategory1 As DevExpress.XtraBars.Navigation.TileNavCategory
     Friend WithEvents PanelControlTop As DevExpress.XtraEditors.PanelControl
     Friend WithEvents TIPOS As DevExpress.XtraEditors.TileItem
-    Friend WithEvents TINotif As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TICompany As DevExpress.XtraEditors.TileItem
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents PanelControl2 As DevExpress.XtraEditors.PanelControl

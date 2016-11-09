@@ -113,4 +113,10 @@ Public Class FormHome
         FormLogin.ShowDialog()
         Cursor = Cursors.Default
     End Sub
+
+    Private Sub TINotif_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TICompany.ItemClick
+        Cursor = Cursors.WaitCursor
+        FormMasterCompany.ShowDialog()
+        Cursor = Cursors.Default
+    End Sub
 End Class
