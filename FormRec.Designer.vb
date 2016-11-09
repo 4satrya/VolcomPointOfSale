@@ -35,11 +35,7 @@ Partial Class FormRec
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.GCItem = New DevExpress.XtraGrid.GridControl()
         Me.GVItem = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.GridColumnIdItem = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumnCode = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumnDescription = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumnPrice = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumnSize = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -204,52 +200,19 @@ Partial Class FormRec
         '
         'GVItem
         '
-        Me.GVItem.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnIdItem, Me.GridColumnCode, Me.GridColumnDescription, Me.GridColumnPrice, Me.GridColumnSize})
+        Me.GVItem.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1})
         Me.GVItem.GridControl = Me.GCItem
         Me.GVItem.Name = "GVItem"
         Me.GVItem.OptionsBehavior.Editable = False
         Me.GVItem.OptionsFind.AlwaysVisible = True
         Me.GVItem.OptionsView.ShowGroupPanel = False
         '
-        'GridColumnIdItem
+        'GridColumn1
         '
-        Me.GridColumnIdItem.Caption = "Id"
-        Me.GridColumnIdItem.FieldName = "id_item"
-        Me.GridColumnIdItem.Name = "GridColumnIdItem"
-        '
-        'GridColumnCode
-        '
-        Me.GridColumnCode.Caption = "Code"
-        Me.GridColumnCode.FieldName = "item_code"
-        Me.GridColumnCode.Name = "GridColumnCode"
-        Me.GridColumnCode.Visible = True
-        Me.GridColumnCode.VisibleIndex = 0
-        '
-        'GridColumnDescription
-        '
-        Me.GridColumnDescription.Caption = "Desription"
-        Me.GridColumnDescription.FieldName = "item_name"
-        Me.GridColumnDescription.Name = "GridColumnDescription"
-        Me.GridColumnDescription.Visible = True
-        Me.GridColumnDescription.VisibleIndex = 1
-        '
-        'GridColumnPrice
-        '
-        Me.GridColumnPrice.Caption = "Price"
-        Me.GridColumnPrice.DisplayFormat.FormatString = "{0:n2}"
-        Me.GridColumnPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.GridColumnPrice.FieldName = "price"
-        Me.GridColumnPrice.Name = "GridColumnPrice"
-        Me.GridColumnPrice.Visible = True
-        Me.GridColumnPrice.VisibleIndex = 3
-        '
-        'GridColumnSize
-        '
-        Me.GridColumnSize.Caption = "Size"
-        Me.GridColumnSize.FieldName = "size"
-        Me.GridColumnSize.Name = "GridColumnSize"
-        Me.GridColumnSize.Visible = True
-        Me.GridColumnSize.VisibleIndex = 2
+        Me.GridColumn1.Caption = "GridColumn1"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 0
         '
         'FormRec
         '
@@ -297,9 +260,5 @@ Partial Class FormRec
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GCItem As DevExpress.XtraGrid.GridControl
     Friend WithEvents GVItem As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents GridColumnIdItem As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumnCode As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumnDescription As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumnPrice As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumnSize As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
 End Class
