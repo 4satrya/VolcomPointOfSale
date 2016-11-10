@@ -78,20 +78,6 @@
     End Sub
 
     Private Sub TxtCodeCompTo_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCodeCompTo.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            Dim dt As DataTable = get_company_by_code(addSlashes(TxtCodeCompTo.Text), "-1")
-            If dt.Rows.Count > 0 Then
-                id_comp_to = dt.Rows(0)("id_comp").ToString
-                TxtCodeCompTo.Text = dt.Rows(0)("comp_number").ToString
-                TxtNameCompTo.Text = dt.Rows(0)("comp_name").ToString
-                TxtRef.Focus()
-            Else
-                stopCustom("Account not found !")
-                id_comp_to = "-1"
-                TxtCodeCompTo.Text = ""
-                TxtNameCompTo.Text = ""
-                TxtCodeCompTo.Focus()
-            End If
-        End If
+
     End Sub
 End Class
