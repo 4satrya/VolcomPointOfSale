@@ -87,6 +87,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassCompany.vb" />
     <Compile Include="ClassItem.vb" />
     <Compile Include="ClassRec.vb" />
     <Compile Include="ClassUser.vb" />
@@ -95,6 +96,12 @@
     </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBlack.Designer.vb">
+      <DependentUpon>FormBlack.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBlack.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDashboard.Designer.vb">
@@ -155,6 +162,12 @@
       <DependentUpon>FormMasterCompanySingle.vb</DependentUpon>
     </Compile>
     <Compile Include="FormMasterCompanySingle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPopUpContact.designer.vb">
+      <DependentUpon>FormPopUpContact.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPopUpContact.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormRec.Designer.vb">
@@ -230,6 +243,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormBlack.resx">
+      <DependentUpon>FormBlack.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDashboard.resx">
       <DependentUpon>FormDashboard.vb</DependentUpon>
     </EmbeddedResource>
@@ -259,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterCompanySingle.resx">
       <DependentUpon>FormMasterCompanySingle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPopUpContact.resx">
+      <DependentUpon>FormPopUpContact.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRec.resx">
       <DependentUpon>FormRec.vb</DependentUpon>

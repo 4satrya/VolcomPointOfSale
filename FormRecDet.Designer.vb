@@ -24,36 +24,35 @@ Partial Class FormRecDet
         Me.PCClose = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlTop = New DevExpress.XtraEditors.PanelControl()
-        Me.PanelControTopLeft = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControlTopFill = New DevExpress.XtraEditors.PanelControl()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.DateEdit1 = New DevExpress.XtraEditors.DateEdit()
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit()
-        Me.TextEdit3 = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit()
-        Me.DateEdit2 = New DevExpress.XtraEditors.DateEdit()
+        Me.BtnBrowseTo = New DevExpress.XtraEditors.SimpleButton()
+        Me.BtnBrowseFrom = New DevExpress.XtraEditors.SimpleButton()
+        Me.DERefDate = New DevExpress.XtraEditors.DateEdit()
+        Me.TxtNameCompTo = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtRef = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtCodeCompTo = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit5 = New DevExpress.XtraEditors.TextEdit()
-        Me.TextEdit6 = New DevExpress.XtraEditors.TextEdit()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtNameCompFrom = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtCodeCompFrom = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.PanelControTopLeft = New DevExpress.XtraEditors.PanelControl()
+        Me.DateEdit1 = New DevExpress.XtraEditors.DateEdit()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
+        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlBottom = New DevExpress.XtraEditors.PanelControl()
-        Me.PanelControlNote = New DevExpress.XtraEditors.PanelControl()
-        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
-        Me.MemoEdit1 = New DevExpress.XtraEditors.MemoEdit()
-        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
-        Me.LEReportStatus = New DevExpress.XtraEditors.LookUpEdit()
-        Me.PanelControlStt = New DevExpress.XtraEditors.PanelControl()
-        Me.SimpleButton5 = New DevExpress.XtraEditors.SimpleButton()
         Me.BtnPrint = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton7 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton5 = New DevExpress.XtraEditors.SimpleButton()
+        Me.PanelControlNote = New DevExpress.XtraEditors.PanelControl()
+        Me.PanelControlStt = New DevExpress.XtraEditors.PanelControl()
+        Me.LEReportStatus = New DevExpress.XtraEditors.LookUpEdit()
+        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
+        Me.MemoEdit1 = New DevExpress.XtraEditors.MemoEdit()
+        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XTPScanned = New DevExpress.XtraTab.XtraTabPage()
-        Me.XTPSummary = New DevExpress.XtraTab.XtraTabPage()
         Me.GCScan = New DevExpress.XtraGrid.GridControl()
         Me.GVScan = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.PanelControlItem = New DevExpress.XtraEditors.PanelControl()
@@ -63,33 +62,34 @@ Partial Class FormRecDet
         Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton8 = New DevExpress.XtraEditors.SimpleButton()
+        Me.XTPSummary = New DevExpress.XtraTab.XtraTabPage()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
         CType(Me.PCClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControlTop, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlTop.SuspendLayout()
-        CType(Me.PanelControTopLeft, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControTopLeft.SuspendLayout()
         CType(Me.PanelControlTopFill, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlTopFill.SuspendLayout()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DERefDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DERefDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtNameCompTo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtRef.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtCodeCompTo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtNameCompFrom.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtCodeCompFrom.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PanelControTopLeft, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControTopLeft.SuspendLayout()
         CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DateEdit2.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DateEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit5.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit6.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControlBottom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlBottom.SuspendLayout()
         CType(Me.PanelControlNote, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlNote.SuspendLayout()
-        CType(Me.MemoEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LEReportStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControlStt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlStt.SuspendLayout()
+        CType(Me.LEReportStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MemoEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabControl1.SuspendLayout()
         Me.XTPScanned.SuspendLayout()
@@ -148,6 +148,149 @@ Partial Class FormRecDet
         Me.PanelControlTop.Size = New System.Drawing.Size(808, 102)
         Me.PanelControlTop.TabIndex = 7
         '
+        'PanelControlTopFill
+        '
+        Me.PanelControlTopFill.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControlTopFill.Controls.Add(Me.BtnBrowseTo)
+        Me.PanelControlTopFill.Controls.Add(Me.BtnBrowseFrom)
+        Me.PanelControlTopFill.Controls.Add(Me.DERefDate)
+        Me.PanelControlTopFill.Controls.Add(Me.TxtNameCompTo)
+        Me.PanelControlTopFill.Controls.Add(Me.TxtRef)
+        Me.PanelControlTopFill.Controls.Add(Me.TxtCodeCompTo)
+        Me.PanelControlTopFill.Controls.Add(Me.LabelControl5)
+        Me.PanelControlTopFill.Controls.Add(Me.LabelControl4)
+        Me.PanelControlTopFill.Controls.Add(Me.TxtNameCompFrom)
+        Me.PanelControlTopFill.Controls.Add(Me.TxtCodeCompFrom)
+        Me.PanelControlTopFill.Controls.Add(Me.LabelControl3)
+        Me.PanelControlTopFill.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PanelControlTopFill.Location = New System.Drawing.Point(353, 0)
+        Me.PanelControlTopFill.Name = "PanelControlTopFill"
+        Me.PanelControlTopFill.Size = New System.Drawing.Size(455, 102)
+        Me.PanelControlTopFill.TabIndex = 1
+        '
+        'BtnBrowseTo
+        '
+        Me.BtnBrowseTo.Appearance.BackColor = System.Drawing.Color.Gray
+        Me.BtnBrowseTo.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnBrowseTo.Appearance.ForeColor = System.Drawing.Color.White
+        Me.BtnBrowseTo.Appearance.Options.UseBackColor = True
+        Me.BtnBrowseTo.Appearance.Options.UseFont = True
+        Me.BtnBrowseTo.Appearance.Options.UseForeColor = True
+        Me.BtnBrowseTo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BtnBrowseTo.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat
+        Me.BtnBrowseTo.Location = New System.Drawing.Point(412, 38)
+        Me.BtnBrowseTo.Name = "BtnBrowseTo"
+        Me.BtnBrowseTo.Size = New System.Drawing.Size(29, 19)
+        Me.BtnBrowseTo.TabIndex = 10
+        Me.BtnBrowseTo.Text = "..."
+        '
+        'BtnBrowseFrom
+        '
+        Me.BtnBrowseFrom.Appearance.BackColor = System.Drawing.Color.Gray
+        Me.BtnBrowseFrom.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnBrowseFrom.Appearance.ForeColor = System.Drawing.Color.White
+        Me.BtnBrowseFrom.Appearance.Options.UseBackColor = True
+        Me.BtnBrowseFrom.Appearance.Options.UseFont = True
+        Me.BtnBrowseFrom.Appearance.Options.UseForeColor = True
+        Me.BtnBrowseFrom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BtnBrowseFrom.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat
+        Me.BtnBrowseFrom.Location = New System.Drawing.Point(412, 12)
+        Me.BtnBrowseFrom.Name = "BtnBrowseFrom"
+        Me.BtnBrowseFrom.Size = New System.Drawing.Size(29, 19)
+        Me.BtnBrowseFrom.TabIndex = 8
+        Me.BtnBrowseFrom.Text = "..."
+        '
+        'DERefDate
+        '
+        Me.DERefDate.EditValue = Nothing
+        Me.DERefDate.Location = New System.Drawing.Point(206, 64)
+        Me.DERefDate.Name = "DERefDate"
+        Me.DERefDate.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DERefDate.Properties.Appearance.Options.UseFont = True
+        Me.DERefDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DERefDate.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DERefDate.Properties.DisplayFormat.FormatString = "dd MMMM yyyy"
+        Me.DERefDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.DERefDate.Properties.Mask.EditMask = "dd-MM-yyyy"
+        Me.DERefDate.Size = New System.Drawing.Size(235, 20)
+        Me.DERefDate.TabIndex = 3
+        '
+        'TxtNameCompTo
+        '
+        Me.TxtNameCompTo.Enabled = False
+        Me.TxtNameCompTo.Location = New System.Drawing.Point(206, 38)
+        Me.TxtNameCompTo.Name = "TxtNameCompTo"
+        Me.TxtNameCompTo.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtNameCompTo.Properties.Appearance.Options.UseFont = True
+        Me.TxtNameCompTo.Size = New System.Drawing.Size(202, 20)
+        Me.TxtNameCompTo.TabIndex = 9
+        Me.TxtNameCompTo.TabStop = False
+        '
+        'TxtRef
+        '
+        Me.TxtRef.Location = New System.Drawing.Point(103, 64)
+        Me.TxtRef.Name = "TxtRef"
+        Me.TxtRef.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtRef.Properties.Appearance.Options.UseFont = True
+        Me.TxtRef.Size = New System.Drawing.Size(99, 20)
+        Me.TxtRef.TabIndex = 2
+        '
+        'TxtCodeCompTo
+        '
+        Me.TxtCodeCompTo.Location = New System.Drawing.Point(103, 38)
+        Me.TxtCodeCompTo.Name = "TxtCodeCompTo"
+        Me.TxtCodeCompTo.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCodeCompTo.Properties.Appearance.Options.UseFont = True
+        Me.TxtCodeCompTo.Size = New System.Drawing.Size(99, 20)
+        Me.TxtCodeCompTo.TabIndex = 1
+        '
+        'LabelControl5
+        '
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Location = New System.Drawing.Point(15, 41)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(72, 13)
+        Me.LabelControl5.TabIndex = 7
+        Me.LabelControl5.Text = "Destination to"
+        '
+        'LabelControl4
+        '
+        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl4.Location = New System.Drawing.Point(15, 67)
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.LabelControl4.Size = New System.Drawing.Size(50, 13)
+        Me.LabelControl4.TabIndex = 7
+        Me.LabelControl4.Text = "Reference"
+        '
+        'TxtNameCompFrom
+        '
+        Me.TxtNameCompFrom.Enabled = False
+        Me.TxtNameCompFrom.Location = New System.Drawing.Point(206, 12)
+        Me.TxtNameCompFrom.Name = "TxtNameCompFrom"
+        Me.TxtNameCompFrom.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtNameCompFrom.Properties.Appearance.Options.UseFont = True
+        Me.TxtNameCompFrom.Size = New System.Drawing.Size(202, 20)
+        Me.TxtNameCompFrom.TabIndex = 6
+        Me.TxtNameCompFrom.TabStop = False
+        '
+        'TxtCodeCompFrom
+        '
+        Me.TxtCodeCompFrom.Location = New System.Drawing.Point(103, 12)
+        Me.TxtCodeCompFrom.Name = "TxtCodeCompFrom"
+        Me.TxtCodeCompFrom.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCodeCompFrom.Properties.Appearance.Options.UseFont = True
+        Me.TxtCodeCompFrom.Size = New System.Drawing.Size(99, 20)
+        Me.TxtCodeCompFrom.TabIndex = 0
+        '
+        'LabelControl3
+        '
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl3.Location = New System.Drawing.Point(15, 15)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(69, 13)
+        Me.LabelControl3.TabIndex = 4
+        Me.LabelControl3.Text = "Receive From"
+        '
         'PanelControTopLeft
         '
         Me.PanelControTopLeft.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
@@ -161,54 +304,6 @@ Partial Class FormRecDet
         Me.PanelControTopLeft.Size = New System.Drawing.Size(347, 102)
         Me.PanelControTopLeft.TabIndex = 0
         '
-        'PanelControlTopFill
-        '
-        Me.PanelControlTopFill.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControlTopFill.Controls.Add(Me.SimpleButton2)
-        Me.PanelControlTopFill.Controls.Add(Me.SimpleButton1)
-        Me.PanelControlTopFill.Controls.Add(Me.DateEdit2)
-        Me.PanelControlTopFill.Controls.Add(Me.TextEdit6)
-        Me.PanelControlTopFill.Controls.Add(Me.TextEdit4)
-        Me.PanelControlTopFill.Controls.Add(Me.TextEdit5)
-        Me.PanelControlTopFill.Controls.Add(Me.LabelControl5)
-        Me.PanelControlTopFill.Controls.Add(Me.LabelControl4)
-        Me.PanelControlTopFill.Controls.Add(Me.TextEdit3)
-        Me.PanelControlTopFill.Controls.Add(Me.TextEdit2)
-        Me.PanelControlTopFill.Controls.Add(Me.LabelControl3)
-        Me.PanelControlTopFill.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControlTopFill.Location = New System.Drawing.Point(353, 0)
-        Me.PanelControlTopFill.Name = "PanelControlTopFill"
-        Me.PanelControlTopFill.Size = New System.Drawing.Size(455, 102)
-        Me.PanelControlTopFill.TabIndex = 1
-        '
-        'LabelControl1
-        '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(12, 15)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(83, 13)
-        Me.LabelControl1.TabIndex = 0
-        Me.LabelControl1.Text = "Receive Number"
-        '
-        'TextEdit1
-        '
-        Me.TextEdit1.Enabled = False
-        Me.TextEdit1.Location = New System.Drawing.Point(109, 12)
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit1.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit1.Size = New System.Drawing.Size(223, 20)
-        Me.TextEdit1.TabIndex = 1
-        '
-        'LabelControl2
-        '
-        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(12, 41)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(67, 13)
-        Me.LabelControl2.TabIndex = 2
-        Me.LabelControl2.Text = "Created Date"
-        '
         'DateEdit1
         '
         Me.DateEdit1.EditValue = Nothing
@@ -221,122 +316,36 @@ Partial Class FormRecDet
         Me.DateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.DateEdit1.Size = New System.Drawing.Size(223, 20)
         Me.DateEdit1.TabIndex = 3
+        Me.DateEdit1.TabStop = False
         '
-        'LabelControl3
+        'LabelControl2
         '
-        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(15, 15)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(69, 13)
-        Me.LabelControl3.TabIndex = 4
-        Me.LabelControl3.Text = "Receive From"
+        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl2.Location = New System.Drawing.Point(12, 41)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(67, 13)
+        Me.LabelControl2.TabIndex = 2
+        Me.LabelControl2.Text = "Created Date"
         '
-        'TextEdit2
+        'TextEdit1
         '
-        Me.TextEdit2.Location = New System.Drawing.Point(103, 12)
-        Me.TextEdit2.Name = "TextEdit2"
-        Me.TextEdit2.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit2.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit2.Size = New System.Drawing.Size(99, 20)
-        Me.TextEdit2.TabIndex = 5
+        Me.TextEdit1.Enabled = False
+        Me.TextEdit1.Location = New System.Drawing.Point(109, 12)
+        Me.TextEdit1.Name = "TextEdit1"
+        Me.TextEdit1.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextEdit1.Properties.Appearance.Options.UseFont = True
+        Me.TextEdit1.Size = New System.Drawing.Size(223, 20)
+        Me.TextEdit1.TabIndex = 1
+        Me.TextEdit1.TabStop = False
         '
-        'TextEdit3
+        'LabelControl1
         '
-        Me.TextEdit3.Location = New System.Drawing.Point(206, 12)
-        Me.TextEdit3.Name = "TextEdit3"
-        Me.TextEdit3.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit3.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit3.Size = New System.Drawing.Size(202, 20)
-        Me.TextEdit3.TabIndex = 6
-        '
-        'LabelControl4
-        '
-        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(15, 67)
-        Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(50, 13)
-        Me.LabelControl4.TabIndex = 7
-        Me.LabelControl4.Text = "Reference"
-        '
-        'TextEdit4
-        '
-        Me.TextEdit4.Location = New System.Drawing.Point(103, 64)
-        Me.TextEdit4.Name = "TextEdit4"
-        Me.TextEdit4.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit4.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit4.Size = New System.Drawing.Size(99, 20)
-        Me.TextEdit4.TabIndex = 8
-        '
-        'DateEdit2
-        '
-        Me.DateEdit2.EditValue = Nothing
-        Me.DateEdit2.Location = New System.Drawing.Point(206, 64)
-        Me.DateEdit2.Name = "DateEdit2"
-        Me.DateEdit2.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateEdit2.Properties.Appearance.Options.UseFont = True
-        Me.DateEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.DateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.DateEdit2.Size = New System.Drawing.Size(235, 20)
-        Me.DateEdit2.TabIndex = 9
-        '
-        'LabelControl5
-        '
-        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(15, 41)
-        Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(72, 13)
-        Me.LabelControl5.TabIndex = 7
-        Me.LabelControl5.Text = "Destination to"
-        '
-        'TextEdit5
-        '
-        Me.TextEdit5.Location = New System.Drawing.Point(103, 38)
-        Me.TextEdit5.Name = "TextEdit5"
-        Me.TextEdit5.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit5.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit5.Size = New System.Drawing.Size(99, 20)
-        Me.TextEdit5.TabIndex = 8
-        '
-        'TextEdit6
-        '
-        Me.TextEdit6.Location = New System.Drawing.Point(206, 38)
-        Me.TextEdit6.Name = "TextEdit6"
-        Me.TextEdit6.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit6.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit6.Size = New System.Drawing.Size(202, 20)
-        Me.TextEdit6.TabIndex = 9
-        '
-        'SimpleButton1
-        '
-        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.Gray
-        Me.SimpleButton1.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SimpleButton1.Appearance.ForeColor = System.Drawing.Color.White
-        Me.SimpleButton1.Appearance.Options.UseBackColor = True
-        Me.SimpleButton1.Appearance.Options.UseFont = True
-        Me.SimpleButton1.Appearance.Options.UseForeColor = True
-        Me.SimpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.SimpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat
-        Me.SimpleButton1.Location = New System.Drawing.Point(412, 12)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(29, 19)
-        Me.SimpleButton1.TabIndex = 8
-        Me.SimpleButton1.Text = "..."
-        '
-        'SimpleButton2
-        '
-        Me.SimpleButton2.Appearance.BackColor = System.Drawing.Color.Gray
-        Me.SimpleButton2.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SimpleButton2.Appearance.ForeColor = System.Drawing.Color.White
-        Me.SimpleButton2.Appearance.Options.UseBackColor = True
-        Me.SimpleButton2.Appearance.Options.UseFont = True
-        Me.SimpleButton2.Appearance.Options.UseForeColor = True
-        Me.SimpleButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.SimpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat
-        Me.SimpleButton2.Location = New System.Drawing.Point(412, 38)
-        Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(29, 19)
-        Me.SimpleButton2.TabIndex = 10
-        Me.SimpleButton2.Text = "..."
+        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl1.Location = New System.Drawing.Point(12, 15)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(83, 13)
+        Me.LabelControl1.TabIndex = 0
+        Me.LabelControl1.Text = "Receive Number"
         '
         'PanelControlBottom
         '
@@ -348,83 +357,6 @@ Partial Class FormRecDet
         Me.PanelControlBottom.Name = "PanelControlBottom"
         Me.PanelControlBottom.Size = New System.Drawing.Size(808, 37)
         Me.PanelControlBottom.TabIndex = 8
-        '
-        'PanelControlNote
-        '
-        Me.PanelControlNote.Appearance.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.PanelControlNote.Appearance.Options.UseBackColor = True
-        Me.PanelControlNote.Controls.Add(Me.PanelControlStt)
-        Me.PanelControlNote.Controls.Add(Me.MemoEdit1)
-        Me.PanelControlNote.Controls.Add(Me.LabelControl8)
-        Me.PanelControlNote.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControlNote.Location = New System.Drawing.Point(0, 473)
-        Me.PanelControlNote.Name = "PanelControlNote"
-        Me.PanelControlNote.Size = New System.Drawing.Size(808, 90)
-        Me.PanelControlNote.TabIndex = 9
-        '
-        'LabelControl8
-        '
-        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(12, 14)
-        Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(39, 13)
-        Me.LabelControl8.TabIndex = 0
-        Me.LabelControl8.Text = "Remark"
-        '
-        'MemoEdit1
-        '
-        Me.MemoEdit1.Location = New System.Drawing.Point(65, 11)
-        Me.MemoEdit1.Name = "MemoEdit1"
-        Me.MemoEdit1.Size = New System.Drawing.Size(353, 57)
-        Me.MemoEdit1.TabIndex = 1
-        '
-        'LabelControl9
-        '
-        Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(27, 12)
-        Me.LabelControl9.Name = "LabelControl9"
-        Me.LabelControl9.Size = New System.Drawing.Size(50, 13)
-        Me.LabelControl9.TabIndex = 2
-        Me.LabelControl9.Text = "Set Status"
-        '
-        'LEReportStatus
-        '
-        Me.LEReportStatus.Location = New System.Drawing.Point(89, 9)
-        Me.LEReportStatus.Name = "LEReportStatus"
-        Me.LEReportStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.LEReportStatus.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_report_status", "Id", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("report_status", "Status")})
-        Me.LEReportStatus.Size = New System.Drawing.Size(251, 20)
-        Me.LEReportStatus.TabIndex = 3
-        '
-        'PanelControlStt
-        '
-        Me.PanelControlStt.Appearance.BackColor = System.Drawing.Color.Transparent
-        Me.PanelControlStt.Appearance.Options.UseBackColor = True
-        Me.PanelControlStt.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControlStt.Controls.Add(Me.LEReportStatus)
-        Me.PanelControlStt.Controls.Add(Me.LabelControl9)
-        Me.PanelControlStt.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControlStt.Location = New System.Drawing.Point(454, 2)
-        Me.PanelControlStt.Name = "PanelControlStt"
-        Me.PanelControlStt.Size = New System.Drawing.Size(352, 86)
-        Me.PanelControlStt.TabIndex = 2
-        '
-        'SimpleButton5
-        '
-        Me.SimpleButton5.Appearance.BackColor = System.Drawing.Color.DimGray
-        Me.SimpleButton5.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SimpleButton5.Appearance.ForeColor = System.Drawing.Color.Black
-        Me.SimpleButton5.Appearance.Options.UseBackColor = True
-        Me.SimpleButton5.Appearance.Options.UseFont = True
-        Me.SimpleButton5.Appearance.Options.UseForeColor = True
-        Me.SimpleButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.SimpleButton5.Dock = System.Windows.Forms.DockStyle.Right
-        Me.SimpleButton5.Image = CType(resources.GetObject("SimpleButton5.Image"), System.Drawing.Image)
-        Me.SimpleButton5.Location = New System.Drawing.Point(710, 2)
-        Me.SimpleButton5.Name = "SimpleButton5"
-        Me.SimpleButton5.Size = New System.Drawing.Size(96, 33)
-        Me.SimpleButton5.TabIndex = 10
-        Me.SimpleButton5.Text = "F5 : Save"
         '
         'BtnPrint
         '
@@ -460,6 +392,83 @@ Partial Class FormRecDet
         Me.SimpleButton7.TabIndex = 12
         Me.SimpleButton7.Text = "F6 : Close"
         '
+        'SimpleButton5
+        '
+        Me.SimpleButton5.Appearance.BackColor = System.Drawing.Color.DimGray
+        Me.SimpleButton5.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SimpleButton5.Appearance.ForeColor = System.Drawing.Color.Black
+        Me.SimpleButton5.Appearance.Options.UseBackColor = True
+        Me.SimpleButton5.Appearance.Options.UseFont = True
+        Me.SimpleButton5.Appearance.Options.UseForeColor = True
+        Me.SimpleButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.SimpleButton5.Dock = System.Windows.Forms.DockStyle.Right
+        Me.SimpleButton5.Image = CType(resources.GetObject("SimpleButton5.Image"), System.Drawing.Image)
+        Me.SimpleButton5.Location = New System.Drawing.Point(710, 2)
+        Me.SimpleButton5.Name = "SimpleButton5"
+        Me.SimpleButton5.Size = New System.Drawing.Size(96, 33)
+        Me.SimpleButton5.TabIndex = 10
+        Me.SimpleButton5.Text = "F5 : Save"
+        '
+        'PanelControlNote
+        '
+        Me.PanelControlNote.Appearance.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.PanelControlNote.Appearance.Options.UseBackColor = True
+        Me.PanelControlNote.Controls.Add(Me.PanelControlStt)
+        Me.PanelControlNote.Controls.Add(Me.MemoEdit1)
+        Me.PanelControlNote.Controls.Add(Me.LabelControl8)
+        Me.PanelControlNote.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PanelControlNote.Location = New System.Drawing.Point(0, 473)
+        Me.PanelControlNote.Name = "PanelControlNote"
+        Me.PanelControlNote.Size = New System.Drawing.Size(808, 90)
+        Me.PanelControlNote.TabIndex = 9
+        '
+        'PanelControlStt
+        '
+        Me.PanelControlStt.Appearance.BackColor = System.Drawing.Color.Transparent
+        Me.PanelControlStt.Appearance.Options.UseBackColor = True
+        Me.PanelControlStt.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControlStt.Controls.Add(Me.LEReportStatus)
+        Me.PanelControlStt.Controls.Add(Me.LabelControl9)
+        Me.PanelControlStt.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PanelControlStt.Location = New System.Drawing.Point(454, 2)
+        Me.PanelControlStt.Name = "PanelControlStt"
+        Me.PanelControlStt.Size = New System.Drawing.Size(352, 86)
+        Me.PanelControlStt.TabIndex = 2
+        '
+        'LEReportStatus
+        '
+        Me.LEReportStatus.Location = New System.Drawing.Point(89, 9)
+        Me.LEReportStatus.Name = "LEReportStatus"
+        Me.LEReportStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.LEReportStatus.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_report_status", "Id", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("report_status", "Status")})
+        Me.LEReportStatus.Size = New System.Drawing.Size(251, 20)
+        Me.LEReportStatus.TabIndex = 3
+        '
+        'LabelControl9
+        '
+        Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl9.Location = New System.Drawing.Point(27, 12)
+        Me.LabelControl9.Name = "LabelControl9"
+        Me.LabelControl9.Size = New System.Drawing.Size(50, 13)
+        Me.LabelControl9.TabIndex = 2
+        Me.LabelControl9.Text = "Set Status"
+        '
+        'MemoEdit1
+        '
+        Me.MemoEdit1.Location = New System.Drawing.Point(65, 11)
+        Me.MemoEdit1.Name = "MemoEdit1"
+        Me.MemoEdit1.Size = New System.Drawing.Size(353, 57)
+        Me.MemoEdit1.TabIndex = 1
+        '
+        'LabelControl8
+        '
+        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl8.Location = New System.Drawing.Point(12, 14)
+        Me.LabelControl8.Name = "LabelControl8"
+        Me.LabelControl8.Size = New System.Drawing.Size(39, 13)
+        Me.LabelControl8.TabIndex = 0
+        Me.LabelControl8.Text = "Remark"
+        '
         'XtraTabControl1
         '
         Me.XtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -477,12 +486,6 @@ Partial Class FormRecDet
         Me.XTPScanned.Name = "XTPScanned"
         Me.XTPScanned.Size = New System.Drawing.Size(802, 319)
         Me.XTPScanned.Text = "Scanned List"
-        '
-        'XTPSummary
-        '
-        Me.XTPSummary.Name = "XTPSummary"
-        Me.XTPSummary.Size = New System.Drawing.Size(802, 279)
-        Me.XTPSummary.Text = "Summary"
         '
         'GCScan
         '
@@ -596,6 +599,12 @@ Partial Class FormRecDet
         Me.SimpleButton8.TabIndex = 12
         Me.SimpleButton8.Text = "F7 : Select"
         '
+        'XTPSummary
+        '
+        Me.XTPSummary.Name = "XTPSummary"
+        Me.XTPSummary.Size = New System.Drawing.Size(802, 319)
+        Me.XTPSummary.Text = "Summary"
+        '
         'FormRecDet
         '
         Me.Appearance.Options.UseFont = True
@@ -609,6 +618,7 @@ Partial Class FormRecDet
         Me.Controls.Add(Me.PanelControl3)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.KeyPreview = True
         Me.LookAndFeel.SkinName = "Office 2010 Silver"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "FormRecDet"
@@ -621,32 +631,32 @@ Partial Class FormRecDet
         CType(Me.PCClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControlTop, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlTop.ResumeLayout(False)
-        CType(Me.PanelControTopLeft, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControTopLeft.ResumeLayout(False)
-        Me.PanelControTopLeft.PerformLayout()
         CType(Me.PanelControlTopFill, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlTopFill.ResumeLayout(False)
         Me.PanelControlTopFill.PerformLayout()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DERefDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DERefDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtNameCompTo.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtRef.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtCodeCompTo.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtNameCompFrom.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtCodeCompFrom.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PanelControTopLeft, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControTopLeft.ResumeLayout(False)
+        Me.PanelControTopLeft.PerformLayout()
         CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DateEdit2.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DateEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit5.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit6.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControlBottom, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlBottom.ResumeLayout(False)
         CType(Me.PanelControlNote, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlNote.ResumeLayout(False)
         Me.PanelControlNote.PerformLayout()
-        CType(Me.MemoEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LEReportStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControlStt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlStt.ResumeLayout(False)
         Me.PanelControlStt.PerformLayout()
+        CType(Me.LEReportStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MemoEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabControl1.ResumeLayout(False)
         Me.XTPScanned.ResumeLayout(False)
@@ -667,22 +677,22 @@ Partial Class FormRecDet
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControlTop As DevExpress.XtraEditors.PanelControl
     Friend WithEvents PanelControlTopFill As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents DateEdit2 As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents TextEdit4 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents DERefDate As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents TxtRef As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit3 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit2 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtNameCompFrom As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtCodeCompFrom As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControTopLeft As DevExpress.XtraEditors.PanelControl
     Friend WithEvents DateEdit1 As DevExpress.XtraEditors.DateEdit
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit6 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit5 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtNameCompTo As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtCodeCompTo As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents BtnBrowseTo As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents BtnBrowseFrom As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents PanelControlBottom As DevExpress.XtraEditors.PanelControl
     Friend WithEvents PanelControlNote As DevExpress.XtraEditors.PanelControl
     Friend WithEvents LEReportStatus As DevExpress.XtraEditors.LookUpEdit
