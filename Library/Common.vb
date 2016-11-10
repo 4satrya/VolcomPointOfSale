@@ -748,7 +748,7 @@ Module Common
         DevExpress.Skins.SkinManager.EnableFormSkins()
         DevExpress.UserSkins.BonusSkins.Register()
         UserLookAndFeel.Default.UseWindowsXPTheme = False
-        UserLookAndFeel.Default.SkinName = "Metropolis"
+        UserLookAndFeel.Default.SkinName = "Office 2010 Silver"
     End Sub
 
     Sub apply_skin_print()

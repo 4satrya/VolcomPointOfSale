@@ -24,8 +24,8 @@
     End Sub
 
     Sub insert()
-        'FormItemDet.action = "ins"
-        'FormItemDet.ShowDialog()
+        FormRecDet.action = "ins"
+        FormRecDet.ShowDialog()
     End Sub
 
     Sub edit()

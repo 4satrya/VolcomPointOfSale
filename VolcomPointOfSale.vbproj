@@ -163,6 +163,12 @@
     <Compile Include="FormRec.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormRecDet.Designer.vb">
+      <DependentUpon>FormRecDet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormRecDet.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormStart.Designer.vb">
       <DependentUpon>FormStart.vb</DependentUpon>
     </Compile>
@@ -256,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRec.resx">
       <DependentUpon>FormRec.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRecDet.resx">
+      <DependentUpon>FormRecDet.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStart.resx">
       <DependentUpon>FormStart.vb</DependentUpon>
