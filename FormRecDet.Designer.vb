@@ -46,10 +46,10 @@ Partial Class FormRecDet
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.MemoEdit1 = New DevExpress.XtraEditors.MemoEdit()
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
-        Me.LookUpEdit1 = New DevExpress.XtraEditors.LookUpEdit()
+        Me.LEReportStatus = New DevExpress.XtraEditors.LookUpEdit()
         Me.PanelControlStt = New DevExpress.XtraEditors.PanelControl()
         Me.SimpleButton5 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton6 = New DevExpress.XtraEditors.SimpleButton()
+        Me.BtnPrint = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton7 = New DevExpress.XtraEditors.SimpleButton()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XTPScanned = New DevExpress.XtraTab.XtraTabPage()
@@ -87,7 +87,7 @@ Partial Class FormRecDet
         CType(Me.PanelControlNote, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlNote.SuspendLayout()
         CType(Me.MemoEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LEReportStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControlStt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlStt.SuspendLayout()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -340,7 +340,7 @@ Partial Class FormRecDet
         '
         'PanelControlBottom
         '
-        Me.PanelControlBottom.Controls.Add(Me.SimpleButton6)
+        Me.PanelControlBottom.Controls.Add(Me.BtnPrint)
         Me.PanelControlBottom.Controls.Add(Me.SimpleButton7)
         Me.PanelControlBottom.Controls.Add(Me.SimpleButton5)
         Me.PanelControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -387,20 +387,21 @@ Partial Class FormRecDet
         Me.LabelControl9.TabIndex = 2
         Me.LabelControl9.Text = "Set Status"
         '
-        'LookUpEdit1
+        'LEReportStatus
         '
-        Me.LookUpEdit1.Location = New System.Drawing.Point(89, 9)
-        Me.LookUpEdit1.Name = "LookUpEdit1"
-        Me.LookUpEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.LookUpEdit1.Size = New System.Drawing.Size(251, 20)
-        Me.LookUpEdit1.TabIndex = 3
+        Me.LEReportStatus.Location = New System.Drawing.Point(89, 9)
+        Me.LEReportStatus.Name = "LEReportStatus"
+        Me.LEReportStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.LEReportStatus.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_report_status", "Id", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("report_status", "Status")})
+        Me.LEReportStatus.Size = New System.Drawing.Size(251, 20)
+        Me.LEReportStatus.TabIndex = 3
         '
         'PanelControlStt
         '
         Me.PanelControlStt.Appearance.BackColor = System.Drawing.Color.Transparent
         Me.PanelControlStt.Appearance.Options.UseBackColor = True
         Me.PanelControlStt.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControlStt.Controls.Add(Me.LookUpEdit1)
+        Me.PanelControlStt.Controls.Add(Me.LEReportStatus)
         Me.PanelControlStt.Controls.Add(Me.LabelControl9)
         Me.PanelControlStt.Dock = System.Windows.Forms.DockStyle.Right
         Me.PanelControlStt.Location = New System.Drawing.Point(454, 2)
@@ -425,22 +426,22 @@ Partial Class FormRecDet
         Me.SimpleButton5.TabIndex = 10
         Me.SimpleButton5.Text = "F5 : Save"
         '
-        'SimpleButton6
+        'BtnPrint
         '
-        Me.SimpleButton6.Appearance.BackColor = System.Drawing.Color.DimGray
-        Me.SimpleButton6.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SimpleButton6.Appearance.ForeColor = System.Drawing.Color.Black
-        Me.SimpleButton6.Appearance.Options.UseBackColor = True
-        Me.SimpleButton6.Appearance.Options.UseFont = True
-        Me.SimpleButton6.Appearance.Options.UseForeColor = True
-        Me.SimpleButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.SimpleButton6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.SimpleButton6.Image = CType(resources.GetObject("SimpleButton6.Image"), System.Drawing.Image)
-        Me.SimpleButton6.Location = New System.Drawing.Point(512, 2)
-        Me.SimpleButton6.Name = "SimpleButton6"
-        Me.SimpleButton6.Size = New System.Drawing.Size(102, 33)
-        Me.SimpleButton6.TabIndex = 11
-        Me.SimpleButton6.Text = "F10 : Print"
+        Me.BtnPrint.Appearance.BackColor = System.Drawing.Color.DimGray
+        Me.BtnPrint.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnPrint.Appearance.ForeColor = System.Drawing.Color.Black
+        Me.BtnPrint.Appearance.Options.UseBackColor = True
+        Me.BtnPrint.Appearance.Options.UseFont = True
+        Me.BtnPrint.Appearance.Options.UseForeColor = True
+        Me.BtnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BtnPrint.Dock = System.Windows.Forms.DockStyle.Right
+        Me.BtnPrint.Image = CType(resources.GetObject("BtnPrint.Image"), System.Drawing.Image)
+        Me.BtnPrint.Location = New System.Drawing.Point(512, 2)
+        Me.BtnPrint.Name = "BtnPrint"
+        Me.BtnPrint.Size = New System.Drawing.Size(102, 33)
+        Me.BtnPrint.TabIndex = 11
+        Me.BtnPrint.Text = "F10 : Print"
         '
         'SimpleButton7
         '
@@ -642,7 +643,7 @@ Partial Class FormRecDet
         Me.PanelControlNote.ResumeLayout(False)
         Me.PanelControlNote.PerformLayout()
         CType(Me.MemoEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LEReportStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControlStt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlStt.ResumeLayout(False)
         Me.PanelControlStt.PerformLayout()
@@ -684,12 +685,12 @@ Partial Class FormRecDet
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents PanelControlBottom As DevExpress.XtraEditors.PanelControl
     Friend WithEvents PanelControlNote As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents LookUpEdit1 As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents LEReportStatus As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents MemoEdit1 As DevExpress.XtraEditors.MemoEdit
     Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControlStt As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents SimpleButton6 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents BtnPrint As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton7 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton5 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents XtraTabControl1 As DevExpress.XtraTab.XtraTabControl
