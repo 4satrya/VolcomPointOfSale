@@ -78,6 +78,61 @@
     End Sub
 
     Private Sub TxtCodeCompTo_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCodeCompTo.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Dim dt As DataTable = get_company_by_code(addSlashes(TxtCodeCompTo.Text), "-1")
+            If dt.Rows.Count > 0 Then
+                id_comp_to = dt.Rows(0)("id_comp").ToString
+                TxtCodeCompTo.Text = dt.Rows(0)("comp_number").ToString
+                TxtNameCompTo.Text = dt.Rows(0)("comp_name").ToString
+                TxtRef.Focus()
 
+            Else
+                stopCustom("Account not found !")
+                id_comp_to = "-1"
+                TxtCodeCompTo.Text = ""
+                TxtNameCompTo.Text = ""
+                TxtCodeCompTo.Focus()
+            End If
+        End If
+    End Sub
+
+    Private Sub FormRecDet_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.F5 Then 'save
+            save()
+        ElseIf e.KeyCode = Keys.F6 Then 'close
+            closeForm()
+        ElseIf e.KeyCode = Keys.F7 Then 'select
+            selectList()
+        ElseIf e.KeyCode = Keys.F8 Then 'add scan
+            addScan()
+        ElseIf e.KeyCode = Keys.F9 Then 'remove scan
+            removeScan()
+        ElseIf e.KeyCode = Keys.F10 Then 'print
+            print()
+        End If
+    End Sub
+
+    Sub save()
+        infoCustom("save")
+    End Sub
+
+    Sub closeForm()
+        Close()
+    End Sub
+
+    Sub selectList()
+        GVScan.Focus()
+    End Sub
+
+    Sub addScan()
+        TxtItemCode.Focus()
+    End Sub
+
+    Sub removeScan()
+        infoCustom("remove scan")
+    End Sub
+
+    Sub print()
+        infoCustom("print")
     End Sub
 End Class

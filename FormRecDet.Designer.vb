@@ -25,6 +25,7 @@ Partial Class FormRecDet
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlTop = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControlTopFill = New DevExpress.XtraEditors.PanelControl()
+        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
         Me.BtnBrowseTo = New DevExpress.XtraEditors.SimpleButton()
         Me.BtnBrowseFrom = New DevExpress.XtraEditors.SimpleButton()
         Me.DERefDate = New DevExpress.XtraEditors.DateEdit()
@@ -57,7 +58,7 @@ Partial Class FormRecDet
         Me.GVScan = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.PanelControlItem = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControlItemCode = New DevExpress.XtraEditors.PanelControl()
-        Me.TextEdit7 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtItemCode = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
@@ -99,7 +100,7 @@ Partial Class FormRecDet
         Me.PanelControlItem.SuspendLayout()
         CType(Me.PanelControlItemCode, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlItemCode.SuspendLayout()
-        CType(Me.TextEdit7.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtItemCode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelControl3
@@ -151,6 +152,7 @@ Partial Class FormRecDet
         'PanelControlTopFill
         '
         Me.PanelControlTopFill.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControlTopFill.Controls.Add(Me.LabelControl10)
         Me.PanelControlTopFill.Controls.Add(Me.BtnBrowseTo)
         Me.PanelControlTopFill.Controls.Add(Me.BtnBrowseFrom)
         Me.PanelControlTopFill.Controls.Add(Me.DERefDate)
@@ -167,6 +169,15 @@ Partial Class FormRecDet
         Me.PanelControlTopFill.Name = "PanelControlTopFill"
         Me.PanelControlTopFill.Size = New System.Drawing.Size(455, 102)
         Me.PanelControlTopFill.TabIndex = 1
+        '
+        'LabelControl10
+        '
+        Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl10.Location = New System.Drawing.Point(231, 67)
+        Me.LabelControl10.Name = "LabelControl10"
+        Me.LabelControl10.Size = New System.Drawing.Size(24, 13)
+        Me.LabelControl10.TabIndex = 11
+        Me.LabelControl10.Text = "Date"
         '
         'BtnBrowseTo
         '
@@ -203,7 +214,7 @@ Partial Class FormRecDet
         'DERefDate
         '
         Me.DERefDate.EditValue = Nothing
-        Me.DERefDate.Location = New System.Drawing.Point(206, 64)
+        Me.DERefDate.Location = New System.Drawing.Point(261, 64)
         Me.DERefDate.Name = "DERefDate"
         Me.DERefDate.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DERefDate.Properties.Appearance.Options.UseFont = True
@@ -212,17 +223,19 @@ Partial Class FormRecDet
         Me.DERefDate.Properties.DisplayFormat.FormatString = "dd MMMM yyyy"
         Me.DERefDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.DERefDate.Properties.Mask.EditMask = "dd-MM-yyyy"
-        Me.DERefDate.Size = New System.Drawing.Size(235, 20)
+        Me.DERefDate.Size = New System.Drawing.Size(180, 20)
         Me.DERefDate.TabIndex = 3
+        Me.DERefDate.ToolTip = "Packing list date"
+        Me.DERefDate.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information
         '
         'TxtNameCompTo
         '
         Me.TxtNameCompTo.Enabled = False
-        Me.TxtNameCompTo.Location = New System.Drawing.Point(206, 38)
+        Me.TxtNameCompTo.Location = New System.Drawing.Point(167, 38)
         Me.TxtNameCompTo.Name = "TxtNameCompTo"
         Me.TxtNameCompTo.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtNameCompTo.Properties.Appearance.Options.UseFont = True
-        Me.TxtNameCompTo.Size = New System.Drawing.Size(202, 20)
+        Me.TxtNameCompTo.Size = New System.Drawing.Size(239, 20)
         Me.TxtNameCompTo.TabIndex = 9
         Me.TxtNameCompTo.TabStop = False
         '
@@ -232,8 +245,10 @@ Partial Class FormRecDet
         Me.TxtRef.Name = "TxtRef"
         Me.TxtRef.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtRef.Properties.Appearance.Options.UseFont = True
-        Me.TxtRef.Size = New System.Drawing.Size(99, 20)
+        Me.TxtRef.Size = New System.Drawing.Size(122, 20)
         Me.TxtRef.TabIndex = 2
+        Me.TxtRef.ToolTip = "Packing list number from vendor"
+        Me.TxtRef.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information
         '
         'TxtCodeCompTo
         '
@@ -241,35 +256,35 @@ Partial Class FormRecDet
         Me.TxtCodeCompTo.Name = "TxtCodeCompTo"
         Me.TxtCodeCompTo.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCodeCompTo.Properties.Appearance.Options.UseFont = True
-        Me.TxtCodeCompTo.Size = New System.Drawing.Size(99, 20)
+        Me.TxtCodeCompTo.Size = New System.Drawing.Size(60, 20)
         Me.TxtCodeCompTo.TabIndex = 1
         '
         'LabelControl5
         '
-        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl5.Location = New System.Drawing.Point(15, 41)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(72, 13)
+        Me.LabelControl5.Size = New System.Drawing.Size(74, 13)
         Me.LabelControl5.TabIndex = 7
         Me.LabelControl5.Text = "Destination to"
         '
         'LabelControl4
         '
-        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl4.Location = New System.Drawing.Point(15, 67)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(50, 13)
+        Me.LabelControl4.Size = New System.Drawing.Size(51, 13)
         Me.LabelControl4.TabIndex = 7
         Me.LabelControl4.Text = "Reference"
         '
         'TxtNameCompFrom
         '
         Me.TxtNameCompFrom.Enabled = False
-        Me.TxtNameCompFrom.Location = New System.Drawing.Point(206, 12)
+        Me.TxtNameCompFrom.Location = New System.Drawing.Point(167, 12)
         Me.TxtNameCompFrom.Name = "TxtNameCompFrom"
         Me.TxtNameCompFrom.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtNameCompFrom.Properties.Appearance.Options.UseFont = True
-        Me.TxtNameCompFrom.Size = New System.Drawing.Size(202, 20)
+        Me.TxtNameCompFrom.Size = New System.Drawing.Size(239, 20)
         Me.TxtNameCompFrom.TabIndex = 6
         Me.TxtNameCompFrom.TabStop = False
         '
@@ -279,15 +294,15 @@ Partial Class FormRecDet
         Me.TxtCodeCompFrom.Name = "TxtCodeCompFrom"
         Me.TxtCodeCompFrom.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCodeCompFrom.Properties.Appearance.Options.UseFont = True
-        Me.TxtCodeCompFrom.Size = New System.Drawing.Size(99, 20)
+        Me.TxtCodeCompFrom.Size = New System.Drawing.Size(60, 20)
         Me.TxtCodeCompFrom.TabIndex = 0
         '
         'LabelControl3
         '
-        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl3.Location = New System.Drawing.Point(15, 15)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(69, 13)
+        Me.LabelControl3.Size = New System.Drawing.Size(67, 13)
         Me.LabelControl3.TabIndex = 4
         Me.LabelControl3.Text = "Receive From"
         '
@@ -320,7 +335,7 @@ Partial Class FormRecDet
         '
         'LabelControl2
         '
-        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl2.Location = New System.Drawing.Point(12, 41)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(67, 13)
@@ -340,10 +355,10 @@ Partial Class FormRecDet
         '
         'LabelControl1
         '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl1.Location = New System.Drawing.Point(12, 15)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(83, 13)
+        Me.LabelControl1.Size = New System.Drawing.Size(82, 13)
         Me.LabelControl1.TabIndex = 0
         Me.LabelControl1.Text = "Receive Number"
         '
@@ -501,6 +516,10 @@ Partial Class FormRecDet
         '
         Me.GVScan.GridControl = Me.GCScan
         Me.GVScan.Name = "GVScan"
+        Me.GVScan.OptionsBehavior.Editable = False
+        Me.GVScan.OptionsCustomization.AllowFilter = False
+        Me.GVScan.OptionsCustomization.AllowGroup = False
+        Me.GVScan.OptionsCustomization.AllowSort = False
         Me.GVScan.OptionsView.ShowGroupPanel = False
         '
         'PanelControlItem
@@ -522,7 +541,7 @@ Partial Class FormRecDet
         Me.PanelControlItemCode.Appearance.BackColor = System.Drawing.Color.Transparent
         Me.PanelControlItemCode.Appearance.Options.UseBackColor = True
         Me.PanelControlItemCode.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControlItemCode.Controls.Add(Me.TextEdit7)
+        Me.PanelControlItemCode.Controls.Add(Me.TxtItemCode)
         Me.PanelControlItemCode.Controls.Add(Me.LabelControl6)
         Me.PanelControlItemCode.Dock = System.Windows.Forms.DockStyle.Right
         Me.PanelControlItemCode.Location = New System.Drawing.Point(453, 2)
@@ -530,14 +549,14 @@ Partial Class FormRecDet
         Me.PanelControlItemCode.Size = New System.Drawing.Size(347, 33)
         Me.PanelControlItemCode.TabIndex = 11
         '
-        'TextEdit7
+        'TxtItemCode
         '
-        Me.TextEdit7.Location = New System.Drawing.Point(89, 7)
-        Me.TextEdit7.Name = "TextEdit7"
-        Me.TextEdit7.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit7.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit7.Size = New System.Drawing.Size(251, 20)
-        Me.TextEdit7.TabIndex = 6
+        Me.TxtItemCode.Location = New System.Drawing.Point(89, 7)
+        Me.TxtItemCode.Name = "TxtItemCode"
+        Me.TxtItemCode.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtItemCode.Properties.Appearance.Options.UseFont = True
+        Me.TxtItemCode.Size = New System.Drawing.Size(251, 20)
+        Me.TxtItemCode.TabIndex = 6
         '
         'LabelControl6
         '
@@ -667,7 +686,7 @@ Partial Class FormRecDet
         CType(Me.PanelControlItemCode, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlItemCode.ResumeLayout(False)
         Me.PanelControlItemCode.PerformLayout()
-        CType(Me.TextEdit7.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtItemCode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -710,9 +729,10 @@ Partial Class FormRecDet
     Friend WithEvents GVScan As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents PanelControlItem As DevExpress.XtraEditors.PanelControl
     Friend WithEvents PanelControlItemCode As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents TextEdit7 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtItemCode As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents SimpleButton4 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton8 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
 End Class
