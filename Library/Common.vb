@@ -2120,6 +2120,8 @@ Module Common
         Return status
     End Function
 
+
+
     Function check_pre_print_report_status(ByVal id_report_status As String)
         Dim status As Boolean = True
 
@@ -2180,6 +2182,20 @@ Module Common
 
         Return status
     End Function
+
+    Function check_status(ByVal id_report_status As String)
+        Dim status As Boolean = True
+
+        If id_report_status = "3" Or id_report_status = "4" Or id_report_status = "6" Or id_report_status = "5" Or id_report_status = "7" Then
+            'approve / on process / completed / received / canceled
+            status = False
+        Else
+            status = True
+        End If
+
+        Return status
+    End Function
+
     Function check_fill_report_status(ByVal id_report_status As String, ByVal report_mark_type As String, ByVal id_report As String)
         Dim status As Boolean = True
 
