@@ -21,11 +21,14 @@
             viewDetail()
             viewSummary()
             allow_status()
+            XTPScanned.PageVisible = False
+            XTPSummary.PageVisible = True
         Else
             LEReportStatus.Enabled = False
             BtnPrint.Enabled = False
             viewDetail()
             viewSummary()
+            XTPSummary.PageVisible = False
         End If
     End Sub
 
@@ -65,6 +68,7 @@
             DERefDate.Enabled = False
             LEReportStatus.Enabled = False
         End If
+        PanelControlItem.Enabled = False
 
         'ATTACH
         'If check_attach_report_status(id_report_status, "91", id_fg_repair) Then
@@ -196,7 +200,10 @@
 
     Sub removeScan()
         Cursor = Cursors.WaitCursor
-        infoCustom("remove scan")
+        Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+        If confirm = DialogResult.Yes Then
+            GVScan.DeleteSelectedRows()
+        End If
         Cursor = Cursors.Default
     End Sub
 

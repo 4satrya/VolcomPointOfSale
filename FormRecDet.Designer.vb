@@ -52,7 +52,7 @@ Partial Class FormRecDet
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
         Me.MENote = New DevExpress.XtraEditors.MemoEdit()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
-        Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
+        Me.XTCItem = New DevExpress.XtraTab.XtraTabControl()
         Me.XTPScanned = New DevExpress.XtraTab.XtraTabPage()
         Me.GCScan = New DevExpress.XtraGrid.GridControl()
         Me.GVScan = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -108,8 +108,8 @@ Partial Class FormRecDet
         Me.PanelControlStt.SuspendLayout()
         CType(Me.LEReportStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MENote.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.XtraTabControl1.SuspendLayout()
+        CType(Me.XTCItem, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XTCItem.SuspendLayout()
         Me.XTPScanned.SuspendLayout()
         CType(Me.GCScan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GVScan, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -167,7 +167,7 @@ Partial Class FormRecDet
         Me.PanelControlTop.Location = New System.Drawing.Point(0, 24)
         Me.PanelControlTop.Name = "PanelControlTop"
         Me.PanelControlTop.Size = New System.Drawing.Size(808, 96)
-        Me.PanelControlTop.TabIndex = 7
+        Me.PanelControlTop.TabIndex = 0
         '
         'PanelControlTopFill
         '
@@ -391,7 +391,7 @@ Partial Class FormRecDet
         Me.PanelControlBottom.Location = New System.Drawing.Point(0, 563)
         Me.PanelControlBottom.Name = "PanelControlBottom"
         Me.PanelControlBottom.Size = New System.Drawing.Size(808, 37)
-        Me.PanelControlBottom.TabIndex = 8
+        Me.PanelControlBottom.TabIndex = 4
         '
         'BtnPrint
         '
@@ -407,7 +407,7 @@ Partial Class FormRecDet
         Me.BtnPrint.Location = New System.Drawing.Point(512, 2)
         Me.BtnPrint.Name = "BtnPrint"
         Me.BtnPrint.Size = New System.Drawing.Size(102, 33)
-        Me.BtnPrint.TabIndex = 11
+        Me.BtnPrint.TabIndex = 12
         Me.BtnPrint.Text = "F10 : Print"
         '
         'BtnClose
@@ -424,7 +424,7 @@ Partial Class FormRecDet
         Me.BtnClose.Location = New System.Drawing.Point(614, 2)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(96, 33)
-        Me.BtnClose.TabIndex = 12
+        Me.BtnClose.TabIndex = 11
         Me.BtnClose.Text = "F6 : Close"
         '
         'BtnSave
@@ -455,7 +455,7 @@ Partial Class FormRecDet
         Me.PanelControlNote.Location = New System.Drawing.Point(0, 473)
         Me.PanelControlNote.Name = "PanelControlNote"
         Me.PanelControlNote.Size = New System.Drawing.Size(808, 90)
-        Me.PanelControlNote.TabIndex = 9
+        Me.PanelControlNote.TabIndex = 3
         '
         'PanelControlStt
         '
@@ -477,7 +477,7 @@ Partial Class FormRecDet
         Me.LEReportStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.LEReportStatus.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_report_status", "Id", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("report_status", "Status")})
         Me.LEReportStatus.Size = New System.Drawing.Size(251, 20)
-        Me.LEReportStatus.TabIndex = 3
+        Me.LEReportStatus.TabIndex = 9
         '
         'LabelControl9
         '
@@ -493,7 +493,7 @@ Partial Class FormRecDet
         Me.MENote.Location = New System.Drawing.Point(65, 11)
         Me.MENote.Name = "MENote"
         Me.MENote.Size = New System.Drawing.Size(353, 57)
-        Me.MENote.TabIndex = 1
+        Me.MENote.TabIndex = 8
         '
         'LabelControl8
         '
@@ -504,15 +504,15 @@ Partial Class FormRecDet
         Me.LabelControl8.TabIndex = 0
         Me.LabelControl8.Text = "Remark"
         '
-        'XtraTabControl1
+        'XTCItem
         '
-        Me.XtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.XtraTabControl1.Location = New System.Drawing.Point(0, 120)
-        Me.XtraTabControl1.Name = "XtraTabControl1"
-        Me.XtraTabControl1.SelectedTabPage = Me.XTPScanned
-        Me.XtraTabControl1.Size = New System.Drawing.Size(808, 353)
-        Me.XtraTabControl1.TabIndex = 12
-        Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPScanned, Me.XTPSummary})
+        Me.XTCItem.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.XTCItem.Location = New System.Drawing.Point(0, 120)
+        Me.XTCItem.Name = "XTCItem"
+        Me.XTCItem.SelectedTabPage = Me.XTPScanned
+        Me.XTCItem.Size = New System.Drawing.Size(808, 353)
+        Me.XTCItem.TabIndex = 1
+        Me.XTCItem.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPScanned, Me.XTPSummary})
         '
         'XTPScanned
         '
@@ -530,6 +530,7 @@ Partial Class FormRecDet
         Me.GCScan.Name = "GCScan"
         Me.GCScan.Size = New System.Drawing.Size(802, 288)
         Me.GCScan.TabIndex = 0
+        Me.GCScan.TabStop = False
         Me.GCScan.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVScan})
         '
         'GVScan
@@ -633,7 +634,7 @@ Partial Class FormRecDet
         Me.PanelControlItem.Location = New System.Drawing.Point(0, 288)
         Me.PanelControlItem.Name = "PanelControlItem"
         Me.PanelControlItem.Size = New System.Drawing.Size(802, 37)
-        Me.PanelControlItem.TabIndex = 11
+        Me.PanelControlItem.TabIndex = 2
         '
         'PanelControlItemCode
         '
@@ -655,7 +656,7 @@ Partial Class FormRecDet
         Me.TxtItemCode.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtItemCode.Properties.Appearance.Options.UseFont = True
         Me.TxtItemCode.Size = New System.Drawing.Size(251, 20)
-        Me.TxtItemCode.TabIndex = 6
+        Me.TxtItemCode.TabIndex = 7
         '
         'LabelControl6
         '
@@ -680,7 +681,7 @@ Partial Class FormRecDet
         Me.BtnRemoveScan.Location = New System.Drawing.Point(202, 2)
         Me.BtnRemoveScan.Name = "BtnRemoveScan"
         Me.BtnRemoveScan.Size = New System.Drawing.Size(103, 33)
-        Me.BtnRemoveScan.TabIndex = 10
+        Me.BtnRemoveScan.TabIndex = 6
         Me.BtnRemoveScan.Text = "F9 : Delete"
         '
         'BtnAddScan
@@ -697,7 +698,7 @@ Partial Class FormRecDet
         Me.BtnAddScan.Location = New System.Drawing.Point(106, 2)
         Me.BtnAddScan.Name = "BtnAddScan"
         Me.BtnAddScan.Size = New System.Drawing.Size(96, 33)
-        Me.BtnAddScan.TabIndex = 9
+        Me.BtnAddScan.TabIndex = 5
         Me.BtnAddScan.Text = "F8 : Add"
         '
         'BtnSelect
@@ -714,7 +715,7 @@ Partial Class FormRecDet
         Me.BtnSelect.Location = New System.Drawing.Point(2, 2)
         Me.BtnSelect.Name = "BtnSelect"
         Me.BtnSelect.Size = New System.Drawing.Size(104, 33)
-        Me.BtnSelect.TabIndex = 12
+        Me.BtnSelect.TabIndex = 4
         Me.BtnSelect.Text = "F7 : Select"
         '
         'XTPSummary
@@ -824,7 +825,7 @@ Partial Class FormRecDet
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(808, 600)
-        Me.Controls.Add(Me.XtraTabControl1)
+        Me.Controls.Add(Me.XTCItem)
         Me.Controls.Add(Me.PanelControlNote)
         Me.Controls.Add(Me.PanelControlBottom)
         Me.Controls.Add(Me.PanelControlTop)
@@ -870,8 +871,8 @@ Partial Class FormRecDet
         Me.PanelControlStt.PerformLayout()
         CType(Me.LEReportStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MENote.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.XtraTabControl1.ResumeLayout(False)
+        CType(Me.XTCItem, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XTCItem.ResumeLayout(False)
         Me.XTPScanned.ResumeLayout(False)
         CType(Me.GCScan, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GVScan, System.ComponentModel.ISupportInitialize).EndInit()
@@ -919,7 +920,7 @@ Partial Class FormRecDet
     Friend WithEvents BtnPrint As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents BtnClose As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents BtnSave As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents XtraTabControl1 As DevExpress.XtraTab.XtraTabControl
+    Friend WithEvents XTCItem As DevExpress.XtraTab.XtraTabControl
     Friend WithEvents XTPScanned As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents XTPSummary As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents GCScan As DevExpress.XtraGrid.GridControl
