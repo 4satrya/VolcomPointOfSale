@@ -29,9 +29,9 @@
     End Sub
 
     Sub edit()
-        'FormItemDet.action = "upd"
-        'FormItemDet.id = GVItem.GetFocusedRowCellValue("id_item").ToString
-        'FormItemDet.ShowDialog()
+        FormRecDet.action = "upd"
+        FormRecDet.id = GVRec.GetFocusedRowCellValue("id_rec").ToString
+        FormRecDet.ShowDialog()
     End Sub
 
     Sub delete()

@@ -2110,7 +2110,7 @@ Module Common
     Function check_print_report_status(ByVal id_report_status As String)
         Dim status As Boolean = True
 
-        If id_report_status = "3" Or id_report_status = "4" Or id_report_status = "6" Or id_report_status = "7" Then
+        If id_report_status = "1" Or id_report_status = "3" Or id_report_status = "4" Or id_report_status = "6" Or id_report_status = "7" Then
             'approve / on process / completed / received
             status = True
         Else

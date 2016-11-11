@@ -185,8 +185,8 @@ Partial Class FormRecDet
         Me.PanelControlTopFill.Controls.Add(Me.TxtNameCompFrom)
         Me.PanelControlTopFill.Controls.Add(Me.TxtCodeCompFrom)
         Me.PanelControlTopFill.Controls.Add(Me.LabelControl3)
-        Me.PanelControlTopFill.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControlTopFill.Location = New System.Drawing.Point(353, 0)
+        Me.PanelControlTopFill.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PanelControlTopFill.Location = New System.Drawing.Point(0, 0)
         Me.PanelControlTopFill.Name = "PanelControlTopFill"
         Me.PanelControlTopFill.Size = New System.Drawing.Size(455, 96)
         Me.PanelControlTopFill.TabIndex = 1
@@ -334,8 +334,8 @@ Partial Class FormRecDet
         Me.PanelControTopLeft.Controls.Add(Me.LabelControl2)
         Me.PanelControTopLeft.Controls.Add(Me.TxtNumber)
         Me.PanelControTopLeft.Controls.Add(Me.LabelControl1)
-        Me.PanelControTopLeft.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PanelControTopLeft.Location = New System.Drawing.Point(0, 0)
+        Me.PanelControTopLeft.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PanelControTopLeft.Location = New System.Drawing.Point(461, 0)
         Me.PanelControTopLeft.Name = "PanelControTopLeft"
         Me.PanelControTopLeft.Size = New System.Drawing.Size(347, 96)
         Me.PanelControTopLeft.TabIndex = 0
@@ -801,7 +801,6 @@ Partial Class FormRecDet
         Me.GridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.GridColumn6.FieldName = "price"
         Me.GridColumn6.Name = "GridColumn6"
-        Me.GridColumn6.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "price", "{0:n2}")})
         Me.GridColumn6.Visible = True
         Me.GridColumn6.VisibleIndex = 5
         Me.GridColumn6.Width = 96

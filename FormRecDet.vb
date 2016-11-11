@@ -191,8 +191,14 @@
         Dim ref_date As String = DateTime.Parse(DERefDate.EditValue.ToString).ToString("yyyy-MM-dd")
         Dim rec_note As String = addSlashes(MENote.Text)
         Dim id_report_status As String = LEReportStatus.EditValue.ToString
+        Dim gv As DevExpress.XtraGrid.Views.Grid.GridView
+        If action = "ins" Then
+            gv = GVScan
+        Else
+            gv = GVScanSum
+        End If
 
-        If id_comp_from = "-1" Or id_comp_to = "-1" Or ref = "" Or ref_date = "" Or GVScan.RowCount = 0 Then
+        If id_comp_from = "-1" Or id_comp_to = "-1" Or ref = "" Or ref_date = "" Or gv.RowCount = 0 Then
             stopCustom("Data can't blank")
         Else
             Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save this transaction?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
@@ -240,7 +246,7 @@
                     id = execute_query(query, 0, True, "", "", "", "")
 
                     'detail
-                    Dim query_det As String = "INSERT INTO tb_rec_det(id_rec, id_item, price, rec_qty) VALUES("
+                    Dim query_det As String = "INSERT INTO tb_rec_det(id_rec, id_item, price, rec_qty) VALUES"
                     For i As Integer = 0 To data_view.Rows.Count - 1
                         Dim id_item As String = data_view.Rows(i)("id_item").ToString
                         Dim price As String = data_view.Rows(i)("price").ToString
@@ -248,9 +254,8 @@
                         If i > 0 Then
                             query_det += ", "
                         End If
-                        query_det += "'" + id + "','" + id_item + "', '" + price + "', '" + rec_qty + "'"
+                        query_det += "('" + id + "','" + id_item + "', '" + price + "', '" + rec_qty + "')"
                     Next
-                    query_det += ") "
                     If data_view.Rows.Count > 0 Then
                         execute_non_query(query_det, True, "", "", "", "")
                     End If
@@ -269,7 +274,6 @@
                     FormRec.GVRec.FocusedRowHandle = find_row(FormRec.GVRec, "id_rec", id)
                     action = "upd"
                     actionLoad()
-                    infoCustom("Document #" + TxtNumber.Text + " was edited successfully.")
                 End If
                 Cursor = Cursors.Default
             End If
