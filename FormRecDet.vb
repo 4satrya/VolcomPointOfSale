@@ -187,106 +187,108 @@
     End Sub
 
     Sub save()
-        Dim ref As String = addSlashes(TxtRef.Text)
-        Dim ref_date As String = DateTime.Parse(DERefDate.EditValue.ToString).ToString("yyyy-MM-dd")
-        Dim rec_note As String = addSlashes(MENote.Text)
-        Dim id_report_status As String = LEReportStatus.EditValue.ToString
-        Dim gv As DevExpress.XtraGrid.Views.Grid.GridView
-        If action = "ins" Then
-            gv = GVScan
-        Else
-            gv = GVScanSum
-        End If
+        If LEReportStatus.EditValue.ToString <> "5" And LEReportStatus.EditValue.ToString <> "6" Then
+            Dim ref As String = addSlashes(TxtRef.Text)
+            Dim ref_date As String = DateTime.Parse(DERefDate.EditValue.ToString).ToString("yyyy-MM-dd")
+            Dim rec_note As String = addSlashes(MENote.Text)
+            Dim id_report_status As String = LEReportStatus.EditValue.ToString
+            Dim gv As DevExpress.XtraGrid.Views.Grid.GridView
+            If action = "ins" Then
+                gv = GVScan
+            Else
+                gv = GVScanSum
+            End If
 
-        If id_comp_from = "-1" Or id_comp_to = "-1" Or ref = "" Or ref_date = "" Or gv.RowCount = 0 Then
-            stopCustom("Data can't blank")
-        Else
-            Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save this transaction?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
-            If confirm = DialogResult.Yes Then
-                Cursor = Cursors.WaitCursor
-                If action = "ins" Then
-                    Dim data_temp As DataTable = GCScan.DataSource
-                    Dim connection_string As String = String.Format("Data Source={0};User Id={1};Password={2};Database={3};Convert Zero Datetime=True", app_host, app_username, app_password, app_database)
-                    Dim connection As New MySql.Data.MySqlClient.MySqlConnection(connection_string)
-                    connection.Open()
-                    Dim command As MySql.Data.MySqlClient.MySqlCommand = connection.CreateCommand()
-                    Dim qry As String = "DROP TABLE IF EXISTS tb_rec_temp; CREATE TEMPORARY TABLE IF NOT EXISTS tb_rec_temp AS ( SELECT * FROM ("
-                    For d As Integer = 0 To data_temp.Rows.Count - 1
-                        Dim id_item As String = data_temp.Rows(d)("id_item").ToString
-                        Dim item_code As String = data_temp.Rows(d)("item_code").ToString
-                        Dim item_name As String = data_temp.Rows(d)("item_name").ToString
-                        Dim size As String = data_temp.Rows(d)("size").ToString
-                        Dim price As String = decimalSQL(data_temp.Rows(d)("price").ToString)
-                        If d > 0 Then
-                            qry += "UNION ALL "
-                        End If
-                        qry += "SELECT '" + id_item + "' AS `id_item`, '" + item_code + "' AS `item_code`, '" + item_name + "' AS `item_name`, '" + size + "' AS `size` , '" + price + "' AS `price` "
-                    Next
-                    qry += ") a ); ALTER TABLE tb_rec_temp CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci; "
-                    command.CommandText = qry
-                    command.ExecuteNonQuery()
-                    command.Dispose()
-                    ' Console.WriteLine(qry)
+            If id_comp_from = "-1" Or id_comp_to = "-1" Or ref = "" Or ref_date = "" Or gv.RowCount = 0 Then
+                stopCustom("Data can't blank")
+            Else
+                Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save this transaction?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                If confirm = DialogResult.Yes Then
+                    Cursor = Cursors.WaitCursor
+                    If action = "ins" Then
+                        Dim data_temp As DataTable = GCScan.DataSource
+                        Dim connection_string As String = String.Format("Data Source={0};User Id={1};Password={2};Database={3};Convert Zero Datetime=True", app_host, app_username, app_password, app_database)
+                        Dim connection As New MySql.Data.MySqlClient.MySqlConnection(connection_string)
+                        connection.Open()
+                        Dim command As MySql.Data.MySqlClient.MySqlCommand = connection.CreateCommand()
+                        Dim qry As String = "DROP TABLE IF EXISTS tb_rec_temp; CREATE TEMPORARY TABLE IF NOT EXISTS tb_rec_temp AS ( SELECT * FROM ("
+                        For d As Integer = 0 To data_temp.Rows.Count - 1
+                            Dim id_item As String = data_temp.Rows(d)("id_item").ToString
+                            Dim item_code As String = data_temp.Rows(d)("item_code").ToString
+                            Dim item_name As String = data_temp.Rows(d)("item_name").ToString
+                            Dim size As String = data_temp.Rows(d)("size").ToString
+                            Dim price As String = decimalSQL(data_temp.Rows(d)("price").ToString)
+                            If d > 0 Then
+                                qry += "UNION ALL "
+                            End If
+                            qry += "SELECT '" + id_item + "' AS `id_item`, '" + item_code + "' AS `item_code`, '" + item_name + "' AS `item_name`, '" + size + "' AS `size` , '" + price + "' AS `price` "
+                        Next
+                        qry += ") a ); ALTER TABLE tb_rec_temp CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci; "
+                        command.CommandText = qry
+                        command.ExecuteNonQuery()
+                        command.Dispose()
+                        ' Console.WriteLine(qry)
 
-                    Dim data_view As New DataTable
-                    Dim qry_view As String = "SELECT a.id_item, a.item_code, a.item_name, a.size, COUNT(a.id_item) AS `rec_qty`, a.price 
+                        Dim data_view As New DataTable
+                        Dim qry_view As String = "SELECT a.id_item, a.item_code, a.item_name, a.size, COUNT(a.id_item) AS `rec_qty`, a.price 
                                 FROM tb_rec_temp a 
                                 GROUP BY a.id_item"
-                    Dim adapter As New MySql.Data.MySqlClient.MySqlDataAdapter(qry_view, connection)
-                    adapter.SelectCommand.CommandTimeout = 300
-                    adapter.Fill(data_view)
-                    adapter.Dispose()
-                    connection.Close()
-                    connection.Dispose()
-                    GCScanSum.DataSource = data_view
+                        Dim adapter As New MySql.Data.MySqlClient.MySqlDataAdapter(qry_view, connection)
+                        adapter.SelectCommand.CommandTimeout = 300
+                        adapter.Fill(data_view)
+                        adapter.Dispose()
+                        connection.Close()
+                        connection.Dispose()
+                        GCScanSum.DataSource = data_view
 
-                    'main query
-                    Dim query As String = "INSERT INTO tb_rec(id_comp_from, id_comp_to, rec_number, rec_date, ref, ref_date, rec_note, id_report_status) 
+                        'main query
+                        Dim query As String = "INSERT INTO tb_rec(id_comp_from, id_comp_to, rec_number, rec_date, ref, ref_date, rec_note, id_report_status) 
                     VALUES('" + id_comp_from + "', '" + id_comp_to + "', header_number(1), NOW(), '" + ref + "', '" + ref_date + "', '" + rec_note + "', '1'); SELECT LAST_INSERT_ID(); "
-                    id = execute_query(query, 0, True, "", "", "", "")
+                        id = execute_query(query, 0, True, "", "", "", "")
 
-                    'detail
-                    Dim query_det As String = "INSERT INTO tb_rec_det(id_rec, id_item, price, rec_qty) VALUES"
-                    For i As Integer = 0 To data_view.Rows.Count - 1
-                        Dim id_item As String = data_view.Rows(i)("id_item").ToString
-                        Dim price As String = data_view.Rows(i)("price").ToString
-                        Dim rec_qty As String = data_view.Rows(i)("rec_qty").ToString
-                        If i > 0 Then
-                            query_det += ", "
+                        'detail
+                        Dim query_det As String = "INSERT INTO tb_rec_det(id_rec, id_item, price, rec_qty) VALUES"
+                        For i As Integer = 0 To data_view.Rows.Count - 1
+                            Dim id_item As String = data_view.Rows(i)("id_item").ToString
+                            Dim price As String = data_view.Rows(i)("price").ToString
+                            Dim rec_qty As String = data_view.Rows(i)("rec_qty").ToString
+                            If i > 0 Then
+                                query_det += ", "
+                            End If
+                            query_det += "('" + id + "','" + id_item + "', '" + price + "', '" + rec_qty + "')"
+                        Next
+                        If data_view.Rows.Count > 0 Then
+                            execute_non_query(query_det, True, "", "", "", "")
                         End If
-                        query_det += "('" + id + "','" + id_item + "', '" + price + "', '" + rec_qty + "')"
-                    Next
-                    If data_view.Rows.Count > 0 Then
-                        execute_non_query(query_det, True, "", "", "", "")
-                    End If
 
-                    FormRec.viewRec()
-                    FormRec.GVRec.FocusedRowHandle = find_row(FormRec.GVRec, "id_rec", id)
-                    action = "upd"
-                    actionLoad()
-                    infoCustom("Document #" + TxtNumber.Text + " was created successfully.")
-                Else
-                    Dim query As String = "UPDATE tb_rec SET id_comp_from='" + id_comp_from + "', id_comp_to='" + id_comp_to + "', 
+                        FormRec.viewRec()
+                        FormRec.GVRec.FocusedRowHandle = find_row(FormRec.GVRec, "id_rec", id)
+                        action = "upd"
+                        actionLoad()
+                        infoCustom("Document #" + TxtNumber.Text + " was created successfully.")
+                    Else
+                        Dim query As String = "UPDATE tb_rec SET id_comp_from='" + id_comp_from + "', id_comp_to='" + id_comp_to + "', 
                     ref='" + ref + "', ref_date='" + ref_date + "', rec_note='" + rec_note + "', id_report_status='" + id_report_status + "'
                     WHERE id_rec ='" + id + "' "
-                    execute_non_query(query, True, "", "", "", "")
+                        execute_non_query(query, True, "", "", "", "")
 
-                    'completed
-                    If id_report_status = "6" Then
-                        Dim query_stock As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
+                        'completed
+                        If id_report_status = "6" Then
+                            Dim query_stock As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
                         SELECT tb_rec.id_comp_to, 1, tb_rec_det.id_item, 1, " + id + ", tb_rec_det.rec_qty, NOW(), 1 
                         FROM tb_rec_det 
                         INNER JOIN tb_rec ON tb_rec.id_rec = tb_rec_det.id_rec
                         WHERE tb_rec_det.id_rec=" + id + ""
-                        execute_non_query(query_stock, True, "", "", "", "")
-                    End If
+                            execute_non_query(query_stock, True, "", "", "", "")
+                        End If
 
-                    FormRec.viewRec()
-                    FormRec.GVRec.FocusedRowHandle = find_row(FormRec.GVRec, "id_rec", id)
-                    action = "upd"
-                    actionLoad()
+                        FormRec.viewRec()
+                        FormRec.GVRec.FocusedRowHandle = find_row(FormRec.GVRec, "id_rec", id)
+                        action = "upd"
+                        actionLoad()
+                    End If
+                    Cursor = Cursors.Default
                 End If
-                Cursor = Cursors.Default
             End If
         End If
     End Sub
