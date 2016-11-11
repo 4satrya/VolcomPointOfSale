@@ -38,9 +38,9 @@ Partial Class FormRecDet
         Me.TxtCodeCompFrom = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControTopLeft = New DevExpress.XtraEditors.PanelControl()
-        Me.DateEdit1 = New DevExpress.XtraEditors.DateEdit()
+        Me.DECreated = New DevExpress.XtraEditors.DateEdit()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtNumber = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlBottom = New DevExpress.XtraEditors.PanelControl()
         Me.BtnPrint = New DevExpress.XtraEditors.SimpleButton()
@@ -81,6 +81,7 @@ Partial Class FormRecDet
         Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnCodeSum = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
         CType(Me.PCClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -97,9 +98,9 @@ Partial Class FormRecDet
         CType(Me.TxtCodeCompFrom.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControTopLeft, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControTopLeft.SuspendLayout()
-        CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DECreated.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DECreated.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtNumber.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControlBottom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlBottom.SuspendLayout()
         CType(Me.PanelControlNote, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -329,9 +330,9 @@ Partial Class FormRecDet
         'PanelControTopLeft
         '
         Me.PanelControTopLeft.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControTopLeft.Controls.Add(Me.DateEdit1)
+        Me.PanelControTopLeft.Controls.Add(Me.DECreated)
         Me.PanelControTopLeft.Controls.Add(Me.LabelControl2)
-        Me.PanelControTopLeft.Controls.Add(Me.TextEdit1)
+        Me.PanelControTopLeft.Controls.Add(Me.TxtNumber)
         Me.PanelControTopLeft.Controls.Add(Me.LabelControl1)
         Me.PanelControTopLeft.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelControTopLeft.Location = New System.Drawing.Point(0, 0)
@@ -339,19 +340,19 @@ Partial Class FormRecDet
         Me.PanelControTopLeft.Size = New System.Drawing.Size(347, 96)
         Me.PanelControTopLeft.TabIndex = 0
         '
-        'DateEdit1
+        'DECreated
         '
-        Me.DateEdit1.EditValue = Nothing
-        Me.DateEdit1.Enabled = False
-        Me.DateEdit1.Location = New System.Drawing.Point(109, 38)
-        Me.DateEdit1.Name = "DateEdit1"
-        Me.DateEdit1.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateEdit1.Properties.Appearance.Options.UseFont = True
-        Me.DateEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.DateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.DateEdit1.Size = New System.Drawing.Size(223, 20)
-        Me.DateEdit1.TabIndex = 3
-        Me.DateEdit1.TabStop = False
+        Me.DECreated.EditValue = Nothing
+        Me.DECreated.Enabled = False
+        Me.DECreated.Location = New System.Drawing.Point(109, 38)
+        Me.DECreated.Name = "DECreated"
+        Me.DECreated.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DECreated.Properties.Appearance.Options.UseFont = True
+        Me.DECreated.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DECreated.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DECreated.Size = New System.Drawing.Size(223, 20)
+        Me.DECreated.TabIndex = 3
+        Me.DECreated.TabStop = False
         '
         'LabelControl2
         '
@@ -362,16 +363,16 @@ Partial Class FormRecDet
         Me.LabelControl2.TabIndex = 2
         Me.LabelControl2.Text = "Created Date"
         '
-        'TextEdit1
+        'TxtNumber
         '
-        Me.TextEdit1.Enabled = False
-        Me.TextEdit1.Location = New System.Drawing.Point(109, 12)
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit1.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit1.Size = New System.Drawing.Size(223, 20)
-        Me.TextEdit1.TabIndex = 1
-        Me.TextEdit1.TabStop = False
+        Me.TxtNumber.Enabled = False
+        Me.TxtNumber.Location = New System.Drawing.Point(109, 12)
+        Me.TxtNumber.Name = "TxtNumber"
+        Me.TxtNumber.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtNumber.Properties.Appearance.Options.UseFont = True
+        Me.TxtNumber.Size = New System.Drawing.Size(223, 20)
+        Me.TxtNumber.TabIndex = 1
+        Me.TxtNumber.TabStop = False
         '
         'LabelControl1
         '
@@ -737,7 +738,7 @@ Partial Class FormRecDet
         '
         'GVScanSum
         '
-        Me.GVScanSum.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7})
+        Me.GVScanSum.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumnCodeSum})
         Me.GVScanSum.GridControl = Me.GCScanSum
         Me.GVScanSum.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "rec_qty", Me.GridColumn5, "{0:n0}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", Me.GridColumn7, "{0:n2}")})
         Me.GVScanSum.Name = "GVScanSum"
@@ -761,7 +762,7 @@ Partial Class FormRecDet
         Me.GridColumn2.Name = "GridColumn2"
         Me.GridColumn2.Visible = True
         Me.GridColumn2.VisibleIndex = 0
-        Me.GridColumn2.Width = 33
+        Me.GridColumn2.Width = 40
         '
         'GridColumn3
         '
@@ -769,8 +770,8 @@ Partial Class FormRecDet
         Me.GridColumn3.FieldName = "item_name"
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.Visible = True
-        Me.GridColumn3.VisibleIndex = 1
-        Me.GridColumn3.Width = 284
+        Me.GridColumn3.VisibleIndex = 2
+        Me.GridColumn3.Width = 225
         '
         'GridColumn4
         '
@@ -778,8 +779,8 @@ Partial Class FormRecDet
         Me.GridColumn4.FieldName = "size"
         Me.GridColumn4.Name = "GridColumn4"
         Me.GridColumn4.Visible = True
-        Me.GridColumn4.VisibleIndex = 2
-        Me.GridColumn4.Width = 52
+        Me.GridColumn4.VisibleIndex = 3
+        Me.GridColumn4.Width = 48
         '
         'GridColumn5
         '
@@ -790,8 +791,8 @@ Partial Class FormRecDet
         Me.GridColumn5.Name = "GridColumn5"
         Me.GridColumn5.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "rec_qty", "{0:n0}")})
         Me.GridColumn5.Visible = True
-        Me.GridColumn5.VisibleIndex = 3
-        Me.GridColumn5.Width = 45
+        Me.GridColumn5.VisibleIndex = 4
+        Me.GridColumn5.Width = 41
         '
         'GridColumn6
         '
@@ -802,8 +803,8 @@ Partial Class FormRecDet
         Me.GridColumn6.Name = "GridColumn6"
         Me.GridColumn6.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "price", "{0:n2}")})
         Me.GridColumn6.Visible = True
-        Me.GridColumn6.VisibleIndex = 4
-        Me.GridColumn6.Width = 119
+        Me.GridColumn6.VisibleIndex = 5
+        Me.GridColumn6.Width = 96
         '
         'GridColumn7
         '
@@ -816,8 +817,17 @@ Partial Class FormRecDet
         Me.GridColumn7.UnboundExpression = "[price] * [rec_qty]"
         Me.GridColumn7.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
         Me.GridColumn7.Visible = True
-        Me.GridColumn7.VisibleIndex = 5
-        Me.GridColumn7.Width = 213
+        Me.GridColumn7.VisibleIndex = 6
+        Me.GridColumn7.Width = 160
+        '
+        'GridColumnCodeSum
+        '
+        Me.GridColumnCodeSum.Caption = "Code"
+        Me.GridColumnCodeSum.FieldName = "item_code"
+        Me.GridColumnCodeSum.Name = "GridColumnCodeSum"
+        Me.GridColumnCodeSum.Visible = True
+        Me.GridColumnCodeSum.VisibleIndex = 1
+        Me.GridColumnCodeSum.Width = 136
         '
         'FormRecDet
         '
@@ -858,9 +868,9 @@ Partial Class FormRecDet
         CType(Me.PanelControTopLeft, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControTopLeft.ResumeLayout(False)
         Me.PanelControTopLeft.PerformLayout()
-        CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DECreated.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DECreated.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtNumber.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControlBottom, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlBottom.ResumeLayout(False)
         CType(Me.PanelControlNote, System.ComponentModel.ISupportInitialize).EndInit()
@@ -901,9 +911,9 @@ Partial Class FormRecDet
     Friend WithEvents TxtCodeCompFrom As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControTopLeft As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents DateEdit1 As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents DECreated As DevExpress.XtraEditors.DateEdit
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtNumber As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TxtNameCompTo As DevExpress.XtraEditors.TextEdit
     Friend WithEvents TxtCodeCompTo As DevExpress.XtraEditors.TextEdit
@@ -950,4 +960,5 @@ Partial Class FormRecDet
     Friend WithEvents GridColumn6 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn7 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnCode As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumnCodeSum As DevExpress.XtraGrid.Columns.GridColumn
 End Class

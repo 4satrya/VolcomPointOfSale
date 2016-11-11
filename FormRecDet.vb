@@ -18,8 +18,24 @@
 
     Sub actionLoad()
         If action = "upd" Then
+            Dim rc As New ClassRec()
+            Dim query As String = rc.queryMain("AND r.id_rec=" + id + "", "1")
+            Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+            TxtNumber.Text = data.Rows(0)("rec_number").ToString
+            DECreated.EditValue = data.Rows(0)("rec_date")
+            id_comp_from = data.Rows(0)("id_comp_from").ToString
+            TxtCodeCompFrom.Text = data.Rows(0)("comp_number_from").ToString
+            TxtNameCompFrom.Text = data.Rows(0)("comp_name_from").ToString
+            id_comp_to = data.Rows(0)("id_comp_to").ToString
+            TxtCodeCompTo.Text = data.Rows(0)("comp_number_to").ToString
+            TxtNameCompTo.Text = data.Rows(0)("comp_name_to").ToString
+            TxtRef.Text = data.Rows(0)("ref").ToString
+            DERefDate.EditValue = data.Rows(0)("ref_date")
+            MENote.Text = data.Rows(0)("rec_note").ToString
+            id_report_status = data.Rows(0)("id_report_status").ToString
+            LEReportStatus.ItemIndex = LEReportStatus.Properties.GetDataSourceRowIndex("id_report_status", data.Rows(0)("id_report_status").ToString)
+
             viewDetail()
-            viewSummary()
             allow_status()
             XTPScanned.PageVisible = False
             XTPSummary.PageVisible = True
@@ -27,7 +43,6 @@
             LEReportStatus.Enabled = False
             BtnPrint.Enabled = False
             viewDetail()
-            viewSummary()
             XTPSummary.PageVisible = False
         End If
     End Sub
@@ -35,14 +50,11 @@
     Sub viewDetail()
         Dim query As String = "CALL get_rec('" + id + "')"
         Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
-        GCScan.DataSource = data
-    End Sub
-
-
-    Sub viewSummary()
-        Dim query As String = "CALL get_rec_sum('" + id + "')"
-        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
-        GCScanSum.DataSource = data
+        If action = "ins" Then
+            GCScan.DataSource = data
+        Else
+            GCScanSum.DataSource = data
+        End If
     End Sub
 
 
@@ -175,9 +187,93 @@
     End Sub
 
     Sub save()
-        Cursor = Cursors.WaitCursor
-        infoCustom("save")
-        Cursor = Cursors.Default
+        Dim ref As String = addSlashes(TxtRef.Text)
+        Dim ref_date As String = DateTime.Parse(DERefDate.EditValue.ToString).ToString("yyyy-MM-dd")
+        Dim rec_note As String = addSlashes(MENote.Text)
+        Dim id_report_status As String = LEReportStatus.EditValue.ToString
+
+        If id_comp_from = "-1" Or id_comp_to = "-1" Or ref = "" Or ref_date = "" Or GVScan.RowCount = 0 Then
+            stopCustom("Data can't blank")
+        Else
+            Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save this transaction?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+            If confirm = DialogResult.Yes Then
+                Cursor = Cursors.WaitCursor
+                If action = "ins" Then
+                    Dim data_temp As DataTable = GCScan.DataSource
+                    Dim connection_string As String = String.Format("Data Source={0};User Id={1};Password={2};Database={3};Convert Zero Datetime=True", app_host, app_username, app_password, app_database)
+                    Dim connection As New MySql.Data.MySqlClient.MySqlConnection(connection_string)
+                    connection.Open()
+                    Dim command As MySql.Data.MySqlClient.MySqlCommand = connection.CreateCommand()
+                    Dim qry As String = "DROP TABLE IF EXISTS tb_rec_temp; CREATE TEMPORARY TABLE IF NOT EXISTS tb_rec_temp AS ( SELECT * FROM ("
+                    For d As Integer = 0 To data_temp.Rows.Count - 1
+                        Dim id_item As String = data_temp.Rows(d)("id_item").ToString
+                        Dim item_code As String = data_temp.Rows(d)("item_code").ToString
+                        Dim item_name As String = data_temp.Rows(d)("item_name").ToString
+                        Dim size As String = data_temp.Rows(d)("size").ToString
+                        Dim price As String = decimalSQL(data_temp.Rows(d)("price").ToString)
+                        If d > 0 Then
+                            qry += "UNION ALL "
+                        End If
+                        qry += "SELECT '" + id_item + "' AS `id_item`, '" + item_code + "' AS `item_code`, '" + item_name + "' AS `item_name`, '" + size + "' AS `size` , '" + price + "' AS `price` "
+                    Next
+                    qry += ") a ); ALTER TABLE tb_rec_temp CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci; "
+                    command.CommandText = qry
+                    command.ExecuteNonQuery()
+                    command.Dispose()
+                    ' Console.WriteLine(qry)
+
+                    Dim data_view As New DataTable
+                    Dim qry_view As String = "SELECT a.id_item, a.item_code, a.item_name, a.size, COUNT(a.id_item) AS `rec_qty`, a.price 
+                                FROM tb_rec_temp a 
+                                GROUP BY a.id_item"
+                    Dim adapter As New MySql.Data.MySqlClient.MySqlDataAdapter(qry_view, connection)
+                    adapter.SelectCommand.CommandTimeout = 300
+                    adapter.Fill(data_view)
+                    adapter.Dispose()
+                    connection.Close()
+                    connection.Dispose()
+                    GCScanSum.DataSource = data_view
+
+                    'main query
+                    Dim query As String = "INSERT INTO tb_rec(id_comp_from, id_comp_to, rec_number, rec_date, ref, ref_date, rec_note, id_report_status) 
+                    VALUES('" + id_comp_from + "', '" + id_comp_to + "', header_number(1), NOW(), '" + ref + "', '" + ref_date + "', '" + rec_note + "', '1'); SELECT LAST_INSERT_ID(); "
+                    id = execute_query(query, 0, True, "", "", "", "")
+
+                    'detail
+                    Dim query_det As String = "INSERT INTO tb_rec_det(id_rec, id_item, price, rec_qty) VALUES("
+                    For i As Integer = 0 To data_view.Rows.Count - 1
+                        Dim id_item As String = data_view.Rows(i)("id_item").ToString
+                        Dim price As String = data_view.Rows(i)("price").ToString
+                        Dim rec_qty As String = data_view.Rows(i)("rec_qty").ToString
+                        If i > 0 Then
+                            query_det += ", "
+                        End If
+                        query_det += "'" + id + "','" + id_item + "', '" + price + "', '" + rec_qty + "'"
+                    Next
+                    query_det += ") "
+                    If data_view.Rows.Count > 0 Then
+                        execute_non_query(query_det, True, "", "", "", "")
+                    End If
+
+                    FormRec.viewRec()
+                    FormRec.GVRec.FocusedRowHandle = find_row(FormRec.GVRec, "id_rec", id)
+                    action = "upd"
+                    actionLoad()
+                    infoCustom("Document #" + TxtNumber.Text + " was created successfully.")
+                Else
+                    Dim query As String = "UPDATE tb_rec SET id_comp_from='" + id_comp_from + "', id_comp_to='" + id_comp_to + "', 
+                    ref='" + ref + "', ref_date='" + ref_date + "', rec_note='" + rec_note + "', id_report_status='" + id_report_status + "'
+                    WHERE id_rec ='" + id + "' "
+                    execute_non_query(query, True, "", "", "", "")
+                    FormRec.viewRec()
+                    FormRec.GVRec.FocusedRowHandle = find_row(FormRec.GVRec, "id_rec", id)
+                    action = "upd"
+                    actionLoad()
+                    infoCustom("Document #" + TxtNumber.Text + " was edited successfully.")
+                End If
+                Cursor = Cursors.Default
+            End If
+        End If
     End Sub
 
     Sub closeForm()
@@ -265,6 +361,12 @@
             End If
             TxtItemCode.Text = ""
             TxtItemCode.Focus()
+        End If
+    End Sub
+
+    Private Sub GVScanSum_CustomColumnDisplayText(sender As Object, e As DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs) Handles GVScanSum.CustomColumnDisplayText
+        If e.Column.FieldName = "no" Then
+            e.DisplayText = (e.ListSourceRowIndex + 1).ToString()
         End If
     End Sub
 End Class
