@@ -2110,7 +2110,7 @@ Module Common
     Function check_print_report_status(ByVal id_report_status As String)
         Dim status As Boolean = True
 
-        If id_report_status = "1" Or id_report_status = "3" Or id_report_status = "4" Or id_report_status = "6" Or id_report_status = "7" Then
+        If id_report_status = "1" Or id_report_status = "3" Or id_report_status = "4" Or id_report_status = "5" Or id_report_status = "6" Or id_report_status = "7" Then
             'approve / on process / completed / received
             status = True
         Else
@@ -3156,5 +3156,9 @@ Module Common
         age = start.Year - dob.Year
         If (dob > start.AddYears(-age)) Then age -= 1
         Return age
+    End Function
+
+    Function queryReportStatus()
+        Return "SELECT * FROM tb_lookup_report_status a WHERE a.id_report_status=1 OR a.id_report_status=5 OR a.id_report_status=6  ORDER BY a.id_report_status ASC "
     End Function
 End Module

@@ -350,6 +350,8 @@ Partial Class FormRecDet
         Me.DECreated.Properties.Appearance.Options.UseFont = True
         Me.DECreated.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.DECreated.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DECreated.Properties.DisplayFormat.FormatString = "dd MMMM yyyy"
+        Me.DECreated.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.DECreated.Size = New System.Drawing.Size(223, 20)
         Me.DECreated.TabIndex = 3
         Me.DECreated.TabStop = False

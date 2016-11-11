@@ -12,7 +12,7 @@
     End Sub
 
     Sub viewReportStatus()
-        Dim query As String = "SELECT * FROM tb_lookup_report_status a ORDER BY a.id_report_status ASC "
+        Dim query As String = queryReportStatus()
         viewLookupQuery(LEReportStatus, query, 0, "report_status", "id_report_status")
     End Sub
 
@@ -270,6 +270,17 @@
                     ref='" + ref + "', ref_date='" + ref_date + "', rec_note='" + rec_note + "', id_report_status='" + id_report_status + "'
                     WHERE id_rec ='" + id + "' "
                     execute_non_query(query, True, "", "", "", "")
+
+                    'completed
+                    If id_report_status = "6" Then
+                        Dim query_stock As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
+                        SELECT tb_rec.id_comp_to, 1, tb_rec_det.id_item, 1, " + id + ", tb_rec_det.rec_qty, NOW(), 1 
+                        FROM tb_rec_det 
+                        INNER JOIN tb_rec ON tb_rec.id_rec = tb_rec_det.id_rec
+                        WHERE tb_rec_det.id_rec=" + id + ""
+                        execute_non_query(query_stock, True, "", "", "", "")
+                    End If
+
                     FormRec.viewRec()
                     FormRec.GVRec.FocusedRowHandle = find_row(FormRec.GVRec, "id_rec", id)
                     action = "upd"
