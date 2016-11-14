@@ -1625,7 +1625,6 @@ Module Common
         'End Try
     End Sub
     Sub print(ByVal GridControlHere As DevExpress.XtraGrid.GridControl, ByVal title_here As String)
-        apply_skin_print()
         title_print = ""
         title_print = title_here
         Dim componentLink As New PrintableComponentLink(New PrintingSystem())
@@ -1645,8 +1644,7 @@ Module Common
 
         ' componentLink.
         componentLink.CreateDocument()
-        componentLink.ShowPreview()
-        apply_skin()
+        componentLink.ShowPreviewDialog()
     End Sub
     Sub print_tree(ByVal TreeHere As DevExpress.XtraTreeList.TreeList, ByVal title_here As String)
         title_print = ""

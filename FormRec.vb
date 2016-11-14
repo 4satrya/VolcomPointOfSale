@@ -55,7 +55,9 @@
     End Sub
 
     Sub printPreview()
+        FormBlack.Show()
         print(GCRec, "Product List")
+        FormBlack.Close()
     End Sub
 
     Sub viewRec()

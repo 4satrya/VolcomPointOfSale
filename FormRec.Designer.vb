@@ -50,6 +50,7 @@ Partial Class FormRec
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintPreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GridColumnPreparedBy = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,9 +107,9 @@ Partial Class FormRec
         Me.PanelControl2.Controls.Add(Me.LabelControl2)
         Me.PanelControl2.Controls.Add(Me.LabelControl1)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControl2.Location = New System.Drawing.Point(291, 0)
+        Me.PanelControl2.Location = New System.Drawing.Point(301, 0)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(330, 35)
+        Me.PanelControl2.Size = New System.Drawing.Size(320, 35)
         Me.PanelControl2.TabIndex = 7
         '
         'LabelControl11
@@ -203,6 +204,7 @@ Partial Class FormRec
         '
         'GCRec
         '
+        Me.GCRec.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GCRec.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCRec.Location = New System.Drawing.Point(20, 65)
         Me.GCRec.LookAndFeel.SkinName = "Office 2010 Silver"
@@ -215,7 +217,7 @@ Partial Class FormRec
         '
         'GVRec
         '
-        Me.GVRec.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnIdRec, Me.GridColumnNumber, Me.GridColumn3, Me.GridColumnTo, Me.GridColumnDate, Me.GridColumnTotal, Me.GridColumnStt, Me.GridColumnReference})
+        Me.GVRec.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnIdRec, Me.GridColumnNumber, Me.GridColumn3, Me.GridColumnTo, Me.GridColumnDate, Me.GridColumnTotal, Me.GridColumnStt, Me.GridColumnReference, Me.GridColumnPreparedBy})
         Me.GVRec.GridControl = Me.GCRec
         Me.GVRec.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "total_rec", Nothing, "{0:N0}")})
         Me.GVRec.Name = "GVRec"
@@ -236,6 +238,7 @@ Partial Class FormRec
         Me.GridColumnNumber.Name = "GridColumnNumber"
         Me.GridColumnNumber.Visible = True
         Me.GridColumnNumber.VisibleIndex = 0
+        Me.GridColumnNumber.Width = 93
         '
         'GridColumn3
         '
@@ -244,6 +247,7 @@ Partial Class FormRec
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 1
+        Me.GridColumn3.Width = 93
         '
         'GridColumnTo
         '
@@ -252,6 +256,7 @@ Partial Class FormRec
         Me.GridColumnTo.Name = "GridColumnTo"
         Me.GridColumnTo.Visible = True
         Me.GridColumnTo.VisibleIndex = 2
+        Me.GridColumnTo.Width = 93
         '
         'GridColumnDate
         '
@@ -262,6 +267,7 @@ Partial Class FormRec
         Me.GridColumnDate.Name = "GridColumnDate"
         Me.GridColumnDate.Visible = True
         Me.GridColumnDate.VisibleIndex = 4
+        Me.GridColumnDate.Width = 93
         '
         'GridColumnTotal
         '
@@ -272,7 +278,8 @@ Partial Class FormRec
         Me.GridColumnTotal.Name = "GridColumnTotal"
         Me.GridColumnTotal.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "total_rec", "{0:N0}")})
         Me.GridColumnTotal.Visible = True
-        Me.GridColumnTotal.VisibleIndex = 5
+        Me.GridColumnTotal.VisibleIndex = 6
+        Me.GridColumnTotal.Width = 55
         '
         'GridColumnStt
         '
@@ -280,7 +287,8 @@ Partial Class FormRec
         Me.GridColumnStt.FieldName = "report_status"
         Me.GridColumnStt.Name = "GridColumnStt"
         Me.GridColumnStt.Visible = True
-        Me.GridColumnStt.VisibleIndex = 6
+        Me.GridColumnStt.VisibleIndex = 7
+        Me.GridColumnStt.Width = 133
         '
         'GridColumnReference
         '
@@ -289,42 +297,52 @@ Partial Class FormRec
         Me.GridColumnReference.Name = "GridColumnReference"
         Me.GridColumnReference.Visible = True
         Me.GridColumnReference.VisibleIndex = 3
+        Me.GridColumnReference.Width = 93
         '
         'ContextMenuStrip1
         '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.PrintPreviewToolStripMenuItem, Me.CloseToolStripMenuItem})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem, Me.NewToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.PrintPreviewToolStripMenuItem, Me.CloseToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(144, 114)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(108, 114)
         '
         'NewToolStripMenuItem
         '
         Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.NewToolStripMenuItem.Text = "New"
         '
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
-        Me.EditToolStripMenuItem.Text = "Edit"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.EditToolStripMenuItem.Text = "Detail"
         '
         'DeleteToolStripMenuItem
         '
         Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.DeleteToolStripMenuItem.Text = "Delete"
         '
         'PrintPreviewToolStripMenuItem
         '
         Me.PrintPreviewToolStripMenuItem.Name = "PrintPreviewToolStripMenuItem"
-        Me.PrintPreviewToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
-        Me.PrintPreviewToolStripMenuItem.Text = "Print Preview"
+        Me.PrintPreviewToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.PrintPreviewToolStripMenuItem.Text = "Print"
         '
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.CloseToolStripMenuItem.Text = "Close"
+        '
+        'GridColumnPreparedBy
+        '
+        Me.GridColumnPreparedBy.Caption = "Prepared By"
+        Me.GridColumnPreparedBy.FieldName = "employee_name"
+        Me.GridColumnPreparedBy.Name = "GridColumnPreparedBy"
+        Me.GridColumnPreparedBy.Visible = True
+        Me.GridColumnPreparedBy.VisibleIndex = 5
+        Me.GridColumnPreparedBy.Width = 93
         '
         'FormRec
         '
@@ -388,4 +406,5 @@ Partial Class FormRec
     Friend WithEvents GridColumnTotal As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnStt As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnReference As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumnPreparedBy As DevExpress.XtraGrid.Columns.GridColumn
 End Class
