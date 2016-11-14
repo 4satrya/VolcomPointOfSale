@@ -44,7 +44,7 @@ Partial Class FormHome
         Me.TIRet = New DevExpress.XtraEditors.TileItem()
         Me.TITrf = New DevExpress.XtraEditors.TileItem()
         Me.TIAccount = New DevExpress.XtraEditors.TileItem()
-        Me.TIPOS = New DevExpress.XtraEditors.TileItem()
+        Me.TIStock = New DevExpress.XtraEditors.TileItem()
         Me.TICompany = New DevExpress.XtraEditors.TileItem()
         Me.TIUser = New DevExpress.XtraEditors.TileItem()
         Me.TIExit = New DevExpress.XtraEditors.TileItem()
@@ -125,7 +125,7 @@ Partial Class FormHome
         Me.TGGeneral.Items.Add(Me.TIRet)
         Me.TGGeneral.Items.Add(Me.TITrf)
         Me.TGGeneral.Items.Add(Me.TIAccount)
-        Me.TGGeneral.Items.Add(Me.TIPOS)
+        Me.TGGeneral.Items.Add(Me.TIStock)
         Me.TGGeneral.Items.Add(Me.TICompany)
         Me.TGGeneral.Items.Add(Me.TIUser)
         Me.TGGeneral.Items.Add(Me.TIExit)
@@ -199,16 +199,16 @@ Partial Class FormHome
         Me.TIAccount.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TIAccount.Name = "TIAccount"
         '
-        'TIPOS
+        'TIStock
         '
-        Me.TIPOS.BackgroundImage = CType(resources.GetObject("TIPOS.BackgroundImage"), System.Drawing.Image)
-        Me.TIPOS.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement6.Text = "Point of Sale"
+        Me.TIStock.BackgroundImage = CType(resources.GetObject("TIStock.BackgroundImage"), System.Drawing.Image)
+        Me.TIStock.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        TileItemElement6.Text = "Stock"
         TileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TIPOS.Elements.Add(TileItemElement6)
-        Me.TIPOS.Id = 23
-        Me.TIPOS.ItemSize = DevExpress.XtraEditors.TileItemSize.Large
-        Me.TIPOS.Name = "TIPOS"
+        Me.TIStock.Elements.Add(TileItemElement6)
+        Me.TIStock.Id = 23
+        Me.TIStock.ItemSize = DevExpress.XtraEditors.TileItemSize.Large
+        Me.TIStock.Name = "TIStock"
         '
         'TICompany
         '
@@ -609,7 +609,7 @@ Partial Class FormHome
     Friend WithEvents NavButton5 As DevExpress.XtraBars.Navigation.NavButton
     Friend WithEvents TileNavCategory1 As DevExpress.XtraBars.Navigation.TileNavCategory
     Friend WithEvents PanelControlTop As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents TIPOS As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TIStock As DevExpress.XtraEditors.TileItem
     Friend WithEvents TICompany As DevExpress.XtraEditors.TileItem
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl

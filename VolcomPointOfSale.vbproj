@@ -64,6 +64,7 @@
     <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v15.1.Extensions, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -197,6 +198,12 @@
     <Compile Include="FormStart.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormStock.Designer.vb">
+      <DependentUpon>FormStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormUser.Designer.vb">
       <DependentUpon>FormUser.vb</DependentUpon>
     </Compile>
@@ -237,6 +244,11 @@
     </Compile>
     <Compile Include="ReportFGRepair.vb">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportFGRepairDet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportFGRepairDet.resx</DependentUpon>
     </Compile>
     <Compile Include="ReportRec.Designer.vb">
       <DependentUpon>ReportRec.vb</DependentUpon>
@@ -309,6 +321,9 @@
     <EmbeddedResource Include="FormStart.resx">
       <DependentUpon>FormStart.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormStock.resx">
+      <DependentUpon>FormStock.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUser.resx">
       <DependentUpon>FormUser.vb</DependentUpon>
     </EmbeddedResource>
@@ -328,7 +343,10 @@
     <EmbeddedResource Include="ReportFGRepair.resx">
       <DependentUpon>ReportFGRepair.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportFGRepairDet.resx" />
+    <EmbeddedResource Include="ReportFGRepairDet.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportFGRepairDet.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportRec.resx">
       <DependentUpon>ReportRec.vb</DependentUpon>
     </EmbeddedResource>
