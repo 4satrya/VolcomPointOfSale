@@ -38,6 +38,8 @@ Partial Class FormRecDet
         Me.TxtCodeCompFrom = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControTopLeft = New DevExpress.XtraEditors.PanelControl()
+        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtPreparedBy = New DevExpress.XtraEditors.TextEdit()
         Me.DECreated = New DevExpress.XtraEditors.DateEdit()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.TxtNumber = New DevExpress.XtraEditors.TextEdit()
@@ -98,6 +100,7 @@ Partial Class FormRecDet
         CType(Me.TxtCodeCompFrom.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControTopLeft, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControTopLeft.SuspendLayout()
+        CType(Me.TxtPreparedBy.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DECreated.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DECreated.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtNumber.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -167,7 +170,7 @@ Partial Class FormRecDet
         Me.PanelControlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControlTop.Location = New System.Drawing.Point(0, 24)
         Me.PanelControlTop.Name = "PanelControlTop"
-        Me.PanelControlTop.Size = New System.Drawing.Size(808, 96)
+        Me.PanelControlTop.Size = New System.Drawing.Size(808, 103)
         Me.PanelControlTop.TabIndex = 0
         '
         'PanelControlTopFill
@@ -188,7 +191,7 @@ Partial Class FormRecDet
         Me.PanelControlTopFill.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelControlTopFill.Location = New System.Drawing.Point(0, 0)
         Me.PanelControlTopFill.Name = "PanelControlTopFill"
-        Me.PanelControlTopFill.Size = New System.Drawing.Size(455, 96)
+        Me.PanelControlTopFill.Size = New System.Drawing.Size(455, 103)
         Me.PanelControlTopFill.TabIndex = 1
         '
         'LabelControl10
@@ -330,6 +333,8 @@ Partial Class FormRecDet
         'PanelControTopLeft
         '
         Me.PanelControTopLeft.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControTopLeft.Controls.Add(Me.LabelControl11)
+        Me.PanelControTopLeft.Controls.Add(Me.TxtPreparedBy)
         Me.PanelControTopLeft.Controls.Add(Me.DECreated)
         Me.PanelControTopLeft.Controls.Add(Me.LabelControl2)
         Me.PanelControTopLeft.Controls.Add(Me.TxtNumber)
@@ -337,8 +342,28 @@ Partial Class FormRecDet
         Me.PanelControTopLeft.Dock = System.Windows.Forms.DockStyle.Right
         Me.PanelControTopLeft.Location = New System.Drawing.Point(461, 0)
         Me.PanelControTopLeft.Name = "PanelControTopLeft"
-        Me.PanelControTopLeft.Size = New System.Drawing.Size(347, 96)
+        Me.PanelControTopLeft.Size = New System.Drawing.Size(347, 103)
         Me.PanelControTopLeft.TabIndex = 0
+        '
+        'LabelControl11
+        '
+        Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl11.Location = New System.Drawing.Point(12, 67)
+        Me.LabelControl11.Name = "LabelControl11"
+        Me.LabelControl11.Size = New System.Drawing.Size(61, 13)
+        Me.LabelControl11.TabIndex = 5
+        Me.LabelControl11.Text = "Prepared By"
+        '
+        'TxtPreparedBy
+        '
+        Me.TxtPreparedBy.Enabled = False
+        Me.TxtPreparedBy.Location = New System.Drawing.Point(109, 64)
+        Me.TxtPreparedBy.Name = "TxtPreparedBy"
+        Me.TxtPreparedBy.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtPreparedBy.Properties.Appearance.Options.UseFont = True
+        Me.TxtPreparedBy.Size = New System.Drawing.Size(223, 20)
+        Me.TxtPreparedBy.TabIndex = 4
+        Me.TxtPreparedBy.TabStop = False
         '
         'DECreated
         '
@@ -350,7 +375,7 @@ Partial Class FormRecDet
         Me.DECreated.Properties.Appearance.Options.UseFont = True
         Me.DECreated.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.DECreated.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.DECreated.Properties.DisplayFormat.FormatString = "dd MMMM yyyy"
+        Me.DECreated.Properties.DisplayFormat.FormatString = "dd MMMM yyyy hh:mm tt"
         Me.DECreated.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.DECreated.Size = New System.Drawing.Size(223, 20)
         Me.DECreated.TabIndex = 3
@@ -407,7 +432,7 @@ Partial Class FormRecDet
         Me.BtnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnPrint.Dock = System.Windows.Forms.DockStyle.Right
         Me.BtnPrint.Image = CType(resources.GetObject("BtnPrint.Image"), System.Drawing.Image)
-        Me.BtnPrint.Location = New System.Drawing.Point(512, 2)
+        Me.BtnPrint.Location = New System.Drawing.Point(518, 2)
         Me.BtnPrint.Name = "BtnPrint"
         Me.BtnPrint.Size = New System.Drawing.Size(102, 33)
         Me.BtnPrint.TabIndex = 12
@@ -424,11 +449,11 @@ Partial Class FormRecDet
         Me.BtnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnClose.Dock = System.Windows.Forms.DockStyle.Right
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(614, 2)
+        Me.BtnClose.Location = New System.Drawing.Point(620, 2)
         Me.BtnClose.Name = "BtnClose"
-        Me.BtnClose.Size = New System.Drawing.Size(96, 33)
+        Me.BtnClose.Size = New System.Drawing.Size(90, 33)
         Me.BtnClose.TabIndex = 11
-        Me.BtnClose.Text = "F6 : Close"
+        Me.BtnClose.Text = "Close"
         '
         'BtnSave
         '
@@ -510,10 +535,10 @@ Partial Class FormRecDet
         'XTCItem
         '
         Me.XTCItem.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.XTCItem.Location = New System.Drawing.Point(0, 120)
+        Me.XTCItem.Location = New System.Drawing.Point(0, 127)
         Me.XTCItem.Name = "XTCItem"
         Me.XTCItem.SelectedTabPage = Me.XTPScanned
-        Me.XTCItem.Size = New System.Drawing.Size(808, 353)
+        Me.XTCItem.Size = New System.Drawing.Size(808, 346)
         Me.XTCItem.TabIndex = 1
         Me.XTCItem.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPScanned, Me.XTPSummary})
         '
@@ -522,7 +547,7 @@ Partial Class FormRecDet
         Me.XTPScanned.Controls.Add(Me.GCScan)
         Me.XTPScanned.Controls.Add(Me.PanelControlItem)
         Me.XTPScanned.Name = "XTPScanned"
-        Me.XTPScanned.Size = New System.Drawing.Size(802, 325)
+        Me.XTPScanned.Size = New System.Drawing.Size(802, 318)
         Me.XTPScanned.Text = "Scanned List"
         '
         'GCScan
@@ -531,7 +556,7 @@ Partial Class FormRecDet
         Me.GCScan.Location = New System.Drawing.Point(0, 0)
         Me.GCScan.MainView = Me.GVScan
         Me.GCScan.Name = "GCScan"
-        Me.GCScan.Size = New System.Drawing.Size(802, 288)
+        Me.GCScan.Size = New System.Drawing.Size(802, 281)
         Me.GCScan.TabIndex = 0
         Me.GCScan.TabStop = False
         Me.GCScan.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVScan})
@@ -634,7 +659,7 @@ Partial Class FormRecDet
         Me.PanelControlItem.Controls.Add(Me.BtnAddScan)
         Me.PanelControlItem.Controls.Add(Me.BtnSelect)
         Me.PanelControlItem.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControlItem.Location = New System.Drawing.Point(0, 288)
+        Me.PanelControlItem.Location = New System.Drawing.Point(0, 281)
         Me.PanelControlItem.Name = "PanelControlItem"
         Me.PanelControlItem.Size = New System.Drawing.Size(802, 37)
         Me.PanelControlItem.TabIndex = 2
@@ -725,7 +750,7 @@ Partial Class FormRecDet
         '
         Me.XTPSummary.Controls.Add(Me.GCScanSum)
         Me.XTPSummary.Name = "XTPSummary"
-        Me.XTPSummary.Size = New System.Drawing.Size(802, 325)
+        Me.XTPSummary.Size = New System.Drawing.Size(802, 318)
         Me.XTPSummary.Text = "Summary"
         '
         'GCScanSum
@@ -734,7 +759,7 @@ Partial Class FormRecDet
         Me.GCScanSum.Location = New System.Drawing.Point(0, 0)
         Me.GCScanSum.MainView = Me.GVScanSum
         Me.GCScanSum.Name = "GCScanSum"
-        Me.GCScanSum.Size = New System.Drawing.Size(802, 325)
+        Me.GCScanSum.Size = New System.Drawing.Size(802, 318)
         Me.GCScanSum.TabIndex = 1
         Me.GCScanSum.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVScanSum})
         '
@@ -869,6 +894,7 @@ Partial Class FormRecDet
         CType(Me.PanelControTopLeft, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControTopLeft.ResumeLayout(False)
         Me.PanelControTopLeft.PerformLayout()
+        CType(Me.TxtPreparedBy.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DECreated.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DECreated.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtNumber.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -962,4 +988,6 @@ Partial Class FormRecDet
     Friend WithEvents GridColumn7 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnCode As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnCodeSum As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TxtPreparedBy As DevExpress.XtraEditors.TextEdit
 End Class

@@ -3,7 +3,7 @@
     Public action As String = "-1"
     Public id_comp_from As String = "-1"
     Public id_comp_to As String = "-1"
-    Dim id_report_status As String = "-1"
+    Dim id_report_status_glb As String = "-1"
     Dim item As New ClassItem()
 
     Private Sub FormRecDet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -32,8 +32,9 @@
             TxtRef.Text = data.Rows(0)("ref").ToString
             DERefDate.EditValue = data.Rows(0)("ref_date")
             MENote.Text = data.Rows(0)("rec_note").ToString
-            id_report_status = data.Rows(0)("id_report_status").ToString
+            id_report_status_glb = data.Rows(0)("id_report_status").ToString
             LEReportStatus.ItemIndex = LEReportStatus.Properties.GetDataSourceRowIndex("id_report_status", data.Rows(0)("id_report_status").ToString)
+            TxtPreparedBy.Text = data.Rows(0)("employee_name").ToString
 
             viewDetail()
             allow_status()
@@ -59,7 +60,7 @@
 
 
     Sub allow_status()
-        If check_status(id_report_status) Then
+        If check_status(id_report_status_glb) Then
             MENote.Enabled = True
             BtnSave.Enabled = True
             TxtCodeCompFrom.Enabled = True
@@ -89,7 +90,7 @@
         '    BtnAttachment.Enabled = False
         'End If
 
-        If check_print_report_status(id_report_status) Then
+        If check_print_report_status(id_report_status_glb) Then
             BtnPrint.Enabled = True
         Else
             BtnPrint.Enabled = False
@@ -173,7 +174,7 @@
     Private Sub FormRecDet_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.F5 Then 'save
             save()
-        ElseIf e.KeyCode = Keys.F6 Then 'close
+        ElseIf e.KeyCode = Keys.Escape Then 'close
             closeForm()
         ElseIf e.KeyCode = Keys.F7 Then 'select
             selectList()
@@ -187,7 +188,7 @@
     End Sub
 
     Sub save()
-        If LEReportStatus.EditValue.ToString <> "5" And LEReportStatus.EditValue.ToString <> "6" Then
+        If id_report_status_glb <> "5" And id_report_status_glb <> "6" Then
             Dim ref As String = addSlashes(TxtRef.Text)
             Dim ref_date As String = DateTime.Parse(DERefDate.EditValue.ToString).ToString("yyyy-MM-dd")
             Dim rec_note As String = addSlashes(MENote.Text)
@@ -242,8 +243,8 @@
                         GCScanSum.DataSource = data_view
 
                         'main query
-                        Dim query As String = "INSERT INTO tb_rec(id_comp_from, id_comp_to, rec_number, rec_date, ref, ref_date, rec_note, id_report_status) 
-                    VALUES('" + id_comp_from + "', '" + id_comp_to + "', header_number(1), NOW(), '" + ref + "', '" + ref_date + "', '" + rec_note + "', '1'); SELECT LAST_INSERT_ID(); "
+                        Dim query As String = "INSERT INTO tb_rec(id_comp_from, id_comp_to, rec_number, rec_date, ref, ref_date, rec_note, id_report_status, id_prepared_by) 
+                        VALUES('" + id_comp_from + "', '" + id_comp_to + "', header_number(1), NOW(), '" + ref + "', '" + ref_date + "', '" + rec_note + "', '1', '" + id_user + "'); SELECT LAST_INSERT_ID(); "
                         id = execute_query(query, 0, True, "", "", "", "")
 
                         'detail
@@ -268,17 +269,20 @@
                         infoCustom("Document #" + TxtNumber.Text + " was created successfully.")
                     Else
                         Dim query As String = "UPDATE tb_rec SET id_comp_from='" + id_comp_from + "', id_comp_to='" + id_comp_to + "', 
-                    ref='" + ref + "', ref_date='" + ref_date + "', rec_note='" + rec_note + "', id_report_status='" + id_report_status + "'
-                    WHERE id_rec ='" + id + "' "
+                        ref='" + ref + "', ref_date='" + ref_date + "', rec_note='" + rec_note + "', id_report_status='" + id_report_status + "' "
+                        If id_report_status = "5" Or id_report_status = "6" Then 'final
+                            query += ", final_status_time=NOW() "
+                        End If
+                        query += "WHERE id_rec ='" + id + "' "
                         execute_non_query(query, True, "", "", "", "")
 
                         'completed
                         If id_report_status = "6" Then
                             Dim query_stock As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
-                        SELECT tb_rec.id_comp_to, 1, tb_rec_det.id_item, 1, " + id + ", tb_rec_det.rec_qty, NOW(), 1 
-                        FROM tb_rec_det 
-                        INNER JOIN tb_rec ON tb_rec.id_rec = tb_rec_det.id_rec
-                        WHERE tb_rec_det.id_rec=" + id + ""
+                            SELECT tb_rec.id_comp_to, 1, tb_rec_det.id_item, 1, " + id + ", tb_rec_det.rec_qty, NOW(), 1 
+                            FROM tb_rec_det 
+                            INNER JOIN tb_rec ON tb_rec.id_rec = tb_rec_det.id_rec
+                            WHERE tb_rec_det.id_rec=" + id + ""
                             execute_non_query(query_stock, True, "", "", "", "")
                         End If
 
@@ -286,6 +290,11 @@
                         FormRec.GVRec.FocusedRowHandle = find_row(FormRec.GVRec, "id_rec", id)
                         action = "upd"
                         actionLoad()
+
+                        'show preview when completed
+                        If id_report_status = "6" Then
+                            print()
+                        End If
                     End If
                     Cursor = Cursors.Default
                 End If
@@ -312,17 +321,52 @@
     End Sub
 
     Sub removeScan()
-        Cursor = Cursors.WaitCursor
-        Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
-        If confirm = DialogResult.Yes Then
-            GVScan.DeleteSelectedRows()
+        If id_report_status_glb = "1" Then
+            Cursor = Cursors.WaitCursor
+            Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+            If confirm = DialogResult.Yes Then
+                GVScan.DeleteSelectedRows()
+            End If
+            Cursor = Cursors.Default
         End If
-        Cursor = Cursors.Default
     End Sub
 
     Sub print()
         Cursor = Cursors.WaitCursor
-        infoCustom("print")
+        FormBlack.Show()
+        ReportRec.id = id
+        ReportRec.dt = GCScanSum.DataSource
+        Dim Report As New ReportRec()
+
+        ' '... 
+        ' ' creating and saving the view's layout to a new memory stream 
+        Dim str As System.IO.Stream
+        str = New System.IO.MemoryStream()
+        GVScan.SaveLayoutToStream(str, DevExpress.Utils.OptionsLayoutBase.FullLayout)
+        str.Seek(0, System.IO.SeekOrigin.Begin)
+        Report.GVScanSum.RestoreLayoutFromStream(str, DevExpress.Utils.OptionsLayoutBase.FullLayout)
+        str.Seek(0, System.IO.SeekOrigin.Begin)
+
+        'Grid Detail
+        ReportStyleGridview(Report.GVScanSum)
+
+        'Parse val
+        Report.LabelFrom.Text = TxtCodeCompFrom.Text + " - " + TxtNameCompFrom.Text
+        Report.LabelTo.Text = TxtCodeCompTo.Text + " - " + TxtNameCompTo.Text
+        Report.LRecNumber.Text = TxtNumber.Text
+        Report.LRecDate.Text = DECreated.Text
+        Report.LabelNote.Text = MENote.Text
+        Report.LabelRef.Text = TxtRef.Text
+        Report.LabelRefDate.Text = DERefDate.Text
+        Report.LabelStatus.Text = LEReportStatus.Text
+        Report.LabelPreparedBy.Text = TxtPreparedBy.Text
+        Report.LabelAckFrom.Text = TxtNameCompFrom.Text
+
+
+        ' Show the report's preview. 
+        Dim Tool As DevExpress.XtraReports.UI.ReportPrintTool = New DevExpress.XtraReports.UI.ReportPrintTool(Report)
+        Tool.ShowPreviewDialog()
+        FormBlack.Close()
         Cursor = Cursors.Default
     End Sub
 
@@ -385,5 +429,17 @@
         If e.Column.FieldName = "no" Then
             e.DisplayText = (e.ListSourceRowIndex + 1).ToString()
         End If
+    End Sub
+
+    Private Sub PCClose_MouseHover(sender As Object, e As EventArgs) Handles PCClose.MouseHover
+        Cursor = Cursors.Hand
+    End Sub
+
+    Private Sub PCClose_MouseLeave(sender As Object, e As EventArgs) Handles PCClose.MouseLeave
+        Cursor = Cursors.Default
+    End Sub
+
+    Private Sub PCClose_Click(sender As Object, e As EventArgs) Handles PCClose.Click
+        closeForm()
     End Sub
 End Class

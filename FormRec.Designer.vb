@@ -96,43 +96,43 @@ Partial Class FormRec
         '
         Me.PanelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl2.Controls.Add(Me.LabelControl11)
+        Me.PanelControl2.Controls.Add(Me.LabelControl4)
         Me.PanelControl2.Controls.Add(Me.LabelControl12)
+        Me.PanelControl2.Controls.Add(Me.LabelControl3)
         Me.PanelControl2.Controls.Add(Me.LabelControl8)
         Me.PanelControl2.Controls.Add(Me.LabelControl9)
         Me.PanelControl2.Controls.Add(Me.LabelControl5)
         Me.PanelControl2.Controls.Add(Me.LabelControl6)
-        Me.PanelControl2.Controls.Add(Me.LabelControl3)
-        Me.PanelControl2.Controls.Add(Me.LabelControl4)
         Me.PanelControl2.Controls.Add(Me.LabelControl2)
         Me.PanelControl2.Controls.Add(Me.LabelControl1)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControl2.Location = New System.Drawing.Point(228, 0)
+        Me.PanelControl2.Location = New System.Drawing.Point(291, 0)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(393, 35)
+        Me.PanelControl2.Size = New System.Drawing.Size(330, 35)
         Me.PanelControl2.TabIndex = 7
         '
         'LabelControl11
         '
         Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl11.Location = New System.Drawing.Point(255, 11)
+        Me.LabelControl11.Location = New System.Drawing.Point(227, 11)
         Me.LabelControl11.Name = "LabelControl11"
-        Me.LabelControl11.Size = New System.Drawing.Size(66, 13)
+        Me.LabelControl11.Size = New System.Drawing.Size(24, 13)
         Me.LabelControl11.TabIndex = 19
-        Me.LabelControl11.Text = "Print Preview"
+        Me.LabelControl11.Text = "Print"
         '
         'LabelControl12
         '
         Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl12.Location = New System.Drawing.Point(216, 11)
+        Me.LabelControl12.Location = New System.Drawing.Point(203, 11)
         Me.LabelControl12.Name = "LabelControl12"
-        Me.LabelControl12.Size = New System.Drawing.Size(33, 13)
+        Me.LabelControl12.Size = New System.Drawing.Size(18, 13)
         Me.LabelControl12.TabIndex = 18
-        Me.LabelControl12.Text = "Ctrl+P"
+        Me.LabelControl12.Text = "F10"
         '
         'LabelControl8
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(356, 11)
+        Me.LabelControl8.Location = New System.Drawing.Point(287, 11)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(28, 13)
         Me.LabelControl8.TabIndex = 15
@@ -141,7 +141,7 @@ Partial Class FormRec
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(333, 11)
+        Me.LabelControl9.Location = New System.Drawing.Point(265, 11)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(16, 13)
         Me.LabelControl9.TabIndex = 14
@@ -150,7 +150,7 @@ Partial Class FormRec
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(169, 11)
+        Me.LabelControl5.Location = New System.Drawing.Point(155, 11)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(33, 13)
         Me.LabelControl5.TabIndex = 12
@@ -159,34 +159,34 @@ Partial Class FormRec
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(146, 11)
+        Me.LabelControl6.Location = New System.Drawing.Point(137, 11)
         Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(17, 13)
+        Me.LabelControl6.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl6.TabIndex = 11
-        Me.LabelControl6.Text = "Del"
+        Me.LabelControl6.Text = "F9"
         '
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(108, 11)
+        Me.LabelControl3.Location = New System.Drawing.Point(36, 11)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(20, 13)
+        Me.LabelControl3.Size = New System.Drawing.Size(30, 13)
         Me.LabelControl3.TabIndex = 10
-        Me.LabelControl3.Text = "Edit"
+        Me.LabelControl3.Text = "Detail"
         '
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(77, 11)
+        Me.LabelControl4.Location = New System.Drawing.Point(18, 11)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(27, 13)
+        Me.LabelControl4.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl4.TabIndex = 9
-        Me.LabelControl4.Text = "Enter"
+        Me.LabelControl4.Text = "F7"
         '
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(35, 11)
+        Me.LabelControl2.Location = New System.Drawing.Point(100, 11)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(23, 13)
         Me.LabelControl2.TabIndex = 8
@@ -195,11 +195,11 @@ Partial Class FormRec
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(16, 11)
+        Me.LabelControl1.Location = New System.Drawing.Point(82, 11)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(15, 13)
+        Me.LabelControl1.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl1.TabIndex = 7
-        Me.LabelControl1.Text = "Ins"
+        Me.LabelControl1.Text = "F8"
         '
         'GCRec
         '
@@ -256,7 +256,7 @@ Partial Class FormRec
         'GridColumnDate
         '
         Me.GridColumnDate.Caption = "Created Date"
-        Me.GridColumnDate.DisplayFormat.FormatString = "dd MMMM yyyy"
+        Me.GridColumnDate.DisplayFormat.FormatString = "dd MMMM yyyy hh:mm tt"
         Me.GridColumnDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.GridColumnDate.FieldName = "rec_date"
         Me.GridColumnDate.Name = "GridColumnDate"
