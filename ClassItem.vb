@@ -12,16 +12,17 @@
             condition = ""
         End If
 
-        Dim query As String = "SELECT i.id_item, i.item_code, i.item_name, CONCAT(i.item_code,' - ', i.item_name) AS `item`, i.id_size, s.size, i.price, i.id_product  
+        Dim query As String = "SELECT i.id_item, i.item_code, i.item_name, CONCAT(i.item_code,' - ', i.item_name) AS `item`, i.id_size, s.size, i.id_color, col.color, i.price, i.id_product  
         FROM tb_item i 
         INNER JOIN tb_size s ON s.id_size = i.id_size
+        INNER JOIN tb_color col ON col.id_color = i.id_color
         WHERE i.id_item>0 "
         query += condition + " "
         query += "ORDER BY i.id_item " + order_type
 
         'all item include
         If is_all Then
-            Dim query_all As String = "(SELECT 0 AS `id_item`, '0' AS `item_code`, 'All Product' AS `item_name`, 'All Product' AS `item`, 0 AS `id_size`, '-' AS `size`, 0 AS `price`, 0 AS `id_product` ) "
+            Dim query_all As String = "(SELECT 0 AS `id_item`, '0' AS `item_code`, 'All Product' AS `item_name`, 'All Product' AS `item`, 0 AS `id_size`, '-' AS `size`, 0 AS `id_color`, '-' AS color, 0 AS `price`, 0 AS `id_product` ) "
             query = query_all + " UNION ALL " + "(" + query + ")"
         End If
 

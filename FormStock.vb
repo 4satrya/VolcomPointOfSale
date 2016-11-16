@@ -42,4 +42,36 @@
     Private Sub FormStock_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Dispose()
     End Sub
+
+    Sub viewStock()
+        Dim cond As String = ""
+
+        'storage
+        If SLEStorage.EditValue.ToString <> "0" Then
+            cond += "AND j.id_comp=" + SLEStorage.EditValue.ToString + " "
+        End If
+
+        'supplier
+        If SLESupplier.EditValue.ToString <> "0" Then
+            cond += "AND f.id_comp_supp=" + SLESupplier.EditValue.ToString + " "
+        End If
+
+        'product
+        If SLEItem.EditValue.ToString <> "0" Then
+            cond += "AND f.id_item=" + SLEItem.EditValue.ToString + " "
+        End If
+
+        Dim dt As String = DateTime.Parse(DERefDate.EditValue.ToString).ToString("yyyy-MM-dd")
+        cond += "AND DATE(j.storage_item_datetime) <= DATE(''" + dt + "'') "
+
+        Dim query As String = "CALL view_stock_item('" + cond + "', '2') "
+        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        GCStock.DataSource = data
+    End Sub
+
+    Private Sub BtnView_Click(sender As Object, e As EventArgs) Handles BtnView.Click
+        Cursor = Cursors.WaitCursor
+        viewStock()
+        Cursor = Cursors.Default
+    End Sub
 End Class
