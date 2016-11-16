@@ -131,4 +131,10 @@ Public Class FormHome
         FormStock.ShowDialog()
         Cursor = Cursors.Default
     End Sub
+
+    Private Sub TIRet_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIRet.ItemClick
+        Cursor = Cursors.WaitCursor
+        FormRet.ShowDialog()
+        Cursor = Cursors.Default
+    End Sub
 End Class
