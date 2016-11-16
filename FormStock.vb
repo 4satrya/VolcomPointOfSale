@@ -36,6 +36,16 @@
             showHideFilter()
         ElseIf e.KeyCode = Keys.Escape Then
             Close()
+        ElseIf e.KeyCode = Keys.F10 Then
+            printPreview()
+        End If
+    End Sub
+
+    Sub printPreview()
+        If XTCStock.SelectedTabPageIndex = 0 Then
+            FormBlack.Show()
+            print(GCStock, "STOCK ON HAND")
+            FormBlack.Close()
         End If
     End Sub
 

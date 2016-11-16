@@ -19,7 +19,7 @@
     Sub actionLoad()
         If action = "upd" Then
             Dim rt As New ClassRet()
-            Dim query As String = rt.queryMain("AND r.id_rec=" + id + "", "1")
+            Dim query As String = rt.queryMain("AND r.id_ret=" + id + "", "1")
             Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
             TxtNumber.Text = data.Rows(0)("ret_number").ToString
             DECreated.EditValue = data.Rows(0)("ret_date")
@@ -278,52 +278,59 @@
                 If confirm = DialogResult.Yes Then
                     Cursor = Cursors.WaitCursor
                     If action = "ins" Then
+                        XTPSummary.PageVisible = True
+
                         'main query
-                        'Dim query As String = "INSERT INTO tb_ret(id_comp_from, id_comp_to, ret_number, ret_date, ref, ref_date, ret_note, id_report_status, id_prepared_by) 
-                        'VALUES('" + id_comp_from + "', '" + id_comp_to + "', header_number(2), NOW(), '" + ref + "', '" + ref_date + "', '" + ret_note + "', '1', '" + id_user + "'); SELECT LAST_INSERT_ID(); "
-                        'id = execute_query(query, 0, True, "", "", "", "")
+                        Dim query As String = "INSERT INTO tb_ret(id_comp_from, id_comp_to, ret_number, ret_date, ref, ref_date, ret_note, id_report_status, id_prepared_by) 
+                        VALUES('" + id_comp_from + "', '" + id_comp_to + "', header_number(2), NOW(), '" + ref + "', '" + ref_date + "', '" + ret_note + "', '1', '" + id_user + "'); SELECT LAST_INSERT_ID(); "
+                        id = execute_query(query, 0, True, "", "", "", "")
 
                         'detail
-                        'Dim query_det As String = "INSERT INTO tb_ret_det(id_ret, id_item, price, ret_qty) VALUES"
-                        'For i As Integer = 0 To data_view.Rows.Count - 1
-                        '    Dim id_item As String = data_view.Rows(i)("id_item").ToString
-                        '    Dim price As String = data_view.Rows(i)("price").ToString
-                        '    Dim ret_qty As String = data_view.Rows(i)("ret_qty").ToString
-                        '    If i > 0 Then
-                        '        query_det += ", "
-                        '    End If
-                        '    query_det += "('" + id + "','" + id_item + "', '" + price + "', '" + ret_qty + "')"
-                        'Next
-                        'If data_view.Rows.Count > 0 Then
-                        '    execute_non_query(query_det, True, "", "", "", "")
-                        'End If
+                        Dim query_det As String = "INSERT INTO tb_ret_det(id_ret, id_item, price, ret_qty) VALUES "
+                        For i As Integer = 0 To ((GVScanSum.RowCount - 1) - GetGroupRowCount(GVScanSum))
+                            Dim id_item As String = GVScanSum.GetRowCellValue(i, "id_item").ToString
+                            Dim price As String = decimalSQL(GVScanSum.GetRowCellValue(i, "price").ToString)
+                            Dim ret_qty As String = decimalSQL(GVScanSum.GetRowCellValue(i, "ret_qty").ToString)
+                            If i > 0 Then
+                                query_det += ", "
+                            End If
+                            query_det += "('" + id + "','" + id_item + "', '" + price + "', '" + ret_qty + "')"
+                        Next
+                        If GVScanSum.RowCount > 0 Then
+                            execute_non_query(query_det, True, "", "", "", "")
+                        End If
 
-                        'FormRet.viewRet()
-                        'FormRet.GVRet.FocusedRowHandle = find_row(FormRet.GVRet, "id_ret", id)
-                        'action = "upd"
-                        'actionLoad()
-                        'infoCustom("Document #" + TxtNumber.Text + " was created successfully.")
+
+                        'reserved
+                        Dim query_res As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
+                                                SELECT tb_ret.id_comp_from, 2, tb_ret_det.id_item, 2, " + id + ", tb_ret_det.ret_qty, NOW(), 2 
+                                                FROM tb_ret_det 
+                                                INNER JOIN tb_ret ON tb_ret.id_ret = tb_ret_det.id_ret
+                                                WHERE tb_ret_det.id_ret=" + id + ""
+                        execute_non_query(query_res, True, "", "", "", "")
+
+                        FormRet.viewRet()
+                        FormRet.GVRet.FocusedRowHandle = find_row(FormRet.GVRet, "id_ret", id)
+                        action = "upd"
+                        actionLoad()
+                        infoCustom("Document #" + TxtNumber.Text + " was created successfully.")
                     Else
-                        Dim query As String = "UPDATE tb_rec SET id_comp_from='" + id_comp_from + "', id_comp_to='" + id_comp_to + "', 
-                        ref='" + ref + "', ref_date='" + ref_date + "', rec_note='" + ret_note + "', id_report_status='" + id_report_status + "' "
+                        Dim query As String = "UPDATE tb_ret SET ref='" + ref + "', ref_date='" + ref_date + "', ret_note='" + ret_note + "', id_report_status='" + id_report_status + "' "
                         If id_report_status = "5" Or id_report_status = "6" Then 'final
                             query += ", final_status_time=NOW() "
                         End If
-                        query += "WHERE id_rec ='" + id + "' "
+                        query += "WHERE id_ret ='" + id + "' "
                         execute_non_query(query, True, "", "", "", "")
 
                         'completed
-                        If id_report_status = "6" Then
-                            Dim query_stock As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
-                            SELECT tb_rec.id_comp_to, 1, tb_rec_det.id_item, 1, " + id + ", tb_rec_det.rec_qty, NOW(), 1 
-                            FROM tb_rec_det 
-                            INNER JOIN tb_rec ON tb_rec.id_rec = tb_rec_det.id_rec
-                            WHERE tb_rec_det.id_rec=" + id + ""
-                            execute_non_query(query_stock, True, "", "", "", "")
+                        If id_report_status = "6" Then 'completed
+
+                        ElseIf id_report_status = "5" Then 'cancelled
+
                         End If
 
-                        FormRec.viewRec()
-                        FormRec.GVRec.FocusedRowHandle = find_row(FormRec.GVRec, "id_rec", id)
+                        FormRet.viewRet()
+                        FormRet.GVRet.FocusedRowHandle = find_row(FormRet.GVRet, "id_ret", id)
                         action = "upd"
                         actionLoad()
 
