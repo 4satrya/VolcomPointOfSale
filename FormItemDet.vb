@@ -15,7 +15,7 @@
     Sub actionLoad()
         If action = "upd" Then
             Dim i As New ClassItem()
-            Dim query As String = i.queryMain("AND i.id_item=" + id + "", "1")
+            Dim query As String = i.queryMain("AND i.id_item=" + id + "", "1", False)
             Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
             TxtCode.Text = data.Rows(0)("item_code").ToString
             TxtDesc.Text = data.Rows(0)("item_name").ToString

@@ -49,7 +49,7 @@
 
     Sub viewItem()
         Dim i As New ClassItem()
-        Dim query As String = i.queryMain("-1", "2")
+        Dim query As String = i.queryMain("-1", "2", False)
         Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
         GCItem.DataSource = data
     End Sub

@@ -97,6 +97,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassComp.vb" />
     <Compile Include="ClassCompany.vb" />
     <Compile Include="ClassItem.vb" />
     <Compile Include="ClassRec.vb" />
