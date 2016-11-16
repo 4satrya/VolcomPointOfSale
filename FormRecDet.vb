@@ -321,7 +321,7 @@
     End Sub
 
     Sub removeScan()
-        If id_report_status_glb = "1" Then
+        If id_report_status_glb = "1" Or id_report_status_glb = "-1" Then
             Cursor = Cursors.WaitCursor
             Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
             If confirm = DialogResult.Yes Then
