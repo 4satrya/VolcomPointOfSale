@@ -171,7 +171,7 @@ Partial Class FormRetDet
         Me.PanelControlTop.Location = New System.Drawing.Point(0, 24)
         Me.PanelControlTop.Name = "PanelControlTop"
         Me.PanelControlTop.Size = New System.Drawing.Size(808, 103)
-        Me.PanelControlTop.TabIndex = 8
+        Me.PanelControlTop.TabIndex = 0
         '
         'PanelControlTopFill
         '
@@ -419,7 +419,7 @@ Partial Class FormRetDet
         Me.PanelControlBottom.Location = New System.Drawing.Point(0, 563)
         Me.PanelControlBottom.Name = "PanelControlBottom"
         Me.PanelControlBottom.Size = New System.Drawing.Size(808, 37)
-        Me.PanelControlBottom.TabIndex = 4
+        Me.PanelControlBottom.TabIndex = 3
         '
         'BtnPrint
         '
@@ -483,7 +483,7 @@ Partial Class FormRetDet
         Me.PanelControlNote.Location = New System.Drawing.Point(0, 473)
         Me.PanelControlNote.Name = "PanelControlNote"
         Me.PanelControlNote.Size = New System.Drawing.Size(808, 90)
-        Me.PanelControlNote.TabIndex = 3
+        Me.PanelControlNote.TabIndex = 2
         '
         'PanelControlStt
         '
@@ -539,7 +539,7 @@ Partial Class FormRetDet
         Me.XTCItem.Name = "XTCItem"
         Me.XTCItem.SelectedTabPage = Me.XTPScanned
         Me.XTCItem.Size = New System.Drawing.Size(808, 346)
-        Me.XTCItem.TabIndex = 2
+        Me.XTCItem.TabIndex = 1
         Me.XTCItem.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPScanned, Me.XTPSummary})
         Me.XTCItem.TabStop = False
         '

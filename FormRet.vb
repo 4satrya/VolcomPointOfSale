@@ -24,30 +24,32 @@
     End Sub
 
     Sub insert()
-        'FormRecDet.action = "ins"
-        'FormRecDet.ShowDialog()
+        FormRetDet.action = "ins"
+        FormRetDet.ShowDialog()
     End Sub
 
     Sub edit()
-        'FormRecDet.action = "upd"
-        'FormRecDet.id = GVRec.GetFocusedRowCellValue("id_rec").ToString
-        'FormRecDet.ShowDialog()
+        If GVRet.FocusedRowHandle > 0 Then
+            FormRetDet.action = "upd"
+            FormRetDet.id = GVRet.GetFocusedRowCellValue("id_ret").ToString
+            FormRetDet.ShowDialog()
+        End If
     End Sub
 
     Sub delete()
-        'If GVRec.FocusedRowHandle >= 0 Then
-        '    Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
-        '    If confirm = DialogResult.Yes Then
-        '        Try
-        '            Dim id As String = GVRec.GetFocusedRowCellValue("id_rec").ToString
-        '            Dim query As String = "DELETE FROM tb_rec WHERE id_rec=" + id + " "
-        '            execute_non_query(query, True, "", "", "", "")
-        '            viewRec()
-        '        Catch ex As Exception
-        '            errorDelete()
-        '        End Try
-        '    End If
-        'End If
+        If GVRet.FocusedRowHandle >= 0 Then
+            Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+            If confirm = DialogResult.Yes Then
+                Try
+                    Dim id As String = GVRet.GetFocusedRowCellValue("id_ret").ToString
+                    Dim query As String = "DELETE FROM tb_ret WHERE id_ret=" + id + " "
+                    execute_non_query(query, True, "", "", "", "")
+                    viewRet()
+                Catch ex As Exception
+                    errorDelete()
+                End Try
+            End If
+        End If
     End Sub
 
     Sub exitForm()
@@ -56,7 +58,7 @@
 
     Sub printPreview()
         FormBlack.Show()
-        'print(GCRec, "Product List")
+        print(GCRet, "Return List")
         FormBlack.Close()
     End Sub
 

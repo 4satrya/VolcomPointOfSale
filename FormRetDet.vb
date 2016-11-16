@@ -43,7 +43,6 @@
         Else
             LEReportStatus.Enabled = False
             BtnPrint.Enabled = False
-            viewDetail()
             XTPSummary.PageVisible = False
         End If
     End Sub
@@ -93,7 +92,8 @@
     Private Sub BtnBrowseFrom_Click(sender As Object, e As EventArgs) Handles BtnBrowseFrom.Click
         Cursor = Cursors.WaitCursor
         FormBlack.Show()
-        FormPopUpContact.id_pop_up = "1"
+        FormPopUpContact.id_cat = "5"
+        FormPopUpContact.id_pop_up = "3"
         FormPopUpContact.ShowDialog()
         FormBlack.Close()
         BringToFront()
@@ -106,7 +106,8 @@
     Private Sub BtnBrowseTo_Click(sender As Object, e As EventArgs) Handles BtnBrowseTo.Click
         Cursor = Cursors.WaitCursor
         FormBlack.Show()
-        FormPopUpContact.id_pop_up = "2"
+        FormPopUpContact.id_cat = "1"
+        FormPopUpContact.id_pop_up = "4"
         FormPopUpContact.ShowDialog()
         FormBlack.Close()
         BringToFront()
@@ -128,7 +129,7 @@
 
     Private Sub TxtCodeCompFrom_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCodeCompFrom.KeyDown
         If e.KeyCode = Keys.Enter Then
-            Dim dt As DataTable = get_company_by_code(addSlashes(TxtCodeCompFrom.Text), "-1")
+            Dim dt As DataTable = get_company_by_code(addSlashes(TxtCodeCompFrom.Text), "AND comp.id_comp_cat=5 ")
             If dt.Rows.Count > 0 Then
                 id_comp_from = dt.Rows(0)("id_comp").ToString
                 TxtCodeCompFrom.Text = dt.Rows(0)("comp_number").ToString
@@ -146,11 +147,12 @@
 
     Private Sub TxtCodeCompTo_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCodeCompTo.KeyDown
         If e.KeyCode = Keys.Enter Then
-            Dim dt As DataTable = get_company_by_code(addSlashes(TxtCodeCompTo.Text), "-1")
+            Dim dt As DataTable = get_company_by_code(addSlashes(TxtCodeCompTo.Text), "AND comp.id_comp_cat=1 ")
             If dt.Rows.Count > 0 Then
                 id_comp_to = dt.Rows(0)("id_comp").ToString
                 TxtCodeCompTo.Text = dt.Rows(0)("comp_number").ToString
                 TxtNameCompTo.Text = dt.Rows(0)("comp_name").ToString
+                viewDetail()
                 TxtRef.Focus()
 
             Else
@@ -158,6 +160,7 @@
                 id_comp_to = "-1"
                 TxtCodeCompTo.Text = ""
                 TxtNameCompTo.Text = ""
+                viewDetail()
                 TxtCodeCompTo.Focus()
             End If
         End If

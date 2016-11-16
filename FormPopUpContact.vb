@@ -88,6 +88,18 @@
             FormRecDet.TxtNameCompTo.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "1")
             FormRecDet.TxtCodeCompTo.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "2")
             Close()
+        ElseIf id_pop_up = "3" Then
+            ' RET FROM
+            FormRetDet.id_comp_from = GVCompany.GetFocusedRowCellValue("id_comp").ToString
+            FormRetDet.TxtNameCompFrom.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "1")
+            FormRetDet.TxtCodeCompFrom.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "2")
+            Close()
+        ElseIf id_pop_up = "4" Then
+            'RET TO
+            FormRetDet.id_comp_to = GVCompany.GetFocusedRowCellValue("id_comp").ToString
+            FormRetDet.TxtNameCompTo.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "1")
+            FormRetDet.TxtCodeCompTo.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "2")
+            Close()
         End If
         Cursor = Cursors.Default
     End Sub
