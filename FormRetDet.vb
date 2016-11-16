@@ -215,7 +215,7 @@
                     If d > 0 Then
                         qry += "UNION ALL "
                     End If
-                    qry += "SELECT '" + id_item + "' AS `id_item`, '" + item_code + "' AS `item_code`, '" + item_name + "' AS `item_name`, '" + size + "' AS `size` , '" + price + "' AS `price` "
+                    qry += "SELECT '" + id_item + "' AS `id_item`, '" + item_code + "' AS `item_code`, '" + item_name + "' AS `item_name`, '" + size + "' AS `size` , " + price + " AS `price` "
                 Next
                 qry += ") a ); ALTER TABLE tb_ret_temp CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci; "
                 command.CommandText = qry
@@ -252,6 +252,7 @@
                                     .ret_qty = table1("ret_qty"),
                                     .qty_avl = If(y1 Is Nothing, 0, y1("qty_avl")),
                                     .price = table1("price"),
+                                    .amount = table1("ret_qty") * table1("price"),
                                     .status = If(table1("ret_qty") <= If(y1 Is Nothing, 0, y1("qty_avl")), "OK", "Can't exceed " + If(y1 Is Nothing, 0, y1("qty_avl").ToString))
                                 }
                 GCScanSum.DataSource = Nothing
@@ -278,9 +279,9 @@
                     Cursor = Cursors.WaitCursor
                     If action = "ins" Then
                         'main query
-                        Dim query As String = "INSERT INTO tb_ret(id_comp_from, id_comp_to, ret_number, ret_date, ref, ref_date, ret_note, id_report_status, id_prepared_by) 
-                        VALUES('" + id_comp_from + "', '" + id_comp_to + "', header_number(2), NOW(), '" + ref + "', '" + ref_date + "', '" + ret_note + "', '1', '" + id_user + "'); SELECT LAST_INSERT_ID(); "
-                        id = execute_query(query, 0, True, "", "", "", "")
+                        'Dim query As String = "INSERT INTO tb_ret(id_comp_from, id_comp_to, ret_number, ret_date, ref, ref_date, ret_note, id_report_status, id_prepared_by) 
+                        'VALUES('" + id_comp_from + "', '" + id_comp_to + "', header_number(2), NOW(), '" + ref + "', '" + ref_date + "', '" + ret_note + "', '1', '" + id_user + "'); SELECT LAST_INSERT_ID(); "
+                        'id = execute_query(query, 0, True, "", "", "", "")
 
                         'detail
                         'Dim query_det As String = "INSERT INTO tb_ret_det(id_ret, id_item, price, ret_qty) VALUES"
@@ -297,11 +298,11 @@
                         '    execute_non_query(query_det, True, "", "", "", "")
                         'End If
 
-                        FormRet.viewRet()
-                        FormRet.GVRet.FocusedRowHandle = find_row(FormRet.GVRet, "id_ret", id)
-                        action = "upd"
-                        actionLoad()
-                        infoCustom("Document #" + TxtNumber.Text + " was created successfully.")
+                        'FormRet.viewRet()
+                        'FormRet.GVRet.FocusedRowHandle = find_row(FormRet.GVRet, "id_ret", id)
+                        'action = "upd"
+                        'actionLoad()
+                        'infoCustom("Document #" + TxtNumber.Text + " was created successfully.")
                     Else
                         Dim query As String = "UPDATE tb_rec SET id_comp_from='" + id_comp_from + "', id_comp_to='" + id_comp_to + "', 
                         ref='" + ref + "', ref_date='" + ref_date + "', rec_note='" + ret_note + "', id_report_status='" + id_report_status + "' "
