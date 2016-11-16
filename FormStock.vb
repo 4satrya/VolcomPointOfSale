@@ -53,7 +53,7 @@
 
         'supplier
         If SLESupplier.EditValue.ToString <> "0" Then
-            cond += "AND f.id_comp_supp=" + SLESupplier.EditValue.ToString + " "
+            cond += "AND f.id_comp_sup=" + SLESupplier.EditValue.ToString + " "
         End If
 
         'product
