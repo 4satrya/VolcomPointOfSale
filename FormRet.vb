@@ -16,7 +16,7 @@
         ElseIf e.KeyCode = Keys.F7 Then 'view
             edit()
         ElseIf e.KeyCode = Keys.F9 Then 'delete
-            delete()
+            'delete()
         ElseIf e.KeyCode = Keys.F10 Then 'delete
             printPreview()
         End If
@@ -29,7 +29,7 @@
     End Sub
 
     Sub edit()
-        If GVRet.FocusedRowHandle > 0 Then
+        If GVRet.FocusedRowHandle >= 0 Then
             FormRetDet.action = "upd"
             FormRetDet.id = GVRet.GetFocusedRowCellValue("id_ret").ToString
             FormRetDet.ShowDialog()
@@ -37,19 +37,19 @@
     End Sub
 
     Sub delete()
-        If GVRet.FocusedRowHandle >= 0 Then
-            Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
-            If confirm = DialogResult.Yes Then
-                Try
-                    Dim id As String = GVRet.GetFocusedRowCellValue("id_ret").ToString
-                    Dim query As String = "DELETE FROM tb_ret WHERE id_ret=" + id + " "
-                    execute_non_query(query, True, "", "", "", "")
-                    viewRet()
-                Catch ex As Exception
-                    errorDelete()
-                End Try
-            End If
-        End If
+        'If GVRet.FocusedRowHandle >= 0 Then
+        '    Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+        '    If confirm = DialogResult.Yes Then
+        '        Try
+        '            Dim id As String = GVRet.GetFocusedRowCellValue("id_ret").ToString
+        '            Dim query As String = "DELETE FROM tb_ret WHERE id_ret=" + id + " "
+        '            execute_non_query(query, True, "", "", "", "")
+        '            viewRet()
+        '        Catch ex As Exception
+        '            errorDelete()
+        '        End Try
+        '    End If
+        'End If
     End Sub
 
     Sub exitForm()

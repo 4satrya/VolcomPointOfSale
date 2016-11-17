@@ -64,25 +64,21 @@
         If check_status(id_report_status_glb) Then
             MENote.Enabled = True
             BtnSave.Enabled = True
-            TxtCodeCompFrom.Enabled = True
-            TxtCodeCompTo.Enabled = True
-            BtnBrowseFrom.Enabled = True
-            BtnBrowseTo.Enabled = True
             TxtRef.Enabled = True
             DERefDate.Enabled = True
             LEReportStatus.Enabled = True
         Else
             MENote.Enabled = False
             BtnSave.Enabled = False
-            TxtCodeCompFrom.Enabled = False
-            TxtCodeCompTo.Enabled = False
-            BtnBrowseFrom.Enabled = False
-            BtnBrowseTo.Enabled = False
             TxtRef.Enabled = False
             DERefDate.Enabled = False
             LEReportStatus.Enabled = False
         End If
         PanelControlItem.Enabled = False
+        TxtCodeCompFrom.Enabled = False
+        TxtCodeCompTo.Enabled = False
+        BtnBrowseFrom.Enabled = False
+        BtnBrowseTo.Enabled = False
 
         If check_print_report_status(id_report_status_glb) Then
             BtnPrint.Enabled = True
@@ -198,7 +194,8 @@
                 gv = GVScanSum
             End If
 
-            'cek
+            'cek stock
+            Dim cond_stk As Boolean = True
             If action = "ins" Then
                 Dim data_temp As DataTable = GCScan.DataSource
                 Dim connection_string As String = String.Format("Data Source={0};User Id={1};Password={2};Database={3};Convert Zero Datetime=True", app_host, app_username, app_password, app_database)
@@ -257,14 +254,21 @@
                                 }
                 GCScanSum.DataSource = Nothing
                 GCScanSum.DataSource = query_cek.ToList()
+
+                'filter OK
+                GVScanSum.ActiveFilterString = "[status]<>'OK' "
+                If GVScanSum.RowCount > 0 Then
+                    cond_stk = False
+                End If
+                GCScanSum.RefreshDataSource()
+                GVScanSum.RefreshData()
+
+                'remove filter
+                GVScanSum.ActiveFilterString = ""
+                GCScanSum.RefreshDataSource()
+                GVScanSum.RefreshData()
             End If
-            GVScanSum.ActiveFilterString = "[status]<>'OK' "
-            Dim cond_stk As Boolean = True
-            If GVScanSum.RowCount > 0 Then
-                cond_stk = False
-            End If
-            GCScanSum.RefreshDataSource()
-            GVScanSum.RefreshData()
+
 
             If id_comp_from = "-1" Or id_comp_to = "-1" Or ref = "" Or ref_date = "" Or gv.RowCount = 0 Then
                 stopCustom("Data can't blank")
@@ -272,14 +276,11 @@
                 stopCustom("Some item can't exceed qty limit, please see error in column status!")
                 XTPSummary.PageVisible = True
                 XTCItem.SelectedTabPageIndex = 1
-                GVScanSum.ActiveFilterString = ""
             Else
                 Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save this transaction?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
                 If confirm = DialogResult.Yes Then
                     Cursor = Cursors.WaitCursor
                     If action = "ins" Then
-                        XTPSummary.PageVisible = True
-
                         'main query
                         Dim query As String = "INSERT INTO tb_ret(id_comp_from, id_comp_to, ret_number, ret_date, ref, ref_date, ret_note, id_report_status, id_prepared_by) 
                         VALUES('" + id_comp_from + "', '" + id_comp_to + "', header_number(2), NOW(), '" + ref + "', '" + ref_date + "', '" + ret_note + "', '1', '" + id_user + "'); SELECT LAST_INSERT_ID(); "
@@ -326,7 +327,12 @@
                         If id_report_status = "6" Then 'completed
 
                         ElseIf id_report_status = "5" Then 'cancelled
-
+                            Dim query_stk As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
+                                                SELECT tb_ret.id_comp_from, 1, tb_ret_det.id_item, 2, " + id + ", tb_ret_det.ret_qty, NOW(), 2 
+                                                FROM tb_ret_det 
+                                                INNER JOIN tb_ret ON tb_ret.id_ret = tb_ret_det.id_ret
+                                                WHERE tb_ret_det.id_ret=" + id + ""
+                            execute_non_query(query_stk, True, "", "", "", "")
                         End If
 
                         FormRet.viewRet()
@@ -365,7 +371,7 @@
     End Sub
 
     Sub removeScan()
-        If id_report_status_glb = "1" Or id_report_status_glb = "-1" Then
+        If (id_report_status_glb = "1" Or id_report_status_glb = "-1") And action = "ins" Then
             Cursor = Cursors.WaitCursor
             Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
             If confirm = DialogResult.Yes Then
