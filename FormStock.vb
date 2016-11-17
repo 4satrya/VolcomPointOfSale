@@ -1,4 +1,9 @@
 ﻿Public Class FormStock
+    Dim soh_storage As String = ""
+    Dim soh_supp As String = ""
+    Dim soh_prod As String = ""
+    Dim soh_date As String = ""
+
     Private Sub FormStock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         viewComp()
         viewItem()
@@ -61,7 +66,10 @@
             ReportStyleGridview(Report.GVStock)
 
             'Parse val
-            '---- nothing
+            Report.LabelStorage.Text = soh_storage
+            Report.LabelSupplier.Text = soh_supp
+            Report.LabelProd.Text = soh_prod
+            Report.LabelDate.Text = soh_date
 
             ' Show the report's preview. 
             Dim Tool As DevExpress.XtraReports.UI.ReportPrintTool = New DevExpress.XtraReports.UI.ReportPrintTool(Report)
@@ -99,6 +107,12 @@
         Dim query As String = "CALL view_stock_item('" + cond + "', '2') "
         Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
         GCStock.DataSource = data
+
+        'label fill
+        soh_storage = SLEStorage.Text
+        soh_supp = SLESupplier.Text
+        soh_prod = SLEItem.Text
+        soh_date = DERefDate.Text
     End Sub
 
     Private Sub BtnView_Click(sender As Object, e As EventArgs) Handles BtnView.Click
