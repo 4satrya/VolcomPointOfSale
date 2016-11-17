@@ -174,7 +174,7 @@
     Sub save()
         If id_report_status_glb <> "5" And id_report_status_glb <> "6" Then
             Cursor = Cursors.WaitCursor
-            Dim ret_note As String = addSlashes(MENote.Text)
+            Dim trf_note As String = addSlashes(MENote.Text)
             Dim id_report_status As String = LEReportStatus.EditValue.ToString
             Dim gv As DevExpress.XtraGrid.Views.Grid.GridView
             If action = "ins" Then
@@ -191,7 +191,7 @@
                 Dim connection As New MySql.Data.MySqlClient.MySqlConnection(connection_string)
                 connection.Open()
                 Dim command As MySql.Data.MySqlClient.MySqlCommand = connection.CreateCommand()
-                Dim qry As String = "DROP TABLE IF EXISTS tb_ret_temp; CREATE TEMPORARY TABLE IF NOT EXISTS tb_ret_temp AS ( SELECT * FROM ("
+                Dim qry As String = "DROP TABLE IF EXISTS tb_trf_temp; CREATE TEMPORARY TABLE IF NOT EXISTS tb_trf_temp AS ( SELECT * FROM ("
                 For d As Integer = 0 To data_temp.Rows.Count - 1
                     Dim id_item As String = data_temp.Rows(d)("id_item").ToString
                     Dim item_code As String = data_temp.Rows(d)("item_code").ToString
@@ -203,15 +203,15 @@
                     End If
                     qry += "SELECT '" + id_item + "' AS `id_item`, '" + item_code + "' AS `item_code`, '" + item_name + "' AS `item_name`, '" + size + "' AS `size` , " + price + " AS `price` "
                 Next
-                qry += ") a ); ALTER TABLE tb_ret_temp CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci; "
+                qry += ") a ); ALTER TABLE tb_trf_temp CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci; "
                 command.CommandText = qry
                 command.ExecuteNonQuery()
                 command.Dispose()
                 ' Console.WriteLine(qry)
 
                 Dim data_view As New DataTable
-                Dim qry_view As String = "SELECT a.id_item, a.item_code, a.item_name, a.size, COUNT(a.id_item) AS `ret_qty`, a.price 
-                                FROM tb_ret_temp a 
+                Dim qry_view As String = "SELECT a.id_item, a.item_code, a.item_name, a.size, COUNT(a.id_item) AS `trf_qty`, a.price 
+                                FROM tb_trf_temp a 
                                 GROUP BY a.id_item"
                 Dim adapter As New MySql.Data.MySqlClient.MySqlDataAdapter(qry_view, connection)
                 adapter.SelectCommand.CommandTimeout = 300
@@ -221,7 +221,7 @@
                 connection.Dispose()
 
                 'get data stock
-                Dim query_stock As String = "CALL view_stock_item('AND j.id_comp=" + id_comp_from + " AND f.id_comp_sup=" + id_comp_to + " AND j.storage_item_datetime<=''9999-12-01'' ', '2')"
+                Dim query_stock As String = "CALL view_stock_item('AND j.id_comp=" + id_comp_from + " AND j.storage_item_datetime<=''9999-12-01'' ', '2')"
                 Dim data_stock As DataTable = execute_query(query_stock, -1, True, "", "", "", "")
                 Dim tb1 = data_view.AsEnumerable()
                 Dim tb2 = data_stock.AsEnumerable()
@@ -235,11 +235,11 @@
                                     .item_code = table1.Field(Of String)("item_code").ToString,
                                     .item_name = table1.Field(Of String)("item_name").ToString,
                                     .size = table1.Field(Of String)("size").ToString,
-                                    .ret_qty = table1("ret_qty"),
+                                    .trf_qty = table1("trf_qty"),
                                     .qty_avl = If(y1 Is Nothing, 0, y1("qty_avl")),
                                     .price = table1("price"),
-                                    .amount = table1("ret_qty") * table1("price"),
-                                    .status = If(table1("ret_qty") <= If(y1 Is Nothing, 0, y1("qty_avl")), "OK", "Can't exceed " + If(y1 Is Nothing, 0, y1("qty_avl").ToString))
+                                    .amount = table1("trf_qty") * table1("price"),
+                                    .status = If(table1("trf_qty") <= If(y1 Is Nothing, 0, y1("qty_avl")), "OK", "Can't exceed " + If(y1 Is Nothing, 0, y1("qty_avl").ToString))
                                 }
                 GCScanSum.DataSource = Nothing
                 GCScanSum.DataSource = query_cek.ToList()
@@ -271,20 +271,20 @@
                     Cursor = Cursors.WaitCursor
                     If action = "ins" Then
                         'main query
-                        Dim query As String = "INSERT INTO tb_ret(id_comp_from, id_comp_to, ret_number, ret_date, ret_note, id_report_status, id_prepared_by) 
-                        VALUES('" + id_comp_from + "', '" + id_comp_to + "', header_number(2), NOW(), '" + ret_note + "', '1', '" + id_user + "'); SELECT LAST_INSERT_ID(); "
+                        Dim query As String = "INSERT INTO tb_trf(id_comp_from, id_comp_to, trf_number, trf_date, trf_note, id_report_status, id_prepared_by) 
+                        VALUES('" + id_comp_from + "', '" + id_comp_to + "', header_number(3), NOW(), '" + trf_note + "', '1', '" + id_user + "'); SELECT LAST_INSERT_ID(); "
                         id = execute_query(query, 0, True, "", "", "", "")
 
                         'detail
-                        Dim query_det As String = "INSERT INTO tb_ret_det(id_ret, id_item, price, ret_qty) VALUES "
+                        Dim query_det As String = "INSERT INTO tb_trf_det(id_trf, id_item, price, trf_qty) VALUES "
                         For i As Integer = 0 To ((GVScanSum.RowCount - 1) - GetGroupRowCount(GVScanSum))
                             Dim id_item As String = GVScanSum.GetRowCellValue(i, "id_item").ToString
                             Dim price As String = decimalSQL(GVScanSum.GetRowCellValue(i, "price").ToString)
-                            Dim ret_qty As String = decimalSQL(GVScanSum.GetRowCellValue(i, "ret_qty").ToString)
+                            Dim trf_qty As String = decimalSQL(GVScanSum.GetRowCellValue(i, "trf_qty").ToString)
                             If i > 0 Then
                                 query_det += ", "
                             End If
-                            query_det += "('" + id + "','" + id_item + "', '" + price + "', '" + ret_qty + "')"
+                            query_det += "('" + id + "','" + id_item + "', '" + price + "', '" + trf_qty + "')"
                         Next
                         If GVScanSum.RowCount > 0 Then
                             execute_non_query(query_det, True, "", "", "", "")
@@ -293,49 +293,54 @@
 
                         'reserved
                         Dim query_res As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
-                                                SELECT tb_ret.id_comp_from, 2, tb_ret_det.id_item, 2, " + id + ", tb_ret_det.ret_qty, NOW(), 2 
-                                                FROM tb_ret_det 
-                                                INNER JOIN tb_ret ON tb_ret.id_ret = tb_ret_det.id_ret
-                                                WHERE tb_ret_det.id_ret=" + id + ""
+                                                SELECT tb_trf.id_comp_from, 2, tb_trf_det.id_item, 3, " + id + ", tb_trf_det.trf_qty, NOW(), 2 
+                                                FROM tb_trf_det 
+                                                INNER JOIN tb_trf ON tb_trf.id_trf = tb_trf_det.id_trf
+                                                WHERE tb_trf_det.id_trf=" + id + ""
                         execute_non_query(query_res, True, "", "", "", "")
 
-                        FormRet.viewRet()
-                        FormRet.GVRet.FocusedRowHandle = find_row(FormRet.GVRet, "id_ret", id)
+                        FormTrf.viewTrf()
+                        FormTrf.GVTrf.FocusedRowHandle = find_row(FormTrf.GVTrf, "id_trf", id)
                         action = "upd"
                         actionLoad()
                         infoCustom("Document #" + TxtNumber.Text + " was created successfully.")
                     Else
-                        Dim query As String = "UPDATE tb_ret SET ret_note='" + ret_note + "', id_report_status='" + id_report_status + "' "
+                        Dim query As String = "UPDATE tb_trf SET trf_note='" + trf_note + "', id_report_status='" + id_report_status + "' "
                         If id_report_status = "5" Or id_report_status = "6" Then 'final
                             query += ", final_status_time=NOW() "
                         End If
-                        query += "WHERE id_ret ='" + id + "' "
+                        query += "WHERE id_trf ='" + id + "' "
                         execute_non_query(query, True, "", "", "", "")
 
                         'completed
                         If id_report_status = "6" Then 'completed
                             Dim query_stk As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
-                                                (SELECT tb_ret.id_comp_from, 1, tb_ret_det.id_item, 2, " + id + ", tb_ret_det.ret_qty, NOW(), 2 
-                                                FROM tb_ret_det 
-                                                INNER JOIN tb_ret ON tb_ret.id_ret = tb_ret_det.id_ret
-                                                WHERE tb_ret_det.id_ret=" + id + ") 
+                                                (SELECT tb_trf.id_comp_from, 1, tb_trf_det.id_item, 3, " + id + ", tb_trf_det.trf_qty, NOW(), 2 
+                                                FROM tb_trf_det 
+                                                INNER JOIN tb_trf ON tb_trf.id_trf = tb_trf_det.id_trf
+                                                WHERE tb_trf_det.id_trf=" + id + ") 
                                                 UNION ALL 
-                                                (SELECT tb_ret.id_comp_from, 2, tb_ret_det.id_item, 2, " + id + ", tb_ret_det.ret_qty, NOW(), 1 
-                                                FROM tb_ret_det 
-                                                INNER JOIN tb_ret ON tb_ret.id_ret = tb_ret_det.id_ret
-                                                WHERE tb_ret_det.id_ret=" + id + ") "
+                                                (SELECT tb_trf.id_comp_from, 2, tb_trf_det.id_item, 3, " + id + ", tb_trf_det.trf_qty, NOW(), 1 
+                                                FROM tb_trf_det 
+                                                INNER JOIN tb_trf ON tb_trf.id_trf = tb_trf_det.id_trf
+                                                WHERE tb_trf_det.id_trf=" + id + ") 
+                                                (SELECT tb_trf.id_comp_to, 1, tb_trf_det.id_item, 3, " + id + ", tb_trf_det.trf_qty, NOW(), 1 
+                                                FROM tb_trf_det 
+                                                INNER JOIN tb_trf ON tb_trf.id_trf = tb_trf_det.id_trf
+                                                WHERE tb_trf_det.id_trf=" + id + ") 
+                                               "
                             execute_non_query(query_stk, True, "", "", "", "")
                         ElseIf id_report_status = "5" Then 'cancelled
                             Dim query_stk As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
-                                                SELECT tb_ret.id_comp_from, 1, tb_ret_det.id_item, 2, " + id + ", tb_ret_det.ret_qty, NOW(), 2 
-                                                FROM tb_ret_det 
-                                                INNER JOIN tb_ret ON tb_ret.id_ret = tb_ret_det.id_ret
-                                                WHERE tb_ret_det.id_ret=" + id + ""
+                                                SELECT tb_trf.id_comp_from, 1, tb_trf_det.id_item, 3, " + id + ", tb_trf_det.trf_qty, NOW(), 2 
+                                                FROM tb_trf_det 
+                                                INNER JOIN tb_trf ON tb_trf.id_trf = tb_trf_det.id_trf
+                                                WHERE tb_trf_det.id_trf=" + id + ""
                             execute_non_query(query_stk, True, "", "", "", "")
                         End If
 
-                        FormRet.viewRet()
-                        FormRet.GVRet.FocusedRowHandle = find_row(FormRet.GVRet, "id_ret", id)
+                        FormTrf.viewTrf()
+                        FormTrf.GVTrf.FocusedRowHandle = find_row(FormTrf.GVTrf, "id_trf", id)
                         action = "upd"
                         actionLoad()
                     End If
