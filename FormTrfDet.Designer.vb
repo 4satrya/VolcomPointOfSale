@@ -182,7 +182,7 @@ Partial Class FormTrfDet
         Me.PanelControlTopFill.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelControlTopFill.Location = New System.Drawing.Point(0, 0)
         Me.PanelControlTopFill.Name = "PanelControlTopFill"
-        Me.PanelControlTopFill.Size = New System.Drawing.Size(455, 103)
+        Me.PanelControlTopFill.Size = New System.Drawing.Size(437, 103)
         Me.PanelControlTopFill.TabIndex = 1
         '
         'BtnBrowseTo
@@ -195,7 +195,7 @@ Partial Class FormTrfDet
         Me.BtnBrowseTo.Appearance.Options.UseForeColor = True
         Me.BtnBrowseTo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnBrowseTo.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat
-        Me.BtnBrowseTo.Location = New System.Drawing.Point(412, 38)
+        Me.BtnBrowseTo.Location = New System.Drawing.Point(394, 38)
         Me.BtnBrowseTo.Name = "BtnBrowseTo"
         Me.BtnBrowseTo.Size = New System.Drawing.Size(29, 19)
         Me.BtnBrowseTo.TabIndex = 10
@@ -211,7 +211,7 @@ Partial Class FormTrfDet
         Me.BtnBrowseFrom.Appearance.Options.UseForeColor = True
         Me.BtnBrowseFrom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnBrowseFrom.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat
-        Me.BtnBrowseFrom.Location = New System.Drawing.Point(412, 12)
+        Me.BtnBrowseFrom.Location = New System.Drawing.Point(394, 12)
         Me.BtnBrowseFrom.Name = "BtnBrowseFrom"
         Me.BtnBrowseFrom.Size = New System.Drawing.Size(29, 19)
         Me.BtnBrowseFrom.TabIndex = 8
@@ -220,7 +220,7 @@ Partial Class FormTrfDet
         'TxtNameCompTo
         '
         Me.TxtNameCompTo.Enabled = False
-        Me.TxtNameCompTo.Location = New System.Drawing.Point(167, 38)
+        Me.TxtNameCompTo.Location = New System.Drawing.Point(149, 38)
         Me.TxtNameCompTo.Name = "TxtNameCompTo"
         Me.TxtNameCompTo.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtNameCompTo.Properties.Appearance.Options.UseFont = True
@@ -230,7 +230,7 @@ Partial Class FormTrfDet
         '
         'TxtCodeCompTo
         '
-        Me.TxtCodeCompTo.Location = New System.Drawing.Point(103, 38)
+        Me.TxtCodeCompTo.Location = New System.Drawing.Point(85, 38)
         Me.TxtCodeCompTo.Name = "TxtCodeCompTo"
         Me.TxtCodeCompTo.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCodeCompTo.Properties.Appearance.Options.UseFont = True
@@ -242,14 +242,14 @@ Partial Class FormTrfDet
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl5.Location = New System.Drawing.Point(15, 41)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(74, 13)
+        Me.LabelControl5.Size = New System.Drawing.Size(60, 13)
         Me.LabelControl5.TabIndex = 7
-        Me.LabelControl5.Text = "Destination to"
+        Me.LabelControl5.Text = "Destination"
         '
         'TxtNameCompFrom
         '
         Me.TxtNameCompFrom.Enabled = False
-        Me.TxtNameCompFrom.Location = New System.Drawing.Point(167, 12)
+        Me.TxtNameCompFrom.Location = New System.Drawing.Point(149, 12)
         Me.TxtNameCompFrom.Name = "TxtNameCompFrom"
         Me.TxtNameCompFrom.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtNameCompFrom.Properties.Appearance.Options.UseFont = True
@@ -259,7 +259,7 @@ Partial Class FormTrfDet
         '
         'TxtCodeCompFrom
         '
-        Me.TxtCodeCompFrom.Location = New System.Drawing.Point(103, 12)
+        Me.TxtCodeCompFrom.Location = New System.Drawing.Point(85, 12)
         Me.TxtCodeCompFrom.Name = "TxtCodeCompFrom"
         Me.TxtCodeCompFrom.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCodeCompFrom.Properties.Appearance.Options.UseFont = True
@@ -271,9 +271,9 @@ Partial Class FormTrfDet
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl3.Location = New System.Drawing.Point(15, 15)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(64, 13)
+        Me.LabelControl3.Size = New System.Drawing.Size(26, 13)
         Me.LabelControl3.TabIndex = 4
-        Me.LabelControl3.Text = "Return From"
+        Me.LabelControl3.Text = "From"
         '
         'PanelControTopLeft
         '
@@ -351,9 +351,9 @@ Partial Class FormTrfDet
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl1.Location = New System.Drawing.Point(12, 15)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(79, 13)
+        Me.LabelControl1.Size = New System.Drawing.Size(85, 13)
         Me.LabelControl1.TabIndex = 0
-        Me.LabelControl1.Text = "Return Number"
+        Me.LabelControl1.Text = "Transfer Number"
         '
         'PanelControlBottom
         '
@@ -511,7 +511,7 @@ Partial Class FormTrfDet
         '
         Me.GVScan.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnId, Me.GridColumnNo, Me.GridColumnProduct, Me.GridColumnSize, Me.GridColumnQty, Me.GridColumnPrice, Me.GridColumnAmount, Me.GridColumnCode})
         Me.GVScan.GridControl = Me.GCScan
-        Me.GVScan.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ret_qty", Me.GridColumnQty, "{0:n0}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", Me.GridColumnAmount, "{0:n2}")})
+        Me.GVScan.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "trf_qty", Me.GridColumnQty, "{0:n0}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", Me.GridColumnAmount, "{0:n2}")})
         Me.GVScan.Name = "GVScan"
         Me.GVScan.OptionsBehavior.Editable = False
         Me.GVScan.OptionsCustomization.AllowFilter = False
@@ -558,9 +558,9 @@ Partial Class FormTrfDet
         Me.GridColumnQty.Caption = "Qty"
         Me.GridColumnQty.DisplayFormat.FormatString = "{0:n0}"
         Me.GridColumnQty.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.GridColumnQty.FieldName = "ret_qty"
+        Me.GridColumnQty.FieldName = "trf_qty"
         Me.GridColumnQty.Name = "GridColumnQty"
-        Me.GridColumnQty.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ret_qty", "{0:n0}")})
+        Me.GridColumnQty.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "trf_qty", "{0:n0}")})
         Me.GridColumnQty.Visible = True
         Me.GridColumnQty.VisibleIndex = 4
         Me.GridColumnQty.Width = 48
@@ -714,7 +714,7 @@ Partial Class FormTrfDet
         '
         Me.GVScanSum.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumnCodeSum, Me.GridColumnAvail, Me.GridColumnStatus})
         Me.GVScanSum.GridControl = Me.GCScanSum
-        Me.GVScanSum.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ret_qty", Me.GridColumn5, "{0:n0}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", Me.GridColumn7, "{0:n2}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "qty_avl", Me.GridColumnAvail, "{0:n0)")})
+        Me.GVScanSum.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "trf_qty", Me.GridColumn5, "{0:n0}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", Me.GridColumn7, "{0:n2}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "qty_avl", Me.GridColumnAvail, "{0:n0)")})
         Me.GVScanSum.Name = "GVScanSum"
         Me.GVScanSum.OptionsBehavior.Editable = False
         Me.GVScanSum.OptionsCustomization.AllowFilter = False
@@ -761,9 +761,9 @@ Partial Class FormTrfDet
         Me.GridColumn5.Caption = "Qty"
         Me.GridColumn5.DisplayFormat.FormatString = "{0:n0}"
         Me.GridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.GridColumn5.FieldName = "ret_qty"
+        Me.GridColumn5.FieldName = "trf_qty"
         Me.GridColumn5.Name = "GridColumn5"
-        Me.GridColumn5.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ret_qty", "{0:n0}")})
+        Me.GridColumn5.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "trf_qty", "{0:n0}")})
         Me.GridColumn5.Visible = True
         Me.GridColumn5.VisibleIndex = 4
         Me.GridColumn5.Width = 41
@@ -787,7 +787,7 @@ Partial Class FormTrfDet
         Me.GridColumn7.FieldName = "amount"
         Me.GridColumn7.Name = "GridColumn7"
         Me.GridColumn7.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", "{0:n2}")})
-        Me.GridColumn7.UnboundExpression = "[price] * [ret_qty]"
+        Me.GridColumn7.UnboundExpression = "[price] * [trf_qty]"
         Me.GridColumn7.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
         Me.GridColumn7.Visible = True
         Me.GridColumn7.VisibleIndex = 7

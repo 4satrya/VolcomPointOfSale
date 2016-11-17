@@ -20,18 +20,18 @@
 
     Sub actionLoad()
         If action = "upd" Then
-            Dim rt As New ClassRet()
-            Dim query As String = rt.queryMain("AND r.id_ret=" + id + "", "1")
+            Dim rt As New ClassTrf()
+            Dim query As String = rt.queryMain("AND t.id_trf=" + id + "", "1")
             Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
-            TxtNumber.Text = data.Rows(0)("ret_number").ToString
-            DECreated.EditValue = data.Rows(0)("ret_date")
+            TxtNumber.Text = data.Rows(0)("trf_number").ToString
+            DECreated.EditValue = data.Rows(0)("trf_date")
             id_comp_from = data.Rows(0)("id_comp_from").ToString
             TxtCodeCompFrom.Text = data.Rows(0)("comp_number_from").ToString
             TxtNameCompFrom.Text = data.Rows(0)("comp_name_from").ToString
             id_comp_to = data.Rows(0)("id_comp_to").ToString
             TxtCodeCompTo.Text = data.Rows(0)("comp_number_to").ToString
             TxtNameCompTo.Text = data.Rows(0)("comp_name_to").ToString
-            MENote.Text = data.Rows(0)("ret_note").ToString
+            MENote.Text = data.Rows(0)("trf_note").ToString
             id_report_status_glb = data.Rows(0)("id_report_status").ToString
             LEReportStatus.ItemIndex = LEReportStatus.Properties.GetDataSourceRowIndex("id_report_status", data.Rows(0)("id_report_status").ToString)
             TxtPreparedBy.Text = data.Rows(0)("employee_name").ToString
@@ -119,7 +119,7 @@
 
     Private Sub TxtCodeCompFrom_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCodeCompFrom.KeyDown
         If e.KeyCode = Keys.Enter Then
-            Dim dt As DataTable = get_company_by_code(addSlashes(TxtCodeCompFrom.Text), "AND comp.id_comp_cat=5 OR comp.id_comp_cat=6 ")
+            Dim dt As DataTable = get_company_by_code(addSlashes(TxtCodeCompFrom.Text), "AND (comp.id_comp_cat=5 OR comp.id_comp_cat=6) ")
             If dt.Rows.Count > 0 Then
                 id_comp_from = dt.Rows(0)("id_comp").ToString
                 TxtCodeCompFrom.Text = dt.Rows(0)("comp_number").ToString
@@ -137,7 +137,7 @@
 
     Private Sub TxtCodeCompTo_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCodeCompTo.KeyDown
         If e.KeyCode = Keys.Enter Then
-            Dim dt As DataTable = get_company_by_code(addSlashes(TxtCodeCompTo.Text), "AND comp.id_comp_cat=5 OR comp.id_comp_cat=6 ")
+            Dim dt As DataTable = get_company_by_code(addSlashes(TxtCodeCompTo.Text), "AND (comp.id_comp_cat=5 OR comp.id_comp_cat=6) ")
             If dt.Rows.Count > 0 Then
                 id_comp_to = dt.Rows(0)("id_comp").ToString
                 TxtCodeCompTo.Text = dt.Rows(0)("comp_number").ToString
@@ -324,6 +324,7 @@
                                                 FROM tb_trf_det 
                                                 INNER JOIN tb_trf ON tb_trf.id_trf = tb_trf_det.id_trf
                                                 WHERE tb_trf_det.id_trf=" + id + ") 
+                                                UNION ALL
                                                 (SELECT tb_trf.id_comp_to, 1, tb_trf_det.id_item, 3, " + id + ", tb_trf_det.trf_qty, NOW(), 1 
                                                 FROM tb_trf_det 
                                                 INNER JOIN tb_trf ON tb_trf.id_trf = tb_trf_det.id_trf
