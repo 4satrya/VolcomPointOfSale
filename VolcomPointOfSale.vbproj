@@ -225,6 +225,12 @@
     <Compile Include="FormTrf.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormTrfDet.Designer.vb">
+      <DependentUpon>FormTrfDet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrfDet.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormUser.Designer.vb">
       <DependentUpon>FormUser.vb</DependentUpon>
     </Compile>
@@ -365,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTrf.resx">
       <DependentUpon>FormTrf.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrfDet.resx">
+      <DependentUpon>FormTrfDet.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUser.resx">
       <DependentUpon>FormUser.vb</DependentUpon>

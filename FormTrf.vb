@@ -23,17 +23,17 @@
 
     Sub insert()
         Cursor = Cursors.WaitCursor
-        'FormRetDet.action = "ins"
-        'FormRetDet.ShowDialog()
+        FormTrfDet.action = "ins"
+        FormTrfDet.ShowDialog()
         Cursor = Cursors.Default
     End Sub
 
     Sub edit()
         Cursor = Cursors.WaitCursor
         If GVTrf.FocusedRowHandle >= 0 Then
-            'FormRetDet.action = "upd"
-            'FormRetDet.id = GVRet.GetFocusedRowCellValue("id_ret").ToString
-            'FormRetDet.ShowDialog()
+            FormTrfDet.action = "upd"
+            FormTrfDet.id = GVTrf.GetFocusedRowCellValue("id_trf").ToString
+            FormTrfDet.ShowDialog()
         End If
         Cursor = Cursors.Default
     End Sub
@@ -77,5 +77,23 @@
         Cursor = Cursors.Default
     End Sub
 
+    Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
+        insert()
+    End Sub
 
+    Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
+        edit()
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
+        delete()
+    End Sub
+
+    Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
+        Close()
+    End Sub
+
+    Private Sub PrintPreviewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintPreviewToolStripMenuItem.Click
+        printPreview()
+    End Sub
 End Class

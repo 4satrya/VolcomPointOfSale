@@ -4,6 +4,7 @@
     Public id_cat As String = "-1"
     Public id_departement As String = "-1"
     Public id_so_type As String = "-1"
+    Public cond As String = ""
     'id use of pop up
     '1 = comp_to sample purchase det
 
@@ -57,6 +58,12 @@
                 query += "AND tb_m_comp.id_so_type = '" + id_so_type + "' "
             End If
         End If
+
+        'by condition
+        If cond <> "" Then
+            query += cond + " "
+        End If
+
         query += "ORDER BY comp_name "
         Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
         GCCompany.DataSource = data
@@ -101,6 +108,19 @@
             FormRetDet.TxtNameCompTo.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "1")
             FormRetDet.TxtCodeCompTo.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "2")
             FormRetDet.viewDetail()
+            Close()
+        ElseIf id_pop_up = "5" Then
+            'TRF FROM
+            FormTrfDet.id_comp_from = GVCompany.GetFocusedRowCellValue("id_comp").ToString
+            FormTrfDet.TxtNameCompFrom.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "1")
+            FormTrfDet.TxtCodeCompFrom.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "2")
+            FormTrfDet.viewDetail()
+            Close()
+        ElseIf id_pop_up = "6" Then
+            'TRF TO
+            FormTrfDet.id_comp_to = GVCompany.GetFocusedRowCellValue("id_comp").ToString
+            FormTrfDet.TxtNameCompTo.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "1")
+            FormTrfDet.TxtCodeCompTo.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "2")
             Close()
         End If
         Cursor = Cursors.Default
