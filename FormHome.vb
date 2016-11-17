@@ -137,4 +137,10 @@ Public Class FormHome
         FormRet.ShowDialog()
         Cursor = Cursors.Default
     End Sub
+
+    Private Sub TITrf_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TITrf.ItemClick
+        Cursor = Cursors.WaitCursor
+        FormTrf.ShowDialog()
+        Cursor = Cursors.Default
+    End Sub
 End Class

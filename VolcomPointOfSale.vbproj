@@ -102,6 +102,7 @@
     <Compile Include="ClassItem.vb" />
     <Compile Include="ClassRec.vb" />
     <Compile Include="ClassRet.vb" />
+    <Compile Include="ClassTrf.vb" />
     <Compile Include="ClassUser.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
@@ -216,6 +217,12 @@
       <DependentUpon>FormStock.vb</DependentUpon>
     </Compile>
     <Compile Include="FormStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrf.Designer.vb">
+      <DependentUpon>FormTrf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrf.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormUser.Designer.vb">
@@ -355,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormStock.resx">
       <DependentUpon>FormStock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrf.resx">
+      <DependentUpon>FormTrf.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUser.resx">
       <DependentUpon>FormUser.vb</DependentUpon>
