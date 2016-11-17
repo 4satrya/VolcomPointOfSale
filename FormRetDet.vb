@@ -5,6 +5,8 @@
     Public id_comp_to As String = "-1"
     Dim id_report_status_glb As String = "-1"
     Dim item As New ClassItem()
+    Dim role_prepared As String = ""
+    Dim spv As String = ""
 
     Private Sub FormRetDet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         viewReportStatus()
@@ -35,6 +37,8 @@
             id_report_status_glb = data.Rows(0)("id_report_status").ToString
             LEReportStatus.ItemIndex = LEReportStatus.Properties.GetDataSourceRowIndex("id_report_status", data.Rows(0)("id_report_status").ToString)
             TxtPreparedBy.Text = data.Rows(0)("employee_name").ToString
+            role_prepared = data.Rows(0)("role").ToString
+            spv = get_setup_field("spv").ToString
 
             viewDetail()
             allow_status()
@@ -339,11 +343,6 @@
                         FormRet.GVRet.FocusedRowHandle = find_row(FormRet.GVRet, "id_ret", id)
                         action = "upd"
                         actionLoad()
-
-                        'show preview when completed
-                        If id_report_status = "6" Then
-                            print()
-                        End If
                     End If
                     Cursor = Cursors.Default
                 End If
@@ -384,9 +383,9 @@
     Sub print()
         Cursor = Cursors.WaitCursor
         FormBlack.Show()
-        ReportRec.id = id
-        ReportRec.dt = GCScanSum.DataSource
-        Dim Report As New ReportRec()
+        ReportRet.id = id
+        ReportRet.dt = GCScanSum.DataSource
+        Dim Report As New ReportRet()
 
         ' '... 
         ' ' creating and saving the view's layout to a new memory stream 
@@ -410,7 +409,9 @@
         Report.LabelRefDate.Text = DERefDate.Text
         Report.LabelStatus.Text = LEReportStatus.Text
         Report.LabelPreparedBy.Text = TxtPreparedBy.Text
-        Report.LabelAckFrom.Text = TxtNameCompFrom.Text
+        Report.LabelRoleBy.Text = role_prepared
+        Report.LabelAckFrom.Text = TxtNameCompTo.Text
+        Report.LabelSpv.Text = spv
 
 
         ' Show the report's preview. 
