@@ -329,7 +329,17 @@
 
                         'completed
                         If id_report_status = "6" Then 'completed
-
+                            Dim query_stk As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
+                                                (SELECT tb_ret.id_comp_from, 1, tb_ret_det.id_item, 2, " + id + ", tb_ret_det.ret_qty, NOW(), 2 
+                                                FROM tb_ret_det 
+                                                INNER JOIN tb_ret ON tb_ret.id_ret = tb_ret_det.id_ret
+                                                WHERE tb_ret_det.id_ret=" + id + ") 
+                                                UNION ALL 
+                                                (SELECT tb_ret.id_comp_from, 2, tb_ret_det.id_item, 2, " + id + ", tb_ret_det.ret_qty, NOW(), 1 
+                                                FROM tb_ret_det 
+                                                INNER JOIN tb_ret ON tb_ret.id_ret = tb_ret_det.id_ret
+                                                WHERE tb_ret_det.id_ret=" + id + ") "
+                            execute_non_query(query_stk, True, "", "", "", "")
                         ElseIf id_report_status = "5" Then 'cancelled
                             Dim query_stk As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
                                                 SELECT tb_ret.id_comp_from, 1, tb_ret_det.id_item, 2, " + id + ", tb_ret_det.ret_qty, NOW(), 2 
@@ -375,6 +385,8 @@
             Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
             If confirm = DialogResult.Yes Then
                 GVScan.DeleteSelectedRows()
+                GCScan.RefreshDataSource()
+                GVScan.RefreshData()
             End If
             Cursor = Cursors.Default
         End If
@@ -455,6 +467,7 @@
         If e.KeyCode = Keys.Enter Then
             Dim code As String = TxtItemCode.Text
             Dim query As String = item.queryMain("AND i.item_code='" + code + "' AND i.id_comp_sup='" + id_comp_to + "' ", "1", False)
+            'Dim query As String = "CALL view_stock_item('AND j.id_comp=" + id_comp_from + " AND f.id_comp_sup=" + id_comp_to + " AND j.storage_item_datetime<=''9999-12-01'' ', '2')"
             Dim dt As DataTable = execute_query(query, -1, True, "", "", "", "")
             If dt.Rows.Count > 0 Then
                 Dim newRow As DataRow = (TryCast(GCScan.DataSource, DataTable)).NewRow()

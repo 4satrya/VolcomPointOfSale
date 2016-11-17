@@ -568,7 +568,7 @@ Partial Class FormRetDet
         '
         Me.GVScan.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnId, Me.GridColumnNo, Me.GridColumnProduct, Me.GridColumnSize, Me.GridColumnQty, Me.GridColumnPrice, Me.GridColumnAmount, Me.GridColumnCode})
         Me.GVScan.GridControl = Me.GCScan
-        Me.GVScan.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "rec_qty", Me.GridColumnQty, "{0:n0}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", Me.GridColumnAmount, "{0:n2}")})
+        Me.GVScan.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ret_qty", Me.GridColumnQty, "{0:n0}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", Me.GridColumnAmount, "{0:n2}")})
         Me.GVScan.Name = "GVScan"
         Me.GVScan.OptionsBehavior.Editable = False
         Me.GVScan.OptionsCustomization.AllowFilter = False
@@ -617,7 +617,9 @@ Partial Class FormRetDet
         Me.GridColumnQty.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.GridColumnQty.FieldName = "ret_qty"
         Me.GridColumnQty.Name = "GridColumnQty"
-        Me.GridColumnQty.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "rec_qty", "{0:n0}")})
+        Me.GridColumnQty.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ret_qty", "{0:n0}")})
+        Me.GridColumnQty.Visible = True
+        Me.GridColumnQty.VisibleIndex = 4
         Me.GridColumnQty.Width = 48
         '
         'GridColumnPrice
@@ -628,7 +630,7 @@ Partial Class FormRetDet
         Me.GridColumnPrice.FieldName = "price"
         Me.GridColumnPrice.Name = "GridColumnPrice"
         Me.GridColumnPrice.Visible = True
-        Me.GridColumnPrice.VisibleIndex = 4
+        Me.GridColumnPrice.VisibleIndex = 5
         Me.GridColumnPrice.Width = 144
         '
         'GridColumnAmount
