@@ -276,6 +276,12 @@
     <Compile Include="ReportRet.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ReportStock.Designer.vb">
+      <DependentUpon>ReportStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportStock.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SplashScreen1.Designer.vb">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </Compile>
@@ -378,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportRet.resx">
       <DependentUpon>ReportRet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportStock.resx">
+      <DependentUpon>ReportStock.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen1.resx">
       <DependentUpon>SplashScreen1.vb</DependentUpon>

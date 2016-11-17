@@ -42,11 +42,33 @@
     End Sub
 
     Sub printPreview()
+        Cursor = Cursors.WaitCursor
         If XTCStock.SelectedTabPageIndex = 0 Then
             FormBlack.Show()
-            print(GCStock, "STOCK ON HAND")
+            ReportStock.dt = GCStock.DataSource
+            Dim Report As New ReportStock()
+
+            ' '... 
+            ' ' creating and saving the view's layout to a new memory stream 
+            Dim str As System.IO.Stream
+            str = New System.IO.MemoryStream()
+            GVStock.SaveLayoutToStream(str, DevExpress.Utils.OptionsLayoutBase.FullLayout)
+            str.Seek(0, System.IO.SeekOrigin.Begin)
+            Report.GVStock.RestoreLayoutFromStream(str, DevExpress.Utils.OptionsLayoutBase.FullLayout)
+            str.Seek(0, System.IO.SeekOrigin.Begin)
+
+            'Grid Detail
+            ReportStyleGridview(Report.GVStock)
+
+            'Parse val
+            '---- nothing
+
+            ' Show the report's preview. 
+            Dim Tool As DevExpress.XtraReports.UI.ReportPrintTool = New DevExpress.XtraReports.UI.ReportPrintTool(Report)
+            Tool.ShowPreviewDialog()
             FormBlack.Close()
         End If
+        Cursor = Cursors.Default
     End Sub
 
     Private Sub FormStock_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
