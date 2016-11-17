@@ -99,7 +99,7 @@ Partial Class FormStock
         Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControl3.Location = New System.Drawing.Point(20, 20)
         Me.PanelControl3.Name = "PanelControl3"
-        Me.PanelControl3.Size = New System.Drawing.Size(740, 45)
+        Me.PanelControl3.Size = New System.Drawing.Size(760, 45)
         Me.PanelControl3.TabIndex = 5
         '
         'LabelControl13
@@ -118,9 +118,9 @@ Partial Class FormStock
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl1.Controls.Add(Me.PanelControl2)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl1.Location = New System.Drawing.Point(20, 398)
+        Me.PanelControl1.Location = New System.Drawing.Point(20, 565)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(740, 35)
+        Me.PanelControl1.Size = New System.Drawing.Size(760, 35)
         Me.PanelControl1.TabIndex = 6
         '
         'PanelControl2
@@ -133,7 +133,7 @@ Partial Class FormStock
         Me.PanelControl2.Controls.Add(Me.LabelControl8)
         Me.PanelControl2.Controls.Add(Me.LabelControl9)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControl2.Location = New System.Drawing.Point(420, 0)
+        Me.PanelControl2.Location = New System.Drawing.Point(440, 0)
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Size = New System.Drawing.Size(320, 35)
         Me.PanelControl2.TabIndex = 7
@@ -216,7 +216,7 @@ Partial Class FormStock
         Me.XTCStock.Location = New System.Drawing.Point(20, 65)
         Me.XTCStock.Name = "XTCStock"
         Me.XTCStock.SelectedTabPage = Me.XTPStock
-        Me.XTCStock.Size = New System.Drawing.Size(740, 333)
+        Me.XTCStock.Size = New System.Drawing.Size(760, 500)
         Me.XTCStock.TabIndex = 9
         Me.XTCStock.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPStock, Me.XTPStockCard})
         '
@@ -225,7 +225,7 @@ Partial Class FormStock
         Me.XTPStock.Controls.Add(Me.GCStock)
         Me.XTPStock.Controls.Add(Me.PanelControlStock)
         Me.XTPStock.Name = "XTPStock"
-        Me.XTPStock.Size = New System.Drawing.Size(738, 308)
+        Me.XTPStock.Size = New System.Drawing.Size(758, 475)
         Me.XTPStock.Text = "Stock"
         '
         'GCStock
@@ -236,7 +236,7 @@ Partial Class FormStock
         Me.GCStock.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCStock.MainView = Me.GVStock
         Me.GCStock.Name = "GCStock"
-        Me.GCStock.Size = New System.Drawing.Size(738, 240)
+        Me.GCStock.Size = New System.Drawing.Size(758, 407)
         Me.GCStock.TabIndex = 1
         Me.GCStock.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVStock})
         '
@@ -345,7 +345,7 @@ Partial Class FormStock
         Me.PanelControlStock.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControlStock.Location = New System.Drawing.Point(0, 0)
         Me.PanelControlStock.Name = "PanelControlStock"
-        Me.PanelControlStock.Size = New System.Drawing.Size(738, 68)
+        Me.PanelControlStock.Size = New System.Drawing.Size(758, 68)
         Me.PanelControlStock.TabIndex = 0
         '
         'SLESupplier
@@ -536,7 +536,7 @@ Partial Class FormStock
         'XTPStockCard
         '
         Me.XTPStockCard.Name = "XTPStockCard"
-        Me.XTPStockCard.Size = New System.Drawing.Size(738, 308)
+        Me.XTPStockCard.Size = New System.Drawing.Size(758, 475)
         Me.XTPStockCard.Text = "Stock Card"
         '
         'FormStock
@@ -544,7 +544,7 @@ Partial Class FormStock
         Me.Appearance.Options.UseFont = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(780, 433)
+        Me.ClientSize = New System.Drawing.Size(800, 600)
         Me.Controls.Add(Me.XTCStock)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.PanelControl3)
@@ -556,7 +556,7 @@ Partial Class FormStock
         Me.Name = "FormStock"
         Me.Padding = New System.Windows.Forms.Padding(20, 20, 20, 0)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FormStock"
+        Me.Text = "Stock"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl3.ResumeLayout(False)
