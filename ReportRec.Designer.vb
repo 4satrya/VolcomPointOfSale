@@ -56,6 +56,8 @@ Partial Public Class ReportRec
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.XrPageInfo1 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
+        Me.LabelSpv = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel19 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel13 = New DevExpress.XtraReports.UI.XRLabel()
         Me.LabelAckFrom = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel18 = New DevExpress.XtraReports.UI.XRLabel()
@@ -65,8 +67,7 @@ Partial Public Class ReportRec
         Me.LabelNote = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel9 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel14 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.LabelSpv = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel19 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.LabelRoleBy = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.GCScanSum, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GVScanSum, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -501,29 +502,57 @@ Partial Public Class ReportRec
         '
         'PageFooter
         '
-        Me.PageFooter.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.LabelSpv, Me.XrLabel19, Me.XrLabel13, Me.LabelAckFrom, Me.XrLabel18, Me.LabelPreparedBy, Me.XrLabel8, Me.XrPanel2})
+        Me.PageFooter.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.LabelRoleBy, Me.LabelSpv, Me.XrLabel19, Me.XrLabel13, Me.LabelAckFrom, Me.XrLabel18, Me.LabelPreparedBy, Me.XrLabel8, Me.XrPanel2})
         Me.PageFooter.HeightF = 188.3335!
         Me.PageFooter.Name = "PageFooter"
+        '
+        'LabelSpv
+        '
+        Me.LabelSpv.Borders = DevExpress.XtraPrinting.BorderSide.None
+        Me.LabelSpv.Font = New System.Drawing.Font("Segoe UI", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelSpv.LocationFloat = New DevExpress.Utils.PointFloat(312.1492!, 149.9999!)
+        Me.LabelSpv.Name = "LabelSpv"
+        Me.LabelSpv.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.LabelSpv.SizeF = New System.Drawing.SizeF(179.5138!, 19.16675!)
+        Me.LabelSpv.StylePriority.UseBorders = False
+        Me.LabelSpv.StylePriority.UseFont = False
+        Me.LabelSpv.StylePriority.UseTextAlignment = False
+        Me.LabelSpv.Text = "Employee Name"
+        Me.LabelSpv.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft
+        '
+        'XrLabel19
+        '
+        Me.XrLabel19.Borders = DevExpress.XtraPrinting.BorderSide.None
+        Me.XrLabel19.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel19.LocationFloat = New DevExpress.Utils.PointFloat(312.1493!, 169.1667!)
+        Me.XrLabel19.Name = "XrLabel19"
+        Me.XrLabel19.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel19.SizeF = New System.Drawing.SizeF(179.5138!, 15.00009!)
+        Me.XrLabel19.StylePriority.UseBorders = False
+        Me.XrLabel19.StylePriority.UseFont = False
+        Me.XrLabel19.StylePriority.UseTextAlignment = False
+        Me.XrLabel19.Text = "Store Supervisor"
+        Me.XrLabel19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft
         '
         'XrLabel13
         '
         Me.XrLabel13.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel13.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel13.LocationFloat = New DevExpress.Utils.PointFloat(577.675!, 169.1667!)
+        Me.XrLabel13.LocationFloat = New DevExpress.Utils.PointFloat(539.6118!, 169.1666!)
         Me.XrLabel13.Name = "XrLabel13"
         Me.XrLabel13.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel13.SizeF = New System.Drawing.SizeF(179.5138!, 15.00009!)
         Me.XrLabel13.StylePriority.UseBorders = False
         Me.XrLabel13.StylePriority.UseFont = False
         Me.XrLabel13.StylePriority.UseTextAlignment = False
-        Me.XrLabel13.Text = "VENDOR"
+        Me.XrLabel13.Text = "Vendor"
         Me.XrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft
         '
         'LabelAckFrom
         '
         Me.LabelAckFrom.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.LabelAckFrom.Font = New System.Drawing.Font("Segoe UI", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelAckFrom.LocationFloat = New DevExpress.Utils.PointFloat(577.6749!, 150.0!)
+        Me.LabelAckFrom.LocationFloat = New DevExpress.Utils.PointFloat(539.6117!, 149.9999!)
         Me.LabelAckFrom.Name = "LabelAckFrom"
         Me.LabelAckFrom.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.LabelAckFrom.SizeF = New System.Drawing.SizeF(179.5138!, 19.16675!)
@@ -537,7 +566,7 @@ Partial Public Class ReportRec
         '
         Me.XrLabel18.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel18.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel18.LocationFloat = New DevExpress.Utils.PointFloat(472.8687!, 63.33912!)
+        Me.XrLabel18.LocationFloat = New DevExpress.Utils.PointFloat(435.3687!, 63.33917!)
         Me.XrLabel18.Name = "XrLabel18"
         Me.XrLabel18.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel18.SizeF = New System.Drawing.SizeF(166.222!, 19.16673!)
@@ -550,8 +579,8 @@ Partial Public Class ReportRec
         'LabelPreparedBy
         '
         Me.LabelPreparedBy.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.LabelPreparedBy.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelPreparedBy.LocationFloat = New DevExpress.Utils.PointFloat(52.1396!, 150.0!)
+        Me.LabelPreparedBy.Font = New System.Drawing.Font("Segoe UI", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelPreparedBy.LocationFloat = New DevExpress.Utils.PointFloat(1.097897!, 150.0!)
         Me.LabelPreparedBy.Name = "LabelPreparedBy"
         Me.LabelPreparedBy.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.LabelPreparedBy.SizeF = New System.Drawing.SizeF(179.5138!, 19.16675!)
@@ -565,7 +594,7 @@ Partial Public Class ReportRec
         '
         Me.XrLabel8.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel8.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(52.1396!, 63.33916!)
+        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(1.097897!, 63.33916!)
         Me.XrLabel8.Name = "XrLabel8"
         Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel8.SizeF = New System.Drawing.SizeF(82.2916!, 19.16673!)
@@ -623,33 +652,19 @@ Partial Public Class ReportRec
         Me.XrLabel14.StylePriority.UseFont = False
         Me.XrLabel14.Text = ":"
         '
-        'LabelSpv
+        'LabelRoleBy
         '
-        Me.LabelSpv.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.LabelSpv.Font = New System.Drawing.Font("Segoe UI", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSpv.LocationFloat = New DevExpress.Utils.PointFloat(354.8575!, 150.0!)
-        Me.LabelSpv.Name = "LabelSpv"
-        Me.LabelSpv.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.LabelSpv.SizeF = New System.Drawing.SizeF(179.5138!, 19.16675!)
-        Me.LabelSpv.StylePriority.UseBorders = False
-        Me.LabelSpv.StylePriority.UseFont = False
-        Me.LabelSpv.StylePriority.UseTextAlignment = False
-        Me.LabelSpv.Text = "Employee Name"
-        Me.LabelSpv.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft
-        '
-        'XrLabel19
-        '
-        Me.XrLabel19.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrLabel19.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel19.LocationFloat = New DevExpress.Utils.PointFloat(354.8576!, 169.1668!)
-        Me.XrLabel19.Name = "XrLabel19"
-        Me.XrLabel19.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel19.SizeF = New System.Drawing.SizeF(179.5138!, 15.00009!)
-        Me.XrLabel19.StylePriority.UseBorders = False
-        Me.XrLabel19.StylePriority.UseFont = False
-        Me.XrLabel19.StylePriority.UseTextAlignment = False
-        Me.XrLabel19.Text = "STORE SUPERVISOR"
-        Me.XrLabel19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft
+        Me.LabelRoleBy.Borders = DevExpress.XtraPrinting.BorderSide.None
+        Me.LabelRoleBy.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelRoleBy.LocationFloat = New DevExpress.Utils.PointFloat(2.000014!, 169.1666!)
+        Me.LabelRoleBy.Name = "LabelRoleBy"
+        Me.LabelRoleBy.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.LabelRoleBy.SizeF = New System.Drawing.SizeF(179.5138!, 15.00009!)
+        Me.LabelRoleBy.StylePriority.UseBorders = False
+        Me.LabelRoleBy.StylePriority.UseFont = False
+        Me.LabelRoleBy.StylePriority.UseTextAlignment = False
+        Me.LabelRoleBy.Text = "Role Name"
+        Me.LabelRoleBy.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft
         '
         'ReportRec
         '
@@ -715,4 +730,5 @@ Partial Public Class ReportRec
     Friend WithEvents XrLabel13 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents LabelSpv As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel19 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents LabelRoleBy As DevExpress.XtraReports.UI.XRLabel
 End Class

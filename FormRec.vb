@@ -35,19 +35,19 @@
     End Sub
 
     Sub delete()
-        If GVRec.FocusedRowHandle >= 0 Then
-            Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
-            If confirm = DialogResult.Yes Then
-                Try
-                    Dim id As String = GVRec.GetFocusedRowCellValue("id_rec").ToString
-                    Dim query As String = "DELETE FROM tb_rec WHERE id_rec=" + id + " "
-                    execute_non_query(query, True, "", "", "", "")
-                    viewRec()
-                Catch ex As Exception
-                    errorDelete()
-                End Try
-            End If
-        End If
+        'If GVRec.FocusedRowHandle >= 0 Then
+        '    Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+        '    If confirm = DialogResult.Yes Then
+        '        Try
+        '            Dim id As String = GVRec.GetFocusedRowCellValue("id_rec").ToString
+        '            Dim query As String = "DELETE FROM tb_rec WHERE id_rec=" + id + " "
+        '            execute_non_query(query, True, "", "", "", "")
+        '            viewRec()
+        '        Catch ex As Exception
+        '            errorDelete()
+        '        End Try
+        '    End If
+        'End If
     End Sub
 
     Sub exitForm()

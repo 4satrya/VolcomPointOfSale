@@ -615,6 +615,8 @@ Partial Class FormRecDet
         Me.GridColumnQty.FieldName = "rec_qty"
         Me.GridColumnQty.Name = "GridColumnQty"
         Me.GridColumnQty.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "rec_qty", "{0:n0}")})
+        Me.GridColumnQty.Visible = True
+        Me.GridColumnQty.VisibleIndex = 4
         Me.GridColumnQty.Width = 48
         '
         'GridColumnPrice
@@ -626,7 +628,7 @@ Partial Class FormRecDet
         Me.GridColumnPrice.Name = "GridColumnPrice"
         Me.GridColumnPrice.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "price", "{0:n2}")})
         Me.GridColumnPrice.Visible = True
-        Me.GridColumnPrice.VisibleIndex = 4
+        Me.GridColumnPrice.VisibleIndex = 5
         Me.GridColumnPrice.Width = 144
         '
         'GridColumnAmount

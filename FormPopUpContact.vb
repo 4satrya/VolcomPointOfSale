@@ -81,6 +81,7 @@
             FormRecDet.id_comp_from = GVCompany.GetFocusedRowCellValue("id_comp").ToString
             FormRecDet.TxtNameCompFrom.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "1")
             FormRecDet.TxtCodeCompFrom.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "2")
+            FormRecDet.viewDetail()
             Close()
         ElseIf id_pop_up = "2" Then
             'REC TO
@@ -99,6 +100,7 @@
             FormRetDet.id_comp_to = GVCompany.GetFocusedRowCellValue("id_comp").ToString
             FormRetDet.TxtNameCompTo.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "1")
             FormRetDet.TxtCodeCompTo.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "2")
+            FormRetDet.viewDetail()
             Close()
         End If
         Cursor = Cursors.Default

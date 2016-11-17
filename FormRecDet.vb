@@ -5,6 +5,9 @@
     Public id_comp_to As String = "-1"
     Dim id_report_status_glb As String = "-1"
     Dim item As New ClassItem()
+    Dim role_prepared As String = ""
+    Dim spv As String = ""
+
 
     Private Sub FormRecDet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         viewReportStatus()
@@ -35,6 +38,8 @@
             id_report_status_glb = data.Rows(0)("id_report_status").ToString
             LEReportStatus.ItemIndex = LEReportStatus.Properties.GetDataSourceRowIndex("id_report_status", data.Rows(0)("id_report_status").ToString)
             TxtPreparedBy.Text = data.Rows(0)("employee_name").ToString
+            role_prepared = data.Rows(0)("role").ToString
+            spv = get_setup_field("spv").ToString
 
             viewDetail()
             allow_status()
@@ -63,25 +68,21 @@
         If check_status(id_report_status_glb) Then
             MENote.Enabled = True
             BtnSave.Enabled = True
-            TxtCodeCompFrom.Enabled = True
-            TxtCodeCompTo.Enabled = True
-            BtnBrowseFrom.Enabled = True
-            BtnBrowseTo.Enabled = True
             TxtRef.Enabled = True
             DERefDate.Enabled = True
             LEReportStatus.Enabled = True
         Else
             MENote.Enabled = False
             BtnSave.Enabled = False
-            TxtCodeCompFrom.Enabled = False
-            TxtCodeCompTo.Enabled = False
-            BtnBrowseFrom.Enabled = False
-            BtnBrowseTo.Enabled = False
             TxtRef.Enabled = False
             DERefDate.Enabled = False
             LEReportStatus.Enabled = False
         End If
         PanelControlItem.Enabled = False
+        TxtCodeCompFrom.Enabled = False
+        TxtCodeCompTo.Enabled = False
+        BtnBrowseFrom.Enabled = False
+        BtnBrowseTo.Enabled = False
 
         'ATTACH
         'If check_attach_report_status(id_report_status, "91", id_fg_repair) Then
@@ -101,6 +102,7 @@
     Private Sub BtnBrowseFrom_Click(sender As Object, e As EventArgs) Handles BtnBrowseFrom.Click
         Cursor = Cursors.WaitCursor
         FormBlack.Show()
+        FormPopUpContact.id_cat = "1"
         FormPopUpContact.id_pop_up = "1"
         FormPopUpContact.ShowDialog()
         FormBlack.Close()
@@ -114,6 +116,7 @@
     Private Sub BtnBrowseTo_Click(sender As Object, e As EventArgs) Handles BtnBrowseTo.Click
         Cursor = Cursors.WaitCursor
         FormBlack.Show()
+        FormPopUpContact.id_cat = "5"
         FormPopUpContact.id_pop_up = "2"
         FormPopUpContact.ShowDialog()
         FormBlack.Close()
@@ -136,25 +139,27 @@
 
     Private Sub TxtCodeCompFrom_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCodeCompFrom.KeyDown
         If e.KeyCode = Keys.Enter Then
-            Dim dt As DataTable = get_company_by_code(addSlashes(TxtCodeCompFrom.Text), "-1")
+            Dim dt As DataTable = get_company_by_code(addSlashes(TxtCodeCompFrom.Text), "AND comp.id_comp_cat=1 ")
             If dt.Rows.Count > 0 Then
                 id_comp_from = dt.Rows(0)("id_comp").ToString
                 TxtCodeCompFrom.Text = dt.Rows(0)("comp_number").ToString
                 TxtNameCompFrom.Text = dt.Rows(0)("comp_name").ToString
                 TxtCodeCompTo.Focus()
+                viewDetail()
             Else
                 stopCustom("Account not found !")
                 id_comp_from = "-1"
                 TxtCodeCompFrom.Text = ""
                 TxtNameCompFrom.Text = ""
                 TxtCodeCompFrom.Focus()
+                viewDetail()
             End If
         End If
     End Sub
 
     Private Sub TxtCodeCompTo_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCodeCompTo.KeyDown
         If e.KeyCode = Keys.Enter Then
-            Dim dt As DataTable = get_company_by_code(addSlashes(TxtCodeCompTo.Text), "-1")
+            Dim dt As DataTable = get_company_by_code(addSlashes(TxtCodeCompTo.Text), "AND comp.id_comp_cat=5 ")
             If dt.Rows.Count > 0 Then
                 id_comp_to = dt.Rows(0)("id_comp").ToString
                 TxtCodeCompTo.Text = dt.Rows(0)("comp_number").ToString
@@ -321,11 +326,13 @@
     End Sub
 
     Sub removeScan()
-        If id_report_status_glb = "1" Or id_report_status_glb = "-1" Then
+        If action = "ins" Then
             Cursor = Cursors.WaitCursor
             Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
             If confirm = DialogResult.Yes Then
                 GVScan.DeleteSelectedRows()
+                GCScan.RefreshDataSource()
+                GVScan.RefreshData()
             End If
             Cursor = Cursors.Default
         End If
@@ -359,8 +366,10 @@
         Report.LabelRef.Text = TxtRef.Text
         Report.LabelRefDate.Text = DERefDate.Text
         Report.LabelStatus.Text = LEReportStatus.Text
-        Report.LabelPreparedBy.Text = TxtPreparedBy.Text
+        Report.LabelPreparedBy.Text = TxtPreparedBy.Text.ToUpper
+        Report.LabelRoleBy.Text = role_prepared
         Report.LabelAckFrom.Text = TxtNameCompFrom.Text
+        Report.LabelSpv.Text = spv.ToUpper
 
 
         ' Show the report's preview. 
@@ -403,7 +412,7 @@
     Private Sub TxtItemCode_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtItemCode.KeyDown
         If e.KeyCode = Keys.Enter Then
             Dim code As String = TxtItemCode.Text
-            Dim query As String = item.queryMain("AND i.item_code='" + code + "' ", "1", False)
+            Dim query As String = item.queryMain("AND i.item_code='" + code + "' AND i.id_comp_sup='" + id_comp_from + "' ", "1", False)
             Dim dt As DataTable = execute_query(query, -1, True, "", "", "", "")
             If dt.Rows.Count > 0 Then
                 Dim newRow As DataRow = (TryCast(GCScan.DataSource, DataTable)).NewRow()
@@ -441,5 +450,11 @@
 
     Private Sub PCClose_Click(sender As Object, e As EventArgs) Handles PCClose.Click
         closeForm()
+    End Sub
+
+    Private Sub DERefDate_KeyDown(sender As Object, e As KeyEventArgs) Handles DERefDate.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            TxtItemCode.Focus()
+        End If
     End Sub
 End Class

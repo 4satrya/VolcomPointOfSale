@@ -420,10 +420,10 @@
         Report.LabelRef.Text = TxtRef.Text
         Report.LabelRefDate.Text = DERefDate.Text
         Report.LabelStatus.Text = LEReportStatus.Text
-        Report.LabelPreparedBy.Text = TxtPreparedBy.Text
+        Report.LabelPreparedBy.Text = TxtPreparedBy.Text.ToUpper
         Report.LabelRoleBy.Text = role_prepared
         Report.LabelAckFrom.Text = TxtNameCompTo.Text
-        Report.LabelSpv.Text = spv
+        Report.LabelSpv.Text = spv.ToUpper
 
 
         ' Show the report's preview. 
