@@ -155,7 +155,7 @@
         End If
     End Sub
 
-    Private Sub FormRetDet_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+    Private Sub FormTrfDet_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.F5 Then 'save
             save()
         ElseIf e.KeyCode = Keys.Escape Then 'close
@@ -386,9 +386,9 @@
     Sub print()
         Cursor = Cursors.WaitCursor
         FormBlack.Show()
-        ReportRet.id = id
-        ReportRet.dt = GCScanSum.DataSource
-        Dim Report As New ReportRet()
+        ReportTrf.id = id
+        ReportTrf.dt = GCScanSum.DataSource
+        Dim Report As New ReportTrf()
 
         ' '... 
         ' ' creating and saving the view's layout to a new memory stream 
@@ -411,7 +411,6 @@
         Report.LabelStatus.Text = LEReportStatus.Text
         Report.LabelPreparedBy.Text = TxtPreparedBy.Text.ToUpper
         Report.LabelRoleBy.Text = role_prepared
-        Report.LabelAckFrom.Text = TxtNameCompTo.Text
         Report.LabelSpv.Text = spv.ToUpper
 
 

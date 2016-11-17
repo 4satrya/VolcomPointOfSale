@@ -281,7 +281,7 @@ Partial Class FormTrf
         Me.GridColumnDate.FieldName = "trf_date"
         Me.GridColumnDate.Name = "GridColumnDate"
         Me.GridColumnDate.Visible = True
-        Me.GridColumnDate.VisibleIndex = 4
+        Me.GridColumnDate.VisibleIndex = 3
         Me.GridColumnDate.Width = 93
         '
         'GridColumnTotal
@@ -293,7 +293,7 @@ Partial Class FormTrf
         Me.GridColumnTotal.Name = "GridColumnTotal"
         Me.GridColumnTotal.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "total_trf", "{0:N0}")})
         Me.GridColumnTotal.Visible = True
-        Me.GridColumnTotal.VisibleIndex = 6
+        Me.GridColumnTotal.VisibleIndex = 5
         Me.GridColumnTotal.Width = 55
         '
         'GridColumnStt
@@ -302,16 +302,13 @@ Partial Class FormTrf
         Me.GridColumnStt.FieldName = "report_status"
         Me.GridColumnStt.Name = "GridColumnStt"
         Me.GridColumnStt.Visible = True
-        Me.GridColumnStt.VisibleIndex = 7
+        Me.GridColumnStt.VisibleIndex = 6
         Me.GridColumnStt.Width = 133
         '
         'GridColumnReference
         '
         Me.GridColumnReference.Caption = "Reference"
-        Me.GridColumnReference.FieldName = "ref"
         Me.GridColumnReference.Name = "GridColumnReference"
-        Me.GridColumnReference.Visible = True
-        Me.GridColumnReference.VisibleIndex = 3
         Me.GridColumnReference.Width = 93
         '
         'GridColumnPreparedBy
@@ -320,7 +317,7 @@ Partial Class FormTrf
         Me.GridColumnPreparedBy.FieldName = "employee_name"
         Me.GridColumnPreparedBy.Name = "GridColumnPreparedBy"
         Me.GridColumnPreparedBy.Visible = True
-        Me.GridColumnPreparedBy.VisibleIndex = 5
+        Me.GridColumnPreparedBy.VisibleIndex = 4
         Me.GridColumnPreparedBy.Width = 93
         '
         'FormTrf
