@@ -1,4 +1,5 @@
 ﻿Public Class FormItem
+
     Private Sub PanelControlExit_Click(sender As Object, e As EventArgs)
         Close()
     End Sub
@@ -106,4 +107,5 @@
     Private Sub PrintPreviewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintPreviewToolStripMenuItem.Click
         printPreview()
     End Sub
+
 End Class

@@ -21,7 +21,7 @@ Partial Class FormItemDet
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormItemDet))
         Me.PanelControlBottom = New DevExpress.XtraEditors.PanelControl()
-        Me.CheckEdit1 = New DevExpress.XtraEditors.CheckEdit()
+        Me.CEActive = New DevExpress.XtraEditors.CheckEdit()
         Me.BtnSave = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
@@ -61,8 +61,6 @@ Partial Class FormItemDet
         Me.XTCItem = New DevExpress.XtraTab.XtraTabControl()
         Me.XTPActive = New DevExpress.XtraTab.XtraTabPage()
         Me.TxtCommVal = New DevExpress.XtraEditors.TextEdit()
-        Me.DERefDate = New DevExpress.XtraEditors.DateEdit()
-        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
         Me.TxtComm = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
         Me.TxtCost = New DevExpress.XtraEditors.TextEdit()
@@ -75,7 +73,7 @@ Partial Class FormItemDet
         Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.PanelControlBottom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlBottom.SuspendLayout()
-        CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CEActive.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtCode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtDesc.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtPrice.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -97,8 +95,6 @@ Partial Class FormItemDet
         Me.XTCItem.SuspendLayout()
         Me.XTPActive.SuspendLayout()
         CType(Me.TxtCommVal.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DERefDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DERefDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtComm.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtCost.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTPHist.SuspendLayout()
@@ -109,21 +105,21 @@ Partial Class FormItemDet
         'PanelControlBottom
         '
         Me.PanelControlBottom.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControlBottom.Controls.Add(Me.CheckEdit1)
+        Me.PanelControlBottom.Controls.Add(Me.CEActive)
         Me.PanelControlBottom.Controls.Add(Me.BtnSave)
         Me.PanelControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControlBottom.Location = New System.Drawing.Point(0, 272)
+        Me.PanelControlBottom.Location = New System.Drawing.Point(0, 252)
         Me.PanelControlBottom.Name = "PanelControlBottom"
         Me.PanelControlBottom.Size = New System.Drawing.Size(646, 34)
         Me.PanelControlBottom.TabIndex = 2
         '
-        'CheckEdit1
+        'CEActive
         '
-        Me.CheckEdit1.Location = New System.Drawing.Point(12, 7)
-        Me.CheckEdit1.Name = "CheckEdit1"
-        Me.CheckEdit1.Properties.Caption = "Discontinued"
-        Me.CheckEdit1.Size = New System.Drawing.Size(107, 19)
-        Me.CheckEdit1.TabIndex = 5
+        Me.CEActive.Location = New System.Drawing.Point(12, 7)
+        Me.CEActive.Name = "CEActive"
+        Me.CEActive.Properties.Caption = "Discontinued"
+        Me.CEActive.Size = New System.Drawing.Size(107, 19)
+        Me.CEActive.TabIndex = 5
         '
         'BtnSave
         '
@@ -459,7 +455,7 @@ Partial Class FormItemDet
         Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl2.Location = New System.Drawing.Point(0, 107)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(646, 165)
+        Me.GroupControl2.Size = New System.Drawing.Size(646, 145)
         Me.GroupControl2.TabIndex = 1
         Me.GroupControl2.Text = "Price"
         '
@@ -471,15 +467,13 @@ Partial Class FormItemDet
         Me.XTCItem.LookAndFeel.UseDefaultLookAndFeel = False
         Me.XTCItem.Name = "XTCItem"
         Me.XTCItem.SelectedTabPage = Me.XTPActive
-        Me.XTCItem.Size = New System.Drawing.Size(623, 161)
+        Me.XTCItem.Size = New System.Drawing.Size(623, 141)
         Me.XTCItem.TabIndex = 17
         Me.XTCItem.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPActive, Me.XTPHist})
         '
         'XTPActive
         '
         Me.XTPActive.Controls.Add(Me.TxtCommVal)
-        Me.XTPActive.Controls.Add(Me.DERefDate)
-        Me.XTPActive.Controls.Add(Me.LabelControl9)
         Me.XTPActive.Controls.Add(Me.TxtComm)
         Me.XTPActive.Controls.Add(Me.LabelControl3)
         Me.XTPActive.Controls.Add(Me.LabelControl12)
@@ -488,7 +482,7 @@ Partial Class FormItemDet
         Me.XTPActive.Controls.Add(Me.LabelControl10)
         Me.XTPActive.Controls.Add(Me.TxtPrice)
         Me.XTPActive.Name = "XTPActive"
-        Me.XTPActive.Size = New System.Drawing.Size(617, 133)
+        Me.XTPActive.Size = New System.Drawing.Size(617, 113)
         Me.XTPActive.Text = "Active Price"
         '
         'TxtCommVal
@@ -506,32 +500,6 @@ Partial Class FormItemDet
         Me.TxtCommVal.Properties.Mask.ShowPlaceHolders = False
         Me.TxtCommVal.Size = New System.Drawing.Size(462, 20)
         Me.TxtCommVal.TabIndex = 15
-        '
-        'DERefDate
-        '
-        Me.DERefDate.EditValue = Nothing
-        Me.DERefDate.Location = New System.Drawing.Point(87, 90)
-        Me.DERefDate.Name = "DERefDate"
-        Me.DERefDate.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DERefDate.Properties.Appearance.Options.UseFont = True
-        Me.DERefDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.DERefDate.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.DERefDate.Properties.DisplayFormat.FormatString = "dd MMMM yyyy"
-        Me.DERefDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.DERefDate.Properties.Mask.EditMask = "dd-MM-yyyy"
-        Me.DERefDate.Size = New System.Drawing.Size(519, 20)
-        Me.DERefDate.TabIndex = 9
-        Me.DERefDate.ToolTip = "Packing list date"
-        Me.DERefDate.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information
-        '
-        'LabelControl9
-        '
-        Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(11, 93)
-        Me.LabelControl9.Name = "LabelControl9"
-        Me.LabelControl9.Size = New System.Drawing.Size(70, 13)
-        Me.LabelControl9.TabIndex = 10
-        Me.LabelControl9.Text = "Effective Date"
         '
         'TxtComm
         '
@@ -643,7 +611,7 @@ Partial Class FormItemDet
         Me.Appearance.Options.UseFont = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(646, 306)
+        Me.ClientSize = New System.Drawing.Size(646, 286)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.PanelControlBottom)
@@ -658,7 +626,7 @@ Partial Class FormItemDet
         Me.Text = "Product"
         CType(Me.PanelControlBottom, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlBottom.ResumeLayout(False)
-        CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CEActive.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtCode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtDesc.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtPrice.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -682,8 +650,6 @@ Partial Class FormItemDet
         Me.XTPActive.ResumeLayout(False)
         Me.XTPActive.PerformLayout()
         CType(Me.TxtCommVal.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DERefDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DERefDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtComm.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtCost.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTPHist.ResumeLayout(False)
@@ -724,8 +690,6 @@ Partial Class FormItemDet
     Friend WithEvents GridColumn7 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn8 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents DERefDate As DevExpress.XtraEditors.DateEdit
     Friend WithEvents TxtComm As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TxtCost As DevExpress.XtraEditors.TextEdit
@@ -735,7 +699,7 @@ Partial Class FormItemDet
     Friend WithEvents XTCItem As DevExpress.XtraTab.XtraTabControl
     Friend WithEvents XTPActive As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents XTPHist As DevExpress.XtraTab.XtraTabPage
-    Friend WithEvents CheckEdit1 As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents CEActive As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents GCPrice As DevExpress.XtraGrid.GridControl
     Friend WithEvents GVPrice As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridColumn9 As DevExpress.XtraGrid.Columns.GridColumn

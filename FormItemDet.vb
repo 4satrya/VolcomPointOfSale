@@ -1,6 +1,8 @@
 ﻿Public Class FormItemDet
     Public action As String = ""
     Public id As String = "-1"
+    Public old_price As String = ""
+
     Private Sub FormItemDet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         viewSize()
         viewColor()
@@ -46,15 +48,22 @@
             TxtCode.Text = data.Rows(0)("item_code").ToString
             TxtDesc.Text = data.Rows(0)("item_name").ToString
             TxtPrice.EditValue = data.Rows(0)("price")
+            SLEColor.EditValue = data.Rows(0)("id_color").ToString
+            SLEClass.EditValue = data.Rows(0)("id_class").ToString
             SLESize.EditValue = data.Rows(0)("id_size").ToString
+            SLEType.EditValue = data.Rows(0)("id_so_type").ToString
+            SLESupplier.EditValue = data.Rows(0)("id_comp_sup").ToString
+            TxtComm.EditValue = data.Rows(0)("comm")
+            getCommVal()
+            old_price = decimalSQL(TxtPrice.EditValue.ToString)
 
             viewPrice()
+            XTPHist.PageVisible = True
         Else
             TxtPrice.EditValue = 0
             TxtComm.EditValue = 0
             TxtCommVal.EditValue = 0
             TxtCost.EditValue = 0
-            DERefDate.EditValue = getTimeDB()
             XTPHist.PageVisible = False
         End If
     End Sub
@@ -82,19 +91,31 @@
         Dim item_name As String = addSlashes(TxtDesc.Text)
         Dim price As String = decimalSQL(TxtPrice.EditValue.ToString)
         Dim id_size As String = SLESize.EditValue.ToString
+        Dim id_color As String = SLEColor.EditValue.ToString
+        Dim id_class As String = SLEClass.EditValue.ToString
+        Dim id_so_type As String = SLEType.EditValue.ToString
+        Dim id_comp_sup As String = SLESupplier.EditValue.ToString
+        Dim comm As String = decimalSQL(TxtComm.EditValue.ToString)
+        Dim is_active As String = ""
+        If CEActive.EditValue Then
+            is_active = "1"
+        Else
+            is_active = "2"
+        End If
+
 
         'cek duplikat
-        Dim check As Boolean = False
-        Dim query_cek As String = "SELECT COUNT(*) FROM tb_item WHERE item_code='" + item_code + "' "
-        If action = "upd" Then
-            query_cek += "AND id_item<>'" + id + "'"
-        End If
-        Dim jum_cek As String = execute_query(query_cek, 0, True, "", "", "", "")
-        If jum_cek > "0" Then
-            check = False
-        Else
-            check = True
-        End If
+        Dim check As Boolean = True
+        'Dim query_cek As String = "SELECT COUNT(*) FROM tb_item WHERE item_code='" + item_code + "' "
+        'If action = "upd" Then
+        '    query_cek += "AND id_item<>'" + id + "'"
+        'End If
+        'Dim jum_cek As String = execute_query(query_cek, 0, True, "", "", "", "")
+        'If jum_cek > "0" Then
+        '    check = False
+        'Else
+        '    check = True
+        'End If
 
         If item_code = "" Or item_name = "" Or price = "" Then
             stopCustom("Data can't blank")
@@ -104,17 +125,42 @@
             Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save changes?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
             If confirm = DialogResult.Yes Then
                 If action = "ins" Then
-                    Dim query As String = "INSERT INTO tb_item(item_code, item_name, id_size, price) 
-                                    VALUES('" + item_code + "', '" + item_name + "', '" + id_size + "','" + price + "'); SELECT LAST_INSERT_ID(); "
+                    Dim query As String = "INSERT INTO tb_item(item_code, item_name, id_size, price, id_color, id_class, id_so_type, id_comp_sup, comm, is_active) 
+                                    VALUES('" + item_code + "', '" + item_name + "', '" + id_size + "','" + price + "', '" + id_color + "', '" + id_class + "', '" + id_so_type + "', '" + id_comp_sup + "', '" + comm + "', '" + is_active + "'); SELECT LAST_INSERT_ID(); "
                     id = execute_query(query, 0, True, "", "", "", "")
+
+                    'price
+                    Dim query_prc As String = "INSERT INTO tb_item_price(id_item, price, price_date) 
+                    VALUES('" + id + "','" + price + "', NOW()) "
+                    execute_non_query(query_prc, True, "", "", "", "")
+
+
+                    FormItem.viewItem()
+                    FormItem.GVItem.FocusedRowHandle = find_row(FormItem.GVItem, "id_item", id)
+                    Close()
+                    'action = "upd"
+                    'actionLoad()
                 Else
-                    Dim query As String = "UPDATE tb_item SET item_code='" + item_code + "', 
-                item_name='" + item_name + "', id_size='" + id_size + "', price='" + price + "' WHERE id_item='" + id + "' "
+                        Dim query As String = "UPDATE tb_item SET item_code='" + item_code + "', 
+                    item_name='" + item_name + "', id_size='" + id_size + "', price='" + price + "', 
+                    id_color='" + id_color + "', id_class='" + id_class + "', id_so_type='" + id_so_type + "', id_comp_sup='" + id_comp_sup + "', comm='" + comm + "', is_active='" + is_active + "'
+                    WHERE id_item='" + id + "' "
                     execute_non_query(query, True, "", "", "", "")
+
+                    'price
+                    Console.WriteLine(price)
+                    Console.WriteLine(old_price)
+                    If price <> old_price Then
+                        Dim query_prc As String = "INSERT INTO tb_item_price(id_item, price, price_date) 
+                        VALUES('" + id + "','" + price + "', NOW()) "
+                        execute_non_query(query_prc, True, "", "", "", "")
+                    End If
+
+                    FormItem.viewItem()
+                    FormItem.GVItem.FocusedRowHandle = find_row(FormItem.GVItem, "id_item", id)
+                    action = "upd"
+                    actionLoad()
                 End If
-                FormItem.viewItem()
-                FormItem.GVItem.FocusedRowHandle = find_row(FormItem.GVItem, "id_item", id)
-                Close()
             End If
         End If
     End Sub
@@ -203,7 +249,7 @@
 
     Private Sub TxtComm_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtComm.KeyDown
         If e.KeyCode = Keys.Enter Then
-            DERefDate.Focus()
+            BtnSave.Focus()
         Else
             getCommVal()
         End If
@@ -213,7 +259,7 @@
         getCommVal()
     End Sub
 
-    Private Sub DERefDate_KeyDown(sender As Object, e As KeyEventArgs) Handles DERefDate.KeyDown
+    Private Sub DERefDate_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             BtnSave.Focus()
         End If
@@ -248,5 +294,9 @@
         Catch ex As Exception
         End Try
         TxtCost.EditValue = prc - comm_val
+    End Sub
+
+    Private Sub CEActive_CheckedChanged(sender As Object, e As EventArgs) Handles CEActive.CheckedChanged
+
     End Sub
 End Class
