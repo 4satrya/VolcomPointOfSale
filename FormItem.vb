@@ -16,11 +16,13 @@
     End Sub
 
     Sub edit()
-        ' FormBlack.Show()
-        FormItemDet.action = "upd"
-        FormItemDet.id = GVItem.GetFocusedRowCellValue("id_item").ToString
-        FormItemDet.ShowDialog()
-        ' FormBlack.Close()
+        If GVItem.FocusedRowHandle >= 0 Then
+            ' FormBlack.Show()
+            FormItemDet.action = "upd"
+            FormItemDet.id = GVItem.GetFocusedRowCellValue("id_item").ToString
+            FormItemDet.ShowDialog()
+            ' FormBlack.Close()
+        End If
     End Sub
 
     Sub delete()

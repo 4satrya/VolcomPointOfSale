@@ -3,6 +3,10 @@
     Public id As String = "-1"
     Private Sub FormItemDet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         viewSize()
+        viewColor()
+        viewClass()
+        viewSupp()
+        viewSoType()
         actionLoad()
         SLESize.ShowPopup()
     End Sub
@@ -10,6 +14,28 @@
     Sub viewSize()
         Dim query As String = "SELECT * FROM tb_size ORDER BY size ASC "
         viewSearchLookupQuery(SLESize, query, "id_size", "size", "id_size")
+    End Sub
+
+    Sub viewColor()
+        Dim query As String = "SELECT * FROM tb_color ORDER BY color ASC "
+        viewSearchLookupQuery(SLEColor, query, "id_color", "color", "id_color")
+    End Sub
+
+
+    Sub viewClass()
+        Dim query As String = "SELECT * FROM tb_class ORDER BY class_display ASC "
+        viewSearchLookupQuery(SLEClass, query, "id_class", "class_display", "id_class")
+    End Sub
+
+    Sub viewSupp()
+        Dim supp As New ClassComp()
+        Dim query As String = supp.queryMain("AND comp.id_comp_cat=1 ", "1", False)
+        viewSearchLookupQuery(SLESupplier, query, "id_comp", "comp", "id_comp")
+    End Sub
+
+    Sub viewSoType()
+        Dim query As String = "SELECT * FROM tb_lookup_so_type a WHERE a.id_so_type>0 ORDER BY a.id_so_type ASC "
+        viewSearchLookupQuery(SLEType, query, "id_so_type", "so_type", "id_so_type")
     End Sub
 
     Sub actionLoad()
@@ -21,9 +47,22 @@
             TxtDesc.Text = data.Rows(0)("item_name").ToString
             TxtPrice.EditValue = data.Rows(0)("price")
             SLESize.EditValue = data.Rows(0)("id_size").ToString
+
+            viewPrice()
         Else
             TxtPrice.EditValue = 0
+            TxtComm.EditValue = 0
+            TxtCommVal.EditValue = 0
+            TxtCost.EditValue = 0
+            DERefDate.EditValue = getTimeDB()
+            XTPHist.PageVisible = False
         End If
+    End Sub
+
+    Sub viewPrice()
+        Dim query As String = "SELECT * FROM tb_item_price a WHERE a.id_item=" + id + " ORDER BY a.price_date ASC "
+        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        GCPrice.DataSource = data
     End Sub
 
     Private Sub FormItemDet_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
@@ -83,5 +122,131 @@
         SLESize.ShowPopup()
     End Sub
 
+    Sub checkCode()
+        'find existing code
+        Dim code As String = addSlashes(TxtCode.Text)
+        Dim find As New ClassItem()
+        Dim cond As String = "AND i.item_code='" + code + "' "
+        If action = "upd" Then
+            cond += "AND i.id_item<>" + id + " "
+        End If
+        Dim data As DataTable = execute_query(find.queryMain(cond, "1", False), -1, True, "", "", "", "")
+        If data.Rows.Count > 0 Then
+            stopCustom("Code already used")
+            TxtCode.Text = ""
+            TxtCode.Focus()
+        Else
+            TxtDesc.Focus()
+        End If
+    End Sub
 
+    Private Sub TxtCode_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCode.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            checkCode()
+        End If
+    End Sub
+
+    Private Sub TxtDesc_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtDesc.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SLEColor.Focus()
+            SLEColor.ShowPopup()
+        End If
+    End Sub
+
+    Private Sub SLEColor_KeyDown(sender As Object, e As KeyEventArgs) Handles SLEColor.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SLEClass.Focus()
+            SLEClass.ShowPopup()
+        End If
+    End Sub
+
+    Private Sub SLEClass_KeyDown(sender As Object, e As KeyEventArgs) Handles SLEClass.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SLESize.Focus()
+            SLESize.ShowPopup()
+        End If
+    End Sub
+
+    Private Sub TxtCode_Leave(sender As Object, e As EventArgs) Handles TxtCode.Leave
+        checkCode()
+    End Sub
+
+    Private Sub SLESize_KeyDown(sender As Object, e As KeyEventArgs) Handles SLESize.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SLEType.Focus()
+            SLEType.ShowPopup()
+        End If
+    End Sub
+
+    Private Sub SLEType_KeyDown(sender As Object, e As KeyEventArgs) Handles SLEType.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SLESupplier.Focus()
+            SLESupplier.ShowPopup()
+        End If
+    End Sub
+
+    Private Sub SLESupplier_KeyDown(sender As Object, e As KeyEventArgs) Handles SLESupplier.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            TxtPrice.Focus()
+        End If
+    End Sub
+
+    Private Sub TxtPrice_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtPrice.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            TxtComm.Focus()
+        End If
+    End Sub
+
+    Private Sub TxtPrice_KeyUp(sender As Object, e As KeyEventArgs) Handles TxtPrice.KeyUp
+        getCommVal()
+    End Sub
+
+    Private Sub TxtComm_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtComm.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            DERefDate.Focus()
+        Else
+            getCommVal()
+        End If
+    End Sub
+
+    Private Sub TxtComm_KeyUp(sender As Object, e As KeyEventArgs) Handles TxtComm.KeyUp
+        getCommVal()
+    End Sub
+
+    Private Sub DERefDate_KeyDown(sender As Object, e As KeyEventArgs) Handles DERefDate.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            BtnSave.Focus()
+        End If
+    End Sub
+
+
+
+    Sub getCommVal()
+        Dim comm As Decimal = 0
+        Try
+            comm = TxtComm.EditValue
+        Catch ex As Exception
+        End Try
+        Dim prc As Decimal = 0
+        Try
+            prc = TxtPrice.EditValue
+        Catch ex As Exception
+        End Try
+        Dim res As Decimal = prc * (comm / 100)
+        TxtCommVal.EditValue = res
+    End Sub
+
+    Private Sub TxtCommVal_EditValueChanged(sender As Object, e As EventArgs) Handles TxtCommVal.EditValueChanged
+        Dim comm_val As Decimal = 0
+        Try
+            comm_val = TxtCommVal.EditValue
+        Catch ex As Exception
+        End Try
+        Dim prc As Decimal = 0
+        Try
+            prc = TxtPrice.EditValue
+        Catch ex As Exception
+        End Try
+        TxtCost.EditValue = prc - comm_val
+    End Sub
 End Class

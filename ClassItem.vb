@@ -12,10 +12,13 @@
             condition = ""
         End If
 
-        Dim query As String = "SELECT i.id_item, i.item_code, i.item_name, CONCAT(i.item_code,' - ', i.item_name) AS `item`, i.id_size, s.size, i.id_color, col.color, i.price, i.id_product  
+        Dim query As String = "SELECT i.id_item, i.item_code, i.item_name, CONCAT(i.item_code,' - ', i.item_name) AS `item`, 
+        i.id_comp_sup, i.id_so_type,
+        i.id_size, s.size, i.id_class, cls.class_display, cls.class, i.id_color, col.color, i.price, i.price_date, i.comm, i.id_product, i.is_active
         FROM tb_item i 
         INNER JOIN tb_size s ON s.id_size = i.id_size
         INNER JOIN tb_color col ON col.id_color = i.id_color
+        INNER JOIN tb_class cls ON cls.id_class = i.id_class 
         WHERE i.id_item>0 "
         query += condition + " "
         query += "ORDER BY i.id_item " + order_type
