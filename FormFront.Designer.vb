@@ -31,10 +31,10 @@ Partial Class FormFront
         Me.TGGeneral = New DevExpress.XtraEditors.TileGroup()
         Me.TIInv = New DevExpress.XtraEditors.TileItem()
         Me.TileItem4 = New DevExpress.XtraEditors.TileItem()
+        Me.TileGroup3 = New DevExpress.XtraEditors.TileGroup()
         Me.TIPOS = New DevExpress.XtraEditors.TileItem()
         Me.TIExit = New DevExpress.XtraEditors.TileItem()
         Me.TileItem2 = New DevExpress.XtraEditors.TileItem()
-        Me.TileGroup3 = New DevExpress.XtraEditors.TileGroup()
         CType(Me.PanelControlTop, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlTop.SuspendLayout()
         Me.SuspendLayout()
@@ -127,6 +127,11 @@ Partial Class FormFront
         Me.TileItem4.Name = "TileItem4"
         Me.TileItem4.Visible = False
         '
+        'TileGroup3
+        '
+        Me.TileGroup3.Items.Add(Me.TIPOS)
+        Me.TileGroup3.Name = "TileGroup3"
+        '
         'TIPOS
         '
         Me.TIPOS.AppearanceItem.Normal.BackColor = System.Drawing.Color.DeepSkyBlue
@@ -170,11 +175,6 @@ Partial Class FormFront
         Me.TileItem2.Id = 45
         Me.TileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TileItem2.Name = "TileItem2"
-        '
-        'TileGroup3
-        '
-        Me.TileGroup3.Items.Add(Me.TIPOS)
-        Me.TileGroup3.Name = "TileGroup3"
         '
         'FormFront
         '
