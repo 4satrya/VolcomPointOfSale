@@ -83,7 +83,5 @@
         SLESize.ShowPopup()
     End Sub
 
-    Private Sub SLESize_KeyDown(sender As Object, e As KeyEventArgs) Handles SLESize.KeyDown
 
-    End Sub
 End Class

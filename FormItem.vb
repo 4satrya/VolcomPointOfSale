@@ -8,14 +8,19 @@
     End Sub
 
     Sub insert()
+        'FormBlack.Show()
         FormItemDet.action = "ins"
         FormItemDet.ShowDialog()
+        FormItemDet.BringToFront()
+        'FormBlack.Close()
     End Sub
 
     Sub edit()
+        ' FormBlack.Show()
         FormItemDet.action = "upd"
         FormItemDet.id = GVItem.GetFocusedRowCellValue("id_item").ToString
         FormItemDet.ShowDialog()
+        ' FormBlack.Close()
     End Sub
 
     Sub delete()

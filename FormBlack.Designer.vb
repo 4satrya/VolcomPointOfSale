@@ -32,6 +32,7 @@ Partial Class FormBlack
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "FormBlack"
         Me.Opacity = 0.3R
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormBlack"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
