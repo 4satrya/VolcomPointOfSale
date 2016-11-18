@@ -62,15 +62,15 @@
         Cursor = Cursors.WaitCursor
         If e.KeyCode = Keys.Escape Then 'close
             Close()
-        ElseIf e.KeyCode = Keys.Insert Then 'new
+        ElseIf e.KeyCode = Keys.F8 Then 'new
             insert()
-        ElseIf e.KeyCode = Keys.Enter Then 'edit
+        ElseIf e.KeyCode = Keys.F7 Then 'edit
             edit()
-        ElseIf e.KeyCode = Keys.Delete Then 'delete
+        ElseIf e.KeyCode = Keys.F9 Then 'delete
             delete()
-        ElseIf e.KeyCode = Keys.I AndAlso e.Modifiers = Keys.Control Then 'delete
+        ElseIf e.KeyCode = Keys.F11 Then 'delete
             importExcel()
-        ElseIf e.KeyCode = Keys.P AndAlso e.Modifiers = Keys.Control Then 'delete
+        ElseIf e.KeyCode = Keys.F10 Then 'delete
             printPreview()
         End If
         Cursor = Cursors.Default

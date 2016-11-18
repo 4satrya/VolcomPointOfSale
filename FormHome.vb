@@ -109,8 +109,7 @@ Public Class FormHome
 
     Private Sub TIProduct_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIProduct.ItemClick
         Cursor = Cursors.WaitCursor
-        FormLogin.menu_acc = "2"
-        FormLogin.ShowDialog()
+        FormItem.ShowDialog()
         Cursor = Cursors.Default
     End Sub
 
