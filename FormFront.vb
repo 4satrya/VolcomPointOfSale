@@ -15,4 +15,8 @@
         FormHome.ShowDialog()
         Cursor = Cursors.Default
     End Sub
+
+    Private Sub TIPOS_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIPOS.ItemClick
+        FormPOS.ShowDialog()
+    End Sub
 End Class

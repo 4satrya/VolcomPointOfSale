@@ -189,6 +189,12 @@
     <Compile Include="FormPopUpContact.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormPOS.Designer.vb">
+      <DependentUpon>FormPOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormRec.Designer.vb">
       <DependentUpon>FormRec.vb</DependentUpon>
     </Compile>
@@ -371,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPopUpContact.resx">
       <DependentUpon>FormPopUpContact.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPOS.resx">
+      <DependentUpon>FormPOS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRec.resx">
       <DependentUpon>FormRec.vb</DependentUpon>
