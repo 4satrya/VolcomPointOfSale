@@ -4,10 +4,19 @@
     Dim soh_prod As String = ""
     Dim soh_date As String = ""
 
+    Dim card_storage As String = ""
+    Dim card_prod As String = ""
+    Dim card_from As String = ""
+    Dim card_until As String = ""
+
     Private Sub FormStock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         viewComp()
         viewItem()
+        viewCompCard()
+        viewItemCard()
         DERefDate.EditValue = getTimeDB()
+        DEFromCard.EditValue = getTimeDB()
+        DEUntilCard.EditValue = getTimeDB()
     End Sub
 
     Sub viewComp()
@@ -20,10 +29,22 @@
         viewSearchLookupQuery(SLESupplier, query_supp, "id_comp", "comp", "id_comp")
     End Sub
 
+    Sub viewCompCard()
+        Dim comp As New ClassComp()
+        Dim query_comp As String = comp.queryMain("AND comp.id_comp_cat=5 OR comp.id_comp_cat=6", "1", False)
+        viewSearchLookupQuery(SLEStorageCard, query_comp, "id_comp", "comp", "id_comp")
+    End Sub
+
     Sub viewItem()
         Dim i As New ClassItem()
         Dim query As String = i.queryMain("-1", "1", True)
         viewSearchLookupQuery(SLEItem, query, "id_item", "item", "id_item")
+    End Sub
+
+    Sub viewItemCard()
+        Dim i As New ClassItem()
+        Dim query As String = i.queryMain("-1", "1", False)
+        viewSearchLookupQuery(SLEItemCard, query, "id_item", "item", "id_item")
     End Sub
 
     Sub showHideFilter()
@@ -32,6 +53,12 @@
                 PanelControlStock.Visible = False
             Else
                 PanelControlStock.Visible = True
+            End If
+        Else
+            If PCCard.Visible = True Then
+                PCCard.Visible = False
+            Else
+                PCCard.Visible = True
             End If
         End If
     End Sub
@@ -115,9 +142,43 @@
         soh_date = DERefDate.Text
     End Sub
 
+    Sub viewStockCard()
+        'storage
+        Dim id_comp As String = "-1"
+        If SLEStorageCard.EditValue.ToString <> "0" Then
+            id_comp = SLEStorageCard.EditValue.ToString
+        End If
+
+        'product
+        Dim id_item As String = "-1"
+        If SLEItemCard.EditValue.ToString <> "0" Then
+            id_item = SLEItemCard.EditValue.ToString
+        End If
+
+        'date
+        Dim dt_from As String = DateTime.Parse(DEFromCard.EditValue.ToString).ToString("yyyy-MM-dd")
+        Dim dt_until As String = DateTime.Parse(DEUntilCard.EditValue.ToString).ToString("yyyy-MM-dd")
+
+        Dim query As String = "CALL view_stock_card('" + id_item + "', '" + id_comp + "', '" + dt_from + "', '" + dt_until + "',1) "
+        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        GCCard.DataSource = data
+
+        'label fill
+        card_storage = SLEStorageCard.Text
+        card_prod = SLEItemCard.Text
+        card_from = DEFromCard.Text
+        card_until = DEUntilCard.Text
+    End Sub
+
     Private Sub BtnView_Click(sender As Object, e As EventArgs) Handles BtnView.Click
         Cursor = Cursors.WaitCursor
         viewStock()
+        Cursor = Cursors.Default
+    End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        Cursor = Cursors.WaitCursor
+        viewStockCard()
         Cursor = Cursors.Default
     End Sub
 End Class

@@ -68,6 +68,32 @@ Partial Class FormStock
         Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.XTPStockCard = New DevExpress.XtraTab.XtraTabPage()
+        Me.GCCard = New DevExpress.XtraGrid.GridControl()
+        Me.GVCard = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn16 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn23 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn24 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn25 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn26 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.PCCard = New DevExpress.XtraEditors.PanelControl()
+        Me.DEFromCard = New DevExpress.XtraEditors.DateEdit()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.DEUntilCard = New DevExpress.XtraEditors.DateEdit()
+        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
+        Me.SLEItemCard = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.GridView4 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn17 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn18 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn19 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn20 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl()
+        Me.SLEStorageCard = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.GridView5 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn21 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn22 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.LabelControl15 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,6 +116,19 @@ Partial Class FormStock
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SLEStorage.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SearchLookUpEdit1View, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XTPStockCard.SuspendLayout()
+        CType(Me.GCCard, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GVCard, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PCCard, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PCCard.SuspendLayout()
+        CType(Me.DEFromCard.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DEFromCard.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DEUntilCard.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DEUntilCard.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SLEItemCard.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SLEStorageCard.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelControl3
@@ -535,9 +574,270 @@ Partial Class FormStock
         '
         'XTPStockCard
         '
+        Me.XTPStockCard.Controls.Add(Me.GCCard)
+        Me.XTPStockCard.Controls.Add(Me.PCCard)
         Me.XTPStockCard.Name = "XTPStockCard"
         Me.XTPStockCard.Size = New System.Drawing.Size(758, 475)
         Me.XTPStockCard.Text = "Stock Card"
+        '
+        'GCCard
+        '
+        Me.GCCard.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GCCard.Location = New System.Drawing.Point(0, 68)
+        Me.GCCard.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCCard.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.GCCard.MainView = Me.GVCard
+        Me.GCCard.Name = "GCCard"
+        Me.GCCard.Size = New System.Drawing.Size(758, 407)
+        Me.GCCard.TabIndex = 2
+        Me.GCCard.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVCard})
+        '
+        'GVCard
+        '
+        Me.GVCard.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn15, Me.GridColumn16, Me.GridColumn23, Me.GridColumn24, Me.GridColumn25, Me.GridColumn26})
+        Me.GVCard.GridControl = Me.GCCard
+        Me.GVCard.Name = "GVCard"
+        Me.GVCard.OptionsBehavior.AutoExpandAllGroups = True
+        Me.GVCard.OptionsBehavior.Editable = False
+        Me.GVCard.OptionsView.ShowFooter = True
+        Me.GVCard.OptionsView.ShowGroupPanel = False
+        '
+        'GridColumn15
+        '
+        Me.GridColumn15.Caption = "Time"
+        Me.GridColumn15.DisplayFormat.FormatString = "dd MMMM yyyy hh:mm tt"
+        Me.GridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.GridColumn15.FieldName = "Time"
+        Me.GridColumn15.Name = "GridColumn15"
+        Me.GridColumn15.Visible = True
+        Me.GridColumn15.VisibleIndex = 0
+        '
+        'GridColumn16
+        '
+        Me.GridColumn16.Caption = "Transaction"
+        Me.GridColumn16.FieldName = "Transaction"
+        Me.GridColumn16.Name = "GridColumn16"
+        Me.GridColumn16.Visible = True
+        Me.GridColumn16.VisibleIndex = 1
+        '
+        'GridColumn23
+        '
+        Me.GridColumn23.Caption = "Type"
+        Me.GridColumn23.FieldName = "Transaction Type"
+        Me.GridColumn23.Name = "GridColumn23"
+        Me.GridColumn23.Visible = True
+        Me.GridColumn23.VisibleIndex = 2
+        '
+        'GridColumn24
+        '
+        Me.GridColumn24.Caption = "Qty"
+        Me.GridColumn24.FieldName = "Qty"
+        Me.GridColumn24.Name = "GridColumn24"
+        Me.GridColumn24.Visible = True
+        Me.GridColumn24.VisibleIndex = 3
+        '
+        'GridColumn25
+        '
+        Me.GridColumn25.Caption = "Balance"
+        Me.GridColumn25.FieldName = "Balance"
+        Me.GridColumn25.Name = "GridColumn25"
+        Me.GridColumn25.Visible = True
+        Me.GridColumn25.VisibleIndex = 4
+        '
+        'GridColumn26
+        '
+        Me.GridColumn26.Caption = "Status"
+        Me.GridColumn26.FieldName = "Status"
+        Me.GridColumn26.Name = "GridColumn26"
+        Me.GridColumn26.Visible = True
+        Me.GridColumn26.VisibleIndex = 5
+        '
+        'PCCard
+        '
+        Me.PCCard.Controls.Add(Me.DEFromCard)
+        Me.PCCard.Controls.Add(Me.LabelControl7)
+        Me.PCCard.Controls.Add(Me.SimpleButton1)
+        Me.PCCard.Controls.Add(Me.DEUntilCard)
+        Me.PCCard.Controls.Add(Me.LabelControl10)
+        Me.PCCard.Controls.Add(Me.SLEItemCard)
+        Me.PCCard.Controls.Add(Me.LabelControl14)
+        Me.PCCard.Controls.Add(Me.SLEStorageCard)
+        Me.PCCard.Controls.Add(Me.LabelControl15)
+        Me.PCCard.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PCCard.Location = New System.Drawing.Point(0, 0)
+        Me.PCCard.Name = "PCCard"
+        Me.PCCard.Size = New System.Drawing.Size(758, 68)
+        Me.PCCard.TabIndex = 1
+        '
+        'DEFromCard
+        '
+        Me.DEFromCard.EditValue = Nothing
+        Me.DEFromCard.Location = New System.Drawing.Point(58, 35)
+        Me.DEFromCard.Name = "DEFromCard"
+        Me.DEFromCard.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DEFromCard.Properties.Appearance.Options.UseFont = True
+        Me.DEFromCard.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DEFromCard.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DEFromCard.Properties.DisplayFormat.FormatString = "dd MMMM yyyy"
+        Me.DEFromCard.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.DEFromCard.Properties.Mask.EditMask = "dd-MM-yyyy"
+        Me.DEFromCard.Size = New System.Drawing.Size(259, 20)
+        Me.DEFromCard.TabIndex = 7
+        Me.DEFromCard.ToolTip = "Packing list date"
+        Me.DEFromCard.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl7.Location = New System.Drawing.Point(12, 38)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(26, 13)
+        Me.LabelControl7.TabIndex = 6
+        Me.LabelControl7.Text = "From"
+        '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.Gray
+        Me.SimpleButton1.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SimpleButton1.Appearance.ForeColor = System.Drawing.Color.White
+        Me.SimpleButton1.Appearance.Options.UseBackColor = True
+        Me.SimpleButton1.Appearance.Options.UseFont = True
+        Me.SimpleButton1.Appearance.Options.UseForeColor = True
+        Me.SimpleButton1.Location = New System.Drawing.Point(651, 22)
+        Me.SimpleButton1.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
+        Me.SimpleButton1.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
+        Me.SimpleButton1.LookAndFeel.SkinName = "Metropolis"
+        Me.SimpleButton1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
+        Me.SimpleButton1.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(58, 20)
+        Me.SimpleButton1.TabIndex = 5
+        Me.SimpleButton1.Text = "View"
+        '
+        'DEUntilCard
+        '
+        Me.DEUntilCard.EditValue = Nothing
+        Me.DEUntilCard.Location = New System.Drawing.Point(376, 35)
+        Me.DEUntilCard.Name = "DEUntilCard"
+        Me.DEUntilCard.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DEUntilCard.Properties.Appearance.Options.UseFont = True
+        Me.DEUntilCard.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DEUntilCard.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DEUntilCard.Properties.DisplayFormat.FormatString = "dd MMMM yyyy"
+        Me.DEUntilCard.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.DEUntilCard.Properties.Mask.EditMask = "dd-MM-yyyy"
+        Me.DEUntilCard.Size = New System.Drawing.Size(259, 20)
+        Me.DEUntilCard.TabIndex = 4
+        Me.DEUntilCard.ToolTip = "Packing list date"
+        Me.DEUntilCard.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information
+        '
+        'LabelControl10
+        '
+        Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl10.Location = New System.Drawing.Point(330, 38)
+        Me.LabelControl10.Name = "LabelControl10"
+        Me.LabelControl10.Size = New System.Drawing.Size(25, 13)
+        Me.LabelControl10.TabIndex = 4
+        Me.LabelControl10.Text = "Until"
+        '
+        'SLEItemCard
+        '
+        Me.SLEItemCard.Location = New System.Drawing.Point(376, 9)
+        Me.SLEItemCard.Name = "SLEItemCard"
+        Me.SLEItemCard.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.SLEItemCard.Properties.ShowClearButton = False
+        Me.SLEItemCard.Properties.View = Me.GridView4
+        Me.SLEItemCard.Size = New System.Drawing.Size(259, 20)
+        Me.SLEItemCard.TabIndex = 3
+        '
+        'GridView4
+        '
+        Me.GridView4.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn17, Me.GridColumn18, Me.GridColumn19, Me.GridColumn20})
+        Me.GridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.GridView4.Name = "GridView4"
+        Me.GridView4.OptionsBehavior.AutoExpandAllGroups = True
+        Me.GridView4.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView4.OptionsView.ShowGroupPanel = False
+        '
+        'GridColumn17
+        '
+        Me.GridColumn17.Caption = "Id Item"
+        Me.GridColumn17.FieldName = "id_item"
+        Me.GridColumn17.Name = "GridColumn17"
+        '
+        'GridColumn18
+        '
+        Me.GridColumn18.Caption = "Description"
+        Me.GridColumn18.FieldName = "item"
+        Me.GridColumn18.Name = "GridColumn18"
+        Me.GridColumn18.Visible = True
+        Me.GridColumn18.VisibleIndex = 0
+        '
+        'GridColumn19
+        '
+        Me.GridColumn19.Caption = "Color"
+        Me.GridColumn19.FieldName = "color"
+        Me.GridColumn19.Name = "GridColumn19"
+        Me.GridColumn19.Visible = True
+        Me.GridColumn19.VisibleIndex = 1
+        '
+        'GridColumn20
+        '
+        Me.GridColumn20.Caption = "Size"
+        Me.GridColumn20.FieldName = "size"
+        Me.GridColumn20.Name = "GridColumn20"
+        Me.GridColumn20.Visible = True
+        Me.GridColumn20.VisibleIndex = 2
+        '
+        'LabelControl14
+        '
+        Me.LabelControl14.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl14.Location = New System.Drawing.Point(330, 12)
+        Me.LabelControl14.Name = "LabelControl14"
+        Me.LabelControl14.Size = New System.Drawing.Size(40, 13)
+        Me.LabelControl14.TabIndex = 2
+        Me.LabelControl14.Text = "Product"
+        '
+        'SLEStorageCard
+        '
+        Me.SLEStorageCard.Location = New System.Drawing.Point(58, 9)
+        Me.SLEStorageCard.Name = "SLEStorageCard"
+        Me.SLEStorageCard.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.SLEStorageCard.Properties.ShowClearButton = False
+        Me.SLEStorageCard.Properties.View = Me.GridView5
+        Me.SLEStorageCard.Size = New System.Drawing.Size(259, 20)
+        Me.SLEStorageCard.TabIndex = 1
+        '
+        'GridView5
+        '
+        Me.GridView5.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn21, Me.GridColumn22})
+        Me.GridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.GridView5.Name = "GridView5"
+        Me.GridView5.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView5.OptionsView.ShowGroupPanel = False
+        '
+        'GridColumn21
+        '
+        Me.GridColumn21.Caption = "Id Comp"
+        Me.GridColumn21.FieldName = "id_comp"
+        Me.GridColumn21.Name = "GridColumn21"
+        '
+        'GridColumn22
+        '
+        Me.GridColumn22.Caption = "Account"
+        Me.GridColumn22.FieldName = "comp"
+        Me.GridColumn22.Name = "GridColumn22"
+        Me.GridColumn22.Visible = True
+        Me.GridColumn22.VisibleIndex = 0
+        '
+        'LabelControl15
+        '
+        Me.LabelControl15.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl15.Location = New System.Drawing.Point(12, 12)
+        Me.LabelControl15.Name = "LabelControl15"
+        Me.LabelControl15.Size = New System.Drawing.Size(40, 13)
+        Me.LabelControl15.TabIndex = 1
+        Me.LabelControl15.Text = "Storage"
         '
         'FormStock
         '
@@ -583,6 +883,20 @@ Partial Class FormStock
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SLEStorage.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SearchLookUpEdit1View, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XTPStockCard.ResumeLayout(False)
+        CType(Me.GCCard, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GVCard, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PCCard, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PCCard.ResumeLayout(False)
+        Me.PCCard.PerformLayout()
+        CType(Me.DEFromCard.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DEFromCard.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DEUntilCard.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DEUntilCard.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SLEItemCard.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SLEStorageCard.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -635,4 +949,30 @@ Partial Class FormStock
     Friend WithEvents GridColumnTotal As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn13 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn14 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents PCCard As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents DEFromCard As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents DEUntilCard As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents SLEItemCard As DevExpress.XtraEditors.SearchLookUpEdit
+    Friend WithEvents GridView4 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumn17 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn18 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn19 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn20 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents LabelControl14 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents SLEStorageCard As DevExpress.XtraEditors.SearchLookUpEdit
+    Friend WithEvents GridView5 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumn21 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn22 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents LabelControl15 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GCCard As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GVCard As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumn15 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn16 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn23 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn24 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn25 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn26 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

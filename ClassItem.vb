@@ -25,7 +25,10 @@
 
         'all item include
         If is_all Then
-            Dim query_all As String = "(SELECT 0 AS `id_item`, '0' AS `item_code`, 'All Product' AS `item_name`, 'All Product' AS `item`, 0 AS `id_size`, '-' AS `size`, 0 AS `id_color`, '-' AS color, 0 AS `price`, 0 AS `id_product` ) "
+            Dim query_all As String = "(SELECT 0 AS `id_item`, '0' AS `item_code`, 'All Product' AS `item_name`, 'All Product' AS `item`, 
+            0 AS `id_comp_sup`, 0 AS `id_so_type`,
+            '0' AS  `id_class`, '-' AS `class_display`, '-' AS `class`,
+            0 AS `id_size`, '-' AS `size`, 0 AS `id_color`, '-' AS color, 0 AS `price`, '-' AS `price_date`, 0 AS `comm`, 0 AS `id_product`, '1' AS `is_active`) "
             query = query_all + " UNION ALL " + "(" + query + ")"
         End If
 
