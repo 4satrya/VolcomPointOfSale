@@ -108,4 +108,7 @@
         printPreview()
     End Sub
 
+    Private Sub PCClose_Click(sender As Object, e As EventArgs) Handles PCClose.Click
+        exitForm()
+    End Sub
 End Class

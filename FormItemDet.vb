@@ -56,6 +56,11 @@
             TxtComm.EditValue = data.Rows(0)("comm")
             getCommVal()
             old_price = decimalSQL(TxtPrice.EditValue.ToString)
+            If data.Rows(0)("is_active").ToString = "2" Then
+                CEActive.EditValue = True
+            Else
+                CEActive.EditValue = False
+            End If
 
             viewPrice()
             XTPHist.PageVisible = True
@@ -98,9 +103,9 @@
         Dim comm As String = decimalSQL(TxtComm.EditValue.ToString)
         Dim is_active As String = ""
         If CEActive.EditValue Then
-            is_active = "1"
-        Else
             is_active = "2"
+        Else
+            is_active = "1"
         End If
 
 

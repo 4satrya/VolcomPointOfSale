@@ -20,6 +20,7 @@ Partial Class FormItem
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormItem))
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
@@ -48,8 +49,12 @@ Partial Class FormItem
         Me.GridColumnDescription = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnPrice = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnSize = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnActive = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnIsActive = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
+        Me.PCClose = New DevExpress.XtraEditors.PanelControl()
+        Me.PanelControl4 = New DevExpress.XtraEditors.PanelControl()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,6 +64,9 @@ Partial Class FormItem
         CType(Me.GVItem, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
+        CType(Me.PCClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PanelControl4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl4.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelControl1
@@ -66,9 +74,9 @@ Partial Class FormItem
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl1.Controls.Add(Me.PanelControl2)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl1.Location = New System.Drawing.Point(20, 327)
+        Me.PanelControl1.Location = New System.Drawing.Point(20, 465)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(573, 35)
+        Me.PanelControl1.Size = New System.Drawing.Size(660, 35)
         Me.PanelControl1.TabIndex = 1
         '
         'PanelControl2
@@ -87,7 +95,7 @@ Partial Class FormItem
         Me.PanelControl2.Controls.Add(Me.LabelControl2)
         Me.PanelControl2.Controls.Add(Me.LabelControl1)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControl2.Location = New System.Drawing.Point(151, 0)
+        Me.PanelControl2.Location = New System.Drawing.Point(238, 0)
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Size = New System.Drawing.Size(422, 35)
         Me.PanelControl2.TabIndex = 8
@@ -204,12 +212,12 @@ Partial Class FormItem
         '
         Me.GCItem.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GCItem.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GCItem.Location = New System.Drawing.Point(20, 73)
+        Me.GCItem.Location = New System.Drawing.Point(20, 74)
         Me.GCItem.LookAndFeel.SkinName = "Office 2010 Silver"
         Me.GCItem.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCItem.MainView = Me.GVItem
         Me.GCItem.Name = "GCItem"
-        Me.GCItem.Size = New System.Drawing.Size(573, 254)
+        Me.GCItem.Size = New System.Drawing.Size(660, 391)
         Me.GCItem.TabIndex = 2
         Me.GCItem.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVItem})
         '
@@ -257,7 +265,7 @@ Partial Class FormItem
         '
         'GVItem
         '
-        Me.GVItem.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnIdItem, Me.GridColumnCode, Me.GridColumnDescription, Me.GridColumnPrice, Me.GridColumnSize})
+        Me.GVItem.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnIdItem, Me.GridColumnCode, Me.GridColumnDescription, Me.GridColumnPrice, Me.GridColumnSize, Me.GridColumnActive, Me.GridColumnIsActive})
         Me.GVItem.GridControl = Me.GCItem
         Me.GVItem.GroupCount = 1
         Me.GVItem.Name = "GVItem"
@@ -307,14 +315,31 @@ Partial Class FormItem
         Me.GridColumnSize.Visible = True
         Me.GridColumnSize.VisibleIndex = 1
         '
+        'GridColumnActive
+        '
+        Me.GridColumnActive.Caption = "Status"
+        Me.GridColumnActive.FieldName = "active"
+        Me.GridColumnActive.Name = "GridColumnActive"
+        Me.GridColumnActive.UnboundExpression = "Iif([is_active] = 1, 'Active', 'Not Active')"
+        Me.GridColumnActive.UnboundType = DevExpress.Data.UnboundColumnType.[String]
+        Me.GridColumnActive.Visible = True
+        Me.GridColumnActive.VisibleIndex = 3
+        '
+        'GridColumnIsActive
+        '
+        Me.GridColumnIsActive.Caption = "IS_ACTIVE"
+        Me.GridColumnIsActive.FieldName = "is_active"
+        Me.GridColumnIsActive.Name = "GridColumnIsActive"
+        '
         'PanelControl3
         '
         Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl3.Controls.Add(Me.PanelControl4)
         Me.PanelControl3.Controls.Add(Me.LabelControl13)
         Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControl3.Location = New System.Drawing.Point(20, 20)
         Me.PanelControl3.Name = "PanelControl3"
-        Me.PanelControl3.Size = New System.Drawing.Size(573, 53)
+        Me.PanelControl3.Size = New System.Drawing.Size(660, 54)
         Me.PanelControl3.TabIndex = 3
         '
         'LabelControl13
@@ -328,11 +353,32 @@ Partial Class FormItem
         Me.LabelControl13.TabIndex = 1
         Me.LabelControl13.Text = "Product List"
         '
+        'PCClose
+        '
+        Me.PCClose.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PCClose.ContentImage = CType(resources.GetObject("PCClose.ContentImage"), System.Drawing.Image)
+        Me.PCClose.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PCClose.Location = New System.Drawing.Point(199, 0)
+        Me.PCClose.Name = "PCClose"
+        Me.PCClose.Size = New System.Drawing.Size(24, 39)
+        Me.PCClose.TabIndex = 2
+        '
+        'PanelControl4
+        '
+        Me.PanelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl4.Controls.Add(Me.PCClose)
+        Me.PanelControl4.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PanelControl4.Location = New System.Drawing.Point(437, 0)
+        Me.PanelControl4.Name = "PanelControl4"
+        Me.PanelControl4.Padding = New System.Windows.Forms.Padding(0, 0, 0, 15)
+        Me.PanelControl4.Size = New System.Drawing.Size(223, 54)
+        Me.PanelControl4.TabIndex = 3
+        '
         'FormItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(613, 362)
+        Me.ClientSize = New System.Drawing.Size(700, 500)
         Me.Controls.Add(Me.GCItem)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.PanelControl3)
@@ -356,6 +402,9 @@ Partial Class FormItem
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl3.ResumeLayout(False)
         Me.PanelControl3.PerformLayout()
+        CType(Me.PCClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PanelControl4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -390,4 +439,8 @@ Partial Class FormItem
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GridColumnActive As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumnIsActive As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents PCClose As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents PanelControl4 As DevExpress.XtraEditors.PanelControl
 End Class
