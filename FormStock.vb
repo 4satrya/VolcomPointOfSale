@@ -102,6 +102,33 @@
             Dim Tool As DevExpress.XtraReports.UI.ReportPrintTool = New DevExpress.XtraReports.UI.ReportPrintTool(Report)
             Tool.ShowPreviewDialog()
             FormBlack.Close()
+        Else
+            FormBlack.Show()
+            ReportStockCard.dt = GCCard.DataSource
+            Dim Report As New ReportStockCard()
+
+            ' '... 
+            ' ' creating and saving the view's layout to a new memory stream 
+            Dim str As System.IO.Stream
+            str = New System.IO.MemoryStream()
+            GVCard.SaveLayoutToStream(str, DevExpress.Utils.OptionsLayoutBase.FullLayout)
+            str.Seek(0, System.IO.SeekOrigin.Begin)
+            Report.GVCard.RestoreLayoutFromStream(str, DevExpress.Utils.OptionsLayoutBase.FullLayout)
+            str.Seek(0, System.IO.SeekOrigin.Begin)
+
+            'Grid Detail
+            ReportStyleGridview(Report.GVCard)
+
+            'Parse val
+            Report.LabelStorage.Text = card_storage
+            Report.LabelItem.Text = card_prod
+            Report.LabelFrom.Text = card_from
+            Report.LabelUntil.Text = card_until
+
+            ' Show the report's preview. 
+            Dim Tool As DevExpress.XtraReports.UI.ReportPrintTool = New DevExpress.XtraReports.UI.ReportPrintTool(Report)
+            Tool.ShowPreviewDialog()
+            FormBlack.Close()
         End If
         Cursor = Cursors.Default
     End Sub

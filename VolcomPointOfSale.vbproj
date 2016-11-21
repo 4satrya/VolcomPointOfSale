@@ -301,6 +301,12 @@
     <Compile Include="ReportStock.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ReportStockCard.Designer.vb">
+      <DependentUpon>ReportStockCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportStockCard.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportTrf.Designer.vb">
       <DependentUpon>ReportTrf.vb</DependentUpon>
     </Compile>
@@ -421,6 +427,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportStock.resx">
       <DependentUpon>ReportStock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportStockCard.resx">
+      <DependentUpon>ReportStockCard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportTrf.resx">
       <DependentUpon>ReportTrf.vb</DependentUpon>
