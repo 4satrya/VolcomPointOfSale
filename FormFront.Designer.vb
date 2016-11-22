@@ -98,8 +98,8 @@ Partial Class FormFront
         '
         'TIInv
         '
-        Me.TIInv.AppearanceItem.Normal.BackColor = System.Drawing.Color.ForestGreen
-        Me.TIInv.AppearanceItem.Normal.BorderColor = System.Drawing.Color.ForestGreen
+        Me.TIInv.AppearanceItem.Normal.BackColor = System.Drawing.Color.Chocolate
+        Me.TIInv.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Chocolate
         Me.TIInv.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TIInv.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIInv.BackgroundImage = CType(resources.GetObject("TIInv.BackgroundImage"), System.Drawing.Image)
