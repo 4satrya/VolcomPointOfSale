@@ -1,5 +1,6 @@
 ﻿Public Class FormFront
-    Private Sub TIExitProg_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) 
+    Public connection_problem As Boolean = False
+    Private Sub TIExitProg_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs)
         Cursor = Cursors.WaitCursor
         End
         Cursor = Cursors.Default
@@ -18,5 +19,36 @@
 
     Private Sub TIPOS_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIPOS.ItemClick
         FormPOS.ShowDialog()
+    End Sub
+
+    Private Sub FormFront_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        apply_skin()
+        SplashScreenManager1.ShowWaitForm()
+        Try
+            read_database_configuration()
+            check_connection(True, "", "", "", "")
+
+            'sync product
+            Dim sc As New ClassItem
+            sc.syncItem()
+
+            SplashScreenManager1.CloseWaitForm()
+            WindowState = FormWindowState.Maximized
+            Opacity = 100
+        Catch ex As Exception
+            SplashScreenManager1.CloseWaitForm()
+            connection_problem = True
+            FormDatabase.id_type = "2"
+            FormDatabase.TopMost = True
+            FormDatabase.Show()
+            FormDatabase.Focus()
+            FormDatabase.TopMost = False
+        End Try
+
+        setLabelUser()
+
+        My.Application.ChangeCulture("en-US")
+        My.Application.Culture.NumberFormat.NumberDecimalSeparator = ","
+        My.Application.Culture.NumberFormat.NumberGroupSeparator = "."
     End Sub
 End Class
