@@ -23,8 +23,8 @@ Partial Class FormPOS
         Me.PanelControlMain = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControlMiddle = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControlMiddleData = New DevExpress.XtraEditors.PanelControl()
-        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GCPOS = New DevExpress.XtraGrid.GridControl()
+        Me.GVPOS = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -50,7 +50,7 @@ Partial Class FormPOS
         Me.LabelControl15 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl18 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControlCard = New DevExpress.XtraEditors.GroupControl()
-        Me.LEReportStatus = New DevExpress.XtraEditors.LookUpEdit()
+        Me.LECardType = New DevExpress.XtraEditors.LookUpEdit()
         Me.TextEdit10 = New DevExpress.XtraEditors.TextEdit()
         Me.TextEdit11 = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
@@ -110,7 +110,7 @@ Partial Class FormPOS
         Me.LabelControl21 = New DevExpress.XtraEditors.LabelControl()
         Me.TextEdit19 = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl20 = New DevExpress.XtraEditors.LabelControl()
-        Me.LookUpEdit1 = New DevExpress.XtraEditors.LookUpEdit()
+        Me.LEStatus = New DevExpress.XtraEditors.LookUpEdit()
         Me.TextEdit16 = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl22 = New DevExpress.XtraEditors.LabelControl()
         Me.TextEdit18 = New DevExpress.XtraEditors.TextEdit()
@@ -126,8 +126,8 @@ Partial Class FormPOS
         Me.PanelControlMiddle.SuspendLayout()
         CType(Me.PanelControlMiddleData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlMiddleData.SuspendLayout()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GCPOS, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GVPOS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControlCode, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlCode.SuspendLayout()
         CType(Me.LENation.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -144,7 +144,7 @@ Partial Class FormPOS
         CType(Me.TextEdit13.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControlCard, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControlCard.SuspendLayout()
-        CType(Me.LEReportStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LECardType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit10.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit11.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControlPay, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -171,7 +171,7 @@ Partial Class FormPOS
         Me.PanelControl1.SuspendLayout()
         CType(Me.TextEdit20.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit19.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LEStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit16.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit18.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit15.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -208,7 +208,7 @@ Partial Class FormPOS
         'PanelControlMiddleData
         '
         Me.PanelControlMiddleData.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControlMiddleData.Controls.Add(Me.GridControl1)
+        Me.PanelControlMiddleData.Controls.Add(Me.GCPOS)
         Me.PanelControlMiddleData.Controls.Add(Me.PanelControlCode)
         Me.PanelControlMiddleData.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControlMiddleData.Location = New System.Drawing.Point(0, 0)
@@ -216,24 +216,24 @@ Partial Class FormPOS
         Me.PanelControlMiddleData.Size = New System.Drawing.Size(598, 557)
         Me.PanelControlMiddleData.TabIndex = 4
         '
-        'GridControl1
+        'GCPOS
         '
-        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(0, 0)
-        Me.GridControl1.LookAndFeel.SkinName = "Office 2010 Silver"
-        Me.GridControl1.LookAndFeel.UseDefaultLookAndFeel = False
-        Me.GridControl1.MainView = Me.GridView1
-        Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(598, 491)
-        Me.GridControl1.TabIndex = 1
-        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        Me.GCPOS.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GCPOS.Location = New System.Drawing.Point(0, 0)
+        Me.GCPOS.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCPOS.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.GCPOS.MainView = Me.GVPOS
+        Me.GCPOS.Name = "GCPOS"
+        Me.GCPOS.Size = New System.Drawing.Size(598, 491)
+        Me.GCPOS.TabIndex = 1
+        Me.GCPOS.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVPOS})
         '
-        'GridView1
+        'GVPOS
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6})
-        Me.GridView1.GridControl = Me.GridControl1
-        Me.GridView1.Name = "GridView1"
-        Me.GridView1.OptionsView.ShowGroupPanel = False
+        Me.GVPOS.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6})
+        Me.GVPOS.GridControl = Me.GCPOS
+        Me.GVPOS.Name = "GVPOS"
+        Me.GVPOS.OptionsView.ShowGroupPanel = False
         '
         'GridColumn1
         '
@@ -450,7 +450,7 @@ Partial Class FormPOS
         Me.GroupControlCustomer.Name = "GroupControlCustomer"
         Me.GroupControlCustomer.Size = New System.Drawing.Size(252, 124)
         Me.GroupControlCustomer.TabIndex = 26
-        Me.GroupControlCustomer.Text = "Customer"
+        Me.GroupControlCustomer.Text = "Member"
         '
         'TextEdit12
         '
@@ -506,7 +506,7 @@ Partial Class FormPOS
         '
         Me.GroupControlCard.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupControlCard.Appearance.Options.UseFont = True
-        Me.GroupControlCard.Controls.Add(Me.LEReportStatus)
+        Me.GroupControlCard.Controls.Add(Me.LECardType)
         Me.GroupControlCard.Controls.Add(Me.TextEdit10)
         Me.GroupControlCard.Controls.Add(Me.TextEdit11)
         Me.GroupControlCard.Controls.Add(Me.LabelControl13)
@@ -519,18 +519,18 @@ Partial Class FormPOS
         Me.GroupControlCard.TabIndex = 25
         Me.GroupControlCard.Text = "Card"
         '
-        'LEReportStatus
+        'LECardType
         '
-        Me.LEReportStatus.Enabled = False
-        Me.LEReportStatus.Location = New System.Drawing.Point(95, 24)
-        Me.LEReportStatus.Name = "LEReportStatus"
-        Me.LEReportStatus.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LEReportStatus.Properties.Appearance.Options.UseFont = True
-        Me.LEReportStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.LEReportStatus.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_report_status", "Id", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("report_status", "Status")})
-        Me.LEReportStatus.Properties.NullText = "-Select Card-"
-        Me.LEReportStatus.Size = New System.Drawing.Size(145, 20)
-        Me.LEReportStatus.TabIndex = 26
+        Me.LECardType.Enabled = False
+        Me.LECardType.Location = New System.Drawing.Point(95, 24)
+        Me.LECardType.Name = "LECardType"
+        Me.LECardType.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LECardType.Properties.Appearance.Options.UseFont = True
+        Me.LECardType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.LECardType.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_card_type", "Id", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("card_type", "Status")})
+        Me.LECardType.Properties.NullText = "-Select Card-"
+        Me.LECardType.Size = New System.Drawing.Size(145, 20)
+        Me.LECardType.TabIndex = 26
         '
         'TextEdit10
         '
@@ -910,12 +910,11 @@ Partial Class FormPOS
         '
         Me.LabelControlPrice.Appearance.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControlPrice.Dock = System.Windows.Forms.DockStyle.Right
-        Me.LabelControlPrice.Location = New System.Drawing.Point(286, 0)
+        Me.LabelControlPrice.Location = New System.Drawing.Point(349, 0)
         Me.LabelControlPrice.Name = "LabelControlPrice"
         Me.LabelControlPrice.Padding = New System.Windows.Forms.Padding(0, 0, 10, 0)
-        Me.LabelControlPrice.Size = New System.Drawing.Size(73, 45)
+        Me.LabelControlPrice.Size = New System.Drawing.Size(10, 45)
         Me.LabelControlPrice.TabIndex = 1
-        Me.LabelControlPrice.Text = "0,00"
         '
         'LabelInfoLeft
         '
@@ -935,7 +934,7 @@ Partial Class FormPOS
         Me.PanelControlBottom.Controls.Add(Me.LabelControl21)
         Me.PanelControlBottom.Controls.Add(Me.TextEdit19)
         Me.PanelControlBottom.Controls.Add(Me.LabelControl20)
-        Me.PanelControlBottom.Controls.Add(Me.LookUpEdit1)
+        Me.PanelControlBottom.Controls.Add(Me.LEStatus)
         Me.PanelControlBottom.Controls.Add(Me.TextEdit16)
         Me.PanelControlBottom.Controls.Add(Me.LabelControl22)
         Me.PanelControlBottom.Controls.Add(Me.TextEdit18)
@@ -1223,17 +1222,18 @@ Partial Class FormPOS
         Me.LabelControl20.TabIndex = 88
         Me.LabelControl20.Text = "Reg#"
         '
-        'LookUpEdit1
+        'LEStatus
         '
-        Me.LookUpEdit1.Enabled = False
-        Me.LookUpEdit1.Location = New System.Drawing.Point(351, 38)
-        Me.LookUpEdit1.Name = "LookUpEdit1"
-        Me.LookUpEdit1.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LookUpEdit1.Properties.Appearance.Options.UseFont = True
-        Me.LookUpEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.LookUpEdit1.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_country", "Id", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("country", "Country")})
-        Me.LookUpEdit1.Size = New System.Drawing.Size(120, 20)
-        Me.LookUpEdit1.TabIndex = 99
+        Me.LEStatus.Enabled = False
+        Me.LEStatus.Location = New System.Drawing.Point(351, 38)
+        Me.LEStatus.Name = "LEStatus"
+        Me.LEStatus.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LEStatus.Properties.Appearance.Options.UseFont = True
+        Me.LEStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.LEStatus.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_pos_status", "Id", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("pos_status", "Status")})
+        Me.LEStatus.Properties.NullText = "-Standby-"
+        Me.LEStatus.Size = New System.Drawing.Size(120, 20)
+        Me.LEStatus.TabIndex = 99
         '
         'TextEdit16
         '
@@ -1351,8 +1351,8 @@ Partial Class FormPOS
         Me.PanelControlMiddle.ResumeLayout(False)
         CType(Me.PanelControlMiddleData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlMiddleData.ResumeLayout(False)
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GCPOS, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GVPOS, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControlCode, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlCode.ResumeLayout(False)
         Me.PanelControlCode.PerformLayout()
@@ -1372,7 +1372,7 @@ Partial Class FormPOS
         CType(Me.GroupControlCard, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControlCard.ResumeLayout(False)
         Me.GroupControlCard.PerformLayout()
-        CType(Me.LEReportStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LECardType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit10.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit11.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControlPay, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1405,7 +1405,7 @@ Partial Class FormPOS
         Me.PanelControl1.PerformLayout()
         CType(Me.TextEdit20.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit19.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LEStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit16.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit18.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit15.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1418,8 +1418,8 @@ Partial Class FormPOS
 
     End Sub
     Friend WithEvents PanelControlMain As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GCPOS As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GVPOS As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn3 As DevExpress.XtraGrid.Columns.GridColumn
@@ -1439,7 +1439,7 @@ Partial Class FormPOS
     Friend WithEvents LabelControl15 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl18 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GroupControlCard As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents LEReportStatus As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents LECardType As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents TextEdit10 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents TextEdit11 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
@@ -1486,7 +1486,7 @@ Partial Class FormPOS
     Friend WithEvents LabelControl21 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TextEdit19 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl20 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LookUpEdit1 As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents LEStatus As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents TextEdit16 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl22 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TextEdit18 As DevExpress.XtraEditors.TextEdit

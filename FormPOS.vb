@@ -2,16 +2,26 @@
     Private Sub FormPOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LabelInfoLeft.Focus()
         viewCountry()
+        viewCardType()
+        viewPOSSTatus()
     End Sub
 
     Private Sub FormPOS_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.F1 Then
             help()
+        ElseIf e.KeyCode = Keys.Insert 'new trans
+            newTrans()
         ElseIf e.KeyCode = Keys.Insert Then
             TxtItemCode.Focus()
         ElseIf e.KeyCode = Keys.Escape Then
             exitForm()
         End If
+    End Sub
+
+    Sub newTrans()
+        TxtItemCode.Enabled = True
+        TxtItemCode.Focus()
+        LEStatus.ItemIndex = LEStatus.Properties.GetDataSourceRowIndex("id_pos_status", 1)
     End Sub
 
     Sub help()
@@ -35,5 +45,29 @@
         viewLookupQuery(LENation, query, -1, "country", "id_country")
     End Sub
 
+    Sub viewCardType()
+        Dim query As String = "SELECT * FROM tb_lookup_card_type a ORDER BY a.id_card_type ASC "
+        viewLookupQuery(LECardType, query, -1, "card_type", "id_card_type")
+    End Sub
 
+    Sub viewPOSSTatus()
+        Dim query As String = "SELECT * FROM tb_lookup_pos_status a ORDER BY a.id_pos_status ASC "
+        viewLookupQuery(LEStatus, query, -1, "pos_status", "id_pos_status")
+    End Sub
+
+    Private Sub TxtItemCode_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtItemCode.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Dim val As String = TxtItemCode.Text.Trim()
+            If val = "" Then
+                FormBlack.Show()
+                Cursor = Cursors.WaitCursor
+                FormPOSItem.ShowDialog()
+                Cursor = Cursors.Default
+                FormBlack.Close()
+                BringToFront()
+            Else
+
+            End If
+        End If
+    End Sub
 End Class
