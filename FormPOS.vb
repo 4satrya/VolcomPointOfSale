@@ -15,11 +15,11 @@
     End Sub
 
     Sub help()
-        If GroupControlMenu.Visible = True Then
-            GroupControlMenu.Visible = False
-        Else
-            GroupControlMenu.Visible = True
-        End If
+        'If GroupControlMenu.Visible = True Then
+        '    GroupControlMenu.Visible = False
+        'Else
+        '    GroupControlMenu.Visible = True
+        'End If
     End Sub
 
     Sub exitForm()
@@ -34,5 +34,13 @@
         Dim query As String = "SELECT * FROM tb_m_country a ORDER BY a.country ASC "
         Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
         'viewLookupQuery(LENation, query, 0, "country", "id_country")
+    End Sub
+
+    Private Sub GroupControl3_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
+
+    Private Sub GroupControl1_Paint(sender As Object, e As PaintEventArgs)
+
     End Sub
 End Class

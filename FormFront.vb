@@ -23,7 +23,7 @@
 
     Private Sub FormFront_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         apply_skin()
-        SplashScreenManager1.ShowWaitForm()
+        Cursor = Cursors.WaitCursor
         Try
             read_database_configuration()
             check_connection(True, "", "", "", "")
@@ -32,11 +32,11 @@
             Dim sc As New ClassItem
             sc.syncItem()
 
-            SplashScreenManager1.CloseWaitForm()
+            Cursor = Cursors.Default
             WindowState = FormWindowState.Maximized
             Opacity = 100
         Catch ex As Exception
-            SplashScreenManager1.CloseWaitForm()
+            Cursor = Cursors.Default
             connection_problem = True
             FormDatabase.id_type = "2"
             FormDatabase.TopMost = True
@@ -45,7 +45,6 @@
             FormDatabase.TopMost = False
         End Try
 
-        setLabelUser()
 
         My.Application.ChangeCulture("en-US")
         My.Application.Culture.NumberFormat.NumberDecimalSeparator = ","

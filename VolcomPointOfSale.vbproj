@@ -231,6 +231,12 @@
     <Compile Include="FormStock.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormTemp.Designer.vb">
+      <DependentUpon>FormTemp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormTemp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormTrf.Designer.vb">
       <DependentUpon>FormTrf.vb</DependentUpon>
     </Compile>
@@ -398,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormStock.resx">
       <DependentUpon>FormStock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTemp.resx">
+      <DependentUpon>FormTemp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTrf.resx">
       <DependentUpon>FormTrf.vb</DependentUpon>
