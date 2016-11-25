@@ -15,7 +15,7 @@ Module Common
     Public id_role_login As String
     Public role_login As String = "Administrator"
     Public id_departement_user As String
-    Public username_user As String
+    Public username_user As String = "catur"
     Public name_user As String = "Catur Satriya Annas"
     Public product_image_path As String = ""
     Public emp_image_path As String = ""

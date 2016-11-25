@@ -6,6 +6,13 @@
         viewCountry()
         viewCardType()
         viewPOSSTatus()
+        shift()
+    End Sub
+
+    Sub shift()
+        FormBlack.Show()
+        FormPOSShift.ShowDialog()
+        FormBlack.Close()
     End Sub
 
     Private Sub FormPOS_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown

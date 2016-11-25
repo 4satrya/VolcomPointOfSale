@@ -201,6 +201,12 @@
     <Compile Include="FormPOSItem.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormPOSShift.Designer.vb">
+      <DependentUpon>FormPOSShift.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPOSShift.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormRec.Designer.vb">
       <DependentUpon>FormRec.vb</DependentUpon>
     </Compile>
@@ -395,6 +401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPOSItem.resx">
       <DependentUpon>FormPOSItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPOSShift.resx">
+      <DependentUpon>FormPOSShift.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRec.resx">
       <DependentUpon>FormRec.vb</DependentUpon>
