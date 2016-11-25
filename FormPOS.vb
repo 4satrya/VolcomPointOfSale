@@ -145,6 +145,9 @@
 
     Sub actionLoad()
         If id <> "-1" Then
+            Dim query_c As New ClassPOS()
+            Dim query As String = query_c.queryMain("-1", "1")
+            Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
 
         End If
     End Sub
