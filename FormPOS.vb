@@ -1,5 +1,7 @@
 ﻿Public Class FormPOS
     Public id As String = "-1"
+    Public id_shift As String = "-1"
+    Dim id_user_shift As String = "-1"
 
     Private Sub FormPOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LabelInfoLeft.Focus()
@@ -10,21 +12,74 @@
     End Sub
 
     Sub shift()
-        FormBlack.Show()
-        FormPOSShift.ShowDialog()
-        FormBlack.Close()
+        'check registered POS
+        Dim id_pos_dev As String = "0"
+        Dim pos As New ClassPOS()
+        Dim dt_comp As DataTable = pos.getPOSDev()
+        If dt_comp.Rows.Count <= 0 Then
+            stopCustom("This computer is not registered")
+            Close()
+            Exit Sub
+        Else
+            id_pos_dev = dt_comp.Rows(0)("id_pos_dev").ToString
+        End If
+
+        'cek sudah ada inisialize atau belum
+        Dim query_open As String = pos.queryShift("AND s.id_pos_dev=" + id_pos_dev + " AND s.is_open=1", "2")
+        Dim dt_open As DataTable = execute_query(query_open, -1, True, "", "", "", "")
+        If dt_open.Rows.Count <= 0 Then
+            id_shift = "-1"
+            FormBlack.Show()
+            FormPOSShift.ShowDialog()
+            FormBlack.Close()
+        Else
+            id_shift = dt_open.Rows(0)("id_shift").ToString
+            TxtShift.Text = dt_open.Rows(0)("shift_type").ToString
+            TxtPOS.Text = dt_open.Rows(0)("pos_dev").ToString
+        End If
+
+        'cek user
+        id_user_shift = dt_open.Rows(0)("id_user").ToString
+        If id_user_shift <> id_user Then
+            stopCustom("User : '" + username_user + "' is active")
+            Close()
+            Exit Sub
+        End If
     End Sub
 
     Private Sub FormPOS_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.F1 Then
             help()
+        ElseIf e.KeyCode = Keys.F2 Then
+            payment()
+        ElseIf e.KeyCode = Keys.F3 Then
+            price()
+        ElseIf e.KeyCode = Keys.F4 Then
+            member()
+        ElseIf e.KeyCode = Keys.F5 Then
+            refund()
+        ElseIf e.KeyCode = Keys.F6 Then
+            pickup()
+        ElseIf e.KeyCode = Keys.F7 Then
+            drawer()
+        ElseIf e.KeyCode = Keys.F8 Then 'closing
+            closing()
+        ElseIf e.KeyCode = Keys.F9 Then
+            term()
+        ElseIf e.KeyCode = Keys.F10 Then
+            bonus()
+        ElseIf e.KeyCode = Keys.F11 Then
+            voucher()
         ElseIf e.KeyCode = Keys.Insert 'new trans
             newTrans()
-        ElseIf e.KeyCode = Keys.Insert Then
-            TxtItemCode.Focus()
         ElseIf e.KeyCode = Keys.Escape Then
             exitForm()
         End If
+    End Sub
+
+    Sub closing()
+        Cursor = Cursors.WaitCursor
+        Cursor = Cursors.Default
     End Sub
 
     Sub newTrans()
@@ -35,6 +90,58 @@
         VALUES(header_number(4), NOW(), 1); SELECT LAST_INSERT_ID(); "
         id = execute_query(query, 0, True, "", "", "", "")
     End Sub
+
+    Sub payment()
+        Cursor = Cursors.WaitCursor
+
+        Cursor = Cursors.Default
+    End Sub
+
+    Sub price()
+        Cursor = Cursors.WaitCursor
+
+        Cursor = Cursors.Default
+    End Sub
+
+    Sub member()
+        Cursor = Cursors.WaitCursor
+
+        Cursor = Cursors.Default
+    End Sub
+
+    Sub refund()
+        Cursor = Cursors.WaitCursor
+
+        Cursor = Cursors.Default
+    End Sub
+
+    Sub pickup()
+        Cursor = Cursors.WaitCursor
+
+        Cursor = Cursors.Default
+    End Sub
+
+    Sub drawer()
+        Cursor = Cursors.WaitCursor
+
+        Cursor = Cursors.Default
+    End Sub
+
+    Sub term()
+        Cursor = Cursors.WaitCursor
+        Cursor = Cursors.Default
+    End Sub
+
+    Sub bonus()
+        Cursor = Cursors.WaitCursor
+        Cursor = Cursors.Default
+    End Sub
+
+    Sub voucher()
+        Cursor = Cursors.WaitCursor
+        Cursor = Cursors.Default
+    End Sub
+
 
     Sub actionLoad()
         If id <> "-1" Then

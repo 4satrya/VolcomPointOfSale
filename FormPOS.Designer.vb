@@ -115,9 +115,9 @@ Partial Class FormPOS
         Me.LEStatus = New DevExpress.XtraEditors.LookUpEdit()
         Me.TextEdit16 = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl22 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit18 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtPOS = New DevExpress.XtraEditors.TextEdit()
         Me.TextEdit15 = New DevExpress.XtraEditors.TextEdit()
-        Me.TextEdit17 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtShift = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl23 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.PCClose = New DevExpress.XtraEditors.PanelControl()
@@ -175,9 +175,9 @@ Partial Class FormPOS
         CType(Me.TextEdit19.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LEStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit16.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit18.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtPOS.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit15.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit17.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtShift.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
         CType(Me.PCClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -939,9 +939,9 @@ Partial Class FormPOS
         Me.PanelControlBottom.Controls.Add(Me.LEStatus)
         Me.PanelControlBottom.Controls.Add(Me.TextEdit16)
         Me.PanelControlBottom.Controls.Add(Me.LabelControl22)
-        Me.PanelControlBottom.Controls.Add(Me.TextEdit18)
+        Me.PanelControlBottom.Controls.Add(Me.TxtPOS)
         Me.PanelControlBottom.Controls.Add(Me.TextEdit15)
-        Me.PanelControlBottom.Controls.Add(Me.TextEdit17)
+        Me.PanelControlBottom.Controls.Add(Me.TxtShift)
         Me.PanelControlBottom.Controls.Add(Me.LabelControl23)
         Me.PanelControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelControlBottom.Location = New System.Drawing.Point(0, 631)
@@ -1277,15 +1277,15 @@ Partial Class FormPOS
         Me.LabelControl22.TabIndex = 93
         Me.LabelControl22.Text = "Shift#"
         '
-        'TextEdit18
+        'TxtPOS
         '
-        Me.TextEdit18.Enabled = False
-        Me.TextEdit18.Location = New System.Drawing.Point(418, 12)
-        Me.TextEdit18.Name = "TextEdit18"
-        Me.TextEdit18.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit18.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit18.Size = New System.Drawing.Size(53, 20)
-        Me.TextEdit18.TabIndex = 94
+        Me.TxtPOS.Enabled = False
+        Me.TxtPOS.Location = New System.Drawing.Point(418, 12)
+        Me.TxtPOS.Name = "TxtPOS"
+        Me.TxtPOS.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtPOS.Properties.Appearance.Options.UseFont = True
+        Me.TxtPOS.Size = New System.Drawing.Size(53, 20)
+        Me.TxtPOS.TabIndex = 94
         '
         'TextEdit15
         '
@@ -1298,15 +1298,15 @@ Partial Class FormPOS
         Me.TextEdit15.Size = New System.Drawing.Size(70, 20)
         Me.TextEdit15.TabIndex = 89
         '
-        'TextEdit17
+        'TxtShift
         '
-        Me.TextEdit17.Enabled = False
-        Me.TextEdit17.Location = New System.Drawing.Point(351, 12)
-        Me.TextEdit17.Name = "TextEdit17"
-        Me.TextEdit17.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit17.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit17.Size = New System.Drawing.Size(29, 20)
-        Me.TextEdit17.TabIndex = 92
+        Me.TxtShift.Enabled = False
+        Me.TxtShift.Location = New System.Drawing.Point(351, 12)
+        Me.TxtShift.Name = "TxtShift"
+        Me.TxtShift.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtShift.Properties.Appearance.Options.UseFont = True
+        Me.TxtShift.Size = New System.Drawing.Size(29, 20)
+        Me.TxtShift.TabIndex = 92
         '
         'LabelControl23
         '
@@ -1430,9 +1430,9 @@ Partial Class FormPOS
         CType(Me.TextEdit19.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LEStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit16.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit18.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtPOS.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit15.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit17.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtShift.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl3.ResumeLayout(False)
         Me.PanelControl3.PerformLayout()
@@ -1512,9 +1512,9 @@ Partial Class FormPOS
     Friend WithEvents LEStatus As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents TextEdit16 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl22 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit18 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtPOS As DevExpress.XtraEditors.TextEdit
     Friend WithEvents TextEdit15 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit17 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtShift As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl23 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents PCClose As DevExpress.XtraEditors.PanelControl

@@ -165,5 +165,4 @@
         Dim nics() As Net.NetworkInformation.NetworkInterface = Net.NetworkInformation.NetworkInterface.GetAllNetworkInterfaces
         Return nics(0).GetPhysicalAddress.ToString
     End Function
-
 End Class

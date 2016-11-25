@@ -26,11 +26,11 @@ Partial Class FormPOSShift
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.DEDate = New DevExpress.XtraEditors.DateEdit()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
-        Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtShift = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtShiftName = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit3 = New DevExpress.XtraEditors.TextEdit()
-        Me.TxtPrice = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtPOS = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtCash = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.BtnOK = New DevExpress.XtraEditors.SimpleButton()
@@ -38,10 +38,10 @@ Partial Class FormPOSShift
         CType(Me.TxtName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DEDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DEDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtPrice.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtShift.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtShiftName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtPOS.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtCash.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         Me.SuspendLayout()
@@ -108,25 +108,25 @@ Partial Class FormPOSShift
         Me.LabelControl3.TabIndex = 5
         Me.LabelControl3.Text = "Shift"
         '
-        'TextEdit1
+        'TxtShift
         '
-        Me.TextEdit1.Enabled = False
-        Me.TextEdit1.Location = New System.Drawing.Point(73, 61)
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit1.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit1.Size = New System.Drawing.Size(44, 20)
-        Me.TextEdit1.TabIndex = 6
+        Me.TxtShift.Enabled = False
+        Me.TxtShift.Location = New System.Drawing.Point(73, 61)
+        Me.TxtShift.Name = "TxtShift"
+        Me.TxtShift.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtShift.Properties.Appearance.Options.UseFont = True
+        Me.TxtShift.Size = New System.Drawing.Size(44, 20)
+        Me.TxtShift.TabIndex = 6
         '
-        'TextEdit2
+        'TxtShiftName
         '
-        Me.TextEdit2.Enabled = False
-        Me.TextEdit2.Location = New System.Drawing.Point(119, 61)
-        Me.TextEdit2.Name = "TextEdit2"
-        Me.TextEdit2.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit2.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit2.Size = New System.Drawing.Size(103, 20)
-        Me.TextEdit2.TabIndex = 7
+        Me.TxtShiftName.Enabled = False
+        Me.TxtShiftName.Location = New System.Drawing.Point(119, 61)
+        Me.TxtShiftName.Name = "TxtShiftName"
+        Me.TxtShiftName.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtShiftName.Properties.Appearance.Options.UseFont = True
+        Me.TxtShiftName.Size = New System.Drawing.Size(103, 20)
+        Me.TxtShiftName.TabIndex = 7
         '
         'LabelControl4
         '
@@ -137,30 +137,30 @@ Partial Class FormPOSShift
         Me.LabelControl4.TabIndex = 8
         Me.LabelControl4.Text = "POS"
         '
-        'TextEdit3
+        'TxtPOS
         '
-        Me.TextEdit3.Enabled = False
-        Me.TextEdit3.Location = New System.Drawing.Point(253, 61)
-        Me.TextEdit3.Name = "TextEdit3"
-        Me.TextEdit3.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit3.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit3.Size = New System.Drawing.Size(49, 20)
-        Me.TextEdit3.TabIndex = 9
+        Me.TxtPOS.Enabled = False
+        Me.TxtPOS.Location = New System.Drawing.Point(253, 61)
+        Me.TxtPOS.Name = "TxtPOS"
+        Me.TxtPOS.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtPOS.Properties.Appearance.Options.UseFont = True
+        Me.TxtPOS.Size = New System.Drawing.Size(49, 20)
+        Me.TxtPOS.TabIndex = 9
         '
-        'TxtPrice
+        'TxtCash
         '
-        Me.TxtPrice.Location = New System.Drawing.Point(73, 87)
-        Me.TxtPrice.Name = "TxtPrice"
-        Me.TxtPrice.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtPrice.Properties.Appearance.Options.UseFont = True
-        Me.TxtPrice.Properties.DisplayFormat.FormatString = "N2"
-        Me.TxtPrice.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TxtPrice.Properties.Mask.EditMask = "n2"
-        Me.TxtPrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TxtPrice.Properties.Mask.SaveLiteral = False
-        Me.TxtPrice.Properties.Mask.ShowPlaceHolders = False
-        Me.TxtPrice.Size = New System.Drawing.Size(229, 20)
-        Me.TxtPrice.TabIndex = 10
+        Me.TxtCash.Location = New System.Drawing.Point(73, 87)
+        Me.TxtCash.Name = "TxtCash"
+        Me.TxtCash.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCash.Properties.Appearance.Options.UseFont = True
+        Me.TxtCash.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtCash.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtCash.Properties.Mask.EditMask = "n2"
+        Me.TxtCash.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtCash.Properties.Mask.SaveLiteral = False
+        Me.TxtCash.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtCash.Size = New System.Drawing.Size(229, 20)
+        Me.TxtCash.TabIndex = 10
         '
         'LabelControl5
         '
@@ -197,17 +197,18 @@ Partial Class FormPOSShift
         '
         'FormPOSShift
         '
+        Me.AcceptButton = Me.BtnOK
         Me.Appearance.Options.UseFont = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(319, 160)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.LabelControl5)
-        Me.Controls.Add(Me.TxtPrice)
-        Me.Controls.Add(Me.TextEdit3)
+        Me.Controls.Add(Me.TxtCash)
+        Me.Controls.Add(Me.TxtPOS)
         Me.Controls.Add(Me.LabelControl4)
-        Me.Controls.Add(Me.TextEdit2)
-        Me.Controls.Add(Me.TextEdit1)
+        Me.Controls.Add(Me.TxtShiftName)
+        Me.Controls.Add(Me.TxtShift)
         Me.Controls.Add(Me.LabelControl3)
         Me.Controls.Add(Me.DEDate)
         Me.Controls.Add(Me.LabelControl2)
@@ -227,10 +228,10 @@ Partial Class FormPOSShift
         CType(Me.TxtName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DEDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DEDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtPrice.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtShift.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtShiftName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtPOS.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtCash.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -244,11 +245,11 @@ Partial Class FormPOSShift
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents DEDate As DevExpress.XtraEditors.DateEdit
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit2 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtShift As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtShiftName As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit3 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TxtPrice As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtPOS As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtCash As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents BtnOK As DevExpress.XtraEditors.SimpleButton

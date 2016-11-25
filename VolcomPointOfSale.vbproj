@@ -100,6 +100,7 @@
     <Compile Include="ClassComp.vb" />
     <Compile Include="ClassCompany.vb" />
     <Compile Include="ClassItem.vb" />
+    <Compile Include="ClassPOS.vb" />
     <Compile Include="ClassRec.vb" />
     <Compile Include="ClassRet.vb" />
     <Compile Include="ClassTrf.vb" />
