@@ -63,7 +63,7 @@
         ElseIf e.KeyCode = Keys.F7 Then
             drawer()
         ElseIf e.KeyCode = Keys.F8 Then 'closing
-            closing()
+            closing_shift()
         ElseIf e.KeyCode = Keys.F9 Then
             term()
         ElseIf e.KeyCode = Keys.F10 Then
@@ -77,7 +77,7 @@
         End If
     End Sub
 
-    Sub closing()
+    Sub closing_shift()
         Cursor = Cursors.WaitCursor
         Cursor = Cursors.Default
     End Sub

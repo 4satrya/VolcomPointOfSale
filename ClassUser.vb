@@ -157,7 +157,7 @@
 
     Function getIP() As String
         Dim strHostName As String = System.Net.Dns.GetHostName()
-        Dim strIPAddress As String = System.Net.Dns.GetHostByName(strHostName).AddressList(0).ToString()
+        Dim strIPAddress As String = System.Net.Dns.GetHostEntry(strHostName).AddressList(0).ToString()
         Return strIPAddress
     End Function
 
