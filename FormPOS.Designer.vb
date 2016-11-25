@@ -19,7 +19,6 @@ Partial Class FormPOS
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPOS))
         Me.PanelControlMain = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControlMiddle = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControlMiddleData = New DevExpress.XtraEditors.PanelControl()
@@ -32,49 +31,49 @@ Partial Class FormPOS
         Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PanelControlCode = New DevExpress.XtraEditors.PanelControl()
-        Me.LENation = New DevExpress.XtraEditors.LookUpEdit()
-        Me.LabelControl25 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit24 = New DevExpress.XtraEditors.TextEdit()
-        Me.TextEdit22 = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl26 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit23 = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl27 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit14 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtPrc = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelPrice = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtQty = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl19 = New DevExpress.XtraEditors.LabelControl()
         Me.TxtItemCode = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl17 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlMainLeft = New DevExpress.XtraEditors.PanelControl()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl26 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtSales = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl25 = New DevExpress.XtraEditors.LabelControl()
+        Me.LENation = New DevExpress.XtraEditors.LookUpEdit()
         Me.GroupControlCustomer = New DevExpress.XtraEditors.GroupControl()
-        Me.TextEdit12 = New DevExpress.XtraEditors.TextEdit()
-        Me.TextEdit13 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtMemberName = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtMemberNumber = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl15 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl18 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControlCard = New DevExpress.XtraEditors.GroupControl()
         Me.LECardType = New DevExpress.XtraEditors.LookUpEdit()
-        Me.TextEdit10 = New DevExpress.XtraEditors.TextEdit()
-        Me.TextEdit11 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtCardName = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtCardNumber = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControlPay = New DevExpress.XtraEditors.GroupControl()
-        Me.TextEdit5 = New DevExpress.XtraEditors.TextEdit()
-        Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtVoucher = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtVoucherNo = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit6 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtChange = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit7 = New DevExpress.XtraEditors.TextEdit()
-        Me.TextEdit9 = New DevExpress.XtraEditors.TextEdit()
-        Me.TextEdit8 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtPoint = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtCard = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtCash = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
         Me.GroupControlInfo = New DevExpress.XtraEditors.GroupControl()
-        Me.TxtPrice = New DevExpress.XtraEditors.TextEdit()
-        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtSubTotal = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtDiscount = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit()
-        Me.TextEdit3 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtTax = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtTotal = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
@@ -106,22 +105,17 @@ Partial Class FormPOS
         Me.LabelControl37 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl47 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl36 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit20 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtCashierName = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl24 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl21 = New DevExpress.XtraEditors.LabelControl()
-        Me.TextEdit19 = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl20 = New DevExpress.XtraEditors.LabelControl()
         Me.LEStatus = New DevExpress.XtraEditors.LookUpEdit()
-        Me.TextEdit16 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtCashierUser = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl22 = New DevExpress.XtraEditors.LabelControl()
         Me.TxtPOS = New DevExpress.XtraEditors.TextEdit()
-        Me.TextEdit15 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtNumber = New DevExpress.XtraEditors.TextEdit()
         Me.TxtShift = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl23 = New DevExpress.XtraEditors.LabelControl()
-        Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
-        Me.PCClose = New DevExpress.XtraEditors.PanelControl()
-        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.PanelControlMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlMain.SuspendLayout()
         CType(Me.PanelControlMiddle, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -132,37 +126,38 @@ Partial Class FormPOS
         CType(Me.GVPOS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControlCode, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlCode.SuspendLayout()
-        CType(Me.LENation.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit24.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit22.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit23.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit14.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtPrc.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtQty.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtItemCode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControlMainLeft, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlMainLeft.SuspendLayout()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
+        CType(Me.TxtSales.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LENation.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControlCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControlCustomer.SuspendLayout()
-        CType(Me.TextEdit12.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit13.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtMemberName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtMemberNumber.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControlCard, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControlCard.SuspendLayout()
         CType(Me.LECardType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit10.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit11.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtCardName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtCardNumber.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControlPay, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControlPay.SuspendLayout()
-        CType(Me.TextEdit5.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit6.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit7.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit9.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit8.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtVoucher.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtVoucherNo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtChange.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtPoint.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtCard.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtCash.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControlInfo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControlInfo.SuspendLayout()
-        CType(Me.TxtPrice.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtSubTotal.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtDiscount.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtTax.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtTotal.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControlnfo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlnfo.SuspendLayout()
         CType(Me.PanelControlInfoLeft, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -171,16 +166,12 @@ Partial Class FormPOS
         Me.PanelControlBottom.SuspendLayout()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
-        CType(Me.TextEdit20.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit19.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtCashierName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LEStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit16.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtCashierUser.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtPOS.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit15.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtNumber.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtShift.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControl3.SuspendLayout()
-        CType(Me.PCClose, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelControlMain
@@ -189,7 +180,6 @@ Partial Class FormPOS
         Me.PanelControlMain.Controls.Add(Me.PanelControlMiddle)
         Me.PanelControlMain.Controls.Add(Me.PanelControlnfo)
         Me.PanelControlMain.Controls.Add(Me.PanelControlBottom)
-        Me.PanelControlMain.Controls.Add(Me.PanelControl3)
         Me.PanelControlMain.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControlMain.Location = New System.Drawing.Point(0, 0)
         Me.PanelControlMain.Name = "PanelControlMain"
@@ -202,9 +192,9 @@ Partial Class FormPOS
         Me.PanelControlMiddle.Controls.Add(Me.PanelControlMiddleData)
         Me.PanelControlMiddle.Controls.Add(Me.PanelControlMainLeft)
         Me.PanelControlMiddle.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControlMiddle.Location = New System.Drawing.Point(0, 74)
+        Me.PanelControlMiddle.Location = New System.Drawing.Point(0, 50)
         Me.PanelControlMiddle.Name = "PanelControlMiddle"
-        Me.PanelControlMiddle.Size = New System.Drawing.Size(850, 557)
+        Me.PanelControlMiddle.Size = New System.Drawing.Size(850, 586)
         Me.PanelControlMiddle.TabIndex = 46
         '
         'PanelControlMiddleData
@@ -215,7 +205,7 @@ Partial Class FormPOS
         Me.PanelControlMiddleData.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControlMiddleData.Location = New System.Drawing.Point(0, 0)
         Me.PanelControlMiddleData.Name = "PanelControlMiddleData"
-        Me.PanelControlMiddleData.Size = New System.Drawing.Size(598, 557)
+        Me.PanelControlMiddleData.Size = New System.Drawing.Size(598, 586)
         Me.PanelControlMiddleData.TabIndex = 4
         '
         'GCPOS
@@ -226,7 +216,7 @@ Partial Class FormPOS
         Me.GCPOS.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCPOS.MainView = Me.GVPOS
         Me.GCPOS.Name = "GCPOS"
-        Me.GCPOS.Size = New System.Drawing.Size(598, 491)
+        Me.GCPOS.Size = New System.Drawing.Size(598, 549)
         Me.GCPOS.TabIndex = 1
         Me.GCPOS.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVPOS})
         '
@@ -287,116 +277,60 @@ Partial Class FormPOS
         '
         'PanelControlCode
         '
-        Me.PanelControlCode.Controls.Add(Me.LENation)
-        Me.PanelControlCode.Controls.Add(Me.LabelControl25)
-        Me.PanelControlCode.Controls.Add(Me.TextEdit24)
-        Me.PanelControlCode.Controls.Add(Me.TextEdit22)
-        Me.PanelControlCode.Controls.Add(Me.LabelControl26)
-        Me.PanelControlCode.Controls.Add(Me.TextEdit23)
-        Me.PanelControlCode.Controls.Add(Me.LabelControl27)
-        Me.PanelControlCode.Controls.Add(Me.TextEdit14)
+        Me.PanelControlCode.Controls.Add(Me.TxtPrc)
+        Me.PanelControlCode.Controls.Add(Me.LabelPrice)
+        Me.PanelControlCode.Controls.Add(Me.TxtQty)
         Me.PanelControlCode.Controls.Add(Me.LabelControl19)
         Me.PanelControlCode.Controls.Add(Me.TxtItemCode)
         Me.PanelControlCode.Controls.Add(Me.LabelControl17)
         Me.PanelControlCode.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControlCode.Location = New System.Drawing.Point(0, 491)
+        Me.PanelControlCode.Location = New System.Drawing.Point(0, 549)
         Me.PanelControlCode.Name = "PanelControlCode"
-        Me.PanelControlCode.Size = New System.Drawing.Size(598, 66)
+        Me.PanelControlCode.Size = New System.Drawing.Size(598, 37)
         Me.PanelControlCode.TabIndex = 3
         '
-        'LENation
+        'TxtPrc
         '
-        Me.LENation.Enabled = False
-        Me.LENation.Location = New System.Drawing.Point(351, 35)
-        Me.LENation.Name = "LENation"
-        Me.LENation.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LENation.Properties.Appearance.Options.UseFont = True
-        Me.LENation.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.LENation.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_country", "Id", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("country", "Country")})
-        Me.LENation.Properties.NullText = "-Select Nation-"
-        Me.LENation.Size = New System.Drawing.Size(120, 20)
-        Me.LENation.TabIndex = 93
+        Me.TxtPrc.Enabled = False
+        Me.TxtPrc.Location = New System.Drawing.Point(351, 9)
+        Me.TxtPrc.Name = "TxtPrc"
+        Me.TxtPrc.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtPrc.Properties.Appearance.Options.UseFont = True
+        Me.TxtPrc.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtPrc.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtPrc.Properties.Mask.EditMask = "n2"
+        Me.TxtPrc.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtPrc.Properties.Mask.SaveLiteral = False
+        Me.TxtPrc.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtPrc.Size = New System.Drawing.Size(120, 20)
+        Me.TxtPrc.TabIndex = 33
+        Me.TxtPrc.Visible = False
         '
-        'LabelControl25
+        'LabelPrice
         '
-        Me.LabelControl25.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl25.Location = New System.Drawing.Point(303, 38)
-        Me.LabelControl25.Name = "LabelControl25"
-        Me.LabelControl25.Size = New System.Drawing.Size(35, 13)
-        Me.LabelControl25.TabIndex = 94
-        Me.LabelControl25.Text = "Nation"
+        Me.LabelPrice.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelPrice.Location = New System.Drawing.Point(303, 11)
+        Me.LabelPrice.Name = "LabelPrice"
+        Me.LabelPrice.Size = New System.Drawing.Size(24, 13)
+        Me.LabelPrice.TabIndex = 51
+        Me.LabelPrice.Text = "Price"
+        Me.LabelPrice.Visible = False
         '
-        'TextEdit24
+        'TxtQty
         '
-        Me.TextEdit24.Enabled = False
-        Me.TextEdit24.Location = New System.Drawing.Point(57, 35)
-        Me.TextEdit24.Name = "TextEdit24"
-        Me.TextEdit24.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit24.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit24.Size = New System.Drawing.Size(70, 20)
-        Me.TextEdit24.TabIndex = 95
-        '
-        'TextEdit22
-        '
-        Me.TextEdit22.Enabled = False
-        Me.TextEdit22.Location = New System.Drawing.Point(130, 35)
-        Me.TextEdit22.Name = "TextEdit22"
-        Me.TextEdit22.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit22.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit22.Size = New System.Drawing.Size(167, 20)
-        Me.TextEdit22.TabIndex = 96
-        '
-        'LabelControl26
-        '
-        Me.LabelControl26.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl26.Location = New System.Drawing.Point(13, 38)
-        Me.LabelControl26.Name = "LabelControl26"
-        Me.LabelControl26.Size = New System.Drawing.Size(26, 13)
-        Me.LabelControl26.TabIndex = 97
-        Me.LabelControl26.Text = "Sales"
-        '
-        'TextEdit23
-        '
-        Me.TextEdit23.Enabled = False
-        Me.TextEdit23.Location = New System.Drawing.Point(351, 9)
-        Me.TextEdit23.Name = "TextEdit23"
-        Me.TextEdit23.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit23.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit23.Properties.DisplayFormat.FormatString = "N2"
-        Me.TextEdit23.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TextEdit23.Properties.Mask.EditMask = "n2"
-        Me.TextEdit23.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit23.Properties.Mask.SaveLiteral = False
-        Me.TextEdit23.Properties.Mask.ShowPlaceHolders = False
-        Me.TextEdit23.Size = New System.Drawing.Size(120, 20)
-        Me.TextEdit23.TabIndex = 33
-        Me.TextEdit23.Visible = False
-        '
-        'LabelControl27
-        '
-        Me.LabelControl27.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl27.Location = New System.Drawing.Point(303, 11)
-        Me.LabelControl27.Name = "LabelControl27"
-        Me.LabelControl27.Size = New System.Drawing.Size(24, 13)
-        Me.LabelControl27.TabIndex = 51
-        Me.LabelControl27.Text = "Price"
-        Me.LabelControl27.Visible = False
-        '
-        'TextEdit14
-        '
-        Me.TextEdit14.Enabled = False
-        Me.TextEdit14.Location = New System.Drawing.Point(246, 9)
-        Me.TextEdit14.Name = "TextEdit14"
-        Me.TextEdit14.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit14.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit14.Properties.DisplayFormat.FormatString = "N2"
-        Me.TextEdit14.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TextEdit14.Properties.Mask.EditMask = "n2"
-        Me.TextEdit14.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit14.Properties.Mask.SaveLiteral = False
-        Me.TextEdit14.Properties.Mask.ShowPlaceHolders = False
-        Me.TextEdit14.Size = New System.Drawing.Size(51, 20)
-        Me.TextEdit14.TabIndex = 33
+        Me.TxtQty.Enabled = False
+        Me.TxtQty.Location = New System.Drawing.Point(246, 9)
+        Me.TxtQty.Name = "TxtQty"
+        Me.TxtQty.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtQty.Properties.Appearance.Options.UseFont = True
+        Me.TxtQty.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtQty.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtQty.Properties.Mask.EditMask = "n2"
+        Me.TxtQty.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtQty.Properties.Mask.SaveLiteral = False
+        Me.TxtQty.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtQty.Size = New System.Drawing.Size(51, 20)
+        Me.TxtQty.TabIndex = 33
         '
         'LabelControl19
         '
@@ -429,6 +363,7 @@ Partial Class FormPOS
         'PanelControlMainLeft
         '
         Me.PanelControlMainLeft.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControlMainLeft.Controls.Add(Me.GroupControl1)
         Me.PanelControlMainLeft.Controls.Add(Me.GroupControlCustomer)
         Me.PanelControlMainLeft.Controls.Add(Me.GroupControlCard)
         Me.PanelControlMainLeft.Controls.Add(Me.GroupControlPay)
@@ -436,55 +371,109 @@ Partial Class FormPOS
         Me.PanelControlMainLeft.Dock = System.Windows.Forms.DockStyle.Right
         Me.PanelControlMainLeft.Location = New System.Drawing.Point(598, 0)
         Me.PanelControlMainLeft.Name = "PanelControlMainLeft"
-        Me.PanelControlMainLeft.Size = New System.Drawing.Size(252, 557)
+        Me.PanelControlMainLeft.Size = New System.Drawing.Size(252, 586)
         Me.PanelControlMainLeft.TabIndex = 2
+        '
+        'GroupControl1
+        '
+        Me.GroupControl1.Controls.Add(Me.LabelControl26)
+        Me.GroupControl1.Controls.Add(Me.TxtSales)
+        Me.GroupControl1.Controls.Add(Me.LabelControl25)
+        Me.GroupControl1.Controls.Add(Me.LENation)
+        Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl1.Location = New System.Drawing.Point(0, 498)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(252, 88)
+        Me.GroupControl1.TabIndex = 34
+        Me.GroupControl1.Text = "Additional"
+        '
+        'LabelControl26
+        '
+        Me.LabelControl26.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl26.Location = New System.Drawing.Point(9, 29)
+        Me.LabelControl26.Name = "LabelControl26"
+        Me.LabelControl26.Size = New System.Drawing.Size(26, 13)
+        Me.LabelControl26.TabIndex = 97
+        Me.LabelControl26.Text = "Sales"
+        '
+        'TxtSales
+        '
+        Me.TxtSales.Enabled = False
+        Me.TxtSales.Location = New System.Drawing.Point(95, 26)
+        Me.TxtSales.Name = "TxtSales"
+        Me.TxtSales.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtSales.Properties.Appearance.Options.UseFont = True
+        Me.TxtSales.Size = New System.Drawing.Size(144, 20)
+        Me.TxtSales.TabIndex = 96
+        '
+        'LabelControl25
+        '
+        Me.LabelControl25.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl25.Location = New System.Drawing.Point(9, 54)
+        Me.LabelControl25.Name = "LabelControl25"
+        Me.LabelControl25.Size = New System.Drawing.Size(35, 13)
+        Me.LabelControl25.TabIndex = 94
+        Me.LabelControl25.Text = "Nation"
+        '
+        'LENation
+        '
+        Me.LENation.Enabled = False
+        Me.LENation.Location = New System.Drawing.Point(95, 51)
+        Me.LENation.Name = "LENation"
+        Me.LENation.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LENation.Properties.Appearance.Options.UseFont = True
+        Me.LENation.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.LENation.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_country", "Id", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("country", "Country")})
+        Me.LENation.Properties.NullText = "-Select Nation-"
+        Me.LENation.Size = New System.Drawing.Size(144, 20)
+        Me.LENation.TabIndex = 93
         '
         'GroupControlCustomer
         '
         Me.GroupControlCustomer.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupControlCustomer.Appearance.Options.UseFont = True
-        Me.GroupControlCustomer.Controls.Add(Me.TextEdit12)
-        Me.GroupControlCustomer.Controls.Add(Me.TextEdit13)
+        Me.GroupControlCustomer.Controls.Add(Me.TxtMemberName)
+        Me.GroupControlCustomer.Controls.Add(Me.TxtMemberNumber)
         Me.GroupControlCustomer.Controls.Add(Me.LabelControl15)
         Me.GroupControlCustomer.Controls.Add(Me.LabelControl18)
-        Me.GroupControlCustomer.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControlCustomer.Location = New System.Drawing.Point(0, 433)
+        Me.GroupControlCustomer.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupControlCustomer.Location = New System.Drawing.Point(0, 416)
         Me.GroupControlCustomer.Name = "GroupControlCustomer"
-        Me.GroupControlCustomer.Size = New System.Drawing.Size(252, 124)
+        Me.GroupControlCustomer.Size = New System.Drawing.Size(252, 82)
         Me.GroupControlCustomer.TabIndex = 26
         Me.GroupControlCustomer.Text = "Member"
         '
-        'TextEdit12
+        'TxtMemberName
         '
-        Me.TextEdit12.Enabled = False
-        Me.TextEdit12.Location = New System.Drawing.Point(95, 55)
-        Me.TextEdit12.Name = "TextEdit12"
-        Me.TextEdit12.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit12.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit12.Properties.DisplayFormat.FormatString = "N2"
-        Me.TextEdit12.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TextEdit12.Properties.Mask.EditMask = "n2"
-        Me.TextEdit12.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit12.Properties.Mask.SaveLiteral = False
-        Me.TextEdit12.Properties.Mask.ShowPlaceHolders = False
-        Me.TextEdit12.Size = New System.Drawing.Size(145, 20)
-        Me.TextEdit12.TabIndex = 33
+        Me.TxtMemberName.Enabled = False
+        Me.TxtMemberName.Location = New System.Drawing.Point(95, 55)
+        Me.TxtMemberName.Name = "TxtMemberName"
+        Me.TxtMemberName.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtMemberName.Properties.Appearance.Options.UseFont = True
+        Me.TxtMemberName.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtMemberName.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtMemberName.Properties.Mask.EditMask = "n2"
+        Me.TxtMemberName.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtMemberName.Properties.Mask.SaveLiteral = False
+        Me.TxtMemberName.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtMemberName.Size = New System.Drawing.Size(145, 20)
+        Me.TxtMemberName.TabIndex = 33
         '
-        'TextEdit13
+        'TxtMemberNumber
         '
-        Me.TextEdit13.Enabled = False
-        Me.TextEdit13.Location = New System.Drawing.Point(95, 29)
-        Me.TextEdit13.Name = "TextEdit13"
-        Me.TextEdit13.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit13.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit13.Properties.DisplayFormat.FormatString = "N2"
-        Me.TextEdit13.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TextEdit13.Properties.Mask.EditMask = "n2"
-        Me.TextEdit13.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit13.Properties.Mask.SaveLiteral = False
-        Me.TextEdit13.Properties.Mask.ShowPlaceHolders = False
-        Me.TextEdit13.Size = New System.Drawing.Size(145, 20)
-        Me.TextEdit13.TabIndex = 22
+        Me.TxtMemberNumber.Enabled = False
+        Me.TxtMemberNumber.Location = New System.Drawing.Point(95, 29)
+        Me.TxtMemberNumber.Name = "TxtMemberNumber"
+        Me.TxtMemberNumber.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtMemberNumber.Properties.Appearance.Options.UseFont = True
+        Me.TxtMemberNumber.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtMemberNumber.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtMemberNumber.Properties.Mask.EditMask = "n2"
+        Me.TxtMemberNumber.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtMemberNumber.Properties.Mask.SaveLiteral = False
+        Me.TxtMemberNumber.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtMemberNumber.Size = New System.Drawing.Size(145, 20)
+        Me.TxtMemberNumber.TabIndex = 22
         '
         'LabelControl15
         '
@@ -509,15 +498,15 @@ Partial Class FormPOS
         Me.GroupControlCard.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupControlCard.Appearance.Options.UseFont = True
         Me.GroupControlCard.Controls.Add(Me.LECardType)
-        Me.GroupControlCard.Controls.Add(Me.TextEdit10)
-        Me.GroupControlCard.Controls.Add(Me.TextEdit11)
+        Me.GroupControlCard.Controls.Add(Me.TxtCardName)
+        Me.GroupControlCard.Controls.Add(Me.TxtCardNumber)
         Me.GroupControlCard.Controls.Add(Me.LabelControl13)
         Me.GroupControlCard.Controls.Add(Me.LabelControl14)
         Me.GroupControlCard.Controls.Add(Me.LabelControl16)
         Me.GroupControlCard.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControlCard.Location = New System.Drawing.Point(0, 325)
+        Me.GroupControlCard.Location = New System.Drawing.Point(0, 314)
         Me.GroupControlCard.Name = "GroupControlCard"
-        Me.GroupControlCard.Size = New System.Drawing.Size(252, 108)
+        Me.GroupControlCard.Size = New System.Drawing.Size(252, 102)
         Me.GroupControlCard.TabIndex = 25
         Me.GroupControlCard.Text = "Card"
         '
@@ -534,37 +523,37 @@ Partial Class FormPOS
         Me.LECardType.Size = New System.Drawing.Size(145, 20)
         Me.LECardType.TabIndex = 26
         '
-        'TextEdit10
+        'TxtCardName
         '
-        Me.TextEdit10.Enabled = False
-        Me.TextEdit10.Location = New System.Drawing.Point(95, 76)
-        Me.TextEdit10.Name = "TextEdit10"
-        Me.TextEdit10.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit10.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit10.Properties.DisplayFormat.FormatString = "N2"
-        Me.TextEdit10.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TextEdit10.Properties.Mask.EditMask = "n2"
-        Me.TextEdit10.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit10.Properties.Mask.SaveLiteral = False
-        Me.TextEdit10.Properties.Mask.ShowPlaceHolders = False
-        Me.TextEdit10.Size = New System.Drawing.Size(145, 20)
-        Me.TextEdit10.TabIndex = 33
+        Me.TxtCardName.Enabled = False
+        Me.TxtCardName.Location = New System.Drawing.Point(95, 76)
+        Me.TxtCardName.Name = "TxtCardName"
+        Me.TxtCardName.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCardName.Properties.Appearance.Options.UseFont = True
+        Me.TxtCardName.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtCardName.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtCardName.Properties.Mask.EditMask = "n2"
+        Me.TxtCardName.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtCardName.Properties.Mask.SaveLiteral = False
+        Me.TxtCardName.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtCardName.Size = New System.Drawing.Size(145, 20)
+        Me.TxtCardName.TabIndex = 33
         '
-        'TextEdit11
+        'TxtCardNumber
         '
-        Me.TextEdit11.Enabled = False
-        Me.TextEdit11.Location = New System.Drawing.Point(95, 50)
-        Me.TextEdit11.Name = "TextEdit11"
-        Me.TextEdit11.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit11.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit11.Properties.DisplayFormat.FormatString = "N2"
-        Me.TextEdit11.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TextEdit11.Properties.Mask.EditMask = "n2"
-        Me.TextEdit11.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit11.Properties.Mask.SaveLiteral = False
-        Me.TextEdit11.Properties.Mask.ShowPlaceHolders = False
-        Me.TextEdit11.Size = New System.Drawing.Size(145, 20)
-        Me.TextEdit11.TabIndex = 22
+        Me.TxtCardNumber.Enabled = False
+        Me.TxtCardNumber.Location = New System.Drawing.Point(95, 50)
+        Me.TxtCardNumber.Name = "TxtCardNumber"
+        Me.TxtCardNumber.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCardNumber.Properties.Appearance.Options.UseFont = True
+        Me.TxtCardNumber.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtCardNumber.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtCardNumber.Properties.Mask.EditMask = "n2"
+        Me.TxtCardNumber.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtCardNumber.Properties.Mask.SaveLiteral = False
+        Me.TxtCardNumber.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtCardNumber.Size = New System.Drawing.Size(145, 20)
+        Me.TxtCardNumber.TabIndex = 22
         '
         'LabelControl13
         '
@@ -597,81 +586,81 @@ Partial Class FormPOS
         '
         Me.GroupControlPay.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupControlPay.Appearance.Options.UseFont = True
-        Me.GroupControlPay.Controls.Add(Me.TextEdit5)
-        Me.GroupControlPay.Controls.Add(Me.TextEdit4)
+        Me.GroupControlPay.Controls.Add(Me.TxtVoucher)
+        Me.GroupControlPay.Controls.Add(Me.TxtVoucherNo)
         Me.GroupControlPay.Controls.Add(Me.LabelControl11)
-        Me.GroupControlPay.Controls.Add(Me.TextEdit6)
+        Me.GroupControlPay.Controls.Add(Me.TxtChange)
         Me.GroupControlPay.Controls.Add(Me.LabelControl6)
         Me.GroupControlPay.Controls.Add(Me.LabelControl12)
-        Me.GroupControlPay.Controls.Add(Me.TextEdit7)
-        Me.GroupControlPay.Controls.Add(Me.TextEdit9)
-        Me.GroupControlPay.Controls.Add(Me.TextEdit8)
+        Me.GroupControlPay.Controls.Add(Me.TxtPoint)
+        Me.GroupControlPay.Controls.Add(Me.TxtCard)
+        Me.GroupControlPay.Controls.Add(Me.TxtCash)
         Me.GroupControlPay.Controls.Add(Me.LabelControl10)
         Me.GroupControlPay.Controls.Add(Me.LabelControl8)
         Me.GroupControlPay.Controls.Add(Me.LabelControl9)
         Me.GroupControlPay.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupControlPay.Location = New System.Drawing.Point(0, 133)
         Me.GroupControlPay.Name = "GroupControlPay"
-        Me.GroupControlPay.Size = New System.Drawing.Size(252, 192)
+        Me.GroupControlPay.Size = New System.Drawing.Size(252, 181)
         Me.GroupControlPay.TabIndex = 24
         Me.GroupControlPay.Text = "Payment"
         '
-        'TextEdit5
+        'TxtVoucher
         '
-        Me.TextEdit5.Enabled = False
-        Me.TextEdit5.Location = New System.Drawing.Point(95, 55)
-        Me.TextEdit5.Name = "TextEdit5"
-        Me.TextEdit5.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit5.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit5.Properties.DisplayFormat.FormatString = "N2"
-        Me.TextEdit5.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TextEdit5.Properties.Mask.EditMask = "n2"
-        Me.TextEdit5.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit5.Properties.Mask.SaveLiteral = False
-        Me.TextEdit5.Properties.Mask.ShowPlaceHolders = False
-        Me.TextEdit5.Size = New System.Drawing.Size(145, 20)
-        Me.TextEdit5.TabIndex = 24
+        Me.TxtVoucher.Enabled = False
+        Me.TxtVoucher.Location = New System.Drawing.Point(95, 51)
+        Me.TxtVoucher.Name = "TxtVoucher"
+        Me.TxtVoucher.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVoucher.Properties.Appearance.Options.UseFont = True
+        Me.TxtVoucher.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtVoucher.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtVoucher.Properties.Mask.EditMask = "n2"
+        Me.TxtVoucher.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtVoucher.Properties.Mask.SaveLiteral = False
+        Me.TxtVoucher.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtVoucher.Size = New System.Drawing.Size(145, 20)
+        Me.TxtVoucher.TabIndex = 24
         '
-        'TextEdit4
+        'TxtVoucherNo
         '
-        Me.TextEdit4.Enabled = False
-        Me.TextEdit4.Location = New System.Drawing.Point(95, 26)
-        Me.TextEdit4.Name = "TextEdit4"
-        Me.TextEdit4.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit4.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit4.Properties.DisplayFormat.FormatString = "N2"
-        Me.TextEdit4.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TextEdit4.Properties.Mask.EditMask = "n2"
-        Me.TextEdit4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit4.Properties.Mask.SaveLiteral = False
-        Me.TextEdit4.Properties.Mask.ShowPlaceHolders = False
-        Me.TextEdit4.Size = New System.Drawing.Size(145, 20)
-        Me.TextEdit4.TabIndex = 22
+        Me.TxtVoucherNo.Enabled = False
+        Me.TxtVoucherNo.Location = New System.Drawing.Point(95, 26)
+        Me.TxtVoucherNo.Name = "TxtVoucherNo"
+        Me.TxtVoucherNo.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVoucherNo.Properties.Appearance.Options.UseFont = True
+        Me.TxtVoucherNo.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtVoucherNo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtVoucherNo.Properties.Mask.EditMask = "n2"
+        Me.TxtVoucherNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtVoucherNo.Properties.Mask.SaveLiteral = False
+        Me.TxtVoucherNo.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtVoucherNo.Size = New System.Drawing.Size(145, 20)
+        Me.TxtVoucherNo.TabIndex = 22
         '
         'LabelControl11
         '
         Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl11.Location = New System.Drawing.Point(9, 58)
+        Me.LabelControl11.Location = New System.Drawing.Point(9, 54)
         Me.LabelControl11.Name = "LabelControl11"
         Me.LabelControl11.Size = New System.Drawing.Size(43, 13)
         Me.LabelControl11.TabIndex = 23
         Me.LabelControl11.Text = "Voucher"
         '
-        'TextEdit6
+        'TxtChange
         '
-        Me.TextEdit6.Enabled = False
-        Me.TextEdit6.Location = New System.Drawing.Point(95, 159)
-        Me.TextEdit6.Name = "TextEdit6"
-        Me.TextEdit6.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit6.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit6.Properties.DisplayFormat.FormatString = "N2"
-        Me.TextEdit6.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TextEdit6.Properties.Mask.EditMask = "n2"
-        Me.TextEdit6.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit6.Properties.Mask.SaveLiteral = False
-        Me.TextEdit6.Properties.Mask.ShowPlaceHolders = False
-        Me.TextEdit6.Size = New System.Drawing.Size(145, 20)
-        Me.TextEdit6.TabIndex = 32
+        Me.TxtChange.Enabled = False
+        Me.TxtChange.Location = New System.Drawing.Point(95, 155)
+        Me.TxtChange.Name = "TxtChange"
+        Me.TxtChange.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtChange.Properties.Appearance.Options.UseFont = True
+        Me.TxtChange.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtChange.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtChange.Properties.Mask.EditMask = "n2"
+        Me.TxtChange.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtChange.Properties.Mask.SaveLiteral = False
+        Me.TxtChange.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtChange.Size = New System.Drawing.Size(145, 20)
+        Me.TxtChange.TabIndex = 32
         '
         'LabelControl6
         '
@@ -685,64 +674,64 @@ Partial Class FormPOS
         'LabelControl12
         '
         Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl12.Location = New System.Drawing.Point(9, 136)
+        Me.LabelControl12.Location = New System.Drawing.Point(8, 132)
         Me.LabelControl12.Name = "LabelControl12"
         Me.LabelControl12.Size = New System.Drawing.Size(24, 13)
         Me.LabelControl12.TabIndex = 30
         Me.LabelControl12.Text = "Card"
         '
-        'TextEdit7
+        'TxtPoint
         '
-        Me.TextEdit7.Enabled = False
-        Me.TextEdit7.Location = New System.Drawing.Point(95, 81)
-        Me.TextEdit7.Name = "TextEdit7"
-        Me.TextEdit7.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit7.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit7.Properties.DisplayFormat.FormatString = "N2"
-        Me.TextEdit7.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TextEdit7.Properties.Mask.EditMask = "n2"
-        Me.TextEdit7.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit7.Properties.Mask.SaveLiteral = False
-        Me.TextEdit7.Properties.Mask.ShowPlaceHolders = False
-        Me.TextEdit7.Size = New System.Drawing.Size(145, 20)
-        Me.TextEdit7.TabIndex = 26
+        Me.TxtPoint.Enabled = False
+        Me.TxtPoint.Location = New System.Drawing.Point(95, 77)
+        Me.TxtPoint.Name = "TxtPoint"
+        Me.TxtPoint.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtPoint.Properties.Appearance.Options.UseFont = True
+        Me.TxtPoint.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtPoint.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtPoint.Properties.Mask.EditMask = "n2"
+        Me.TxtPoint.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtPoint.Properties.Mask.SaveLiteral = False
+        Me.TxtPoint.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtPoint.Size = New System.Drawing.Size(145, 20)
+        Me.TxtPoint.TabIndex = 26
         '
-        'TextEdit9
+        'TxtCard
         '
-        Me.TextEdit9.Enabled = False
-        Me.TextEdit9.Location = New System.Drawing.Point(95, 133)
-        Me.TextEdit9.Name = "TextEdit9"
-        Me.TextEdit9.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit9.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit9.Properties.DisplayFormat.FormatString = "N2"
-        Me.TextEdit9.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TextEdit9.Properties.Mask.EditMask = "n2"
-        Me.TextEdit9.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit9.Properties.Mask.SaveLiteral = False
-        Me.TextEdit9.Properties.Mask.ShowPlaceHolders = False
-        Me.TextEdit9.Size = New System.Drawing.Size(145, 20)
-        Me.TextEdit9.TabIndex = 29
+        Me.TxtCard.Enabled = False
+        Me.TxtCard.Location = New System.Drawing.Point(95, 129)
+        Me.TxtCard.Name = "TxtCard"
+        Me.TxtCard.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCard.Properties.Appearance.Options.UseFont = True
+        Me.TxtCard.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtCard.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtCard.Properties.Mask.EditMask = "n2"
+        Me.TxtCard.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtCard.Properties.Mask.SaveLiteral = False
+        Me.TxtCard.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtCard.Size = New System.Drawing.Size(145, 20)
+        Me.TxtCard.TabIndex = 29
         '
-        'TextEdit8
+        'TxtCash
         '
-        Me.TextEdit8.Enabled = False
-        Me.TextEdit8.Location = New System.Drawing.Point(95, 107)
-        Me.TextEdit8.Name = "TextEdit8"
-        Me.TextEdit8.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit8.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit8.Properties.DisplayFormat.FormatString = "N2"
-        Me.TextEdit8.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TextEdit8.Properties.Mask.EditMask = "n2"
-        Me.TextEdit8.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit8.Properties.Mask.SaveLiteral = False
-        Me.TextEdit8.Properties.Mask.ShowPlaceHolders = False
-        Me.TextEdit8.Size = New System.Drawing.Size(145, 20)
-        Me.TextEdit8.TabIndex = 27
+        Me.TxtCash.Enabled = False
+        Me.TxtCash.Location = New System.Drawing.Point(95, 103)
+        Me.TxtCash.Name = "TxtCash"
+        Me.TxtCash.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCash.Properties.Appearance.Options.UseFont = True
+        Me.TxtCash.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtCash.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtCash.Properties.Mask.EditMask = "n2"
+        Me.TxtCash.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtCash.Properties.Mask.SaveLiteral = False
+        Me.TxtCash.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtCash.Size = New System.Drawing.Size(145, 20)
+        Me.TxtCash.TabIndex = 27
         '
         'LabelControl10
         '
         Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl10.Location = New System.Drawing.Point(9, 84)
+        Me.LabelControl10.Location = New System.Drawing.Point(9, 80)
         Me.LabelControl10.Name = "LabelControl10"
         Me.LabelControl10.Size = New System.Drawing.Size(27, 13)
         Me.LabelControl10.TabIndex = 25
@@ -751,7 +740,7 @@ Partial Class FormPOS
         'LabelControl8
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(9, 110)
+        Me.LabelControl8.Location = New System.Drawing.Point(9, 106)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(25, 13)
         Me.LabelControl8.TabIndex = 28
@@ -760,7 +749,7 @@ Partial Class FormPOS
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(9, 162)
+        Me.LabelControl9.Location = New System.Drawing.Point(9, 158)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(40, 13)
         Me.LabelControl9.TabIndex = 31
@@ -770,11 +759,11 @@ Partial Class FormPOS
         '
         Me.GroupControlInfo.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupControlInfo.Appearance.Options.UseFont = True
-        Me.GroupControlInfo.Controls.Add(Me.TxtPrice)
-        Me.GroupControlInfo.Controls.Add(Me.TextEdit1)
+        Me.GroupControlInfo.Controls.Add(Me.TxtSubTotal)
+        Me.GroupControlInfo.Controls.Add(Me.TxtDiscount)
         Me.GroupControlInfo.Controls.Add(Me.LabelControl5)
-        Me.GroupControlInfo.Controls.Add(Me.TextEdit2)
-        Me.GroupControlInfo.Controls.Add(Me.TextEdit3)
+        Me.GroupControlInfo.Controls.Add(Me.TxtTax)
+        Me.GroupControlInfo.Controls.Add(Me.TxtTotal)
         Me.GroupControlInfo.Controls.Add(Me.LabelControl4)
         Me.GroupControlInfo.Controls.Add(Me.LabelControl2)
         Me.GroupControlInfo.Controls.Add(Me.LabelControl3)
@@ -785,37 +774,37 @@ Partial Class FormPOS
         Me.GroupControlInfo.TabIndex = 33
         Me.GroupControlInfo.Text = "Sales Info"
         '
-        'TxtPrice
+        'TxtSubTotal
         '
-        Me.TxtPrice.Enabled = False
-        Me.TxtPrice.Location = New System.Drawing.Point(95, 28)
-        Me.TxtPrice.Name = "TxtPrice"
-        Me.TxtPrice.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtPrice.Properties.Appearance.Options.UseFont = True
-        Me.TxtPrice.Properties.DisplayFormat.FormatString = "N2"
-        Me.TxtPrice.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TxtPrice.Properties.Mask.EditMask = "n2"
-        Me.TxtPrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TxtPrice.Properties.Mask.SaveLiteral = False
-        Me.TxtPrice.Properties.Mask.ShowPlaceHolders = False
-        Me.TxtPrice.Size = New System.Drawing.Size(145, 20)
-        Me.TxtPrice.TabIndex = 14
+        Me.TxtSubTotal.Enabled = False
+        Me.TxtSubTotal.Location = New System.Drawing.Point(95, 28)
+        Me.TxtSubTotal.Name = "TxtSubTotal"
+        Me.TxtSubTotal.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtSubTotal.Properties.Appearance.Options.UseFont = True
+        Me.TxtSubTotal.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtSubTotal.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtSubTotal.Properties.Mask.EditMask = "n2"
+        Me.TxtSubTotal.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtSubTotal.Properties.Mask.SaveLiteral = False
+        Me.TxtSubTotal.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtSubTotal.Size = New System.Drawing.Size(145, 20)
+        Me.TxtSubTotal.TabIndex = 14
         '
-        'TextEdit1
+        'TxtDiscount
         '
-        Me.TextEdit1.Enabled = False
-        Me.TextEdit1.Location = New System.Drawing.Point(95, 54)
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit1.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit1.Properties.DisplayFormat.FormatString = "N2"
-        Me.TextEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TextEdit1.Properties.Mask.EditMask = "n2"
-        Me.TextEdit1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit1.Properties.Mask.SaveLiteral = False
-        Me.TextEdit1.Properties.Mask.ShowPlaceHolders = False
-        Me.TextEdit1.Size = New System.Drawing.Size(145, 20)
-        Me.TextEdit1.TabIndex = 16
+        Me.TxtDiscount.Enabled = False
+        Me.TxtDiscount.Location = New System.Drawing.Point(95, 54)
+        Me.TxtDiscount.Name = "TxtDiscount"
+        Me.TxtDiscount.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtDiscount.Properties.Appearance.Options.UseFont = True
+        Me.TxtDiscount.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtDiscount.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtDiscount.Properties.Mask.EditMask = "n2"
+        Me.TxtDiscount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtDiscount.Properties.Mask.SaveLiteral = False
+        Me.TxtDiscount.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtDiscount.Size = New System.Drawing.Size(145, 20)
+        Me.TxtDiscount.TabIndex = 16
         '
         'LabelControl5
         '
@@ -826,37 +815,37 @@ Partial Class FormPOS
         Me.LabelControl5.TabIndex = 20
         Me.LabelControl5.Text = "Total"
         '
-        'TextEdit2
+        'TxtTax
         '
-        Me.TextEdit2.Enabled = False
-        Me.TextEdit2.Location = New System.Drawing.Point(95, 80)
-        Me.TextEdit2.Name = "TextEdit2"
-        Me.TextEdit2.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit2.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit2.Properties.DisplayFormat.FormatString = "N2"
-        Me.TextEdit2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TextEdit2.Properties.Mask.EditMask = "n2"
-        Me.TextEdit2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit2.Properties.Mask.SaveLiteral = False
-        Me.TextEdit2.Properties.Mask.ShowPlaceHolders = False
-        Me.TextEdit2.Size = New System.Drawing.Size(145, 20)
-        Me.TextEdit2.TabIndex = 17
+        Me.TxtTax.Enabled = False
+        Me.TxtTax.Location = New System.Drawing.Point(95, 80)
+        Me.TxtTax.Name = "TxtTax"
+        Me.TxtTax.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtTax.Properties.Appearance.Options.UseFont = True
+        Me.TxtTax.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtTax.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtTax.Properties.Mask.EditMask = "n2"
+        Me.TxtTax.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtTax.Properties.Mask.SaveLiteral = False
+        Me.TxtTax.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtTax.Size = New System.Drawing.Size(145, 20)
+        Me.TxtTax.TabIndex = 17
         '
-        'TextEdit3
+        'TxtTotal
         '
-        Me.TextEdit3.Enabled = False
-        Me.TextEdit3.Location = New System.Drawing.Point(95, 106)
-        Me.TextEdit3.Name = "TextEdit3"
-        Me.TextEdit3.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit3.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit3.Properties.DisplayFormat.FormatString = "N2"
-        Me.TextEdit3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TextEdit3.Properties.Mask.EditMask = "n2"
-        Me.TextEdit3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit3.Properties.Mask.SaveLiteral = False
-        Me.TextEdit3.Properties.Mask.ShowPlaceHolders = False
-        Me.TextEdit3.Size = New System.Drawing.Size(145, 20)
-        Me.TextEdit3.TabIndex = 19
+        Me.TxtTotal.Enabled = False
+        Me.TxtTotal.Location = New System.Drawing.Point(95, 106)
+        Me.TxtTotal.Name = "TxtTotal"
+        Me.TxtTotal.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtTotal.Properties.Appearance.Options.UseFont = True
+        Me.TxtTotal.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtTotal.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtTotal.Properties.Mask.EditMask = "n2"
+        Me.TxtTotal.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtTotal.Properties.Mask.SaveLiteral = False
+        Me.TxtTotal.Properties.Mask.ShowPlaceHolders = False
+        Me.TxtTotal.Size = New System.Drawing.Size(145, 20)
+        Me.TxtTotal.TabIndex = 19
         '
         'LabelControl4
         '
@@ -893,7 +882,7 @@ Partial Class FormPOS
         Me.PanelControlnfo.Controls.Add(Me.PanelControlInfoLeft)
         Me.PanelControlnfo.Controls.Add(Me.LabelInfoLeft)
         Me.PanelControlnfo.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControlnfo.Location = New System.Drawing.Point(0, 24)
+        Me.PanelControlnfo.Location = New System.Drawing.Point(0, 0)
         Me.PanelControlnfo.Name = "PanelControlnfo"
         Me.PanelControlnfo.Size = New System.Drawing.Size(850, 50)
         Me.PanelControlnfo.TabIndex = 10
@@ -912,41 +901,41 @@ Partial Class FormPOS
         '
         Me.LabelControlPrice.Appearance.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControlPrice.Dock = System.Windows.Forms.DockStyle.Right
-        Me.LabelControlPrice.Location = New System.Drawing.Point(349, 0)
+        Me.LabelControlPrice.Location = New System.Drawing.Point(331, 0)
         Me.LabelControlPrice.Name = "LabelControlPrice"
         Me.LabelControlPrice.Padding = New System.Windows.Forms.Padding(0, 0, 10, 0)
-        Me.LabelControlPrice.Size = New System.Drawing.Size(10, 45)
+        Me.LabelControlPrice.Size = New System.Drawing.Size(28, 45)
         Me.LabelControlPrice.TabIndex = 1
+        Me.LabelControlPrice.Text = "0"
         '
         'LabelInfoLeft
         '
         Me.LabelInfoLeft.Appearance.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelInfoLeft.Location = New System.Drawing.Point(12, 3)
         Me.LabelInfoLeft.Name = "LabelInfoLeft"
-        Me.LabelInfoLeft.Size = New System.Drawing.Size(0, 45)
+        Me.LabelInfoLeft.Size = New System.Drawing.Size(13, 45)
         Me.LabelInfoLeft.TabIndex = 0
+        Me.LabelInfoLeft.Text = "-"
         '
         'PanelControlBottom
         '
         Me.PanelControlBottom.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControlBottom.Controls.Add(Me.PanelControl1)
-        Me.PanelControlBottom.Controls.Add(Me.TextEdit20)
+        Me.PanelControlBottom.Controls.Add(Me.TxtCashierName)
         Me.PanelControlBottom.Controls.Add(Me.LabelControl1)
-        Me.PanelControlBottom.Controls.Add(Me.LabelControl24)
         Me.PanelControlBottom.Controls.Add(Me.LabelControl21)
-        Me.PanelControlBottom.Controls.Add(Me.TextEdit19)
         Me.PanelControlBottom.Controls.Add(Me.LabelControl20)
         Me.PanelControlBottom.Controls.Add(Me.LEStatus)
-        Me.PanelControlBottom.Controls.Add(Me.TextEdit16)
+        Me.PanelControlBottom.Controls.Add(Me.TxtCashierUser)
         Me.PanelControlBottom.Controls.Add(Me.LabelControl22)
         Me.PanelControlBottom.Controls.Add(Me.TxtPOS)
-        Me.PanelControlBottom.Controls.Add(Me.TextEdit15)
+        Me.PanelControlBottom.Controls.Add(Me.TxtNumber)
         Me.PanelControlBottom.Controls.Add(Me.TxtShift)
         Me.PanelControlBottom.Controls.Add(Me.LabelControl23)
         Me.PanelControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControlBottom.Location = New System.Drawing.Point(0, 631)
+        Me.PanelControlBottom.Location = New System.Drawing.Point(0, 636)
         Me.PanelControlBottom.Name = "PanelControlBottom"
-        Me.PanelControlBottom.Size = New System.Drawing.Size(850, 69)
+        Me.PanelControlBottom.Size = New System.Drawing.Size(850, 64)
         Me.PanelControlBottom.TabIndex = 47
         '
         'PanelControl1
@@ -977,13 +966,13 @@ Partial Class FormPOS
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Right
         Me.PanelControl1.Location = New System.Drawing.Point(420, 0)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(430, 69)
+        Me.PanelControl1.Size = New System.Drawing.Size(430, 64)
         Me.PanelControl1.TabIndex = 101
         '
         'LabelControl48
         '
         Me.LabelControl48.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl48.Location = New System.Drawing.Point(374, 16)
+        Me.LabelControl48.Location = New System.Drawing.Point(374, 11)
         Me.LabelControl48.Name = "LabelControl48"
         Me.LabelControl48.Size = New System.Drawing.Size(43, 13)
         Me.LabelControl48.TabIndex = 88
@@ -993,7 +982,7 @@ Partial Class FormPOS
         '
         Me.LabelControl49.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl49.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl49.Location = New System.Drawing.Point(352, 16)
+        Me.LabelControl49.Location = New System.Drawing.Point(352, 11)
         Me.LabelControl49.Name = "LabelControl49"
         Me.LabelControl49.Size = New System.Drawing.Size(18, 13)
         Me.LabelControl49.TabIndex = 87
@@ -1002,7 +991,7 @@ Partial Class FormPOS
         'LabelControl38
         '
         Me.LabelControl38.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl38.Location = New System.Drawing.Point(311, 40)
+        Me.LabelControl38.Location = New System.Drawing.Point(311, 35)
         Me.LabelControl38.Name = "LabelControl38"
         Me.LabelControl38.Size = New System.Drawing.Size(33, 13)
         Me.LabelControl38.TabIndex = 86
@@ -1012,7 +1001,7 @@ Partial Class FormPOS
         '
         Me.LabelControl35.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl35.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl35.Location = New System.Drawing.Point(81, 16)
+        Me.LabelControl35.Location = New System.Drawing.Point(81, 11)
         Me.LabelControl35.Name = "LabelControl35"
         Me.LabelControl35.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl35.TabIndex = 67
@@ -1022,7 +1011,7 @@ Partial Class FormPOS
         '
         Me.LabelControl39.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl39.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl39.Location = New System.Drawing.Point(289, 40)
+        Me.LabelControl39.Location = New System.Drawing.Point(289, 35)
         Me.LabelControl39.Name = "LabelControl39"
         Me.LabelControl39.Size = New System.Drawing.Size(18, 13)
         Me.LabelControl39.TabIndex = 85
@@ -1031,7 +1020,7 @@ Partial Class FormPOS
         'LabelControl34
         '
         Me.LabelControl34.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl34.Location = New System.Drawing.Point(99, 16)
+        Me.LabelControl34.Location = New System.Drawing.Point(99, 11)
         Me.LabelControl34.Name = "LabelControl34"
         Me.LabelControl34.Size = New System.Drawing.Size(24, 13)
         Me.LabelControl34.TabIndex = 68
@@ -1040,7 +1029,7 @@ Partial Class FormPOS
         'LabelControl40
         '
         Me.LabelControl40.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl40.Location = New System.Drawing.Point(171, 40)
+        Me.LabelControl40.Location = New System.Drawing.Point(171, 35)
         Me.LabelControl40.Name = "LabelControl40"
         Me.LabelControl40.Size = New System.Drawing.Size(34, 13)
         Me.LabelControl40.TabIndex = 84
@@ -1050,7 +1039,7 @@ Partial Class FormPOS
         '
         Me.LabelControl33.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl33.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl33.Location = New System.Drawing.Point(222, 16)
+        Me.LabelControl33.Location = New System.Drawing.Point(222, 11)
         Me.LabelControl33.Name = "LabelControl33"
         Me.LabelControl33.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl33.TabIndex = 71
@@ -1060,7 +1049,7 @@ Partial Class FormPOS
         '
         Me.LabelControl41.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl41.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl41.Location = New System.Drawing.Point(12, 40)
+        Me.LabelControl41.Location = New System.Drawing.Point(12, 35)
         Me.LabelControl41.Name = "LabelControl41"
         Me.LabelControl41.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl41.TabIndex = 79
@@ -1069,7 +1058,7 @@ Partial Class FormPOS
         'LabelControl32
         '
         Me.LabelControl32.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl32.Location = New System.Drawing.Point(239, 16)
+        Me.LabelControl32.Location = New System.Drawing.Point(239, 11)
         Me.LabelControl32.Name = "LabelControl32"
         Me.LabelControl32.Size = New System.Drawing.Size(37, 13)
         Me.LabelControl32.TabIndex = 72
@@ -1079,7 +1068,7 @@ Partial Class FormPOS
         '
         Me.LabelControl42.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl42.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl42.Location = New System.Drawing.Point(152, 40)
+        Me.LabelControl42.Location = New System.Drawing.Point(152, 35)
         Me.LabelControl42.Name = "LabelControl42"
         Me.LabelControl42.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl42.TabIndex = 83
@@ -1088,7 +1077,7 @@ Partial Class FormPOS
         'LabelControl31
         '
         Me.LabelControl31.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl31.Location = New System.Drawing.Point(30, 16)
+        Me.LabelControl31.Location = New System.Drawing.Point(30, 11)
         Me.LabelControl31.Name = "LabelControl31"
         Me.LabelControl31.Size = New System.Drawing.Size(27, 13)
         Me.LabelControl31.TabIndex = 70
@@ -1097,7 +1086,7 @@ Partial Class FormPOS
         'LabelControl43
         '
         Me.LabelControl43.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl43.Location = New System.Drawing.Point(30, 40)
+        Me.LabelControl43.Location = New System.Drawing.Point(30, 35)
         Me.LabelControl43.Name = "LabelControl43"
         Me.LabelControl43.Size = New System.Drawing.Size(43, 13)
         Me.LabelControl43.TabIndex = 80
@@ -1107,7 +1096,7 @@ Partial Class FormPOS
         '
         Me.LabelControl30.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl30.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl30.Location = New System.Drawing.Point(152, 16)
+        Me.LabelControl30.Location = New System.Drawing.Point(152, 11)
         Me.LabelControl30.Name = "LabelControl30"
         Me.LabelControl30.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl30.TabIndex = 73
@@ -1116,7 +1105,7 @@ Partial Class FormPOS
         'LabelControl44
         '
         Me.LabelControl44.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl44.Location = New System.Drawing.Point(239, 40)
+        Me.LabelControl44.Location = New System.Drawing.Point(239, 35)
         Me.LabelControl44.Name = "LabelControl44"
         Me.LabelControl44.Size = New System.Drawing.Size(39, 13)
         Me.LabelControl44.TabIndex = 82
@@ -1126,7 +1115,7 @@ Partial Class FormPOS
         '
         Me.LabelControl29.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl29.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl29.Location = New System.Drawing.Point(12, 16)
+        Me.LabelControl29.Location = New System.Drawing.Point(12, 11)
         Me.LabelControl29.Name = "LabelControl29"
         Me.LabelControl29.Size = New System.Drawing.Size(15, 13)
         Me.LabelControl29.TabIndex = 69
@@ -1136,7 +1125,7 @@ Partial Class FormPOS
         '
         Me.LabelControl45.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl45.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl45.Location = New System.Drawing.Point(222, 40)
+        Me.LabelControl45.Location = New System.Drawing.Point(222, 35)
         Me.LabelControl45.Name = "LabelControl45"
         Me.LabelControl45.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl45.TabIndex = 81
@@ -1145,7 +1134,7 @@ Partial Class FormPOS
         'LabelControl28
         '
         Me.LabelControl28.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl28.Location = New System.Drawing.Point(171, 16)
+        Me.LabelControl28.Location = New System.Drawing.Point(171, 11)
         Me.LabelControl28.Name = "LabelControl28"
         Me.LabelControl28.Size = New System.Drawing.Size(38, 13)
         Me.LabelControl28.TabIndex = 74
@@ -1154,7 +1143,7 @@ Partial Class FormPOS
         'LabelControl46
         '
         Me.LabelControl46.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl46.Location = New System.Drawing.Point(99, 40)
+        Me.LabelControl46.Location = New System.Drawing.Point(99, 35)
         Me.LabelControl46.Name = "LabelControl46"
         Me.LabelControl46.Size = New System.Drawing.Size(42, 13)
         Me.LabelControl46.TabIndex = 78
@@ -1164,7 +1153,7 @@ Partial Class FormPOS
         '
         Me.LabelControl37.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl37.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl37.Location = New System.Drawing.Point(289, 16)
+        Me.LabelControl37.Location = New System.Drawing.Point(289, 11)
         Me.LabelControl37.Name = "LabelControl37"
         Me.LabelControl37.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl37.TabIndex = 75
@@ -1174,7 +1163,7 @@ Partial Class FormPOS
         '
         Me.LabelControl47.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl47.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl47.Location = New System.Drawing.Point(81, 40)
+        Me.LabelControl47.Location = New System.Drawing.Point(81, 35)
         Me.LabelControl47.Name = "LabelControl47"
         Me.LabelControl47.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl47.TabIndex = 77
@@ -1183,63 +1172,44 @@ Partial Class FormPOS
         'LabelControl36
         '
         Me.LabelControl36.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl36.Location = New System.Drawing.Point(311, 16)
+        Me.LabelControl36.Location = New System.Drawing.Point(311, 11)
         Me.LabelControl36.Name = "LabelControl36"
         Me.LabelControl36.Size = New System.Drawing.Size(24, 13)
         Me.LabelControl36.TabIndex = 76
         Me.LabelControl36.Text = "Term"
         '
-        'TextEdit20
+        'TxtCashierName
         '
-        Me.TextEdit20.Enabled = False
-        Me.TextEdit20.Location = New System.Drawing.Point(131, 12)
-        Me.TextEdit20.Name = "TextEdit20"
-        Me.TextEdit20.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit20.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit20.Size = New System.Drawing.Size(164, 20)
-        Me.TextEdit20.TabIndex = 100
+        Me.TxtCashierName.Enabled = False
+        Me.TxtCashierName.Location = New System.Drawing.Point(131, 7)
+        Me.TxtCashierName.Name = "TxtCashierName"
+        Me.TxtCashierName.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCashierName.Properties.Appearance.Options.UseFont = True
+        Me.TxtCashierName.Size = New System.Drawing.Size(164, 20)
+        Me.TxtCashierName.TabIndex = 100
         '
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(303, 41)
+        Me.LabelControl1.Location = New System.Drawing.Point(303, 36)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(32, 13)
         Me.LabelControl1.TabIndex = 98
         Me.LabelControl1.Text = "Status"
         '
-        'LabelControl24
-        '
-        Me.LabelControl24.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl24.Location = New System.Drawing.Point(130, 40)
-        Me.LabelControl24.Name = "LabelControl24"
-        Me.LabelControl24.Size = New System.Drawing.Size(23, 13)
-        Me.LabelControl24.TabIndex = 96
-        Me.LabelControl24.Text = "Tax#"
-        '
         'LabelControl21
         '
         Me.LabelControl21.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl21.Location = New System.Drawing.Point(13, 15)
+        Me.LabelControl21.Location = New System.Drawing.Point(13, 10)
         Me.LabelControl21.Name = "LabelControl21"
         Me.LabelControl21.Size = New System.Drawing.Size(38, 13)
         Me.LabelControl21.TabIndex = 91
         Me.LabelControl21.Text = "Cashier"
         '
-        'TextEdit19
-        '
-        Me.TextEdit19.Enabled = False
-        Me.TextEdit19.Location = New System.Drawing.Point(162, 38)
-        Me.TextEdit19.Name = "TextEdit19"
-        Me.TextEdit19.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit19.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit19.Size = New System.Drawing.Size(132, 20)
-        Me.TextEdit19.TabIndex = 97
-        '
         'LabelControl20
         '
         Me.LabelControl20.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl20.Location = New System.Drawing.Point(13, 40)
+        Me.LabelControl20.Location = New System.Drawing.Point(13, 35)
         Me.LabelControl20.Name = "LabelControl20"
         Me.LabelControl20.Size = New System.Drawing.Size(27, 13)
         Me.LabelControl20.TabIndex = 88
@@ -1248,7 +1218,7 @@ Partial Class FormPOS
         'LEStatus
         '
         Me.LEStatus.Enabled = False
-        Me.LEStatus.Location = New System.Drawing.Point(351, 38)
+        Me.LEStatus.Location = New System.Drawing.Point(351, 33)
         Me.LEStatus.Name = "LEStatus"
         Me.LEStatus.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LEStatus.Properties.Appearance.Options.UseFont = True
@@ -1258,20 +1228,20 @@ Partial Class FormPOS
         Me.LEStatus.Size = New System.Drawing.Size(120, 20)
         Me.LEStatus.TabIndex = 99
         '
-        'TextEdit16
+        'TxtCashierUser
         '
-        Me.TextEdit16.Enabled = False
-        Me.TextEdit16.Location = New System.Drawing.Point(57, 12)
-        Me.TextEdit16.Name = "TextEdit16"
-        Me.TextEdit16.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit16.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit16.Size = New System.Drawing.Size(70, 20)
-        Me.TextEdit16.TabIndex = 90
+        Me.TxtCashierUser.Enabled = False
+        Me.TxtCashierUser.Location = New System.Drawing.Point(57, 7)
+        Me.TxtCashierUser.Name = "TxtCashierUser"
+        Me.TxtCashierUser.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCashierUser.Properties.Appearance.Options.UseFont = True
+        Me.TxtCashierUser.Size = New System.Drawing.Size(70, 20)
+        Me.TxtCashierUser.TabIndex = 90
         '
         'LabelControl22
         '
         Me.LabelControl22.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl22.Location = New System.Drawing.Point(303, 15)
+        Me.LabelControl22.Location = New System.Drawing.Point(303, 10)
         Me.LabelControl22.Name = "LabelControl22"
         Me.LabelControl22.Size = New System.Drawing.Size(31, 13)
         Me.LabelControl22.TabIndex = 93
@@ -1280,28 +1250,28 @@ Partial Class FormPOS
         'TxtPOS
         '
         Me.TxtPOS.Enabled = False
-        Me.TxtPOS.Location = New System.Drawing.Point(418, 12)
+        Me.TxtPOS.Location = New System.Drawing.Point(418, 7)
         Me.TxtPOS.Name = "TxtPOS"
         Me.TxtPOS.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtPOS.Properties.Appearance.Options.UseFont = True
         Me.TxtPOS.Size = New System.Drawing.Size(53, 20)
         Me.TxtPOS.TabIndex = 94
         '
-        'TextEdit15
+        'TxtNumber
         '
-        Me.TextEdit15.EditValue = ""
-        Me.TextEdit15.Enabled = False
-        Me.TextEdit15.Location = New System.Drawing.Point(57, 38)
-        Me.TextEdit15.Name = "TextEdit15"
-        Me.TextEdit15.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit15.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit15.Size = New System.Drawing.Size(70, 20)
-        Me.TextEdit15.TabIndex = 89
+        Me.TxtNumber.EditValue = ""
+        Me.TxtNumber.Enabled = False
+        Me.TxtNumber.Location = New System.Drawing.Point(57, 33)
+        Me.TxtNumber.Name = "TxtNumber"
+        Me.TxtNumber.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtNumber.Properties.Appearance.Options.UseFont = True
+        Me.TxtNumber.Size = New System.Drawing.Size(238, 20)
+        Me.TxtNumber.TabIndex = 89
         '
         'TxtShift
         '
         Me.TxtShift.Enabled = False
-        Me.TxtShift.Location = New System.Drawing.Point(351, 12)
+        Me.TxtShift.Location = New System.Drawing.Point(351, 7)
         Me.TxtShift.Name = "TxtShift"
         Me.TxtShift.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtShift.Properties.Appearance.Options.UseFont = True
@@ -1311,46 +1281,11 @@ Partial Class FormPOS
         'LabelControl23
         '
         Me.LabelControl23.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl23.Location = New System.Drawing.Point(386, 15)
+        Me.LabelControl23.Location = New System.Drawing.Point(386, 10)
         Me.LabelControl23.Name = "LabelControl23"
         Me.LabelControl23.Size = New System.Drawing.Size(28, 13)
         Me.LabelControl23.TabIndex = 95
         Me.LabelControl23.Text = "POS#"
-        '
-        'PanelControl3
-        '
-        Me.PanelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.PanelControl3.Appearance.Options.UseBackColor = True
-        Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControl3.Controls.Add(Me.PCClose)
-        Me.PanelControl3.Controls.Add(Me.LabelControl7)
-        Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl3.Location = New System.Drawing.Point(0, 0)
-        Me.PanelControl3.Name = "PanelControl3"
-        Me.PanelControl3.Padding = New System.Windows.Forms.Padding(7, 5, 0, 5)
-        Me.PanelControl3.Size = New System.Drawing.Size(850, 24)
-        Me.PanelControl3.TabIndex = 102
-        '
-        'PCClose
-        '
-        Me.PCClose.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PCClose.ContentImage = CType(resources.GetObject("PCClose.ContentImage"), System.Drawing.Image)
-        Me.PCClose.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PCClose.Location = New System.Drawing.Point(826, 5)
-        Me.PCClose.Name = "PCClose"
-        Me.PCClose.Size = New System.Drawing.Size(24, 14)
-        Me.PCClose.TabIndex = 1
-        '
-        'LabelControl7
-        '
-        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelControl7.Dock = System.Windows.Forms.DockStyle.Left
-        Me.LabelControl7.Location = New System.Drawing.Point(7, 5)
-        Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(64, 13)
-        Me.LabelControl7.TabIndex = 0
-        Me.LabelControl7.Text = "Point of Sale"
         '
         'FormPOS
         '
@@ -1379,41 +1314,43 @@ Partial Class FormPOS
         CType(Me.PanelControlCode, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlCode.ResumeLayout(False)
         Me.PanelControlCode.PerformLayout()
-        CType(Me.LENation.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit24.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit22.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit23.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit14.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtPrc.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtQty.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtItemCode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControlMainLeft, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlMainLeft.ResumeLayout(False)
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        Me.GroupControl1.PerformLayout()
+        CType(Me.TxtSales.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LENation.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControlCustomer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControlCustomer.ResumeLayout(False)
         Me.GroupControlCustomer.PerformLayout()
-        CType(Me.TextEdit12.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit13.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtMemberName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtMemberNumber.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControlCard, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControlCard.ResumeLayout(False)
         Me.GroupControlCard.PerformLayout()
         CType(Me.LECardType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit10.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit11.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtCardName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtCardNumber.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControlPay, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControlPay.ResumeLayout(False)
         Me.GroupControlPay.PerformLayout()
-        CType(Me.TextEdit5.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit6.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit7.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit9.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit8.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtVoucher.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtVoucherNo.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtChange.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtPoint.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtCard.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtCash.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControlInfo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControlInfo.ResumeLayout(False)
         Me.GroupControlInfo.PerformLayout()
-        CType(Me.TxtPrice.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtSubTotal.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtDiscount.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtTax.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtTotal.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControlnfo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlnfo.ResumeLayout(False)
         Me.PanelControlnfo.PerformLayout()
@@ -1426,17 +1363,12 @@ Partial Class FormPOS
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         Me.PanelControl1.PerformLayout()
-        CType(Me.TextEdit20.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit19.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtCashierName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LEStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit16.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtCashierUser.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtPOS.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit15.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtNumber.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtShift.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl3.ResumeLayout(False)
-        Me.PanelControl3.PerformLayout()
-        CType(Me.PCClose, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1450,43 +1382,43 @@ Partial Class FormPOS
     Friend WithEvents GridColumn5 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn6 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents PanelControlCode As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents TextEdit14 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtQty As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl19 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TxtItemCode As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl17 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControlMiddle As DevExpress.XtraEditors.PanelControl
     Friend WithEvents PanelControlMainLeft As DevExpress.XtraEditors.PanelControl
     Friend WithEvents GroupControlCustomer As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents TextEdit12 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit13 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtMemberName As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtMemberNumber As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl15 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl18 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GroupControlCard As DevExpress.XtraEditors.GroupControl
     Friend WithEvents LECardType As DevExpress.XtraEditors.LookUpEdit
-    Friend WithEvents TextEdit10 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit11 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtCardName As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtCardNumber As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl14 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl16 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GroupControlPay As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents TextEdit5 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit4 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtVoucher As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtVoucherNo As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit6 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtChange As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit7 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit9 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit8 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtPoint As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtCard As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtCash As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GroupControlInfo As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents TxtPrice As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtSubTotal As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtDiscount As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit2 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit3 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtTax As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtTotal As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
@@ -1496,29 +1428,23 @@ Partial Class FormPOS
     Friend WithEvents LabelInfoLeft As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControlMiddleData As DevExpress.XtraEditors.PanelControl
     Friend WithEvents PanelControlBottom As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents TextEdit23 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents LabelControl27 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TxtPrc As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelPrice As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LENation As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl25 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit24 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit22 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtSales As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl26 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit20 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtCashierName As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl24 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl21 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit19 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl20 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LEStatus As DevExpress.XtraEditors.LookUpEdit
-    Friend WithEvents TextEdit16 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtCashierUser As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl22 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TxtPOS As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit15 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtNumber As DevExpress.XtraEditors.TextEdit
     Friend WithEvents TxtShift As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl23 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents PCClose As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents LabelControl38 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl35 As DevExpress.XtraEditors.LabelControl
@@ -1542,4 +1468,5 @@ Partial Class FormPOS
     Friend WithEvents LabelControl36 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl48 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl49 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
 End Class
