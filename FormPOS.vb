@@ -2,6 +2,8 @@
     Public id As String = "-1"
     Public id_shift As String = "-1"
     Dim id_user_shift As String = "-1"
+    Dim new_trans As Boolean = False
+    Dim id_stock_last As String = "-1"
 
     Private Sub FormPOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LabelInfoLeft.Focus()
@@ -85,10 +87,13 @@
     Sub newTrans()
         TxtItemCode.Enabled = True
         TxtItemCode.Focus()
-        Dim query As String = "INSERT INTO tb_pos(pos_number, pos_date, id_pos_status, id_pos_cat) 
-        VALUES(header_number(4), NOW(), 1, 1); SELECT LAST_INSERT_ID(); "
-        id = execute_query(query, 0, True, "", "", "", "")
-        actionLoad()
+        If Not new_trans Then
+            Dim query As String = "INSERT INTO tb_pos(id_shift, pos_number, pos_date, id_pos_status, id_pos_cat) 
+            VALUES('" + id_shift + "', header_number(4), NOW(), 1, 1); SELECT LAST_INSERT_ID(); "
+            id = execute_query(query, 0, True, "", "", "", "")
+            new_trans = True
+            actionLoad()
+        End If
     End Sub
 
     Sub payment()
@@ -146,7 +151,7 @@
     Sub actionLoad()
         If id <> "-1" Then
             Dim query_c As New ClassPOS()
-            Dim query As String = query_c.queryMain("-1", "1")
+            Dim query As String = query_c.queryMain("AND p.id_pos=" + id + "", "1")
             Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
             TxtCashierUser.Text = data.Rows(0)("cashier").ToString
             TxtCashierName.Text = data.Rows(0)("cashier_name").ToString
@@ -251,7 +256,17 @@
             ' -> belum ada
             LENation.ItemIndex = LENation.Properties.GetDataSourceRowIndex("id_country", data.Rows(0)("id_country").ToString)
             TxtSales.Text = data.Rows(0)("sales_name").ToString
+            TxtQty.EditValue = 1
+
+            viewDetail()
         End If
+    End Sub
+
+    Sub viewDetail()
+        Dim query_c As New ClassPOS()
+        Dim query As String = query_c.queryDet("AND pd.id_pos=" + id + " ", "1")
+        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        GCPOS.DataSource = data
     End Sub
 
     Sub help()
@@ -296,8 +311,141 @@
                 FormBlack.Close()
                 BringToFront()
             Else
-
+                Dim code As String = TxtItemCode.Text
+                Dim query As String = "CALL view_stock_item('AND j.id_comp=" + get_setup_field("id_display_default") + " AND f.item_code=" + code + " AND j.storage_item_datetime<=''9999-12-01'' ', '2')"
+                Dim dt As DataTable = execute_query(query, -1, True, "", "", "", "")
+                If dt.Rows.Count > 0 Then
+                    Dim qty_avail As Decimal = dt.Rows(0)("qty_avl")
+                    If qty_avail <= 0 Then
+                        stopCustom("No stock available")
+                    Else
+                        Dim newRow As DataRow = (TryCast(GCPOS.DataSource, DataTable)).NewRow()
+                        newRow("id_item") = dt(0)("id_item").ToString
+                        newRow("item_code") = dt(0)("item_code").ToString
+                        newRow("item_name") = dt(0)("item_name").ToString
+                        newRow("qty") = 1
+                        newRow("price") = dt(0)("price")
+                        newRow("is_edit") = "2"
+                        TryCast(GCPOS.DataSource, DataTable).Rows.Add(newRow)
+                        GCPOS.RefreshDataSource()
+                        GVPOS.RefreshData()
+                        getSubTotal()
+                        Dim rh As Integer = GVPOS.RowCount - 1
+                        showDisplay(dt(0)("item_name").ToString, "1", GVPOS.GetRowCellDisplayText(rh, "amount").ToString)
+                    End If
+                Else
+                    stopCustom("Code not found")
+                End If
+                TxtQty.EditValue = 1
+                TxtItemCode.Text = ""
+                TxtItemCode.Focus()
             End If
+        ElseIf e.KeyCode = Keys.add Then
+            If GVPOS.RowCount > 0 Then
+                Dim last_index As Integer = GVPOS.RowCount - 1
+                TxtItemCode.Text = GVPOS.GetRowCellValue(last_index, "item_code").ToString
+                TxtItemCode.Enabled = False
+                GVPOS.SetRowCellValue(last_index, "is_edit", "1")
+                TxtQty.Enabled = True
+                TxtQty.Focus()
+            End If
+        End If
+    End Sub
+
+    Sub showDisplay(ByVal name As String, ByVal qty As String, ByVal price As String)
+        LabelInfoLeft.Text = name.Substring(0, 13) + " @" + qty.ToString
+        LabelControlPrice.Text = price.ToString
+    End Sub
+
+    Private Sub TxtQty_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtQty.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Dim qty As Integer = TxtQty.EditValue
+            Dim rh As Integer = GVPOS.RowCount - 1
+            If qty > 0 Then 'plus
+                GVPOS.SetRowCellValue(rh, "qty", qty)
+                GVPOS.SetRowCellValue(rh, "is_edit", "2")
+                GCPOS.RefreshDataSource()
+                GVPOS.RefreshData()
+                getSubTotal()
+                showDisplay(GVPOS.GetRowCellDisplayText(rh, "item_name").ToString, qty, GVPOS.GetRowCellDisplayText(rh, "amount").ToString)
+                TxtQty.EditValue = 1
+                TxtQty.Enabled = False
+                TxtItemCode.Enabled = True
+                TxtItemCode.Text = ""
+                TxtItemCode.Focus()
+            ElseIf qty = 0 Then 'zero
+                GVPOS.SetRowCellValue(rh, "is_edit", "2")
+                GCPOS.RefreshDataSource()
+                GVPOS.RefreshData()
+                TxtQty.EditValue = 1
+                TxtQty.Enabled = False
+                TxtItemCode.Enabled = True
+                TxtItemCode.Text = ""
+                TxtItemCode.Focus()
+            Else
+                Dim id_item As String = GVPOS.GetRowCellValue(rh, "id_item").ToString
+                GVPOS.ActiveFilterString = "[id_item]='" + id_item + "' AND [is_edit]='2' "
+                GCPOS.RefreshDataSource()
+                GVPOS.RefreshData()
+                Dim max As Integer = 0
+                For i As Integer = 0 To GVPOS.RowCount - 1
+                    max = max + GVPOS.GetRowCellValue(i, "qty")
+                Next
+
+                GVPOS.ActiveFilterString = ""
+                GCPOS.RefreshDataSource()
+                GVPOS.RefreshData()
+
+                If (qty * -1) <= max Then
+                    GVPOS.SetRowCellValue(rh, "qty", qty)
+                    GVPOS.SetRowCellValue(rh, "is_edit", "2")
+                    GCPOS.RefreshDataSource()
+                    GVPOS.RefreshData()
+                    getSubTotal()
+                    showDisplay(GVPOS.GetRowCellDisplayText(rh, "item_name").ToString, qty, GVPOS.GetRowCellDisplayText(rh, "amount").ToString)
+                    TxtQty.EditValue = 1
+                    TxtQty.Enabled = False
+                    TxtItemCode.Enabled = True
+                    TxtItemCode.Text = ""
+                    TxtItemCode.Focus()
+                Else
+                    GVPOS.SetRowCellValue(rh, "is_edit", "2")
+                    GCPOS.RefreshDataSource()
+                    GVPOS.RefreshData()
+                    TxtQty.EditValue = 1
+                    TxtQty.Enabled = False
+                    TxtItemCode.Enabled = True
+                    TxtItemCode.Text = ""
+                    TxtItemCode.Focus()
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Sub TxtItemCode_KeyUp(sender As Object, e As KeyEventArgs) Handles TxtItemCode.KeyUp
+        If GVPOS.RowCount <= 0 Then
+            If e.KeyCode = Keys.Add Then
+                TxtItemCode.Text = ""
+                TxtItemCode.Focus()
+            End If
+        End If
+    End Sub
+
+    Private Sub GVPOS_CustomColumnDisplayText(sender As Object, e As DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs) Handles GVPOS.CustomColumnDisplayText
+        If e.Column.FieldName = "no" Then
+            e.DisplayText = (e.ListSourceRowIndex + 1).ToString()
+        End If
+    End Sub
+
+    Sub getSubTotal()
+        TxtSubTotal.EditValue = GVPOS.Columns("amount").SummaryItem.SummaryValue()
+    End Sub
+
+    Sub insertStock(ByVal id_item_par As String, qty_par As String, id_stock As String)
+        If id_stock <> "-1" Then 'edit
+
+        Else 'new
+
         End If
     End Sub
 End Class

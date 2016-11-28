@@ -30,6 +30,8 @@ Partial Class FormPOS
         Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnidItem = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnEdit = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PanelControlCode = New DevExpress.XtraEditors.PanelControl()
         Me.TxtPrc = New DevExpress.XtraEditors.TextEdit()
         Me.LabelPrice = New DevExpress.XtraEditors.LabelControl()
@@ -83,7 +85,6 @@ Partial Class FormPOS
         Me.LabelInfoLeft = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlBottom = New DevExpress.XtraEditors.PanelControl()
         Me.DECreated = New DevExpress.XtraEditors.DateEdit()
-        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl48 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl49 = New DevExpress.XtraEditors.LabelControl()
@@ -196,9 +197,9 @@ Partial Class FormPOS
         Me.PanelControlMiddle.Controls.Add(Me.PanelControlMiddleData)
         Me.PanelControlMiddle.Controls.Add(Me.PanelControlMainLeft)
         Me.PanelControlMiddle.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControlMiddle.Location = New System.Drawing.Point(0, 50)
+        Me.PanelControlMiddle.Location = New System.Drawing.Point(0, 57)
         Me.PanelControlMiddle.Name = "PanelControlMiddle"
-        Me.PanelControlMiddle.Size = New System.Drawing.Size(850, 586)
+        Me.PanelControlMiddle.Size = New System.Drawing.Size(850, 579)
         Me.PanelControlMiddle.TabIndex = 46
         '
         'PanelControlMiddleData
@@ -209,7 +210,7 @@ Partial Class FormPOS
         Me.PanelControlMiddleData.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControlMiddleData.Location = New System.Drawing.Point(0, 0)
         Me.PanelControlMiddleData.Name = "PanelControlMiddleData"
-        Me.PanelControlMiddleData.Size = New System.Drawing.Size(598, 586)
+        Me.PanelControlMiddleData.Size = New System.Drawing.Size(598, 579)
         Me.PanelControlMiddleData.TabIndex = 4
         '
         'GCPOS
@@ -220,20 +221,28 @@ Partial Class FormPOS
         Me.GCPOS.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCPOS.MainView = Me.GVPOS
         Me.GCPOS.Name = "GCPOS"
-        Me.GCPOS.Size = New System.Drawing.Size(598, 549)
+        Me.GCPOS.Size = New System.Drawing.Size(598, 542)
         Me.GCPOS.TabIndex = 1
         Me.GCPOS.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVPOS})
         '
         'GVPOS
         '
-        Me.GVPOS.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6})
+        Me.GVPOS.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumnidItem, Me.GridColumnEdit})
         Me.GVPOS.GridControl = Me.GCPOS
         Me.GVPOS.Name = "GVPOS"
+        Me.GVPOS.OptionsBehavior.Editable = False
+        Me.GVPOS.OptionsCustomization.AllowColumnMoving = False
+        Me.GVPOS.OptionsCustomization.AllowFilter = False
+        Me.GVPOS.OptionsCustomization.AllowGroup = False
+        Me.GVPOS.OptionsCustomization.AllowQuickHideColumns = False
+        Me.GVPOS.OptionsCustomization.AllowSort = False
+        Me.GVPOS.OptionsFind.AllowFindPanel = False
         Me.GVPOS.OptionsView.ShowGroupPanel = False
         '
         'GridColumn1
         '
         Me.GridColumn1.Caption = "No"
+        Me.GridColumn1.FieldName = "no"
         Me.GridColumn1.Name = "GridColumn1"
         Me.GridColumn1.Visible = True
         Me.GridColumn1.VisibleIndex = 0
@@ -242,6 +251,7 @@ Partial Class FormPOS
         'GridColumn2
         '
         Me.GridColumn2.Caption = "Code"
+        Me.GridColumn2.FieldName = "item_code"
         Me.GridColumn2.Name = "GridColumn2"
         Me.GridColumn2.Visible = True
         Me.GridColumn2.VisibleIndex = 1
@@ -250,6 +260,7 @@ Partial Class FormPOS
         'GridColumn3
         '
         Me.GridColumn3.Caption = "Description"
+        Me.GridColumn3.FieldName = "item_name"
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 2
@@ -258,6 +269,9 @@ Partial Class FormPOS
         'GridColumn4
         '
         Me.GridColumn4.Caption = "Price"
+        Me.GridColumn4.DisplayFormat.FormatString = "N2"
+        Me.GridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.GridColumn4.FieldName = "price"
         Me.GridColumn4.Name = "GridColumn4"
         Me.GridColumn4.Visible = True
         Me.GridColumn4.VisibleIndex = 3
@@ -266,6 +280,9 @@ Partial Class FormPOS
         'GridColumn5
         '
         Me.GridColumn5.Caption = "Qty"
+        Me.GridColumn5.DisplayFormat.FormatString = "{0:n0}"
+        Me.GridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.GridColumn5.FieldName = "qty"
         Me.GridColumn5.Name = "GridColumn5"
         Me.GridColumn5.Visible = True
         Me.GridColumn5.VisibleIndex = 4
@@ -274,10 +291,29 @@ Partial Class FormPOS
         'GridColumn6
         '
         Me.GridColumn6.Caption = "Amount"
+        Me.GridColumn6.DisplayFormat.FormatString = "{0:n2}"
+        Me.GridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.GridColumn6.FieldName = "amount"
         Me.GridColumn6.Name = "GridColumn6"
+        Me.GridColumn6.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", "{0:n2}")})
+        Me.GridColumn6.UnboundExpression = "[price] * [qty]"
+        Me.GridColumn6.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
         Me.GridColumn6.Visible = True
         Me.GridColumn6.VisibleIndex = 5
         Me.GridColumn6.Width = 196
+        '
+        'GridColumnidItem
+        '
+        Me.GridColumnidItem.Caption = "Id Item"
+        Me.GridColumnidItem.FieldName = "id_item"
+        Me.GridColumnidItem.Name = "GridColumnidItem"
+        Me.GridColumnidItem.OptionsColumn.ShowInCustomizationForm = False
+        '
+        'GridColumnEdit
+        '
+        Me.GridColumnEdit.Caption = "Is Edit"
+        Me.GridColumnEdit.FieldName = "is_edit"
+        Me.GridColumnEdit.Name = "GridColumnEdit"
         '
         'PanelControlCode
         '
@@ -288,7 +324,7 @@ Partial Class FormPOS
         Me.PanelControlCode.Controls.Add(Me.TxtItemCode)
         Me.PanelControlCode.Controls.Add(Me.LabelControl17)
         Me.PanelControlCode.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControlCode.Location = New System.Drawing.Point(0, 549)
+        Me.PanelControlCode.Location = New System.Drawing.Point(0, 542)
         Me.PanelControlCode.Name = "PanelControlCode"
         Me.PanelControlCode.Size = New System.Drawing.Size(598, 37)
         Me.PanelControlCode.TabIndex = 3
@@ -327,9 +363,9 @@ Partial Class FormPOS
         Me.TxtQty.Name = "TxtQty"
         Me.TxtQty.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtQty.Properties.Appearance.Options.UseFont = True
-        Me.TxtQty.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtQty.Properties.DisplayFormat.FormatString = "N0"
         Me.TxtQty.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TxtQty.Properties.Mask.EditMask = "n2"
+        Me.TxtQty.Properties.Mask.EditMask = "n0"
         Me.TxtQty.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.TxtQty.Properties.Mask.SaveLiteral = False
         Me.TxtQty.Properties.Mask.ShowPlaceHolders = False
@@ -375,7 +411,7 @@ Partial Class FormPOS
         Me.PanelControlMainLeft.Dock = System.Windows.Forms.DockStyle.Right
         Me.PanelControlMainLeft.Location = New System.Drawing.Point(598, 0)
         Me.PanelControlMainLeft.Name = "PanelControlMainLeft"
-        Me.PanelControlMainLeft.Size = New System.Drawing.Size(252, 586)
+        Me.PanelControlMainLeft.Size = New System.Drawing.Size(252, 579)
         Me.PanelControlMainLeft.TabIndex = 2
         '
         'GroupControl1
@@ -387,7 +423,7 @@ Partial Class FormPOS
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl1.Location = New System.Drawing.Point(0, 498)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(252, 88)
+        Me.GroupControl1.Size = New System.Drawing.Size(252, 81)
         Me.GroupControl1.TabIndex = 34
         Me.GroupControl1.Text = "Additional"
         '
@@ -687,7 +723,7 @@ Partial Class FormPOS
         'TxtPoint
         '
         Me.TxtPoint.Enabled = False
-        Me.TxtPoint.Location = New System.Drawing.Point(95, 77)
+        Me.TxtPoint.Location = New System.Drawing.Point(94, 52)
         Me.TxtPoint.Name = "TxtPoint"
         Me.TxtPoint.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtPoint.Properties.Appearance.Options.UseFont = True
@@ -888,7 +924,7 @@ Partial Class FormPOS
         Me.PanelControlnfo.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControlnfo.Location = New System.Drawing.Point(0, 0)
         Me.PanelControlnfo.Name = "PanelControlnfo"
-        Me.PanelControlnfo.Size = New System.Drawing.Size(850, 50)
+        Me.PanelControlnfo.Size = New System.Drawing.Size(850, 57)
         Me.PanelControlnfo.TabIndex = 10
         '
         'PanelControlInfoLeft
@@ -898,7 +934,7 @@ Partial Class FormPOS
         Me.PanelControlInfoLeft.Dock = System.Windows.Forms.DockStyle.Right
         Me.PanelControlInfoLeft.Location = New System.Drawing.Point(491, 0)
         Me.PanelControlInfoLeft.Name = "PanelControlInfoLeft"
-        Me.PanelControlInfoLeft.Size = New System.Drawing.Size(359, 50)
+        Me.PanelControlInfoLeft.Size = New System.Drawing.Size(359, 57)
         Me.PanelControlInfoLeft.TabIndex = 1
         '
         'LabelControlPrice
@@ -907,8 +943,8 @@ Partial Class FormPOS
         Me.LabelControlPrice.Dock = System.Windows.Forms.DockStyle.Right
         Me.LabelControlPrice.Location = New System.Drawing.Point(331, 0)
         Me.LabelControlPrice.Name = "LabelControlPrice"
-        Me.LabelControlPrice.Padding = New System.Windows.Forms.Padding(0, 0, 10, 0)
-        Me.LabelControlPrice.Size = New System.Drawing.Size(28, 45)
+        Me.LabelControlPrice.Padding = New System.Windows.Forms.Padding(0, 3, 10, 0)
+        Me.LabelControlPrice.Size = New System.Drawing.Size(28, 48)
         Me.LabelControlPrice.TabIndex = 1
         Me.LabelControlPrice.Text = "0"
         '
@@ -925,7 +961,6 @@ Partial Class FormPOS
         '
         Me.PanelControlBottom.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControlBottom.Controls.Add(Me.DECreated)
-        Me.PanelControlBottom.Controls.Add(Me.LabelControl7)
         Me.PanelControlBottom.Controls.Add(Me.PanelControl1)
         Me.PanelControlBottom.Controls.Add(Me.TxtCashierName)
         Me.PanelControlBottom.Controls.Add(Me.LabelControl1)
@@ -948,7 +983,7 @@ Partial Class FormPOS
         '
         Me.DECreated.EditValue = Nothing
         Me.DECreated.Enabled = False
-        Me.DECreated.Location = New System.Drawing.Point(163, 32)
+        Me.DECreated.Location = New System.Drawing.Point(131, 32)
         Me.DECreated.Name = "DECreated"
         Me.DECreated.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DECreated.Properties.Appearance.Options.UseFont = True
@@ -956,18 +991,9 @@ Partial Class FormPOS
         Me.DECreated.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.DECreated.Properties.DisplayFormat.FormatString = "dd\/MM\/yyyy hh:mm tt"
         Me.DECreated.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.DECreated.Size = New System.Drawing.Size(145, 20)
+        Me.DECreated.Size = New System.Drawing.Size(177, 20)
         Me.DECreated.TabIndex = 103
         Me.DECreated.TabStop = False
-        '
-        'LabelControl7
-        '
-        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(133, 35)
-        Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(24, 13)
-        Me.LabelControl7.TabIndex = 102
-        Me.LabelControl7.Text = "Date"
         '
         'PanelControl1
         '
@@ -1502,6 +1528,7 @@ Partial Class FormPOS
     Friend WithEvents LabelControl48 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl49 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents DECreated As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents GridColumnidItem As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumnEdit As DevExpress.XtraGrid.Columns.GridColumn
 End Class
