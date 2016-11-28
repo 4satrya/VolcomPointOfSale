@@ -85,10 +85,10 @@
     Sub newTrans()
         TxtItemCode.Enabled = True
         TxtItemCode.Focus()
-        LEStatus.ItemIndex = LEStatus.Properties.GetDataSourceRowIndex("id_pos_status", 1)
-        Dim query As String = "INSERT INTO tb_pos(pos_number, pos_date, id_pos_status) 
-        VALUES(header_number(4), NOW(), 1); SELECT LAST_INSERT_ID(); "
+        Dim query As String = "INSERT INTO tb_pos(pos_number, pos_date, id_pos_status, id_pos_cat) 
+        VALUES(header_number(4), NOW(), 1, 1); SELECT LAST_INSERT_ID(); "
         id = execute_query(query, 0, True, "", "", "", "")
+        actionLoad()
     End Sub
 
     Sub payment()
@@ -148,7 +148,109 @@
             Dim query_c As New ClassPOS()
             Dim query As String = query_c.queryMain("-1", "1")
             Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+            TxtCashierUser.Text = data.Rows(0)("cashier").ToString
+            TxtCashierName.Text = data.Rows(0)("cashier_name").ToString
+            TxtNumber.Text = data.Rows(0)("pos_number").ToString
+            DECreated.EditValue = data.Rows(0)("pos_date")
+            TxtShift.Text = data.Rows(0)("shift_type").ToString
+            TxtPOS.Text = data.Rows(0)("pos_dev").ToString
+            LEStatus.ItemIndex = LEStatus.Properties.GetDataSourceRowIndex("id_pos_status", data.Rows(0)("id_pos_status").ToString)
 
+            Dim subtotal As Decimal = 0
+            Try
+                subtotal = data.Rows(0)("subtotal")
+            Catch ex As Exception
+            End Try
+            If subtotal <> 0 Then
+                TxtSubTotal.EditValue = subtotal
+            Else
+                TxtSubTotal.EditValue = Nothing
+            End If
+
+            Dim discount As Decimal = 0
+            Try
+                discount = data.Rows(0)("discount")
+            Catch ex As Exception
+            End Try
+            If discount <> 0 Then
+                TxtDiscount.EditValue = discount
+            Else
+                TxtDiscount.EditValue = Nothing
+            End If
+
+            Dim tax As Decimal = 0
+            Try
+                tax = data.Rows(0)("tax")
+            Catch ex As Exception
+            End Try
+            If tax <> 0 Then
+                TxtTax.EditValue = tax
+            Else
+                TxtTax.EditValue = Nothing
+            End If
+
+            Dim total As Decimal = 0
+            Try
+                total = data.Rows(0)("total")
+            Catch ex As Exception
+            End Try
+            If total <> 0 Then
+                TxtTotal.EditValue = total
+            Else
+                TxtTotal.EditValue = Nothing
+            End If
+
+            TxtVoucherNo.Text = data.Rows(0)("voucher_number").ToString
+            Dim voucher As Decimal = 0
+            Try
+                voucher = data.Rows(0)("voucher")
+            Catch ex As Exception
+            End Try
+            If voucher <> 0 Then
+                TxtVoucher.EditValue = voucher
+            Else
+                TxtVoucher.EditValue = Nothing
+            End If
+
+            Dim point As Decimal = 0
+            Try
+                point = data.Rows(0)("point")
+            Catch ex As Exception
+            End Try
+            If point <> 0 Then
+                TxtPoint.EditValue = point
+            Else
+                TxtPoint.EditValue = Nothing
+            End If
+
+            Dim cash As Decimal = 0
+            Try
+                cash = data.Rows(0)("cash")
+            Catch ex As Exception
+            End Try
+            If point <> 0 Then
+                TxtCash.EditValue = cash
+            Else
+                TxtCash.EditValue = Nothing
+            End If
+
+            Dim card As Decimal = 0
+            Try
+                card = data.Rows(0)("card")
+            Catch ex As Exception
+            End Try
+            If card <> 0 Then
+                TxtCard.EditValue = card
+            Else
+                TxtCard.EditValue = Nothing
+            End If
+            LECardType.ItemIndex = LECardType.Properties.GetDataSourceRowIndex("id_card_type", data.Rows(0)("id_card_type").ToString)
+            TxtCardNumber.Text = data.Rows(0)("card_number").ToString
+            TxtCardName.Text = data.Rows(0)("card_name").ToString
+            'TxtMemberNumber -> belum ada
+            ' -> belum ada
+            LENation.ItemIndex = LENation.Properties.GetDataSourceRowIndex("id_country", data.Rows(0)("id_country").ToString)
+            TxtSales.Text = data.Rows(0)("sales_name").ToString
         End If
     End Sub
 

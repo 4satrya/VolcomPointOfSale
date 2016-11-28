@@ -82,6 +82,8 @@ Partial Class FormPOS
         Me.LabelControlPrice = New DevExpress.XtraEditors.LabelControl()
         Me.LabelInfoLeft = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlBottom = New DevExpress.XtraEditors.PanelControl()
+        Me.DECreated = New DevExpress.XtraEditors.DateEdit()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl48 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl49 = New DevExpress.XtraEditors.LabelControl()
@@ -164,6 +166,8 @@ Partial Class FormPOS
         Me.PanelControlInfoLeft.SuspendLayout()
         CType(Me.PanelControlBottom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlBottom.SuspendLayout()
+        CType(Me.DECreated.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DECreated.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.TxtCashierName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -309,7 +313,7 @@ Partial Class FormPOS
         'LabelPrice
         '
         Me.LabelPrice.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelPrice.Location = New System.Drawing.Point(303, 11)
+        Me.LabelPrice.Location = New System.Drawing.Point(314, 11)
         Me.LabelPrice.Name = "LabelPrice"
         Me.LabelPrice.Size = New System.Drawing.Size(24, 13)
         Me.LabelPrice.TabIndex = 51
@@ -329,7 +333,7 @@ Partial Class FormPOS
         Me.TxtQty.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.TxtQty.Properties.Mask.SaveLiteral = False
         Me.TxtQty.Properties.Mask.ShowPlaceHolders = False
-        Me.TxtQty.Size = New System.Drawing.Size(51, 20)
+        Me.TxtQty.Size = New System.Drawing.Size(62, 20)
         Me.TxtQty.TabIndex = 33
         '
         'LabelControl19
@@ -920,6 +924,8 @@ Partial Class FormPOS
         'PanelControlBottom
         '
         Me.PanelControlBottom.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControlBottom.Controls.Add(Me.DECreated)
+        Me.PanelControlBottom.Controls.Add(Me.LabelControl7)
         Me.PanelControlBottom.Controls.Add(Me.PanelControl1)
         Me.PanelControlBottom.Controls.Add(Me.TxtCashierName)
         Me.PanelControlBottom.Controls.Add(Me.LabelControl1)
@@ -937,6 +943,31 @@ Partial Class FormPOS
         Me.PanelControlBottom.Name = "PanelControlBottom"
         Me.PanelControlBottom.Size = New System.Drawing.Size(850, 64)
         Me.PanelControlBottom.TabIndex = 47
+        '
+        'DECreated
+        '
+        Me.DECreated.EditValue = Nothing
+        Me.DECreated.Enabled = False
+        Me.DECreated.Location = New System.Drawing.Point(163, 32)
+        Me.DECreated.Name = "DECreated"
+        Me.DECreated.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DECreated.Properties.Appearance.Options.UseFont = True
+        Me.DECreated.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DECreated.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DECreated.Properties.DisplayFormat.FormatString = "dd\/MM\/yyyy hh:mm tt"
+        Me.DECreated.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.DECreated.Size = New System.Drawing.Size(145, 20)
+        Me.DECreated.TabIndex = 103
+        Me.DECreated.TabStop = False
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl7.Location = New System.Drawing.Point(133, 35)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(24, 13)
+        Me.LabelControl7.TabIndex = 102
+        Me.LabelControl7.Text = "Date"
         '
         'PanelControl1
         '
@@ -1185,13 +1216,13 @@ Partial Class FormPOS
         Me.TxtCashierName.Name = "TxtCashierName"
         Me.TxtCashierName.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCashierName.Properties.Appearance.Options.UseFont = True
-        Me.TxtCashierName.Size = New System.Drawing.Size(164, 20)
+        Me.TxtCashierName.Size = New System.Drawing.Size(177, 20)
         Me.TxtCashierName.TabIndex = 100
         '
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(303, 36)
+        Me.LabelControl1.Location = New System.Drawing.Point(314, 36)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(32, 13)
         Me.LabelControl1.TabIndex = 98
@@ -1241,7 +1272,7 @@ Partial Class FormPOS
         'LabelControl22
         '
         Me.LabelControl22.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl22.Location = New System.Drawing.Point(303, 10)
+        Me.LabelControl22.Location = New System.Drawing.Point(314, 10)
         Me.LabelControl22.Name = "LabelControl22"
         Me.LabelControl22.Size = New System.Drawing.Size(31, 13)
         Me.LabelControl22.TabIndex = 93
@@ -1265,7 +1296,7 @@ Partial Class FormPOS
         Me.TxtNumber.Name = "TxtNumber"
         Me.TxtNumber.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtNumber.Properties.Appearance.Options.UseFont = True
-        Me.TxtNumber.Size = New System.Drawing.Size(238, 20)
+        Me.TxtNumber.Size = New System.Drawing.Size(70, 20)
         Me.TxtNumber.TabIndex = 89
         '
         'TxtShift
@@ -1360,6 +1391,8 @@ Partial Class FormPOS
         CType(Me.PanelControlBottom, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlBottom.ResumeLayout(False)
         Me.PanelControlBottom.PerformLayout()
+        CType(Me.DECreated.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DECreated.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         Me.PanelControl1.PerformLayout()
@@ -1469,4 +1502,6 @@ Partial Class FormPOS
     Friend WithEvents LabelControl48 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl49 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents DECreated As DevExpress.XtraEditors.DateEdit
 End Class
