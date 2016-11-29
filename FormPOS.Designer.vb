@@ -32,6 +32,9 @@ Partial Class FormPOS
         Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnidItem = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnEdit = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnComm = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnId = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnIdStorage = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PanelControlCode = New DevExpress.XtraEditors.PanelControl()
         Me.TxtPrc = New DevExpress.XtraEditors.TextEdit()
         Me.LabelPrice = New DevExpress.XtraEditors.LabelControl()
@@ -227,7 +230,7 @@ Partial Class FormPOS
         '
         'GVPOS
         '
-        Me.GVPOS.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumnidItem, Me.GridColumnEdit})
+        Me.GVPOS.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumnidItem, Me.GridColumnEdit, Me.GridColumnComm, Me.GridColumnId, Me.GridColumnIdStorage})
         Me.GVPOS.GridControl = Me.GCPOS
         Me.GVPOS.Name = "GVPOS"
         Me.GVPOS.OptionsBehavior.Editable = False
@@ -314,6 +317,27 @@ Partial Class FormPOS
         Me.GridColumnEdit.Caption = "Is Edit"
         Me.GridColumnEdit.FieldName = "is_edit"
         Me.GridColumnEdit.Name = "GridColumnEdit"
+        '
+        'GridColumnComm
+        '
+        Me.GridColumnComm.Caption = "Comm"
+        Me.GridColumnComm.FieldName = "comm"
+        Me.GridColumnComm.Name = "GridColumnComm"
+        Me.GridColumnComm.OptionsColumn.ShowInCustomizationForm = False
+        '
+        'GridColumnId
+        '
+        Me.GridColumnId.Caption = "Id"
+        Me.GridColumnId.FieldName = "id_pos_det"
+        Me.GridColumnId.Name = "GridColumnId"
+        Me.GridColumnId.OptionsColumn.ShowInCustomizationForm = False
+        '
+        'GridColumnIdStorage
+        '
+        Me.GridColumnIdStorage.Caption = "Id Stock"
+        Me.GridColumnIdStorage.FieldName = "id_storage_item"
+        Me.GridColumnIdStorage.Name = "GridColumnIdStorage"
+        Me.GridColumnIdStorage.OptionsColumn.ShowInCustomizationForm = False
         '
         'PanelControlCode
         '
@@ -723,7 +747,7 @@ Partial Class FormPOS
         'TxtPoint
         '
         Me.TxtPoint.Enabled = False
-        Me.TxtPoint.Location = New System.Drawing.Point(94, 52)
+        Me.TxtPoint.Location = New System.Drawing.Point(95, 77)
         Me.TxtPoint.Name = "TxtPoint"
         Me.TxtPoint.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtPoint.Properties.Appearance.Options.UseFont = True
@@ -1531,4 +1555,7 @@ Partial Class FormPOS
     Friend WithEvents DECreated As DevExpress.XtraEditors.DateEdit
     Friend WithEvents GridColumnidItem As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnEdit As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumnComm As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumnId As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumnIdStorage As DevExpress.XtraGrid.Columns.GridColumn
 End Class

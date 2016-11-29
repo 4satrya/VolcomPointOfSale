@@ -4,6 +4,8 @@
     Dim id_user_shift As String = "-1"
     Dim new_trans As Boolean = False
     Dim id_stock_last As String = "-1"
+    Dim id_detail_last As String = "-1"
+    Dim id_display_default As String = "-1"
 
     Private Sub FormPOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LabelInfoLeft.Focus()
@@ -11,6 +13,9 @@
         viewCardType()
         viewPOSSTatus()
         shift()
+
+        'get display default
+        id_display_default = get_setup_field("id_display_default")
     End Sub
 
     Sub shift()
@@ -98,7 +103,10 @@
 
     Sub payment()
         Cursor = Cursors.WaitCursor
-
+        TxtItemCode.Enabled = False
+        TxtDiscount.Enabled = True
+        TxtDiscount.EditValue = 0
+        TxtDiscount.Focus()
         Cursor = Cursors.Default
     End Sub
 
@@ -312,27 +320,40 @@
                 BringToFront()
             Else
                 Dim code As String = TxtItemCode.Text
-                Dim query As String = "CALL view_stock_item('AND j.id_comp=" + get_setup_field("id_display_default") + " AND f.item_code=" + code + " AND j.storage_item_datetime<=''9999-12-01'' ', '2')"
+                '- query direct to stock Dim query As String = "CALL view_stock_item('AND j.id_comp=" + id_display_default + " AND f.item_code=" + code + " AND j.storage_item_datetime<=''9999-12-01'' ', '2')"
+                Dim i As New ClassItem()
+                Dim query As String = i.queryMain("AND i.item_code='" + code + "' ", "1", False)
                 Dim dt As DataTable = execute_query(query, -1, True, "", "", "", "")
                 If dt.Rows.Count > 0 Then
-                    Dim qty_avail As Decimal = dt.Rows(0)("qty_avl")
-                    If qty_avail <= 0 Then
-                        stopCustom("No stock available")
-                    Else
-                        Dim newRow As DataRow = (TryCast(GCPOS.DataSource, DataTable)).NewRow()
-                        newRow("id_item") = dt(0)("id_item").ToString
-                        newRow("item_code") = dt(0)("item_code").ToString
-                        newRow("item_name") = dt(0)("item_name").ToString
-                        newRow("qty") = 1
-                        newRow("price") = dt(0)("price")
-                        newRow("is_edit") = "2"
-                        TryCast(GCPOS.DataSource, DataTable).Rows.Add(newRow)
-                        GCPOS.RefreshDataSource()
-                        GVPOS.RefreshData()
-                        getSubTotal()
-                        Dim rh As Integer = GVPOS.RowCount - 1
-                        showDisplay(dt(0)("item_name").ToString, "1", GVPOS.GetRowCellDisplayText(rh, "amount").ToString)
-                    End If
+                    'Dim qty_avail As Decimal = dt.Rows(0)("qty_avl")
+                    'If qty_avail <= 0 Then
+                    '    stopCustom("No stock available")
+                    'Else
+                    'End If
+                    'insert stock
+                    'insertStock(dt(0)("id_item").ToString, id_display_default, "1", "2", "-1")
+
+                    'insert detail
+                    insertDetail(dt(0)("id_item").ToString, decimalSQL(dt(0)("comm").ToString), "1", decimalSQL(dt(0)("price").ToString), "-1")
+
+                    'insert gv
+                    Dim newRow As DataRow = (TryCast(GCPOS.DataSource, DataTable)).NewRow()
+                    newRow("id_pos_det") = id_detail_last
+                    newRow("id_item") = dt(0)("id_item").ToString
+                    newRow("item_code") = dt(0)("item_code").ToString
+                    newRow("item_name") = dt(0)("item_name").ToString
+                    newRow("qty") = 1
+                    newRow("price") = dt(0)("price")
+                    newRow("comm") = dt(0)("comm")
+                    newRow("is_edit") = "2"
+                    TryCast(GCPOS.DataSource, DataTable).Rows.Add(newRow)
+                    GCPOS.RefreshDataSource()
+                    GVPOS.RefreshData()
+
+                    'info
+                    getSubTotal()
+                    Dim rh As Integer = GVPOS.RowCount - 1
+                    showDisplay(dt(0)("item_name").ToString, "1", GVPOS.GetRowCellDisplayText(rh, "amount").ToString)
                 Else
                     stopCustom("Code not found")
                 End If
@@ -361,7 +382,14 @@
         If e.KeyCode = Keys.Enter Then
             Dim qty As Integer = TxtQty.EditValue
             Dim rh As Integer = GVPOS.RowCount - 1
+            Dim code As String = TxtItemCode.Text
+            Dim id_pos_det As String = GVPOS.GetRowCellValue(rh, "id_pos_det")
+
+
             If qty > 0 Then 'plus
+                'insert detail
+                insertDetail("0", "0", qty.ToString, "0", id_pos_det)
+
                 GVPOS.SetRowCellValue(rh, "qty", qty)
                 GVPOS.SetRowCellValue(rh, "is_edit", "2")
                 GCPOS.RefreshDataSource()
@@ -382,7 +410,7 @@
                 TxtItemCode.Enabled = True
                 TxtItemCode.Text = ""
                 TxtItemCode.Focus()
-            Else
+            Else 'minus
                 Dim id_item As String = GVPOS.GetRowCellValue(rh, "id_item").ToString
                 GVPOS.ActiveFilterString = "[id_item]='" + id_item + "' AND [is_edit]='2' "
                 GCPOS.RefreshDataSource()
@@ -397,6 +425,9 @@
                 GVPOS.RefreshData()
 
                 If (qty * -1) <= max Then
+                    'insert detail
+                    insertDetail("0", "0", qty.ToString, "0", id_pos_det)
+
                     GVPOS.SetRowCellValue(rh, "qty", qty)
                     GVPOS.SetRowCellValue(rh, "is_edit", "2")
                     GCPOS.RefreshDataSource()
@@ -439,13 +470,162 @@
 
     Sub getSubTotal()
         TxtSubTotal.EditValue = GVPOS.Columns("amount").SummaryItem.SummaryValue()
+
+        Dim subtotal As Decimal = 0
+        Try
+            subtotal = TxtSubTotal.EditValue
+        Catch ex As Exception
+        End Try
+
+        Dim discount As Decimal = 0
+        Try
+            discount = TxtDiscount.EditValue
+        Catch ex As Exception
+        End Try
+
+        Dim tax As Decimal = 0
+        Try
+            tax = TxtTax.EditValue
+        Catch ex As Exception
+        End Try
+
+        TxtTotal.EditValue = subtotal - discount + tax
     End Sub
 
-    Sub insertStock(ByVal id_item_par As String, qty_par As String, id_stock As String)
-        If id_stock <> "-1" Then 'edit
-
+    Sub insertStock(ByVal id_item_par As String, id_comp_par As String, qty_par As String, ByVal id_storage_category_par As String, id_stock_par As String)
+        If id_stock_par <> "-1" Then 'edit
+            Dim query As String = "UPDATE tb_storage_item SET storage_item_qty='" + qty_par + "' WHERE id_storage_item='" + id_stock_par + "' "
+            execute_non_query(query, True, "", "", "", "")
         Else 'new
-
+            Dim query As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
+            VALUES ('" + id_comp_par + "', '" + id_storage_category_par + "', '" + id_item_par + "', '3', '" + id + "', '" + qty_par + "', NOW(), '1'); SELECT LAST_INSERT_ID(); "
+            id_stock_last = execute_query(query, 0, True, "", "", "", "")
         End If
     End Sub
+
+    Sub insertDetail(ByVal id_item_par As String, ByVal comm_par As String, ByVal qty_par As String, ByVal price_par As String, ByVal id_pos_det_par As String)
+        If id_pos_det_par <> "-1" Then 'edit only qty
+            Dim query As String = "UPDATE tb_pos_det SET qty='" + qty_par + "' WHERE id_pos_det='" + id_pos_det_par + "'"
+            execute_non_query(query, True, "", "", "", "")
+        Else
+            Dim query As String = "INSERT INTO tb_pos_det(id_pos, id_item, comm, qty, price) 
+            VALUES ('" + id + "', '" + id_item_par + "', '" + comm_par + "', '" + qty_par + "', '" + price_par + "'); SELECT LAST_INSERT_ID(); "
+            id_detail_last = execute_query(query, 0, True, "", "", "", "")
+        End If
+    End Sub
+
+    Private Sub TxtDiscount_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtDiscount.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Dim discount As Decimal = TxtDiscount.EditValue
+            If discount = 0 Then
+                getSubTotal()
+                TxtDiscount.Enabled = False
+                TxtCash.Enabled = True
+                TxtCash.EditValue = TxtTotal.EditValue
+                TxtCash.Focus()
+            Else 'with login
+                getSubTotal()
+                TxtDiscount.Enabled = False
+                TxtCash.Enabled = True
+                TxtCash.EditValue = TxtTotal.EditValue
+                TxtCash.Focus()
+            End If
+        End If
+    End Sub
+
+    Private Sub TxtCash_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCash.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            If TxtCash.EditValue > TxtTotal.EditValue Then
+                'jika lebih ada kembalian
+                TxtChange.EditValue = TxtCash.EditValue - TxtTotal.EditValue
+                Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Payment OK ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                If confirm = DialogResult.Yes Then
+                    TxtCash.Enabled = False
+                    paymentOK()
+                Else
+                    TxtCash.EditValue = TxtTotal.EditValue
+                End If
+            ElseIf TxtCash.EditValue = TxtTotal.EditValue Then
+                Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Payment OK ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                If confirm = DialogResult.Yes Then
+                    TxtCash.Enabled = False
+                    paymentOK()
+                Else
+                    TxtCash.EditValue = TxtTotal.EditValue
+                End If
+            Else
+                'jika kurang sisanya ke card
+                TxtCash.Enabled = False
+                TxtCard.Enabled = True
+                TxtCard.EditValue = TxtTotal.EditValue - TxtCash.EditValue
+                TxtCard.Focus()
+            End If
+        End If
+    End Sub
+
+    Sub paymentOK()
+        Dim query As String = "UPDATE tb_pos SET is_payment_ok=1 WHERE id_pos=" + id + " "
+        execute_non_query(query, True, "", "", "", "")
+        TxtSales.Focus()
+    End Sub
+
+    Private Sub TxtCard_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCard.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            If TxtCash.EditValue + TxtCard.EditValue < TxtTotal.EditValue Then
+                stopCustom("Payment cannot less than payment")
+                TxtCard.EditValue = TxtTotal.EditValue - TxtCash.EditValue
+                TxtCard.Focus()
+            ElseIf TxtCash.EditValue + TxtCard.EditValue > TxtTotal.EditValue
+                TxtChange.EditValue = (TxtCash.EditValue + TxtCard.EditValue) - TxtTotal.EditValue
+                TxtCard.Enabled = False
+                LECardType.Enabled = True
+                LECardType.Focus()
+            Else
+                TxtCard.Enabled = False
+                LECardType.Enabled = True
+                LECardType.Focus()
+            End If
+        End If
+    End Sub
+
+    Private Sub LECardType_KeyDown(sender As Object, e As KeyEventArgs) Handles LECardType.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            If LECardType.EditValue = Nothing Then
+                LECardType.Focus()
+            Else
+                LECardType.Enabled = False
+                TxtCardNumber.Enabled = True
+                TxtCardNumber.Focus()
+            End If
+        End If
+    End Sub
+
+    Private Sub TxtCardNumber_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCardNumber.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            If TxtCardNumber.EditValue = Nothing Then
+                TxtCardNumber.Focus()
+            Else
+                TxtCardNumber.Enabled = False
+                TxtCardName.Enabled = True
+                TxtCardName.Focus()
+            End If
+        End If
+    End Sub
+
+    Private Sub TxtCardName_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCardName.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            If TxtCardName.EditValue = Nothing Then
+                TxtCardName.Focus()
+            Else
+                Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Payment OK ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                If confirm = DialogResult.Yes Then
+                    TxtCardName.Enabled = False
+                    paymentOK()
+                Else
+                    TxtCardName.Text = ""
+                End If
+            End If
+        End If
+    End Sub
+
 End Class

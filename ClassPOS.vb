@@ -54,9 +54,9 @@
             condition = ""
         End If
 
-        Dim query As String = "SELECT pd.id_pos_det, pd.id_pos, 
+        Dim query As String = "SELECT pd.id_pos_det, pd.id_pos,
         pd.id_item, i.item_code, i.item_name, 
-        pd.item_price, pd.comm, pd.qty, pd.price, '' AS `is_edit`
+        pd.comm, pd.qty, pd.price, '' AS `is_edit`
         FROM tb_pos_det pd 
         INNER JOIN tb_item i ON i.id_item = pd.id_item 
         WHERE pd.id_pos>0 "
