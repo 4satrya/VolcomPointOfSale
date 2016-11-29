@@ -6,6 +6,8 @@
     Dim id_stock_last As String = "-1"
     Dim id_detail_last As String = "-1"
     Dim id_display_default As String = "-1"
+    Dim id_sales As String = "-1"
+    Dim is_payment_ok As Boolean = False
 
     Private Sub FormPOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LabelInfoLeft.Focus()
@@ -77,7 +79,7 @@
             bonus()
         ElseIf e.KeyCode = Keys.F11 Then
             voucher()
-        ElseIf e.KeyCode = Keys.Insert 'new trans
+        ElseIf e.KeyCode = Keys.Insert And is_payment_ok = False 'new trans
             newTrans()
         ElseIf e.KeyCode = Keys.Escape Then
             exitForm()
@@ -90,6 +92,16 @@
     End Sub
 
     Sub newTrans()
+        TxtDiscount.Enabled = False
+        TxtVoucherNo.Enabled = False
+        TxtVoucher.Enabled = False
+        TxtPoint.Enabled = False
+        TxtCash.Enabled = False
+        TxtCard.Enabled = False
+        LECardType.Enabled = False
+        TxtCardNumber.Enabled = False
+        TxtCardName.Enabled = False
+
         TxtItemCode.Enabled = True
         TxtItemCode.Focus()
         If Not new_trans Then
@@ -566,6 +578,8 @@
     Sub paymentOK()
         Dim query As String = "UPDATE tb_pos SET is_payment_ok=1 WHERE id_pos=" + id + " "
         execute_non_query(query, True, "", "", "", "")
+        is_payment_ok = True
+        TxtSales.Enabled = True
         TxtSales.Focus()
     End Sub
 
@@ -628,4 +642,53 @@
         End If
     End Sub
 
+    Private Sub TxtSales_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtSales.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Dim code As String = addSlashes(TxtSales.Text)
+            If code = "" Then
+                FormBlack.Show()
+                Cursor = Cursors.WaitCursor
+                FormPOSSales.ShowDialog()
+                Cursor = Cursors.Default
+                FormBlack.Close()
+                BringToFront()
+            Else
+                Dim query As String = "SELECT * FROM tb_m_employee WHERE employee_code='" + code + "' "
+                Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+                If data.Rows.Count > 0 Then
+                    id_sales = data.Rows(0)("id_employee").ToString
+                    TxtSales.Enabled = False
+                    LENation.Enabled = True
+                    LENation.Focus()
+                Else
+                    stopCustom("Sales not found")
+                    TxtSales.Focus()
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Sub LENation_KeyDown(sender As Object, e As KeyEventArgs) Handles LENation.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            If LENation.EditValue = Nothing Then
+                LENation.Focus()
+            Else
+                Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Transaction OK ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                If confirm = DialogResult.Yes Then
+                    completed()
+                Else
+                    LENation.Focus()
+                End If
+            End If
+        End If
+    End Sub
+
+    Sub completed()
+        'potong stok
+
+        'closed pos
+        Dim query As String = "UPDATE tb_pos SET id_sales='" + id_sales + "', id_country='" + LENation.EditValue.ToString + "', id_pos_status=2 WHERE id_pos=" + id + ""
+        execute_non_query(query, True, "", "", "", "")
+        Close()
+    End Sub
 End Class

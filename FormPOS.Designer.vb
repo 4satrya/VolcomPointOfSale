@@ -594,12 +594,6 @@ Partial Class FormPOS
         Me.TxtCardName.Name = "TxtCardName"
         Me.TxtCardName.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCardName.Properties.Appearance.Options.UseFont = True
-        Me.TxtCardName.Properties.DisplayFormat.FormatString = "N2"
-        Me.TxtCardName.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TxtCardName.Properties.Mask.EditMask = "n2"
-        Me.TxtCardName.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TxtCardName.Properties.Mask.SaveLiteral = False
-        Me.TxtCardName.Properties.Mask.ShowPlaceHolders = False
         Me.TxtCardName.Size = New System.Drawing.Size(145, 20)
         Me.TxtCardName.TabIndex = 33
         '
@@ -610,12 +604,6 @@ Partial Class FormPOS
         Me.TxtCardNumber.Name = "TxtCardNumber"
         Me.TxtCardNumber.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCardNumber.Properties.Appearance.Options.UseFont = True
-        Me.TxtCardNumber.Properties.DisplayFormat.FormatString = "N2"
-        Me.TxtCardNumber.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TxtCardNumber.Properties.Mask.EditMask = "n2"
-        Me.TxtCardNumber.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TxtCardNumber.Properties.Mask.SaveLiteral = False
-        Me.TxtCardNumber.Properties.Mask.ShowPlaceHolders = False
         Me.TxtCardNumber.Size = New System.Drawing.Size(145, 20)
         Me.TxtCardNumber.TabIndex = 22
         '
