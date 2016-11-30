@@ -8,6 +8,7 @@
     Dim id_display_default As String = "-1"
     Dim id_sales As String = "-1"
     Dim is_payment_ok As Boolean = False
+    Dim id_voucher_db As String = "-1"
 
     Private Sub FormPOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LabelInfoLeft.Focus()
@@ -576,7 +577,77 @@
     End Sub
 
     Sub paymentOK()
-        Dim query As String = "UPDATE tb_pos SET is_payment_ok=1 WHERE id_pos=" + id + " "
+        Dim subtotal As String = "0"
+        Try
+            subtotal = decimalSQL(TxtSubTotal.EditValue.ToString)
+        Catch ex As Exception
+        End Try
+
+        Dim discount As String = "0"
+        Try
+            discount = decimalSQL(TxtDiscount.EditValue.ToString)
+        Catch ex As Exception
+        End Try
+
+        Dim tax As String = "0"
+        Try
+            tax = decimalSQL(TxtTax.EditValue.ToString)
+        Catch ex As Exception
+        End Try
+
+        Dim total As String = "0"
+        Try
+            total = decimalSQL(TxtTotal.EditValue.ToString)
+        Catch ex As Exception
+        End Try
+
+        Dim id_voucher As String = id_voucher_db
+        If id_voucher = "-1" Then
+            id_voucher = "NULL"
+        Else
+            id_voucher = "'" + id_voucher_db + "'"
+        End If
+        Dim voucher_number As String = addSlashes(TxtVoucherNo.Text)
+        Dim voucher As String = "0"
+        Try
+            voucher = decimalSQL(TxtVoucher.EditValue.ToString)
+        Catch ex As Exception
+        End Try
+
+        Dim point As String = "0"
+        Try
+            point = decimalSQL(TxtPoint.EditValue.ToString)
+        Catch ex As Exception
+        End Try
+
+        Dim cash As String = "0"
+        Try
+            cash = decimalSQL(TxtCash.EditValue.ToString)
+        Catch ex As Exception
+
+        End Try
+
+        Dim card As String = "0"
+        Try
+            card = decimalSQL(TxtCard.EditValue.ToString)
+        Catch ex As Exception
+        End Try
+
+        Dim id_card_type As String = "NULL"
+        Try
+            id_card_type = "'" + LECardType.EditValue.ToString + "'"
+        Catch ex As Exception
+        End Try
+
+        Dim card_number As String = addSlashes(TxtCardNumber.Text.ToString)
+        Dim card_name As String = addSlashes(TxtCardName.Text.ToString)
+
+        Dim query As String = "UPDATE tb_pos SET is_payment_ok=1,
+        subtotal='" + subtotal + "', discount='" + discount + "', tax='" + tax + "',
+        total='" + total + "', id_voucher=" + id_voucher + ", voucher_number='" + voucher_number + "',
+        voucher='" + voucher + "', point='" + point + "', cash='" + cash + "', card='" + card + "',
+        id_card_type=" + id_card_type + ", card_number='" + card_number + "', card_name='" + card_name + "'
+        WHERE id_pos=" + id + " "
         execute_non_query(query, True, "", "", "", "")
         is_payment_ok = True
         TxtSales.Enabled = True
@@ -685,6 +756,10 @@
 
     Sub completed()
         'potong stok
+        Dim query_stc As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
+        SELECT '" + id_display_default + "', IF(qty>=0,'2', '1'), id_item, '3', '" + id + "', ABS(qty), NOW(), '1' 
+        FROM tb_pos_det WHERE id_pos=" + id + " "
+        execute_non_query(query_stc, True, "", "", "", "")
 
         'closed pos
         Dim query As String = "UPDATE tb_pos SET id_sales='" + id_sales + "', id_country='" + LENation.EditValue.ToString + "', id_pos_status=2 WHERE id_pos=" + id + ""
