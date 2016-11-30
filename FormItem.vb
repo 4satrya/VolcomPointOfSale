@@ -108,7 +108,11 @@
         printPreview()
     End Sub
 
-    Private Sub PCClose_Click(sender As Object, e As EventArgs) Handles PCClose.Click
+    Private Sub PCClose_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub PanelControl5_Click(sender As Object, e As EventArgs) Handles PanelControl5.Click
         exitForm()
     End Sub
 End Class
