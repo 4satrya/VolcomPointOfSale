@@ -13,7 +13,7 @@
             condition = ""
         End If
 
-        Dim query As String = "SELECT p.id_pos, p.pos_number, p.tax_number, p.pos_date, 
+        Dim query As String = "SELECT p.id_pos, p.pos_number, p.pos_date, 
         p.id_shift, s.id_shift_type, st.shift_type, st.shift_name, st.shift_start, s.id_user, 
         s.id_pos_dev, pd.pos_dev, pd.mac_address,
         s.open_shift, s.close_shift, s.cash, s.is_open, 

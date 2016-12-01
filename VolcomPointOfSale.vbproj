@@ -101,6 +101,7 @@
     <Compile Include="ClassCompany.vb" />
     <Compile Include="ClassItem.vb" />
     <Compile Include="ClassPOS.vb" />
+    <Compile Include="ClassRawPrint.vb" />
     <Compile Include="ClassRec.vb" />
     <Compile Include="ClassRet.vb" />
     <Compile Include="ClassTrf.vb" />
@@ -212,6 +213,12 @@
       <DependentUpon>FormPOSShift.vb</DependentUpon>
     </Compile>
     <Compile Include="FormPOSShift.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrint.Designer.vb">
+      <DependentUpon>FormPrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrint.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormRec.Designer.vb">
@@ -414,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPOSShift.resx">
       <DependentUpon>FormPOSShift.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrint.resx">
+      <DependentUpon>FormPrint.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRec.resx">
       <DependentUpon>FormRec.vb</DependentUpon>
