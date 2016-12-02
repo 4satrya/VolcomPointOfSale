@@ -1,4 +1,19 @@
 ﻿Public Class ClassPOS
+    Public Const eClear As String = Chr(27) + "@"
+    Public Const eCentre As String = Chr(27) + Chr(97) + "1"
+    Public Const eLeft As String = Chr(27) + Chr(77) + "1" + Chr(27) + Chr(97) + "0"
+    Public Const eRight As String = Chr(27) + Chr(97) + "2"
+    Public Const eDrawer As String = eClear + Chr(27) + "p" + Chr(0) + ".}"
+    Public Const eCut As String = Chr(27) + "i" + vbCrLf
+    Public Const eSmlText As String = Chr(27) + "!" + Chr(1)
+    Public Const eNmlText As String = Chr(27) + "!" + Chr(0)
+    Public Const eInit As String = eNmlText + Chr(13) + Chr(27) + "3" + Chr(18) + vbCrLf
+    Public Const eBigCharOn As String = Chr(27) + "!" + Chr(56)
+    Public Const eBigCharOff As String = Chr(27) + "!" + Chr(0)
+
+    Private prn As New ClassRawPrint
+
+    Private PrinterName As String = get_setup_field("printer_name")
 
     Public Function queryMain(ByVal condition As String, ByVal order_type As String) As String
         If order_type = "1" Then
@@ -13,7 +28,8 @@
             condition = ""
         End If
 
-        Dim query As String = "SELECT p.id_pos, p.pos_number, p.pos_date, 
+        Dim query As String = "SELECT p.id_pos, p.pos_number, 
+        p.pos_date, DATE_FORMAT(p.pos_date,'%d/%m/%Y') AS  `pos_date_display` , DATE_FORMAT(p.pos_date,'%H:%i') AS  `pos_time_display`,
         p.id_shift, s.id_shift_type, st.shift_type, st.shift_name, st.shift_start, s.id_user, 
         s.id_pos_dev, pd.pos_dev, pd.mac_address,
         s.open_shift, s.close_shift, s.cash, s.is_open, 
@@ -55,8 +71,11 @@
         End If
 
         Dim query As String = "SELECT pd.id_pos_det, pd.id_pos,
-        pd.id_item, i.item_code, i.item_name, 
-        pd.comm, pd.qty, pd.price, '' AS `is_edit`
+        pd.id_item, i.item_code, 
+        i.item_name, 
+        IF(LENGTH(i.item_name)<=35,i.item_name, SUBSTRING(i.item_name,1,35)) AS `item_name_display`,
+        pd.comm, pd.qty, pd.price, (pd.price*pd.qty) AS `amo`, 
+        '' AS `is_edit`
         FROM tb_pos_det pd 
         INNER JOIN tb_item i ON i.id_item = pd.id_item 
         WHERE pd.id_pos>0 "
@@ -97,5 +116,123 @@
         query += "ORDER BY s.id_shift " + order_type
         Return query
     End Function
+
+    '===========PRINTER==================
+    Private Sub StartPrint()
+        prn.OpenPrint(PrinterName)
+    End Sub
+
+    Private Sub PrintHeader()
+        Dim query As String = "SELECT * FROM tb_opt"
+        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        Print(eInit + eCentre + Chr(27) + Chr(33) + Chr(16) + data.Rows(0)("header_1").ToString)
+        Print(eNmlText + Chr(27) + Chr(77) + "1" + data.Rows(0)("header_2").ToString)
+        Print(Chr(27) + Chr(77) + "1" + data.Rows(0)("header_3").ToString)
+        Print(Chr(27) + Chr(77) + "1" + data.Rows(0)("header_4").ToString)
+        Print(Chr(27) + Chr(77) + "1" + data.Rows(0)("header_5").ToString + eLeft)
+        PrintDashes()
+    End Sub
+
+    Private Sub PrintBody(ByVal id_pos As String)
+        Dim query_main As String = queryMain("AND p.id_pos=" + id_pos + "", "1")
+        Dim dt_main As DataTable = execute_query(query_main, -1, True, "", "", "", "")
+        Print(eLeft + dt_main.Rows(0)("pos_number").ToString + Chr(13) + eRight + dt_main.Rows(0)("pos_date_display").ToString)
+        Print(eLeft + dt_main.Rows(0)("pos_dev").ToString + Chr(13) + eRight + dt_main.Rows(0)("pos_time_display").ToString)
+
+        Print(eLeft + "No.--------Code--------Qty--------Amount")
+        Dim query_det As String = queryDet("AND pd.id_pos=" + id_pos + "", "1")
+        Dim dt_det As DataTable = execute_query(query_det, -1, True, "", "", "", "")
+        Dim no As Integer = 1
+        For i As Integer = 0 To (dt_det.Rows.Count - 1)
+            printItem(no.ToString, dt_det.Rows(i)("item_code").ToString, dt_det.Rows(i)("item_name_display").ToString, dt_det.Rows(i)("qty").ToString("N0"), dt_det.Rows(i)("amo").ToString("N0"))
+            no += 1
+        Next
+
+        PrintDashes()
+        Print(eLeft + "Total" + Chr(13) + eRight + "0")
+        Print(eLeft + "Dasar Kena PPN" + Chr(13) + eRight + "0")
+        Print(eLeft + "PPN" + Chr(13) + eRight + "0")
+        Print(eLeft + "Cash" + Chr(13) + eRight + "0")
+        Print(eLeft + "Card" + Chr(13) + eRight + "0")
+        Print(eLeft + "Voucher" + Chr(13) + eRight + "0")
+        Print(eLeft + "Change" + Chr(13) + eRight + "0")
+
+        'jika ada card/voucher
+        'Print(vbLf)
+        'Print(eLeft + "       Card Type" + "    : " + "DEBIT BCA")
+        'Print(eLeft + "       Number" + "       : " + "12345")
+        'Print(eLeft + "       Holder" + "       : " + "KOMANG")
+        'Print(eLeft + "       Voucher No." + "  : " + "123445")
+
+        Print(vbLf)
+    End Sub
+
+    Private Sub printItem(ByVal no As String, code As String, desc As String, qty As String, amount As String)
+        'no=5; code=18; qty=2; amount=15
+        If no.Length = "1" Then
+            no = " " + no + ".  "
+        Else
+            no = no + ".  "
+        End If
+
+        Dim code_max As Integer = 18
+        If code.Length < code_max Then
+            For c = 1 To (code_max - code.Length)
+                code += " "
+            Next
+        Else
+            code = code
+        End If
+
+        If qty.Length = "1" Then
+            qty = " " + qty
+        Else
+            qty = qty
+        End If
+
+        Dim amount_max As Integer = 15
+        If amount.Length < amount_max Then
+            For a = 1 To (amount_max - amount.Length)
+                amount = " " + amount
+            Next
+        Else
+            amount = amount
+        End If
+        Print(eLeft + no + code + qty + amount)
+        Print(eLeft + "     " + desc)
+    End Sub
+
+    Private Sub PrintFooter()
+        Dim query As String = "SELECT * FROM tb_opt"
+        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        Print(eCentre + data.Rows(0)("footer_1").ToString)
+        Print(eCentre + data.Rows(0)("footer_2").ToString)
+        Print(eCentre + data.Rows(0)("footer_3").ToString)
+        Print(eCentre + data.Rows(0)("footer_4").ToString)
+        Print(vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + eCut + eDrawer)
+    End Sub
+
+    Private Sub Print(Line As String)
+        prn.SendStringToPrinter(PrinterName, Line + vbLf)
+    End Sub
+
+    Private Sub PrintDashes()
+        Print(eLeft + eNmlText + "-".PadRight(33, "-"))
+    End Sub
+
+    Private Sub EndPrint()
+        prn.ClosePrint()
+    End Sub
+
+    Public Sub printPos(ByVal id_pos As String)
+        StartPrint()
+
+        If prn.PrinterIsOpen = True Then
+            PrintHeader()
+            PrintBody("-1")
+            PrintFooter()
+            EndPrint()
+        End If
+    End Sub
 
 End Class

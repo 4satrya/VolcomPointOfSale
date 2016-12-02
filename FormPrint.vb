@@ -65,7 +65,18 @@
         Print(eLeft + "Total" + Chr(13) + eRight + "0")
         Print(eLeft + "Dasar Kena PPN" + Chr(13) + eRight + "0")
         Print(eLeft + "PPN" + Chr(13) + eRight + "0")
+        Print(eLeft + "Cash" + Chr(13) + eRight + "0")
+        Print(eLeft + "Card" + Chr(13) + eRight + "0")
+        Print(eLeft + "Voucher" + Chr(13) + eRight + "0")
         Print(eLeft + "Change" + Chr(13) + eRight + "0")
+
+        'jika ada card/voucher
+        'Print(vbLf)
+        'Print(eLeft + "       Card Type" + "    : " + "DEBIT BCA")
+        'Print(eLeft + "       Number" + "       : " + "12345")
+        'Print(eLeft + "       Holder" + "       : " + "KOMANG")
+        'Print(eLeft + "       Voucher No." + "  : " + "123445")
+
         Print(vbLf)
     End Sub
 
