@@ -287,6 +287,7 @@ Partial Class FormPOS
         Me.GridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.GridColumn5.FieldName = "qty"
         Me.GridColumn5.Name = "GridColumn5"
+        Me.GridColumn5.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "qty", "{0:n0}")})
         Me.GridColumn5.Visible = True
         Me.GridColumn5.VisibleIndex = 4
         Me.GridColumn5.Width = 53
@@ -355,7 +356,6 @@ Partial Class FormPOS
         '
         'TxtPrc
         '
-        Me.TxtPrc.Enabled = False
         Me.TxtPrc.Location = New System.Drawing.Point(351, 9)
         Me.TxtPrc.Name = "TxtPrc"
         Me.TxtPrc.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -604,6 +604,9 @@ Partial Class FormPOS
         Me.TxtCardNumber.Name = "TxtCardNumber"
         Me.TxtCardNumber.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCardNumber.Properties.Appearance.Options.UseFont = True
+        Me.TxtCardNumber.Properties.Mask.EditMask = "f0"
+        Me.TxtCardNumber.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TxtCardNumber.Properties.MaxLength = 4
         Me.TxtCardNumber.Size = New System.Drawing.Size(145, 20)
         Me.TxtCardNumber.TabIndex = 22
         '

@@ -102,6 +102,9 @@
         LECardType.Enabled = False
         TxtCardNumber.Enabled = False
         TxtCardName.Enabled = False
+        LECardType.EditValue = Nothing
+        TxtCardName.Text =""
+        TxtCardNumber.Text = ""
 
         TxtItemCode.Enabled = True
         TxtItemCode.Focus()
@@ -288,7 +291,7 @@
             LENation.ItemIndex = LENation.Properties.GetDataSourceRowIndex("id_country", data.Rows(0)("id_country").ToString)
             TxtSales.Text = data.Rows(0)("sales_name").ToString
             TxtQty.EditValue = 1
-
+            TxtPrc.EditValue = 0
             viewDetail()
         End If
     End Sub
@@ -392,6 +395,16 @@
                 GVPOS.SetRowCellValue(last_index, "is_edit", "1")
                 TxtQty.Enabled = True
                 TxtQty.Focus()
+            End If
+        ElseIf e.KeyCode = Keys.F3 Then
+            If GVPOS.RowCount > 0 Then
+                Dim last_index As Integer = GVPOS.RowCount - 1
+                TxtItemCode.Text = GVPOS.GetRowCellValue(last_index, "item_code").ToString
+                TxtItemCode.Enabled = False
+                GVPOS.SetRowCellValue(last_index, "is_edit", "1")
+                LabelPrice.Visible = True
+                TxtPrc.Visible = True
+                TxtPrc.Focus()
             End If
         End If
     End Sub
@@ -658,11 +671,13 @@
         Catch ex As Exception
         End Try
 
+        Dim total_qty As String = decimalSQL(GVPOS.Columns("qty").SummaryItem.SummaryValue().ToString)
+
         Dim query As String = "UPDATE tb_pos SET is_payment_ok=1,
         subtotal='" + subtotal + "', discount='" + discount + "', tax='" + tax + "',
         total='" + total + "', id_voucher=" + id_voucher + ", voucher_number='" + voucher_number + "',
         voucher='" + voucher + "', point='" + point + "', cash='" + cash + "', card='" + card + "',
-        id_card_type=" + id_card_type + ", card_number='" + card_number + "', card_name='" + card_name + "', `change`='" + change + "'
+        id_card_type=" + id_card_type + ", card_number='" + card_number + "', card_name='" + card_name + "', `change`='" + change + "', total_qty='" + total_qty + "'
         WHERE id_pos=" + id + " "
         execute_non_query(query, True, "", "", "", "")
         is_payment_ok = True
@@ -786,5 +801,55 @@
         Dim query As String = "UPDATE tb_pos SET id_sales='" + id_sales + "', id_country='" + LENation.EditValue.ToString + "', id_pos_status=2 WHERE id_pos=" + id + ""
         execute_non_query(query, True, "", "", "", "")
         Close()
+    End Sub
+
+    Private Sub TxtPrc_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtPrc.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Dim prc As Decimal = 0
+            Dim rh As Integer = GVPOS.RowCount - 1
+            Dim id_pos_det As String = GVPOS.GetRowCellValue(rh, "id_pos_det")
+
+            Try
+                prc = TxtPrc.EditValue
+            Catch ex As Exception
+            End Try
+            If prc > 0 Then
+                'edit detail
+                Dim query As String = "UPDATE tb_pos_det SET price='" + decimalSQL(prc.ToString) + "' WHERE id_pos_det='" + id_pos_det + "'"
+                execute_non_query(query, True, "", "", "", "")
+
+                GVPOS.SetRowCellValue(rh, "price", prc)
+                GVPOS.SetRowCellValue(rh, "is_edit", "2")
+                GCPOS.RefreshDataSource()
+                GVPOS.RefreshData()
+                getSubTotal()
+                showDisplay(GVPOS.GetRowCellDisplayText(rh, "item_name").ToString, GVPOS.GetRowCellDisplayText(rh, "qty").ToString, GVPOS.GetRowCellDisplayText(rh, "amount").ToString)
+                TxtPrc.EditValue = 0
+                TxtPrc.Visible = False
+                LabelPrice.Visible = False
+                TxtItemCode.Enabled = True
+                TxtItemCode.Text = ""
+                TxtItemCode.Focus()
+            Else
+                GVPOS.SetRowCellValue(rh, "is_edit", "2")
+                GCPOS.RefreshDataSource()
+                GVPOS.RefreshData()
+                TxtPrc.EditValue = 0
+                TxtPrc.Visible = False
+                LabelPrice.Visible = False
+                TxtItemCode.Enabled = True
+                TxtItemCode.Text = ""
+                TxtItemCode.Focus()
+            End If
+        End If
+    End Sub
+
+    Private Sub FormPOS_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If id <> "-1" Then
+            Dim query_upd_stt As String = "UPDATE tb_pos SET id_pos_status=3 WHERE id_pos=" + id + ""
+            execute_non_query(query_upd_stt, True, "", "", "", "")
+            Dim prn As New ClassPOS()
+            prn.printPos(id)
+        End If
     End Sub
 End Class

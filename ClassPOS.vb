@@ -10,6 +10,7 @@
     Public Const eInit As String = eNmlText + Chr(13) + Chr(27) + "3" + Chr(18) + vbCrLf
     Public Const eBigCharOn As String = Chr(27) + "!" + Chr(56)
     Public Const eBigCharOff As String = Chr(27) + "!" + Chr(0)
+    Dim stt_pos As String = "1"
 
     Private prn As New ClassRawPrint
 
@@ -40,7 +41,7 @@
         CAST(((100/(100+o.tax))*p.total) AS DECIMAL(15,0)) AS `kena_ppn`,
         CAST(((o.tax/(100+o.tax))*p.total) AS DECIMAL(15,0)) AS `ppn`,
         p.id_voucher, p.voucher_number, p.voucher, p.point, p.cash, 
-        p.card, p.id_card_type, card.card_type, p.card_number, p.card_name, p.`change`,
+        p.card, p.id_card_type, card.card_type, p.card_number, p.card_name, p.`change`, p.`total_qty`,
         p.id_sales, emp.employee_code AS `sales_number`, emp.employee_name AS `sales_name`, p.id_country, cty.country
         FROM tb_pos p 
         INNER JOIN tb_shift s ON s.id_shift = p.id_shift 
@@ -152,7 +153,13 @@
         Next
 
         PrintDashes()
-        Print(eLeft + "Total" + Chr(13) + eRight + Decimal.Parse(dt_main.Rows(0)("total")).ToString("N0"))
+        Dim total_qty As String = Decimal.Parse(dt_main.Rows(0)("total_qty")).ToString("N0")
+        If total_qty.Length = "1" Then
+            total_qty = " " + total_qty
+        Else
+            total_qty = total_qty
+        End If
+        Print(eLeft + "Total                  " + total_qty + Chr(13) + eRight + Decimal.Parse(dt_main.Rows(0)("total")).ToString("N0"))
         Print(eLeft + "Dasar Kena PPN" + Chr(13) + eRight + Decimal.Parse(dt_main.Rows(0)("kena_ppn")).ToString("N0"))
         Print(eLeft + "PPN" + Chr(13) + eRight + Decimal.Parse(dt_main.Rows(0)("ppn")).ToString("N0"))
         Print(eLeft + "Cash" + Chr(13) + eRight + Decimal.Parse(dt_main.Rows(0)("cash")).ToString("N0"))
@@ -175,6 +182,7 @@
             Print(eLeft + "       Voucher No." + "  : " + dt_main.Rows(0)("voucher_number"))
         End If
 
+        stt_pos = dt_main.Rows(0)("id_pos_status").ToString
         Print(vbLf)
     End Sub
 
@@ -214,12 +222,19 @@
     End Sub
 
     Private Sub PrintFooter()
-        Dim query As String = "SELECT * FROM tb_opt"
-        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
-        Print(eCentre + data.Rows(0)("footer_1").ToString)
-        Print(eCentre + data.Rows(0)("footer_2").ToString)
-        Print(eCentre + data.Rows(0)("footer_3").ToString)
-        Print(eCentre + data.Rows(0)("footer_4").ToString)
+        If stt_pos = "2" Then 'closed
+            Dim query As String = "SELECT * FROM tb_opt"
+            Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+            Print(eCentre + data.Rows(0)("footer_1").ToString)
+            Print(eCentre + data.Rows(0)("footer_2").ToString)
+            Print(eCentre + data.Rows(0)("footer_3").ToString)
+            Print(eCentre + data.Rows(0)("footer_4").ToString)
+        ElseIf stt_pos = "1" Then 'open
+            Print(eCentre + "*** OPENED TRANSACTION ***")
+        Else
+            Print(eCentre + "*** CANCELLED TRANSACTION ***")
+        End If
+
         Print(vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + eCut + eDrawer)
     End Sub
 
