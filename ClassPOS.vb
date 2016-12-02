@@ -32,13 +32,15 @@
         p.pos_date, DATE_FORMAT(p.pos_date,'%d/%m/%Y') AS  `pos_date_display` , DATE_FORMAT(p.pos_date,'%H:%i') AS  `pos_time_display`,
         p.id_shift, s.id_shift_type, st.shift_type, st.shift_name, st.shift_start, s.id_user, 
         s.id_pos_dev, pd.pos_dev, pd.mac_address,
-        s.open_shift, s.close_shift, s.cash, s.is_open, 
+        s.open_shift, s.close_shift, s.cash AS `cash_initial`, s.is_open, 
         s.id_user, csh.username AS `cashier`, csh_emp.employee_code AS `cashier_number`, csh_emp.employee_name AS `cashier_name`,  
         p.id_pos_status, stt.pos_status,
         p.id_pos_cat, cat.pos_cat,
         p.subtotal, p.discount, p.tax, p.total, 
+        CAST(((100/(100+o.tax))*p.total) AS DECIMAL(15,0)) AS `kena_ppn`,
+        CAST(((o.tax/(100+o.tax))*p.total) AS DECIMAL(15,0)) AS `ppn`,
         p.id_voucher, p.voucher_number, p.voucher, p.point, p.cash, 
-        p.card, p.id_card_type, card.card_type, p.card_number, p.card_name,
+        p.card, p.id_card_type, card.card_type, p.card_number, p.card_name, p.`change`,
         p.id_sales, emp.employee_code AS `sales_number`, emp.employee_name AS `sales_name`, p.id_country, cty.country
         FROM tb_pos p 
         INNER JOIN tb_shift s ON s.id_shift = p.id_shift 
@@ -51,6 +53,7 @@
         INNER JOIN tb_lookup_pos_status stt ON stt.id_pos_status = p.id_pos_status
         INNER JOIN tb_lookup_pos_cat cat ON cat.id_pos_cat = p.id_pos_cat
         LEFT JOIN tb_lookup_card_type card ON card.id_card_type = p.id_card_type
+        JOIN tb_opt o
         WHERE p.id_pos>0 "
         query += condition + " "
         query += "ORDER BY p.id_pos " + order_type
@@ -144,25 +147,33 @@
         Dim dt_det As DataTable = execute_query(query_det, -1, True, "", "", "", "")
         Dim no As Integer = 1
         For i As Integer = 0 To (dt_det.Rows.Count - 1)
-            printItem(no.ToString, dt_det.Rows(i)("item_code").ToString, dt_det.Rows(i)("item_name_display").ToString, dt_det.Rows(i)("qty").ToString("N0"), dt_det.Rows(i)("amo").ToString("N0"))
+            printItem(no.ToString, dt_det.Rows(i)("item_code").ToString, dt_det.Rows(i)("item_name_display").ToString, Decimal.Parse(dt_det.Rows(i)("qty")).ToString("N0"), Decimal.Parse(dt_det.Rows(i)("amo")).ToString("N0"))
             no += 1
         Next
 
         PrintDashes()
-        Print(eLeft + "Total" + Chr(13) + eRight + "0")
-        Print(eLeft + "Dasar Kena PPN" + Chr(13) + eRight + "0")
-        Print(eLeft + "PPN" + Chr(13) + eRight + "0")
-        Print(eLeft + "Cash" + Chr(13) + eRight + "0")
-        Print(eLeft + "Card" + Chr(13) + eRight + "0")
-        Print(eLeft + "Voucher" + Chr(13) + eRight + "0")
-        Print(eLeft + "Change" + Chr(13) + eRight + "0")
+        Print(eLeft + "Total" + Chr(13) + eRight + Decimal.Parse(dt_main.Rows(0)("total")).ToString("N0"))
+        Print(eLeft + "Dasar Kena PPN" + Chr(13) + eRight + Decimal.Parse(dt_main.Rows(0)("kena_ppn")).ToString("N0"))
+        Print(eLeft + "PPN" + Chr(13) + eRight + Decimal.Parse(dt_main.Rows(0)("ppn")).ToString("N0"))
+        Print(eLeft + "Cash" + Chr(13) + eRight + Decimal.Parse(dt_main.Rows(0)("cash")).ToString("N0"))
+        If dt_main.Rows(0)("card") > 0 Then
+            Print(eLeft + "Card" + Chr(13) + eRight + Decimal.Parse(dt_main.Rows(0)("card")).ToString("N0"))
+        End If
+        If dt_main.Rows(0)("voucher") > 0 Then
+            Print(eLeft + "Voucher" + Chr(13) + eRight + Decimal.Parse(dt_main.Rows(0)("voucher")).ToString("N0"))
+        End If
+        Print(eLeft + "Change" + Chr(13) + eRight + Decimal.Parse(dt_main.Rows(0)("change")).ToString("N0"))
 
         'jika ada card/voucher
-        'Print(vbLf)
-        'Print(eLeft + "       Card Type" + "    : " + "DEBIT BCA")
-        'Print(eLeft + "       Number" + "       : " + "12345")
-        'Print(eLeft + "       Holder" + "       : " + "KOMANG")
-        'Print(eLeft + "       Voucher No." + "  : " + "123445")
+        Print(vbLf)
+        If dt_main.Rows(0)("card") > 0 Then
+            Print(eLeft + "       Card Type" + "    : " + dt_main.Rows(0)("card_type").ToString)
+            Print(eLeft + "       Number" + "       : " + dt_main.Rows(0)("card_number").ToString)
+            Print(eLeft + "       Holder" + "       : " + dt_main.Rows(0)("card_name").ToString)
+        End If
+        If dt_main.Rows(0)("voucher") > 0 Then
+            Print(eLeft + "       Voucher No." + "  : " + dt_main.Rows(0)("voucher_number"))
+        End If
 
         Print(vbLf)
     End Sub
@@ -229,7 +240,7 @@
 
         If prn.PrinterIsOpen = True Then
             PrintHeader()
-            PrintBody("-1")
+            PrintBody(id_pos)
             PrintFooter()
             EndPrint()
         End If

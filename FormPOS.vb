@@ -273,6 +273,16 @@
             LECardType.ItemIndex = LECardType.Properties.GetDataSourceRowIndex("id_card_type", data.Rows(0)("id_card_type").ToString)
             TxtCardNumber.Text = data.Rows(0)("card_number").ToString
             TxtCardName.Text = data.Rows(0)("card_name").ToString
+            Dim change As Decimal = 0
+            Try
+                change = data.Rows(0)("change")
+            Catch ex As Exception
+            End Try
+            If change <> 0 Then
+                TxtChange.EditValue = change
+            Else
+                TxtChange.EditValue = Nothing
+            End If
             'TxtMemberNumber -> belum ada
             ' -> belum ada
             LENation.ItemIndex = LENation.Properties.GetDataSourceRowIndex("id_country", data.Rows(0)("id_country").ToString)
@@ -642,14 +652,25 @@
         Dim card_number As String = addSlashes(TxtCardNumber.Text.ToString)
         Dim card_name As String = addSlashes(TxtCardName.Text.ToString)
 
+        Dim change As String = "0"
+        Try
+            change = decimalSQL(TxtChange.EditValue.ToString)
+        Catch ex As Exception
+        End Try
+
         Dim query As String = "UPDATE tb_pos SET is_payment_ok=1,
         subtotal='" + subtotal + "', discount='" + discount + "', tax='" + tax + "',
         total='" + total + "', id_voucher=" + id_voucher + ", voucher_number='" + voucher_number + "',
         voucher='" + voucher + "', point='" + point + "', cash='" + cash + "', card='" + card + "',
-        id_card_type=" + id_card_type + ", card_number='" + card_number + "', card_name='" + card_name + "'
+        id_card_type=" + id_card_type + ", card_number='" + card_number + "', card_name='" + card_name + "', `change`='" + change + "'
         WHERE id_pos=" + id + " "
         execute_non_query(query, True, "", "", "", "")
         is_payment_ok = True
+
+        'print
+        Dim prn As New ClassPOS()
+        prn.printPos(id)
+
         TxtSales.Enabled = True
         TxtSales.Focus()
     End Sub
