@@ -203,6 +203,12 @@
     <Compile Include="FormPOSItem.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormPOSRefund.Designer.vb">
+      <DependentUpon>FormPOSRefund.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPOSRefund.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormPOSSales.Designer.vb">
       <DependentUpon>FormPOSSales.vb</DependentUpon>
     </Compile>
@@ -415,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPOSItem.resx">
       <DependentUpon>FormPOSItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPOSRefund.resx">
+      <DependentUpon>FormPOSRefund.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPOSSales.resx">
       <DependentUpon>FormPOSSales.vb</DependentUpon>

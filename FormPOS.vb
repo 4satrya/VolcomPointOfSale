@@ -2,7 +2,7 @@
     Public id As String = "-1"
     Public id_shift As String = "-1"
     Dim id_user_shift As String = "-1"
-    Dim new_trans As Boolean = False
+    Public new_trans As Boolean = False
     Dim id_stock_last As String = "-1"
     Dim id_detail_last As String = "-1"
     Dim id_display_default As String = "-1"
@@ -66,7 +66,7 @@
             price()
         ElseIf e.KeyCode = Keys.F4 Then
             member()
-        ElseIf e.KeyCode = Keys.F5 Then
+        ElseIf e.KeyCode = Keys.F5 And new_trans = False Then
             refund()
         ElseIf e.KeyCode = Keys.F6 Then
             pickup()
@@ -139,9 +139,22 @@
     End Sub
 
     Sub refund()
+        FormBlack.Show()
         Cursor = Cursors.WaitCursor
-
+        FormPOSRefund.ShowDialog()
         Cursor = Cursors.Default
+        FormBlack.Close()
+        BringToFront()
+        If new_trans = True Then
+            Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to refund this sales?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+            If confirm = DialogResult.Yes Then
+                infoCustom("OK")
+            Else
+                id = "-1"
+                new_trans = False
+                actionLoad()
+            End If
+        End If
     End Sub
 
     Sub pickup()
@@ -293,12 +306,39 @@
             TxtQty.EditValue = 1
             TxtPrc.EditValue = 0
             viewDetail()
+        Else
+            TxtCashierUser.Text = ""
+            TxtCashierName.Text = ""
+            TxtNumber.Text = ""
+            DECreated.EditValue = ""
+            TxtShift.Text = ""
+            TxtPOS.Text = ""
+            LEStatus.EditValue = Nothing
+            TxtSubTotal.EditValue = Nothing
+            TxtDiscount.EditValue = Nothing
+            TxtTax.EditValue = Nothing
+            TxtTotal.EditValue = Nothing
+            TxtVoucherNo.Text = ""
+            TxtVoucher.EditValue = Nothing
+            TxtPoint.EditValue = Nothing
+            TxtCash.EditValue = Nothing
+            TxtCard.EditValue = Nothing
+            LECardType.EditValue = Nothing
+            TxtCardNumber.Text = ""
+            TxtCardName.Text = ""
+            TxtChange.EditValue = Nothing
+            LENation.EditValue = Nothing
+            TxtSales.Text = ""
+            TxtQty.EditValue = 1
+            TxtPrc.EditValue = 0
+            viewDetail()
+            showDisplay("-", "-", "0")
         End If
     End Sub
 
     Sub viewDetail()
         Dim query_c As New ClassPOS()
-        Dim query As String = query_c.queryDet("AND pd.id_pos=" + id + " ", "1")
+        Dim query As String = query_c.queryDet("And pd.id_pos=" + id + " ", "1")
         Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
         GCPOS.DataSource = data
     End Sub
@@ -320,17 +360,17 @@
     End Sub
 
     Sub viewCountry()
-        Dim query As String = "SELECT * FROM tb_m_country a ORDER BY a.country ASC "
+        Dim query As String = "Select * FROM tb_m_country a ORDER BY a.country ASC "
         viewLookupQuery(LENation, query, -1, "country", "id_country")
     End Sub
 
     Sub viewCardType()
-        Dim query As String = "SELECT * FROM tb_lookup_card_type a ORDER BY a.id_card_type ASC "
+        Dim query As String = "Select * FROM tb_lookup_card_type a ORDER BY a.id_card_type ASC "
         viewLookupQuery(LECardType, query, -1, "card_type", "id_card_type")
     End Sub
 
     Sub viewPOSSTatus()
-        Dim query As String = "SELECT * FROM tb_lookup_pos_status a ORDER BY a.id_pos_status ASC "
+        Dim query As String = "Select * FROM tb_lookup_pos_status a ORDER BY a.id_pos_status ASC "
         viewLookupQuery(LEStatus, query, -1, "pos_status", "id_pos_status")
     End Sub
 
@@ -410,7 +450,11 @@
     End Sub
 
     Sub showDisplay(ByVal name As String, ByVal qty As String, ByVal price As String)
-        LabelInfoLeft.Text = name.Substring(0, 13) + " @" + qty.ToString
+        If qty = "-" Then
+            LabelInfoLeft.Text = name.ToString
+        Else
+            LabelInfoLeft.Text = name.Substring(0, 13) + " @" + qty.ToString
+        End If
         LabelControlPrice.Text = price.ToString
     End Sub
 
