@@ -13,11 +13,19 @@
                 Dim query As String = "SELECT id_pos,total FROM tb_pos WHERE id_pos_cat=1 AND id_pos_status=2 AND pos_number='" + pos_number + "'"
                 Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
                 If data.Rows.Count > 0 Then
-                    FormPOS.id = data.Rows(0)("id_pos").ToString
-                    FormPOS.new_trans = True
-                    FormPOS.actionLoad()
-                    FormPOS.showDisplay("Total :", "-", data.Rows(0)("total").ToString)
-                    Close()
+                    'check
+                    Dim query_check As String = "SELECT COUNT(*) FROM tb_pos WHERE id_pos_ref='" + data.Rows(0)("id_pos").ToString + "'"
+                    Dim jum_check As String = execute_query(query_check, 0, True, "", "", "", "")
+                    If jum_check > "0" Then
+                        stopCustom("#" + pos_number + " has been refund")
+                        TextEdit1.Focus()
+                    Else
+                        FormPOS.id = data.Rows(0)("id_pos").ToString
+                        FormPOS.new_trans = True
+                        FormPOS.actionLoad()
+                        FormPOS.showDisplay("Total :", "-", FormPOS.TxtTotal.Text)
+                        Close()
+                    End If
                 Else
                     stopCustom("Transaction not found")
                 End If

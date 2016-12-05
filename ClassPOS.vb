@@ -29,7 +29,7 @@
             condition = ""
         End If
 
-        Dim query As String = "SELECT p.id_pos, p.pos_number, 
+        Dim query As String = "SELECT p.id_pos, ref.pos_number AS `pos_ref_number`,p.pos_number, 
         p.pos_date, DATE_FORMAT(p.pos_date,'%d/%m/%Y') AS  `pos_date_display` , DATE_FORMAT(p.pos_date,'%H:%i') AS  `pos_time_display`,
         p.id_shift, s.id_shift_type, st.shift_type, st.shift_name, st.shift_start, s.id_user, 
         s.id_pos_dev, pd.pos_dev, pd.mac_address,
@@ -54,6 +54,7 @@
         INNER JOIN tb_lookup_pos_status stt ON stt.id_pos_status = p.id_pos_status
         INNER JOIN tb_lookup_pos_cat cat ON cat.id_pos_cat = p.id_pos_cat
         LEFT JOIN tb_lookup_card_type card ON card.id_card_type = p.id_card_type
+        LEFT JOIN tb_pos ref ON ref.id_pos = p.id_pos_ref
         JOIN tb_opt o
         WHERE p.id_pos>0 "
         query += condition + " "
@@ -137,6 +138,14 @@
         PrintDashes()
     End Sub
 
+    Private Sub PrintHeaderRefund(ByVal id_pos As String)
+        Dim query As String = queryMain("AND p.id_pos=" + id_pos + "", "1")
+        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        Print(eInit + eCentre + Chr(27) + Chr(33) + Chr(14) + "*** REFUND ***")
+        Print(eNmlText + Chr(27) + Chr(77) + "1" + "REF NO. : " + data.Rows(0)("pos_ref_number").ToString)
+        PrintDashes()
+    End Sub
+
     Private Sub PrintBody(ByVal id_pos As String)
         Dim query_main As String = queryMain("AND p.id_pos=" + id_pos + "", "1")
         Dim dt_main As DataTable = execute_query(query_main, -1, True, "", "", "", "")
@@ -183,6 +192,32 @@
         End If
 
         stt_pos = dt_main.Rows(0)("id_pos_status").ToString
+        Print(vbLf)
+    End Sub
+
+    Private Sub PrintBodyRefund(ByVal id_pos As String)
+        Dim query_main As String = queryMain("AND p.id_pos=" + id_pos + "", "1")
+        Dim dt_main As DataTable = execute_query(query_main, -1, True, "", "", "", "")
+        Print(eLeft + dt_main.Rows(0)("pos_number").ToString + Chr(13) + eRight + dt_main.Rows(0)("pos_date_display").ToString)
+        Print(eLeft + dt_main.Rows(0)("pos_dev").ToString + Chr(13) + eRight + dt_main.Rows(0)("pos_time_display").ToString)
+
+        Print(eLeft + "No.--------Code--------Qty--------Amount")
+        Dim query_det As String = queryDet("AND pd.id_pos=" + id_pos + "", "1")
+        Dim dt_det As DataTable = execute_query(query_det, -1, True, "", "", "", "")
+        Dim no As Integer = 1
+        For i As Integer = 0 To (dt_det.Rows.Count - 1)
+            printItem(no.ToString, dt_det.Rows(i)("item_code").ToString, dt_det.Rows(i)("item_name_display").ToString, Decimal.Parse(dt_det.Rows(i)("qty")).ToString("N0"), Decimal.Parse(dt_det.Rows(i)("amo")).ToString("N0"))
+            no += 1
+        Next
+
+        PrintDashes()
+        Dim total_qty As String = Decimal.Parse(dt_main.Rows(0)("total_qty")).ToString("N0")
+        If total_qty.Length = "1" Then
+            total_qty = " " + total_qty
+        Else
+            total_qty = total_qty
+        End If
+        Print(eLeft + "Total                  " + total_qty + Chr(13) + eRight + Decimal.Parse(dt_main.Rows(0)("total")).ToString("N0"))
         Print(vbLf)
     End Sub
 
@@ -238,6 +273,11 @@
         Print(vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + eCut + eDrawer)
     End Sub
 
+    Private Sub PrintFooterRefund()
+        Print(eCentre + "--- ACC SUPERVISOR ---")
+        Print(vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + eCut + eDrawer)
+    End Sub
+
     Private Sub Print(Line As String)
         prn.SendStringToPrinter(PrinterName, Line + vbLf)
     End Sub
@@ -257,6 +297,17 @@
             PrintHeader()
             PrintBody(id_pos)
             PrintFooter()
+            EndPrint()
+        End If
+    End Sub
+
+    Public Sub printRefund(ByVal id_pos As String)
+        StartPrint()
+
+        If prn.PrinterIsOpen = True Then
+            PrintHeaderRefund(id_pos)
+            PrintBodyRefund(id_pos)
+            PrintFooterRefund()
             EndPrint()
         End If
     End Sub

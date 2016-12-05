@@ -148,7 +148,28 @@
         If new_trans = True Then
             Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to refund this sales?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
             If confirm = DialogResult.Yes Then
-                infoCustom("OK")
+                'insert main
+                Dim query As String = "INSERT INTO tb_pos(id_pos_ref, pos_number, pos_date, id_shift, id_pos_status, id_pos_cat, subtotal, discount, tax, total, id_voucher, voucher_number, voucher, `point`, cash, card, id_card_type, card_number, card_name, `change`, total_qty, id_sales, id_country, is_payment_ok ) 
+                SELECT '" + id + "', header_number(4), NOW(), '" + id_shift + "', '2', '2',subtotal, discount, tax, total, id_voucher, voucher_number, voucher, `point`, cash, card, id_card_type, card_number, card_name, `change`, total_qty, id_sales, id_country, is_payment_ok
+                FROM tb_pos WHERE id_pos='" + id + "'; SELECT LAST_INSERT_ID(); "
+                Dim id_refund As String = execute_query(query, 0, True, "", "", "", "")
+
+                'insert det
+                Dim query_det As String = "INSERT INTO tb_pos_det(id_pos, id_item, comm, qty, price) 
+                SELECT '" + id_refund + "', id_item, comm, qty, price FROM tb_pos_det WHERE id_pos='" + id + "' "
+                execute_non_query(query_det, True, "", "", "", "")
+
+                'stock
+                Dim query_stc As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
+                SELECT '" + id_display_default + "', IF(qty>=0,'1', '2'), id_item, '4', '" + id_refund + "', ABS(qty), NOW(), '1' 
+                FROM tb_pos_det WHERE id_pos=" + id_refund + " "
+                execute_non_query(query_stc, True, "", "", "", "")
+
+                'print
+                Dim prn As New ClassPOS()
+                prn.printRefund(id_refund)
+
+                Close()
             Else
                 id = "-1"
                 new_trans = False
@@ -837,7 +858,7 @@
     Sub completed()
         'potong stok
         Dim query_stc As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
-        SELECT '" + id_display_default + "', IF(qty>=0,'2', '1'), id_item, '3', '" + id + "', ABS(qty), NOW(), '1' 
+        SELECT '" + id_display_default + "', IF(qty>=0,'2', '1'), id_item, '4', '" + id + "', ABS(qty), NOW(), '1' 
         FROM tb_pos_det WHERE id_pos=" + id + " "
         execute_non_query(query_stc, True, "", "", "", "")
 
@@ -890,10 +911,10 @@
 
     Private Sub FormPOS_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If id <> "-1" Then
-            Dim query_upd_stt As String = "UPDATE tb_pos SET id_pos_status=3 WHERE id_pos=" + id + ""
-            execute_non_query(query_upd_stt, True, "", "", "", "")
-            Dim prn As New ClassPOS()
-            prn.printPos(id)
+            'Dim query_upd_stt As String = "UPDATE tb_pos SET id_pos_status=3 WHERE id_pos=" + id + ""
+            'execute_non_query(query_upd_stt, True, "", "", "", "")
+            'Dim prn As New ClassPOS()
+            'prn.printPos(id)
         End If
     End Sub
 End Class
