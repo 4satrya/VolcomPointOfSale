@@ -11,6 +11,7 @@
     Public Const eBigCharOn As String = Chr(27) + "!" + Chr(56)
     Public Const eBigCharOff As String = Chr(27) + "!" + Chr(0)
     Dim stt_pos As String = "1"
+    Dim is_payment_ok As String = "2"
 
     Private prn As New ClassRawPrint
 
@@ -42,7 +43,7 @@
         CAST(((o.tax/(100+o.tax))*p.total) AS DECIMAL(15,0)) AS `ppn`,
         p.id_voucher, p.voucher_number, p.voucher, p.point, p.cash, 
         p.card, p.id_card_type, card.card_type, p.card_number, p.card_name, p.`change`, p.`total_qty`,
-        p.id_sales, emp.employee_code AS `sales_number`, emp.employee_name AS `sales_name`, p.id_country, cty.country
+        p.id_sales, emp.employee_code AS `sales_number`, emp.employee_name AS `sales_name`, p.id_country, cty.country,p.is_payment_ok
         FROM tb_pos p 
         INNER JOIN tb_shift s ON s.id_shift = p.id_shift 
         INNER JOIN tb_shift_type st ON st.id_shift_type = s.id_shift_type 
@@ -88,7 +89,6 @@
         query += "ORDER BY pd.id_pos_det " + order_type
         Return query
     End Function
-
 
     Public Function getPOSDev() As DataTable
         Dim mycomp As New ClassUser()
@@ -192,6 +192,7 @@
         End If
 
         stt_pos = dt_main.Rows(0)("id_pos_status").ToString
+        is_payment_ok = dt_main.Rows(0)("is_payment_ok").ToString
         Print(vbLf)
     End Sub
 
@@ -257,17 +258,17 @@
     End Sub
 
     Private Sub PrintFooter()
-        If stt_pos = "2" Then 'closed
+        If stt_pos = "2" Or (stt_pos = "1" And is_payment_ok = "1") Then 'closed
             Dim query As String = "SELECT * FROM tb_opt"
             Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
             Print(eCentre + data.Rows(0)("footer_1").ToString)
             Print(eCentre + data.Rows(0)("footer_2").ToString)
             Print(eCentre + data.Rows(0)("footer_3").ToString)
             Print(eCentre + data.Rows(0)("footer_4").ToString)
-        ElseIf stt_pos = "1" Then 'open
-            Print(eCentre + "*** OPENED TRANSACTION ***")
-        Else
+        ElseIf stt_pos = "3" Then 'cancelled
             Print(eCentre + "*** CANCELLED TRANSACTION ***")
+        Else
+            Print(eCentre + "*** OPENED TRANSACTION ***")
         End If
 
         Print(vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + eCut + eDrawer)

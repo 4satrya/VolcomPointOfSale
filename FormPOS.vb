@@ -302,7 +302,7 @@
                 cash = data.Rows(0)("cash")
             Catch ex As Exception
             End Try
-            If point <> 0 Then
+            If cash <> 0 Then
                 TxtCash.EditValue = cash
             Else
                 TxtCash.EditValue = Nothing
@@ -661,25 +661,26 @@
                     TxtCash.Enabled = False
                     paymentOK()
                 Else
-                    TxtCash.EditValue = pay
+                    TxtCash.Focus()
                 End If
-            ElseIf pay = TxtTotal.EditValue Then
+            ElseIf pay = TxtTotal.EditValue
+                TxtChange.EditValue = Nothing
                 Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Payment OK ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
                 If confirm = DialogResult.Yes Then
                     TxtCash.Enabled = False
                     paymentOK()
                 Else
-                    TxtCash.EditValue = pay
+                    TxtCash.Focus()
                 End If
             Else
                 'jika kurang sisanya ke card
+                TxtChange.EditValue = Nothing
                 TxtCash.Enabled = False
                 TxtCard.Enabled = True
                 TxtCard.EditValue = TxtTotal.EditValue - pay
                 TxtCard.Focus()
             End If
         ElseIf e.KeyCode = Keys.F11 Then 'voucher
-            TxtCash.EditValue = 0
             TxtCash.Enabled = False
             TxtVoucherNo.Enabled = True
             TxtVoucherNo.Focus()
@@ -760,22 +761,64 @@
 
         Dim total_qty As String = decimalSQL(GVPOS.Columns("qty").SummaryItem.SummaryValue().ToString)
 
-        Dim query As String = "UPDATE tb_pos SET is_payment_ok=1,
-        subtotal='" + subtotal + "', discount='" + discount + "', tax='" + tax + "',
-        total='" + total + "', id_voucher=" + id_voucher + ", voucher_number='" + voucher_number + "',
-        voucher='" + voucher + "', point='" + point + "', cash='" + cash + "', card='" + card + "',
-        id_card_type=" + id_card_type + ", card_number='" + card_number + "', card_name='" + card_name + "', `change`='" + change + "', total_qty='" + total_qty + "'
-        WHERE id_pos=" + id + " "
-        execute_non_query(query, True, "", "", "", "")
-        is_payment_ok = True
+        'check
+        Dim ok As Boolean = True
+        If id_voucher_db <> "-1" Then 'jika voucher
+            If checkVoucher(TxtVoucherNo.Text, "2") Then
+                ok = True
+            Else
+                ok = False
+            End If
+        End If
 
-        'print
-        Dim prn As New ClassPOS()
-        prn.printPos(id)
+        If ok Then
+            Dim query As String = "UPDATE tb_pos SET is_payment_ok=1,
+            subtotal='" + subtotal + "', discount='" + discount + "', tax='" + tax + "',
+            total='" + total + "', id_voucher=" + id_voucher + ", voucher_number='" + voucher_number + "',
+            voucher='" + voucher + "', point='" + point + "', cash='" + cash + "', card='" + card + "',
+            id_card_type=" + id_card_type + ", card_number='" + card_number + "', card_name='" + card_name + "', `change`='" + change + "', total_qty='" + total_qty + "'
+            WHERE id_pos=" + id + " "
+            execute_non_query(query, True, "", "", "", "")
+            is_payment_ok = True
 
-        TxtSales.Enabled = True
-        TxtSales.Focus()
+            'update ke master jika pakai voucher
+            If id_voucher_db <> "-1" Then
+                Dim query_opt As String = "SELECT * FROM tb_opt"
+                Dim dt_opt As DataTable = execute_query(query_opt, -1, True, "", "", "", "")
+                Dim query_v As String = "UPDATE tb_m_voucher SET id_outlet='" + dt_opt.Rows(0)("id_outlet").ToString + "',
+                used_date=NOW(), id_report='" + id + "' WHERE id_voucher='" + id_voucher_db + "'"
+                execute_non_query(query_v, False, dt_opt.Rows(0)("host_main").ToString, dt_opt.Rows(0)("username_main").ToString, dt_opt.Rows(0)("pass_main").ToString, dt_opt.Rows(0)("db_main").ToString)
+            End If
+
+            'print
+            Dim prn As New ClassPOS()
+            prn.printPos(id)
+
+            TxtSales.Enabled = True
+            TxtSales.Focus()
+        End If
     End Sub
+
+    Private Function checkVoucher(ByVal voucher_number As String, type As String)
+        'cek voucher 
+        Dim query_opt As String = "SELECT * FROM tb_opt "
+        Dim data_opt As DataTable = execute_query(query_opt, -1, True, "", "", "", "")
+
+        Dim query_vch As String = "SELECT * FROM tb_m_voucher v 
+        WHERE v.voucher_number='" + voucher_number + "' 
+        AND ISNULL(v.id_outlet) AND v.expire_date>= DATE(NOW()) LIMIT 1 "
+
+        If type = "1" Then 'return datatable
+            Return execute_query(query_vch, -1, False, data_opt.Rows(0)("host_main").ToString, data_opt.Rows(0)("username_main").ToString, data_opt.Rows(0)("pass_main").ToString, data_opt.Rows(0)("db_main").ToString)
+        Else
+            Dim dt_vch As DataTable = execute_query(query_vch, -1, False, data_opt.Rows(0)("host_main").ToString, data_opt.Rows(0)("username_main").ToString, data_opt.Rows(0)("pass_main").ToString, data_opt.Rows(0)("db_main").ToString)
+            If dt_vch.Rows.Count > 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        End If
+    End Function
 
     Private Sub TxtCard_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCard.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -787,6 +830,7 @@
             Dim pay As Decimal = TxtCash.EditValue + voucher + TxtCard.EditValue
 
             If pay < TxtTotal.EditValue Then
+                TxtChange.EditValue = Nothing
                 stopCustom("Payment cannot less than payment")
                 TxtCard.EditValue = TxtTotal.EditValue - TxtCash.EditValue
                 TxtCard.Focus()
@@ -796,6 +840,7 @@
                 LECardType.Enabled = True
                 LECardType.Focus()
             Else
+                TxtChange.EditValue = Nothing
                 TxtCard.Enabled = False
                 LECardType.Enabled = True
                 LECardType.Focus()
@@ -957,19 +1002,12 @@
                 TxtVoucherNo.Enabled = False
                 TxtCash.EditValue = TxtTotal.EditValue
                 TxtCash.Enabled = True
+                TxtCash.Focus()
             Else
-                Dim query As String = "SELECT * FROM tb_opt "
-                Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
-
-                'cek voucher 
-                Dim query_vch As String = "SELECT * FROM tb_m_voucher v 
-                WHERE v.voucher_number='" + voucher_number + "' 
-                AND ISNULL(v.id_outlet) AND v.expire_date>= DATE(NOW()) LIMIT 1 "
-                Dim dt_vch As DataTable = execute_query(query_vch, -1, False, data.Rows(0)("host_main").ToString, data.Rows(0)("username_main").ToString, data.Rows(0)("pass_main").ToString, data.Rows(0)("db_main").ToString)
-
+                Dim dt_vch As DataTable = checkVoucher(voucher_number, "1")
                 If dt_vch.Rows.Count > 0 Then
-                    TxtCash.EditValue = 0
-                    TxtCard.EditValue = 0
+                    TxtCash.EditValue = Nothing
+                    TxtCard.EditValue = Nothing
                     id_voucher_db = dt_vch.Rows(0)("id_voucher").ToString
                     Dim voucher As Decimal = dt_vch.Rows(0)("voucher")
                     If voucher >= TxtTotal.EditValue Then
@@ -987,6 +1025,7 @@
                     End If
                 Else
                     stopCustom("Voucher is not found")
+                    TxtVoucherNo.Text = ""
                     TxtVoucherNo.Focus()
                 End If
             End If
