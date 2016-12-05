@@ -445,9 +445,9 @@ Partial Class FormPOS
         Me.GroupControl1.Controls.Add(Me.LabelControl25)
         Me.GroupControl1.Controls.Add(Me.LENation)
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl1.Location = New System.Drawing.Point(0, 498)
+        Me.GroupControl1.Location = New System.Drawing.Point(0, 435)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(252, 81)
+        Me.GroupControl1.Size = New System.Drawing.Size(252, 144)
         Me.GroupControl1.TabIndex = 34
         Me.GroupControl1.Text = "Additional"
         '
@@ -501,11 +501,12 @@ Partial Class FormPOS
         Me.GroupControlCustomer.Controls.Add(Me.LabelControl15)
         Me.GroupControlCustomer.Controls.Add(Me.LabelControl18)
         Me.GroupControlCustomer.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControlCustomer.Location = New System.Drawing.Point(0, 416)
+        Me.GroupControlCustomer.Location = New System.Drawing.Point(0, 425)
         Me.GroupControlCustomer.Name = "GroupControlCustomer"
-        Me.GroupControlCustomer.Size = New System.Drawing.Size(252, 82)
+        Me.GroupControlCustomer.Size = New System.Drawing.Size(252, 10)
         Me.GroupControlCustomer.TabIndex = 26
         Me.GroupControlCustomer.Text = "Member"
+        Me.GroupControlCustomer.Visible = False
         '
         'TxtMemberName
         '
@@ -568,16 +569,16 @@ Partial Class FormPOS
         Me.GroupControlCard.Controls.Add(Me.LabelControl14)
         Me.GroupControlCard.Controls.Add(Me.LabelControl16)
         Me.GroupControlCard.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControlCard.Location = New System.Drawing.Point(0, 314)
+        Me.GroupControlCard.Location = New System.Drawing.Point(0, 318)
         Me.GroupControlCard.Name = "GroupControlCard"
-        Me.GroupControlCard.Size = New System.Drawing.Size(252, 102)
+        Me.GroupControlCard.Size = New System.Drawing.Size(252, 107)
         Me.GroupControlCard.TabIndex = 25
         Me.GroupControlCard.Text = "Card"
         '
         'LECardType
         '
         Me.LECardType.Enabled = False
-        Me.LECardType.Location = New System.Drawing.Point(95, 24)
+        Me.LECardType.Location = New System.Drawing.Point(95, 26)
         Me.LECardType.Name = "LECardType"
         Me.LECardType.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LECardType.Properties.Appearance.Options.UseFont = True
@@ -590,7 +591,7 @@ Partial Class FormPOS
         'TxtCardName
         '
         Me.TxtCardName.Enabled = False
-        Me.TxtCardName.Location = New System.Drawing.Point(95, 76)
+        Me.TxtCardName.Location = New System.Drawing.Point(95, 78)
         Me.TxtCardName.Name = "TxtCardName"
         Me.TxtCardName.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCardName.Properties.Appearance.Options.UseFont = True
@@ -600,7 +601,7 @@ Partial Class FormPOS
         'TxtCardNumber
         '
         Me.TxtCardNumber.Enabled = False
-        Me.TxtCardNumber.Location = New System.Drawing.Point(95, 50)
+        Me.TxtCardNumber.Location = New System.Drawing.Point(95, 52)
         Me.TxtCardNumber.Name = "TxtCardNumber"
         Me.TxtCardNumber.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCardNumber.Properties.Appearance.Options.UseFont = True
@@ -613,7 +614,7 @@ Partial Class FormPOS
         'LabelControl13
         '
         Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl13.Location = New System.Drawing.Point(9, 53)
+        Me.LabelControl13.Location = New System.Drawing.Point(9, 55)
         Me.LabelControl13.Name = "LabelControl13"
         Me.LabelControl13.Size = New System.Drawing.Size(31, 13)
         Me.LabelControl13.TabIndex = 23
@@ -622,7 +623,7 @@ Partial Class FormPOS
         'LabelControl14
         '
         Me.LabelControl14.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl14.Location = New System.Drawing.Point(9, 27)
+        Me.LabelControl14.Location = New System.Drawing.Point(9, 29)
         Me.LabelControl14.Name = "LabelControl14"
         Me.LabelControl14.Size = New System.Drawing.Size(50, 13)
         Me.LabelControl14.TabIndex = 21
@@ -631,7 +632,7 @@ Partial Class FormPOS
         'LabelControl16
         '
         Me.LabelControl16.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl16.Location = New System.Drawing.Point(9, 79)
+        Me.LabelControl16.Location = New System.Drawing.Point(9, 81)
         Me.LabelControl16.Name = "LabelControl16"
         Me.LabelControl16.Size = New System.Drawing.Size(29, 13)
         Me.LabelControl16.TabIndex = 25
@@ -656,7 +657,7 @@ Partial Class FormPOS
         Me.GroupControlPay.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupControlPay.Location = New System.Drawing.Point(0, 133)
         Me.GroupControlPay.Name = "GroupControlPay"
-        Me.GroupControlPay.Size = New System.Drawing.Size(252, 181)
+        Me.GroupControlPay.Size = New System.Drawing.Size(252, 185)
         Me.GroupControlPay.TabIndex = 24
         Me.GroupControlPay.Text = "Payment"
         '
@@ -665,7 +666,7 @@ Partial Class FormPOS
         Me.TxtVoucher.Enabled = False
         Me.TxtVoucher.Location = New System.Drawing.Point(95, 51)
         Me.TxtVoucher.Name = "TxtVoucher"
-        Me.TxtVoucher.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVoucher.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtVoucher.Properties.Appearance.Options.UseFont = True
         Me.TxtVoucher.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtVoucher.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
@@ -681,14 +682,8 @@ Partial Class FormPOS
         Me.TxtVoucherNo.Enabled = False
         Me.TxtVoucherNo.Location = New System.Drawing.Point(95, 26)
         Me.TxtVoucherNo.Name = "TxtVoucherNo"
-        Me.TxtVoucherNo.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVoucherNo.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtVoucherNo.Properties.Appearance.Options.UseFont = True
-        Me.TxtVoucherNo.Properties.DisplayFormat.FormatString = "N2"
-        Me.TxtVoucherNo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TxtVoucherNo.Properties.Mask.EditMask = "n2"
-        Me.TxtVoucherNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TxtVoucherNo.Properties.Mask.SaveLiteral = False
-        Me.TxtVoucherNo.Properties.Mask.ShowPlaceHolders = False
         Me.TxtVoucherNo.Size = New System.Drawing.Size(145, 20)
         Me.TxtVoucherNo.TabIndex = 22
         '
@@ -706,7 +701,7 @@ Partial Class FormPOS
         Me.TxtChange.Enabled = False
         Me.TxtChange.Location = New System.Drawing.Point(95, 155)
         Me.TxtChange.Name = "TxtChange"
-        Me.TxtChange.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtChange.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtChange.Properties.Appearance.Options.UseFont = True
         Me.TxtChange.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtChange.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
@@ -740,7 +735,7 @@ Partial Class FormPOS
         Me.TxtPoint.Enabled = False
         Me.TxtPoint.Location = New System.Drawing.Point(95, 77)
         Me.TxtPoint.Name = "TxtPoint"
-        Me.TxtPoint.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtPoint.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtPoint.Properties.Appearance.Options.UseFont = True
         Me.TxtPoint.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtPoint.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
@@ -756,7 +751,7 @@ Partial Class FormPOS
         Me.TxtCard.Enabled = False
         Me.TxtCard.Location = New System.Drawing.Point(95, 129)
         Me.TxtCard.Name = "TxtCard"
-        Me.TxtCard.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCard.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCard.Properties.Appearance.Options.UseFont = True
         Me.TxtCard.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtCard.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
@@ -772,7 +767,7 @@ Partial Class FormPOS
         Me.TxtCash.Enabled = False
         Me.TxtCash.Location = New System.Drawing.Point(95, 103)
         Me.TxtCash.Name = "TxtCash"
-        Me.TxtCash.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCash.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCash.Properties.Appearance.Options.UseFont = True
         Me.TxtCash.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtCash.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
@@ -834,7 +829,7 @@ Partial Class FormPOS
         Me.TxtSubTotal.Enabled = False
         Me.TxtSubTotal.Location = New System.Drawing.Point(95, 28)
         Me.TxtSubTotal.Name = "TxtSubTotal"
-        Me.TxtSubTotal.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtSubTotal.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtSubTotal.Properties.Appearance.Options.UseFont = True
         Me.TxtSubTotal.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtSubTotal.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
@@ -850,7 +845,7 @@ Partial Class FormPOS
         Me.TxtDiscount.Enabled = False
         Me.TxtDiscount.Location = New System.Drawing.Point(95, 54)
         Me.TxtDiscount.Name = "TxtDiscount"
-        Me.TxtDiscount.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtDiscount.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtDiscount.Properties.Appearance.Options.UseFont = True
         Me.TxtDiscount.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtDiscount.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
@@ -875,7 +870,7 @@ Partial Class FormPOS
         Me.TxtTax.Enabled = False
         Me.TxtTax.Location = New System.Drawing.Point(95, 80)
         Me.TxtTax.Name = "TxtTax"
-        Me.TxtTax.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtTax.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtTax.Properties.Appearance.Options.UseFont = True
         Me.TxtTax.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtTax.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
@@ -891,7 +886,7 @@ Partial Class FormPOS
         Me.TxtTotal.Enabled = False
         Me.TxtTotal.Location = New System.Drawing.Point(95, 106)
         Me.TxtTotal.Name = "TxtTotal"
-        Me.TxtTotal.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtTotal.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtTotal.Properties.Appearance.Options.UseFont = True
         Me.TxtTotal.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtTotal.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric

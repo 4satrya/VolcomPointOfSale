@@ -92,19 +92,30 @@
         Cursor = Cursors.Default
     End Sub
 
-    Sub newTrans()
+    Sub resetPayment()
+        TxtDiscount.EditValue = Nothing
         TxtDiscount.Enabled = False
+        id_voucher_db = "-1"
+        TxtVoucherNo.Text = ""
         TxtVoucherNo.Enabled = False
+        TxtVoucher.EditValue = Nothing
         TxtVoucher.Enabled = False
+        TxtPoint.EditValue = Nothing
         TxtPoint.Enabled = False
+        TxtCash.EditValue = Nothing
         TxtCash.Enabled = False
+        TxtCard.EditValue = Nothing
         TxtCard.Enabled = False
-        LECardType.Enabled = False
-        TxtCardNumber.Enabled = False
-        TxtCardName.Enabled = False
         LECardType.EditValue = Nothing
-        TxtCardName.Text =""
+        LECardType.Enabled = False
         TxtCardNumber.Text = ""
+        TxtCardNumber.Enabled = False
+        TxtCardName.Text = ""
+        TxtCardName.Enabled = False
+    End Sub
+
+    Sub newTrans()
+        resetPayment()
 
         TxtItemCode.Enabled = True
         TxtItemCode.Focus()
@@ -119,9 +130,9 @@
 
     Sub payment()
         Cursor = Cursors.WaitCursor
+        resetPayment()
         TxtItemCode.Enabled = False
         TxtDiscount.Enabled = True
-        TxtDiscount.EditValue = 0
         TxtDiscount.Focus()
         Cursor = Cursors.Default
     End Sub
@@ -636,31 +647,42 @@
 
     Private Sub TxtCash_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCash.KeyDown
         If e.KeyCode = Keys.Enter Then
-            If TxtCash.EditValue > TxtTotal.EditValue Then
+            Dim voucher As Decimal = 0
+            Try
+                voucher = TxtVoucher.EditValue
+            Catch ex As Exception
+            End Try
+            Dim pay As Decimal = TxtCash.EditValue + voucher
+            If pay > TxtTotal.EditValue Then
                 'jika lebih ada kembalian
-                TxtChange.EditValue = TxtCash.EditValue - TxtTotal.EditValue
+                TxtChange.EditValue = pay - TxtTotal.EditValue
                 Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Payment OK ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
                 If confirm = DialogResult.Yes Then
                     TxtCash.Enabled = False
                     paymentOK()
                 Else
-                    TxtCash.EditValue = TxtTotal.EditValue
+                    TxtCash.EditValue = pay
                 End If
-            ElseIf TxtCash.EditValue = TxtTotal.EditValue Then
+            ElseIf pay = TxtTotal.EditValue Then
                 Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Payment OK ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
                 If confirm = DialogResult.Yes Then
                     TxtCash.Enabled = False
                     paymentOK()
                 Else
-                    TxtCash.EditValue = TxtTotal.EditValue
+                    TxtCash.EditValue = pay
                 End If
             Else
                 'jika kurang sisanya ke card
                 TxtCash.Enabled = False
                 TxtCard.Enabled = True
-                TxtCard.EditValue = TxtTotal.EditValue - TxtCash.EditValue
+                TxtCard.EditValue = TxtTotal.EditValue - pay
                 TxtCard.Focus()
             End If
+        ElseIf e.KeyCode = Keys.F11 Then 'voucher
+            TxtCash.EditValue = 0
+            TxtCash.Enabled = False
+            TxtVoucherNo.Enabled = True
+            TxtVoucherNo.Focus()
         End If
     End Sub
 
@@ -757,12 +779,19 @@
 
     Private Sub TxtCard_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCard.KeyDown
         If e.KeyCode = Keys.Enter Then
-            If TxtCash.EditValue + TxtCard.EditValue < TxtTotal.EditValue Then
+            Dim voucher As Decimal = 0
+            Try
+                voucher = TxtVoucher.EditValue
+            Catch ex As Exception
+            End Try
+            Dim pay As Decimal = TxtCash.EditValue + voucher + TxtCard.EditValue
+
+            If pay < TxtTotal.EditValue Then
                 stopCustom("Payment cannot less than payment")
                 TxtCard.EditValue = TxtTotal.EditValue - TxtCash.EditValue
                 TxtCard.Focus()
-            ElseIf TxtCash.EditValue + TxtCard.EditValue > TxtTotal.EditValue
-                TxtChange.EditValue = (TxtCash.EditValue + TxtCard.EditValue) - TxtTotal.EditValue
+            ElseIf pay > TxtTotal.EditValue
+                TxtChange.EditValue = pay - TxtTotal.EditValue
                 TxtCard.Enabled = False
                 LECardType.Enabled = True
                 LECardType.Focus()
@@ -915,6 +944,53 @@
             'execute_non_query(query_upd_stt, True, "", "", "", "")
             'Dim prn As New ClassPOS()
             'prn.printPos(id)
+        End If
+    End Sub
+
+    Private Sub TxtVoucherNo_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtVoucherNo.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Cursor = Cursors.WaitCursor
+            Dim voucher_number As String = TxtVoucherNo.Text
+
+            If voucher_number = "" Then
+                TxtVoucherNo.Text = ""
+                TxtVoucherNo.Enabled = False
+                TxtCash.EditValue = TxtTotal.EditValue
+                TxtCash.Enabled = True
+            Else
+                Dim query As String = "SELECT * FROM tb_opt "
+                Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+
+                'cek voucher 
+                Dim query_vch As String = "SELECT * FROM tb_m_voucher v 
+                WHERE v.voucher_number='" + voucher_number + "' 
+                AND ISNULL(v.id_outlet) AND v.expire_date>= DATE(NOW()) LIMIT 1 "
+                Dim dt_vch As DataTable = execute_query(query_vch, -1, False, data.Rows(0)("host_main").ToString, data.Rows(0)("username_main").ToString, data.Rows(0)("pass_main").ToString, data.Rows(0)("db_main").ToString)
+
+                If dt_vch.Rows.Count > 0 Then
+                    TxtCash.EditValue = 0
+                    TxtCard.EditValue = 0
+                    id_voucher_db = dt_vch.Rows(0)("id_voucher").ToString
+                    Dim voucher As Decimal = dt_vch.Rows(0)("voucher")
+                    If voucher >= TxtTotal.EditValue Then
+                        TxtVoucher.EditValue = TxtTotal.EditValue
+                        TxtVoucherNo.Enabled = False
+                        TxtCash.EditValue = 0
+                        TxtCash.Enabled = True
+                        TxtCash.Focus()
+                    Else
+                        TxtVoucher.EditValue = voucher
+                        TxtVoucherNo.Enabled = False
+                        TxtCash.EditValue = TxtTotal.EditValue - TxtVoucher.EditValue
+                        TxtCash.Enabled = True
+                        TxtCash.Focus()
+                    End If
+                Else
+                    stopCustom("Voucher is not found")
+                    TxtVoucherNo.Focus()
+                End If
+            End If
+            Cursor = Cursors.Default
         End If
     End Sub
 End Class
