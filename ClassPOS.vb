@@ -123,13 +123,45 @@
         Return query
     End Function
 
+    Public Function querySal(ByVal condition As String, ByVal order_by As String, ByVal group_by As String) As String
+        If order_by <> "-1" Then
+            order_by = "ORDER BY " + order_by
+        Else
+            order_by = ""
+        End If
+
+        If condition <> "-1" Then
+            condition = condition
+        Else
+            condition = ""
+        End If
+
+        If group_by <> "-1" Then
+            group_by = "GROUP BY " + group_by
+        Else
+            group_by = ""
+        End If
+
+        Dim query As String = "SELECT SUM(p.subtotal) AS `subtotal`, SUM(p.discount) AS `discount`,
+        (SUM(p.subtotal)-SUM(p.discount)) AS `after_discount`,
+        SUM(p.tax) AS `tax`, SUM(p.total) AS `total`,
+        SUM(p.card) AS `card`, SUM(p.voucher) AS `voucher`,
+        SUM(p.total)-(SUM(p.card)+SUM(p.voucher)) AS `cash_in_drawer`
+        FROM tb_pos p
+        WHERE p.id_pos>0 "
+        query += condition + " "
+        query += group_by + " "
+        query += order_by + " "
+        Return query
+    End Function
+
     '===========PRINTER==================
     Private Sub StartPrint()
         prn.OpenPrint(PrinterName)
     End Sub
 
     Private Sub PrintHeader()
-        Dim query As String = "SELECT * FROM tb_opt"
+        Dim query As String = "Select * FROM tb_opt"
         Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
         Print(eInit + eCentre + Chr(27) + Chr(33) + Chr(16) + data.Rows(0)("header_1").ToString)
         Print(eNmlText + Chr(27) + Chr(77) + "1" + data.Rows(0)("header_2").ToString)
@@ -140,7 +172,7 @@
     End Sub
 
     Private Sub PrintHeaderRefund(ByVal id_pos As String)
-        Dim query As String = queryMain("AND p.id_pos=" + id_pos + "", "1")
+        Dim query As String = queryMain("And p.id_pos=" + id_pos + "", "1")
         Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
         Print(eInit + eCentre + Chr(27) + Chr(33) + Chr(14) + "*** REFUND ***")
         Print(eNmlText + Chr(27) + Chr(77) + "1" + "REF NO. : " + data.Rows(0)("pos_ref_number").ToString)

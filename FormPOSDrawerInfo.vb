@@ -16,6 +16,27 @@
         LabelCashier.Text = dt_shf.Rows(0)("username").ToString
         LabelShift.Text = dt_shf.Rows(0)("shift_type").ToString
         LabelPOS.Text = "POS#" + dt_shf.Rows(0)("pos_dev").ToString
+
+        'info sales
+        Dim sal As New ClassPOS()
+        Dim query_sal As String = sal.querySal("AND  p.id_shift=" + id_shift + " AND p.id_pos_status=2", "p.id_pos ASC", "p.id_shift")
+        'Dim query_sal As String = "SELECT SUM(p.subtotal) AS `subtotal`, SUM(p.discount) AS `discount`,
+        '(SUM(p.subtotal)-SUM(p.discount)) AS `after_discount`,
+        'SUM(p.tax) AS `tax`, SUM(p.total) AS `total`,
+        'SUM(p.card) AS `card`, SUM(p.voucher) AS `voucher`,
+        'SUM(p.total)-(SUM(p.card)+SUM(p.voucher)) AS `cash_in_drawer`
+        'FROM tb_pos p
+        'WHERE p.id_shift=" + id_shift + " AND p.id_pos_status='2'
+        'GROUP BY p.id_shift "
+        Dim dt_sal As DataTable = execute_query(query_sal, -1, True, "", "", "", "")
+        LabelBefore.Text = Decimal.Parse(dt_sal.Rows(0)("subtotal").ToString()).ToString("N2")
+        LabelDiscount.Text = Decimal.Parse(dt_sal.Rows(0)("discount").ToString()).ToString("N2")
+        LabelAfter.Text = Decimal.Parse(dt_sal.Rows(0)("after_discount").ToString()).ToString("N2")
+        LabelTax.Text = Decimal.Parse(dt_sal.Rows(0)("tax").ToString()).ToString("N2")
+        LabelNetto.Text = Decimal.Parse(dt_sal.Rows(0)("total").ToString()).ToString("N2")
+        LabelCard.Text = Decimal.Parse(dt_sal.Rows(0)("card").ToString()).ToString("N2")
+        LabelVoucher.Text = Decimal.Parse(dt_sal.Rows(0)("voucher").ToString()).ToString("N2")
+        LabelCashDrawer.Text = Decimal.Parse(dt_sal.Rows(0)("cash_in_drawer").ToString()).ToString("N2")
     End Sub
 
 End Class
