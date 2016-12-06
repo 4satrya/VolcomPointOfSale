@@ -70,7 +70,7 @@
             refund()
         ElseIf e.KeyCode = Keys.F6 Then
             pickup()
-        ElseIf e.KeyCode = Keys.F7 Then
+        ElseIf e.KeyCode = Keys.F7 And new_trans = False Then
             drawer()
         ElseIf e.KeyCode = Keys.F8 Then 'closing
             closing_shift()
@@ -197,7 +197,11 @@
 
     Sub drawer()
         Cursor = Cursors.WaitCursor
-
+        FormBlack.Show()
+        FormPOSDrawerInfo.id_shift = id_shift
+        FormPOSDrawerInfo.ShowDialog()
+        FormBlack.Close()
+        BringToFront()
         Cursor = Cursors.Default
     End Sub
 
