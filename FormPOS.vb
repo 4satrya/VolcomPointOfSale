@@ -161,13 +161,13 @@
             If confirm = DialogResult.Yes Then
                 'insert main
                 Dim query As String = "INSERT INTO tb_pos(id_pos_ref, pos_number, pos_date, id_shift, id_pos_status, id_pos_cat, subtotal, discount, tax, total, id_voucher, voucher_number, voucher, `point`, cash, card, id_card_type, card_number, card_name, `change`, total_qty, id_sales, id_country, is_payment_ok ) 
-                SELECT '" + id + "', header_number(4), NOW(), '" + id_shift + "', '2', '2',subtotal, discount, tax, total, id_voucher, voucher_number, voucher, `point`, cash, card, id_card_type, card_number, card_name, `change`, total_qty, id_sales, id_country, is_payment_ok
+                SELECT '" + id + "', header_number(4), NOW(), '" + id_shift + "', '2', '2',subtotal*-1, discount*-1, tax*-1, total*-1, id_voucher, voucher_number, voucher*-1, `point`*-1, cash*-1, card*-1, id_card_type, card_number, card_name, `change`*-1, total_qty*-1, id_sales, id_country, is_payment_ok
                 FROM tb_pos WHERE id_pos='" + id + "'; SELECT LAST_INSERT_ID(); "
                 Dim id_refund As String = execute_query(query, 0, True, "", "", "", "")
 
                 'insert det
                 Dim query_det As String = "INSERT INTO tb_pos_det(id_pos, id_item, comm, qty, price) 
-                SELECT '" + id_refund + "', id_item, comm, qty, price FROM tb_pos_det WHERE id_pos='" + id + "' "
+                SELECT '" + id_refund + "', id_item, comm, qty*-1, price FROM tb_pos_det WHERE id_pos='" + id + "' "
                 execute_non_query(query_det, True, "", "", "", "")
 
                 'stock
