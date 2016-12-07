@@ -20,14 +20,6 @@
         'info sales
         Dim sal As New ClassPOS()
         Dim query_sal As String = sal.querySal("AND  p.id_shift=" + id_shift + " AND p.id_pos_status=2", "p.id_pos ASC", "p.id_shift")
-        'Dim query_sal As String = "SELECT SUM(p.subtotal) AS `subtotal`, SUM(p.discount) AS `discount`,
-        '(SUM(p.subtotal)-SUM(p.discount)) AS `after_discount`,
-        'SUM(p.tax) AS `tax`, SUM(p.total) AS `total`,
-        'SUM(p.card) AS `card`, SUM(p.voucher) AS `voucher`,
-        'SUM(p.total)-(SUM(p.card)+SUM(p.voucher)) AS `cash_in_drawer`
-        'FROM tb_pos p
-        'WHERE p.id_shift=" + id_shift + " AND p.id_pos_status='2'
-        'GROUP BY p.id_shift "
         Dim dt_sal As DataTable = execute_query(query_sal, -1, True, "", "", "", "")
         LabelBefore.Text = Decimal.Parse(dt_sal.Rows(0)("subtotal").ToString()).ToString("N2")
         LabelDiscount.Text = Decimal.Parse(dt_sal.Rows(0)("discount").ToString()).ToString("N2")
@@ -37,6 +29,40 @@
         LabelCard.Text = Decimal.Parse(dt_sal.Rows(0)("card").ToString()).ToString("N2")
         LabelVoucher.Text = Decimal.Parse(dt_sal.Rows(0)("voucher").ToString()).ToString("N2")
         LabelCashDrawer.Text = Decimal.Parse(dt_sal.Rows(0)("cash_in_drawer").ToString()).ToString("N2")
+
+        'refund
+        Dim qrf As String = sal.queryMain("AND p.id_shift=" + id_shift + " AND p.id_pos_cat=2 AND p.id_pos_status=2", "1")
+        Dim dtf As DataTable = execute_query(qrf, -1, True, "", "", "", "")
+        GCRefund.DataSource = dtf
+
+        'voucher
+        Dim qvch As String = sal.queryMain("AND p.id_shift=" + id_shift + " AND p.id_pos_status=2 AND !ISNULL(p.id_voucher)", "1")
+        Dim dtvch As DataTable = execute_query(qvch, -1, True, "", "", "", "")
+        GCVoucher.DataSource = dtvch
+
+        'statisctic
+        Dim qstt As String = sal.querySal("AND p.id_shift=" + id_shift + " AND p.id_pos_status=2", "p.id_pos ASC", "p.id_pos")
+        Dim dtstt As DataTable = execute_query(qstt, -1, True, "", "", "", "")
+        LabelSold.Text = dtstt.Rows.Count.ToString
+
+        'sales performance
+        Dim qsls As String = sal.querySal("AND p.id_shift=" + id_shift + " AND p.id_pos_status=2", "e.employee_name ASC", "p.id_sales")
+        Dim dtsls As DataTable = execute_query(qsls, -1, True, "", "", "", "")
+        GCSales.DataSource = dtsls
+
+
+    End Sub
+
+    Private Sub GVRefund_CustomColumnDisplayText(sender As Object, e As DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs) Handles GVRefund.CustomColumnDisplayText
+        If e.Column.FieldName = "no" Then
+            e.DisplayText = (e.ListSourceRowIndex + 1).ToString()
+        End If
+    End Sub
+
+    Private Sub GVVoucher_CustomColumnDisplayText(sender As Object, e As DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs) Handles GVVoucher.CustomColumnDisplayText
+        If e.Column.FieldName = "no" Then
+            e.DisplayText = (e.ListSourceRowIndex + 1).ToString()
+        End If
     End Sub
 
 End Class

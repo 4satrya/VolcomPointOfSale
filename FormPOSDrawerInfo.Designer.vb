@@ -23,20 +23,14 @@ Partial Class FormPOSDrawerInfo
         Me.LabelControl47 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl46 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl45 = New DevExpress.XtraEditors.LabelControl()
-        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GCSales = New DevExpress.XtraGrid.GridControl()
+        Me.GVSales = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.LabelControl44 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelOpportunity = New DevExpress.XtraEditors.LabelControl()
         Me.LabelSold = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelGuest = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl40 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl39 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl38 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl37 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl36 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl35 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl33 = New DevExpress.XtraEditors.LabelControl()
         Me.GCVoucher = New DevExpress.XtraGrid.GridControl()
@@ -89,8 +83,8 @@ Partial Class FormPOSDrawerInfo
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.BtnClose = New DevExpress.XtraEditors.SimpleButton()
         Me.XtraScrollableControl1.SuspendLayout()
-        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GCSales, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GVSales, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GCVoucher, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GVVoucher, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GCRefund, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,16 +98,10 @@ Partial Class FormPOSDrawerInfo
         Me.XtraScrollableControl1.Controls.Add(Me.LabelControl47)
         Me.XtraScrollableControl1.Controls.Add(Me.LabelControl46)
         Me.XtraScrollableControl1.Controls.Add(Me.LabelControl45)
-        Me.XtraScrollableControl1.Controls.Add(Me.GridControl2)
+        Me.XtraScrollableControl1.Controls.Add(Me.GCSales)
         Me.XtraScrollableControl1.Controls.Add(Me.LabelControl44)
-        Me.XtraScrollableControl1.Controls.Add(Me.LabelOpportunity)
         Me.XtraScrollableControl1.Controls.Add(Me.LabelSold)
-        Me.XtraScrollableControl1.Controls.Add(Me.LabelGuest)
-        Me.XtraScrollableControl1.Controls.Add(Me.LabelControl40)
         Me.XtraScrollableControl1.Controls.Add(Me.LabelControl39)
-        Me.XtraScrollableControl1.Controls.Add(Me.LabelControl38)
-        Me.XtraScrollableControl1.Controls.Add(Me.LabelControl37)
-        Me.XtraScrollableControl1.Controls.Add(Me.LabelControl36)
         Me.XtraScrollableControl1.Controls.Add(Me.LabelControl35)
         Me.XtraScrollableControl1.Controls.Add(Me.LabelControl33)
         Me.XtraScrollableControl1.Controls.Add(Me.GCVoucher)
@@ -160,7 +148,7 @@ Partial Class FormPOSDrawerInfo
         'LabelControl47
         '
         Me.LabelControl47.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl47.Location = New System.Drawing.Point(80, 1013)
+        Me.LabelControl47.Location = New System.Drawing.Point(81, 986)
         Me.LabelControl47.Name = "LabelControl47"
         Me.LabelControl47.Size = New System.Drawing.Size(89, 15)
         Me.LabelControl47.TabIndex = 39
@@ -169,7 +157,7 @@ Partial Class FormPOSDrawerInfo
         'LabelControl46
         '
         Me.LabelControl46.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl46.Location = New System.Drawing.Point(18, 1040)
+        Me.LabelControl46.Location = New System.Drawing.Point(19, 1013)
         Me.LabelControl46.Name = "LabelControl46"
         Me.LabelControl46.Size = New System.Drawing.Size(30, 15)
         Me.LabelControl46.TabIndex = 38
@@ -179,34 +167,34 @@ Partial Class FormPOSDrawerInfo
         'LabelControl45
         '
         Me.LabelControl45.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl45.Location = New System.Drawing.Point(16, 1013)
+        Me.LabelControl45.Location = New System.Drawing.Point(17, 986)
         Me.LabelControl45.Name = "LabelControl45"
         Me.LabelControl45.Size = New System.Drawing.Size(58, 15)
         Me.LabelControl45.TabIndex = 37
         Me.LabelControl45.Text = "Datetime : "
         '
-        'GridControl2
+        'GCSales
         '
-        Me.GridControl2.Location = New System.Drawing.Point(16, 841)
-        Me.GridControl2.LookAndFeel.SkinName = "Metropolis"
-        Me.GridControl2.LookAndFeel.UseDefaultLookAndFeel = False
-        Me.GridControl2.MainView = Me.GridView2
-        Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(309, 159)
-        Me.GridControl2.TabIndex = 36
-        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        Me.GCSales.Location = New System.Drawing.Point(16, 799)
+        Me.GCSales.LookAndFeel.SkinName = "Metropolis"
+        Me.GCSales.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.GCSales.MainView = Me.GVSales
+        Me.GCSales.Name = "GCSales"
+        Me.GCSales.Size = New System.Drawing.Size(309, 159)
+        Me.GCSales.TabIndex = 36
+        Me.GCSales.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVSales})
         '
-        'GridView2
+        'GVSales
         '
-        Me.GridView2.Appearance.HeaderPanel.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GridView2.Appearance.HeaderPanel.Options.UseFont = True
-        Me.GridView2.Appearance.Row.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GridView2.Appearance.Row.Options.UseFont = True
-        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn10, Me.GridColumn11, Me.GridColumn12})
-        Me.GridView2.GridControl = Me.GridControl2
-        Me.GridView2.Name = "GridView2"
-        Me.GridView2.OptionsView.ShowFooter = True
-        Me.GridView2.OptionsView.ShowGroupPanel = False
+        Me.GVSales.Appearance.HeaderPanel.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.GVSales.Appearance.HeaderPanel.Options.UseFont = True
+        Me.GVSales.Appearance.Row.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.GVSales.Appearance.Row.Options.UseFont = True
+        Me.GVSales.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn10, Me.GridColumn11, Me.GridColumn12})
+        Me.GVSales.GridControl = Me.GCSales
+        Me.GVSales.Name = "GVSales"
+        Me.GVSales.OptionsView.ShowFooter = True
+        Me.GVSales.OptionsView.ShowGroupPanel = False
         '
         'GridColumn10
         '
@@ -215,6 +203,7 @@ Partial Class FormPOSDrawerInfo
         Me.GridColumn10.Name = "GridColumn10"
         Me.GridColumn10.Visible = True
         Me.GridColumn10.VisibleIndex = 0
+        Me.GridColumn10.Width = 349
         '
         'GridColumn11
         '
@@ -226,6 +215,7 @@ Partial Class FormPOSDrawerInfo
         Me.GridColumn11.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "total_qty", "{0:n0}")})
         Me.GridColumn11.Visible = True
         Me.GridColumn11.VisibleIndex = 1
+        Me.GridColumn11.Width = 96
         '
         'GridColumn12
         '
@@ -237,96 +227,43 @@ Partial Class FormPOSDrawerInfo
         Me.GridColumn12.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "total", "{0:n2}")})
         Me.GridColumn12.Visible = True
         Me.GridColumn12.VisibleIndex = 2
+        Me.GridColumn12.Width = 290
         '
         'LabelControl44
         '
         Me.LabelControl44.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl44.Location = New System.Drawing.Point(16, 820)
+        Me.LabelControl44.Location = New System.Drawing.Point(16, 778)
         Me.LabelControl44.Name = "LabelControl44"
         Me.LabelControl44.Size = New System.Drawing.Size(169, 15)
         Me.LabelControl44.TabIndex = 35
         Me.LabelControl44.Text = "Sales Promotion Performance"
         '
-        'LabelOpportunity
-        '
-        Me.LabelOpportunity.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelOpportunity.Location = New System.Drawing.Point(135, 789)
-        Me.LabelOpportunity.Name = "LabelOpportunity"
-        Me.LabelOpportunity.Size = New System.Drawing.Size(19, 15)
-        Me.LabelOpportunity.TabIndex = 34
-        Me.LabelOpportunity.Text = "0 %"
-        '
         'LabelSold
         '
         Me.LabelSold.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSold.Location = New System.Drawing.Point(135, 768)
+        Me.LabelSold.Location = New System.Drawing.Point(135, 747)
         Me.LabelSold.Name = "LabelSold"
         Me.LabelSold.Size = New System.Drawing.Size(6, 15)
         Me.LabelSold.TabIndex = 33
         Me.LabelSold.Text = "0"
         '
-        'LabelGuest
-        '
-        Me.LabelGuest.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelGuest.Location = New System.Drawing.Point(135, 747)
-        Me.LabelGuest.Name = "LabelGuest"
-        Me.LabelGuest.Size = New System.Drawing.Size(6, 15)
-        Me.LabelGuest.TabIndex = 32
-        Me.LabelGuest.Text = "0"
-        '
-        'LabelControl40
-        '
-        Me.LabelControl40.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl40.Location = New System.Drawing.Point(126, 789)
-        Me.LabelControl40.Name = "LabelControl40"
-        Me.LabelControl40.Size = New System.Drawing.Size(3, 15)
-        Me.LabelControl40.TabIndex = 31
-        Me.LabelControl40.Text = ":"
-        '
         'LabelControl39
         '
         Me.LabelControl39.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl39.Location = New System.Drawing.Point(126, 768)
+        Me.LabelControl39.Location = New System.Drawing.Point(126, 747)
         Me.LabelControl39.Name = "LabelControl39"
         Me.LabelControl39.Size = New System.Drawing.Size(3, 15)
         Me.LabelControl39.TabIndex = 30
         Me.LabelControl39.Text = ":"
         '
-        'LabelControl38
-        '
-        Me.LabelControl38.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl38.Location = New System.Drawing.Point(126, 747)
-        Me.LabelControl38.Name = "LabelControl38"
-        Me.LabelControl38.Size = New System.Drawing.Size(3, 15)
-        Me.LabelControl38.TabIndex = 29
-        Me.LabelControl38.Text = ":"
-        '
-        'LabelControl37
-        '
-        Me.LabelControl37.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl37.Location = New System.Drawing.Point(16, 789)
-        Me.LabelControl37.Name = "LabelControl37"
-        Me.LabelControl37.Size = New System.Drawing.Size(86, 15)
-        Me.LabelControl37.TabIndex = 28
-        Me.LabelControl37.Text = "- % Opportunity"
-        '
-        'LabelControl36
-        '
-        Me.LabelControl36.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl36.Location = New System.Drawing.Point(16, 747)
-        Me.LabelControl36.Name = "LabelControl36"
-        Me.LabelControl36.Size = New System.Drawing.Size(74, 15)
-        Me.LabelControl36.TabIndex = 27
-        Me.LabelControl36.Text = "- No. of Guest"
-        '
         'LabelControl35
         '
         Me.LabelControl35.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl35.Location = New System.Drawing.Point(16, 768)
+        Me.LabelControl35.Location = New System.Drawing.Point(16, 747)
         Me.LabelControl35.Name = "LabelControl35"
-        Me.LabelControl35.Size = New System.Drawing.Size(67, 15)
+        Me.LabelControl35.Size = New System.Drawing.Size(106, 15)
         Me.LabelControl35.TabIndex = 26
-        Me.LabelControl35.Text = "- No. of Sold"
+        Me.LabelControl35.Text = "- No. of Transaction"
         '
         'LabelControl33
         '
@@ -350,9 +287,9 @@ Partial Class FormPOSDrawerInfo
         '
         'GVVoucher
         '
-        Me.GVVoucher.Appearance.HeaderPanel.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GVVoucher.Appearance.HeaderPanel.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.GVVoucher.Appearance.HeaderPanel.Options.UseFont = True
-        Me.GVVoucher.Appearance.Row.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GVVoucher.Appearance.Row.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.GVVoucher.Appearance.Row.Options.UseFont = True
         Me.GVVoucher.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9})
         Me.GVVoucher.GridControl = Me.GCVoucher
@@ -367,6 +304,7 @@ Partial Class FormPOSDrawerInfo
         Me.GridColumn1.Name = "GridColumn1"
         Me.GridColumn1.Visible = True
         Me.GridColumn1.VisibleIndex = 0
+        Me.GridColumn1.Width = 66
         '
         'GridColumn6
         '
@@ -375,6 +313,7 @@ Partial Class FormPOSDrawerInfo
         Me.GridColumn6.Name = "GridColumn6"
         Me.GridColumn6.Visible = True
         Me.GridColumn6.VisibleIndex = 1
+        Me.GridColumn6.Width = 165
         '
         'GridColumn7
         '
@@ -383,27 +322,30 @@ Partial Class FormPOSDrawerInfo
         Me.GridColumn7.Name = "GridColumn7"
         Me.GridColumn7.Visible = True
         Me.GridColumn7.VisibleIndex = 2
+        Me.GridColumn7.Width = 157
         '
         'GridColumn8
         '
         Me.GridColumn8.Caption = "Time"
-        Me.GridColumn8.DisplayFormat.FormatString = "hh:mm tt"
+        Me.GridColumn8.DisplayFormat.FormatString = "HH:mm"
         Me.GridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.GridColumn8.FieldName = "pos_date"
         Me.GridColumn8.Name = "GridColumn8"
         Me.GridColumn8.Visible = True
         Me.GridColumn8.VisibleIndex = 3
+        Me.GridColumn8.Width = 120
         '
         'GridColumn9
         '
         Me.GridColumn9.Caption = "Amount"
         Me.GridColumn9.DisplayFormat.FormatString = "{0:n2}"
         Me.GridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.GridColumn9.FieldName = "total"
+        Me.GridColumn9.FieldName = "voucher"
         Me.GridColumn9.Name = "GridColumn9"
-        Me.GridColumn9.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "total", "{0:n2}")})
+        Me.GridColumn9.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "voucher", "{0:n2}")})
         Me.GridColumn9.Visible = True
         Me.GridColumn9.VisibleIndex = 4
+        Me.GridColumn9.Width = 227
         '
         'LabelControl34
         '
@@ -427,9 +369,9 @@ Partial Class FormPOSDrawerInfo
         '
         'GVRefund
         '
-        Me.GVRefund.Appearance.HeaderPanel.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GVRefund.Appearance.HeaderPanel.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.GVRefund.Appearance.HeaderPanel.Options.UseFont = True
-        Me.GVRefund.Appearance.Row.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GVRefund.Appearance.Row.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.GVRefund.Appearance.Row.Options.UseFont = True
         Me.GVRefund.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5})
         Me.GVRefund.GridControl = Me.GCRefund
@@ -444,6 +386,7 @@ Partial Class FormPOSDrawerInfo
         Me.GridColumn.Name = "GridColumn"
         Me.GridColumn.Visible = True
         Me.GridColumn.VisibleIndex = 0
+        Me.GridColumn.Width = 80
         '
         'GridColumn2
         '
@@ -452,37 +395,42 @@ Partial Class FormPOSDrawerInfo
         Me.GridColumn2.Name = "GridColumn2"
         Me.GridColumn2.Visible = True
         Me.GridColumn2.VisibleIndex = 1
+        Me.GridColumn2.Width = 163
         '
         'GridColumn3
         '
         Me.GridColumn3.Caption = "Time"
-        Me.GridColumn3.DisplayFormat.FormatString = "dd\/MM\/yyyy"
+        Me.GridColumn3.DisplayFormat.FormatString = "HH:mm"
         Me.GridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.GridColumn3.FieldName = "pos_date"
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 2
+        Me.GridColumn3.Width = 103
         '
         'GridColumn4
         '
         Me.GridColumn4.Caption = "Qty"
         Me.GridColumn4.DisplayFormat.FormatString = "N0"
         Me.GridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.GridColumn4.FieldName = "total_qty"
+        Me.GridColumn4.FieldName = "total_qty_refund"
         Me.GridColumn4.Name = "GridColumn4"
+        Me.GridColumn4.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "total_qty_refund", "{0:N0}")})
         Me.GridColumn4.Visible = True
         Me.GridColumn4.VisibleIndex = 3
+        Me.GridColumn4.Width = 77
         '
         'GridColumn5
         '
         Me.GridColumn5.Caption = "Amount"
         Me.GridColumn5.DisplayFormat.FormatString = "N2"
         Me.GridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.GridColumn5.FieldName = "total"
+        Me.GridColumn5.FieldName = "total_refund"
         Me.GridColumn5.Name = "GridColumn5"
-        Me.GridColumn5.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "total", "{0:n2}")})
+        Me.GridColumn5.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "total_refund", "{0:n2}")})
         Me.GridColumn5.Visible = True
         Me.GridColumn5.VisibleIndex = 4
+        Me.GridColumn5.Width = 312
         '
         'LabelControl32
         '
@@ -833,8 +781,8 @@ Partial Class FormPOSDrawerInfo
         Me.Text = "Drawer Information"
         Me.XtraScrollableControl1.ResumeLayout(False)
         Me.XtraScrollableControl1.PerformLayout()
-        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GCSales, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GVSales, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GCVoucher, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GVVoucher, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GCRefund, System.ComponentModel.ISupportInitialize).EndInit()
@@ -884,9 +832,6 @@ Partial Class FormPOSDrawerInfo
     Friend WithEvents LabelNetto As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelTax As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelAfter As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl38 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl37 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl36 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl35 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl33 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GCVoucher As DevExpress.XtraGrid.GridControl
@@ -894,16 +839,13 @@ Partial Class FormPOSDrawerInfo
     Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents LabelControl34 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl39 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GCSales As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GVSales As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridColumn10 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn11 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn12 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents LabelControl44 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelOpportunity As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelSold As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelGuest As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl40 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl47 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl46 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl45 As DevExpress.XtraEditors.LabelControl

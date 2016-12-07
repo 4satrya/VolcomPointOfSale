@@ -38,11 +38,11 @@
         s.id_user, csh.username AS `cashier`, csh_emp.employee_code AS `cashier_number`, csh_emp.employee_name AS `cashier_name`,  
         p.id_pos_status, stt.pos_status,
         p.id_pos_cat, cat.pos_cat,
-        p.subtotal, p.discount, p.tax, p.total, 
+        p.subtotal, p.discount, p.tax, p.total,(p.total*-1) AS `total_refund`, 
         CAST(((100/(100+o.tax))*p.total) AS DECIMAL(15,0)) AS `kena_ppn`,
         CAST(((o.tax/(100+o.tax))*p.total) AS DECIMAL(15,0)) AS `ppn`,
         p.id_voucher, p.voucher_number, p.voucher, p.point, p.cash, 
-        p.card, p.id_card_type, card.card_type, p.card_number, p.card_name, p.`change`, p.`total_qty`,
+        p.card, p.id_card_type, card.card_type, p.card_number, p.card_name, p.`change`, p.`total_qty`, (p.`total_qty`*-1) AS `total_qty_refund`,
         p.id_sales, emp.employee_code AS `sales_number`, emp.employee_name AS `sales_name`, p.id_country, cty.country,p.is_payment_ok
         FROM tb_pos p 
         INNER JOIN tb_shift s ON s.id_shift = p.id_shift 
@@ -142,12 +142,13 @@
             group_by = ""
         End If
 
-        Dim query As String = "SELECT SUM(p.subtotal) AS `subtotal`, SUM(p.discount) AS `discount`,
+        Dim query As String = "SELECT e.employee_name, SUM(p.subtotal) AS `subtotal`, SUM(p.discount) AS `discount`,
         (SUM(p.subtotal)-SUM(p.discount)) AS `after_discount`,
         SUM(p.tax) AS `tax`, SUM(p.total) AS `total`,
         SUM(p.card) AS `card`, SUM(p.voucher) AS `voucher`,
-        SUM(p.total)-(SUM(p.card)+SUM(p.voucher)) AS `cash_in_drawer`
+        SUM(p.total)-(SUM(p.card)+SUM(p.voucher)) AS `cash_in_drawer`, SUM(p.total_qty) AS `total_qty`
         FROM tb_pos p
+        INNER JOIN tb_m_employee e ON e.id_employee = p.id_sales
         WHERE p.id_pos>0 "
         query += condition + " "
         query += group_by + " "
