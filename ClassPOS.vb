@@ -112,7 +112,7 @@
         End If
 
         Dim query As String = "SELECT s.id_shift, s.id_shift_type, st.shift_type, st.shift_name, st.shift_start, 
-        s.id_user, u.`username`, s.id_pos_dev, dev.pos_dev, dev.mac_address, s.open_shift, s.close_shift, s.cash, s.is_open 
+        s.id_user, u.`username`, s.id_pos_dev, dev.pos_dev, dev.mac_address, s.open_shift, DATE_FORMAT(s.open_shift,'%d/%m/%Y') AS  `open_shift_display`, s.close_shift, s.cash, s.is_open 
         FROM tb_shift s 
         INNER JOIN tb_shift_type st ON st.id_shift_type = s.id_shift_type 
         INNER JOIN tb_pos_dev dev ON dev.id_pos_dev = s.id_pos_dev
@@ -177,6 +177,15 @@
         Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
         Print(eInit + eCentre + Chr(27) + Chr(33) + Chr(14) + "*** REFUND ***")
         Print(eNmlText + Chr(27) + Chr(77) + "1" + "REF NO. : " + data.Rows(0)("pos_ref_number").ToString)
+        PrintDashes()
+    End Sub
+
+    Private Sub PrintHeaderClosing()
+        Dim query As String = "Select * FROM tb_opt"
+        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        Print(eInit + eCentre + Chr(27) + Chr(33) + Chr(16) + data.Rows(0)("header_closing").ToString)
+        Print(eNmlText + Chr(27) + Chr(77) + "1" + data.Rows(0)("header_1").ToString)
+        Print(Chr(27) + Chr(77) + "1" + data.Rows(0)("header_2").ToString + eLeft)
         PrintDashes()
     End Sub
 
@@ -255,6 +264,145 @@
         Print(eLeft + "Total                  " + total_qty + Chr(13) + eRight + Decimal.Parse(dt_main.Rows(0)("total")).ToString("N0"))
         Print(vbLf)
     End Sub
+
+    Private Sub PrintBodyClosing(ByVal id_shift As String)
+        Dim query_main As String = queryShift("AND s.id_shift=" + id_shift + "", "1")
+        Dim dt_main As DataTable = execute_query(query_main, -1, True, "", "", "", "")
+        Print(eLeft + "========================================")
+        Print(eLeft + "Date      : " + dt_main.Rows(0)("open_shift_display").ToString)
+        Print(eLeft + "Cashier   : " + dt_main.Rows(0)("username").ToString)
+        Print(eLeft + "Shift     : " + dt_main.Rows(0)("shift_type").ToString + Chr(13) + eRight + "POS#" + dt_main.Rows(0)("pos_dev").ToString))
+        Print(eLeft + "========================================")
+
+        Dim sal As New ClassPOS()
+        Dim query_sal As String = sal.querySal("AND  p.id_shift=" + id_shift + " AND p.id_pos_status=2", "p.id_pos ASC", "p.id_shift")
+        Dim dt_sal As DataTable = execute_query(query_sal, -1, True, "", "", "", "")
+
+        Print(eLeft + "a. Gross Sale Before Disc....." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("subtotal").ToString()).ToString("N2"))
+        Print(eLeft + "b. Discount..................." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("discount").ToString()).ToString("N2"))
+        Print(eLeft + "c. Gross Sale After Discount.." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("after_discount").ToString()).ToString("N2"))
+        Print(eLeft + "d. Tax........................" + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("tax").ToString()).ToString("N2"))
+        Print(eLeft + "e. Netto......................" + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("total").ToString()).ToString("N2"))
+        Print(eLeft + "f. Card......................." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("card").ToString()).ToString("N2"))
+        Print(eLeft + "g. Voucher...................." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("voucher").ToString()).ToString("N2"))
+        Print(eLeft + "h. Cash in Drawer............." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("cash_in_drawer").ToString()).ToString("N2"))
+
+        'refund
+        Print(eLeft + "i. Refund List :")
+        Print(eLeft + "   No    Ref    Time    Qty      Amount")
+        Print(eLeft + "   -------------------------------------")
+        'Print(eLeft + "   1  1000851 18:50:04  100   99.900.000")
+        Dim qrf As String = sal.queryMain("AND p.id_shift=" + id_shift + " AND p.id_pos_cat=2 AND p.id_pos_status=2", "1")
+        Dim dtf As DataTable = execute_query(qrf, -1, True, "", "", "", "")
+        Dim total_refund As Decimal = 0
+        If dtf.Rows.Count > 0 Then
+            Dim no_refund As Integer = 1
+            For i As Integer = 0 To dtf.Rows.Count - 1
+                'no
+                Dim no As String = ""
+                If no_refund.ToString.Length = 1 Then
+                    no = no_refund.ToString + "  "
+                ElseIf no_refund.ToString.Length = 2 Then
+                    no = no_refund.ToString + " "
+                Else
+                    no = no_refund.ToString
+                End If
+
+                'qty
+                Dim qty As String = Decimal.Parse(dtf.Rows(i)("total_qty").ToString).ToString("N0")
+                If qty.ToString.Length = 1 Then
+                    qty = "  " + qty.ToString
+                ElseIf no_refund.ToString.Length = 2 Then
+                    qty = " " + qty.ToString
+                Else
+                    qty = qty.ToString
+                End If
+
+                Print(eLeft + "   " + no + dtf.Rows(i)("pos_ref_number").ToString + " " + DateTime.Parse(dtf.Rows(i)("pos_date").ToString).ToString("HH:mm:ss") + "  " + qty + Chr(13) + eRight + Decimal.Parse(dtf.Rows(i)("total_refund").ToString).ToString("N2"))
+                total_refund += dtf.Rows(i)("total_refund")
+                no_refund += 1
+            Next
+        End If
+        Print(eRight + "----------")
+        Print(eLeft + "  Total......................." + Chr(13) + eRight + Decimal.Parse(total_refund.ToString).ToString("N2"))
+
+        'voucher
+        Print(eLeft + "j. Voucher List :")
+        Print(eLeft + "   No  Voucher#   Ref   Time     Amount")
+        Print(eLeft + "   -------------------------------------")
+        'Print(eLeft + "   100 16110000 1001158 15:23 999.999.00")
+        Dim qvch As String = sal.queryMain("AND p.id_shift=" + id_shift + " AND p.id_pos_status=2 AND !ISNULL(p.id_voucher)", "1")
+        Dim dtvch As DataTable = execute_query(qvch, -1, True, "", "", "", "")
+        Dim total_vch As Decimal = 0
+        If dtvch.Rows.Count > 0 Then
+            Dim no_vch As Integer = 1
+            For i As Integer = 0 To dtvch.Rows.Count - 1
+                'no
+                Dim no As String = ""
+                If no_vch.ToString.Length = 1 Then
+                    no = no_vch.ToString + "  "
+                ElseIf no_vch.ToString.Length = 2 Then
+                    no = no_vch.ToString + " "
+                Else
+                    no = no_vch.ToString
+                End If
+
+                'nyumber
+                Dim number_max As Integer = 8
+                Dim number As String = dtvch.Rows(i)("voucher_number").ToString
+                If number.Length < number_max Then
+                    For c = 1 To (number_max - number.Length)
+                        number += " "
+                    Next
+                Else
+                    number = number
+                End If
+
+                'ref
+                Dim ref_max As Integer = 7
+                Dim ref As String = dtvch.Rows(i)("pos_number").ToString
+                If ref.Length < ref_max Then
+                    For a = 1 To (ref_max - ref.Length)
+                        ref = " " + ref
+                    Next
+                Else
+                    ref = ref
+                End If
+
+                'voucher
+                Dim vch_max As Integer = 10
+                Dim vch As String = Decimal.Parse(dtvch.Rows(i)("voucher").ToString).ToString("N2")
+                If vch.Length < vch_max Then
+                    For a = 1 To (vch_max - vch.Length)
+                        vch = " " + vch
+                    Next
+                Else
+                    vch = vch
+                End If
+                total_vch += dtvch.Rows(i)("voucher")
+
+                'time
+                Dim time_vch As String = DateTime.Parse(dtf.Rows(i)("pos_date").ToString).ToString("HH:mm:ss")
+
+                Print(eLeft + "   " + no + " " + number + " " + ref + " " + time_vch + " " + vch)
+                no_vch += 1
+            Next
+        End If
+        Print(eRight + "----------")
+        Print(eLeft + "  Total......................." + Chr(13) + eRight + Decimal.Parse(total_vch.ToString).ToString("N2"))
+
+        'statisctic
+        Print(eLeft + "k. Statistics :")
+        Dim qstt As String = sal.querySal("AND p.id_shift=" + id_shift + " AND p.id_pos_status=2", "p.id_pos ASC", "p.id_pos")
+        Dim dtstt As DataTable = execute_query(qstt, -1, True, "", "", "", "")
+        Print(eLeft + "   - No. of Transaction : " + dtstt.Rows.Count.ToString)
+
+        'sales performance
+        Print(eLeft + "l. Sales Promotion Performance :")
+        Print(eLeft + "   Name              Qty          Amount")
+        Print(eLeft + "   -------------------------------------")
+    End Sub
+
 
     Private Sub printItem(ByVal no As String, code As String, desc As String, qty As String, amount As String)
         'no=5; code=18; qty=2; amount=15
