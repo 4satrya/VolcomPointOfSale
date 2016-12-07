@@ -185,8 +185,7 @@
         Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
         Print(eInit + eCentre + Chr(27) + Chr(33) + Chr(16) + data.Rows(0)("header_closing").ToString)
         Print(eNmlText + Chr(27) + Chr(77) + "1" + data.Rows(0)("header_1").ToString)
-        Print(Chr(27) + Chr(77) + "1" + data.Rows(0)("header_2").ToString + eLeft)
-        PrintDashes()
+        Print(Chr(27) + Chr(77) + "1" + data.Rows(0)("header_2").ToString)
     End Sub
 
     Private Sub PrintBody(ByVal id_pos As String)
@@ -271,30 +270,36 @@
         Print(eLeft + "========================================")
         Print(eLeft + "Date      : " + dt_main.Rows(0)("open_shift_display").ToString)
         Print(eLeft + "Cashier   : " + dt_main.Rows(0)("username").ToString)
-        Print(eLeft + "Shift     : " + dt_main.Rows(0)("shift_type").ToString + Chr(13) + eRight + "POS#" + dt_main.Rows(0)("pos_dev").ToString))
+        Print(eLeft + "Shift     : " + dt_main.Rows(0)("shift_type").ToString + Chr(13) + eRight + "POS#" + dt_main.Rows(0)("pos_dev").ToString)
         Print(eLeft + "========================================")
 
         Dim sal As New ClassPOS()
         Dim query_sal As String = sal.querySal("AND  p.id_shift=" + id_shift + " AND p.id_pos_status=2", "p.id_pos ASC", "p.id_shift")
         Dim dt_sal As DataTable = execute_query(query_sal, -1, True, "", "", "", "")
 
-        Print(eLeft + "a. Gross Sale Before Disc....." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("subtotal").ToString()).ToString("N2"))
-        Print(eLeft + "b. Discount..................." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("discount").ToString()).ToString("N2"))
-        Print(eLeft + "c. Gross Sale After Discount.." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("after_discount").ToString()).ToString("N2"))
-        Print(eLeft + "d. Tax........................" + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("tax").ToString()).ToString("N2"))
-        Print(eLeft + "e. Netto......................" + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("total").ToString()).ToString("N2"))
-        Print(eLeft + "f. Card......................." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("card").ToString()).ToString("N2"))
-        Print(eLeft + "g. Voucher...................." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("voucher").ToString()).ToString("N2"))
-        Print(eLeft + "h. Cash in Drawer............." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("cash_in_drawer").ToString()).ToString("N2"))
+        Print(eLeft + "a. Gross Sale Before Disc.." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("subtotal").ToString()).ToString("N0"))
+        Print(eLeft + "b. Discount................" + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("discount").ToString()).ToString("N0"))
+        Print(eRight + "----------")
+        Print(eLeft + "c. Gross Sale After Disc..." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("after_discount").ToString()).ToString("N0"))
+        Print(eLeft + "d. Tax....................." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("tax").ToString()).ToString("N0"))
+        Print(eRight + "----------")
+        Print(eLeft + "e. Netto..................." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("total").ToString()).ToString("N0"))
+        Print(eLeft + "")
+        Print(eLeft + "f. Card...................." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("card").ToString()).ToString("N0"))
+        Print(eLeft + "g. Voucher................." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("voucher").ToString()).ToString("N0"))
+        Print(eRight + "----------")
+        Print(eLeft + "h. Cash in Drawer.........." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("cash_in_drawer").ToString()).ToString("N0"))
+        Print(eLeft + "")
 
         'refund
         Print(eLeft + "i. Refund List :")
-        Print(eLeft + "   No    Ref    Time    Qty      Amount")
+        Print(eLeft + "   No  Ref      Time  Qty         Amount")
         Print(eLeft + "   -------------------------------------")
-        'Print(eLeft + "   1  1000851 18:50:04  100   99.900.000")
+        'Print(eLeft + "   100 10008511 18:50 100 99.999.900.000")
         Dim qrf As String = sal.queryMain("AND p.id_shift=" + id_shift + " AND p.id_pos_cat=2 AND p.id_pos_status=2", "1")
         Dim dtf As DataTable = execute_query(qrf, -1, True, "", "", "", "")
         Dim total_refund As Decimal = 0
+        Dim total_qty_refund As Decimal = 0
         If dtf.Rows.Count > 0 Then
             Dim no_refund As Integer = 1
             For i As Integer = 0 To dtf.Rows.Count - 1
@@ -308,8 +313,19 @@
                     no = no_refund.ToString
                 End If
 
+                'number
+                Dim ref_max As Integer = 8
+                Dim ref As String = dtf.Rows(i)("pos_ref_number").ToString
+                If ref.Length < ref_max Then
+                    For c = 1 To (ref_max - ref.Length)
+                        ref += " "
+                    Next
+                Else
+                    ref = ref
+                End If
+
                 'qty
-                Dim qty As String = Decimal.Parse(dtf.Rows(i)("total_qty").ToString).ToString("N0")
+                Dim qty As String = Decimal.Parse(dtf.Rows(i)("total_qty_refund").ToString).ToString("N0")
                 If qty.ToString.Length = 1 Then
                     qty = "  " + qty.ToString
                 ElseIf no_refund.ToString.Length = 2 Then
@@ -317,20 +333,52 @@
                 Else
                     qty = qty.ToString
                 End If
+                total_qty_refund += dtf.Rows(i)("total_qty_refund")
 
-                Print(eLeft + "   " + no + dtf.Rows(i)("pos_ref_number").ToString + " " + DateTime.Parse(dtf.Rows(i)("pos_date").ToString).ToString("HH:mm:ss") + "  " + qty + Chr(13) + eRight + Decimal.Parse(dtf.Rows(i)("total_refund").ToString).ToString("N2"))
+                'total
+                Dim total_max As Integer = 14
+                Dim total As String = Decimal.Parse(dtf.Rows(i)("total_refund").ToString).ToString("N0")
+                If total.Length < total_max Then
+                    For a = 1 To (total_max - total.Length)
+                        total = " " + total
+                    Next
+                Else
+                    total = total
+                End If
                 total_refund += dtf.Rows(i)("total_refund")
+
+                Print(eLeft + "   " + no + " " + ref + " " + DateTime.Parse(dtf.Rows(i)("pos_date").ToString).ToString("HH:mm") + " " + qty + " " + total)
                 no_refund += 1
             Next
         End If
         Print(eRight + "----------")
-        Print(eLeft + "  Total......................." + Chr(13) + eRight + Decimal.Parse(total_refund.ToString).ToString("N2"))
+        'total qty display
+        Dim total_qty_refund_d As String = Decimal.Parse(total_qty_refund).ToString("N0")
+        If total_qty_refund_d.ToString.Length = 1 Then
+            total_qty_refund_d = "  " + total_qty_refund_d.ToString
+        ElseIf total_qty_refund_d.ToString.Length = 2 Then
+            total_qty_refund_d = " " + total_qty_refund_d.ToString
+        Else
+            total_qty_refund_d = total_qty_refund_d.ToString
+        End If
+        'total refund display
+        Dim total_display_max As Integer = 14
+        Dim total_refund_d As String = Decimal.Parse(total_refund).ToString("N0")
+        If total_refund_d.Length < total_display_max Then
+            For a = 1 To (total_display_max - total_refund_d.Length)
+                total_refund_d = " " + total_refund_d
+            Next
+        Else
+            total_refund_d = total_refund_d
+        End If
+        Print(eLeft + "   Total............  " + total_qty_refund_d + " " + total_refund_d)
+        Print(eLeft + "")
 
         'voucher
-        Print(eLeft + "j. Voucher List :")
-        Print(eLeft + "   No  Voucher#   Ref   Time     Amount")
+        Print(eLeft + "j. Voucher List : ")
+        Print(eLeft + "   No  Voucher# Ref     Time     Amount")
         Print(eLeft + "   -------------------------------------")
-        'Print(eLeft + "   100 16110000 1001158 15:23 999.999.00")
+        'Print(eLeft + "   100 16110000 1001158 15:23 99.999.000")
         Dim qvch As String = sal.queryMain("AND p.id_shift=" + id_shift + " AND p.id_pos_status=2 AND !ISNULL(p.id_voucher)", "1")
         Dim dtvch As DataTable = execute_query(qvch, -1, True, "", "", "", "")
         Dim total_vch As Decimal = 0
@@ -371,7 +419,7 @@
 
                 'voucher
                 Dim vch_max As Integer = 10
-                Dim vch As String = Decimal.Parse(dtvch.Rows(i)("voucher").ToString).ToString("N2")
+                Dim vch As String = Decimal.Parse(dtvch.Rows(i)("voucher").ToString).ToString("N0")
                 If vch.Length < vch_max Then
                     For a = 1 To (vch_max - vch.Length)
                         vch = " " + vch
@@ -382,25 +430,97 @@
                 total_vch += dtvch.Rows(i)("voucher")
 
                 'time
-                Dim time_vch As String = DateTime.Parse(dtf.Rows(i)("pos_date").ToString).ToString("HH:mm:ss")
+                Dim time_vch As String = DateTime.Parse(dtf.Rows(i)("pos_date").ToString).ToString("HH:mm")
 
                 Print(eLeft + "   " + no + " " + number + " " + ref + " " + time_vch + " " + vch)
                 no_vch += 1
             Next
         End If
         Print(eRight + "----------")
-        Print(eLeft + "  Total......................." + Chr(13) + eRight + Decimal.Parse(total_vch.ToString).ToString("N2"))
+        Print(eLeft + "   Total............  " + Chr(13) + eRight + Decimal.Parse(total_vch.ToString).ToString("N0"))
+        Print(eLeft + "")
 
         'statisctic
         Print(eLeft + "k. Statistics :")
         Dim qstt As String = sal.querySal("AND p.id_shift=" + id_shift + " AND p.id_pos_status=2", "p.id_pos ASC", "p.id_pos")
         Dim dtstt As DataTable = execute_query(qstt, -1, True, "", "", "", "")
         Print(eLeft + "   - No. of Transaction : " + dtstt.Rows.Count.ToString)
+        Print(eLeft + "")
 
         'sales performance
         Print(eLeft + "l. Sales Promotion Performance :")
-        Print(eLeft + "   Name              Qty          Amount")
+        Print(eLeft + "   Name                   Qty     Amount")
         Print(eLeft + "   -------------------------------------")
+        'Print(eLeft + "   ABCDEFGHIJKLMNOPQRSTUV 100 99.999.999")
+        Dim qsls As String = sal.querySal("AND p.id_shift=" + id_shift + " AND p.id_pos_status=2", "e.employee_name ASC", "p.id_sales")
+        Dim dtsls As DataTable = execute_query(qsls, -1, True, "", "", "", "")
+        Dim total_sls As Decimal = 0
+        Dim total_qty As Decimal = 0
+        If dtsls.Rows.Count > 0 Then
+            Dim no_sls As Integer = 1
+            For i As Integer = 0 To dtsls.Rows.Count - 1
+                'name
+                Dim name_max As Integer = 22
+                Dim name As String = dtsls.Rows(i)("employee_name").ToString
+                If name.Length < name_max Then
+                    For c = 1 To (name_max - name.Length)
+                        name += " "
+                    Next
+                Else
+                    name = name
+                End If
+
+                'qty
+                Dim qty_max As Integer = 3
+                Dim qty As String = Decimal.Parse(dtsls.Rows(i)("total_qty").ToString).ToString("N0")
+                If qty.Length < qty_max Then
+                    For a = 1 To (qty_max - qty.Length)
+                        qty = " " + qty
+                    Next
+                Else
+                    qty = qty
+                End If
+                total_qty += dtsls.Rows(i)("total_qty")
+
+                'total
+                Dim amount_max As Integer = 10
+                Dim amount As String = Decimal.Parse(dtsls.Rows(i)("total").ToString).ToString("N0")
+                If amount.Length < amount_max Then
+                    For a = 1 To (amount_max - amount.Length)
+                        amount = " " + amount
+                    Next
+                Else
+                    amount = amount
+                End If
+                total_sls += dtsls.Rows(i)("total")
+
+                Print(eLeft + "   " + name.Substring(0, 22) + " " + qty + " " + amount)
+                no_sls += 1
+            Next
+        End If
+        Print(eRight + "----------")
+        'qty display
+        Dim qty_d_max As Integer = 3
+        Dim total_qty_d As String = Decimal.Parse(total_qty.ToString).ToString("N0")
+        If total_qty_d.Length < qty_d_max Then
+            For a = 1 To (qty_d_max - total_qty_d.Length)
+                total_qty_d = " " + total_qty_d
+            Next
+        Else
+            total_qty_d = total_qty_d
+        End If
+        'total sls display
+        Dim total_sls_d_max As Integer = 10
+        Dim total_sls_d As String = Decimal.Parse(total_sls).ToString("N0")
+        If total_sls_d.Length < total_sls_d_max Then
+            For a = 1 To (total_sls_d_max - total_sls_d.Length)
+                total_sls_d = " " + total_sls_d
+            Next
+        Else
+            total_sls_d = total_sls_d
+        End If
+        Print(eLeft + "   Total................. " + total_qty_d + " " + total_sls_d)
+        Print(vbLf)
     End Sub
 
 
@@ -461,6 +581,14 @@
         Print(vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + eCut + eDrawer)
     End Sub
 
+    Private Sub PrintFooterClosing()
+        Dim dt As DateTime = getTimeDB()
+        Print(eLeft + "Supervisor Check :")
+        Print(eLeft + "Date : " + DateTime.Parse(dt.ToString).ToString("dd\/MM\/yyyy"))
+        Print(eLeft + "Time : " + DateTime.Parse(dt.ToString).ToString("HH:mm:ss"))
+        Print(vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + eCut + eDrawer)
+    End Sub
+
     Private Sub Print(Line As String)
         prn.SendStringToPrinter(PrinterName, Line + vbLf)
     End Sub
@@ -491,6 +619,26 @@
             PrintHeaderRefund(id_pos)
             PrintBodyRefund(id_pos)
             PrintFooterRefund()
+            EndPrint()
+        End If
+    End Sub
+
+    Public Sub printClosing(ByVal id_shift As String)
+        StartPrint()
+
+        If prn.PrinterIsOpen = True Then
+            PrintHeaderClosing()
+            PrintBodyClosing(id_shift)
+            PrintFooterClosing()
+            EndPrint()
+        End If
+    End Sub
+
+    Sub cut()
+        StartPrint()
+
+        If prn.PrinterIsOpen = True Then
+            Print(vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + vbLf + eCut + eDrawer)
             EndPrint()
         End If
     End Sub

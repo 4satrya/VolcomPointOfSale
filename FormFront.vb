@@ -50,4 +50,8 @@
         My.Application.Culture.NumberFormat.NumberDecimalSeparator = ","
         My.Application.Culture.NumberFormat.NumberGroupSeparator = "."
     End Sub
+
+    Private Sub FormFront_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+
+    End Sub
 End Class
