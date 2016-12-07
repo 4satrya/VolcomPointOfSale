@@ -49,11 +49,13 @@
         End If
 
         'cek user
-        id_user_shift = dt_open.Rows(0)("id_user").ToString
-        If id_user_shift <> id_user Then
-            stopCustom("User : '" + username_user + "' is active")
-            Close()
-            Exit Sub
+        If id_shift <> "-1" Then
+            id_user_shift = dt_open.Rows(0)("id_user").ToString
+            If id_user_shift <> id_user Then
+                stopCustom("User : '" + username_user + "' is active")
+                Close()
+                Exit Sub
+            End If
         End If
     End Sub
 
@@ -72,7 +74,7 @@
             pickup()
         ElseIf e.KeyCode = Keys.F7 And new_trans = False Then
             drawer()
-        ElseIf e.KeyCode = Keys.F8 Then 'closing
+        ElseIf e.KeyCode = Keys.F8 And new_trans = False Then 'closing
             closing_shift()
         ElseIf e.KeyCode = Keys.F9 Then
             term()
@@ -89,6 +91,14 @@
 
     Sub closing_shift()
         Cursor = Cursors.WaitCursor
+        Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to close this shift?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+        If confirm = DialogResult.Yes Then
+            Dim query As String = "UPDATE tb_shift SET close_shift=NOW(), is_open=2 WHERE id_shift=" + id_shift + " "
+            execute_non_query(query, True, "", "", "", "")
+            Dim prn As New ClassPOS()
+            prn.printClosing(id_shift)
+            Close()
+        End If
         Cursor = Cursors.Default
     End Sub
 
