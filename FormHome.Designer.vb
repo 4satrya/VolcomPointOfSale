@@ -54,7 +54,7 @@ Partial Class FormHome
         Me.TIExit = New DevExpress.XtraEditors.TileItem()
         Me.TileGroup2 = New DevExpress.XtraEditors.TileGroup()
         Me.TIDaily = New DevExpress.XtraEditors.TileItem()
-        Me.TileItem2 = New DevExpress.XtraEditors.TileItem()
+        Me.TITransDetail = New DevExpress.XtraEditors.TileItem()
         Me.TileItem3 = New DevExpress.XtraEditors.TileItem()
         Me.TileItem4 = New DevExpress.XtraEditors.TileItem()
         Me.NavButton2 = New DevExpress.XtraBars.Navigation.NavButton()
@@ -263,7 +263,7 @@ Partial Class FormHome
         'TileGroup2
         '
         Me.TileGroup2.Items.Add(Me.TIDaily)
-        Me.TileGroup2.Items.Add(Me.TileItem2)
+        Me.TileGroup2.Items.Add(Me.TITransDetail)
         Me.TileGroup2.Items.Add(Me.TileItem3)
         Me.TileGroup2.Items.Add(Me.TileItem4)
         Me.TileGroup2.Name = "TileGroup2"
@@ -279,16 +279,16 @@ Partial Class FormHome
         Me.TIDaily.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TIDaily.Name = "TIDaily"
         '
-        'TileItem2
+        'TITransDetail
         '
-        Me.TileItem2.BackgroundImage = CType(resources.GetObject("TileItem2.BackgroundImage"), System.Drawing.Image)
-        Me.TileItem2.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        Me.TITransDetail.BackgroundImage = CType(resources.GetObject("TITransDetail.BackgroundImage"), System.Drawing.Image)
+        Me.TITransDetail.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement11.Text = "Transaction Detail"
         TileItemElement11.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem2.Elements.Add(TileItemElement11)
-        Me.TileItem2.Id = 36
-        Me.TileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
-        Me.TileItem2.Name = "TileItem2"
+        Me.TITransDetail.Elements.Add(TileItemElement11)
+        Me.TITransDetail.Id = 36
+        Me.TITransDetail.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
+        Me.TITransDetail.Name = "TITransDetail"
         '
         'TileItem3
         '
@@ -700,7 +700,7 @@ Partial Class FormHome
     Friend WithEvents SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager
     Friend WithEvents TileGroup2 As DevExpress.XtraEditors.TileGroup
     Friend WithEvents TIDaily As DevExpress.XtraEditors.TileItem
-    Friend WithEvents TileItem2 As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TITransDetail As DevExpress.XtraEditors.TileItem
     Friend WithEvents TileItem3 As DevExpress.XtraEditors.TileItem
     Friend WithEvents TileGroup1 As DevExpress.XtraEditors.TileGroup
     Friend WithEvents TileItem4 As DevExpress.XtraEditors.TileItem

@@ -148,4 +148,10 @@ Public Class FormHome
         FormReportDaily.ShowDialog()
         Cursor = Cursors.Default
     End Sub
+
+    Private Sub TITransDetail_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TITransDetail.ItemClick
+        Cursor = Cursors.WaitCursor
+        FormReportTransDetail.ShowDialog()
+        Cursor = Cursors.Default
+    End Sub
 End Class

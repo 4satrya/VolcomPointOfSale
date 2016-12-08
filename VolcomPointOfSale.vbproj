@@ -253,6 +253,12 @@
     <Compile Include="FormReportDaily.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormReportTransDetail.Designer.vb">
+      <DependentUpon>FormReportTransDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportTransDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormRet.Designer.vb">
       <DependentUpon>FormRet.vb</DependentUpon>
     </Compile>
@@ -471,6 +477,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormReportDaily.resx">
       <DependentUpon>FormReportDaily.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportTransDetail.resx">
+      <DependentUpon>FormReportTransDetail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRet.resx">
       <DependentUpon>FormRet.vb</DependentUpon>
