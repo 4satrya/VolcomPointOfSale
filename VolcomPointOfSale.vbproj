@@ -383,6 +383,12 @@
     <Compile Include="ReportStockCard.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ReportTransDetail.Designer.vb">
+      <DependentUpon>ReportTransDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportTransDetail.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportTrf.Designer.vb">
       <DependentUpon>ReportTrf.vb</DependentUpon>
     </Compile>
@@ -539,6 +545,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportStockCard.resx">
       <DependentUpon>ReportStockCard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportTransDetail.resx">
+      <DependentUpon>ReportTransDetail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportTrf.resx">
       <DependentUpon>ReportTrf.vb</DependentUpon>
