@@ -41,7 +41,7 @@
         p.subtotal, p.discount, p.tax, p.total,(p.total*-1) AS `total_refund`, 
         CAST(((100/(100+o.tax))*p.total) AS DECIMAL(15,0)) AS `kena_ppn`,
         CAST(((o.tax/(100+o.tax))*p.total) AS DECIMAL(15,0)) AS `ppn`,
-        p.id_voucher, p.voucher_number, p.voucher, p.point, p.cash, 
+        p.id_voucher, p.voucher_number, p.voucher, p.point, p.cash, (p.total-(p.card+p.voucher)) AS `cash_drawer`,
         p.card, p.id_card_type, card.card_type, p.card_number, p.card_name, p.`change`, p.`total_qty`, (p.`total_qty`*-1) AS `total_qty_refund`,
         p.id_sales, emp.employee_code AS `sales_number`, emp.employee_name AS `sales_name`, p.id_country, cty.country,p.is_payment_ok
         FROM tb_pos p 

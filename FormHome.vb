@@ -142,4 +142,10 @@ Public Class FormHome
         FormTrf.ShowDialog()
         Cursor = Cursors.Default
     End Sub
+
+    Private Sub TIDaily_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIDaily.ItemClick
+        Cursor = Cursors.WaitCursor
+        FormReportDaily.ShowDialog()
+        Cursor = Cursors.Default
+    End Sub
 End Class

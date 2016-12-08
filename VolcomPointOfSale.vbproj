@@ -68,6 +68,8 @@
     <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v15.1.Extensions, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.1.Core, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -243,6 +245,12 @@
       <DependentUpon>FormRecDet.vb</DependentUpon>
     </Compile>
     <Compile Include="FormRecDet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportDaily.Designer.vb">
+      <DependentUpon>FormReportDaily.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportDaily.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormRet.Designer.vb">
@@ -454,6 +462,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRecDet.resx">
       <DependentUpon>FormRecDet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportDaily.resx">
+      <DependentUpon>FormReportDaily.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRet.resx">
       <DependentUpon>FormRet.vb</DependentUpon>
