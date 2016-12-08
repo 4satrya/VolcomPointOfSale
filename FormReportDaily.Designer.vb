@@ -20,7 +20,7 @@ Partial Class FormReportDaily
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormReportDaily))
-        Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
+        Me.PanelControlTitle = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlBack = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
@@ -31,21 +31,40 @@ Partial Class FormReportDaily
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
         Me.GCDaily = New DevExpress.XtraGrid.GridControl()
         Me.GVDaily = New DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView()
+        Me.gridBand1 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.BandedGridColumnNo = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand2 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.BandedGridColumnTrs = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand12 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.BandedGridColumnRef = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand8 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.BandedGridColumnCategory = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand9 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.BandedGridColumnStatus = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand15 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.BandedGridColumnQty = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand10 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.BandedGridColumnSubtotal = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand11 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.BandedGridColumnDiscount = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand13 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.BandedGridColumnTotal = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand14 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.BandedGridColumnCashInDrawer = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand5 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.gridBand16 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.BandedGridColumnCard = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand6 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.BandedGridColumnType = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand7 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.BandedGridColumnCardNumber = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand3 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.BandedGridColumnCardName = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
-        Me.BandedGridColumnVoucherNumber = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand4 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.gridBand18 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.BandedGridColumnVoucher = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand17 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.BandedGridColumnVoucherNumber = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
         Me.PanelControlStock = New DevExpress.XtraEditors.PanelControl()
         Me.LEStatus = New DevExpress.XtraEditors.LookUpEdit()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
@@ -56,27 +75,8 @@ Partial Class FormReportDaily
         Me.DEUntil = New DevExpress.XtraEditors.DateEdit()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.DEFrom = New DevExpress.XtraEditors.DateEdit()
-        Me.BandedGridColumnCard = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
-        Me.gridBand1 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand2 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand12 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand8 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand9 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand15 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand10 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand11 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand13 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand14 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand5 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand16 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand6 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand7 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand3 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand4 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand18 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.gridBand17 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControl3.SuspendLayout()
+        CType(Me.PanelControlTitle, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControlTitle.SuspendLayout()
         CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
@@ -94,16 +94,16 @@ Partial Class FormReportDaily
         CType(Me.DEFrom.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'PanelControl3
+        'PanelControlTitle
         '
-        Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControl3.Controls.Add(Me.LabelControl13)
-        Me.PanelControl3.Controls.Add(Me.PanelControlBack)
-        Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl3.Location = New System.Drawing.Point(20, 20)
-        Me.PanelControl3.Name = "PanelControl3"
-        Me.PanelControl3.Size = New System.Drawing.Size(815, 54)
-        Me.PanelControl3.TabIndex = 4
+        Me.PanelControlTitle.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControlTitle.Controls.Add(Me.LabelControl13)
+        Me.PanelControlTitle.Controls.Add(Me.PanelControlBack)
+        Me.PanelControlTitle.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelControlTitle.Location = New System.Drawing.Point(20, 20)
+        Me.PanelControlTitle.Name = "PanelControlTitle"
+        Me.PanelControlTitle.Size = New System.Drawing.Size(815, 61)
+        Me.PanelControlTitle.TabIndex = 4
         '
         'LabelControl13
         '
@@ -112,8 +112,8 @@ Partial Class FormReportDaily
         Me.LabelControl13.Dock = System.Windows.Forms.DockStyle.Left
         Me.LabelControl13.Location = New System.Drawing.Point(40, 0)
         Me.LabelControl13.Name = "LabelControl13"
-        Me.LabelControl13.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
-        Me.LabelControl13.Size = New System.Drawing.Size(195, 43)
+        Me.LabelControl13.Padding = New System.Windows.Forms.Padding(5, 9, 0, 0)
+        Me.LabelControl13.Size = New System.Drawing.Size(195, 46)
         Me.LabelControl13.TabIndex = 1
         Me.LabelControl13.Text = "Daily Transaction"
         '
@@ -124,7 +124,7 @@ Partial Class FormReportDaily
         Me.PanelControlBack.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelControlBack.Location = New System.Drawing.Point(0, 0)
         Me.PanelControlBack.Name = "PanelControlBack"
-        Me.PanelControlBack.Size = New System.Drawing.Size(40, 54)
+        Me.PanelControlBack.Size = New System.Drawing.Size(40, 61)
         Me.PanelControlBack.TabIndex = 4
         '
         'PanelControl1
@@ -145,9 +145,9 @@ Partial Class FormReportDaily
         Me.PanelControl2.Controls.Add(Me.LabelControl8)
         Me.PanelControl2.Controls.Add(Me.LabelControl9)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControl2.Location = New System.Drawing.Point(678, 0)
+        Me.PanelControl2.Location = New System.Drawing.Point(684, 0)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(137, 35)
+        Me.PanelControl2.Size = New System.Drawing.Size(131, 35)
         Me.PanelControl2.TabIndex = 8
         '
         'LabelControl11
@@ -171,7 +171,7 @@ Partial Class FormReportDaily
         'LabelControl8
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(101, 11)
+        Me.LabelControl8.Location = New System.Drawing.Point(95, 11)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(28, 13)
         Me.LabelControl8.TabIndex = 15
@@ -180,7 +180,7 @@ Partial Class FormReportDaily
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(79, 11)
+        Me.LabelControl9.Location = New System.Drawing.Point(73, 11)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(16, 13)
         Me.LabelControl9.TabIndex = 14
@@ -189,12 +189,12 @@ Partial Class FormReportDaily
         'GCDaily
         '
         Me.GCDaily.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GCDaily.Location = New System.Drawing.Point(20, 115)
+        Me.GCDaily.Location = New System.Drawing.Point(20, 122)
         Me.GCDaily.LookAndFeel.SkinName = "Office 2010 Silver"
         Me.GCDaily.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCDaily.MainView = Me.GVDaily
         Me.GCDaily.Name = "GCDaily"
-        Me.GCDaily.Size = New System.Drawing.Size(815, 258)
+        Me.GCDaily.Size = New System.Drawing.Size(815, 251)
         Me.GCDaily.TabIndex = 6
         Me.GCDaily.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVDaily})
         '
@@ -203,10 +203,19 @@ Partial Class FormReportDaily
         Me.GVDaily.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.gridBand1, Me.gridBand2, Me.gridBand12, Me.gridBand8, Me.gridBand9, Me.gridBand15, Me.gridBand10, Me.gridBand11, Me.gridBand13, Me.gridBand14, Me.gridBand5, Me.gridBand4})
         Me.GVDaily.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.BandedGridColumnNo, Me.BandedGridColumnTrs, Me.BandedGridColumnType, Me.BandedGridColumnCard, Me.BandedGridColumnCardNumber, Me.BandedGridColumnCardName, Me.BandedGridColumnVoucher, Me.BandedGridColumnVoucherNumber, Me.BandedGridColumnCategory, Me.BandedGridColumnStatus, Me.BandedGridColumnRef, Me.BandedGridColumnSubtotal, Me.BandedGridColumnDiscount, Me.BandedGridColumnTotal, Me.BandedGridColumnCashInDrawer, Me.BandedGridColumnQty})
         Me.GVDaily.GridControl = Me.GCDaily
+        Me.GVDaily.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "total_qty", Me.BandedGridColumnQty, "{0:n2}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "subtotal", Me.BandedGridColumnSubtotal, "{0:n2}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "discount", Me.BandedGridColumnDiscount, "{0:n2}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "total", Me.BandedGridColumnTotal, "{0:n2}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cash_drawer", Me.BandedGridColumnCashInDrawer, "{0:n2}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "card", Me.BandedGridColumnCard, "{0:n2}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "voucher", Me.BandedGridColumnVoucher, "{0:n2}")})
         Me.GVDaily.Name = "GVDaily"
         Me.GVDaily.OptionsBehavior.Editable = False
         Me.GVDaily.OptionsView.ShowFooter = True
         Me.GVDaily.OptionsView.ShowGroupPanel = False
+        '
+        'gridBand1
+        '
+        Me.gridBand1.Caption = "No"
+        Me.gridBand1.Columns.Add(Me.BandedGridColumnNo)
+        Me.gridBand1.Name = "gridBand1"
+        Me.gridBand1.VisibleIndex = 0
+        Me.gridBand1.Width = 43
         '
         'BandedGridColumnNo
         '
@@ -216,13 +225,29 @@ Partial Class FormReportDaily
         Me.BandedGridColumnNo.Visible = True
         Me.BandedGridColumnNo.Width = 43
         '
+        'gridBand2
+        '
+        Me.gridBand2.Caption = "TRS#"
+        Me.gridBand2.Columns.Add(Me.BandedGridColumnTrs)
+        Me.gridBand2.Name = "gridBand2"
+        Me.gridBand2.VisibleIndex = 1
+        Me.gridBand2.Width = 100
+        '
         'BandedGridColumnTrs
         '
         Me.BandedGridColumnTrs.Caption = " "
         Me.BandedGridColumnTrs.FieldName = "pos_number"
         Me.BandedGridColumnTrs.Name = "BandedGridColumnTrs"
         Me.BandedGridColumnTrs.Visible = True
-        Me.BandedGridColumnTrs.Width = 55
+        Me.BandedGridColumnTrs.Width = 100
+        '
+        'gridBand12
+        '
+        Me.gridBand12.Caption = "REF#"
+        Me.gridBand12.Columns.Add(Me.BandedGridColumnRef)
+        Me.gridBand12.Name = "gridBand12"
+        Me.gridBand12.VisibleIndex = 2
+        Me.gridBand12.Width = 100
         '
         'BandedGridColumnRef
         '
@@ -230,7 +255,15 @@ Partial Class FormReportDaily
         Me.BandedGridColumnRef.FieldName = "pos_ref_number"
         Me.BandedGridColumnRef.Name = "BandedGridColumnRef"
         Me.BandedGridColumnRef.Visible = True
-        Me.BandedGridColumnRef.Width = 55
+        Me.BandedGridColumnRef.Width = 100
+        '
+        'gridBand8
+        '
+        Me.gridBand8.Caption = "CATEGORY"
+        Me.gridBand8.Columns.Add(Me.BandedGridColumnCategory)
+        Me.gridBand8.Name = "gridBand8"
+        Me.gridBand8.VisibleIndex = 3
+        Me.gridBand8.Width = 63
         '
         'BandedGridColumnCategory
         '
@@ -238,7 +271,15 @@ Partial Class FormReportDaily
         Me.BandedGridColumnCategory.FieldName = "pos_cat"
         Me.BandedGridColumnCategory.Name = "BandedGridColumnCategory"
         Me.BandedGridColumnCategory.Visible = True
-        Me.BandedGridColumnCategory.Width = 54
+        Me.BandedGridColumnCategory.Width = 63
+        '
+        'gridBand9
+        '
+        Me.gridBand9.Caption = "STATUS"
+        Me.gridBand9.Columns.Add(Me.BandedGridColumnStatus)
+        Me.gridBand9.Name = "gridBand9"
+        Me.gridBand9.VisibleIndex = 4
+        Me.gridBand9.Width = 57
         '
         'BandedGridColumnStatus
         '
@@ -247,6 +288,16 @@ Partial Class FormReportDaily
         Me.BandedGridColumnStatus.Name = "BandedGridColumnStatus"
         Me.BandedGridColumnStatus.Visible = True
         Me.BandedGridColumnStatus.Width = 57
+        '
+        'gridBand15
+        '
+        Me.gridBand15.AppearanceHeader.Options.UseTextOptions = True
+        Me.gridBand15.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.gridBand15.Caption = "QTY"
+        Me.gridBand15.Columns.Add(Me.BandedGridColumnQty)
+        Me.gridBand15.Name = "gridBand15"
+        Me.gridBand15.VisibleIndex = 5
+        Me.gridBand15.Width = 45
         '
         'BandedGridColumnQty
         '
@@ -259,6 +310,16 @@ Partial Class FormReportDaily
         Me.BandedGridColumnQty.Visible = True
         Me.BandedGridColumnQty.Width = 45
         '
+        'gridBand10
+        '
+        Me.gridBand10.AppearanceHeader.Options.UseTextOptions = True
+        Me.gridBand10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.gridBand10.Caption = "SUBTOTAL"
+        Me.gridBand10.Columns.Add(Me.BandedGridColumnSubtotal)
+        Me.gridBand10.Name = "gridBand10"
+        Me.gridBand10.VisibleIndex = 6
+        Me.gridBand10.Width = 75
+        '
         'BandedGridColumnSubtotal
         '
         Me.BandedGridColumnSubtotal.Caption = " "
@@ -268,6 +329,16 @@ Partial Class FormReportDaily
         Me.BandedGridColumnSubtotal.Name = "BandedGridColumnSubtotal"
         Me.BandedGridColumnSubtotal.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "subtotal", "{0:n2}")})
         Me.BandedGridColumnSubtotal.Visible = True
+        '
+        'gridBand11
+        '
+        Me.gridBand11.AppearanceHeader.Options.UseTextOptions = True
+        Me.gridBand11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.gridBand11.Caption = "DISCOUNT"
+        Me.gridBand11.Columns.Add(Me.BandedGridColumnDiscount)
+        Me.gridBand11.Name = "gridBand11"
+        Me.gridBand11.VisibleIndex = 7
+        Me.gridBand11.Width = 94
         '
         'BandedGridColumnDiscount
         '
@@ -280,6 +351,16 @@ Partial Class FormReportDaily
         Me.BandedGridColumnDiscount.Visible = True
         Me.BandedGridColumnDiscount.Width = 94
         '
+        'gridBand13
+        '
+        Me.gridBand13.AppearanceHeader.Options.UseTextOptions = True
+        Me.gridBand13.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.gridBand13.Caption = "TOTAL"
+        Me.gridBand13.Columns.Add(Me.BandedGridColumnTotal)
+        Me.gridBand13.Name = "gridBand13"
+        Me.gridBand13.VisibleIndex = 8
+        Me.gridBand13.Width = 111
+        '
         'BandedGridColumnTotal
         '
         Me.BandedGridColumnTotal.Caption = " "
@@ -290,6 +371,16 @@ Partial Class FormReportDaily
         Me.BandedGridColumnTotal.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "total", "{0:N2}")})
         Me.BandedGridColumnTotal.Visible = True
         Me.BandedGridColumnTotal.Width = 111
+        '
+        'gridBand14
+        '
+        Me.gridBand14.AppearanceHeader.Options.UseTextOptions = True
+        Me.gridBand14.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.gridBand14.Caption = "CASH IN DRAWER"
+        Me.gridBand14.Columns.Add(Me.BandedGridColumnCashInDrawer)
+        Me.gridBand14.Name = "gridBand14"
+        Me.gridBand14.VisibleIndex = 9
+        Me.gridBand14.Width = 106
         '
         'BandedGridColumnCashInDrawer
         '
@@ -302,13 +393,60 @@ Partial Class FormReportDaily
         Me.BandedGridColumnCashInDrawer.Visible = True
         Me.BandedGridColumnCashInDrawer.Width = 106
         '
+        'gridBand5
+        '
+        Me.gridBand5.AppearanceHeader.Options.UseTextOptions = True
+        Me.gridBand5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.gridBand5.Caption = "CARD"
+        Me.gridBand5.Children.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.gridBand16, Me.gridBand6, Me.gridBand7, Me.gridBand3})
+        Me.gridBand5.Name = "gridBand5"
+        Me.gridBand5.VisibleIndex = 10
+        Me.gridBand5.Width = 300
+        '
+        'gridBand16
+        '
+        Me.gridBand16.AppearanceHeader.Options.UseTextOptions = True
+        Me.gridBand16.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.gridBand16.Caption = "AMOUNT"
+        Me.gridBand16.Columns.Add(Me.BandedGridColumnCard)
+        Me.gridBand16.Name = "gridBand16"
+        Me.gridBand16.VisibleIndex = 0
+        Me.gridBand16.Width = 66
+        '
+        'BandedGridColumnCard
+        '
+        Me.BandedGridColumnCard.Caption = " "
+        Me.BandedGridColumnCard.DisplayFormat.FormatString = "{0:n2}"
+        Me.BandedGridColumnCard.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.BandedGridColumnCard.FieldName = "card"
+        Me.BandedGridColumnCard.Name = "BandedGridColumnCard"
+        Me.BandedGridColumnCard.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "card", "{0:n2}")})
+        Me.BandedGridColumnCard.Visible = True
+        Me.BandedGridColumnCard.Width = 66
+        '
+        'gridBand6
+        '
+        Me.gridBand6.Caption = "TYPE"
+        Me.gridBand6.Columns.Add(Me.BandedGridColumnType)
+        Me.gridBand6.Name = "gridBand6"
+        Me.gridBand6.VisibleIndex = 1
+        Me.gridBand6.Width = 58
+        '
         'BandedGridColumnType
         '
         Me.BandedGridColumnType.Caption = " "
         Me.BandedGridColumnType.FieldName = "card_type"
         Me.BandedGridColumnType.Name = "BandedGridColumnType"
         Me.BandedGridColumnType.Visible = True
-        Me.BandedGridColumnType.Width = 43
+        Me.BandedGridColumnType.Width = 58
+        '
+        'gridBand7
+        '
+        Me.gridBand7.Caption = "NUMBER"
+        Me.gridBand7.Columns.Add(Me.BandedGridColumnCardNumber)
+        Me.gridBand7.Name = "gridBand7"
+        Me.gridBand7.VisibleIndex = 2
+        Me.gridBand7.Width = 92
         '
         'BandedGridColumnCardNumber
         '
@@ -316,7 +454,15 @@ Partial Class FormReportDaily
         Me.BandedGridColumnCardNumber.FieldName = "card_number"
         Me.BandedGridColumnCardNumber.Name = "BandedGridColumnCardNumber"
         Me.BandedGridColumnCardNumber.Visible = True
-        Me.BandedGridColumnCardNumber.Width = 31
+        Me.BandedGridColumnCardNumber.Width = 92
+        '
+        'gridBand3
+        '
+        Me.gridBand3.Caption = "NAME"
+        Me.gridBand3.Columns.Add(Me.BandedGridColumnCardName)
+        Me.gridBand3.Name = "gridBand3"
+        Me.gridBand3.VisibleIndex = 3
+        Me.gridBand3.Width = 84
         '
         'BandedGridColumnCardName
         '
@@ -326,6 +472,45 @@ Partial Class FormReportDaily
         Me.BandedGridColumnCardName.Visible = True
         Me.BandedGridColumnCardName.Width = 84
         '
+        'gridBand4
+        '
+        Me.gridBand4.AppearanceHeader.Options.UseTextOptions = True
+        Me.gridBand4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.gridBand4.Caption = "VOUCHER"
+        Me.gridBand4.Children.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.gridBand18, Me.gridBand17})
+        Me.gridBand4.Name = "gridBand4"
+        Me.gridBand4.VisibleIndex = 11
+        Me.gridBand4.Width = 169
+        '
+        'gridBand18
+        '
+        Me.gridBand18.AppearanceHeader.Options.UseTextOptions = True
+        Me.gridBand18.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.gridBand18.Caption = "AMOUNT"
+        Me.gridBand18.Columns.Add(Me.BandedGridColumnVoucher)
+        Me.gridBand18.Name = "gridBand18"
+        Me.gridBand18.VisibleIndex = 0
+        Me.gridBand18.Width = 103
+        '
+        'BandedGridColumnVoucher
+        '
+        Me.BandedGridColumnVoucher.Caption = " "
+        Me.BandedGridColumnVoucher.DisplayFormat.FormatString = "{0:n2}"
+        Me.BandedGridColumnVoucher.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.BandedGridColumnVoucher.FieldName = "voucher"
+        Me.BandedGridColumnVoucher.Name = "BandedGridColumnVoucher"
+        Me.BandedGridColumnVoucher.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "voucher", "{0:n2}")})
+        Me.BandedGridColumnVoucher.Visible = True
+        Me.BandedGridColumnVoucher.Width = 103
+        '
+        'gridBand17
+        '
+        Me.gridBand17.Caption = "VOUCHER#"
+        Me.gridBand17.Columns.Add(Me.BandedGridColumnVoucherNumber)
+        Me.gridBand17.Name = "gridBand17"
+        Me.gridBand17.VisibleIndex = 1
+        Me.gridBand17.Width = 66
+        '
         'BandedGridColumnVoucherNumber
         '
         Me.BandedGridColumnVoucherNumber.AutoFillDown = True
@@ -334,14 +519,6 @@ Partial Class FormReportDaily
         Me.BandedGridColumnVoucherNumber.Name = "BandedGridColumnVoucherNumber"
         Me.BandedGridColumnVoucherNumber.Visible = True
         Me.BandedGridColumnVoucherNumber.Width = 66
-        '
-        'BandedGridColumnVoucher
-        '
-        Me.BandedGridColumnVoucher.Caption = " "
-        Me.BandedGridColumnVoucher.FieldName = "voucher"
-        Me.BandedGridColumnVoucher.Name = "BandedGridColumnVoucher"
-        Me.BandedGridColumnVoucher.Visible = True
-        Me.BandedGridColumnVoucher.Width = 103
         '
         'PanelControlStock
         '
@@ -355,7 +532,7 @@ Partial Class FormReportDaily
         Me.PanelControlStock.Controls.Add(Me.LabelControl3)
         Me.PanelControlStock.Controls.Add(Me.DEFrom)
         Me.PanelControlStock.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControlStock.Location = New System.Drawing.Point(20, 74)
+        Me.PanelControlStock.Location = New System.Drawing.Point(20, 81)
         Me.PanelControlStock.Name = "PanelControlStock"
         Me.PanelControlStock.Size = New System.Drawing.Size(815, 41)
         Me.PanelControlStock.TabIndex = 7
@@ -469,179 +646,6 @@ Partial Class FormReportDaily
         Me.DEFrom.TabIndex = 0
         Me.DEFrom.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information
         '
-        'BandedGridColumnCard
-        '
-        Me.BandedGridColumnCard.Caption = " "
-        Me.BandedGridColumnCard.DisplayFormat.FormatString = "{0:n2}"
-        Me.BandedGridColumnCard.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.BandedGridColumnCard.FieldName = "card"
-        Me.BandedGridColumnCard.Name = "BandedGridColumnCard"
-        Me.BandedGridColumnCard.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "card", "{0:n2}")})
-        Me.BandedGridColumnCard.Visible = True
-        Me.BandedGridColumnCard.Width = 50
-        '
-        'gridBand1
-        '
-        Me.gridBand1.Caption = "No"
-        Me.gridBand1.Columns.Add(Me.BandedGridColumnNo)
-        Me.gridBand1.Name = "gridBand1"
-        Me.gridBand1.VisibleIndex = 0
-        Me.gridBand1.Width = 43
-        '
-        'gridBand2
-        '
-        Me.gridBand2.Caption = "TRS#"
-        Me.gridBand2.Columns.Add(Me.BandedGridColumnTrs)
-        Me.gridBand2.Name = "gridBand2"
-        Me.gridBand2.VisibleIndex = 1
-        Me.gridBand2.Width = 55
-        '
-        'gridBand12
-        '
-        Me.gridBand12.Caption = "REF#"
-        Me.gridBand12.Columns.Add(Me.BandedGridColumnRef)
-        Me.gridBand12.Name = "gridBand12"
-        Me.gridBand12.VisibleIndex = 2
-        Me.gridBand12.Width = 55
-        '
-        'gridBand8
-        '
-        Me.gridBand8.Caption = "CATEGORY"
-        Me.gridBand8.Columns.Add(Me.BandedGridColumnCategory)
-        Me.gridBand8.Name = "gridBand8"
-        Me.gridBand8.VisibleIndex = 3
-        Me.gridBand8.Width = 54
-        '
-        'gridBand9
-        '
-        Me.gridBand9.Caption = "STATUS"
-        Me.gridBand9.Columns.Add(Me.BandedGridColumnStatus)
-        Me.gridBand9.Name = "gridBand9"
-        Me.gridBand9.VisibleIndex = 4
-        Me.gridBand9.Width = 57
-        '
-        'gridBand15
-        '
-        Me.gridBand15.AppearanceHeader.Options.UseTextOptions = True
-        Me.gridBand15.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.gridBand15.Caption = "QTY"
-        Me.gridBand15.Columns.Add(Me.BandedGridColumnQty)
-        Me.gridBand15.Name = "gridBand15"
-        Me.gridBand15.VisibleIndex = 5
-        Me.gridBand15.Width = 45
-        '
-        'gridBand10
-        '
-        Me.gridBand10.AppearanceHeader.Options.UseTextOptions = True
-        Me.gridBand10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.gridBand10.Caption = "SUBTOTAL"
-        Me.gridBand10.Columns.Add(Me.BandedGridColumnSubtotal)
-        Me.gridBand10.Name = "gridBand10"
-        Me.gridBand10.VisibleIndex = 6
-        Me.gridBand10.Width = 75
-        '
-        'gridBand11
-        '
-        Me.gridBand11.AppearanceHeader.Options.UseTextOptions = True
-        Me.gridBand11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.gridBand11.Caption = "DISCOUNT"
-        Me.gridBand11.Columns.Add(Me.BandedGridColumnDiscount)
-        Me.gridBand11.Name = "gridBand11"
-        Me.gridBand11.VisibleIndex = 7
-        Me.gridBand11.Width = 94
-        '
-        'gridBand13
-        '
-        Me.gridBand13.AppearanceHeader.Options.UseTextOptions = True
-        Me.gridBand13.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.gridBand13.Caption = "TOTAL"
-        Me.gridBand13.Columns.Add(Me.BandedGridColumnTotal)
-        Me.gridBand13.Name = "gridBand13"
-        Me.gridBand13.VisibleIndex = 8
-        Me.gridBand13.Width = 111
-        '
-        'gridBand14
-        '
-        Me.gridBand14.AppearanceHeader.Options.UseTextOptions = True
-        Me.gridBand14.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.gridBand14.Caption = "CASH IN DRAWER"
-        Me.gridBand14.Columns.Add(Me.BandedGridColumnCashInDrawer)
-        Me.gridBand14.Name = "gridBand14"
-        Me.gridBand14.VisibleIndex = 9
-        Me.gridBand14.Width = 106
-        '
-        'gridBand5
-        '
-        Me.gridBand5.AppearanceHeader.Options.UseTextOptions = True
-        Me.gridBand5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.gridBand5.Caption = "CARD"
-        Me.gridBand5.Children.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.gridBand16, Me.gridBand6, Me.gridBand7, Me.gridBand3})
-        Me.gridBand5.Name = "gridBand5"
-        Me.gridBand5.VisibleIndex = 10
-        Me.gridBand5.Width = 208
-        '
-        'gridBand16
-        '
-        Me.gridBand16.AppearanceHeader.Options.UseTextOptions = True
-        Me.gridBand16.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.gridBand16.Caption = "AMOUNT"
-        Me.gridBand16.Columns.Add(Me.BandedGridColumnCard)
-        Me.gridBand16.Name = "gridBand16"
-        Me.gridBand16.VisibleIndex = 0
-        Me.gridBand16.Width = 50
-        '
-        'gridBand6
-        '
-        Me.gridBand6.Caption = "TYPE"
-        Me.gridBand6.Columns.Add(Me.BandedGridColumnType)
-        Me.gridBand6.Name = "gridBand6"
-        Me.gridBand6.VisibleIndex = 1
-        Me.gridBand6.Width = 43
-        '
-        'gridBand7
-        '
-        Me.gridBand7.Caption = "NUMBER"
-        Me.gridBand7.Columns.Add(Me.BandedGridColumnCardNumber)
-        Me.gridBand7.Name = "gridBand7"
-        Me.gridBand7.VisibleIndex = 2
-        Me.gridBand7.Width = 31
-        '
-        'gridBand3
-        '
-        Me.gridBand3.Caption = "NAME"
-        Me.gridBand3.Columns.Add(Me.BandedGridColumnCardName)
-        Me.gridBand3.Name = "gridBand3"
-        Me.gridBand3.VisibleIndex = 3
-        Me.gridBand3.Width = 84
-        '
-        'gridBand4
-        '
-        Me.gridBand4.AppearanceHeader.Options.UseTextOptions = True
-        Me.gridBand4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.gridBand4.Caption = "VOUCHER"
-        Me.gridBand4.Children.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.gridBand18, Me.gridBand17})
-        Me.gridBand4.Name = "gridBand4"
-        Me.gridBand4.VisibleIndex = 11
-        Me.gridBand4.Width = 169
-        '
-        'gridBand18
-        '
-        Me.gridBand18.AppearanceHeader.Options.UseTextOptions = True
-        Me.gridBand18.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.gridBand18.Caption = "AMOUNT"
-        Me.gridBand18.Columns.Add(Me.BandedGridColumnVoucher)
-        Me.gridBand18.Name = "gridBand18"
-        Me.gridBand18.VisibleIndex = 0
-        Me.gridBand18.Width = 103
-        '
-        'gridBand17
-        '
-        Me.gridBand17.Caption = "VOUCHER#"
-        Me.gridBand17.Columns.Add(Me.BandedGridColumnVoucherNumber)
-        Me.gridBand17.Name = "gridBand17"
-        Me.gridBand17.VisibleIndex = 1
-        Me.gridBand17.Width = 66
-        '
         'FormReportDaily
         '
         Me.Appearance.Options.UseFont = True
@@ -651,7 +655,7 @@ Partial Class FormReportDaily
         Me.Controls.Add(Me.GCDaily)
         Me.Controls.Add(Me.PanelControlStock)
         Me.Controls.Add(Me.PanelControl1)
-        Me.Controls.Add(Me.PanelControl3)
+        Me.Controls.Add(Me.PanelControlTitle)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.KeyPreview = True
@@ -661,12 +665,13 @@ Partial Class FormReportDaily
         Me.MinimizeBox = False
         Me.Name = "FormReportDaily"
         Me.Padding = New System.Windows.Forms.Padding(20)
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Daily Transaction"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl3.ResumeLayout(False)
-        Me.PanelControl3.PerformLayout()
+        CType(Me.PanelControlTitle, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControlTitle.ResumeLayout(False)
+        Me.PanelControlTitle.PerformLayout()
         CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
@@ -688,7 +693,7 @@ Partial Class FormReportDaily
 
     End Sub
 
-    Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents PanelControlTitle As DevExpress.XtraEditors.PanelControl
     Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControlBack As DevExpress.XtraEditors.PanelControl
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl

@@ -330,6 +330,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ReportDaily.Designer.vb">
+      <DependentUpon>ReportDaily.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportDaily.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportFGRepair.designer.vb">
       <DependentUpon>ReportFGRepair.vb</DependentUpon>
     </Compile>
@@ -502,6 +508,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportDaily.resx">
+      <DependentUpon>ReportDaily.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportFGRepair.resx">
       <DependentUpon>ReportFGRepair.vb</DependentUpon>
