@@ -365,6 +365,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportFGRepairDet.resx</DependentUpon>
     </Compile>
+    <Compile Include="ReportPOSCopy.Designer.vb">
+      <DependentUpon>ReportPOSCopy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPOSCopy.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportPOSDrawerInfo.Designer.vb">
       <DependentUpon>ReportPOSDrawerInfo.vb</DependentUpon>
     </Compile>
@@ -557,6 +563,9 @@
     <EmbeddedResource Include="ReportFGRepairDet.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ReportFGRepairDet.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportPOSCopy.resx">
+      <DependentUpon>ReportPOSCopy.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportRec.resx">
       <DependentUpon>ReportRec.vb</DependentUpon>

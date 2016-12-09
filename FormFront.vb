@@ -55,7 +55,10 @@
         If e.KeyCode = Keys.F1 Then
             'Dim prn As New ClassPOS()
             'prn.printPos(90, False)
-            FormPOSCopy.ShowDialog()
+            ' FormPOSCopy.ShowDialog()
+            Dim Report As New ReportPOSCopy()
+            Dim Tool As DevExpress.XtraReports.UI.ReportPrintTool = New DevExpress.XtraReports.UI.ReportPrintTool(Report)
+            Tool.ShowPreviewDialog()
         End If
     End Sub
 End Class
