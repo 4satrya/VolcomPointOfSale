@@ -52,6 +52,10 @@
     End Sub
 
     Private Sub FormFront_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-
+        If e.KeyCode = Keys.F1 Then
+            'Dim prn As New ClassPOS()
+            'prn.printPos(90, False)
+            FormPOSCopy.ShowDialog()
+        End If
     End Sub
 End Class

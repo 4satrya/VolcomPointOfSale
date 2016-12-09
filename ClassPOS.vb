@@ -188,11 +188,19 @@
         Print(Chr(27) + Chr(77) + "1" + data.Rows(0)("header_2").ToString)
     End Sub
 
-    Private Sub PrintBody(ByVal id_pos As String)
+    Private Sub PrintBody(ByVal id_pos As String, ByVal copy As Boolean)
         Dim query_main As String = queryMain("AND p.id_pos=" + id_pos + "", "1")
         Dim dt_main As DataTable = execute_query(query_main, -1, True, "", "", "", "")
         Print(eLeft + dt_main.Rows(0)("pos_number").ToString + Chr(13) + eRight + dt_main.Rows(0)("pos_date_display").ToString)
         Print(eLeft + dt_main.Rows(0)("pos_dev").ToString + Chr(13) + eRight + dt_main.Rows(0)("pos_time_display").ToString)
+
+        If copy Then
+            Dim dt As String = DateTime.Parse(getTimeDB.ToString).ToString("dd\/MM\/yyyy HH:mm:ss")
+            PrintDashes()
+            Print(eNmlText + eCentre + "Printed : " + dt)
+            Print(eCentre + Chr(27) + Chr(33) + Chr(16) + "- C  O  P  Y -" + eNmlText + Chr(27) + Chr(77) + "1")
+        End If
+
 
         Print(eLeft + "No.--------Code--------Qty--------Amount")
         Dim query_det As String = queryDet("AND pd.id_pos=" + id_pos + "", "1")
@@ -601,12 +609,12 @@
         prn.ClosePrint()
     End Sub
 
-    Public Sub printPos(ByVal id_pos As String)
+    Public Sub printPos(ByVal id_pos As String, ByVal copy As Boolean)
         StartPrint()
 
         If prn.PrinterIsOpen = True Then
             PrintHeader()
-            PrintBody(id_pos)
+            PrintBody(id_pos, copy)
             PrintFooter()
             EndPrint()
         End If

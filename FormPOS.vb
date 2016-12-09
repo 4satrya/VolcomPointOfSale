@@ -806,7 +806,7 @@
 
             'print
             Dim prn As New ClassPOS()
-            prn.printPos(id)
+            prn.printPos(id, False)
 
             TxtSales.Enabled = True
             TxtSales.Focus()
