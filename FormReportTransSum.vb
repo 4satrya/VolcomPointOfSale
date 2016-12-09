@@ -27,37 +27,44 @@
     End Sub
 
     Sub printPreview()
-        'Cursor = Cursors.WaitCursor
-        'FormBlack.Show()
-        'ReportTransDetail.dt = GCTransDetail.DataSource
-        'Dim Report As New ReportTransDetail()
+        Cursor = Cursors.WaitCursor
+        FormBlack.Show()
+        ReportTransSum.dt_sales = GCSales.DataSource
+        ReportTransSum.dt_payment = GCPayment.DataSource
+        Dim Report As New ReportTransSum()
 
-        '' '... 
-        '' ' creating and saving the view's layout to a new memory stream 
-        'Dim str As System.IO.Stream
-        'str = New System.IO.MemoryStream()
-        'GVTransDetail.SaveLayoutToStream(str, DevExpress.Utils.OptionsLayoutBase.FullLayout)
-        'str.Seek(0, System.IO.SeekOrigin.Begin)
-        'Report.GVTransDetail.RestoreLayoutFromStream(str, DevExpress.Utils.OptionsLayoutBase.FullLayout)
-        'str.Seek(0, System.IO.SeekOrigin.Begin)
+        ' '... 
+        ' ' creating and saving the view's layout to a new memory stream 
+        Dim str As System.IO.Stream
+        str = New System.IO.MemoryStream()
+        GVSales.SaveLayoutToStream(str, DevExpress.Utils.OptionsLayoutBase.FullLayout)
+        str.Seek(0, System.IO.SeekOrigin.Begin)
+        Report.GVSales.RestoreLayoutFromStream(str, DevExpress.Utils.OptionsLayoutBase.FullLayout)
+        str.Seek(0, System.IO.SeekOrigin.Begin)
 
-        ''Grid Detail
-        'ReportStyleGridview(Report.GVTransDetail)
+        Dim str2 As System.IO.Stream
+        str2 = New System.IO.MemoryStream()
+        GVPayment.SaveLayoutToStream(str2, DevExpress.Utils.OptionsLayoutBase.FullLayout)
+        str2.Seek(0, System.IO.SeekOrigin.Begin)
+        Report.GVPayment.RestoreLayoutFromStream(str2, DevExpress.Utils.OptionsLayoutBase.FullLayout)
+        str2.Seek(0, System.IO.SeekOrigin.Begin)
 
-        ''Parse val
-        'Dim dt As DateTime = getTimeDB()
-        'Report.LabelFrom.Text = from
-        'Report.LabelUntil.Text = until
-        'Report.LabelShift.Text = shift
-        'Report.LabelStatus.Text = status
-        'Report.LabelDate.Text = dt.ToString("dd\/MM\/yyyy")
-        'Report.LabelTime.Text = dt.ToString("HH:mm:ss")
-        'Report.LabelPOS.Text = "POS-" + pos
-        '' Show the report's preview. 
-        'Dim Tool As DevExpress.XtraReports.UI.ReportPrintTool = New DevExpress.XtraReports.UI.ReportPrintTool(Report)
-        'Tool.ShowPreviewDialog()
-        'FormBlack.Close()
-        'Cursor = Cursors.Default
+        'Grid Detail
+        ReportStyleGridview(Report.GVSales)
+        ReportStyleGridview(Report.GVPayment)
+
+        'Parse val
+        Dim dt As DateTime = getTimeDB()
+        Report.LabelFrom.Text = from
+        Report.LabelUntil.Text = until
+        Report.LabelStatus.Text = status
+        Report.LabelDate.Text = dt.ToString("dd\/MM\/yyyy")
+        Report.LabelTime.Text = dt.ToString("HH:mm:ss")
+        ' Show the report's preview. 
+        Dim Tool As DevExpress.XtraReports.UI.ReportPrintTool = New DevExpress.XtraReports.UI.ReportPrintTool(Report)
+        Tool.ShowPreviewDialog()
+        FormBlack.Close()
+        Cursor = Cursors.Default
     End Sub
 
     Private Sub PanelControlBack_Click(sender As Object, e As EventArgs) Handles PanelControlBack.Click
@@ -145,6 +152,18 @@
 
         'status
         cond += "AND p.id_pos_status=" + LEStatus.EditValue.ToString + " "
+
+        Dim query As String = "(SELECT 'Cash' AS `payment`,IFNULL(SUM(p.total-(p.card+p.voucher)),0) AS `cash`, 0 AS `card`, 0 AS `voucher` FROM tb_pos p WHERE p.cash>0 " + cond + ")
+        UNION ALL
+        (SELECT 'Voucher' AS `payment`,0 AS `cash`, 0 AS `card`, IFNULL(SUM(p.voucher),0) AS `voucher` FROM tb_pos p WHERE p.voucher>0 " + cond + ")
+        UNION ALL
+        (SELECT ct.card_type AS `payment`, 0 AS `cash`, IFNULL(SUM(p.card),0) AS `card`, 0 AS `voucher`
+        FROM tb_pos p
+        INNER JOIN tb_lookup_card_type ct ON ct.id_card_type = p.id_card_type
+        WHERE p.card>0 " + cond + "
+        GROUP BY p.id_card_type) "
+        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        GCPayment.DataSource = data
         Cursor = Cursors.Default
     End Sub
 

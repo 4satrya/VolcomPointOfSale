@@ -37,7 +37,6 @@ Partial Class FormReportTransSum
         Me.DEUntil = New DevExpress.XtraEditors.DateEdit()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.DEFrom = New DevExpress.XtraEditors.DateEdit()
-        Me.LabelControlSalesContribution = New DevExpress.XtraEditors.LabelControl()
         Me.GCSales = New DevExpress.XtraGrid.GridControl()
         Me.GVSales = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -47,7 +46,6 @@ Partial Class FormReportTransSum
         Me.GridColumnTotal = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnComm = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnCons = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.GCPayment = New DevExpress.XtraGrid.GridControl()
         Me.GVPayment = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -55,6 +53,8 @@ Partial Class FormReportTransSum
         Me.GridColumnCash = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnCard = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnVoucher = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,6 +73,10 @@ Partial Class FormReportTransSum
         CType(Me.GVSales, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GCPayment, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GVPayment, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl2.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelControl1
@@ -275,26 +279,15 @@ Partial Class FormReportTransSum
         Me.DEFrom.TabIndex = 0
         Me.DEFrom.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information
         '
-        'LabelControlSalesContribution
-        '
-        Me.LabelControlSalesContribution.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControlSalesContribution.Dock = System.Windows.Forms.DockStyle.Top
-        Me.LabelControlSalesContribution.Location = New System.Drawing.Point(20, 128)
-        Me.LabelControlSalesContribution.Name = "LabelControlSalesContribution"
-        Me.LabelControlSalesContribution.Padding = New System.Windows.Forms.Padding(0, 10, 0, 0)
-        Me.LabelControlSalesContribution.Size = New System.Drawing.Size(127, 25)
-        Me.LabelControlSalesContribution.TabIndex = 10
-        Me.LabelControlSalesContribution.Text = "SALES CONTRIBUTION"
-        '
         'GCSales
         '
-        Me.GCSales.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GCSales.Location = New System.Drawing.Point(20, 153)
+        Me.GCSales.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GCSales.Location = New System.Drawing.Point(2, 21)
         Me.GCSales.LookAndFeel.SkinName = "Office 2010 Silver"
         Me.GCSales.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCSales.MainView = Me.GVSales
         Me.GCSales.Name = "GCSales"
-        Me.GCSales.Size = New System.Drawing.Size(852, 225)
+        Me.GCSales.Size = New System.Drawing.Size(848, 162)
         Me.GCSales.TabIndex = 11
         Me.GCSales.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVSales})
         '
@@ -391,26 +384,15 @@ Partial Class FormReportTransSum
         Me.GridColumnCons.VisibleIndex = 6
         Me.GridColumnCons.Width = 238
         '
-        'LabelControl2
-        '
-        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.LabelControl2.Location = New System.Drawing.Point(20, 378)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Padding = New System.Windows.Forms.Padding(0, 10, 0, 0)
-        Me.LabelControl2.Size = New System.Drawing.Size(92, 25)
-        Me.LabelControl2.TabIndex = 12
-        Me.LabelControl2.Text = "SALES PAYMENT"
-        '
         'GCPayment
         '
         Me.GCPayment.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GCPayment.Location = New System.Drawing.Point(20, 403)
+        Me.GCPayment.Location = New System.Drawing.Point(2, 21)
         Me.GCPayment.LookAndFeel.SkinName = "Office 2010 Silver"
         Me.GCPayment.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCPayment.MainView = Me.GVPayment
         Me.GCPayment.Name = "GCPayment"
-        Me.GCPayment.Size = New System.Drawing.Size(852, 330)
+        Me.GCPayment.Size = New System.Drawing.Size(848, 397)
         Me.GCPayment.TabIndex = 13
         Me.GCPayment.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVPayment})
         '
@@ -478,15 +460,41 @@ Partial Class FormReportTransSum
         Me.GridColumnVoucher.VisibleIndex = 4
         Me.GridColumnVoucher.Width = 263
         '
+        'GroupControl1
+        '
+        Me.GroupControl1.AppearanceCaption.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupControl1.AppearanceCaption.Options.UseFont = True
+        Me.GroupControl1.Controls.Add(Me.GCSales)
+        Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupControl1.Location = New System.Drawing.Point(20, 128)
+        Me.GroupControl1.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GroupControl1.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(852, 185)
+        Me.GroupControl1.TabIndex = 14
+        Me.GroupControl1.Text = "SALES CONTRIBUTION"
+        '
+        'GroupControl2
+        '
+        Me.GroupControl2.AppearanceCaption.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.GroupControl2.AppearanceCaption.Options.UseFont = True
+        Me.GroupControl2.Controls.Add(Me.GCPayment)
+        Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl2.Location = New System.Drawing.Point(20, 313)
+        Me.GroupControl2.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GroupControl2.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.GroupControl2.Name = "GroupControl2"
+        Me.GroupControl2.Size = New System.Drawing.Size(852, 420)
+        Me.GroupControl2.TabIndex = 15
+        Me.GroupControl2.Text = "SALES PAYMENT"
+        '
         'FormReportTransSum
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(892, 788)
-        Me.Controls.Add(Me.GCPayment)
-        Me.Controls.Add(Me.LabelControl2)
-        Me.Controls.Add(Me.GCSales)
-        Me.Controls.Add(Me.LabelControlSalesContribution)
+        Me.Controls.Add(Me.GroupControl2)
+        Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.PanelControlStock)
         Me.Controls.Add(Me.PanelControlTitle)
         Me.Controls.Add(Me.PanelControl1)
@@ -522,8 +530,11 @@ Partial Class FormReportTransSum
         CType(Me.GVSales, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GCPayment, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GVPayment, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl2.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -542,10 +553,8 @@ Partial Class FormReportTransSum
     Friend WithEvents DEUntil As DevExpress.XtraEditors.DateEdit
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents DEFrom As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents LabelControlSalesContribution As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GCSales As DevExpress.XtraGrid.GridControl
     Friend WithEvents GVSales As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GCPayment As DevExpress.XtraGrid.GridControl
     Friend WithEvents GVPayment As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
@@ -562,4 +571,6 @@ Partial Class FormReportTransSum
     Friend WithEvents GridColumnCash As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnCard As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnVoucher As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
 End Class
