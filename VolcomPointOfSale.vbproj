@@ -259,6 +259,12 @@
     <Compile Include="FormReportTransDetail.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormReportTransSum.Designer.vb">
+      <DependentUpon>FormReportTransSum.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportTransSum.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormRet.Designer.vb">
       <DependentUpon>FormRet.vb</DependentUpon>
     </Compile>
@@ -486,6 +492,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormReportTransDetail.resx">
       <DependentUpon>FormReportTransDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportTransSum.resx">
+      <DependentUpon>FormReportTransSum.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRet.resx">
       <DependentUpon>FormRet.vb</DependentUpon>

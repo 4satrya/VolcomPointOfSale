@@ -55,7 +55,7 @@ Partial Class FormHome
         Me.TileGroup2 = New DevExpress.XtraEditors.TileGroup()
         Me.TIDaily = New DevExpress.XtraEditors.TileItem()
         Me.TITransDetail = New DevExpress.XtraEditors.TileItem()
-        Me.TileItem3 = New DevExpress.XtraEditors.TileItem()
+        Me.TITransSum = New DevExpress.XtraEditors.TileItem()
         Me.TileItem4 = New DevExpress.XtraEditors.TileItem()
         Me.NavButton2 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.NavButton4 = New DevExpress.XtraBars.Navigation.NavButton()
@@ -264,7 +264,7 @@ Partial Class FormHome
         '
         Me.TileGroup2.Items.Add(Me.TIDaily)
         Me.TileGroup2.Items.Add(Me.TITransDetail)
-        Me.TileGroup2.Items.Add(Me.TileItem3)
+        Me.TileGroup2.Items.Add(Me.TITransSum)
         Me.TileGroup2.Items.Add(Me.TileItem4)
         Me.TileGroup2.Name = "TileGroup2"
         '
@@ -290,16 +290,16 @@ Partial Class FormHome
         Me.TITransDetail.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TITransDetail.Name = "TITransDetail"
         '
-        'TileItem3
+        'TITransSum
         '
-        Me.TileItem3.BackgroundImage = CType(resources.GetObject("TileItem3.BackgroundImage"), System.Drawing.Image)
-        Me.TileItem3.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        Me.TITransSum.BackgroundImage = CType(resources.GetObject("TITransSum.BackgroundImage"), System.Drawing.Image)
+        Me.TITransSum.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement12.Text = "Transaction Summary"
         TileItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem3.Elements.Add(TileItemElement12)
-        Me.TileItem3.Id = 37
-        Me.TileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
-        Me.TileItem3.Name = "TileItem3"
+        Me.TITransSum.Elements.Add(TileItemElement12)
+        Me.TITransSum.Id = 37
+        Me.TITransSum.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
+        Me.TITransSum.Name = "TITransSum"
         '
         'TileItem4
         '
@@ -701,7 +701,7 @@ Partial Class FormHome
     Friend WithEvents TileGroup2 As DevExpress.XtraEditors.TileGroup
     Friend WithEvents TIDaily As DevExpress.XtraEditors.TileItem
     Friend WithEvents TITransDetail As DevExpress.XtraEditors.TileItem
-    Friend WithEvents TileItem3 As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TITransSum As DevExpress.XtraEditors.TileItem
     Friend WithEvents TileGroup1 As DevExpress.XtraEditors.TileGroup
     Friend WithEvents TileItem4 As DevExpress.XtraEditors.TileItem
 End Class

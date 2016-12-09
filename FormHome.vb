@@ -154,4 +154,10 @@ Public Class FormHome
         FormReportTransDetail.ShowDialog()
         Cursor = Cursors.Default
     End Sub
+
+    Private Sub TITransSum_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TITransSum.ItemClick
+        Cursor = Cursors.WaitCursor
+        FormReportTransSum.ShowDialog()
+        Cursor = Cursors.Default
+    End Sub
 End Class
