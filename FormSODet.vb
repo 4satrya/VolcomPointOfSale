@@ -276,9 +276,9 @@
     Sub print()
         Cursor = Cursors.WaitCursor
         FormBlack.Show()
-        ReportTrf.id = id
-        ReportTrf.dt = GCScanSum.DataSource
-        Dim Report As New ReportTrf()
+        ReportSO.id = id
+        ReportSO.dt = GCScanSum.DataSource
+        Dim Report As New ReportSO()
 
         ' '... 
         ' ' creating and saving the view's layout to a new memory stream 
