@@ -166,4 +166,10 @@ Public Class FormHome
         FormReportCopyReceipt.ShowDialog()
         Cursor = Cursors.Default
     End Sub
+
+    Private Sub TIStockOpname_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIStockOpname.ItemClick
+        Cursor = Cursors.WaitCursor
+        FormSO.ShowDialog()
+        Cursor = Cursors.Default
+    End Sub
 End Class
