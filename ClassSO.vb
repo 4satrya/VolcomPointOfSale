@@ -15,7 +15,7 @@
         Dim query As String = "SELECT s.id_so, 
         s.id_comp, c.comp_number AS `comp_number`, c.comp_name AS `comp_name`, CONCAT(c.comp_number,' - ', c.comp_name) AS `comp`,
         s.so_number, s.so_date, s.so_note, 
-        s.id_report_status, stt.report_status, s.id_prepared_by, e.employee_name, rl.role, s.so_total_qty
+        s.id_report_status, stt.report_status, s.id_prepared_by, e.employee_name, rl.role
         FROM tb_so s
         INNER JOIN tb_m_comp c ON c.id_comp = s.id_comp
         INNER JOIN tb_lookup_report_status stt ON stt.id_report_status = s.id_report_status 

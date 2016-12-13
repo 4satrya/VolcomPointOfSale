@@ -662,9 +662,7 @@ Partial Class FormSODet
         Me.GVScanSum.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "so_qty", Me.GridColumn5, "{0:n0}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", Me.GridColumn7, "{0:n2}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "so_qty", Me.GridColumn8, "{0:n0}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "diff", Me.GridColumnDiff, "{0:n0}")})
         Me.GVScanSum.Name = "GVScanSum"
         Me.GVScanSum.OptionsBehavior.Editable = False
-        Me.GVScanSum.OptionsCustomization.AllowFilter = False
         Me.GVScanSum.OptionsCustomization.AllowGroup = False
-        Me.GVScanSum.OptionsCustomization.AllowSort = False
         Me.GVScanSum.OptionsView.ShowFooter = True
         Me.GVScanSum.OptionsView.ShowGroupPanel = False
         '
@@ -710,7 +708,7 @@ Partial Class FormSODet
         Me.GridColumn5.Name = "GridColumn5"
         Me.GridColumn5.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "so_qty", "{0:n0}")})
         Me.GridColumn5.Visible = True
-        Me.GridColumn5.VisibleIndex = 6
+        Me.GridColumn5.VisibleIndex = 5
         Me.GridColumn5.Width = 109
         '
         'GridColumn6
@@ -754,7 +752,7 @@ Partial Class FormSODet
         Me.GridColumn8.Name = "GridColumn8"
         Me.GridColumn8.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "qty", "{0:n0}")})
         Me.GridColumn8.Visible = True
-        Me.GridColumn8.VisibleIndex = 5
+        Me.GridColumn8.VisibleIndex = 6
         Me.GridColumn8.Width = 112
         '
         'GridColumnDiff
@@ -764,6 +762,8 @@ Partial Class FormSODet
         Me.GridColumnDiff.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.GridColumnDiff.FieldName = "diff"
         Me.GridColumnDiff.Name = "GridColumnDiff"
+        Me.GridColumnDiff.UnboundExpression = "[so_qty] - [qty]"
+        Me.GridColumnDiff.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
         Me.GridColumnDiff.Visible = True
         Me.GridColumnDiff.VisibleIndex = 7
         Me.GridColumnDiff.Width = 91

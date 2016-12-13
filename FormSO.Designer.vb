@@ -297,8 +297,6 @@ Partial Class FormSO
         Me.GridColumnTotal.FieldName = "so_total_qty"
         Me.GridColumnTotal.Name = "GridColumnTotal"
         Me.GridColumnTotal.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "so_total_qty", "{0:N0}")})
-        Me.GridColumnTotal.Visible = True
-        Me.GridColumnTotal.VisibleIndex = 3
         Me.GridColumnTotal.Width = 55
         '
         'GridColumnStt
@@ -307,7 +305,7 @@ Partial Class FormSO
         Me.GridColumnStt.FieldName = "report_status"
         Me.GridColumnStt.Name = "GridColumnStt"
         Me.GridColumnStt.Visible = True
-        Me.GridColumnStt.VisibleIndex = 4
+        Me.GridColumnStt.VisibleIndex = 3
         Me.GridColumnStt.Width = 133
         '
         'FormSO
