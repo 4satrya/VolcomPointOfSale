@@ -378,4 +378,8 @@
             e.DisplayText = (e.ListSourceRowIndex + 1).ToString()
         End If
     End Sub
+
+    Private Sub PCClose_Click(sender As Object, e As EventArgs) Handles PCClose.Click
+        closeForm()
+    End Sub
 End Class
