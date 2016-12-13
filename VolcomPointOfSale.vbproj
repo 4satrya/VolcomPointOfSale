@@ -296,6 +296,12 @@
     <Compile Include="FormSO.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormSODet.Designer.vb">
+      <DependentUpon>FormSODet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormSODet.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormStart.Designer.vb">
       <DependentUpon>FormStart.vb</DependentUpon>
     </Compile>
@@ -541,6 +547,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSO.resx">
       <DependentUpon>FormSO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSODet.resx">
+      <DependentUpon>FormSODet.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStart.resx">
       <DependentUpon>FormStart.vb</DependentUpon>

@@ -19,16 +19,16 @@
 
     Sub insert()
         Cursor = Cursors.WaitCursor
-        FormRecDet.action = "ins"
-        FormRecDet.ShowDialog()
+        FormSODet.action = "ins"
+        FormSODet.ShowDialog()
         Cursor = Cursors.Default
     End Sub
 
     Sub edit()
         Cursor = Cursors.WaitCursor
-        FormRecDet.action = "upd"
-        FormRecDet.id = GVSO.GetFocusedRowCellValue("id_rec").ToString
-        FormRecDet.ShowDialog()
+        FormSODet.action = "upd"
+        FormSODet.id = GVSO.GetFocusedRowCellValue("id_so").ToString
+        FormSODet.ShowDialog()
         Cursor = Cursors.Default
     End Sub
 

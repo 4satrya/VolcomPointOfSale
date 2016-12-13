@@ -122,6 +122,13 @@
             FormTrfDet.TxtNameCompTo.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "1")
             FormTrfDet.TxtCodeCompTo.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "2")
             Close()
+        ElseIf id_pop_up = "7" Then
+            'Stock Opname
+            FormSODet.id_comp = GVCompany.GetFocusedRowCellValue("id_comp").ToString
+            FormSODet.TxtNameCompFrom.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "1")
+            FormSODet.TxtCodeCompFrom.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "2")
+            FormSODet.viewDetail()
+            Close()
         End If
         Cursor = Cursors.Default
     End Sub
