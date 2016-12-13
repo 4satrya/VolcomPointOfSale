@@ -106,6 +106,7 @@
     <Compile Include="ClassRawPrint.vb" />
     <Compile Include="ClassRec.vb" />
     <Compile Include="ClassRet.vb" />
+    <Compile Include="ClassSO.vb" />
     <Compile Include="ClassTrf.vb" />
     <Compile Include="ClassUser.vb" />
     <Compile Include="Form1.vb">

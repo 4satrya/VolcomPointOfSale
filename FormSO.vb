@@ -27,7 +27,7 @@
     Sub edit()
         Cursor = Cursors.WaitCursor
         FormRecDet.action = "upd"
-        FormRecDet.id = GVRec.GetFocusedRowCellValue("id_rec").ToString
+        FormRecDet.id = GVSO.GetFocusedRowCellValue("id_rec").ToString
         FormRecDet.ShowDialog()
         Cursor = Cursors.Default
     End Sub
@@ -45,17 +45,17 @@
     Sub printPreview()
         Cursor = Cursors.WaitCursor
         FormBlack.Show()
-        print(GCRec, "Product List")
+        print(GCSO, "Product List")
         FormBlack.Close()
         Cursor = Cursors.Default
     End Sub
 
     Sub viewSO()
         Cursor = Cursors.WaitCursor
-        Dim i As New ClassRec()
+        Dim i As New ClassSO()
         Dim query As String = i.queryMain("-1", "2")
         Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
-        GCRec.DataSource = data
+        GCSO.DataSource = data
         Cursor = Cursors.Default
     End Sub
 
@@ -89,5 +89,9 @@
 
     Private Sub PanelControlBack_MouseLeave(sender As Object, e As EventArgs) Handles PanelControlBack.MouseLeave
         PanelControlBack.Cursor = Cursors.Default
+    End Sub
+
+    Private Sub FormSO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        viewSO()
     End Sub
 End Class
