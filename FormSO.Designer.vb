@@ -34,23 +34,20 @@ Partial Class FormSO
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.GCRec = New DevExpress.XtraGrid.GridControl()
+        Me.GCSO = New DevExpress.XtraGrid.GridControl()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintPreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GVRec = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GVSO = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumnIdRec = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnNumber = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumnTo = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnDate = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnTotal = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnStt = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumnReference = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumnPreparedBy = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.PanelControlTitle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlTitle.SuspendLayout()
         CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,9 +55,9 @@ Partial Class FormSO
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
-        CType(Me.GCRec, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GCSO, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
-        CType(Me.GVRec, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GVSO, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelControlTitle
@@ -197,18 +194,18 @@ Partial Class FormSO
         Me.LabelControl1.TabIndex = 7
         Me.LabelControl1.Text = "F8"
         '
-        'GCRec
+        'GCSO
         '
-        Me.GCRec.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.GCRec.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GCRec.Location = New System.Drawing.Point(20, 81)
-        Me.GCRec.LookAndFeel.SkinName = "Office 2010 Silver"
-        Me.GCRec.LookAndFeel.UseDefaultLookAndFeel = False
-        Me.GCRec.MainView = Me.GVRec
-        Me.GCRec.Name = "GCRec"
-        Me.GCRec.Size = New System.Drawing.Size(680, 300)
-        Me.GCRec.TabIndex = 11
-        Me.GCRec.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVRec})
+        Me.GCSO.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.GCSO.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GCSO.Location = New System.Drawing.Point(20, 81)
+        Me.GCSO.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCSO.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.GCSO.MainView = Me.GVSO
+        Me.GCSO.Name = "GCSO"
+        Me.GCSO.Size = New System.Drawing.Size(680, 300)
+        Me.GCSO.TabIndex = 11
+        Me.GCSO.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVSO})
         '
         'ContextMenuStrip1
         '
@@ -247,26 +244,26 @@ Partial Class FormSO
         Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
-        'GVRec
+        'GVSO
         '
-        Me.GVRec.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnIdRec, Me.GridColumnNumber, Me.GridColumn3, Me.GridColumnTo, Me.GridColumnDate, Me.GridColumnTotal, Me.GridColumnStt, Me.GridColumnReference, Me.GridColumnPreparedBy})
-        Me.GVRec.GridControl = Me.GCRec
-        Me.GVRec.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "total_rec", Nothing, "{0:N0}")})
-        Me.GVRec.Name = "GVRec"
-        Me.GVRec.OptionsBehavior.Editable = False
-        Me.GVRec.OptionsView.ShowFooter = True
-        Me.GVRec.OptionsView.ShowGroupPanel = False
+        Me.GVSO.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnIdRec, Me.GridColumnNumber, Me.GridColumn3, Me.GridColumnDate, Me.GridColumnTotal, Me.GridColumnStt})
+        Me.GVSO.GridControl = Me.GCSO
+        Me.GVSO.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "so_total_qty", Me.GridColumnTotal, "{0:N0}")})
+        Me.GVSO.Name = "GVSO"
+        Me.GVSO.OptionsBehavior.Editable = False
+        Me.GVSO.OptionsView.ShowFooter = True
+        Me.GVSO.OptionsView.ShowGroupPanel = False
         '
         'GridColumnIdRec
         '
         Me.GridColumnIdRec.Caption = "Id"
-        Me.GridColumnIdRec.FieldName = "id_rec"
+        Me.GridColumnIdRec.FieldName = "id_so"
         Me.GridColumnIdRec.Name = "GridColumnIdRec"
         '
         'GridColumnNumber
         '
         Me.GridColumnNumber.Caption = "Number"
-        Me.GridColumnNumber.FieldName = "rec_number"
+        Me.GridColumnNumber.FieldName = "so_number"
         Me.GridColumnNumber.Name = "GridColumnNumber"
         Me.GridColumnNumber.Visible = True
         Me.GridColumnNumber.VisibleIndex = 0
@@ -274,31 +271,22 @@ Partial Class FormSO
         '
         'GridColumn3
         '
-        Me.GridColumn3.Caption = "From"
-        Me.GridColumn3.FieldName = "comp_from"
+        Me.GridColumn3.Caption = "Account"
+        Me.GridColumn3.FieldName = "comp"
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 1
         Me.GridColumn3.Width = 93
-        '
-        'GridColumnTo
-        '
-        Me.GridColumnTo.Caption = "To"
-        Me.GridColumnTo.FieldName = "comp_to"
-        Me.GridColumnTo.Name = "GridColumnTo"
-        Me.GridColumnTo.Visible = True
-        Me.GridColumnTo.VisibleIndex = 2
-        Me.GridColumnTo.Width = 93
         '
         'GridColumnDate
         '
         Me.GridColumnDate.Caption = "Created Date"
         Me.GridColumnDate.DisplayFormat.FormatString = "dd MMMM yyyy hh:mm tt"
         Me.GridColumnDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.GridColumnDate.FieldName = "rec_date"
+        Me.GridColumnDate.FieldName = "so_date"
         Me.GridColumnDate.Name = "GridColumnDate"
         Me.GridColumnDate.Visible = True
-        Me.GridColumnDate.VisibleIndex = 4
+        Me.GridColumnDate.VisibleIndex = 2
         Me.GridColumnDate.Width = 93
         '
         'GridColumnTotal
@@ -306,11 +294,11 @@ Partial Class FormSO
         Me.GridColumnTotal.Caption = "Total"
         Me.GridColumnTotal.DisplayFormat.FormatString = "{0:N0}"
         Me.GridColumnTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.GridColumnTotal.FieldName = "total_rec"
+        Me.GridColumnTotal.FieldName = "so_total_qty"
         Me.GridColumnTotal.Name = "GridColumnTotal"
-        Me.GridColumnTotal.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "total_rec", "{0:N0}")})
+        Me.GridColumnTotal.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "so_total_qty", "{0:N0}")})
         Me.GridColumnTotal.Visible = True
-        Me.GridColumnTotal.VisibleIndex = 6
+        Me.GridColumnTotal.VisibleIndex = 3
         Me.GridColumnTotal.Width = 55
         '
         'GridColumnStt
@@ -319,26 +307,8 @@ Partial Class FormSO
         Me.GridColumnStt.FieldName = "report_status"
         Me.GridColumnStt.Name = "GridColumnStt"
         Me.GridColumnStt.Visible = True
-        Me.GridColumnStt.VisibleIndex = 7
+        Me.GridColumnStt.VisibleIndex = 4
         Me.GridColumnStt.Width = 133
-        '
-        'GridColumnReference
-        '
-        Me.GridColumnReference.Caption = "Reference"
-        Me.GridColumnReference.FieldName = "ref"
-        Me.GridColumnReference.Name = "GridColumnReference"
-        Me.GridColumnReference.Visible = True
-        Me.GridColumnReference.VisibleIndex = 3
-        Me.GridColumnReference.Width = 93
-        '
-        'GridColumnPreparedBy
-        '
-        Me.GridColumnPreparedBy.Caption = "Prepared By"
-        Me.GridColumnPreparedBy.FieldName = "employee_name"
-        Me.GridColumnPreparedBy.Name = "GridColumnPreparedBy"
-        Me.GridColumnPreparedBy.Visible = True
-        Me.GridColumnPreparedBy.VisibleIndex = 5
-        Me.GridColumnPreparedBy.Width = 93
         '
         'FormSO
         '
@@ -346,7 +316,7 @@ Partial Class FormSO
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(720, 436)
-        Me.Controls.Add(Me.GCRec)
+        Me.Controls.Add(Me.GCSO)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.PanelControlTitle)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -358,6 +328,7 @@ Partial Class FormSO
         Me.Padding = New System.Windows.Forms.Padding(20)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormSO"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.PanelControlTitle, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlTitle.ResumeLayout(False)
         Me.PanelControlTitle.PerformLayout()
@@ -367,9 +338,9 @@ Partial Class FormSO
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()
-        CType(Me.GCRec, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GCSO, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStrip1.ResumeLayout(False)
-        CType(Me.GVRec, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GVSO, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -387,17 +358,14 @@ Partial Class FormSO
     Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents GCRec As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GVRec As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GCSO As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GVSO As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridColumnIdRec As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnNumber As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn3 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumnTo As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnDate As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnTotal As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnStt As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumnReference As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumnPreparedBy As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NewToolStripMenuItem As ToolStripMenuItem
