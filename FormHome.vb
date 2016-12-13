@@ -160,4 +160,10 @@ Public Class FormHome
         FormReportTransSum.ShowDialog()
         Cursor = Cursors.Default
     End Sub
+
+    Private Sub TICopyReceipt_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TICopyReceipt.ItemClick
+        Cursor = Cursors.WaitCursor
+        FormReportCopyReceipt.ShowDialog()
+        Cursor = Cursors.Default
+    End Sub
 End Class

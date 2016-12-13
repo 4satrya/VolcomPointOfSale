@@ -56,12 +56,12 @@
             'Dim prn As New ClassPOS()
             'prn.printPos(90, False)
             ' FormPOSCopy.ShowDialog()
-            ReportPOSCopy.id = "89"
-            Dim Report As New ReportPOSCopy()
-            Dim Tool As DevExpress.XtraReports.UI.ReportPrintTool = New DevExpress.XtraReports.UI.ReportPrintTool(Report)
-            Tool.PreviewForm.PrintControl.Zoom = 2.0F
-            Tool.PreviewForm.FormBorderStyle = FormBorderStyle.None
-            Tool.ShowPreviewDialog()
+            'ReportPOSCopy.id = "89"
+            'Dim Report As New ReportPOSCopy()
+            'Dim Tool As DevExpress.XtraReports.UI.ReportPrintTool = New DevExpress.XtraReports.UI.ReportPrintTool(Report)
+            'Tool.PreviewForm.PrintControl.Zoom = 2.0F
+            'Tool.PreviewForm.FormBorderStyle = FormBorderStyle.None
+            'Tool.ShowPreviewDialog()
         End If
     End Sub
 End Class

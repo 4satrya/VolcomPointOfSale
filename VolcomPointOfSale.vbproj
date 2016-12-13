@@ -253,6 +253,12 @@
     <Compile Include="FormRecDet.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormReportCopyReceipt.Designer.vb">
+      <DependentUpon>FormReportCopyReceipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportCopyReceipt.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormReportDaily.Designer.vb">
       <DependentUpon>FormReportDaily.vb</DependentUpon>
     </Compile>
@@ -507,6 +513,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRecDet.resx">
       <DependentUpon>FormRecDet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportCopyReceipt.resx">
+      <DependentUpon>FormReportCopyReceipt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReportDaily.resx">
       <DependentUpon>FormReportDaily.vb</DependentUpon>

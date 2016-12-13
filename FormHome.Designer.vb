@@ -56,7 +56,7 @@ Partial Class FormHome
         Me.TIDaily = New DevExpress.XtraEditors.TileItem()
         Me.TITransDetail = New DevExpress.XtraEditors.TileItem()
         Me.TITransSum = New DevExpress.XtraEditors.TileItem()
-        Me.TileItem4 = New DevExpress.XtraEditors.TileItem()
+        Me.TICopyReceipt = New DevExpress.XtraEditors.TileItem()
         Me.NavButton2 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.NavButton4 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.NavButton5 = New DevExpress.XtraBars.Navigation.NavButton()
@@ -265,7 +265,7 @@ Partial Class FormHome
         Me.TileGroup2.Items.Add(Me.TIDaily)
         Me.TileGroup2.Items.Add(Me.TITransDetail)
         Me.TileGroup2.Items.Add(Me.TITransSum)
-        Me.TileGroup2.Items.Add(Me.TileItem4)
+        Me.TileGroup2.Items.Add(Me.TICopyReceipt)
         Me.TileGroup2.Name = "TileGroup2"
         '
         'TIDaily
@@ -301,16 +301,16 @@ Partial Class FormHome
         Me.TITransSum.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TITransSum.Name = "TITransSum"
         '
-        'TileItem4
+        'TICopyReceipt
         '
-        Me.TileItem4.BackgroundImage = CType(resources.GetObject("TileItem4.BackgroundImage"), System.Drawing.Image)
-        Me.TileItem4.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        Me.TICopyReceipt.BackgroundImage = CType(resources.GetObject("TICopyReceipt.BackgroundImage"), System.Drawing.Image)
+        Me.TICopyReceipt.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement13.Text = "Copy Receipt"
         TileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem4.Elements.Add(TileItemElement13)
-        Me.TileItem4.Id = 38
-        Me.TileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
-        Me.TileItem4.Name = "TileItem4"
+        Me.TICopyReceipt.Elements.Add(TileItemElement13)
+        Me.TICopyReceipt.Id = 38
+        Me.TICopyReceipt.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
+        Me.TICopyReceipt.Name = "TICopyReceipt"
         '
         'NavButton2
         '
@@ -703,5 +703,5 @@ Partial Class FormHome
     Friend WithEvents TITransDetail As DevExpress.XtraEditors.TileItem
     Friend WithEvents TITransSum As DevExpress.XtraEditors.TileItem
     Friend WithEvents TileGroup1 As DevExpress.XtraEditors.TileGroup
-    Friend WithEvents TileItem4 As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TICopyReceipt As DevExpress.XtraEditors.TileItem
 End Class
