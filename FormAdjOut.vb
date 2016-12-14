@@ -144,9 +144,9 @@
     Sub print()
         Cursor = Cursors.WaitCursor
         FormBlack.Show()
-        ReportSO.id = id
-        ReportSO.dt = GCScanSum.DataSource
-        Dim Report As New ReportSO()
+        ReportAdjOut.id = id
+        ReportAdjOut.dt = GCScanSum.DataSource
+        Dim Report As New ReportAdjOut()
 
         ' '... 
         ' ' creating and saving the view's layout to a new memory stream 
@@ -174,6 +174,8 @@
         ' Show the report's preview. 
         Dim Tool As DevExpress.XtraReports.UI.ReportPrintTool = New DevExpress.XtraReports.UI.ReportPrintTool(Report)
         Tool.ShowPreviewDialog()
+        Tool.PreviewForm.FormBorderStyle = FormBorderStyle.None
+        Tool.PreviewForm.WindowState = FormWindowState.Normal
         FormBlack.Close()
         Cursor = Cursors.Default
     End Sub
@@ -329,5 +331,9 @@
         TryCast(gc.DataSource, DataTable).Rows.Add(newRow)
         gc.RefreshDataSource()
         gv.RefreshData()
+    End Sub
+
+    Private Sub PCClose_Click(sender As Object, e As EventArgs) Handles PCClose.Click
+        closeForm()
     End Sub
 End Class
