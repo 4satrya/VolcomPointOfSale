@@ -172,4 +172,10 @@ Public Class FormHome
         FormSO.ShowDialog()
         Cursor = Cursors.Default
     End Sub
+
+    Private Sub TIAdj_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIAdj.ItemClick
+        Cursor = Cursors.WaitCursor
+        FormAdj.ShowDialog()
+        Cursor = Cursors.Default
+    End Sub
 End Class
