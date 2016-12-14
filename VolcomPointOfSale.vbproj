@@ -129,6 +129,12 @@
     <Compile Include="FormAdjOut.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormAdjSingle.Designer.vb">
+      <DependentUpon>FormAdjSingle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdjSingle.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormBlack.Designer.vb">
       <DependentUpon>FormBlack.vb</DependentUpon>
     </Compile>
@@ -482,6 +488,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdjOut.resx">
       <DependentUpon>FormAdjOut.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdjSingle.resx">
+      <DependentUpon>FormAdjSingle.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBlack.resx">
       <DependentUpon>FormBlack.vb</DependentUpon>

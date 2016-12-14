@@ -161,7 +161,8 @@
                         connection.Dispose()
 
                         'get data stock
-                        Dim query_stock = "(SELECT f.id_item, f.item_code, f.price, SUM(IF(j.id_storage_category='2', CONCAT('-', j.storage_item_qty), j.storage_item_qty)) AS qty	
+                        Dim query_stock = "(SELECT f.id_item, f.item_code, f.price, 	
+                        SUM(IF(j.id_stock_status='1', (IF(j.id_storage_category='2', CONCAT('-', j.storage_item_qty), j.storage_item_qty)),0)) AS qty
                         FROM tb_item f 
                         INNER JOIN tb_storage_item j ON j.id_item = f.id_item
                         WHERE j.id_item>0 AND j.id_comp=" + id_comp + " AND f.is_active=1
