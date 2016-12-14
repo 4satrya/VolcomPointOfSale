@@ -72,7 +72,7 @@ Public Class FormImportExcel
         oledbconn.ConnectionString = strConn
         Dim MyCommand As OleDbDataAdapter
 
-        If id_pop_up = "" Then
+        If id_pop_up = "2" Then
             MyCommand = New OleDbDataAdapter("select code, SUM(qty) AS qty from [" & CBWorksheetName.SelectedItem.ToString & "] GROUP BY code", oledbconn)
         Else
             MyCommand = New OleDbDataAdapter("select * from [" & CBWorksheetName.SelectedItem.ToString & "]", oledbconn)
@@ -81,12 +81,12 @@ Public Class FormImportExcel
         'Try
         MyCommand.Fill(data_temp)
             MyCommand.Dispose()
-            'Catch ex As Exception
-            '    stopCustom("Input must be in accordance with the format specified !")
-            '    Exit Sub
-            'End Try
+        'Catch ex As Exception
+        '    stopCustom("Input must be in accordance with the format specified !")
+        '    Exit Sub
+        'End Try
 
-            If id_pop_up = "1" Then
+        If id_pop_up = "1" Then
             'MASTER PRODUCT
             Try
                 'size
@@ -122,9 +122,38 @@ Public Class FormImportExcel
             Catch ex As Exception
                 stopCustom("Incorrect format on table.")
             End Try
+        ElseIf id_pop_up = "2" Then
+            'Adjustment IN
+            Try
+                Dim i As New ClassItem()
+                Dim qry As String = i.queryMain("AND i.is_active=1", "1", False)
+                Dim dt As DataTable = execute_query(qry, -1, True, "", "", "", "")
+
+                Dim tb1 = data_temp.AsEnumerable()
+                Dim tb2 = dt.AsEnumerable()
+                Dim query = From xls In tb1 'left join xls dgn size menjadi sizejoin
+                            Group Join item In tb2
+                            On xls("code") Equals item("item_code") Into codejoin = Group
+                            From resultcode In codejoin.DefaultIfEmpty()
+                            Select New With
+                            {
+                                .id_item = If(resultcode Is Nothing, 0, resultcode("id_item").ToString),
+                                .Code = xls.Field(Of String)("code").ToString,
+                                .Description = If(resultcode Is Nothing, "-", resultcode("item_name").ToString),
+                                .Size = If(resultcode Is Nothing, "-", resultcode("size").ToString),
+                                .Price = If(resultcode Is Nothing, 0, resultcode("price")),
+                                .Qty = xls("qty"),
+                                .Status = If(resultcode Is Nothing, "Code not found", "OK")
+                            }
+                GCData.DataSource = Nothing
+                GCData.DataSource = query.ToList()
+                GCData.RefreshDataSource()
+                GVData.PopulateColumns()
+                GVData.Columns("id_item").Visible = False
+            Catch ex As Exception
+                stopCustom("Incorrect format on table.")
+            End Try
         End If
-
-
         data_temp.Dispose()
         oledbconn.Close()
         oledbconn.Dispose()
@@ -153,7 +182,11 @@ Public Class FormImportExcel
                 e.Appearance.BackColor2 = Color.Salmon
             End If
         ElseIf id_pop_up = "2" Then
-
+            Dim stt As String = sender.GetRowCellValue(e.RowHandle, sender.Columns("Status")).ToString
+            If stt <> "OK" Then
+                e.Appearance.BackColor = Color.Salmon
+                e.Appearance.BackColor2 = Color.Salmon
+            End If
         End If
     End Sub
 
@@ -205,6 +238,38 @@ Public Class FormImportExcel
                             execute_non_query(query_ins, True, "", "", "", "")
                         End If
                         FormItem.viewItem()
+                        Close()
+                        Cursor = Cursors.Default
+                    Else
+                        stopCustom("There is no data for import process, please make sure your input !")
+                        makeSafeGV(GVData)
+                    End If
+                End If
+            ElseIf id_pop_up = "2" Then
+                'adj out
+                Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Please make sure :" + System.Environment.NewLine + "- Only 'OK' status will continue to next step." + System.Environment.NewLine + "- If this report is an important, please click 'No' button, and then click 'Print' button to export to multiple formats provided." + System.Environment.NewLine + "Are you sure you want to continue this process?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                If confirm = DialogResult.Yes Then
+                    makeSafeGV(GVData)
+                    GVData.ActiveFilterString = "[Status] = 'OK'"
+                    If GVData.RowCount > 0 Then
+                        Cursor = Cursors.WaitCursor
+
+                        'ins
+                        FormAdjOut.viewDetail()
+                        Dim l_i As Integer = 0
+                        For l As Integer = 0 To ((GVData.RowCount - 1) - GetGroupRowCount(GVData))
+                            Dim id_item As String = addSlashes(GVData.GetRowCellValue(l, "id_item").ToString)
+                            Dim item_code As String = addSlashes(GVData.GetRowCellValue(l, "Code").ToString)
+                            Dim item_name As String = addSlashes(GVData.GetRowCellValue(l, "Description").ToString)
+                            Dim price As Decimal = GVData.GetRowCellValue(l, "Price")
+                            Dim qty As Decimal = GVData.GetRowCellValue(l, "Qty")
+                            Dim size As String = GVData.GetRowCellValue(l, "Size").ToString
+
+                            FormAdjOut.addRows(id_item, item_code, item_name, size, qty, price)
+                            l_i += 1
+                            PBC.PerformStep()
+                            PBC.Update()
+                        Next
                         Close()
                         Cursor = Cursors.Default
                     Else

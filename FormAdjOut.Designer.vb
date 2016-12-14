@@ -47,7 +47,7 @@ Partial Class FormAdjOut
         Me.MENote = New DevExpress.XtraEditors.MemoEdit()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlItem = New DevExpress.XtraEditors.PanelControl()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.BtnXls = New DevExpress.XtraEditors.SimpleButton()
         Me.BtnRemoveScan = New DevExpress.XtraEditors.SimpleButton()
         Me.BtnAddScan = New DevExpress.XtraEditors.SimpleButton()
         Me.BtnSelect = New DevExpress.XtraEditors.SimpleButton()
@@ -62,7 +62,6 @@ Partial Class FormAdjOut
         Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnCodeSum = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumnSOH = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
         CType(Me.PCClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -161,7 +160,7 @@ Partial Class FormAdjOut
         Me.BtnBrowseFrom.Appearance.Options.UseForeColor = True
         Me.BtnBrowseFrom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnBrowseFrom.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat
-        Me.BtnBrowseFrom.Location = New System.Drawing.Point(394, 12)
+        Me.BtnBrowseFrom.Location = New System.Drawing.Point(371, 12)
         Me.BtnBrowseFrom.Name = "BtnBrowseFrom"
         Me.BtnBrowseFrom.Size = New System.Drawing.Size(29, 19)
         Me.BtnBrowseFrom.TabIndex = 8
@@ -170,7 +169,7 @@ Partial Class FormAdjOut
         'TxtNameCompFrom
         '
         Me.TxtNameCompFrom.Enabled = False
-        Me.TxtNameCompFrom.Location = New System.Drawing.Point(149, 12)
+        Me.TxtNameCompFrom.Location = New System.Drawing.Point(126, 12)
         Me.TxtNameCompFrom.Name = "TxtNameCompFrom"
         Me.TxtNameCompFrom.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtNameCompFrom.Properties.Appearance.Options.UseFont = True
@@ -180,7 +179,7 @@ Partial Class FormAdjOut
         '
         'TxtCodeCompFrom
         '
-        Me.TxtCodeCompFrom.Location = New System.Drawing.Point(85, 12)
+        Me.TxtCodeCompFrom.Location = New System.Drawing.Point(62, 12)
         Me.TxtCodeCompFrom.Name = "TxtCodeCompFrom"
         Me.TxtCodeCompFrom.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCodeCompFrom.Properties.Appearance.Options.UseFont = True
@@ -190,7 +189,7 @@ Partial Class FormAdjOut
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(15, 15)
+        Me.LabelControl3.Location = New System.Drawing.Point(7, 15)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(42, 13)
         Me.LabelControl3.TabIndex = 4
@@ -402,7 +401,7 @@ Partial Class FormAdjOut
         '
         Me.PanelControlItem.Appearance.BackColor = System.Drawing.Color.WhiteSmoke
         Me.PanelControlItem.Appearance.Options.UseBackColor = True
-        Me.PanelControlItem.Controls.Add(Me.SimpleButton1)
+        Me.PanelControlItem.Controls.Add(Me.BtnXls)
         Me.PanelControlItem.Controls.Add(Me.BtnRemoveScan)
         Me.PanelControlItem.Controls.Add(Me.BtnAddScan)
         Me.PanelControlItem.Controls.Add(Me.BtnSelect)
@@ -412,22 +411,22 @@ Partial Class FormAdjOut
         Me.PanelControlItem.Size = New System.Drawing.Size(802, 37)
         Me.PanelControlItem.TabIndex = 14
         '
-        'SimpleButton1
+        'BtnXls
         '
-        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.SimpleButton1.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SimpleButton1.Appearance.ForeColor = System.Drawing.Color.Black
-        Me.SimpleButton1.Appearance.Options.UseBackColor = True
-        Me.SimpleButton1.Appearance.Options.UseFont = True
-        Me.SimpleButton1.Appearance.Options.UseForeColor = True
-        Me.SimpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.SimpleButton1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(305, 2)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(145, 33)
-        Me.SimpleButton1.TabIndex = 7
-        Me.SimpleButton1.Text = "F11 : Load from XLS"
+        Me.BtnXls.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtnXls.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnXls.Appearance.ForeColor = System.Drawing.Color.Black
+        Me.BtnXls.Appearance.Options.UseBackColor = True
+        Me.BtnXls.Appearance.Options.UseFont = True
+        Me.BtnXls.Appearance.Options.UseForeColor = True
+        Me.BtnXls.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BtnXls.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BtnXls.Image = CType(resources.GetObject("BtnXls.Image"), System.Drawing.Image)
+        Me.BtnXls.Location = New System.Drawing.Point(305, 2)
+        Me.BtnXls.Name = "BtnXls"
+        Me.BtnXls.Size = New System.Drawing.Size(145, 33)
+        Me.BtnXls.TabIndex = 7
+        Me.BtnXls.Text = "F11 : Load from XLS"
         '
         'BtnRemoveScan
         '
@@ -492,9 +491,9 @@ Partial Class FormAdjOut
         '
         'GVScanSum
         '
-        Me.GVScanSum.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn2, Me.GridColumnIdDet, Me.GridColumn1, Me.GridColumn3, Me.GridColumn4, Me.GridColumnQty, Me.GridColumn6, Me.GridColumn7, Me.GridColumnCodeSum, Me.GridColumnSOH})
+        Me.GVScanSum.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn2, Me.GridColumnIdDet, Me.GridColumn1, Me.GridColumn3, Me.GridColumn4, Me.GridColumnQty, Me.GridColumn6, Me.GridColumn7, Me.GridColumnCodeSum})
         Me.GVScanSum.GridControl = Me.GCScanSum
-        Me.GVScanSum.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "adj_out_qty", Me.GridColumnQty, "{0:n0}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", Me.GridColumn7, "{0:n2}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "origin_qty", Me.GridColumnSOH, "{0:n0}")})
+        Me.GVScanSum.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "adj_out_qty", Me.GridColumnQty, "{0:n0}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", Me.GridColumn7, "{0:n2}")})
         Me.GVScanSum.Name = "GVScanSum"
         Me.GVScanSum.OptionsBehavior.Editable = False
         Me.GVScanSum.OptionsCustomization.AllowGroup = False
@@ -542,14 +541,14 @@ Partial Class FormAdjOut
         '
         'GridColumnQty
         '
-        Me.GridColumnQty.Caption = "Adj Qty"
+        Me.GridColumnQty.Caption = "Qty"
         Me.GridColumnQty.DisplayFormat.FormatString = "{0:n0}"
         Me.GridColumnQty.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.GridColumnQty.FieldName = "adj_out_qty"
         Me.GridColumnQty.Name = "GridColumnQty"
         Me.GridColumnQty.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "adj_out_qty", "{0:n0}")})
         Me.GridColumnQty.Visible = True
-        Me.GridColumnQty.VisibleIndex = 5
+        Me.GridColumnQty.VisibleIndex = 4
         Me.GridColumnQty.Width = 109
         '
         'GridColumn6
@@ -560,7 +559,7 @@ Partial Class FormAdjOut
         Me.GridColumn6.FieldName = "price"
         Me.GridColumn6.Name = "GridColumn6"
         Me.GridColumn6.Visible = True
-        Me.GridColumn6.VisibleIndex = 6
+        Me.GridColumn6.VisibleIndex = 5
         Me.GridColumn6.Width = 126
         '
         'GridColumn7
@@ -574,7 +573,7 @@ Partial Class FormAdjOut
         Me.GridColumn7.UnboundExpression = "[price] * [adj_out_qty]"
         Me.GridColumn7.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
         Me.GridColumn7.Visible = True
-        Me.GridColumn7.VisibleIndex = 7
+        Me.GridColumn7.VisibleIndex = 6
         Me.GridColumn7.Width = 187
         '
         'GridColumnCodeSum
@@ -585,18 +584,6 @@ Partial Class FormAdjOut
         Me.GridColumnCodeSum.Visible = True
         Me.GridColumnCodeSum.VisibleIndex = 1
         Me.GridColumnCodeSum.Width = 198
-        '
-        'GridColumnSOH
-        '
-        Me.GridColumnSOH.Caption = "SOH"
-        Me.GridColumnSOH.DisplayFormat.FormatString = "{0:n0}"
-        Me.GridColumnSOH.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.GridColumnSOH.FieldName = "origin_qty"
-        Me.GridColumnSOH.Name = "GridColumnSOH"
-        Me.GridColumnSOH.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "origin_qty", "{0:n0}")})
-        Me.GridColumnSOH.Visible = True
-        Me.GridColumnSOH.VisibleIndex = 4
-        Me.GridColumnSOH.Width = 112
         '
         'FormAdjOut
         '
@@ -686,7 +673,7 @@ Partial Class FormAdjOut
     Friend WithEvents BtnRemoveScan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents BtnAddScan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents BtnSelect As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents BtnXls As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GCScanSum As DevExpress.XtraGrid.GridControl
     Friend WithEvents GVScanSum As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
@@ -697,6 +684,5 @@ Partial Class FormAdjOut
     Friend WithEvents GridColumn6 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn7 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnCodeSum As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumnSOH As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnIdDet As DevExpress.XtraGrid.Columns.GridColumn
 End Class

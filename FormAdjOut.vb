@@ -29,12 +29,14 @@
             removeScan()
         ElseIf e.KeyCode = Keys.F10 Then 'print
             print()
+        ElseIf e.KeyCode = Keys.F11 Then 'load xls
+            importExcel()
         End If
     End Sub
 
     Sub save()
         If id_report_status_glb <> "5" And id_report_status_glb <> "6" Then
-            Dim so_note As String = addSlashes(MENote.Text)
+            Dim adj_out_note As String = addSlashes(MENote.Text)
             Dim id_report_status As String = LEReportStatus.EditValue.ToString
             Dim gv As DevExpress.XtraGrid.Views.Grid.GridView
             gv = GVScanSum
@@ -46,110 +48,52 @@
                 If confirm = DialogResult.Yes Then
                     Cursor = Cursors.WaitCursor
                     If action = "ins" Then
-                        Dim data_temp As DataTable = GCScanSum.DataSource
-                        Dim connection_string As String = String.Format("Data Source={0};User Id={1};Password={2};Database={3};Convert Zero Datetime=True", app_host, app_username, app_password, app_database)
-                        Dim connection As New MySql.Data.MySqlClient.MySqlConnection(connection_string)
-                        connection.Open()
-                        Dim command As MySql.Data.MySqlClient.MySqlCommand = connection.CreateCommand()
-                        Dim qry As String = "DROP TABLE IF EXISTS tb_so_temp; CREATE TEMPORARY TABLE IF NOT EXISTS tb_so_temp AS ( SELECT * FROM ("
-                        For d As Integer = 0 To data_temp.Rows.Count - 1
-                            Dim id_item As String = data_temp.Rows(d)("id_item").ToString
-                            If d > 0 Then
-                                qry += "UNION ALL "
-                            End If
-                            qry += "SELECT '" + id_item + "' AS `id_item` "
-                        Next
-                        qry += ") a ); ALTER TABLE tb_so_temp CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci; "
-                        command.CommandText = qry
-                        command.ExecuteNonQuery()
-                        command.Dispose()
-                        ' Console.WriteLine(qry)
-
-                        Dim data_view As New DataTable
-                        Dim qry_view As String = "SELECT a.id_item, COUNT(a.id_item) AS `so_qty`
-                                FROM tb_so_temp a 
-                                GROUP BY a.id_item"
-                        Dim adapter As New MySql.Data.MySqlClient.MySqlDataAdapter(qry_view, connection)
-                        adapter.SelectCommand.CommandTimeout = 300
-                        adapter.Fill(data_view)
-                        adapter.Dispose()
-                        connection.Close()
-                        connection.Dispose()
-
-                        'get data stock
-                        Dim query_stock = "(SELECT f.id_item, f.item_code, f.price, 	
-                        SUM(IF(j.id_stock_status='1', (IF(j.id_storage_category='2', CONCAT('-', j.storage_item_qty), j.storage_item_qty)),0)) AS qty
-                        FROM tb_item f 
-                        INNER JOIN tb_storage_item j ON j.id_item = f.id_item
-                        WHERE j.id_item>0 AND j.id_comp=" + id_comp + " AND f.is_active=1
-                        GROUP BY j.id_item, j.id_comp)
-                        UNION ALL
-                        (SELECT i.id_item, i.item_code, i.price, 0 AS `qty`
-                        FROM tb_item i
-                        LEFT JOIN (
-	                        SELECT j.id_item
-	                        FROM tb_storage_item j
-	                        WHERE j.id_comp=" + id_comp + "
-	                        GROUP BY j.id_item, j.id_comp
-                        ) s ON s.id_item = i.id_item
-                        WHERE ISNULL(s.id_item) AND i.is_active=1)
-                        ORDER BY id_item ASC"
-                        Dim data_stock As DataTable = execute_query(query_stock, -1, True, "", "", "", "")
-                        Dim tb1 = data_stock.AsEnumerable()
-                        Dim tb2 = data_view.AsEnumerable()
-                        Dim query_cek = From table1 In tb1
-                                        Group Join table_tmp In tb2 On table1("id_item").ToString Equals table_tmp("id_item").ToString
-                                        Into Group
-                                        From y1 In Group.DefaultIfEmpty()
-                                        Select New With
-                                        {
-                                            .id_item = table1("id_item").ToString,
-                                            .item_code = table1("item_code").ToString,
-                                            .so_qty = If(y1 Is Nothing, 0, y1("so_qty")),
-                                            .qty = table1("qty"),
-                                            .price = table1("price")
-                                        }
-                        GCScanSum.DataSource = Nothing
-                        GCScanSum.DataSource = query_cek.ToList()
-
                         'main query
-                        Dim query As String = "INSERT INTO tb_so(id_comp, so_number, so_date, so_note, id_report_status, id_prepared_by) 
-                        VALUES('" + id_comp + "', header_number(5), NOW(), '" + so_note + "', '1', '" + id_user + "'); SELECT LAST_INSERT_ID(); "
+                        Dim query As String = "INSERT INTO tb_adj_out(id_comp, adj_out_number, adj_out_date, adj_out_note, id_report_status, id_prepared_by) 
+                        VALUES('" + id_comp + "', header_number(6), NOW(), '" + adj_out_note + "', '1', '" + id_user + "'); SELECT LAST_INSERT_ID(); "
                         id = execute_query(query, 0, True, "", "", "", "")
 
                         'detail
-                        Dim query_det As String = "INSERT INTO tb_so_det(id_so, id_item, price, so_qty,qty) VALUES "
+                        Dim query_det As String = "INSERT INTO tb_adj_out_det(id_adj_out, id_item, price, adj_out_qty) VALUES "
                         For i As Integer = 0 To ((GVScanSum.RowCount - 1) - GetGroupRowCount(GVScanSum))
                             Dim id_item As String = GVScanSum.GetRowCellValue(i, "id_item").ToString
                             Dim price As String = decimalSQL(GVScanSum.GetRowCellValue(i, "price").ToString)
-                            Dim so_qty As String = decimalSQL(GVScanSum.GetRowCellValue(i, "so_qty").ToString)
-                            Dim qty As String = decimalSQL(GVScanSum.GetRowCellValue(i, "qty").ToString)
+                            Dim adj_out_qty As String = decimalSQL(GVScanSum.GetRowCellValue(i, "adj_out_qty").ToString)
                             If i > 0 Then
                                 query_det += ", "
                             End If
-                            query_det += "('" + id + "','" + id_item + "', '" + price + "', '" + so_qty + "', '" + qty + "')"
+                            query_det += "('" + id + "','" + id_item + "', '" + price + "', '" + adj_out_qty + "')"
                         Next
                         If GVScanSum.RowCount > 0 Then
                             execute_non_query(query_det, True, "", "", "", "")
                         End If
 
-                        FormSO.viewSO()
-                        FormSO.GVSO.FocusedRowHandle = find_row(FormSO.GVSO, "id_so", id)
+                        FormAdj.viewAdjOut()
+                        FormAdj.GVAdjOut.FocusedRowHandle = find_row(FormAdj.GVAdjOut, "id_adj_out", id)
                         action = "upd"
                         actionLoad()
                         infoCustom("Document #" + TxtNumber.Text + " was created successfully.")
                     Else
-                        Dim query As String = "UPDATE tb_so SET id_comp='" + id_comp + "', 
-                        so_note='" + so_note + "', id_report_status='" + id_report_status + "' "
+                        Dim query As String = "UPDATE tb_adj_out SET id_comp='" + id_comp + "', 
+                        adj_out_note='" + adj_out_note + "', id_report_status='" + id_report_status + "' "
                         If id_report_status = "5" Or id_report_status = "6" Then 'final
                             query += ", final_status_time=NOW() "
                         End If
-                        query += "WHERE id_so ='" + id + "' "
+                        query += "WHERE id_adj_out ='" + id + "' "
                         execute_non_query(query, True, "", "", "", "")
 
+                        'completed
+                        If id_report_status = "6" Then
+                            Dim query_stock As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
+                            SELECT tb_adj_out.id_comp, 2, tb_adj_out_det.id_item, 6, " + id + ", tb_adj_out_det.adj_out_qty, NOW(), 1 
+                            FROM tb_adj_out_det 
+                            INNER JOIN tb_adj_out ON tb_adj_out.id_adj_out = tb_adj_out_det.id_adj_out
+                            WHERE tb_adj_out_det.id_adj_out=" + id + ""
+                            execute_non_query(query_stock, True, "", "", "", "")
+                        End If
 
-                        FormSO.viewSO()
-                        FormSO.GVSO.FocusedRowHandle = find_row(FormSO.GVSO, "id_so", id)
+                        FormAdj.viewAdjOut()
+                        FormAdj.GVAdjOut.FocusedRowHandle = find_row(FormAdj.GVAdjOut, "id_adj_out", id)
                         action = "upd"
                         actionLoad()
                     End If
@@ -172,14 +116,16 @@
     End Sub
 
     Sub addScan()
-        Cursor = Cursors.WaitCursor
-        FormBlack.Show()
-        FormAdjSingle.id_comp = id_comp
-        FormAdjSingle.ShowDialog()
-        FormBlack.Close()
-        BringToFront()
-        BtnAddScan.Focus()
-        Cursor = Cursors.Default
+        If action = "ins" Then
+            Cursor = Cursors.WaitCursor
+            FormBlack.Show()
+            FormAdjSingle.id_pop_up = "1"
+            FormAdjSingle.ShowDialog()
+            FormBlack.Close()
+            BringToFront()
+            BtnAddScan.Focus()
+            Cursor = Cursors.Default
+        End If
     End Sub
 
     Sub removeScan()
@@ -232,6 +178,16 @@
         Cursor = Cursors.Default
     End Sub
 
+    Sub importExcel()
+        If action = "ins" Then
+            Cursor = Cursors.WaitCursor
+            FormImportExcel.id_pop_up = "2"
+            FormImportExcel.ShowDialog()
+            BringToFront()
+            Cursor = Cursors.Default
+        End If
+    End Sub
+
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         save()
     End Sub
@@ -246,15 +202,15 @@
 
     Sub actionLoad()
         If action = "upd" Then
-            Dim so As New ClassSO()
-            Dim query As String = so.queryMain("AND s.id_so=" + id + "", "1")
+            Dim out As New ClassAdj()
+            Dim query As String = out.queryMainOut("AND o.id_adj_out=" + id + "", "1")
             Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
-            TxtNumber.Text = data.Rows(0)("so_number").ToString
-            DECreated.EditValue = data.Rows(0)("so_date")
+            TxtNumber.Text = data.Rows(0)("adj_out_number").ToString
+            DECreated.EditValue = data.Rows(0)("adj_out_date")
             id_comp = data.Rows(0)("id_comp").ToString
             TxtCodeCompFrom.Text = data.Rows(0)("comp_number").ToString
             TxtNameCompFrom.Text = data.Rows(0)("comp_name").ToString
-            MENote.Text = data.Rows(0)("so_note").ToString
+            MENote.Text = data.Rows(0)("adj_out_note").ToString
             id_report_status_glb = data.Rows(0)("id_report_status").ToString
             LEReportStatus.ItemIndex = LEReportStatus.Properties.GetDataSourceRowIndex("id_report_status", data.Rows(0)("id_report_status").ToString)
             TxtPreparedBy.Text = data.Rows(0)("employee_name").ToString
@@ -347,5 +303,31 @@
 
     Private Sub BtnRemoveScan_Click(sender As Object, e As EventArgs) Handles BtnRemoveScan.Click
         removeScan()
+    End Sub
+
+    Private Sub GVScanSum_CustomColumnDisplayText(sender As Object, e As DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs) Handles GVScanSum.CustomColumnDisplayText
+        If e.Column.FieldName = "no" Then
+            e.DisplayText = (e.ListSourceRowIndex + 1).ToString()
+        End If
+    End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles BtnXls.Click
+        importExcel()
+    End Sub
+
+    Sub addRows(ByVal id_item As String, ByVal code As String, ByVal desc As String, ByVal size As String, ByVal qty As Decimal, ByVal price As Decimal)
+        Dim gc As DevExpress.XtraGrid.GridControl = GCScanSum
+        Dim gv As DevExpress.XtraGrid.Views.Grid.GridView = GVScanSum
+        Dim newRow As DataRow = (TryCast(gc.DataSource, DataTable)).NewRow()
+        newRow("id_adj_out_det") = "0"
+        newRow("id_item") = id_item
+        newRow("item_code") = code
+        newRow("item_name") = desc
+        newRow("size") = size
+        newRow("adj_out_qty") = qty
+        newRow("price") = price
+        TryCast(gc.DataSource, DataTable).Rows.Add(newRow)
+        gc.RefreshDataSource()
+        gv.RefreshData()
     End Sub
 End Class

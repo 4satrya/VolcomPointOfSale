@@ -23,14 +23,17 @@ Partial Class FormAdjSingle
         Me.TxtCode = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.TxtDesc = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
-        Me.TxtSOH = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.TxtQty = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtSize = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtPrice = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.TxtCode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtDesc.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtSOH.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtQty.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtSize.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtPrice.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelControl1
@@ -70,31 +73,6 @@ Partial Class FormAdjSingle
         Me.TxtDesc.Size = New System.Drawing.Size(349, 20)
         Me.TxtDesc.TabIndex = 3
         '
-        'LabelControl3
-        '
-        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(12, 102)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(76, 13)
-        Me.LabelControl3.TabIndex = 4
-        Me.LabelControl3.Text = "Stock on Hand"
-        '
-        'TxtSOH
-        '
-        Me.TxtSOH.Enabled = False
-        Me.TxtSOH.Location = New System.Drawing.Point(12, 121)
-        Me.TxtSOH.Name = "TxtSOH"
-        Me.TxtSOH.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtSOH.Properties.Appearance.Options.UseFont = True
-        Me.TxtSOH.Properties.DisplayFormat.FormatString = "N0"
-        Me.TxtSOH.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TxtSOH.Properties.Mask.EditMask = "n0"
-        Me.TxtSOH.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TxtSOH.Properties.Mask.SaveLiteral = False
-        Me.TxtSOH.Properties.Mask.ShowPlaceHolders = False
-        Me.TxtSOH.Size = New System.Drawing.Size(349, 20)
-        Me.TxtSOH.TabIndex = 28
-        '
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -120,15 +98,57 @@ Partial Class FormAdjSingle
         Me.TxtQty.Size = New System.Drawing.Size(349, 20)
         Me.TxtQty.TabIndex = 30
         '
+        'LabelControl3
+        '
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl3.Location = New System.Drawing.Point(12, 102)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(20, 13)
+        Me.LabelControl3.TabIndex = 31
+        Me.LabelControl3.Text = "Size"
+        '
+        'TxtSize
+        '
+        Me.TxtSize.Enabled = False
+        Me.TxtSize.Location = New System.Drawing.Point(12, 121)
+        Me.TxtSize.Name = "TxtSize"
+        Me.TxtSize.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtSize.Properties.Appearance.Options.UseFont = True
+        Me.TxtSize.Size = New System.Drawing.Size(154, 20)
+        Me.TxtSize.TabIndex = 32
+        '
+        'TxtPrice
+        '
+        Me.TxtPrice.Enabled = False
+        Me.TxtPrice.Location = New System.Drawing.Point(169, 121)
+        Me.TxtPrice.Name = "TxtPrice"
+        Me.TxtPrice.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtPrice.Properties.Appearance.Options.UseFont = True
+        Me.TxtPrice.Properties.DisplayFormat.FormatString = "N2"
+        Me.TxtPrice.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TxtPrice.Size = New System.Drawing.Size(192, 20)
+        Me.TxtPrice.TabIndex = 33
+        '
+        'LabelControl5
+        '
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Location = New System.Drawing.Point(169, 102)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(24, 13)
+        Me.LabelControl5.TabIndex = 34
+        Me.LabelControl5.Text = "Price"
+        '
         'FormAdjSingle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(373, 218)
+        Me.ClientSize = New System.Drawing.Size(373, 211)
+        Me.Controls.Add(Me.LabelControl5)
+        Me.Controls.Add(Me.TxtPrice)
+        Me.Controls.Add(Me.TxtSize)
+        Me.Controls.Add(Me.LabelControl3)
         Me.Controls.Add(Me.TxtQty)
         Me.Controls.Add(Me.LabelControl4)
-        Me.Controls.Add(Me.TxtSOH)
-        Me.Controls.Add(Me.LabelControl3)
         Me.Controls.Add(Me.TxtDesc)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.TxtCode)
@@ -144,8 +164,9 @@ Partial Class FormAdjSingle
         Me.Text = "Adjustment"
         CType(Me.TxtCode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtDesc.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtSOH.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtQty.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtSize.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtPrice.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -155,8 +176,10 @@ Partial Class FormAdjSingle
     Friend WithEvents TxtCode As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TxtDesc As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TxtSOH As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TxtQty As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TxtSize As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtPrice As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
 End Class

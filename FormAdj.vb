@@ -36,9 +36,11 @@
     Sub edit()
         Cursor = Cursors.WaitCursor
         If XTCAdj.SelectedTabPageIndex = 0 Then 'out
-            FormAdjOut.action = "upd"
-            FormAdjOut.id = GVAdjOut.GetFocusedRowCellValue("id_adj_out").ToString
-            FormAdjOut.ShowDialog()
+            If GVAdjOut.FocusedRowHandle >= 0 Then
+                FormAdjOut.action = "upd"
+                FormAdjOut.id = GVAdjOut.GetFocusedRowCellValue("id_adj_out").ToString
+                FormAdjOut.ShowDialog()
+            End If
         Else 'in
 
         End If
