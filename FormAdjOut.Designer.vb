@@ -494,7 +494,7 @@ Partial Class FormAdjOut
         '
         Me.GVScanSum.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn2, Me.GridColumnIdDet, Me.GridColumn1, Me.GridColumn3, Me.GridColumn4, Me.GridColumnQty, Me.GridColumn6, Me.GridColumn7, Me.GridColumnCodeSum, Me.GridColumnSOH})
         Me.GVScanSum.GridControl = Me.GCScanSum
-        Me.GVScanSum.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "so_qty", Me.GridColumnQty, "{0:n0}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", Me.GridColumn7, "{0:n2}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "so_qty", Me.GridColumnSOH, "{0:n0}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "diff", Nothing, "{0:n0}")})
+        Me.GVScanSum.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "adj_out_qty", Me.GridColumnQty, "{0:n0}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", Me.GridColumn7, "{0:n2}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "origin_qty", Me.GridColumnSOH, "{0:n0}")})
         Me.GVScanSum.Name = "GVScanSum"
         Me.GVScanSum.OptionsBehavior.Editable = False
         Me.GVScanSum.OptionsCustomization.AllowGroup = False
@@ -545,9 +545,9 @@ Partial Class FormAdjOut
         Me.GridColumnQty.Caption = "Adj Qty"
         Me.GridColumnQty.DisplayFormat.FormatString = "{0:n0}"
         Me.GridColumnQty.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.GridColumnQty.FieldName = "adj_qty"
+        Me.GridColumnQty.FieldName = "adj_out_qty"
         Me.GridColumnQty.Name = "GridColumnQty"
-        Me.GridColumnQty.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "adj_qty", "{0:n0}")})
+        Me.GridColumnQty.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "adj_out_qty", "{0:n0}")})
         Me.GridColumnQty.Visible = True
         Me.GridColumnQty.VisibleIndex = 5
         Me.GridColumnQty.Width = 109
@@ -571,7 +571,7 @@ Partial Class FormAdjOut
         Me.GridColumn7.FieldName = "amount"
         Me.GridColumn7.Name = "GridColumn7"
         Me.GridColumn7.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", "{0:n2}")})
-        Me.GridColumn7.UnboundExpression = "[price] * [adj_qty]"
+        Me.GridColumn7.UnboundExpression = "[price] * [adj_out_qty]"
         Me.GridColumn7.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
         Me.GridColumn7.Visible = True
         Me.GridColumn7.VisibleIndex = 7

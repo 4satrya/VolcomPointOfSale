@@ -25,8 +25,8 @@
     Sub insert()
         Cursor = Cursors.WaitCursor
         If XTCAdj.SelectedTabPageIndex = 0 Then 'out
-            FormSODet.action = "ins"
-            FormSODet.ShowDialog()
+            FormAdjOut.action = "ins"
+            FormAdjOut.ShowDialog()
         Else 'in
 
         End If
@@ -36,9 +36,9 @@
     Sub edit()
         Cursor = Cursors.WaitCursor
         If XTCAdj.SelectedTabPageIndex = 0 Then 'out
-            'FormSODet.action = "upd"
-            'FormSODet.id = GVSO.GetFocusedRowCellValue("id_so").ToString
-            'FormSODet.ShowDialog()
+            FormAdjOut.action = "upd"
+            FormAdjOut.id = GVAdjOut.GetFocusedRowCellValue("id_adj_out").ToString
+            FormAdjOut.ShowDialog()
         Else 'in
 
         End If
