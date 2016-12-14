@@ -99,6 +99,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassAdj.vb" />
     <Compile Include="ClassComp.vb" />
     <Compile Include="ClassCompany.vb" />
     <Compile Include="ClassItem.vb" />
@@ -114,6 +115,12 @@
     </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdj.Designer.vb">
+      <DependentUpon>FormAdj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdj.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormBlack.Designer.vb">
@@ -464,6 +471,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormAdj.resx">
+      <DependentUpon>FormAdj.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBlack.resx">
       <DependentUpon>FormBlack.vb</DependentUpon>
     </EmbeddedResource>
