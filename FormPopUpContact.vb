@@ -129,6 +129,20 @@
             FormSODet.TxtCodeCompFrom.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "2")
             FormSODet.viewDetail()
             Close()
+        ElseIf id_pop_up = "8" Then
+            'Adj Out
+            FormAdjOut.id_comp = GVCompany.GetFocusedRowCellValue("id_comp").ToString
+            FormAdjOut.TxtNameCompFrom.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "1")
+            FormAdjOut.TxtCodeCompFrom.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "2")
+            FormAdjOut.viewDetail()
+            Close()
+        ElseIf id_pop_up = "9" Then
+            'Adj In
+            'FormAdjIn.id_comp = GVCompany.GetFocusedRowCellValue("id_comp").ToString
+            'FormAdjIn.TxtNameCompFrom.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "1")
+            'FormAdjIn.TxtCodeCompFrom.Text = get_company_x(get_id_company(GVCompanyContactList.GetFocusedRowCellDisplayText("id_comp_contact").ToString), "2")
+            'FormAdjIn.viewDetail()
+            'Close()
         End If
         Cursor = Cursors.Default
     End Sub

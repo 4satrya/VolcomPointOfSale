@@ -47,13 +47,15 @@ Partial Class FormAdjOut
         Me.MENote = New DevExpress.XtraEditors.MemoEdit()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlItem = New DevExpress.XtraEditors.PanelControl()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.BtnRemoveScan = New DevExpress.XtraEditors.SimpleButton()
         Me.BtnAddScan = New DevExpress.XtraEditors.SimpleButton()
         Me.BtnSelect = New DevExpress.XtraEditors.SimpleButton()
         Me.GCScanSum = New DevExpress.XtraGrid.GridControl()
         Me.GVScanSum = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnIdDet = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnQty = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -61,8 +63,6 @@ Partial Class FormAdjOut
         Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnCodeSum = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnSOH = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.GridColumnIdDet = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
         CType(Me.PCClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -412,6 +412,23 @@ Partial Class FormAdjOut
         Me.PanelControlItem.Size = New System.Drawing.Size(802, 37)
         Me.PanelControlItem.TabIndex = 14
         '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.SimpleButton1.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SimpleButton1.Appearance.ForeColor = System.Drawing.Color.Black
+        Me.SimpleButton1.Appearance.Options.UseBackColor = True
+        Me.SimpleButton1.Appearance.Options.UseFont = True
+        Me.SimpleButton1.Appearance.Options.UseForeColor = True
+        Me.SimpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.SimpleButton1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
+        Me.SimpleButton1.Location = New System.Drawing.Point(305, 2)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(145, 33)
+        Me.SimpleButton1.TabIndex = 7
+        Me.SimpleButton1.Text = "F11 : Load from XLS"
+        '
         'BtnRemoveScan
         '
         Me.BtnRemoveScan.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
@@ -484,12 +501,6 @@ Partial Class FormAdjOut
         Me.GVScanSum.OptionsView.ShowFooter = True
         Me.GVScanSum.OptionsView.ShowGroupPanel = False
         '
-        'GridColumn1
-        '
-        Me.GridColumn1.Caption = "Id_item"
-        Me.GridColumn1.FieldName = "id_item"
-        Me.GridColumn1.Name = "GridColumn1"
-        '
         'GridColumn2
         '
         Me.GridColumn2.Caption = "No"
@@ -498,6 +509,18 @@ Partial Class FormAdjOut
         Me.GridColumn2.Visible = True
         Me.GridColumn2.VisibleIndex = 0
         Me.GridColumn2.Width = 58
+        '
+        'GridColumnIdDet
+        '
+        Me.GridColumnIdDet.Caption = "Id"
+        Me.GridColumnIdDet.FieldName = "id_adj_out"
+        Me.GridColumnIdDet.Name = "GridColumnIdDet"
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "Id_item"
+        Me.GridColumn1.FieldName = "id_item"
+        Me.GridColumn1.Name = "GridColumn1"
         '
         'GridColumn3
         '
@@ -574,29 +597,6 @@ Partial Class FormAdjOut
         Me.GridColumnSOH.Visible = True
         Me.GridColumnSOH.VisibleIndex = 4
         Me.GridColumnSOH.Width = 112
-        '
-        'SimpleButton1
-        '
-        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.SimpleButton1.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SimpleButton1.Appearance.ForeColor = System.Drawing.Color.Black
-        Me.SimpleButton1.Appearance.Options.UseBackColor = True
-        Me.SimpleButton1.Appearance.Options.UseFont = True
-        Me.SimpleButton1.Appearance.Options.UseForeColor = True
-        Me.SimpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.SimpleButton1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(305, 2)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(145, 33)
-        Me.SimpleButton1.TabIndex = 7
-        Me.SimpleButton1.Text = "F11 : Load from XLS"
-        '
-        'GridColumnIdDet
-        '
-        Me.GridColumnIdDet.Caption = "Id"
-        Me.GridColumnIdDet.FieldName = "id_adj_out"
-        Me.GridColumnIdDet.Name = "GridColumnIdDet"
         '
         'FormAdjOut
         '
