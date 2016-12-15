@@ -412,7 +412,7 @@
     Private Sub TxtItemCode_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtItemCode.KeyDown
         If e.KeyCode = Keys.Enter Then
             Dim code As String = TxtItemCode.Text
-            Dim query As String = item.queryMain("AND i.item_code='" + code + "' AND i.id_comp_sup='" + id_comp_from + "' ", "1", False)
+            Dim query As String = item.queryMain("AND i.is_active=1 AND i.item_code='" + code + "' AND i.id_comp_sup='" + id_comp_from + "' ", "1", False)
             Dim dt As DataTable = execute_query(query, -1, True, "", "", "", "")
             If dt.Rows.Count > 0 Then
                 Dim newRow As DataRow = (TryCast(GCScan.DataSource, DataTable)).NewRow()

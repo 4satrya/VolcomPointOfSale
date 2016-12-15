@@ -236,7 +236,7 @@
                 connection.Dispose()
 
                 'get data stock
-                Dim query_stock As String = "CALL view_stock_item('AND j.id_comp=" + id_comp_from + " AND f.id_comp_sup=" + id_comp_to + " AND j.storage_item_datetime<=''9999-12-01'' ', '2')"
+                Dim query_stock As String = "CALL view_stock_item('AND f.is_active=1 AND j.id_comp=" + id_comp_from + " AND f.id_comp_sup=" + id_comp_to + " AND j.storage_item_datetime<=''9999-12-01'' ', '2')"
                 Dim data_stock As DataTable = execute_query(query_stock, -1, True, "", "", "", "")
                 Dim tb1 = data_view.AsEnumerable()
                 Dim tb2 = data_stock.AsEnumerable()
@@ -466,8 +466,7 @@
     Private Sub TxtItemCode_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtItemCode.KeyDown
         If e.KeyCode = Keys.Enter Then
             Dim code As String = TxtItemCode.Text
-            Dim query As String = item.queryMain("AND i.item_code='" + code + "' AND i.id_comp_sup='" + id_comp_to + "' ", "1", False)
-            'Dim query As String = "CALL view_stock_item('AND j.id_comp=" + id_comp_from + " AND f.id_comp_sup=" + id_comp_to + " AND j.storage_item_datetime<=''9999-12-01'' ', '2')"
+            Dim query As String = item.queryMain("AND i.is_active=1 AND i.item_code='" + code + "' AND i.id_comp_sup='" + id_comp_to + "' ", "1", False)
             Dim dt As DataTable = execute_query(query, -1, True, "", "", "", "")
             If dt.Rows.Count > 0 Then
                 Dim newRow As DataRow = (TryCast(GCScan.DataSource, DataTable)).NewRow()

@@ -432,9 +432,8 @@
                 BringToFront()
             Else
                 Dim code As String = TxtItemCode.Text
-                '- query direct to stock Dim query As String = "CALL view_stock_item('AND j.id_comp=" + id_display_default + " AND f.item_code=" + code + " AND j.storage_item_datetime<=''9999-12-01'' ', '2')"
                 Dim i As New ClassItem()
-                Dim query As String = i.queryMain("AND i.item_code='" + code + "' ", "1", False)
+                Dim query As String = i.queryMain("AND i.is_active=1 AND i.item_code='" + code + "' ", "1", False)
                 Dim dt As DataTable = execute_query(query, -1, True, "", "", "", "")
                 If dt.Rows.Count > 0 Then
                     'Dim qty_avail As Decimal = dt.Rows(0)("qty_avl")
