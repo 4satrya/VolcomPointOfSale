@@ -10,6 +10,7 @@
     Dim card_until As String = ""
 
     Private Sub FormStock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SLEStorage.Focus()
         viewComp()
         viewItem()
         viewCompCard()
@@ -207,5 +208,73 @@
         Cursor = Cursors.WaitCursor
         viewStockCard()
         Cursor = Cursors.Default
+    End Sub
+
+    Private Sub PanelControlBack_MouseHover(sender As Object, e As EventArgs) Handles PanelControlBack.MouseHover
+        PanelControlBack.Cursor = Cursors.Hand
+    End Sub
+
+    Private Sub PanelControlBack_MouseLeave(sender As Object, e As EventArgs) Handles PanelControlBack.MouseLeave
+        PanelControlBack.Cursor = Cursors.Default
+    End Sub
+
+    Private Sub PanelControlBack_MouseClick(sender As Object, e As MouseEventArgs) Handles PanelControlBack.MouseClick
+        Close()
+    End Sub
+
+    Private Sub XTCStock_SelectedPageChanged(sender As Object, e As DevExpress.XtraTab.TabPageChangedEventArgs) Handles XTCStock.SelectedPageChanged
+        If XTCStock.SelectedTabPageIndex = 0 Then
+            SLEStorage.Focus()
+        ElseIf XTCStock.SelectedTabPageIndex = 1 Then
+            SLEStorageCard.Focus()
+        End If
+    End Sub
+
+    Private Sub SLEStorage_KeyDown(sender As Object, e As KeyEventArgs) Handles SLEStorage.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SLESupplier.Focus()
+        End If
+    End Sub
+
+    Private Sub SLESupplier_KeyDown(sender As Object, e As KeyEventArgs) Handles SLESupplier.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SLEItem.Focus()
+        End If
+    End Sub
+
+    Private Sub SLEItem_KeyDown(sender As Object, e As KeyEventArgs) Handles SLEItem.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            DERefDate.Focus()
+        End If
+    End Sub
+
+    Private Sub DERefDate_KeyDown(sender As Object, e As KeyEventArgs) Handles DERefDate.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            BtnView.Focus()
+        End If
+    End Sub
+
+    Private Sub SLEStorageCard_KeyDown(sender As Object, e As KeyEventArgs) Handles SLEStorageCard.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SLEItemCard.Focus()
+        End If
+    End Sub
+
+    Private Sub SLEItemCard_KeyDown(sender As Object, e As KeyEventArgs) Handles SLEItemCard.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            DEFromCard.Focus()
+        End If
+    End Sub
+
+    Private Sub DEFromCard_KeyDown(sender As Object, e As KeyEventArgs) Handles DEFromCard.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            DEUntilCard.Focus()
+        End If
+    End Sub
+
+    Private Sub DEUntilCard_KeyDown(sender As Object, e As KeyEventArgs) Handles DEUntilCard.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SimpleButton1.Focus()
+        End If
     End Sub
 End Class

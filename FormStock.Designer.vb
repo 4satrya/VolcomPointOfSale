@@ -20,8 +20,7 @@ Partial Class FormStock
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
-        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormStock))
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
@@ -94,8 +93,9 @@ Partial Class FormStock
         Me.GridColumn21 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn22 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.LabelControl15 = New DevExpress.XtraEditors.LabelControl()
-        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControl3.SuspendLayout()
+        Me.PanelControlTitle = New DevExpress.XtraEditors.PanelControl()
+        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
+        Me.PanelControlBack = New DevExpress.XtraEditors.PanelControl()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -129,35 +129,17 @@ Partial Class FormStock
         CType(Me.GridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SLEStorageCard.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PanelControlTitle, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControlTitle.SuspendLayout()
+        CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PanelControl3
-        '
-        Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControl3.Controls.Add(Me.LabelControl13)
-        Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl3.Location = New System.Drawing.Point(20, 20)
-        Me.PanelControl3.Name = "PanelControl3"
-        Me.PanelControl3.Size = New System.Drawing.Size(760, 45)
-        Me.PanelControl3.TabIndex = 5
-        '
-        'LabelControl13
-        '
-        Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Segoe UI Light", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LabelControl13.Dock = System.Windows.Forms.DockStyle.Left
-        Me.LabelControl13.Location = New System.Drawing.Point(0, 0)
-        Me.LabelControl13.Name = "LabelControl13"
-        Me.LabelControl13.Size = New System.Drawing.Size(60, 37)
-        Me.LabelControl13.TabIndex = 1
-        Me.LabelControl13.Text = "Stock"
         '
         'PanelControl1
         '
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl1.Controls.Add(Me.PanelControl2)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl1.Location = New System.Drawing.Point(20, 565)
+        Me.PanelControl1.Location = New System.Drawing.Point(20, 545)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(760, 35)
         Me.PanelControl1.TabIndex = 6
@@ -252,10 +234,11 @@ Partial Class FormStock
         'XTCStock
         '
         Me.XTCStock.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.XTCStock.Location = New System.Drawing.Point(20, 65)
+        Me.XTCStock.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Left
+        Me.XTCStock.Location = New System.Drawing.Point(20, 81)
         Me.XTCStock.Name = "XTCStock"
         Me.XTCStock.SelectedTabPage = Me.XTPStock
-        Me.XTCStock.Size = New System.Drawing.Size(760, 500)
+        Me.XTCStock.Size = New System.Drawing.Size(760, 464)
         Me.XTCStock.TabIndex = 9
         Me.XTCStock.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPStock, Me.XTPStockCard})
         '
@@ -264,7 +247,7 @@ Partial Class FormStock
         Me.XTPStock.Controls.Add(Me.GCStock)
         Me.XTPStock.Controls.Add(Me.PanelControlStock)
         Me.XTPStock.Name = "XTPStock"
-        Me.XTPStock.Size = New System.Drawing.Size(758, 475)
+        Me.XTPStock.Size = New System.Drawing.Size(734, 462)
         Me.XTPStock.Text = "Stock"
         '
         'GCStock
@@ -275,7 +258,7 @@ Partial Class FormStock
         Me.GCStock.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCStock.MainView = Me.GVStock
         Me.GCStock.Name = "GCStock"
-        Me.GCStock.Size = New System.Drawing.Size(758, 407)
+        Me.GCStock.Size = New System.Drawing.Size(734, 394)
         Me.GCStock.TabIndex = 1
         Me.GCStock.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVStock})
         '
@@ -384,7 +367,7 @@ Partial Class FormStock
         Me.PanelControlStock.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControlStock.Location = New System.Drawing.Point(0, 0)
         Me.PanelControlStock.Name = "PanelControlStock"
-        Me.PanelControlStock.Size = New System.Drawing.Size(758, 68)
+        Me.PanelControlStock.Size = New System.Drawing.Size(734, 68)
         Me.PanelControlStock.TabIndex = 0
         '
         'SLESupplier
@@ -458,7 +441,7 @@ Partial Class FormStock
         Me.DERefDate.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.DERefDate.Properties.DisplayFormat.FormatString = "dd MMMM yyyy"
         Me.DERefDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.DERefDate.Properties.Mask.EditMask = "dd-MM-yyyy"
+        Me.DERefDate.Properties.Mask.EditMask = "dd\/MM\/yyyy"
         Me.DERefDate.Size = New System.Drawing.Size(259, 20)
         Me.DERefDate.TabIndex = 4
         Me.DERefDate.ToolTip = "Packing list date"
@@ -577,7 +560,7 @@ Partial Class FormStock
         Me.XTPStockCard.Controls.Add(Me.GCCard)
         Me.XTPStockCard.Controls.Add(Me.PCCard)
         Me.XTPStockCard.Name = "XTPStockCard"
-        Me.XTPStockCard.Size = New System.Drawing.Size(758, 475)
+        Me.XTPStockCard.Size = New System.Drawing.Size(734, 462)
         Me.XTPStockCard.Text = "Stock Card"
         '
         'GCCard
@@ -588,7 +571,7 @@ Partial Class FormStock
         Me.GCCard.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCCard.MainView = Me.GVCard
         Me.GCCard.Name = "GCCard"
-        Me.GCCard.Size = New System.Drawing.Size(758, 407)
+        Me.GCCard.Size = New System.Drawing.Size(734, 394)
         Me.GCCard.TabIndex = 2
         Me.GCCard.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVCard})
         '
@@ -666,7 +649,7 @@ Partial Class FormStock
         Me.PCCard.Dock = System.Windows.Forms.DockStyle.Top
         Me.PCCard.Location = New System.Drawing.Point(0, 0)
         Me.PCCard.Name = "PCCard"
-        Me.PCCard.Size = New System.Drawing.Size(758, 68)
+        Me.PCCard.Size = New System.Drawing.Size(734, 68)
         Me.PCCard.TabIndex = 1
         '
         'DEFromCard
@@ -680,7 +663,7 @@ Partial Class FormStock
         Me.DEFromCard.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.DEFromCard.Properties.DisplayFormat.FormatString = "dd MMMM yyyy"
         Me.DEFromCard.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.DEFromCard.Properties.Mask.EditMask = "dd-MM-yyyy"
+        Me.DEFromCard.Properties.Mask.EditMask = "dd\/MM\/yyyy"
         Me.DEFromCard.Size = New System.Drawing.Size(259, 20)
         Me.DEFromCard.TabIndex = 7
         Me.DEFromCard.ToolTip = "Packing list date"
@@ -725,7 +708,7 @@ Partial Class FormStock
         Me.DEUntilCard.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.DEUntilCard.Properties.DisplayFormat.FormatString = "dd MMMM yyyy"
         Me.DEUntilCard.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.DEUntilCard.Properties.Mask.EditMask = "dd-MM-yyyy"
+        Me.DEUntilCard.Properties.Mask.EditMask = "dd\/MM\/yyyy"
         Me.DEUntilCard.Size = New System.Drawing.Size(259, 20)
         Me.DEUntilCard.TabIndex = 4
         Me.DEUntilCard.ToolTip = "Packing list date"
@@ -839,6 +822,41 @@ Partial Class FormStock
         Me.LabelControl15.TabIndex = 1
         Me.LabelControl15.Text = "Storage"
         '
+        'PanelControlTitle
+        '
+        Me.PanelControlTitle.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControlTitle.Controls.Add(Me.LabelControl13)
+        Me.PanelControlTitle.Controls.Add(Me.PanelControlBack)
+        Me.PanelControlTitle.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelControlTitle.Location = New System.Drawing.Point(20, 20)
+        Me.PanelControlTitle.Name = "PanelControlTitle"
+        Me.PanelControlTitle.Size = New System.Drawing.Size(760, 61)
+        Me.PanelControlTitle.TabIndex = 11
+        '
+        'LabelControl13
+        '
+        Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Segoe UI Light", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LabelControl13.Dock = System.Windows.Forms.DockStyle.Left
+        Me.LabelControl13.Location = New System.Drawing.Point(40, 0)
+        Me.LabelControl13.Name = "LabelControl13"
+        Me.LabelControl13.Padding = New System.Windows.Forms.Padding(5, 9, 0, 0)
+        Me.LabelControl13.Size = New System.Drawing.Size(65, 46)
+        Me.LabelControl13.TabIndex = 1
+        Me.LabelControl13.Text = "Stock"
+        '
+        'PanelControlBack
+        '
+        Me.PanelControlBack.Appearance.BackColor = System.Drawing.Color.White
+        Me.PanelControlBack.Appearance.Options.UseBackColor = True
+        Me.PanelControlBack.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControlBack.ContentImage = CType(resources.GetObject("PanelControlBack.ContentImage"), System.Drawing.Image)
+        Me.PanelControlBack.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PanelControlBack.Location = New System.Drawing.Point(0, 0)
+        Me.PanelControlBack.Name = "PanelControlBack"
+        Me.PanelControlBack.Size = New System.Drawing.Size(40, 61)
+        Me.PanelControlBack.TabIndex = 4
+        '
         'FormStock
         '
         Me.Appearance.Options.UseFont = True
@@ -847,20 +865,17 @@ Partial Class FormStock
         Me.ClientSize = New System.Drawing.Size(800, 600)
         Me.Controls.Add(Me.XTCStock)
         Me.Controls.Add(Me.PanelControl1)
-        Me.Controls.Add(Me.PanelControl3)
+        Me.Controls.Add(Me.PanelControlTitle)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.KeyPreview = True
         Me.LookAndFeel.SkinName = "Metropolis"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "FormStock"
-        Me.Padding = New System.Windows.Forms.Padding(20, 20, 20, 0)
+        Me.Padding = New System.Windows.Forms.Padding(20)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Stock"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl3.ResumeLayout(False)
-        Me.PanelControl3.PerformLayout()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -897,12 +912,13 @@ Partial Class FormStock
         CType(Me.GridView4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SLEStorageCard.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PanelControlTitle, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControlTitle.ResumeLayout(False)
+        Me.PanelControlTitle.PerformLayout()
+        CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents PanelControl2 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
@@ -975,4 +991,7 @@ Partial Class FormStock
     Friend WithEvents GridColumn24 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn25 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn26 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents PanelControlTitle As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents PanelControlBack As DevExpress.XtraEditors.PanelControl
 End Class
