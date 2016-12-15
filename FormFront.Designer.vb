@@ -20,48 +20,21 @@ Partial Class FormFront
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormFront))
+        Dim TileItemElement1 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement3 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement2 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement5 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement6 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement7 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement8 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement9 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement10 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Me.PanelControlTop = New DevExpress.XtraEditors.PanelControl()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Dim TileItemElement4 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Me.TileControl1 = New DevExpress.XtraEditors.TileControl()
         Me.TGGeneral = New DevExpress.XtraEditors.TileGroup()
         Me.TIInv = New DevExpress.XtraEditors.TileItem()
         Me.TileItem4 = New DevExpress.XtraEditors.TileItem()
-        Me.TileGroup3 = New DevExpress.XtraEditors.TileGroup()
         Me.TIPOS = New DevExpress.XtraEditors.TileItem()
         Me.TIExit = New DevExpress.XtraEditors.TileItem()
         Me.TileItem2 = New DevExpress.XtraEditors.TileItem()
-        CType(Me.PanelControlTop, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControlTop.SuspendLayout()
+        Me.TIEnd = New DevExpress.XtraEditors.TileItem()
         Me.SuspendLayout()
-        '
-        'PanelControlTop
-        '
-        Me.PanelControlTop.Appearance.BackColor = System.Drawing.Color.Transparent
-        Me.PanelControlTop.Appearance.Options.UseBackColor = True
-        Me.PanelControlTop.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControlTop.Controls.Add(Me.LabelControl1)
-        Me.PanelControlTop.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControlTop.Location = New System.Drawing.Point(0, 0)
-        Me.PanelControlTop.Name = "PanelControlTop"
-        Me.PanelControlTop.Padding = New System.Windows.Forms.Padding(20)
-        Me.PanelControlTop.Size = New System.Drawing.Size(1350, 81)
-        Me.PanelControlTop.TabIndex = 2
-        '
-        'LabelControl1
-        '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelControl1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.LabelControl1.Location = New System.Drawing.Point(20, 20)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(186, 47)
-        Me.LabelControl1.TabIndex = 0
-        Me.LabelControl1.Text = "Volcom POS"
         '
         'TileControl1
         '
@@ -80,35 +53,36 @@ Partial Class FormFront
         Me.TileControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TileControl1.DragSize = New System.Drawing.Size(0, 0)
         Me.TileControl1.Groups.Add(Me.TGGeneral)
-        Me.TileControl1.Groups.Add(Me.TileGroup3)
         Me.TileControl1.ItemSize = 125
-        Me.TileControl1.Location = New System.Drawing.Point(0, 81)
-        Me.TileControl1.MaxId = 49
+        Me.TileControl1.Location = New System.Drawing.Point(0, 0)
+        Me.TileControl1.MaxId = 50
         Me.TileControl1.Name = "TileControl1"
-        Me.TileControl1.Size = New System.Drawing.Size(1350, 649)
+        Me.TileControl1.Size = New System.Drawing.Size(484, 233)
         Me.TileControl1.TabIndex = 3
         Me.TileControl1.Text = "POINT OF SALE"
         '
         'TGGeneral
         '
         Me.TGGeneral.Items.Add(Me.TIInv)
+        Me.TGGeneral.Items.Add(Me.TIPOS)
         Me.TGGeneral.Items.Add(Me.TileItem4)
+        Me.TGGeneral.Items.Add(Me.TIEnd)
         Me.TGGeneral.Name = "TGGeneral"
         Me.TGGeneral.Text = "General"
         '
         'TIInv
         '
-        Me.TIInv.AppearanceItem.Normal.BackColor = System.Drawing.Color.Crimson
-        Me.TIInv.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Crimson
+        Me.TIInv.AppearanceItem.Normal.BackColor = System.Drawing.Color.SeaGreen
+        Me.TIInv.AppearanceItem.Normal.BorderColor = System.Drawing.Color.SeaGreen
         Me.TIInv.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TIInv.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIInv.BackgroundImage = CType(resources.GetObject("TIInv.BackgroundImage"), System.Drawing.Image)
         Me.TIInv.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement6.Text = "Inventory Control"
-        TileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TIInv.Elements.Add(TileItemElement6)
+        TileItemElement1.Text = "Inventory Control"
+        TileItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TIInv.Elements.Add(TileItemElement1)
         Me.TIInv.Id = 47
-        Me.TIInv.ItemSize = DevExpress.XtraEditors.TileItemSize.Large
+        Me.TIInv.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TIInv.Name = "TIInv"
         '
         'TileItem4
@@ -119,18 +93,13 @@ Partial Class FormFront
         Me.TileItem4.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TileItem4.BackgroundImage = CType(resources.GetObject("TileItem4.BackgroundImage"), System.Drawing.Image)
         Me.TileItem4.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement7.Text = "About"
-        TileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem4.Elements.Add(TileItemElement7)
+        TileItemElement3.Text = "About"
+        TileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem4.Elements.Add(TileItemElement3)
         Me.TileItem4.Id = 48
         Me.TileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TileItem4.Name = "TileItem4"
         Me.TileItem4.Visible = False
-        '
-        'TileGroup3
-        '
-        Me.TileGroup3.Items.Add(Me.TIPOS)
-        Me.TileGroup3.Name = "TileGroup3"
         '
         'TIPOS
         '
@@ -140,11 +109,11 @@ Partial Class FormFront
         Me.TIPOS.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIPOS.BackgroundImage = CType(resources.GetObject("TIPOS.BackgroundImage"), System.Drawing.Image)
         Me.TIPOS.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement8.Text = "Point of Sale"
-        TileItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TIPOS.Elements.Add(TileItemElement8)
+        TileItemElement2.Text = "Point of Sale"
+        TileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TIPOS.Elements.Add(TileItemElement2)
         Me.TIPOS.Id = 23
-        Me.TIPOS.ItemSize = DevExpress.XtraEditors.TileItemSize.Large
+        Me.TIPOS.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TIPOS.Name = "TIPOS"
         '
         'TIExit
@@ -154,9 +123,9 @@ Partial Class FormFront
         Me.TIExit.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TIExit.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIExit.BackgroundImage = CType(resources.GetObject("TIExit.BackgroundImage"), System.Drawing.Image)
-        TileItemElement9.Text = "Exit"
-        TileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
-        Me.TIExit.Elements.Add(TileItemElement9)
+        TileItemElement5.Text = "Exit"
+        TileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TIExit.Elements.Add(TileItemElement5)
         Me.TIExit.Id = 29
         Me.TIExit.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TIExit.Name = "TIExit"
@@ -169,42 +138,48 @@ Partial Class FormFront
         Me.TileItem2.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TileItem2.BackgroundImage = CType(resources.GetObject("TileItem2.BackgroundImage"), System.Drawing.Image)
         Me.TileItem2.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement10.Text = "Exit Program"
-        TileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem2.Elements.Add(TileItemElement10)
+        TileItemElement6.Text = "Exit Program"
+        TileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem2.Elements.Add(TileItemElement6)
         Me.TileItem2.Id = 45
         Me.TileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TileItem2.Name = "TileItem2"
         '
+        'TIEnd
+        '
+        Me.TIEnd.AppearanceItem.Normal.BackColor = System.Drawing.Color.Firebrick
+        Me.TIEnd.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Firebrick
+        Me.TIEnd.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TIEnd.AppearanceItem.Normal.Options.UseBorderColor = True
+        Me.TIEnd.BackgroundImage = CType(resources.GetObject("TIEnd.BackgroundImage"), System.Drawing.Image)
+        TileItemElement4.Text = "Exit"
+        TileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TIEnd.Elements.Add(TileItemElement4)
+        Me.TIEnd.Id = 49
+        Me.TIEnd.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
+        Me.TIEnd.Name = "TIEnd"
+        '
         'FormFront
         '
-        Me.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Appearance.Options.UseBackColor = True
         Me.Appearance.Options.UseFont = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1350, 730)
+        Me.ClientSize = New System.Drawing.Size(484, 233)
         Me.Controls.Add(Me.TileControl1)
-        Me.Controls.Add(Me.PanelControlTop)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.KeyPreview = True
-        Me.LookAndFeel.SkinName = "Metropolis"
+        Me.LookAndFeel.SkinName = "Metropolis Dark"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FormFront"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FormFront"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.PanelControlTop, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControlTop.ResumeLayout(False)
-        Me.PanelControlTop.PerformLayout()
+        Me.Text = "Point of Sale"
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents PanelControlTop As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TileControl1 As DevExpress.XtraEditors.TileControl
     Friend WithEvents TGGeneral As DevExpress.XtraEditors.TileGroup
     Friend WithEvents TIPOS As DevExpress.XtraEditors.TileItem
@@ -212,5 +187,5 @@ Partial Class FormFront
     Friend WithEvents TileItem2 As DevExpress.XtraEditors.TileItem
     Friend WithEvents TIInv As DevExpress.XtraEditors.TileItem
     Friend WithEvents TileItem4 As DevExpress.XtraEditors.TileItem
-    Friend WithEvents TileGroup3 As DevExpress.XtraEditors.TileGroup
+    Friend WithEvents TIEnd As DevExpress.XtraEditors.TileItem
 End Class

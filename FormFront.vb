@@ -33,7 +33,6 @@
             sc.syncItem()
 
             Cursor = Cursors.Default
-            WindowState = FormWindowState.Maximized
             Opacity = 100
         Catch ex As Exception
             Cursor = Cursors.Default
@@ -63,5 +62,9 @@
             'Tool.PreviewForm.FormBorderStyle = FormBorderStyle.None
             'Tool.ShowPreviewDialog()
         End If
+    End Sub
+
+    Private Sub TIEnd_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIEnd.ItemClick
+        End
     End Sub
 End Class
