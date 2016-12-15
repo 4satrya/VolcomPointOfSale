@@ -38,13 +38,13 @@
 
     Sub viewItem()
         Dim i As New ClassItem()
-        Dim query As String = i.queryMain("-1", "1", True)
+        Dim query As String = i.queryMain("AND i.is_active=1", "1", True)
         viewSearchLookupQuery(SLEItem, query, "id_item", "item", "id_item")
     End Sub
 
     Sub viewItemCard()
         Dim i As New ClassItem()
-        Dim query As String = i.queryMain("-1", "1", False)
+        Dim query As String = i.queryMain("AND i.is_active=1", "1", False)
         viewSearchLookupQuery(SLEItemCard, query, "id_item", "item", "id_item")
     End Sub
 

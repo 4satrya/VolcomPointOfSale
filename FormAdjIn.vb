@@ -3,7 +3,6 @@
     Public action As String = "-1"
     Public id_comp As String = "-1"
     Dim id_report_status_glb As String = "-1"
-    Dim item As New ClassItem()
     Dim role_prepared As String = ""
     Dim spv As String = ""
 
