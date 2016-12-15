@@ -159,6 +159,11 @@
         Dim dt As String = DateTime.Parse(DERefDate.EditValue.ToString).ToString("yyyy-MM-dd")
         cond += "AND DATE(j.storage_item_datetime) <= DATE(''" + dt + "'') "
 
+        'active
+        If CEActive.EditValue = True Then
+            cond += "AND f.is_active=1 "
+        End If
+
         Dim query As String = "CALL view_stock_item('" + cond + "', '2') "
         Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
         GCStock.DataSource = data

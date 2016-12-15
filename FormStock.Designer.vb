@@ -96,6 +96,7 @@ Partial Class FormStock
         Me.PanelControlTitle = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlBack = New DevExpress.XtraEditors.PanelControl()
+        Me.CEActive = New DevExpress.XtraEditors.CheckEdit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -132,6 +133,7 @@ Partial Class FormStock
         CType(Me.PanelControlTitle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlTitle.SuspendLayout()
         CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CEActive.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelControl1
@@ -141,7 +143,7 @@ Partial Class FormStock
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelControl1.Location = New System.Drawing.Point(20, 545)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(760, 35)
+        Me.PanelControl1.Size = New System.Drawing.Size(842, 35)
         Me.PanelControl1.TabIndex = 6
         '
         'PanelControl2
@@ -154,7 +156,7 @@ Partial Class FormStock
         Me.PanelControl2.Controls.Add(Me.LabelControl8)
         Me.PanelControl2.Controls.Add(Me.LabelControl9)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControl2.Location = New System.Drawing.Point(440, 0)
+        Me.PanelControl2.Location = New System.Drawing.Point(522, 0)
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Size = New System.Drawing.Size(320, 35)
         Me.PanelControl2.TabIndex = 7
@@ -238,7 +240,7 @@ Partial Class FormStock
         Me.XTCStock.Location = New System.Drawing.Point(20, 81)
         Me.XTCStock.Name = "XTCStock"
         Me.XTCStock.SelectedTabPage = Me.XTPStock
-        Me.XTCStock.Size = New System.Drawing.Size(760, 464)
+        Me.XTCStock.Size = New System.Drawing.Size(842, 464)
         Me.XTCStock.TabIndex = 9
         Me.XTCStock.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPStock, Me.XTPStockCard})
         '
@@ -247,7 +249,7 @@ Partial Class FormStock
         Me.XTPStock.Controls.Add(Me.GCStock)
         Me.XTPStock.Controls.Add(Me.PanelControlStock)
         Me.XTPStock.Name = "XTPStock"
-        Me.XTPStock.Size = New System.Drawing.Size(734, 462)
+        Me.XTPStock.Size = New System.Drawing.Size(816, 462)
         Me.XTPStock.Text = "Stock"
         '
         'GCStock
@@ -258,7 +260,7 @@ Partial Class FormStock
         Me.GCStock.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCStock.MainView = Me.GVStock
         Me.GCStock.Name = "GCStock"
-        Me.GCStock.Size = New System.Drawing.Size(734, 394)
+        Me.GCStock.Size = New System.Drawing.Size(816, 394)
         Me.GCStock.TabIndex = 1
         Me.GCStock.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVStock})
         '
@@ -355,6 +357,7 @@ Partial Class FormStock
         '
         'PanelControlStock
         '
+        Me.PanelControlStock.Controls.Add(Me.CEActive)
         Me.PanelControlStock.Controls.Add(Me.SLESupplier)
         Me.PanelControlStock.Controls.Add(Me.LabelControl4)
         Me.PanelControlStock.Controls.Add(Me.BtnView)
@@ -367,7 +370,7 @@ Partial Class FormStock
         Me.PanelControlStock.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControlStock.Location = New System.Drawing.Point(0, 0)
         Me.PanelControlStock.Name = "PanelControlStock"
-        Me.PanelControlStock.Size = New System.Drawing.Size(734, 68)
+        Me.PanelControlStock.Size = New System.Drawing.Size(816, 68)
         Me.PanelControlStock.TabIndex = 0
         '
         'SLESupplier
@@ -419,7 +422,7 @@ Partial Class FormStock
         Me.BtnView.Appearance.Options.UseBackColor = True
         Me.BtnView.Appearance.Options.UseFont = True
         Me.BtnView.Appearance.Options.UseForeColor = True
-        Me.BtnView.Location = New System.Drawing.Point(651, 22)
+        Me.BtnView.Location = New System.Drawing.Point(736, 21)
         Me.BtnView.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
         Me.BtnView.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
         Me.BtnView.LookAndFeel.SkinName = "Metropolis"
@@ -560,7 +563,7 @@ Partial Class FormStock
         Me.XTPStockCard.Controls.Add(Me.GCCard)
         Me.XTPStockCard.Controls.Add(Me.PCCard)
         Me.XTPStockCard.Name = "XTPStockCard"
-        Me.XTPStockCard.Size = New System.Drawing.Size(734, 462)
+        Me.XTPStockCard.Size = New System.Drawing.Size(816, 462)
         Me.XTPStockCard.Text = "Stock Card"
         '
         'GCCard
@@ -571,7 +574,7 @@ Partial Class FormStock
         Me.GCCard.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCCard.MainView = Me.GVCard
         Me.GCCard.Name = "GCCard"
-        Me.GCCard.Size = New System.Drawing.Size(734, 394)
+        Me.GCCard.Size = New System.Drawing.Size(816, 394)
         Me.GCCard.TabIndex = 2
         Me.GCCard.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVCard})
         '
@@ -649,7 +652,7 @@ Partial Class FormStock
         Me.PCCard.Dock = System.Windows.Forms.DockStyle.Top
         Me.PCCard.Location = New System.Drawing.Point(0, 0)
         Me.PCCard.Name = "PCCard"
-        Me.PCCard.Size = New System.Drawing.Size(734, 68)
+        Me.PCCard.Size = New System.Drawing.Size(816, 68)
         Me.PCCard.TabIndex = 1
         '
         'DEFromCard
@@ -686,7 +689,7 @@ Partial Class FormStock
         Me.SimpleButton1.Appearance.Options.UseBackColor = True
         Me.SimpleButton1.Appearance.Options.UseFont = True
         Me.SimpleButton1.Appearance.Options.UseForeColor = True
-        Me.SimpleButton1.Location = New System.Drawing.Point(651, 22)
+        Me.SimpleButton1.Location = New System.Drawing.Point(649, 21)
         Me.SimpleButton1.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
         Me.SimpleButton1.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
         Me.SimpleButton1.LookAndFeel.SkinName = "Metropolis"
@@ -830,7 +833,7 @@ Partial Class FormStock
         Me.PanelControlTitle.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControlTitle.Location = New System.Drawing.Point(20, 20)
         Me.PanelControlTitle.Name = "PanelControlTitle"
-        Me.PanelControlTitle.Size = New System.Drawing.Size(760, 61)
+        Me.PanelControlTitle.Size = New System.Drawing.Size(842, 61)
         Me.PanelControlTitle.TabIndex = 11
         '
         'LabelControl13
@@ -857,12 +860,21 @@ Partial Class FormStock
         Me.PanelControlBack.Size = New System.Drawing.Size(40, 61)
         Me.PanelControlBack.TabIndex = 4
         '
+        'CEActive
+        '
+        Me.CEActive.EditValue = True
+        Me.CEActive.Location = New System.Drawing.Point(641, 21)
+        Me.CEActive.Name = "CEActive"
+        Me.CEActive.Properties.Caption = "Active Product"
+        Me.CEActive.Size = New System.Drawing.Size(89, 19)
+        Me.CEActive.TabIndex = 2
+        '
         'FormStock
         '
         Me.Appearance.Options.UseFont = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 600)
+        Me.ClientSize = New System.Drawing.Size(882, 600)
         Me.Controls.Add(Me.XTCStock)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.PanelControlTitle)
@@ -916,6 +928,7 @@ Partial Class FormStock
         Me.PanelControlTitle.ResumeLayout(False)
         Me.PanelControlTitle.PerformLayout()
         CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CEActive.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -994,4 +1007,5 @@ Partial Class FormStock
     Friend WithEvents PanelControlTitle As DevExpress.XtraEditors.PanelControl
     Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControlBack As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents CEActive As DevExpress.XtraEditors.CheckEdit
 End Class
