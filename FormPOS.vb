@@ -42,6 +42,7 @@
             FormBlack.Show()
             FormPOSShift.ShowDialog()
             FormBlack.Close()
+            Exit Sub
         Else
             id_shift = dt_open.Rows(0)("id_shift").ToString
             TxtShift.Text = dt_open.Rows(0)("shift_type").ToString
