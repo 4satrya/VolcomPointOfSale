@@ -291,7 +291,7 @@
   <data name="TIStockOpname.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAA8ISURBVHhe7Z1/aF7VGcfDSyhSShlFRIYMEZEhIkNEZMiQ
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAA8ISURBVHhe7Z1/aF7VGcfDSyhSShlFRIYMEZEhIkNEZMiQ
         IjJkfxQZImVIKSIiMsYQERnCkFFk+McQKTKG+MeQIaMUQUHR2latqU2b1qY/jElM3qbJm5g0v5PXNHbf
         78l57p577rn3vW+ybiP3+cDD+f3jPue558d77006DMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMw
         DMMwDMMwDMMwDMMwDKMsNe+GhPE6nFcmhPmSvAMDA53z8/N/++GHH65db77//vtri4uLQ3Nzc6/X6/Xb
@@ -361,7 +361,7 @@
   <data name="TIAdj.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAA3SSURBVHhe7Z1LaFznFcfFIIwJJphSQhahBGOCCSWYEkoo
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAA3SSURBVHhe7Z1LaFznFcfFIIwJJphSQhahBGOCCSWYEkoo
         pZjQRShdeGFCMKVkEYIpIZRQQhfelFCKKV4FY0opxZTQRVehkFKXJlESv9QosWzHjyjSRBqPJ2NbskYj
         aTyRx+7/fPOd63PP/e5jRlZTdM8PDt/7db7XuXNnpBHDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzD
         MAzDMAzDMAzDMAzDMAzDKErFuxodL8NpZTSUL8o7MzMzury8/Ke7d+/e22i+/vrre6urq7PtdvtIrVbb

@@ -11,10 +11,8 @@
     End Sub
 
     Private Sub TIInv_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIInv.ItemClick
-        Cursor = Cursors.WaitCursor
         Opacity = 0
-        FormHome.ShowDialog()
-        Cursor = Cursors.Default
+        FormLoginInv.ShowDialog()
     End Sub
 
     Private Sub TIPOS_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIPOS.ItemClick
