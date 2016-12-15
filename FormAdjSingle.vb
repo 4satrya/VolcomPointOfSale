@@ -66,6 +66,9 @@
                 If id_pop_up = "1" Then
                     FormAdjOut.addRows(id_item, TxtCode.Text, TxtDesc.Text, TxtSize.Text, TxtQty.EditValue, TxtPrice.EditValue)
                     Close()
+                ElseIf id_pop_up = "2" Then
+                    FormAdjIn.addRows(id_item, TxtCode.Text, TxtDesc.Text, TxtSize.Text, TxtQty.EditValue, TxtPrice.EditValue)
+                    Close()
                 End If
             End If
         End If

@@ -72,7 +72,7 @@ Public Class FormImportExcel
         oledbconn.ConnectionString = strConn
         Dim MyCommand As OleDbDataAdapter
 
-        If id_pop_up = "2" Then
+        If id_pop_up = "2" Or id_pop_up = "3" Then
             MyCommand = New OleDbDataAdapter("select code, SUM(qty) AS qty from [" & CBWorksheetName.SelectedItem.ToString & "] GROUP BY code", oledbconn)
         Else
             MyCommand = New OleDbDataAdapter("select * from [" & CBWorksheetName.SelectedItem.ToString & "]", oledbconn)
@@ -122,8 +122,8 @@ Public Class FormImportExcel
             Catch ex As Exception
                 stopCustom("Incorrect format on table.")
             End Try
-        ElseIf id_pop_up = "2" Then
-            'Adjustment IN
+        ElseIf id_pop_up = "2" Or id_pop_up = "3" Then
+            'Adjustment IN/Out
             Try
                 Dim i As New ClassItem()
                 Dim qry As String = i.queryMain("AND i.is_active=1", "1", False)
@@ -181,7 +181,7 @@ Public Class FormImportExcel
                 e.Appearance.BackColor = Color.Salmon
                 e.Appearance.BackColor2 = Color.Salmon
             End If
-        ElseIf id_pop_up = "2" Then
+        ElseIf id_pop_up = "2" Or id_pop_up = "3" Then
             Dim stt As String = sender.GetRowCellValue(e.RowHandle, sender.Columns("Status")).ToString
             If stt <> "OK" Then
                 e.Appearance.BackColor = Color.Salmon
@@ -266,6 +266,38 @@ Public Class FormImportExcel
                             Dim size As String = GVData.GetRowCellValue(l, "Size").ToString
 
                             FormAdjOut.addRows(id_item, item_code, item_name, size, qty, price)
+                            l_i += 1
+                            PBC.PerformStep()
+                            PBC.Update()
+                        Next
+                        Close()
+                        Cursor = Cursors.Default
+                    Else
+                        stopCustom("There is no data for import process, please make sure your input !")
+                        makeSafeGV(GVData)
+                    End If
+                End If
+            ElseIf id_pop_up = "3" Then
+                'adj in
+                Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Please make sure :" + System.Environment.NewLine + "- Only 'OK' status will continue to next step." + System.Environment.NewLine + "- If this report is an important, please click 'No' button, and then click 'Print' button to export to multiple formats provided." + System.Environment.NewLine + "Are you sure you want to continue this process?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                If confirm = DialogResult.Yes Then
+                    makeSafeGV(GVData)
+                    GVData.ActiveFilterString = "[Status] = 'OK'"
+                    If GVData.RowCount > 0 Then
+                        Cursor = Cursors.WaitCursor
+
+                        'ins
+                        FormAdjIn.viewDetail()
+                        Dim l_i As Integer = 0
+                        For l As Integer = 0 To ((GVData.RowCount - 1) - GetGroupRowCount(GVData))
+                            Dim id_item As String = addSlashes(GVData.GetRowCellValue(l, "id_item").ToString)
+                            Dim item_code As String = addSlashes(GVData.GetRowCellValue(l, "Code").ToString)
+                            Dim item_name As String = addSlashes(GVData.GetRowCellValue(l, "Description").ToString)
+                            Dim price As Decimal = GVData.GetRowCellValue(l, "Price")
+                            Dim qty As Decimal = GVData.GetRowCellValue(l, "Qty")
+                            Dim size As String = GVData.GetRowCellValue(l, "Size").ToString
+
+                            FormAdjIn.addRows(id_item, item_code, item_name, size, qty, price)
                             l_i += 1
                             PBC.PerformStep()
                             PBC.Update()

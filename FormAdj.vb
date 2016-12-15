@@ -28,7 +28,8 @@
             FormAdjOut.action = "ins"
             FormAdjOut.ShowDialog()
         Else 'in
-
+            FormAdjIn.action = "ins"
+            FormAdjIn.ShowDialog()
         End If
         Cursor = Cursors.Default
     End Sub
@@ -42,7 +43,11 @@
                 FormAdjOut.ShowDialog()
             End If
         Else 'in
-
+            If GVAdjIn.FocusedRowHandle >= 0 Then
+                FormAdjIn.action = "upd"
+                FormAdjIn.id = GVAdjIn.GetFocusedRowCellValue("id_adj_in").ToString
+                FormAdjIn.ShowDialog()
+            End If
         End If
         Cursor = Cursors.Default
     End Sub
