@@ -212,7 +212,7 @@ Partial Class FormPOS
         '
         Me.GCPOS.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCPOS.Location = New System.Drawing.Point(0, 0)
-        Me.GCPOS.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCPOS.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCPOS.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCPOS.MainView = Me.GVPOS
         Me.GCPOS.Name = "GCPOS"
@@ -352,6 +352,10 @@ Partial Class FormPOS
         Me.TxtPrc.Name = "TxtPrc"
         Me.TxtPrc.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtPrc.Properties.Appearance.Options.UseFont = True
+        Me.TxtPrc.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtPrc.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtPrc.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtPrc.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtPrc.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtPrc.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TxtPrc.Properties.Mask.EditMask = "n2"
@@ -379,6 +383,10 @@ Partial Class FormPOS
         Me.TxtQty.Name = "TxtQty"
         Me.TxtQty.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtQty.Properties.Appearance.Options.UseFont = True
+        Me.TxtQty.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtQty.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtQty.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtQty.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtQty.Properties.DisplayFormat.FormatString = "N0"
         Me.TxtQty.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TxtQty.Properties.Mask.EditMask = "n0"
@@ -404,6 +412,10 @@ Partial Class FormPOS
         Me.TxtItemCode.Name = "TxtItemCode"
         Me.TxtItemCode.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtItemCode.Properties.Appearance.Options.UseFont = True
+        Me.TxtItemCode.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtItemCode.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtItemCode.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtItemCode.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtItemCode.Size = New System.Drawing.Size(159, 20)
         Me.TxtItemCode.TabIndex = 9
         '
@@ -459,6 +471,10 @@ Partial Class FormPOS
         Me.TxtSales.Name = "TxtSales"
         Me.TxtSales.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtSales.Properties.Appearance.Options.UseFont = True
+        Me.TxtSales.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtSales.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtSales.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtSales.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtSales.Size = New System.Drawing.Size(144, 20)
         Me.TxtSales.TabIndex = 96
         '
@@ -478,6 +494,10 @@ Partial Class FormPOS
         Me.LENation.Name = "LENation"
         Me.LENation.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LENation.Properties.Appearance.Options.UseFont = True
+        Me.LENation.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.LENation.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.LENation.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.LENation.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.LENation.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.LENation.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_country", "Id", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("country", "Country")})
         Me.LENation.Properties.NullText = "-Select Nation-"
@@ -574,6 +594,10 @@ Partial Class FormPOS
         Me.LECardType.Name = "LECardType"
         Me.LECardType.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LECardType.Properties.Appearance.Options.UseFont = True
+        Me.LECardType.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.LECardType.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.LECardType.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.LECardType.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.LECardType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.LECardType.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_card_type", "Id", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("card_type", "Status")})
         Me.LECardType.Properties.NullText = "-Select Card-"
@@ -587,6 +611,10 @@ Partial Class FormPOS
         Me.TxtCardName.Name = "TxtCardName"
         Me.TxtCardName.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCardName.Properties.Appearance.Options.UseFont = True
+        Me.TxtCardName.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtCardName.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtCardName.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtCardName.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtCardName.Size = New System.Drawing.Size(145, 20)
         Me.TxtCardName.TabIndex = 33
         '
@@ -597,6 +625,10 @@ Partial Class FormPOS
         Me.TxtCardNumber.Name = "TxtCardNumber"
         Me.TxtCardNumber.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCardNumber.Properties.Appearance.Options.UseFont = True
+        Me.TxtCardNumber.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtCardNumber.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtCardNumber.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtCardNumber.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtCardNumber.Properties.Mask.EditMask = "f0"
         Me.TxtCardNumber.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.TxtCardNumber.Properties.MaxLength = 4
@@ -660,6 +692,10 @@ Partial Class FormPOS
         Me.TxtVoucher.Name = "TxtVoucher"
         Me.TxtVoucher.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtVoucher.Properties.Appearance.Options.UseFont = True
+        Me.TxtVoucher.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtVoucher.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtVoucher.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtVoucher.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtVoucher.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtVoucher.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TxtVoucher.Properties.Mask.EditMask = "n2"
@@ -676,6 +712,10 @@ Partial Class FormPOS
         Me.TxtVoucherNo.Name = "TxtVoucherNo"
         Me.TxtVoucherNo.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtVoucherNo.Properties.Appearance.Options.UseFont = True
+        Me.TxtVoucherNo.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtVoucherNo.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtVoucherNo.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtVoucherNo.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtVoucherNo.Size = New System.Drawing.Size(145, 20)
         Me.TxtVoucherNo.TabIndex = 22
         '
@@ -695,6 +735,10 @@ Partial Class FormPOS
         Me.TxtChange.Name = "TxtChange"
         Me.TxtChange.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtChange.Properties.Appearance.Options.UseFont = True
+        Me.TxtChange.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtChange.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtChange.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtChange.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtChange.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtChange.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TxtChange.Properties.Mask.EditMask = "n2"
@@ -729,6 +773,10 @@ Partial Class FormPOS
         Me.TxtPoint.Name = "TxtPoint"
         Me.TxtPoint.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtPoint.Properties.Appearance.Options.UseFont = True
+        Me.TxtPoint.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtPoint.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtPoint.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtPoint.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtPoint.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtPoint.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TxtPoint.Properties.Mask.EditMask = "n2"
@@ -745,6 +793,10 @@ Partial Class FormPOS
         Me.TxtCard.Name = "TxtCard"
         Me.TxtCard.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCard.Properties.Appearance.Options.UseFont = True
+        Me.TxtCard.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtCard.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtCard.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtCard.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtCard.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtCard.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TxtCard.Properties.Mask.EditMask = "n2"
@@ -761,6 +813,10 @@ Partial Class FormPOS
         Me.TxtCash.Name = "TxtCash"
         Me.TxtCash.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCash.Properties.Appearance.Options.UseFont = True
+        Me.TxtCash.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtCash.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtCash.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtCash.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtCash.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtCash.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TxtCash.Properties.Mask.EditMask = "n2"
@@ -811,6 +867,7 @@ Partial Class FormPOS
         Me.GroupControlInfo.Controls.Add(Me.LabelControl3)
         Me.GroupControlInfo.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupControlInfo.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControlInfo.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GroupControlInfo.Name = "GroupControlInfo"
         Me.GroupControlInfo.Size = New System.Drawing.Size(252, 133)
         Me.GroupControlInfo.TabIndex = 33
@@ -823,6 +880,10 @@ Partial Class FormPOS
         Me.TxtSubTotal.Name = "TxtSubTotal"
         Me.TxtSubTotal.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtSubTotal.Properties.Appearance.Options.UseFont = True
+        Me.TxtSubTotal.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtSubTotal.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtSubTotal.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtSubTotal.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtSubTotal.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtSubTotal.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TxtSubTotal.Properties.Mask.EditMask = "n2"
@@ -839,6 +900,10 @@ Partial Class FormPOS
         Me.TxtDiscount.Name = "TxtDiscount"
         Me.TxtDiscount.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtDiscount.Properties.Appearance.Options.UseFont = True
+        Me.TxtDiscount.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtDiscount.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtDiscount.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtDiscount.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtDiscount.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtDiscount.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TxtDiscount.Properties.Mask.EditMask = "n2"
@@ -864,6 +929,10 @@ Partial Class FormPOS
         Me.TxtTax.Name = "TxtTax"
         Me.TxtTax.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtTax.Properties.Appearance.Options.UseFont = True
+        Me.TxtTax.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtTax.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtTax.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtTax.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtTax.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtTax.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TxtTax.Properties.Mask.EditMask = "n2"
@@ -880,6 +949,10 @@ Partial Class FormPOS
         Me.TxtTotal.Name = "TxtTotal"
         Me.TxtTotal.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtTotal.Properties.Appearance.Options.UseFont = True
+        Me.TxtTotal.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtTotal.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtTotal.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtTotal.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtTotal.Properties.DisplayFormat.FormatString = "N2"
         Me.TxtTotal.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.TxtTotal.Properties.Mask.EditMask = "n2"
@@ -989,6 +1062,10 @@ Partial Class FormPOS
         Me.DECreated.Name = "DECreated"
         Me.DECreated.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DECreated.Properties.Appearance.Options.UseFont = True
+        Me.DECreated.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.DECreated.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.DECreated.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.DECreated.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.DECreated.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.DECreated.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.DECreated.Properties.DisplayFormat.FormatString = "dd\/MM\/yyyy hh:mm tt"
@@ -1161,6 +1238,10 @@ Partial Class FormPOS
         Me.TxtCashierName.Name = "TxtCashierName"
         Me.TxtCashierName.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCashierName.Properties.Appearance.Options.UseFont = True
+        Me.TxtCashierName.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtCashierName.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtCashierName.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtCashierName.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtCashierName.Size = New System.Drawing.Size(177, 20)
         Me.TxtCashierName.TabIndex = 100
         '
@@ -1198,6 +1279,10 @@ Partial Class FormPOS
         Me.LEStatus.Name = "LEStatus"
         Me.LEStatus.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LEStatus.Properties.Appearance.Options.UseFont = True
+        Me.LEStatus.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.LEStatus.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.LEStatus.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.LEStatus.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.LEStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.LEStatus.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_pos_status", "Id", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("pos_status", "Status")})
         Me.LEStatus.Properties.NullText = "-Standby-"
@@ -1211,6 +1296,10 @@ Partial Class FormPOS
         Me.TxtCashierUser.Name = "TxtCashierUser"
         Me.TxtCashierUser.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCashierUser.Properties.Appearance.Options.UseFont = True
+        Me.TxtCashierUser.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtCashierUser.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtCashierUser.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtCashierUser.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtCashierUser.Size = New System.Drawing.Size(70, 20)
         Me.TxtCashierUser.TabIndex = 90
         '
@@ -1230,6 +1319,10 @@ Partial Class FormPOS
         Me.TxtPOS.Name = "TxtPOS"
         Me.TxtPOS.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtPOS.Properties.Appearance.Options.UseFont = True
+        Me.TxtPOS.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtPOS.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtPOS.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtPOS.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtPOS.Size = New System.Drawing.Size(53, 20)
         Me.TxtPOS.TabIndex = 94
         '
@@ -1241,6 +1334,10 @@ Partial Class FormPOS
         Me.TxtNumber.Name = "TxtNumber"
         Me.TxtNumber.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtNumber.Properties.Appearance.Options.UseFont = True
+        Me.TxtNumber.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtNumber.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtNumber.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtNumber.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtNumber.Size = New System.Drawing.Size(70, 20)
         Me.TxtNumber.TabIndex = 89
         '
@@ -1251,6 +1348,10 @@ Partial Class FormPOS
         Me.TxtShift.Name = "TxtShift"
         Me.TxtShift.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtShift.Properties.Appearance.Options.UseFont = True
+        Me.TxtShift.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White
+        Me.TxtShift.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White
+        Me.TxtShift.Properties.AppearanceDisabled.Options.UseBackColor = True
+        Me.TxtShift.Properties.AppearanceDisabled.Options.UseBorderColor = True
         Me.TxtShift.Size = New System.Drawing.Size(29, 20)
         Me.TxtShift.TabIndex = 92
         '
@@ -1273,7 +1374,7 @@ Partial Class FormPOS
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.KeyPreview = True
-        Me.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "FormPOS"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

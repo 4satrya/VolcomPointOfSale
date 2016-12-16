@@ -154,10 +154,6 @@ Partial Class FormHome
         '
         'TIRec
         '
-        Me.TIRec.AppearanceItem.Normal.BackColor = System.Drawing.Color.LightSeaGreen
-        Me.TIRec.AppearanceItem.Normal.BorderColor = System.Drawing.Color.LightSeaGreen
-        Me.TIRec.AppearanceItem.Normal.Options.UseBackColor = True
-        Me.TIRec.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIRec.BackgroundImage = CType(resources.GetObject("TIRec.BackgroundImage"), System.Drawing.Image)
         TileItemElement1.Text = "Receive"
         TileItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
@@ -197,8 +193,8 @@ Partial Class FormHome
         '
         'TIStockOpname
         '
-        Me.TIStockOpname.AppearanceItem.Normal.BackColor = System.Drawing.Color.SteelBlue
-        Me.TIStockOpname.AppearanceItem.Normal.BorderColor = System.Drawing.Color.SteelBlue
+        Me.TIStockOpname.AppearanceItem.Normal.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.TIStockOpname.AppearanceItem.Normal.BorderColor = System.Drawing.Color.LightSeaGreen
         Me.TIStockOpname.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TIStockOpname.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIStockOpname.BackgroundImage = CType(resources.GetObject("TIStockOpname.BackgroundImage"), System.Drawing.Image)

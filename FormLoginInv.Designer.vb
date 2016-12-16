@@ -83,10 +83,12 @@ Partial Class FormLoginInv
         '
         'SimpleButton1
         '
-        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.DimGray
+        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.DarkSlateBlue
+        Me.SimpleButton1.Appearance.BorderColor = System.Drawing.Color.DarkSlateBlue
         Me.SimpleButton1.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SimpleButton1.Appearance.ForeColor = System.Drawing.Color.White
         Me.SimpleButton1.Appearance.Options.UseBackColor = True
+        Me.SimpleButton1.Appearance.Options.UseBorderColor = True
         Me.SimpleButton1.Appearance.Options.UseFont = True
         Me.SimpleButton1.Appearance.Options.UseForeColor = True
         Me.SimpleButton1.Location = New System.Drawing.Point(162, 359)
@@ -102,10 +104,12 @@ Partial Class FormLoginInv
         '
         'BtnSignIn
         '
-        Me.BtnSignIn.Appearance.BackColor = System.Drawing.Color.DimGray
+        Me.BtnSignIn.Appearance.BackColor = System.Drawing.Color.DarkSlateBlue
+        Me.BtnSignIn.Appearance.BorderColor = System.Drawing.Color.DarkSlateBlue
         Me.BtnSignIn.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSignIn.Appearance.ForeColor = System.Drawing.Color.White
         Me.BtnSignIn.Appearance.Options.UseBackColor = True
+        Me.BtnSignIn.Appearance.Options.UseBorderColor = True
         Me.BtnSignIn.Appearance.Options.UseFont = True
         Me.BtnSignIn.Appearance.Options.UseForeColor = True
         Me.BtnSignIn.Location = New System.Drawing.Point(246, 359)
@@ -121,7 +125,7 @@ Partial Class FormLoginInv
         '
         'FormLoginInv
         '
-        Me.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Appearance.Options.UseBackColor = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
