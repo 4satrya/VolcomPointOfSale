@@ -1019,11 +1019,12 @@ Partial Class FormPOS
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(303, 64)
         Me.PanelControl1.TabIndex = 101
+        Me.PanelControl1.Visible = False
         '
         'LabelControl48
         '
         Me.LabelControl48.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl48.Location = New System.Drawing.Point(243, 11)
+        Me.LabelControl48.Location = New System.Drawing.Point(248, 11)
         Me.LabelControl48.Name = "LabelControl48"
         Me.LabelControl48.Size = New System.Drawing.Size(43, 13)
         Me.LabelControl48.TabIndex = 88
@@ -1033,7 +1034,7 @@ Partial Class FormPOS
         '
         Me.LabelControl49.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl49.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl49.Location = New System.Drawing.Point(219, 11)
+        Me.LabelControl49.Location = New System.Drawing.Point(224, 11)
         Me.LabelControl49.Name = "LabelControl49"
         Me.LabelControl49.Size = New System.Drawing.Size(18, 13)
         Me.LabelControl49.TabIndex = 87
@@ -1043,7 +1044,7 @@ Partial Class FormPOS
         '
         Me.LabelControl35.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl35.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl35.Location = New System.Drawing.Point(81, 11)
+        Me.LabelControl35.Location = New System.Drawing.Point(87, 11)
         Me.LabelControl35.Name = "LabelControl35"
         Me.LabelControl35.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl35.TabIndex = 67
@@ -1052,7 +1053,7 @@ Partial Class FormPOS
         'LabelControl34
         '
         Me.LabelControl34.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl34.Location = New System.Drawing.Point(99, 11)
+        Me.LabelControl34.Location = New System.Drawing.Point(105, 11)
         Me.LabelControl34.Name = "LabelControl34"
         Me.LabelControl34.Size = New System.Drawing.Size(24, 13)
         Me.LabelControl34.TabIndex = 68
@@ -1062,7 +1063,7 @@ Partial Class FormPOS
         '
         Me.LabelControl33.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl33.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl33.Location = New System.Drawing.Point(149, 10)
+        Me.LabelControl33.Location = New System.Drawing.Point(155, 10)
         Me.LabelControl33.Name = "LabelControl33"
         Me.LabelControl33.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl33.TabIndex = 71
@@ -1081,7 +1082,7 @@ Partial Class FormPOS
         'LabelControl32
         '
         Me.LabelControl32.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl32.Location = New System.Drawing.Point(167, 10)
+        Me.LabelControl32.Location = New System.Drawing.Point(173, 10)
         Me.LabelControl32.Name = "LabelControl32"
         Me.LabelControl32.Size = New System.Drawing.Size(37, 13)
         Me.LabelControl32.TabIndex = 72
@@ -1109,7 +1110,7 @@ Partial Class FormPOS
         '
         Me.LabelControl30.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl30.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl30.Location = New System.Drawing.Point(81, 35)
+        Me.LabelControl30.Location = New System.Drawing.Point(87, 35)
         Me.LabelControl30.Name = "LabelControl30"
         Me.LabelControl30.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl30.TabIndex = 73
@@ -1118,7 +1119,7 @@ Partial Class FormPOS
         'LabelControl44
         '
         Me.LabelControl44.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl44.Location = New System.Drawing.Point(167, 35)
+        Me.LabelControl44.Location = New System.Drawing.Point(173, 35)
         Me.LabelControl44.Name = "LabelControl44"
         Me.LabelControl44.Size = New System.Drawing.Size(39, 13)
         Me.LabelControl44.TabIndex = 82
@@ -1138,7 +1139,7 @@ Partial Class FormPOS
         '
         Me.LabelControl45.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl45.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl45.Location = New System.Drawing.Point(149, 35)
+        Me.LabelControl45.Location = New System.Drawing.Point(155, 35)
         Me.LabelControl45.Name = "LabelControl45"
         Me.LabelControl45.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl45.TabIndex = 81
@@ -1147,7 +1148,7 @@ Partial Class FormPOS
         'LabelControl28
         '
         Me.LabelControl28.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl28.Location = New System.Drawing.Point(99, 35)
+        Me.LabelControl28.Location = New System.Drawing.Point(105, 35)
         Me.LabelControl28.Name = "LabelControl28"
         Me.LabelControl28.Size = New System.Drawing.Size(38, 13)
         Me.LabelControl28.TabIndex = 74

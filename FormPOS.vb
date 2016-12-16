@@ -93,16 +93,24 @@
     End Sub
 
     Sub closing_shift()
-        Cursor = Cursors.WaitCursor
-        Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to close this shift?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
-        If confirm = DialogResult.Yes Then
-            Dim query As String = "UPDATE tb_shift SET close_shift=NOW(), is_open=2 WHERE id_shift=" + id_shift + " "
-            execute_non_query(query, True, "", "", "", "")
-            Dim prn As New ClassPOS()
-            prn.printClosing(id_shift)
-            Close()
+        FormLogin.menu_acc = "18"
+        FormLogin.is_open_form = False
+        FormLogin.ShowDialog()
+        BringToFront()
+
+        If is_auth Then
+            Cursor = Cursors.WaitCursor
+            Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to close this shift?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+            If confirm = DialogResult.Yes Then
+                Dim query As String = "UPDATE tb_shift SET close_shift=NOW(), is_open=2 WHERE id_shift=" + id_shift + " "
+                execute_non_query(query, True, "", "", "", "")
+                Dim prn As New ClassPOS()
+                prn.printClosing(id_shift)
+                is_auth = False
+                Close()
+            End If
+            Cursor = Cursors.Default
         End If
-        Cursor = Cursors.Default
     End Sub
 
     Sub resetPayment()
@@ -231,13 +239,19 @@
     End Sub
 
     Sub drawer()
-        Cursor = Cursors.WaitCursor
-        FormBlack.Show()
-        FormPOSDrawerInfo.id_shift = id_shift
-        FormPOSDrawerInfo.ShowDialog()
-        FormBlack.Close()
-        BringToFront()
-        Cursor = Cursors.Default
+        FormLogin.menu_acc = "17"
+        FormLogin.is_open_form = False
+        FormLogin.ShowDialog()
+        If is_auth Then
+            Cursor = Cursors.WaitCursor
+            FormBlack.Show()
+            FormPOSDrawerInfo.id_shift = id_shift
+            FormPOSDrawerInfo.ShowDialog()
+            is_auth = False
+            FormBlack.Close()
+            BringToFront()
+            Cursor = Cursors.Default
+        End If
     End Sub
 
     Sub term()
@@ -423,7 +437,21 @@
     End Sub
 
     Sub exitForm()
-        Close()
+        If id <> "-1" Then
+            FormLogin.menu_acc = "20"
+            FormLogin.is_open_form = False
+            FormLogin.ShowDialog()
+            If is_auth Then
+                Dim query_upd_stt As String = "UPDATE tb_pos SET id_pos_status=3 WHERE id_pos=" + id + ""
+                execute_non_query(query_upd_stt, True, "", "", "", "")
+                Dim prn As New ClassPOS()
+                prn.printPos(id, False)
+                is_auth = False
+                Close()
+            End If
+        Else
+            Close()
+        End If
     End Sub
 
     Private Sub FormPOS_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
@@ -666,11 +694,20 @@
                 TxtCash.EditValue = TxtTotal.EditValue
                 TxtCash.Focus()
             Else 'with login
-                getSubTotal()
-                TxtDiscount.Enabled = False
-                TxtCash.Enabled = True
-                TxtCash.EditValue = TxtTotal.EditValue
-                TxtCash.Focus()
+                FormLogin.menu_acc = "19"
+                FormLogin.is_open_form = False
+                FormLogin.ShowDialog()
+                BringToFront()
+                If is_auth Then
+                    getSubTotal()
+                    TxtDiscount.Enabled = False
+                    TxtCash.Enabled = True
+                    TxtCash.EditValue = TxtTotal.EditValue
+                    TxtCash.Focus()
+                Else
+                    TxtDiscount.EditValue = 0
+                    TxtDiscount.Focus()
+                End If
             End If
         End If
     End Sub
@@ -1014,12 +1051,7 @@
     End Sub
 
     Private Sub FormPOS_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If id <> "-1" Then
-            'Dim query_upd_stt As String = "UPDATE tb_pos SET id_pos_status=3 WHERE id_pos=" + id + ""
-            'execute_non_query(query_upd_stt, True, "", "", "", "")
-            'Dim prn As New ClassPOS()
-            'prn.printPos(id)
-        End If
+
     End Sub
 
     Private Sub TxtVoucherNo_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtVoucherNo.KeyDown
