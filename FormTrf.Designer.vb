@@ -20,6 +20,7 @@ Partial Class FormTrf
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormTrf))
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
@@ -32,6 +33,7 @@ Partial Class FormTrf
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
+        Me.PanelControlBack = New DevExpress.XtraEditors.PanelControl()
         Me.GCTrf = New DevExpress.XtraGrid.GridControl()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -55,6 +57,7 @@ Partial Class FormTrf
         Me.PanelControl2.SuspendLayout()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
+        CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GCTrf, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.GVTrf, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,7 +68,7 @@ Partial Class FormTrf
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl1.Controls.Add(Me.PanelControl2)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl1.Location = New System.Drawing.Point(20, 286)
+        Me.PanelControl1.Location = New System.Drawing.Point(20, 266)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(605, 35)
         Me.PanelControl1.TabIndex = 7
@@ -163,6 +166,7 @@ Partial Class FormTrf
         '
         Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl3.Controls.Add(Me.LabelControl13)
+        Me.PanelControl3.Controls.Add(Me.PanelControlBack)
         Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControl3.Location = New System.Drawing.Point(20, 20)
         Me.PanelControl3.Name = "PanelControl3"
@@ -174,22 +178,34 @@ Partial Class FormTrf
         Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Segoe UI Light", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.LabelControl13.Dock = System.Windows.Forms.DockStyle.Left
-        Me.LabelControl13.Location = New System.Drawing.Point(0, 0)
+        Me.LabelControl13.Location = New System.Drawing.Point(40, 0)
         Me.LabelControl13.Name = "LabelControl13"
         Me.LabelControl13.Size = New System.Drawing.Size(232, 37)
         Me.LabelControl13.TabIndex = 1
         Me.LabelControl13.Text = "Inner Outlet Transfer"
+        '
+        'PanelControlBack
+        '
+        Me.PanelControlBack.Appearance.BackColor = System.Drawing.Color.White
+        Me.PanelControlBack.Appearance.Options.UseBackColor = True
+        Me.PanelControlBack.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControlBack.ContentImage = CType(resources.GetObject("PanelControlBack.ContentImage"), System.Drawing.Image)
+        Me.PanelControlBack.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PanelControlBack.Location = New System.Drawing.Point(0, 0)
+        Me.PanelControlBack.Name = "PanelControlBack"
+        Me.PanelControlBack.Size = New System.Drawing.Size(40, 45)
+        Me.PanelControlBack.TabIndex = 7
         '
         'GCTrf
         '
         Me.GCTrf.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GCTrf.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCTrf.Location = New System.Drawing.Point(20, 65)
-        Me.GCTrf.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCTrf.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCTrf.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCTrf.MainView = Me.GVTrf
         Me.GCTrf.Name = "GCTrf"
-        Me.GCTrf.Size = New System.Drawing.Size(605, 221)
+        Me.GCTrf.Size = New System.Drawing.Size(605, 201)
         Me.GCTrf.TabIndex = 10
         Me.GCTrf.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVTrf})
         '
@@ -335,7 +351,7 @@ Partial Class FormTrf
         Me.LookAndFeel.SkinName = "Metropolis"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "FormTrf"
-        Me.Padding = New System.Windows.Forms.Padding(20, 20, 20, 0)
+        Me.Padding = New System.Windows.Forms.Padding(20)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Transfer"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -347,6 +363,7 @@ Partial Class FormTrf
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl3.ResumeLayout(False)
         Me.PanelControl3.PerformLayout()
+        CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GCTrf, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.GVTrf, System.ComponentModel.ISupportInitialize).EndInit()
@@ -383,4 +400,5 @@ Partial Class FormTrf
     Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PrintPreviewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PanelControlBack As DevExpress.XtraEditors.PanelControl
 End Class
