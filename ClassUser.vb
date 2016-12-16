@@ -84,8 +84,32 @@
             For i As Integer = 0 To group.Items.Count - 1
                 If TypeOf group.Items(i) Is DevExpress.XtraEditors.TileItem Then
                     Dim item As DevExpress.XtraEditors.TileItem = TryCast(group.Items(i), DevExpress.XtraEditors.TileItem)
-                    If item.Name.ToString <> "TIExit" And item.Name.ToString <> "TILogout" Then
+                    If item.Name.ToString <> "TIExit" And item.Name.ToString <> "TIAccount" Then
                         item.Visible = False
+                    End If
+                End If
+            Next i
+        Next
+    End Sub
+
+    Public Sub showMenu()
+        Dim query As String = "SELECT a.id_role, a.id_menu, m.menu, m.menu_tile 
+        FROM tb_menu_access a 
+        INNER JOIN tb_menu m ON m.id_menu = a.id_menu
+        WHERE a.id_role=" + id_role_login + " "
+        Dim dt As DataTable = execute_query(query, -1, True, "", "", "", "")
+        For m As Integer = 0 To FormHome.TileControl1.Groups.Count - 1
+            Dim group As DevExpress.XtraEditors.TileGroup = TryCast(FormHome.TileControl1.Groups(m), DevExpress.XtraEditors.TileGroup)
+            For i As Integer = 0 To group.Items.Count - 1
+                If TypeOf group.Items(i) Is DevExpress.XtraEditors.TileItem Then
+                    Dim item As DevExpress.XtraEditors.TileItem = TryCast(group.Items(i), DevExpress.XtraEditors.TileItem)
+                    If item.Name.ToString <> "TIExit" And item.Name.ToString <> "TIAccount" Then
+                        Dim dtf As DataRow() = dt.Select("[menu_tile]='" + item.Name.ToString + "'")
+                        If dtf.Length > 0 Then
+                            item.Visible = True
+                        Else
+                            item.Visible = False
+                        End If
                     End If
                 End If
             Next i
