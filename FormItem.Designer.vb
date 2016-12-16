@@ -71,7 +71,7 @@ Partial Class FormItem
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl1.Controls.Add(Me.PanelControl2)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl1.Location = New System.Drawing.Point(20, 465)
+        Me.PanelControl1.Location = New System.Drawing.Point(20, 445)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(660, 35)
         Me.PanelControl1.TabIndex = 1
@@ -210,11 +210,11 @@ Partial Class FormItem
         Me.GCItem.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GCItem.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCItem.Location = New System.Drawing.Point(20, 74)
-        Me.GCItem.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCItem.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCItem.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCItem.MainView = Me.GVItem
         Me.GCItem.Name = "GCItem"
-        Me.GCItem.Size = New System.Drawing.Size(660, 391)
+        Me.GCItem.Size = New System.Drawing.Size(660, 371)
         Me.GCItem.TabIndex = 2
         Me.GCItem.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVItem})
         '
@@ -374,7 +374,7 @@ Partial Class FormItem
         Me.LookAndFeel.SkinName = "Metropolis"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "FormItem"
-        Me.Padding = New System.Windows.Forms.Padding(20, 20, 20, 0)
+        Me.Padding = New System.Windows.Forms.Padding(20)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Item"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
