@@ -20,8 +20,10 @@ Partial Class FormRec
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormRec))
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
+        Me.PanelControlBack = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
@@ -51,6 +53,7 @@ Partial Class FormRec
         Me.GridColumnPreparedBy = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
+        CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,6 +67,7 @@ Partial Class FormRec
         '
         Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl3.Controls.Add(Me.LabelControl13)
+        Me.PanelControl3.Controls.Add(Me.PanelControlBack)
         Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControl3.Location = New System.Drawing.Point(20, 20)
         Me.PanelControl3.Name = "PanelControl3"
@@ -75,18 +79,30 @@ Partial Class FormRec
         Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Segoe UI Light", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.LabelControl13.Dock = System.Windows.Forms.DockStyle.Left
-        Me.LabelControl13.Location = New System.Drawing.Point(0, 0)
+        Me.LabelControl13.Location = New System.Drawing.Point(40, 0)
         Me.LabelControl13.Name = "LabelControl13"
         Me.LabelControl13.Size = New System.Drawing.Size(87, 37)
         Me.LabelControl13.TabIndex = 1
         Me.LabelControl13.Text = "Receive"
+        '
+        'PanelControlBack
+        '
+        Me.PanelControlBack.Appearance.BackColor = System.Drawing.Color.White
+        Me.PanelControlBack.Appearance.Options.UseBackColor = True
+        Me.PanelControlBack.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControlBack.ContentImage = CType(resources.GetObject("PanelControlBack.ContentImage"), System.Drawing.Image)
+        Me.PanelControlBack.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PanelControlBack.Location = New System.Drawing.Point(0, 0)
+        Me.PanelControlBack.Name = "PanelControlBack"
+        Me.PanelControlBack.Size = New System.Drawing.Size(40, 45)
+        Me.PanelControlBack.TabIndex = 5
         '
         'PanelControl1
         '
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl1.Controls.Add(Me.PanelControl2)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl1.Location = New System.Drawing.Point(20, 340)
+        Me.PanelControl1.Location = New System.Drawing.Point(20, 320)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(621, 35)
         Me.PanelControl1.TabIndex = 5
@@ -185,11 +201,11 @@ Partial Class FormRec
         Me.GCRec.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GCRec.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCRec.Location = New System.Drawing.Point(20, 65)
-        Me.GCRec.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCRec.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCRec.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCRec.MainView = Me.GVRec
         Me.GCRec.Name = "GCRec"
-        Me.GCRec.Size = New System.Drawing.Size(621, 275)
+        Me.GCRec.Size = New System.Drawing.Size(621, 255)
         Me.GCRec.TabIndex = 6
         Me.GCRec.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVRec})
         '
@@ -336,13 +352,14 @@ Partial Class FormRec
         Me.LookAndFeel.SkinName = "Metropolis"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "FormRec"
-        Me.Padding = New System.Windows.Forms.Padding(20, 20, 20, 0)
+        Me.Padding = New System.Windows.Forms.Padding(20)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormRec"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl3.ResumeLayout(False)
         Me.PanelControl3.PerformLayout()
+        CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -384,4 +401,5 @@ Partial Class FormRec
     Friend WithEvents GridColumnStt As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnReference As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnPreparedBy As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents PanelControlBack As DevExpress.XtraEditors.PanelControl
 End Class

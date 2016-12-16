@@ -88,4 +88,16 @@
     Private Sub PrintPreviewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintPreviewToolStripMenuItem.Click
         printPreview()
     End Sub
+
+    Private Sub PanelControlBack_Click(sender As Object, e As EventArgs) Handles PanelControlBack.Click
+        Close()
+    End Sub
+
+    Private Sub PanelControlBack_MouseHover(sender As Object, e As EventArgs) Handles PanelControlBack.MouseHover
+        PanelControlBack.Cursor = Cursors.Hand
+    End Sub
+
+    Private Sub PanelControlBack_MouseLeave(sender As Object, e As EventArgs) Handles PanelControlBack.MouseLeave
+        PanelControlBack.Cursor = Cursors.Default
+    End Sub
 End Class

@@ -20,6 +20,7 @@ Partial Class FormRet
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormRet))
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
@@ -38,6 +39,7 @@ Partial Class FormRet
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
+        Me.PanelControlBack = New DevExpress.XtraEditors.PanelControl()
         Me.GCRet = New DevExpress.XtraGrid.GridControl()
         Me.GVRet = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumnIdRet = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -56,6 +58,7 @@ Partial Class FormRet
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
+        CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GCRet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GVRet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -65,7 +68,7 @@ Partial Class FormRet
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl1.Controls.Add(Me.PanelControl2)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl1.Location = New System.Drawing.Point(20, 324)
+        Me.PanelControl1.Location = New System.Drawing.Point(20, 304)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(621, 35)
         Me.PanelControl1.TabIndex = 6
@@ -163,43 +166,44 @@ Partial Class FormRet
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem, Me.NewToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.PrintPreviewToolStripMenuItem, Me.CloseToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 136)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(108, 114)
         '
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.EditToolStripMenuItem.Text = "Detail"
         '
         'NewToolStripMenuItem
         '
         Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.NewToolStripMenuItem.Text = "New"
         '
         'DeleteToolStripMenuItem
         '
         Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.DeleteToolStripMenuItem.Text = "Delete"
         Me.DeleteToolStripMenuItem.Visible = False
         '
         'PrintPreviewToolStripMenuItem
         '
         Me.PrintPreviewToolStripMenuItem.Name = "PrintPreviewToolStripMenuItem"
-        Me.PrintPreviewToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PrintPreviewToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.PrintPreviewToolStripMenuItem.Text = "Print"
         '
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
         'PanelControl3
         '
         Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl3.Controls.Add(Me.LabelControl13)
+        Me.PanelControl3.Controls.Add(Me.PanelControlBack)
         Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControl3.Location = New System.Drawing.Point(20, 20)
         Me.PanelControl3.Name = "PanelControl3"
@@ -211,22 +215,34 @@ Partial Class FormRet
         Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Segoe UI Light", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.LabelControl13.Dock = System.Windows.Forms.DockStyle.Left
-        Me.LabelControl13.Location = New System.Drawing.Point(0, 0)
+        Me.LabelControl13.Location = New System.Drawing.Point(40, 0)
         Me.LabelControl13.Name = "LabelControl13"
         Me.LabelControl13.Size = New System.Drawing.Size(74, 37)
         Me.LabelControl13.TabIndex = 1
         Me.LabelControl13.Text = "Return"
+        '
+        'PanelControlBack
+        '
+        Me.PanelControlBack.Appearance.BackColor = System.Drawing.Color.White
+        Me.PanelControlBack.Appearance.Options.UseBackColor = True
+        Me.PanelControlBack.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControlBack.ContentImage = CType(resources.GetObject("PanelControlBack.ContentImage"), System.Drawing.Image)
+        Me.PanelControlBack.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PanelControlBack.Location = New System.Drawing.Point(0, 0)
+        Me.PanelControlBack.Name = "PanelControlBack"
+        Me.PanelControlBack.Size = New System.Drawing.Size(40, 45)
+        Me.PanelControlBack.TabIndex = 6
         '
         'GCRet
         '
         Me.GCRet.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GCRet.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCRet.Location = New System.Drawing.Point(20, 65)
-        Me.GCRet.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCRet.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCRet.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCRet.MainView = Me.GVRet
         Me.GCRet.Name = "GCRet"
-        Me.GCRet.Size = New System.Drawing.Size(621, 259)
+        Me.GCRet.Size = New System.Drawing.Size(621, 239)
         Me.GCRet.TabIndex = 9
         Me.GCRet.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVRet})
         '
@@ -338,7 +354,7 @@ Partial Class FormRet
         Me.LookAndFeel.SkinName = "Metropolis"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "FormRet"
-        Me.Padding = New System.Windows.Forms.Padding(20, 20, 20, 0)
+        Me.Padding = New System.Windows.Forms.Padding(20)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Return"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -351,6 +367,7 @@ Partial Class FormRet
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl3.ResumeLayout(False)
         Me.PanelControl3.PerformLayout()
+        CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GCRet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GVRet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -386,4 +403,5 @@ Partial Class FormRet
     Friend WithEvents GridColumnStt As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnReference As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnPreparedBy As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents PanelControlBack As DevExpress.XtraEditors.PanelControl
 End Class

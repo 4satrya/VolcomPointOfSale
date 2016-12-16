@@ -131,7 +131,7 @@ Partial Class FormRetDet
         '
         'PanelControl3
         '
-        Me.PanelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanelControl3.Appearance.BackColor = System.Drawing.Color.MidnightBlue
         Me.PanelControl3.Appearance.Options.UseBackColor = True
         Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl3.Controls.Add(Me.PCClose)
@@ -207,10 +207,12 @@ Partial Class FormRetDet
         '
         'BtnBrowseTo
         '
-        Me.BtnBrowseTo.Appearance.BackColor = System.Drawing.Color.Gray
+        Me.BtnBrowseTo.Appearance.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnBrowseTo.Appearance.BorderColor = System.Drawing.Color.MidnightBlue
         Me.BtnBrowseTo.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnBrowseTo.Appearance.ForeColor = System.Drawing.Color.White
         Me.BtnBrowseTo.Appearance.Options.UseBackColor = True
+        Me.BtnBrowseTo.Appearance.Options.UseBorderColor = True
         Me.BtnBrowseTo.Appearance.Options.UseFont = True
         Me.BtnBrowseTo.Appearance.Options.UseForeColor = True
         Me.BtnBrowseTo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -223,10 +225,12 @@ Partial Class FormRetDet
         '
         'BtnBrowseFrom
         '
-        Me.BtnBrowseFrom.Appearance.BackColor = System.Drawing.Color.Gray
+        Me.BtnBrowseFrom.Appearance.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BtnBrowseFrom.Appearance.BorderColor = System.Drawing.Color.MidnightBlue
         Me.BtnBrowseFrom.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnBrowseFrom.Appearance.ForeColor = System.Drawing.Color.White
         Me.BtnBrowseFrom.Appearance.Options.UseBackColor = True
+        Me.BtnBrowseFrom.Appearance.Options.UseBorderColor = True
         Me.BtnBrowseFrom.Appearance.Options.UseFont = True
         Me.BtnBrowseFrom.Appearance.Options.UseForeColor = True
         Me.BtnBrowseFrom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -890,7 +894,7 @@ Partial Class FormRetDet
         Me.Controls.Add(Me.PanelControl3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.KeyPreview = True
-        Me.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "FormRetDet"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
