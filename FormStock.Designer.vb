@@ -46,6 +46,7 @@ Partial Class FormStock
         Me.GridColumnRes = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnTotal = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PanelControlStock = New DevExpress.XtraEditors.PanelControl()
+        Me.CEActive = New DevExpress.XtraEditors.CheckEdit()
         Me.SLESupplier = New DevExpress.XtraEditors.SearchLookUpEdit()
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -96,7 +97,6 @@ Partial Class FormStock
         Me.PanelControlTitle = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlBack = New DevExpress.XtraEditors.PanelControl()
-        Me.CEActive = New DevExpress.XtraEditors.CheckEdit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,6 +109,7 @@ Partial Class FormStock
         CType(Me.GVStock, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControlStock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlStock.SuspendLayout()
+        CType(Me.CEActive.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SLESupplier.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DERefDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -133,7 +134,6 @@ Partial Class FormStock
         CType(Me.PanelControlTitle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlTitle.SuspendLayout()
         CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CEActive.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelControl1
@@ -256,7 +256,7 @@ Partial Class FormStock
         '
         Me.GCStock.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCStock.Location = New System.Drawing.Point(0, 68)
-        Me.GCStock.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCStock.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCStock.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCStock.MainView = Me.GVStock
         Me.GCStock.Name = "GCStock"
@@ -373,6 +373,15 @@ Partial Class FormStock
         Me.PanelControlStock.Size = New System.Drawing.Size(816, 68)
         Me.PanelControlStock.TabIndex = 0
         '
+        'CEActive
+        '
+        Me.CEActive.EditValue = True
+        Me.CEActive.Location = New System.Drawing.Point(641, 21)
+        Me.CEActive.Name = "CEActive"
+        Me.CEActive.Properties.Caption = "Active Product"
+        Me.CEActive.Size = New System.Drawing.Size(89, 19)
+        Me.CEActive.TabIndex = 2
+        '
         'SLESupplier
         '
         Me.SLESupplier.Location = New System.Drawing.Point(376, 9)
@@ -416,10 +425,12 @@ Partial Class FormStock
         '
         'BtnView
         '
-        Me.BtnView.Appearance.BackColor = System.Drawing.Color.Gray
+        Me.BtnView.Appearance.BackColor = System.Drawing.Color.DarkSlateBlue
+        Me.BtnView.Appearance.BorderColor = System.Drawing.Color.DarkSlateBlue
         Me.BtnView.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnView.Appearance.ForeColor = System.Drawing.Color.White
         Me.BtnView.Appearance.Options.UseBackColor = True
+        Me.BtnView.Appearance.Options.UseBorderColor = True
         Me.BtnView.Appearance.Options.UseFont = True
         Me.BtnView.Appearance.Options.UseForeColor = True
         Me.BtnView.Location = New System.Drawing.Point(736, 21)
@@ -570,7 +581,7 @@ Partial Class FormStock
         '
         Me.GCCard.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCCard.Location = New System.Drawing.Point(0, 68)
-        Me.GCCard.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCCard.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCCard.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCCard.MainView = Me.GVCard
         Me.GCCard.Name = "GCCard"
@@ -683,10 +694,12 @@ Partial Class FormStock
         '
         'SimpleButton1
         '
-        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.Gray
+        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.DarkSlateBlue
+        Me.SimpleButton1.Appearance.BorderColor = System.Drawing.Color.DarkSlateBlue
         Me.SimpleButton1.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SimpleButton1.Appearance.ForeColor = System.Drawing.Color.White
         Me.SimpleButton1.Appearance.Options.UseBackColor = True
+        Me.SimpleButton1.Appearance.Options.UseBorderColor = True
         Me.SimpleButton1.Appearance.Options.UseFont = True
         Me.SimpleButton1.Appearance.Options.UseForeColor = True
         Me.SimpleButton1.Location = New System.Drawing.Point(649, 21)
@@ -860,15 +873,6 @@ Partial Class FormStock
         Me.PanelControlBack.Size = New System.Drawing.Size(40, 61)
         Me.PanelControlBack.TabIndex = 4
         '
-        'CEActive
-        '
-        Me.CEActive.EditValue = True
-        Me.CEActive.Location = New System.Drawing.Point(641, 21)
-        Me.CEActive.Name = "CEActive"
-        Me.CEActive.Properties.Caption = "Active Product"
-        Me.CEActive.Size = New System.Drawing.Size(89, 19)
-        Me.CEActive.TabIndex = 2
-        '
         'FormStock
         '
         Me.Appearance.Options.UseFont = True
@@ -902,6 +906,7 @@ Partial Class FormStock
         CType(Me.PanelControlStock, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlStock.ResumeLayout(False)
         Me.PanelControlStock.PerformLayout()
+        CType(Me.CEActive.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SLESupplier.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DERefDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -928,7 +933,6 @@ Partial Class FormStock
         Me.PanelControlTitle.ResumeLayout(False)
         Me.PanelControlTitle.PerformLayout()
         CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CEActive.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
