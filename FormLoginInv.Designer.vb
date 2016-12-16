@@ -134,6 +134,7 @@ Partial Class FormLoginInv
         Me.Controls.Add(Me.TxtUsername)
         Me.Controls.Add(Me.LabelControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.KeyPreview = True
         Me.LookAndFeel.SkinName = "Metropolis"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.MaximizeBox = False

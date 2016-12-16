@@ -65,4 +65,11 @@
             signIn()
         End If
     End Sub
+
+    Private Sub FormLoginInv_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.F1 Then
+            TxtUsername.Text = "catur"
+            TxtPass.Text = "catur"
+        End If
+    End Sub
 End Class

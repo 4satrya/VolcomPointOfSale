@@ -154,6 +154,10 @@ Partial Class FormHome
         '
         'TIRec
         '
+        Me.TIRec.AppearanceItem.Normal.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.TIRec.AppearanceItem.Normal.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.TIRec.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TIRec.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIRec.BackgroundImage = CType(resources.GetObject("TIRec.BackgroundImage"), System.Drawing.Image)
         TileItemElement1.Text = "Receive"
         TileItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
@@ -164,6 +168,10 @@ Partial Class FormHome
         '
         'TIRet
         '
+        Me.TIRet.AppearanceItem.Normal.BackColor = System.Drawing.Color.SlateBlue
+        Me.TIRet.AppearanceItem.Normal.BorderColor = System.Drawing.Color.SlateBlue
+        Me.TIRet.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TIRet.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIRet.BackgroundImage = CType(resources.GetObject("TIRet.BackgroundImage"), System.Drawing.Image)
         TileItemElement2.Text = "Return"
         TileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
@@ -174,6 +182,10 @@ Partial Class FormHome
         '
         'TITrf
         '
+        Me.TITrf.AppearanceItem.Normal.BackColor = System.Drawing.Color.Crimson
+        Me.TITrf.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Crimson
+        Me.TITrf.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TITrf.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TITrf.BackgroundImage = CType(resources.GetObject("TITrf.BackgroundImage"), System.Drawing.Image)
         Me.TITrf.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement3.Text = "Transfer"
@@ -185,6 +197,10 @@ Partial Class FormHome
         '
         'TIStockOpname
         '
+        Me.TIStockOpname.AppearanceItem.Normal.BackColor = System.Drawing.Color.SteelBlue
+        Me.TIStockOpname.AppearanceItem.Normal.BorderColor = System.Drawing.Color.SteelBlue
+        Me.TIStockOpname.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TIStockOpname.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIStockOpname.BackgroundImage = CType(resources.GetObject("TIStockOpname.BackgroundImage"), System.Drawing.Image)
         TileItemElement4.Text = "Stock Opname"
         TileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
@@ -206,6 +222,10 @@ Partial Class FormHome
         '
         'TICompany
         '
+        Me.TICompany.AppearanceItem.Normal.BackColor = System.Drawing.Color.OrangeRed
+        Me.TICompany.AppearanceItem.Normal.BorderColor = System.Drawing.Color.OrangeRed
+        Me.TICompany.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TICompany.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TICompany.BackgroundImage = CType(resources.GetObject("TICompany.BackgroundImage"), System.Drawing.Image)
         Me.TICompany.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement6.Text = "Company"
@@ -217,6 +237,10 @@ Partial Class FormHome
         '
         'TIProduct
         '
+        Me.TIProduct.AppearanceItem.Normal.BackColor = System.Drawing.Color.SteelBlue
+        Me.TIProduct.AppearanceItem.Normal.BorderColor = System.Drawing.Color.SteelBlue
+        Me.TIProduct.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TIProduct.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIProduct.BackgroundImage = CType(resources.GetObject("TIProduct.BackgroundImage"), System.Drawing.Image)
         Me.TIProduct.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement7.Text = "Master Product"
@@ -228,6 +252,10 @@ Partial Class FormHome
         '
         'TIDaily
         '
+        Me.TIDaily.AppearanceItem.Normal.BackColor = System.Drawing.Color.SlateBlue
+        Me.TIDaily.AppearanceItem.Normal.BorderColor = System.Drawing.Color.SlateBlue
+        Me.TIDaily.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TIDaily.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIDaily.BackgroundImage = CType(resources.GetObject("TIDaily.BackgroundImage"), System.Drawing.Image)
         Me.TIDaily.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement8.Text = "Daily Transaction"
@@ -250,6 +278,10 @@ Partial Class FormHome
         '
         'TIStock
         '
+        Me.TIStock.AppearanceItem.Normal.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.TIStock.AppearanceItem.Normal.BorderColor = System.Drawing.Color.LightSeaGreen
+        Me.TIStock.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TIStock.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIStock.BackgroundImage = CType(resources.GetObject("TIStock.BackgroundImage"), System.Drawing.Image)
         Me.TIStock.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement10.Text = "Stock"
@@ -261,6 +293,10 @@ Partial Class FormHome
         '
         'TITransDetail
         '
+        Me.TITransDetail.AppearanceItem.Normal.BackColor = System.Drawing.Color.Crimson
+        Me.TITransDetail.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Crimson
+        Me.TITransDetail.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TITransDetail.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TITransDetail.BackgroundImage = CType(resources.GetObject("TITransDetail.BackgroundImage"), System.Drawing.Image)
         Me.TITransDetail.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement11.Text = "Transaction Detail"
@@ -272,6 +308,10 @@ Partial Class FormHome
         '
         'TICopyReceipt
         '
+        Me.TICopyReceipt.AppearanceItem.Normal.BackColor = System.Drawing.Color.SteelBlue
+        Me.TICopyReceipt.AppearanceItem.Normal.BorderColor = System.Drawing.Color.SteelBlue
+        Me.TICopyReceipt.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TICopyReceipt.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TICopyReceipt.BackgroundImage = CType(resources.GetObject("TICopyReceipt.BackgroundImage"), System.Drawing.Image)
         Me.TICopyReceipt.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement12.Text = "Copy Receipt"
@@ -294,6 +334,10 @@ Partial Class FormHome
         '
         'TIUser
         '
+        Me.TIUser.AppearanceItem.Normal.BackColor = System.Drawing.Color.OrangeRed
+        Me.TIUser.AppearanceItem.Normal.BorderColor = System.Drawing.Color.OrangeRed
+        Me.TIUser.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TIUser.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIUser.BackgroundImage = CType(resources.GetObject("TIUser.BackgroundImage"), System.Drawing.Image)
         Me.TIUser.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement14.Text = "Setting"
@@ -305,6 +349,10 @@ Partial Class FormHome
         '
         'TIExit
         '
+        Me.TIExit.AppearanceItem.Normal.BackColor = System.Drawing.Color.Crimson
+        Me.TIExit.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Crimson
+        Me.TIExit.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TIExit.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIExit.BackgroundImage = CType(resources.GetObject("TIExit.BackgroundImage"), System.Drawing.Image)
         Me.TIExit.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement15.Text = "Sign out"
@@ -630,7 +678,7 @@ Partial Class FormHome
         '
         'FormHome
         '
-        Me.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Appearance.Options.UseBackColor = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -641,6 +689,7 @@ Partial Class FormHome
         Me.Controls.Add(Me.barDockControlRight)
         Me.Controls.Add(Me.barDockControlBottom)
         Me.Controls.Add(Me.barDockControlTop)
+        Me.DoubleBuffered = True
         Me.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.KeyPreview = True

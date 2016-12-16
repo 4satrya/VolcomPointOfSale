@@ -37,8 +37,8 @@
 
     Sub setLabelUser()
         Dim u As New ClassUser()
-        LabelEmployeeLogin.Text = u.getHostName()
-        LabelRoleLogin.Text = u.getIP()
+        LabelEmployeeLogin.Text = name_user
+        LabelRoleLogin.Text = role_login
     End Sub
 
     Private Sub TILogout_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TILogout.ItemClick
