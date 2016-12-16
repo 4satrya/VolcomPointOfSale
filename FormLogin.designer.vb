@@ -141,9 +141,8 @@ Partial Class FormLogin
         Me.MinimizeBox = False
         Me.Name = "FormLogin"
         Me.ShowInTaskbar = False
-        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Login"
+        Me.Text = "Authorization"
         CType(Me.PictureEditIcon.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtUsername.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtPassword.Properties, System.ComponentModel.ISupportInitialize).EndInit()

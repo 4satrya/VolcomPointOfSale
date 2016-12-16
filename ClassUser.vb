@@ -156,18 +156,25 @@
     End Sub
 
     'check access menu user
-    Public Sub checkAccess(ByVal id_menu As String)
+    Public Sub checkAccess(ByVal id_menu As String, open_form As Boolean)
         Dim query As String = "SELECT COUNT(*) FROM tb_menu_access a
         INNER JOIN tb_menu m ON m.id_menu = a.id_menu
         WHERE a.id_role='" + id_role_login + "' AND m.id_menu='" + id_menu + "' "
         Dim jum As String = execute_query(query, 0, True, "", "", "", "")
         If jum > 0 Then
-            If id_menu = "1" Then
-                'ADMIN SETUP
-                FormUser.ShowDialog()
-            ElseIf id_menu = "2" Then
-                'MASTER PRODUCT
-                FormItem.ShowDialog()
+            If open_form Then
+                If id_menu = "1" Then
+                    'ADMIN SETUP
+                    FormUser.ShowDialog()
+                ElseIf id_menu = "2" Then
+                    'MASTER PRODUCT
+                    FormItem.ShowDialog()
+                ElseIf id_menu = "14" Then
+                    'POS
+                    FormPOS.ShowDialog()
+                End If
+            Else
+                is_auth = True
             End If
         Else
             stopCustom("Access denied")

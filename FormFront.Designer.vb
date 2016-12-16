@@ -20,12 +20,12 @@ Partial Class FormFront
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormFront))
-        Dim TileItemElement13 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement14 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement15 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement16 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement17 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement18 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement31 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement32 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement33 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement34 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement35 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement36 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Me.TileControl1 = New DevExpress.XtraEditors.TileControl()
         Me.TGGeneral = New DevExpress.XtraEditors.TileGroup()
         Me.TIInv = New DevExpress.XtraEditors.TileItem()
@@ -48,17 +48,17 @@ Partial Class FormFront
         Me.TileControl1.AppearanceText.ForeColor = System.Drawing.Color.White
         Me.TileControl1.AppearanceText.Options.UseFont = True
         Me.TileControl1.AppearanceText.Options.UseForeColor = True
-        Me.TileControl1.BackColor = System.Drawing.Color.Transparent
+        Me.TileControl1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TileControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.TileControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TileControl1.DragSize = New System.Drawing.Size(0, 0)
         Me.TileControl1.Groups.Add(Me.TGGeneral)
         Me.TileControl1.ItemSize = 125
-        Me.TileControl1.Location = New System.Drawing.Point(0, 0)
+        Me.TileControl1.Location = New System.Drawing.Point(2, 2)
         Me.TileControl1.MaxId = 50
         Me.TileControl1.Name = "TileControl1"
         Me.TileControl1.ShowGroupText = True
-        Me.TileControl1.Size = New System.Drawing.Size(571, 339)
+        Me.TileControl1.Size = New System.Drawing.Size(567, 335)
         Me.TileControl1.TabIndex = 3
         Me.TileControl1.Text = "POINT OF SALE"
         '
@@ -79,9 +79,9 @@ Partial Class FormFront
         Me.TIInv.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIInv.BackgroundImage = CType(resources.GetObject("TIInv.BackgroundImage"), System.Drawing.Image)
         Me.TIInv.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement13.Text = "Inventory Control"
-        TileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
-        Me.TIInv.Elements.Add(TileItemElement13)
+        TileItemElement31.Text = "Inventory Control"
+        TileItemElement31.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TIInv.Elements.Add(TileItemElement31)
         Me.TIInv.Id = 47
         Me.TIInv.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TIInv.Name = "TIInv"
@@ -94,9 +94,9 @@ Partial Class FormFront
         Me.TIPOS.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIPOS.BackgroundImage = CType(resources.GetObject("TIPOS.BackgroundImage"), System.Drawing.Image)
         Me.TIPOS.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement14.Text = "Point of Sale"
-        TileItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
-        Me.TIPOS.Elements.Add(TileItemElement14)
+        TileItemElement32.Text = "Point of Sale"
+        TileItemElement32.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TIPOS.Elements.Add(TileItemElement32)
         Me.TIPOS.Id = 23
         Me.TIPOS.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TIPOS.Name = "TIPOS"
@@ -109,9 +109,9 @@ Partial Class FormFront
         Me.TileItem4.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TileItem4.BackgroundImage = CType(resources.GetObject("TileItem4.BackgroundImage"), System.Drawing.Image)
         Me.TileItem4.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement15.Text = "About"
-        TileItemElement15.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem4.Elements.Add(TileItemElement15)
+        TileItemElement33.Text = "About"
+        TileItemElement33.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem4.Elements.Add(TileItemElement33)
         Me.TileItem4.Id = 48
         Me.TileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TileItem4.Name = "TileItem4"
@@ -124,9 +124,9 @@ Partial Class FormFront
         Me.TIEnd.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TIEnd.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIEnd.BackgroundImage = CType(resources.GetObject("TIEnd.BackgroundImage"), System.Drawing.Image)
-        TileItemElement16.Text = "Exit"
-        TileItemElement16.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
-        Me.TIEnd.Elements.Add(TileItemElement16)
+        TileItemElement34.Text = "Exit"
+        TileItemElement34.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TIEnd.Elements.Add(TileItemElement34)
         Me.TIEnd.Id = 49
         Me.TIEnd.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TIEnd.Name = "TIEnd"
@@ -138,9 +138,9 @@ Partial Class FormFront
         Me.TIExit.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TIExit.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIExit.BackgroundImage = CType(resources.GetObject("TIExit.BackgroundImage"), System.Drawing.Image)
-        TileItemElement17.Text = "Exit"
-        TileItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
-        Me.TIExit.Elements.Add(TileItemElement17)
+        TileItemElement35.Text = "Exit"
+        TileItemElement35.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TIExit.Elements.Add(TileItemElement35)
         Me.TIExit.Id = 29
         Me.TIExit.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TIExit.Name = "TIExit"
@@ -153,16 +153,16 @@ Partial Class FormFront
         Me.TileItem2.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TileItem2.BackgroundImage = CType(resources.GetObject("TileItem2.BackgroundImage"), System.Drawing.Image)
         Me.TileItem2.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement18.Text = "Exit Program"
-        TileItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem2.Elements.Add(TileItemElement18)
+        TileItemElement36.Text = "Exit Program"
+        TileItemElement36.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem2.Elements.Add(TileItemElement36)
         Me.TileItem2.Id = 45
         Me.TileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TileItem2.Name = "TileItem2"
         '
         'FormFront
         '
-        Me.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Appearance.BackColor = System.Drawing.Color.DimGray
         Me.Appearance.Options.UseBackColor = True
         Me.Appearance.Options.UseFont = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -177,6 +177,7 @@ Partial Class FormFront
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormFront"
+        Me.Padding = New System.Windows.Forms.Padding(2)
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Point of Sale"

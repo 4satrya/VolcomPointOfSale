@@ -2,6 +2,8 @@
 
 Public Class FormLogin
     Public menu_acc As String = "-1"
+    Public is_open_form As Boolean = False
+    Public frm As DevExpress.XtraEditors.XtraForm
 
     'Load
     Private Sub FormLogin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -44,8 +46,8 @@ Public Class FormLogin
                     id_employee_user = data.Rows(0)("id_employee").ToString
                     is_change_pass_user = data.Rows(0)("is_change").ToString
                     Opacity = 0
-                    Close()
-                    u.checkAccess(menu_acc)
+                    Dispose()
+                    u.checkAccess(menu_acc, is_open_form)
                 Else
                     XtraMessageBox.Show("Login failure, please check your input !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If

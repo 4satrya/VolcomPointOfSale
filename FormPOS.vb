@@ -9,6 +9,7 @@
     Dim id_sales As String = "-1"
     Dim is_payment_ok As Boolean = False
     Dim id_voucher_db As String = "-1"
+    Dim username_shift As String = "-1"
 
     Private Sub FormPOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LabelInfoLeft.Focus()
@@ -47,13 +48,14 @@
             id_shift = dt_open.Rows(0)("id_shift").ToString
             TxtShift.Text = dt_open.Rows(0)("shift_type").ToString
             TxtPOS.Text = dt_open.Rows(0)("pos_dev").ToString
+            username_shift = dt_open.Rows(0)("username").ToString
         End If
 
         'cek user
         If id_shift <> "-1" Then
             id_user_shift = dt_open.Rows(0)("id_user").ToString
             If id_user_shift <> id_user Then
-                stopCustom("User : '" + username_user + "' is active")
+                stopCustom("User : '" + username_shift + "' is active")
                 Close()
                 Exit Sub
             End If
@@ -66,7 +68,7 @@
         ElseIf e.KeyCode = Keys.F2 Then
             payment()
         ElseIf e.KeyCode = Keys.F3 Then
-            price()
+            'price()
         ElseIf e.KeyCode = Keys.F4 Then
             member()
         ElseIf e.KeyCode = Keys.F5 And new_trans = False Then
@@ -150,7 +152,20 @@
 
     Sub price()
         Cursor = Cursors.WaitCursor
-
+        FormLogin.menu_acc = "15"
+        FormLogin.is_open_form = False
+        FormLogin.ShowDialog()
+        If GVPOS.RowCount > 0 And is_auth Then
+            Dim last_index As Integer = GVPOS.RowCount - 1
+            TxtItemCode.Text = GVPOS.GetRowCellValue(last_index, "item_code").ToString
+            TxtItemCode.Enabled = False
+            GVPOS.SetRowCellValue(last_index, "is_edit", "1")
+            LabelPrice.Visible = True
+            TxtPrc.Visible = True
+            TxtPrc.Focus()
+        Else
+            TxtItemCode.Focus()
+        End If
         Cursor = Cursors.Default
     End Sub
 
@@ -161,41 +176,50 @@
     End Sub
 
     Sub refund()
-        FormBlack.Show()
-        Cursor = Cursors.WaitCursor
-        FormPOSRefund.ShowDialog()
-        Cursor = Cursors.Default
-        FormBlack.Close()
+        FormLogin.menu_acc = "16"
+        FormLogin.is_open_form = False
+        FormLogin.ShowDialog()
         BringToFront()
-        If new_trans = True Then
-            Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to refund this sales?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
-            If confirm = DialogResult.Yes Then
-                'insert main
-                Dim query As String = "INSERT INTO tb_pos(id_pos_ref, pos_number, pos_date, id_shift, id_pos_status, id_pos_cat, subtotal, discount, tax, total, id_voucher, voucher_number, voucher, `point`, cash, card, id_card_type, card_number, card_name, `change`, total_qty, id_sales, id_country, is_payment_ok ) 
-                SELECT '" + id + "', header_number(4), NOW(), '" + id_shift + "', '2', '2',subtotal*-1, discount*-1, tax*-1, total*-1, id_voucher, voucher_number, voucher*-1, `point`*-1, cash*-1, card*-1, id_card_type, card_number, card_name, `change`*-1, total_qty*-1, id_sales, id_country, is_payment_ok
-                FROM tb_pos WHERE id_pos='" + id + "'; SELECT LAST_INSERT_ID(); "
-                Dim id_refund As String = execute_query(query, 0, True, "", "", "", "")
 
-                'insert det
-                Dim query_det As String = "INSERT INTO tb_pos_det(id_pos, id_item, comm, qty, price) 
-                SELECT '" + id_refund + "', id_item, comm, qty*-1, price FROM tb_pos_det WHERE id_pos='" + id + "' "
-                execute_non_query(query_det, True, "", "", "", "")
+        If is_auth Then
+            FormBlack.Show()
+            Cursor = Cursors.WaitCursor
+            FormPOSRefund.ShowDialog()
+            Cursor = Cursors.Default
+            FormBlack.Close()
+            BringToFront()
+            If new_trans = True Then
+                Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to refund this sales?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                If confirm = DialogResult.Yes Then
+                    'insert main
+                    Dim query As String = "INSERT INTO tb_pos(id_pos_ref, pos_number, pos_date, id_shift, id_pos_status, id_pos_cat, subtotal, discount, tax, total, id_voucher, voucher_number, voucher, `point`, cash, card, id_card_type, card_number, card_name, `change`, total_qty, id_sales, id_country, is_payment_ok ) 
+                    SELECT '" + id + "', header_number(4), NOW(), '" + id_shift + "', '2', '2',subtotal*-1, discount*-1, tax*-1, total*-1, id_voucher, voucher_number, voucher*-1, `point`*-1, cash*-1, card*-1, id_card_type, card_number, card_name, `change`*-1, total_qty*-1, id_sales, id_country, is_payment_ok
+                    FROM tb_pos WHERE id_pos='" + id + "'; SELECT LAST_INSERT_ID(); "
+                    Dim id_refund As String = execute_query(query, 0, True, "", "", "", "")
 
-                'stock
-                Dim query_stc As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
-                SELECT '" + id_display_default + "', IF(qty>=0,'1', '2'), id_item, '4', '" + id_refund + "', ABS(qty), NOW(), '1' 
-                FROM tb_pos_det WHERE id_pos=" + id_refund + " "
-                execute_non_query(query_stc, True, "", "", "", "")
+                    'insert det
+                    Dim query_det As String = "INSERT INTO tb_pos_det(id_pos, id_item, comm, qty, price) 
+                    SELECT '" + id_refund + "', id_item, comm, qty*-1, price FROM tb_pos_det WHERE id_pos='" + id + "' "
+                    execute_non_query(query_det, True, "", "", "", "")
 
-                'print
-                Dim prn As New ClassPOS()
-                prn.printRefund(id_refund)
+                    'stock
+                    Dim query_stc As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
+                    SELECT '" + id_display_default + "', IF(qty>=0,'1', '2'), id_item, '4', '" + id_refund + "', ABS(qty), NOW(), '1' 
+                    FROM tb_pos_det WHERE id_pos=" + id_refund + " "
+                    execute_non_query(query_stc, True, "", "", "", "")
 
-                Close()
-            Else
-                id = "-1"
-                new_trans = False
-                actionLoad()
+                    'print
+                    Dim prn As New ClassPOS()
+                    prn.printRefund(id_refund)
+                    is_auth = False
+
+                    Close()
+                Else
+                    id = "-1"
+                    new_trans = False
+                    actionLoad()
+                    is_auth = False
+                End If
             End If
         End If
     End Sub
@@ -482,16 +506,8 @@
                 TxtQty.Enabled = True
                 TxtQty.Focus()
             End If
-        ElseIf e.KeyCode = Keys.F3 Then
-            If GVPOS.RowCount > 0 Then
-                Dim last_index As Integer = GVPOS.RowCount - 1
-                TxtItemCode.Text = GVPOS.GetRowCellValue(last_index, "item_code").ToString
-                TxtItemCode.Enabled = False
-                GVPOS.SetRowCellValue(last_index, "is_edit", "1")
-                LabelPrice.Visible = True
-                TxtPrc.Visible = True
-                TxtPrc.Focus()
-            End If
+        ElseIf e.KeyCode = Keys.f3 Then
+            price()
         End If
     End Sub
 

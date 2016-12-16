@@ -22,6 +22,7 @@ Module Common
     Public is_change_pass_user As String = ""
     Public again_awb As String = ""
     Public dt_acc As DataTable
+    Public is_auth As Boolean = False 'for auth per control
 
     Sub loadImgPath()
         product_image_path = get_setup_field("pic_path_design") & "\"

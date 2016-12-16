@@ -16,7 +16,9 @@
     End Sub
 
     Private Sub TIPOS_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIPOS.ItemClick
-        FormPOS.ShowDialog()
+        FormLogin.is_open_form = True
+        FormLogin.menu_acc = "14"
+        FormLogin.ShowDialog()
     End Sub
 
     Private Sub FormFront_Load(sender As Object, e As EventArgs) Handles MyBase.Load
