@@ -28,9 +28,11 @@
             read_database_configuration()
             check_connection(True, "", "", "", "")
 
-            'sync product
-            Dim sc As New ClassItem
-            sc.syncItem()
+            'sync
+            Dim sy As New ClassSync()
+            sy.syncAll()
+            'Dim sc As New ClassItem
+            'sc.syncItem()
 
             Cursor = Cursors.Default
             Opacity = 100
@@ -52,6 +54,10 @@
 
     Private Sub FormFront_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.F1 Then
+            'Cursor = Cursors.WaitCursor
+            'Dim sy As New ClassSync()
+            'sy.BackupCustomTable()
+            'Cursor = Cursors.Default
             'Dim prn As New ClassPOS()
             'prn.printPos(90, False)
             ' FormPOSCopy.ShowDialog()
@@ -61,6 +67,11 @@
             'Tool.PreviewForm.PrintControl.Zoom = 2.0F
             'Tool.PreviewForm.FormBorderStyle = FormBorderStyle.None
             'Tool.ShowPreviewDialog()
+        ElseIf e.KeyCode = Keys.F2 Then
+            'Cursor = Cursors.WaitCursor
+            'Dim sy As New ClassSync()
+            'sy.RestoreCustomTable()
+            'Cursor = Cursors.Default
         End If
     End Sub
 

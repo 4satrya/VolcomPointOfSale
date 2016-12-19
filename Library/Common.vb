@@ -3066,10 +3066,16 @@ Module Common
         Return data.Rows(0)("time_now")
     End Function
 
+    Public Function getTimeDBStr()
+        Dim query As String = "SELECT NOW() as time_now"
+        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        Return DateTime.Parse(data.Rows(0)("time_now").ToString).ToString("yyyy-MM-dd HH:mm:ss")
+    End Function
+
     Public Function getLastUpd()
         Dim query As String = "SELECT last_updated FROM tb_opt"
         Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
-        Return data.Rows(0)("last_updated")
+        Return DateTime.Parse(data.Rows(0)("last_updated").ToString).ToString("yyyy-MM-dd HH:mm:ss")
     End Function
 
     Function removeCharacter(ByVal str As String) As String
