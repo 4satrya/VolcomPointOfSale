@@ -30,7 +30,8 @@
 
             'sync
             Dim sy As New ClassSync()
-            sy.syncAll()
+            sy.sync_list.Add("1")
+            sy.synchronize()
             'Dim sc As New ClassItem
             'sc.syncItem()
 

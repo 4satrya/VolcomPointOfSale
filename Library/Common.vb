@@ -3066,9 +3066,11 @@ Module Common
         Return data.Rows(0)("time_now")
     End Function
 
-    Public Function getTimeDBStr()
+    Public Function getTimeDBServer()
+        Dim qopt As String = "SELECT * FROM tb_opt"
+        Dim dopt As DataTable = execute_query(qopt, -1, True, "", "", "", "")
         Dim query As String = "SELECT NOW() as time_now"
-        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        Dim data As DataTable = execute_query(query, -1, False, dopt.Rows(0)("host_main").ToString, dopt.Rows(0)("username_main").ToString, dopt.Rows(0)("pass_main").ToString, dopt.Rows(0)("db_main").ToString)
         Return DateTime.Parse(data.Rows(0)("time_now").ToString).ToString("yyyy-MM-dd HH:mm:ss")
     End Function
 
