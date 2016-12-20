@@ -173,6 +173,7 @@ Partial Class FormFront
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormFront"
+        Me.Opacity = 0R
         Me.Padding = New System.Windows.Forms.Padding(2)
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
