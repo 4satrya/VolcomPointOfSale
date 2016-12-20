@@ -27,14 +27,6 @@
         Try
             read_database_configuration()
             check_connection(True, "", "", "", "")
-
-            'sync
-            Dim sy As New ClassSync()
-            sy.sync_list.Add("1")
-            sy.synchronize()
-            'Dim sc As New ClassItem
-            'sc.syncItem()
-
             Cursor = Cursors.Default
             Opacity = 100
         Catch ex As Exception
@@ -45,8 +37,13 @@
             FormDatabase.Show()
             FormDatabase.Focus()
             FormDatabase.TopMost = False
+            Exit Sub
         End Try
 
+        'sync
+        Dim sy As New ClassSync()
+        sy.sync_list.Add("1")
+        sy.synchronize()
 
         My.Application.ChangeCulture("en-US")
         My.Application.Culture.NumberFormat.NumberDecimalSeparator = ","

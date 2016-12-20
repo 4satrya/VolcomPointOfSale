@@ -92,7 +92,13 @@ Public Class ClassSync
             err += ex.ToString + "; "
         End Try
 
-        Dim qlast As String = "INSERT INTO tb_sync_log(sync_time, id_sync_data, remark) VALUES('" + curr_time + "', '1', '" + err + "') "
+        Dim is_success = ""
+        If err = "" Then
+            is_success = "1"
+        Else
+            is_success = "2"
+        End If
+        Dim qlast As String = "INSERT INTO tb_sync_log(sync_time, id_sync_data, is_success, remark) VALUES('" + curr_time + "', '1', '" + is_success + "','" + addSlashes(err) + "') "
         execute_non_query(qlast, True, "", "", "", "")
     End Sub
 
@@ -123,7 +129,7 @@ Public Class ClassSync
         Dim dic As New Dictionary(Of String, String)()
         For i As Integer = 0 To sync_list.Count - 1
             If sync_list(i) = "1" Then 'code det
-                Dim ql As String = "SELECT a.sync_time FROM tb_sync_log a WHERE a.id_sync_data=1 ORDER BY a.sync_time DESC LIMIT 1"
+                Dim ql As String = "SELECT a.sync_time FROM tb_sync_log a WHERE a.id_sync_data=1 AND a.is_success=1 ORDER BY a.sync_time DESC LIMIT 1"
                 Dim dql As DataTable = execute_query(ql, -1, True, "", "", "", "")
                 If dql.Rows.Count > 0 Then
                     last_upd = DateTime.Parse(dql.Rows(0)("sync_time").ToString).ToString("yyyy-MM-dd HH:mm:ss")
@@ -148,8 +154,8 @@ Public Class ClassSync
                     mb.ExportInfo.ExportTriggers = False
                     mb.ExportInfo.ExportEvents = False
                     mb.ExportInfo.ExportViews = False
-                    ' mb.ExportInfo.EnableEncryption = True
-                    ' mb.ExportInfo.EncryptionPassword = "csmtafc"
+                    mb.ExportInfo.EnableEncryption = True
+                    mb.ExportInfo.EncryptionPassword = "csmtafc"
                     mb.ExportToFile(file)
                 End Using
             End Using
@@ -168,8 +174,8 @@ Public Class ClassSync
                     cmd.Connection = conn
                     conn.Open()
                     mb.ImportInfo.TargetDatabase = "db_sync"
-                    ' mb.ImportInfo.EnableEncryption = True
-                    'mb.ImportInfo.EncryptionPassword = "csmtafc"
+                    mb.ImportInfo.EnableEncryption = True
+                    mb.ImportInfo.EncryptionPassword = "csmtafc"
                     mb.ImportFromFile(file)
                     conn.Close()
                 End Using
