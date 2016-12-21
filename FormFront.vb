@@ -43,6 +43,7 @@
         'sync
         Dim sy As New ClassSync()
         sy.sync_list.Add("1")
+        sy.sync_list.Add("2")
         sy.synchronize()
 
         My.Application.ChangeCulture("en-US")

@@ -130,15 +130,9 @@
             Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save changes?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
             If confirm = DialogResult.Yes Then
                 If action = "ins" Then
-                    Dim query As String = "INSERT INTO tb_item(item_code, item_name, id_size, price, id_color, id_class, id_so_type, id_comp_sup, comm, is_active) 
-                                    VALUES('" + item_code + "', '" + item_name + "', '" + id_size + "','" + price + "', '" + id_color + "', '" + id_class + "', '" + id_so_type + "', '" + id_comp_sup + "', '" + comm + "', '" + is_active + "'); SELECT LAST_INSERT_ID(); "
+                    Dim query As String = "INSERT INTO tb_item(item_code, item_name, id_size, price, price_date, id_color, id_class, id_so_type, id_comp_sup, comm, is_active) 
+                                           VALUES('" + item_code + "', '" + item_name + "', '" + id_size + "','" + price + "', NOW(), '" + id_color + "', '" + id_class + "', '" + id_so_type + "', '" + id_comp_sup + "', '" + comm + "', '" + is_active + "'); SELECT LAST_INSERT_ID(); "
                     id = execute_query(query, 0, True, "", "", "", "")
-
-                    'price
-                    Dim query_prc As String = "INSERT INTO tb_item_price(id_item, price, price_date) 
-                    VALUES('" + id + "','" + price + "', NOW()) "
-                    execute_non_query(query_prc, True, "", "", "", "")
-
 
                     FormItem.viewItem()
                     FormItem.GVItem.FocusedRowHandle = find_row(FormItem.GVItem, "id_item", id)
@@ -146,20 +140,14 @@
                     'action = "upd"
                     'actionLoad()
                 Else
-                        Dim query As String = "UPDATE tb_item SET item_code='" + item_code + "', 
-                    item_name='" + item_name + "', id_size='" + id_size + "', price='" + price + "', 
-                    id_color='" + id_color + "', id_class='" + id_class + "', id_so_type='" + id_so_type + "', id_comp_sup='" + id_comp_sup + "', comm='" + comm + "', is_active='" + is_active + "'
-                    WHERE id_item='" + id + "' "
-                    execute_non_query(query, True, "", "", "", "")
-
-                    'price
-                    Console.WriteLine(price)
-                    Console.WriteLine(old_price)
+                    Dim query As String = "UPDATE tb_item SET item_code='" + item_code + "', 
+                    item_name='" + item_name + "', id_size='" + id_size + "', 
+                    id_color='" + id_color + "', id_class='" + id_class + "', id_so_type='" + id_so_type + "', id_comp_sup='" + id_comp_sup + "', comm='" + comm + "', is_active='" + is_active + "' "
                     If price <> old_price Then
-                        Dim query_prc As String = "INSERT INTO tb_item_price(id_item, price, price_date) 
-                        VALUES('" + id + "','" + price + "', NOW()) "
-                        execute_non_query(query_prc, True, "", "", "", "")
+                        query += ", price='" + price + "', price_date=NOW() "
                     End If
+                    query += "WHERE id_item='" + id + "' "
+                    execute_non_query(query, True, "", "", "", "")
 
                     FormItem.viewItem()
                     FormItem.GVItem.FocusedRowHandle = find_row(FormItem.GVItem, "id_item", id)

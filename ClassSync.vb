@@ -4,7 +4,19 @@ Public Class ClassSync
     Dim curr_time As String = getTimeDBServer()
     Dim last_upd As String = ""
     Public sync_list As New List(Of String)
+    Dim host_main As String = ""
+    Dim username_main As String = ""
+    Dim pass_main As String = ""
+    Dim db_main As String = ""
 
+    Public Sub New()
+        Dim query As String = "SELECT * FROM tb_opt"
+        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        host_main = data.Rows(0)("host_main").ToString
+        username_main = data.Rows(0)("username_main").ToString
+        pass_main = data.Rows(0)("pass_main").ToString
+        db_main = data.Rows(0)("db_main").ToString
+    End Sub
 
     Public Sub syncCodeDet()
         Dim err As String = ""
@@ -102,11 +114,25 @@ Public Class ClassSync
         execute_non_query(qlast, True, "", "", "", "")
     End Sub
 
+    Public Sub syncItem()
+        Dim err As String = ""
+        Dim is_success = ""
+        If err = "" Then
+            is_success = "1"
+        Else
+            is_success = "2"
+        End If
+        Dim qlast As String = "INSERT INTO tb_sync_log(sync_time, id_sync_data, is_success, remark) VALUES('" + curr_time + "', '2', '" + is_success + "','" + addSlashes(err) + "') "
+        execute_non_query(qlast, True, "", "", "", "")
+    End Sub
+
 
     Public Sub startofSync()
         For i As Integer = 0 To sync_list.Count - 1
             If sync_list(i) = "1" Then 'code det
                 syncCodeDet()
+            ElseIf sync_list(i) = "2" Then 'item
+                syncItem()
             End If
         Next
     End Sub
@@ -120,7 +146,7 @@ Public Class ClassSync
 
     Public Sub BackupCustomTable()
         last_upd = ""
-        Dim constring As String = "server=localhost;user=root;pwd=bangcat48;database=db_volcom_mrp;"
+        Dim constring As String = "server=" + host_main + ";user=" + username_main + ";pwd=" + pass_main + ";database=" + db_main + ";"
         Dim path_root As String = Application.StartupPath
         Dim fileName As String = "bup" + ".sql"
         Dim file As String = IO.Path.Combine(path_root, fileName)
@@ -137,6 +163,16 @@ Public Class ClassSync
                     last_upd = "1945-08-17 00:00:10"
                 End If
                 dic.Add("tb_m_code_detail", "SELECT cd.* FROM tb_m_code_detail cd JOIN tb_opt o WHERE (cd.id_code= 14 OR cd.id_code=30 OR id_code=33) AND cd.last_updated>'" + last_upd + "';")
+            ElseIf sync_list(i) = "2" Then 'item
+                Dim ql As String = "SELECT a.sync_time FROM tb_sync_log a WHERE a.id_sync_data=2 AND a.is_success=1 ORDER BY a.sync_time DESC LIMIT 1"
+                Dim dql As DataTable = execute_query(ql, -1, True, "", "", "", "")
+                If dql.Rows.Count > 0 Then
+                    last_upd = DateTime.Parse(dql.Rows(0)("sync_time").ToString).ToString("yyyy-MM-dd HH:mm:ss")
+                Else
+                    last_upd = "1945-08-17 00:00:10"
+                End If
+                execute_non_query("CALL set_product_sync('" + last_upd + "')", False, host_main, username_main, pass_main, db_main)
+                dic.Add("tb_product_sync", "SELECT * FROM tb_product_sync;")
             End If
         Next
 
