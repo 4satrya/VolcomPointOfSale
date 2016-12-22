@@ -61,9 +61,11 @@ Public Class FormFront
         'sync
         SplashScreenManager1.ShowWaitForm()
         Dim sy As New ClassSync()
-        sy.sync_list.Add("1")
-        sy.sync_list.Add("2")
-        sy.sync_list.Add("3")
+        Dim query As String = "SELECT * FROM tb_sync_data ORDER BY id_sync_data ASC"
+        Dim dt As DataTable = execute_query(query, -1, True, "", "", "", "")
+        For i As Integer = 1 To dt.Rows.Count
+            sy.sync_list.Add(i.ToString)
+        Next
         sy.synchronize()
         SplashScreenManager1.CloseWaitForm()
     End Sub

@@ -228,6 +228,207 @@ Public Class ClassSync
         execute_non_query(qlast, True, "", "", "", "")
     End Sub
 
+    Public Sub syncEmp()
+        Dim err As String = ""
+
+        '-----CLASS
+        Try
+            'update
+            Dim qupd_cls As String = "UPDATE tb_m_employee emp 
+            INNER JOIN(
+               SELECT * FROM db_sync.tb_m_employee a
+            ) src ON src.id_employee = emp.id_employee 
+            SET 
+            emp.id_sex = src.id_sex,
+            emp.id_departement = src.id_departement,
+            emp.id_blood_type = src.id_blood_type,
+            emp.id_religion =src.id_religion,
+            emp.id_country =src.id_country,
+            emp.id_education= src.id_education,
+            emp.id_employee_status=src.id_employee_status,
+            emp.start_period =src.start_period,
+            emp.end_period =src.end_period,
+            emp.id_employee_active=src.id_employee_active,
+            emp.employee_code =src.employee_code,
+            emp.employee_name =src.employee_name,
+            emp.employee_nick_name=src.employee_nick_name,
+            emp.employee_initial_name= src.employee_initial_name,
+            emp.employee_pob =src.employee_pob,
+            emp.employee_dob =src.employee_dob,
+            emp.employee_ethnic= src.employee_ethnic,
+            emp.employee_join_date= src.employee_join_date,
+            emp.employee_last_date =src.employee_last_date,
+            emp.employee_position =src.employee_position,
+            emp.id_employee_level =src.id_employee_level,
+            emp.email_lokal =src.email_lokal,
+            emp.email_lokal_pass =src.email_lokal_pass,
+            emp.email_external =src.email_external,
+            emp.email_external_pass =src.email_external_pass,
+            emp.email_other =src.email_other,
+            emp.email_other_pass=src.email_other_pass,
+            emp.phone =src.phone,
+            emp.phone_mobile=src.phone_mobile,
+            emp.phone_ext =src.phone_ext,
+            emp.employee_ktp= src.employee_ktp,
+            emp.employee_ktp_period=src.employee_ktp_period,
+            emp.employee_passport =src.employee_passport,
+            emp.employee_passport_period=src.employee_passport_period, 
+            emp.employee_bpjs_tk =src.employee_bpjs_tk,
+            emp.employee_bpjs_tk_date=src.employee_bpjs_tk_date, 
+            emp.employee_bpjs_kesehatan= src.employee_bpjs_kesehatan,
+            emp.employee_bpjs_kesehatan_date=src.employee_bpjs_kesehatan_date, 
+            emp.employee_npwp =src.employee_npwp,
+            emp.address_primary= src.address_primary,
+            emp.address_additional= src.address_additional,
+            emp.id_marriage_status =src.id_marriage_status,
+            emp.husband =src.husband,
+            emp.wife =src.wife,
+            emp.child1 =src.child1,
+            emp.child2 =src.child2,
+            emp.child3 =src.child3,
+            emp.basic_salary=src.basic_salary, 
+            emp.allow_job =src.allow_job,
+            emp.allow_meal =src.allow_meal,
+            emp.allow_trans =src.allow_trans,
+            emp.allow_house =src.allow_house,
+            emp.allow_car =src.allow_car "
+            execute_non_query(qupd_cls, True, "", "", "", "")
+        Catch ex As Exception
+            err = ex.ToString + "; "
+        End Try
+
+        Try
+            'insert
+            Dim qins_cls As String = "INSERT INTO tb_m_employee(
+            id_employee,
+            id_sex,
+            id_departement, 
+            id_blood_type ,
+            id_religion ,
+            id_country ,
+            id_education,
+            id_employee_status,
+            start_period ,
+            end_period ,
+            id_employee_active,
+            employee_code,
+            employee_name ,
+            employee_nick_name,
+            employee_initial_name,
+            employee_pob,
+            employee_dob ,
+            employee_ethnic,
+            employee_join_date,
+            employee_last_date,
+            employee_position,
+            id_employee_level,
+            email_lokal ,
+            email_lokal_pass, 
+            email_external ,
+            email_external_pass,
+            email_other,
+            email_other_pass,
+            phone,
+            phone_mobile,
+            phone_ext ,
+            employee_ktp,
+            employee_ktp_period,
+            employee_passport ,
+            employee_passport_period,
+            employee_bpjs_tk ,
+            employee_bpjs_tk_date,
+            employee_bpjs_kesehatan,
+            employee_bpjs_kesehatan_date,
+            employee_npwp ,
+            address_primary,
+            address_additional,
+            id_marriage_status ,
+            husband ,
+            wife ,
+            child1, 
+            child2 ,
+            child3 ,
+            basic_salary, 
+            allow_job ,
+            allow_meal ,
+            allow_trans,
+            allow_house,
+            allow_car )
+            SELECT
+            ad.id_employee,
+            ad.id_sex,
+            ad.id_departement, 
+            ad.id_blood_type ,
+            ad.id_religion ,
+            ad.id_country ,
+            ad.id_education,
+            ad.id_employee_status,
+            ad.start_period ,
+            ad.end_period ,
+            ad.id_employee_active,
+            ad.employee_code,
+            ad.employee_name ,
+            ad.employee_nick_name,
+            ad.employee_initial_name,
+            ad.employee_pob,
+            ad.employee_dob ,
+            ad.employee_ethnic,
+            ad.employee_join_date,
+            ad.employee_last_date,
+            ad.employee_position,
+            ad.id_employee_level,
+            ad.email_lokal ,
+            ad.email_lokal_pass, 
+            ad.email_external ,
+            ad.email_external_pass,
+            ad.email_other,
+            ad.email_other_pass,
+            ad.phone,
+            ad.phone_mobile,
+            ad.phone_ext ,
+            ad.employee_ktp,
+            ad.employee_ktp_period,
+            ad.employee_passport ,
+            ad.employee_passport_period,
+            ad.employee_bpjs_tk ,
+            ad.employee_bpjs_tk_date,
+            ad.employee_bpjs_kesehatan,
+            ad.employee_bpjs_kesehatan_date,
+            ad.employee_npwp ,
+            ad.address_primary,
+            ad.address_additional,
+            ad.id_marriage_status ,
+            ad.husband ,
+            ad.wife ,
+            ad.child1, 
+            ad.child2 ,
+            ad.child3 ,
+            ad.basic_salary, 
+            ad.allow_job ,
+            ad.allow_meal ,
+            ad.allow_trans,
+            ad.allow_house,
+            ad.allow_car
+            FROM tb_m_employee emp
+            RIGHT JOIN (
+	            SELECT a.* FROM db_sync.tb_m_employee a
+            ) ad ON ad.id_employee = emp.id_employee
+            WHERE ISNULL(emp.id_employee) "
+            execute_non_query(qins_cls, True, "", "", "", "")
+        Catch ex As Exception
+            err += ex.ToString + "; "
+        End Try
+
+
+        Dim is_success = ""
+        If err = "" Then
+            is_success = "1"
+        Else
+            is_success = "2"
+        End If
+        Dim qlast As String = "INSERT INTO tb_sync_log(sync_time, id_sync_data, is_success, remark) VALUES('" + curr_time + "', '4', '" + is_success + "','" + addSlashes(err) + "') "
+        execute_non_query(qlast, True, "", "", "", "")
+    End Sub
 
     Public Sub startofSync()
         For i As Integer = 0 To sync_list.Count - 1
@@ -240,6 +441,9 @@ Public Class ClassSync
             ElseIf sync_list(i) = "3" Then 'item
                 FormFront.SplashScreenManager1.SetWaitFormDescription("Sync products")
                 syncItem()
+            ElseIf sync_list(i) = "4" Then 'emp
+                FormFront.SplashScreenManager1.SetWaitFormDescription("Sync employee")
+                syncEmp()
             End If
         Next
     End Sub
@@ -289,6 +493,16 @@ Public Class ClassSync
                 End If
                 execute_non_query("CALL set_product_sync('" + last_upd + "')", False, host_main, username_main, pass_main, db_main)
                 dic.Add("tb_product_sync", "SELECT * FROM tb_product_sync;")
+            ElseIf sync_list(i) = "4" Then 'item
+                Dim ql As String = "SELECT a.sync_time FROM tb_sync_log a WHERE a.id_sync_data=4 AND a.is_success=1 ORDER BY a.sync_time DESC LIMIT 1"
+                Dim dql As DataTable = execute_query(ql, -1, True, "", "", "", "")
+                If dql.Rows.Count > 0 Then
+                    last_upd = DateTime.Parse(dql.Rows(0)("sync_time").ToString).ToString("yyyy-MM-dd HH:mm:ss")
+                Else
+                    last_upd = "1945-08-17 00:00:10"
+                End If
+                Dim id_outlet As String = execute_query("SELECT id_outlet FROM tb_opt", 0, True, "", "", "", "")
+                dic.Add("tb_m_employee", "SELECT * FROM tb_m_employee emp WHERE id_departement=" + id_outlet + " AND emp.last_updated>'" + last_upd + "';")
             End If
         Next
 
