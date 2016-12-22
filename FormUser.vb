@@ -16,6 +16,15 @@ Public Class FormUser
         GVRole.Focus()
         viewRole()
         viewUser()
+
+        'opt
+        Dim qopt As String = "SELECT * FROM tb_opt"
+        Dim dopt As DataTable = execute_query(qopt, -1, True, "", "", "", "")
+        TxtCompName.Text = dopt.Rows(0)("company_name").ToString
+        TxtTagline.Text = dopt.Rows(0)("company_tagline").ToString
+        TxtOutletName.Text = dopt.Rows(0)("outlet_name").ToString
+        TxtOutletId.Text = dopt.Rows(0)("id_outlet").ToString
+        TxtSupervisor.Text = dopt.Rows(0)("spv").ToString
     End Sub
 
     Sub viewRole()
