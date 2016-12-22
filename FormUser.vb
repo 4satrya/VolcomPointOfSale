@@ -1,4 +1,17 @@
-﻿Public Class FormUser
+﻿Imports System.Runtime.InteropServices
+Public Class FormUser
+    Public Const WM_NCLBUTTONDOWN As Integer = &HA1
+    Public Const HT_CAPTION As Integer = &H2
+    <DllImportAttribute("user32.dll")>
+    Public Shared Function SendMessage(ByVal hWnd As IntPtr,
+      ByVal Msg As Integer, ByVal wParam As Integer,
+      ByVal lParam As Integer) As Integer
+    End Function
+
+    <DllImportAttribute("user32.dll")>
+    Public Shared Function ReleaseCapture() As Boolean
+    End Function
+
     Private Sub FormUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GVRole.Focus()
         viewRole()
@@ -109,5 +122,25 @@
 
     Private Sub GVUser_DoubleClick(sender As Object, e As EventArgs) Handles GVUser.DoubleClick
         editUser()
+    End Sub
+
+    Private Sub PanelControlBack_MouseHover(sender As Object, e As EventArgs) Handles PanelControlBack.MouseHover
+        PanelControlBack.Cursor = Cursors.Hand
+    End Sub
+
+    Private Sub PanelControlBack_MouseLeave(sender As Object, e As EventArgs) Handles PanelControlBack.MouseLeave
+        PanelControlBack.Cursor = Cursors.Default
+    End Sub
+
+    Private Sub PanelControlBack_Click(sender As Object, e As EventArgs) Handles PanelControlBack.Click
+        Close()
+    End Sub
+
+    Private Sub FormUser_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
+        If e.Button = System.Windows.Forms.MouseButtons.Left Then
+            ReleaseCapture()
+            SendMessage(Handle, WM_NCLBUTTONDOWN,
+               HT_CAPTION, 0)
+        End If
     End Sub
 End Class

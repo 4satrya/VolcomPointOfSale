@@ -1,5 +1,19 @@
-﻿Public Class FormFront
+﻿Imports System.Runtime.InteropServices
+Public Class FormFront
+    Public Const WM_NCLBUTTONDOWN As Integer = &HA1
+    Public Const HT_CAPTION As Integer = &H2
     Public connection_problem As Boolean = False
+
+    <DllImportAttribute("user32.dll")>
+    Public Shared Function SendMessage(ByVal hWnd As IntPtr,
+      ByVal Msg As Integer, ByVal wParam As Integer,
+      ByVal lParam As Integer) As Integer
+    End Function
+
+    <DllImportAttribute("user32.dll")>
+    Public Shared Function ReleaseCapture() As Boolean
+    End Function
+
     Private Sub TIExitProg_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs)
         Cursor = Cursors.WaitCursor
         End
@@ -101,7 +115,7 @@
         Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
         LabelStoreName.Text = data.Rows(0)("outlet_name").ToString
         LabelFooter.Text = data.Rows(0)("company_name").ToString + " - " + data.Rows(0)("company_tagline").ToString
-        LabelDate.Text = data.Rows(0)("dt").ToString
+        LabelDate.Text = data.Rows(0)("dt").ToString.ToUpper
 
         Dim str As String = ""
         Dim csh As String = ""
@@ -130,5 +144,30 @@
 
     Private Sub PISync_Click(sender As Object, e As EventArgs) Handles PISync.Click
         syncProcess()
+    End Sub
+
+    Private Sub PanelControl4_MouseDown(sender As Object, e As MouseEventArgs) Handles PanelControl4.MouseDown
+        Cursor = Cursors.SizeAll
+        If e.Button = System.Windows.Forms.MouseButtons.Left Then
+            ReleaseCapture()
+            SendMessage(Handle, WM_NCLBUTTONDOWN,
+               HT_CAPTION, 0)
+        End If
+    End Sub
+
+    Private Sub PanelControl4_MouseHover(sender As Object, e As EventArgs) Handles PanelControl4.MouseHover
+        Cursor = Cursors.SizeAll
+    End Sub
+
+    Private Sub PanelControl4_MouseLeave(sender As Object, e As EventArgs) Handles PanelControl4.MouseLeave
+        Cursor = Cursors.Default
+    End Sub
+
+    Private Sub PCClose_MouseHover(sender As Object, e As EventArgs) Handles PCClose.MouseHover
+        Cursor = Cursors.Hand
+    End Sub
+
+    Private Sub PCClose_MouseLeave(sender As Object, e As EventArgs) Handles PCClose.MouseLeave
+        Cursor = Cursors.Default
     End Sub
 End Class

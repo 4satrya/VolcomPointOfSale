@@ -20,11 +20,12 @@ Partial Class FormFront
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormFront))
-        Dim TileItemElement3 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement4 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement13 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement14 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Me.TIExit = New DevExpress.XtraEditors.TileItem()
         Me.TileItem2 = New DevExpress.XtraEditors.TileItem()
         Me.PanelBasic = New DevExpress.XtraEditors.PanelControl()
+        Me.LabelCsh = New DevExpress.XtraEditors.LabelControl()
         Me.LabelDate = New DevExpress.XtraEditors.LabelControl()
         Me.LabelInfo = New DevExpress.XtraEditors.LabelControl()
         Me.LabelStoreName = New DevExpress.XtraEditors.LabelControl()
@@ -42,7 +43,6 @@ Partial Class FormFront
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelFooter = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelCsh = New DevExpress.XtraEditors.LabelControl()
         Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.VolcomPointOfSale.WaitSyncItem), True, True)
         CType(Me.PanelBasic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBasic.SuspendLayout()
@@ -66,9 +66,9 @@ Partial Class FormFront
         Me.TIExit.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TIExit.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIExit.BackgroundImage = CType(resources.GetObject("TIExit.BackgroundImage"), System.Drawing.Image)
-        TileItemElement3.Text = "Exit"
-        TileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
-        Me.TIExit.Elements.Add(TileItemElement3)
+        TileItemElement13.Text = "Exit"
+        TileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TIExit.Elements.Add(TileItemElement13)
         Me.TIExit.Id = 29
         Me.TIExit.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TIExit.Name = "TIExit"
@@ -81,9 +81,9 @@ Partial Class FormFront
         Me.TileItem2.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TileItem2.BackgroundImage = CType(resources.GetObject("TileItem2.BackgroundImage"), System.Drawing.Image)
         Me.TileItem2.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement4.Text = "Exit Program"
-        TileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem2.Elements.Add(TileItemElement4)
+        TileItemElement14.Text = "Exit Program"
+        TileItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem2.Elements.Add(TileItemElement14)
         Me.TileItem2.Id = 45
         Me.TileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TileItem2.Name = "TileItem2"
@@ -112,13 +112,23 @@ Partial Class FormFront
         Me.PanelBasic.Size = New System.Drawing.Size(680, 465)
         Me.PanelBasic.TabIndex = 4
         '
+        'LabelCsh
+        '
+        Me.LabelCsh.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCsh.Appearance.ForeColor = System.Drawing.Color.White
+        Me.LabelCsh.Location = New System.Drawing.Point(197, 106)
+        Me.LabelCsh.Name = "LabelCsh"
+        Me.LabelCsh.Size = New System.Drawing.Size(111, 17)
+        Me.LabelCsh.TabIndex = 5
+        Me.LabelCsh.Text = "CASHIER ACTIVE : "
+        '
         'LabelDate
         '
-        Me.LabelDate.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelDate.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelDate.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelDate.Location = New System.Drawing.Point(197, 136)
+        Me.LabelDate.Location = New System.Drawing.Point(197, 130)
         Me.LabelDate.Name = "LabelDate"
-        Me.LabelDate.Size = New System.Drawing.Size(190, 17)
+        Me.LabelDate.Size = New System.Drawing.Size(194, 17)
         Me.LabelDate.TabIndex = 3
         Me.LabelDate.Text = "THURSDAY, 22 DECEMBER 2016"
         '
@@ -126,7 +136,7 @@ Partial Class FormFront
         '
         Me.LabelInfo.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelInfo.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelInfo.Location = New System.Drawing.Point(197, 90)
+        Me.LabelInfo.Location = New System.Drawing.Point(197, 84)
         Me.LabelInfo.Name = "LabelInfo"
         Me.LabelInfo.Size = New System.Drawing.Size(99, 17)
         Me.LabelInfo.TabIndex = 1
@@ -136,7 +146,7 @@ Partial Class FormFront
         '
         Me.LabelStoreName.Appearance.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelStoreName.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelStoreName.Location = New System.Drawing.Point(197, 50)
+        Me.LabelStoreName.Location = New System.Drawing.Point(197, 45)
         Me.LabelStoreName.Name = "LabelStoreName"
         Me.LabelStoreName.Size = New System.Drawing.Size(153, 32)
         Me.LabelStoreName.TabIndex = 1
@@ -308,16 +318,6 @@ Partial Class FormFront
         Me.LabelFooter.Size = New System.Drawing.Size(676, 18)
         Me.LabelFooter.TabIndex = 1
         Me.LabelFooter.Text = "PT VOLCOM INDONESIA - TRUE TO THIS"
-        '
-        'LabelCsh
-        '
-        Me.LabelCsh.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCsh.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelCsh.Location = New System.Drawing.Point(197, 113)
-        Me.LabelCsh.Name = "LabelCsh"
-        Me.LabelCsh.Size = New System.Drawing.Size(111, 17)
-        Me.LabelCsh.TabIndex = 5
-        Me.LabelCsh.Text = "CASHIER ACTIVE : "
         '
         'SplashScreenManager1
         '
