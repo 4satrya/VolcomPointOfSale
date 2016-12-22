@@ -203,7 +203,7 @@ Partial Class FormReportTransDetail
         '
         'BtnView
         '
-        Me.BtnView.Appearance.BackColor = System.Drawing.Color.Gray
+        Me.BtnView.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.BtnView.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnView.Appearance.ForeColor = System.Drawing.Color.White
         Me.BtnView.Appearance.Options.UseBackColor = True
@@ -316,7 +316,7 @@ Partial Class FormReportTransDetail
         '
         Me.GCTransDetail.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCTransDetail.Location = New System.Drawing.Point(20, 150)
-        Me.GCTransDetail.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCTransDetail.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCTransDetail.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCTransDetail.MainView = Me.GVTransDetail
         Me.GCTransDetail.Name = "GCTransDetail"

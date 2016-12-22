@@ -50,8 +50,8 @@ Partial Class FormMasterCompany
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
-        Me.PCClose = New DevExpress.XtraEditors.PanelControl()
-        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
+        Me.PanelControl5 = New DevExpress.XtraEditors.PanelControl()
         CType(Me.GCCompany, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.GVCompany, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,20 +63,20 @@ Partial Class FormMasterCompany
         Me.PanelControl2.SuspendLayout()
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
-        CType(Me.PCClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PanelControl5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GCCompany
         '
         Me.GCCompany.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GCCompany.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GCCompany.Location = New System.Drawing.Point(0, 24)
-        Me.GCCompany.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCCompany.Location = New System.Drawing.Point(20, 74)
+        Me.GCCompany.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCCompany.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCCompany.MainView = Me.GVCompany
         Me.GCCompany.Name = "GCCompany"
         Me.GCCompany.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.is_active_company, Me.RepositoryItemCheckEdit1})
-        Me.GCCompany.Size = New System.Drawing.Size(653, 283)
+        Me.GCCompany.Size = New System.Drawing.Size(613, 213)
         Me.GCCompany.TabIndex = 3
         Me.GCCompany.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVCompany})
         '
@@ -198,9 +198,9 @@ Partial Class FormMasterCompany
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl1.Controls.Add(Me.PanelControl2)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 307)
+        Me.PanelControl1.Location = New System.Drawing.Point(20, 287)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(653, 35)
+        Me.PanelControl1.Size = New System.Drawing.Size(613, 35)
         Me.PanelControl1.TabIndex = 4
         '
         'PanelControl2
@@ -217,7 +217,7 @@ Partial Class FormMasterCompany
         Me.PanelControl2.Controls.Add(Me.LabelControl2)
         Me.PanelControl2.Controls.Add(Me.LabelControl1)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControl2.Location = New System.Drawing.Point(257, 0)
+        Me.PanelControl2.Location = New System.Drawing.Point(217, 0)
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Size = New System.Drawing.Size(396, 35)
         Me.PanelControl2.TabIndex = 7
@@ -319,38 +319,36 @@ Partial Class FormMasterCompany
         '
         'PanelControl3
         '
-        Me.PanelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.PanelControl3.Appearance.Options.UseBackColor = True
         Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControl3.Controls.Add(Me.PCClose)
-        Me.PanelControl3.Controls.Add(Me.LabelControl7)
+        Me.PanelControl3.Controls.Add(Me.LabelControl13)
+        Me.PanelControl3.Controls.Add(Me.PanelControl5)
         Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl3.Location = New System.Drawing.Point(0, 0)
+        Me.PanelControl3.Location = New System.Drawing.Point(20, 20)
         Me.PanelControl3.Name = "PanelControl3"
-        Me.PanelControl3.Padding = New System.Windows.Forms.Padding(7, 5, 0, 5)
-        Me.PanelControl3.Size = New System.Drawing.Size(653, 24)
+        Me.PanelControl3.Size = New System.Drawing.Size(613, 54)
         Me.PanelControl3.TabIndex = 5
         '
-        'PCClose
+        'LabelControl13
         '
-        Me.PCClose.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PCClose.ContentImage = CType(resources.GetObject("PCClose.ContentImage"), System.Drawing.Image)
-        Me.PCClose.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PCClose.Location = New System.Drawing.Point(629, 5)
-        Me.PCClose.Name = "PCClose"
-        Me.PCClose.Size = New System.Drawing.Size(24, 14)
-        Me.PCClose.TabIndex = 1
+        Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Segoe UI Light", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LabelControl13.Dock = System.Windows.Forms.DockStyle.Left
+        Me.LabelControl13.Location = New System.Drawing.Point(40, 0)
+        Me.LabelControl13.Name = "LabelControl13"
+        Me.LabelControl13.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
+        Me.LabelControl13.Size = New System.Drawing.Size(113, 43)
+        Me.LabelControl13.TabIndex = 1
+        Me.LabelControl13.Text = "Company"
         '
-        'LabelControl7
+        'PanelControl5
         '
-        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelControl7.Dock = System.Windows.Forms.DockStyle.Left
-        Me.LabelControl7.Location = New System.Drawing.Point(7, 5)
-        Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(49, 13)
-        Me.LabelControl7.TabIndex = 0
-        Me.LabelControl7.Text = "Company"
+        Me.PanelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl5.ContentImage = CType(resources.GetObject("PanelControl5.ContentImage"), System.Drawing.Image)
+        Me.PanelControl5.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PanelControl5.Location = New System.Drawing.Point(0, 0)
+        Me.PanelControl5.Name = "PanelControl5"
+        Me.PanelControl5.Size = New System.Drawing.Size(40, 54)
+        Me.PanelControl5.TabIndex = 4
         '
         'FormMasterCompany
         '
@@ -368,6 +366,7 @@ Partial Class FormMasterCompany
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormMasterCompany"
+        Me.Padding = New System.Windows.Forms.Padding(20)
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Company"
@@ -385,7 +384,7 @@ Partial Class FormMasterCompany
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl3.ResumeLayout(False)
         Me.PanelControl3.PerformLayout()
-        CType(Me.PCClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PanelControl5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -418,6 +417,6 @@ Partial Class FormMasterCompany
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents PCClose As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents PanelControl5 As DevExpress.XtraEditors.PanelControl
 End Class

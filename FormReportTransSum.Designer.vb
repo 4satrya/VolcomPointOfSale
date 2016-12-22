@@ -199,7 +199,7 @@ Partial Class FormReportTransSum
         '
         'BtnView
         '
-        Me.BtnView.Appearance.BackColor = System.Drawing.Color.Gray
+        Me.BtnView.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.BtnView.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnView.Appearance.ForeColor = System.Drawing.Color.White
         Me.BtnView.Appearance.Options.UseBackColor = True
@@ -283,7 +283,7 @@ Partial Class FormReportTransSum
         '
         Me.GCSales.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCSales.Location = New System.Drawing.Point(2, 21)
-        Me.GCSales.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCSales.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCSales.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCSales.MainView = Me.GVSales
         Me.GCSales.Name = "GCSales"
@@ -388,7 +388,7 @@ Partial Class FormReportTransSum
         '
         Me.GCPayment.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCPayment.Location = New System.Drawing.Point(2, 21)
-        Me.GCPayment.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCPayment.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCPayment.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCPayment.MainView = Me.GVPayment
         Me.GCPayment.Name = "GCPayment"

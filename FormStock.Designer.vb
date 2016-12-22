@@ -425,8 +425,8 @@ Partial Class FormStock
         '
         'BtnView
         '
-        Me.BtnView.Appearance.BackColor = System.Drawing.Color.DarkSlateBlue
-        Me.BtnView.Appearance.BorderColor = System.Drawing.Color.DarkSlateBlue
+        Me.BtnView.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BtnView.Appearance.BorderColor = System.Drawing.Color.DeepSkyBlue
         Me.BtnView.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnView.Appearance.ForeColor = System.Drawing.Color.White
         Me.BtnView.Appearance.Options.UseBackColor = True
@@ -694,8 +694,8 @@ Partial Class FormStock
         '
         'SimpleButton1
         '
-        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.DarkSlateBlue
-        Me.SimpleButton1.Appearance.BorderColor = System.Drawing.Color.DarkSlateBlue
+        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.SimpleButton1.Appearance.BorderColor = System.Drawing.Color.DeepSkyBlue
         Me.SimpleButton1.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SimpleButton1.Appearance.ForeColor = System.Drawing.Color.White
         Me.SimpleButton1.Appearance.Options.UseBackColor = True

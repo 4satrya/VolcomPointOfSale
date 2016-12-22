@@ -190,7 +190,7 @@ Partial Class FormReportDaily
         '
         Me.GCDaily.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCDaily.Location = New System.Drawing.Point(20, 122)
-        Me.GCDaily.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCDaily.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCDaily.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCDaily.MainView = Me.GVDaily
         Me.GCDaily.Name = "GCDaily"
@@ -559,7 +559,7 @@ Partial Class FormReportDaily
         '
         'BtnView
         '
-        Me.BtnView.Appearance.BackColor = System.Drawing.Color.Gray
+        Me.BtnView.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.BtnView.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnView.Appearance.ForeColor = System.Drawing.Color.White
         Me.BtnView.Appearance.Options.UseBackColor = True

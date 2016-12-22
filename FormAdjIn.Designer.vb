@@ -93,7 +93,7 @@ Partial Class FormAdjIn
         '
         'PanelControl3
         '
-        Me.PanelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanelControl3.Appearance.BackColor = System.Drawing.Color.MidnightBlue
         Me.PanelControl3.Appearance.Options.UseBackColor = True
         Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl3.Controls.Add(Me.PCClose)
@@ -152,7 +152,7 @@ Partial Class FormAdjIn
         '
         'BtnBrowseFrom
         '
-        Me.BtnBrowseFrom.Appearance.BackColor = System.Drawing.Color.Gray
+        Me.BtnBrowseFrom.Appearance.BackColor = System.Drawing.Color.MidnightBlue
         Me.BtnBrowseFrom.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnBrowseFrom.Appearance.ForeColor = System.Drawing.Color.White
         Me.BtnBrowseFrom.Appearance.Options.UseBackColor = True
@@ -598,7 +598,7 @@ Partial Class FormAdjIn
         Me.Controls.Add(Me.PanelControl3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.KeyPreview = True
-        Me.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "FormAdjIn"
         Me.ShowInTaskbar = False

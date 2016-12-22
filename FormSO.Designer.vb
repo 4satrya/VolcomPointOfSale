@@ -199,7 +199,7 @@ Partial Class FormSO
         Me.GCSO.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GCSO.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCSO.Location = New System.Drawing.Point(20, 81)
-        Me.GCSO.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCSO.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCSO.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCSO.MainView = Me.GVSO
         Me.GCSO.Name = "GCSO"

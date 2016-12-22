@@ -114,7 +114,7 @@ Partial Class FormReportCopyReceipt
         '
         'BtnViewPOS
         '
-        Me.BtnViewPOS.Appearance.BackColor = System.Drawing.Color.Gray
+        Me.BtnViewPOS.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.BtnViewPOS.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnViewPOS.Appearance.ForeColor = System.Drawing.Color.White
         Me.BtnViewPOS.Appearance.Options.UseBackColor = True
@@ -177,7 +177,7 @@ Partial Class FormReportCopyReceipt
         '
         'BtnViewClosing
         '
-        Me.BtnViewClosing.Appearance.BackColor = System.Drawing.Color.Gray
+        Me.BtnViewClosing.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.BtnViewClosing.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnViewClosing.Appearance.ForeColor = System.Drawing.Color.White
         Me.BtnViewClosing.Appearance.Options.UseBackColor = True

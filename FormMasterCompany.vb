@@ -109,12 +109,16 @@
         Cursor = Cursors.Default
     End Sub
 
-    Private Sub PanelControl3_Paint(sender As Object, e As PaintEventArgs) Handles PanelControl3.Paint
+    Private Sub PanelControl3_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
 
 
-    Private Sub PCClose_Click(sender As Object, e As EventArgs) Handles PCClose.Click
+    Private Sub PCClose_Click(sender As Object, e As EventArgs)
         exitForm()
+    End Sub
+
+    Private Sub PanelControl5_Click(sender As Object, e As EventArgs) Handles PanelControl5.Click
+        Close()
     End Sub
 End Class

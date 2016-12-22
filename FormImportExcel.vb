@@ -354,4 +354,8 @@ Public Class FormImportExcel
             Close()
         End If
     End Sub
+
+    Private Sub PanelControl5_Click(sender As Object, e As EventArgs) Handles PanelControl5.Click
+        Close()
+    End Sub
 End Class

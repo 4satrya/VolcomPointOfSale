@@ -173,12 +173,13 @@ Partial Class FormPOSShift
         '
         'PanelControl1
         '
-        Me.PanelControl1.Appearance.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.PanelControl1.Appearance.BackColor = System.Drawing.Color.Silver
         Me.PanelControl1.Appearance.Options.UseBackColor = True
-        Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl1.Controls.Add(Me.BtnOK)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelControl1.Location = New System.Drawing.Point(0, 125)
+        Me.PanelControl1.LookAndFeel.SkinName = "Blue"
+        Me.PanelControl1.LookAndFeel.UseDefaultLookAndFeel = False
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(319, 35)
         Me.PanelControl1.TabIndex = 13
@@ -217,7 +218,7 @@ Partial Class FormPOSShift
         Me.Controls.Add(Me.LabelControl1)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.MaximizeBox = False
         Me.MinimizeBox = False

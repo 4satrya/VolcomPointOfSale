@@ -562,18 +562,18 @@ Partial Class FormItemDet
         '
         Me.XTPHist.Controls.Add(Me.GCPrice)
         Me.XTPHist.Name = "XTPHist"
-        Me.XTPHist.Size = New System.Drawing.Size(617, 133)
+        Me.XTPHist.Size = New System.Drawing.Size(617, 113)
         Me.XTPHist.Text = "History"
         '
         'GCPrice
         '
         Me.GCPrice.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCPrice.Location = New System.Drawing.Point(0, 0)
-        Me.GCPrice.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCPrice.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCPrice.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCPrice.MainView = Me.GVPrice
         Me.GCPrice.Name = "GCPrice"
-        Me.GCPrice.Size = New System.Drawing.Size(617, 133)
+        Me.GCPrice.Size = New System.Drawing.Size(617, 113)
         Me.GCPrice.TabIndex = 3
         Me.GCPrice.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVPrice})
         '
@@ -617,7 +617,7 @@ Partial Class FormItemDet
         Me.Controls.Add(Me.PanelControlBottom)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KeyPreview = True
-        Me.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.MaximizeBox = False
         Me.MinimizeBox = False

@@ -74,7 +74,7 @@ Partial Class FormPOSItem
         '
         Me.GCItem.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCItem.Location = New System.Drawing.Point(0, 0)
-        Me.GCItem.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCItem.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCItem.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCItem.MainView = Me.GVItem
         Me.GCItem.Name = "GCItem"
@@ -165,7 +165,7 @@ Partial Class FormPOSItem
         Me.Controls.Add(Me.PanelControl1)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KeyPreview = True
-        Me.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.MaximizeBox = False
         Me.MinimizeBox = False

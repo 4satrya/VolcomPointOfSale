@@ -233,7 +233,7 @@ Partial Class FormAdj
         Me.GCAdjOut.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GCAdjOut.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCAdjOut.Location = New System.Drawing.Point(0, 0)
-        Me.GCAdjOut.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCAdjOut.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCAdjOut.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCAdjOut.MainView = Me.GVAdjOut
         Me.GCAdjOut.Name = "GCAdjOut"
@@ -343,7 +343,7 @@ Partial Class FormAdj
         Me.GCAdjIn.ContextMenuStrip = Me.ContextMenuStrip1
         Me.GCAdjIn.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCAdjIn.Location = New System.Drawing.Point(0, 0)
-        Me.GCAdjIn.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCAdjIn.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCAdjIn.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCAdjIn.MainView = Me.GVAdjIn
         Me.GCAdjIn.Name = "GCAdjIn"

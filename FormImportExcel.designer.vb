@@ -19,6 +19,7 @@ Partial Class FormImportExcel
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormImportExcel))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.GCData = New DevExpress.XtraGrid.GridControl()
         Me.GVData = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -35,6 +36,9 @@ Partial Class FormImportExcel
         Me.TBFileAddress = New DevExpress.XtraEditors.TextEdit()
         Me.LWorksheetName = New DevExpress.XtraEditors.LabelControl()
         Me.BBrowse = New DevExpress.XtraEditors.SimpleButton()
+        Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
+        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
+        Me.PanelControl5 = New DevExpress.XtraEditors.PanelControl()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.GCData, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,15 +51,18 @@ Partial Class FormImportExcel
         Me.PanelControl1.SuspendLayout()
         CType(Me.CBWorksheetName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TBFileAddress.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl3.SuspendLayout()
+        CType(Me.PanelControl5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.GCData)
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupControl1.Location = New System.Drawing.Point(15, 82)
+        Me.GroupControl1.Location = New System.Drawing.Point(20, 141)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(804, 223)
+        Me.GroupControl1.Size = New System.Drawing.Size(794, 159)
         Me.GroupControl1.TabIndex = 5
         Me.GroupControl1.Text = "Data"
         '
@@ -63,11 +70,11 @@ Partial Class FormImportExcel
         '
         Me.GCData.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCData.Location = New System.Drawing.Point(2, 22)
-        Me.GCData.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCData.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCData.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCData.MainView = Me.GVData
         Me.GCData.Name = "GCData"
-        Me.GCData.Size = New System.Drawing.Size(800, 199)
+        Me.GCData.Size = New System.Drawing.Size(790, 135)
         Me.GCData.TabIndex = 86
         Me.GCData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVData, Me.GridView2})
         '
@@ -91,15 +98,15 @@ Partial Class FormImportExcel
         Me.PanelControl2.Controls.Add(Me.BCancel)
         Me.PanelControl2.Controls.Add(Me.BImport)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl2.Location = New System.Drawing.Point(15, 305)
+        Me.PanelControl2.Location = New System.Drawing.Point(20, 300)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(804, 32)
+        Me.PanelControl2.Size = New System.Drawing.Size(794, 32)
         Me.PanelControl2.TabIndex = 4
         '
         'BtnPrint
         '
         Me.BtnPrint.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BtnPrint.Location = New System.Drawing.Point(532, 2)
+        Me.BtnPrint.Location = New System.Drawing.Point(522, 2)
         Me.BtnPrint.Name = "BtnPrint"
         Me.BtnPrint.Size = New System.Drawing.Size(90, 28)
         Me.BtnPrint.TabIndex = 93
@@ -125,7 +132,7 @@ Partial Class FormImportExcel
         'BCancel
         '
         Me.BCancel.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BCancel.Location = New System.Drawing.Point(622, 2)
+        Me.BCancel.Location = New System.Drawing.Point(612, 2)
         Me.BCancel.Name = "BCancel"
         Me.BCancel.Size = New System.Drawing.Size(90, 28)
         Me.BCancel.TabIndex = 90
@@ -134,7 +141,7 @@ Partial Class FormImportExcel
         'BImport
         '
         Me.BImport.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BImport.Location = New System.Drawing.Point(712, 2)
+        Me.BImport.Location = New System.Drawing.Point(702, 2)
         Me.BImport.Name = "BImport"
         Me.BImport.Size = New System.Drawing.Size(90, 28)
         Me.BImport.TabIndex = 89
@@ -150,9 +157,9 @@ Partial Class FormImportExcel
         Me.PanelControl1.Controls.Add(Me.LWorksheetName)
         Me.PanelControl1.Controls.Add(Me.BBrowse)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl1.Location = New System.Drawing.Point(15, 15)
+        Me.PanelControl1.Location = New System.Drawing.Point(20, 74)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(804, 67)
+        Me.PanelControl1.Size = New System.Drawing.Size(794, 67)
         Me.PanelControl1.TabIndex = 3
         '
         'CBWorksheetName
@@ -204,6 +211,39 @@ Partial Class FormImportExcel
         Me.BBrowse.TabIndex = 88
         Me.BBrowse.Text = "Browse"
         '
+        'PanelControl3
+        '
+        Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl3.Controls.Add(Me.LabelControl13)
+        Me.PanelControl3.Controls.Add(Me.PanelControl5)
+        Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelControl3.Location = New System.Drawing.Point(20, 20)
+        Me.PanelControl3.Name = "PanelControl3"
+        Me.PanelControl3.Size = New System.Drawing.Size(794, 54)
+        Me.PanelControl3.TabIndex = 6
+        '
+        'LabelControl13
+        '
+        Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Segoe UI Light", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LabelControl13.Dock = System.Windows.Forms.DockStyle.Left
+        Me.LabelControl13.Location = New System.Drawing.Point(40, 0)
+        Me.LabelControl13.Name = "LabelControl13"
+        Me.LabelControl13.Padding = New System.Windows.Forms.Padding(5, 6, 0, 0)
+        Me.LabelControl13.Size = New System.Drawing.Size(144, 43)
+        Me.LabelControl13.TabIndex = 1
+        Me.LabelControl13.Text = "Import Excel"
+        '
+        'PanelControl5
+        '
+        Me.PanelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl5.ContentImage = CType(resources.GetObject("PanelControl5.ContentImage"), System.Drawing.Image)
+        Me.PanelControl5.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PanelControl5.Location = New System.Drawing.Point(0, 0)
+        Me.PanelControl5.Name = "PanelControl5"
+        Me.PanelControl5.Size = New System.Drawing.Size(40, 54)
+        Me.PanelControl5.TabIndex = 4
+        '
         'FormImportExcel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -212,13 +252,14 @@ Partial Class FormImportExcel
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.PanelControl2)
         Me.Controls.Add(Me.PanelControl1)
+        Me.Controls.Add(Me.PanelControl3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.KeyPreview = True
         Me.LookAndFeel.SkinName = "Metropolis"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.MinimizeBox = False
         Me.Name = "FormImportExcel"
-        Me.Padding = New System.Windows.Forms.Padding(15)
+        Me.Padding = New System.Windows.Forms.Padding(20)
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Import Data From Excel"
@@ -237,6 +278,10 @@ Partial Class FormImportExcel
         Me.PanelControl1.PerformLayout()
         CType(Me.CBWorksheetName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TBFileAddress.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl3.ResumeLayout(False)
+        Me.PanelControl3.PerformLayout()
+        CType(Me.PanelControl5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -256,4 +301,7 @@ Partial Class FormImportExcel
     Friend WithEvents PBC As DevExpress.XtraEditors.ProgressBarControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents BtnPrint As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents PanelControl5 As DevExpress.XtraEditors.PanelControl
 End Class

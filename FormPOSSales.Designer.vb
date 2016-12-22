@@ -71,7 +71,7 @@ Partial Class FormPOSSales
         '
         Me.GCEmployee.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GCEmployee.Location = New System.Drawing.Point(0, 0)
-        Me.GCEmployee.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.GCEmployee.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.GCEmployee.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCEmployee.MainView = Me.GVEmployee
         Me.GCEmployee.Name = "GCEmployee"
@@ -131,7 +131,7 @@ Partial Class FormPOSSales
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.KeyPreview = True
-        Me.LookAndFeel.SkinName = "Office 2010 Silver"
+        Me.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.MaximizeBox = False
         Me.MinimizeBox = False

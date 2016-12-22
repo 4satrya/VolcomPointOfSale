@@ -187,7 +187,7 @@ Partial Class FormTrfDet
         '
         'BtnBrowseTo
         '
-        Me.BtnBrowseTo.Appearance.BackColor = System.Drawing.Color.Gray
+        Me.BtnBrowseTo.Appearance.BackColor = System.Drawing.Color.MidnightBlue
         Me.BtnBrowseTo.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnBrowseTo.Appearance.ForeColor = System.Drawing.Color.White
         Me.BtnBrowseTo.Appearance.Options.UseBackColor = True
