@@ -1051,7 +1051,7 @@
     End Sub
 
     Private Sub FormPOS_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-
+        FormFront.info()
     End Sub
 
     Private Sub TxtVoucherNo_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtVoucherNo.KeyDown

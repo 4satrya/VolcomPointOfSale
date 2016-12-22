@@ -126,17 +126,18 @@ Public Class FormFront
             str += "This computer is not registered "
         Else
             id_pos_dev = dt_comp.Rows(0)("id_pos_dev").ToString
+            str += "POS#" + dt_comp.Rows(0)("pos_dev").ToString + " "
         End If
 
         'cek sudah ada inisialize atau belum
         Dim query_open As String = pos.queryShift("AND s.id_pos_dev=" + id_pos_dev + " AND s.is_open=1", "2")
         Dim dt_open As DataTable = execute_query(query_open, -1, True, "", "", "", "")
         If dt_open.Rows.Count <= 0 Then
-            str += "/ There is no shift "
+            str += "/ NO SHIFT "
             csh += "CASHIER ACTIVE : -"
         Else
-            str += "POS#" + dt_open.Rows(0)("pos_dev").ToString + " / Shift " + dt_open.Rows(0)("shift_type").ToString
-            csh += "CASHIER ACTIVE : " + dt_open.Rows(0)("username").ToString
+            str += "/ SHIFT " + dt_open.Rows(0)("shift_type").ToString
+            csh += "CASHIER ACTIVE : " + dt_open.Rows(0)("username").ToString.ToUpper
         End If
         LabelInfo.Text = str
         LabelCsh.Text = csh

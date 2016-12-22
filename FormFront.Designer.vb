@@ -20,8 +20,8 @@ Partial Class FormFront
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormFront))
-        Dim TileItemElement13 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement14 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement23 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement24 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Me.TIExit = New DevExpress.XtraEditors.TileItem()
         Me.TileItem2 = New DevExpress.XtraEditors.TileItem()
         Me.PanelBasic = New DevExpress.XtraEditors.PanelControl()
@@ -66,9 +66,9 @@ Partial Class FormFront
         Me.TIExit.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TIExit.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIExit.BackgroundImage = CType(resources.GetObject("TIExit.BackgroundImage"), System.Drawing.Image)
-        TileItemElement13.Text = "Exit"
-        TileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
-        Me.TIExit.Elements.Add(TileItemElement13)
+        TileItemElement23.Text = "Exit"
+        TileItemElement23.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TIExit.Elements.Add(TileItemElement23)
         Me.TIExit.Id = 29
         Me.TIExit.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TIExit.Name = "TIExit"
@@ -81,9 +81,9 @@ Partial Class FormFront
         Me.TileItem2.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TileItem2.BackgroundImage = CType(resources.GetObject("TileItem2.BackgroundImage"), System.Drawing.Image)
         Me.TileItem2.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement14.Text = "Exit Program"
-        TileItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem2.Elements.Add(TileItemElement14)
+        TileItemElement24.Text = "Exit Program"
+        TileItemElement24.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem2.Elements.Add(TileItemElement24)
         Me.TileItem2.Id = 45
         Me.TileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TileItem2.Name = "TileItem2"
@@ -114,11 +114,11 @@ Partial Class FormFront
         '
         'LabelCsh
         '
-        Me.LabelCsh.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCsh.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelCsh.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelCsh.Location = New System.Drawing.Point(197, 106)
+        Me.LabelCsh.Location = New System.Drawing.Point(197, 110)
         Me.LabelCsh.Name = "LabelCsh"
-        Me.LabelCsh.Size = New System.Drawing.Size(111, 17)
+        Me.LabelCsh.Size = New System.Drawing.Size(114, 17)
         Me.LabelCsh.TabIndex = 5
         Me.LabelCsh.Text = "CASHIER ACTIVE : "
         '
@@ -126,7 +126,7 @@ Partial Class FormFront
         '
         Me.LabelDate.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelDate.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelDate.Location = New System.Drawing.Point(197, 130)
+        Me.LabelDate.Location = New System.Drawing.Point(197, 136)
         Me.LabelDate.Name = "LabelDate"
         Me.LabelDate.Size = New System.Drawing.Size(194, 17)
         Me.LabelDate.TabIndex = 3
@@ -134,11 +134,11 @@ Partial Class FormFront
         '
         'LabelInfo
         '
-        Me.LabelInfo.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelInfo.Appearance.ForeColor = System.Drawing.Color.White
+        Me.LabelInfo.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelInfo.Appearance.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.LabelInfo.Location = New System.Drawing.Point(197, 84)
         Me.LabelInfo.Name = "LabelInfo"
-        Me.LabelInfo.Size = New System.Drawing.Size(99, 17)
+        Me.LabelInfo.Size = New System.Drawing.Size(101, 17)
         Me.LabelInfo.TabIndex = 1
         Me.LabelInfo.Text = "POS#1 / SHIFT 1"
         '
@@ -210,9 +210,9 @@ Partial Class FormFront
         Me.PanelControl2.Controls.Add(Me.PIInv)
         Me.PanelControl2.Controls.Add(Me.PanelControl1)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl2.Location = New System.Drawing.Point(2, 180)
+        Me.PanelControl2.Location = New System.Drawing.Point(2, 189)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(676, 283)
+        Me.PanelControl2.Size = New System.Drawing.Size(676, 274)
         Me.PanelControl2.TabIndex = 1
         '
         'LabelControl9
@@ -289,7 +289,7 @@ Partial Class FormFront
         Me.PanelControl1.Controls.Add(Me.LabelControl6)
         Me.PanelControl1.Controls.Add(Me.LabelFooter)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 259)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 250)
         Me.PanelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat
         Me.PanelControl1.LookAndFeel.UseDefaultLookAndFeel = False
         Me.PanelControl1.Name = "PanelControl1"
