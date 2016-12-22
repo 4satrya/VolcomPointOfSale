@@ -232,10 +232,13 @@ Public Class ClassSync
     Public Sub startofSync()
         For i As Integer = 0 To sync_list.Count - 1
             If sync_list(i) = "1" Then 'code det
+                FormFront.SplashScreenManager1.SetWaitFormDescription("Sync master data")
                 syncCodeDet()
             ElseIf sync_list(i) = "2" Then 'comp
+                FormFront.SplashScreenManager1.SetWaitFormDescription("Sync company account")
                 syncComp()
             ElseIf sync_list(i) = "3" Then 'item
+                FormFront.SplashScreenManager1.SetWaitFormDescription("Sync products")
                 syncItem()
             End If
         Next

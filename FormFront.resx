@@ -324,10 +324,21 @@
         0ezYAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="PCClose.ContentImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAEtSURBVEhL7ZMxS8RAEIXDVRZi4Q+wkCssLPxtVtdaiZWl
+        lb/JHFcmh4hFqqtCQjab5HxfmBxRFLIBuzwYssy+eTP7dhMtWPD/yPP8rGma+7Zt3xRO4RVb5TZFUZwb
+        bR6qqrrqum6nOP4RiThro4eBySWwOwqa9lXrjDXQ+qDcizXZ6yQXVjYd2IIY4mmarpxzNzRBvK7ruziO
+        V977Z+M8WNl04LlNmCFOji/irGXNtTgfcPRNyAVBRc4afGsCxuJD2NZ0SMBzfCCB3hbb6k9CU9ue3WBr
+        xSdxJh/bNTQR951cEHRxGybjtXChI1tOdumSn4zz2BeFgJ9IxQkCvJYfnmeDuOKzLMtLKwuDJl1LYI8N
+        vwFxcW6NPg/8RLxznaA/DYHn2DJ78gULAhBFX+dIvf+97VnzAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="PISync.EditValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAA+dSURBVHhe7Z3bUxRXHsfnYR/2YR/ysLUPW1upfdhKpfYh
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAA+dSURBVHhe7Z3bUxRXHsfnYR/2YR/ysLUPW1upfdhKpfYh
         tQ+prVQqlUqltvYvSNUm2SQSLwFRh6ugRvGyGy/xtokSo0aNF+Iao4LjDJeGGRhgBpabgMNVVEREJMDA
         0DPdc+Fs/4ZDADkzdM+l+8xwvlUfy6J7+nJ+3afP5Xd+P10yqshq/f2F9va0o92jBWnl4qFc42jbtsrn
         4/k1455c65Qvs5pHm6q8aF3pbBD4P/wNtsE+sG+uabQ9rVQ8eqR7rOB8R0f6D/X1L+PDM9GkyzU1v/vm
@@ -400,7 +411,7 @@
   <data name="PIPOS.EditValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAA+sSURBVHhe7Z3bTxtXHsf9sA/7sA99WO3DalXtw6qq9qHa
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAA+sSURBVHhe7Z3bTxtXHsf9sA/7sA99WO3DalXtw6qq9qHa
         h2pVVVVVVav9Cypt2222uRZKEnMNJN2WNFm1aZrbblIShSSkJCUpyqWhxOYyXA22odyCicGQkEAIEIeA
         bezBHl846599HDP2GQcbz3hmPF/pEwfPGXt8fjPn/M45v3OOSo6q0el+f3F4OPfYmLU8t4k5XKKxDu1t
         ebpY1rnoLtE5fAUdNNrZ6kXbGlZDwP/hPTgGaSBtidY6nNvAHDs6tlBeZTLlXdHrX8Yfr0hMutzZ+bvT
@@ -473,7 +484,7 @@
   <data name="PIInv.EditValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAABX1SURBVHhe7V3bb1xFmu+HfdiHeZiH1T6sRqN9WI1G+zCa
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AABX1SURBVHhe7V3bb1xFmu+HfdiHeZiH1T6sRqN9WI1G+zCa
         h9FqhBAaodX+BWgXGC4BAnYudhzbOMAEh6ARMMMlzEDIJCEJIROYCHLDuH1pO07s2E6IY2M7jm1CLo5x
         EuP42veba/vXfT7319V1TnfbfU53nPOTfq6v7ud8Va6qrlMXx2rE4fb2fzvQ31/67vBkbWlT8E/V9ZN9
         L7X8OL3lzLS/un0+XHHaKza0hsRzDYtxQoYb/BAGYaudk/2lDcF33xmeqt0/MLD+s87On2vJ2ygmHDpz
@@ -568,17 +579,6 @@
         pxfCjx1VF4YVxE4pHLyMs3dx/KruCZw2zMOBzs5fvTd0a2t5/Uz9i2fmwmsbzGshcM0KbtrAZQs4bz/t
         yHUbxYFDXV0P7Rn5rua1Pu/2khPug1tck7dxSyauSsV9ubg0GTdnU8FChhv8EAZhcaki7tXD1Wq4XWvp
         gqVVBYfj/wGzhCaPaUVwCgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="PCClose.ContentImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAEtSURBVEhL7ZMxS8RAEIXDVRZi4Q+wkCssLPxtVtdaiZWl
-        lb/JHFcmh4hFqqtCQjab5HxfmBxRFLIBuzwYssy+eTP7dhMtWPD/yPP8rGma+7Zt3xRO4RVb5TZFUZwb
-        bR6qqrrqum6nOP4RiThro4eBySWwOwqa9lXrjDXQ+qDcizXZ6yQXVjYd2IIY4mmarpxzNzRBvK7ruziO
-        V977Z+M8WNl04LlNmCFOji/irGXNtTgfcPRNyAVBRc4afGsCxuJD2NZ0SMBzfCCB3hbb6k9CU9ue3WBr
-        xSdxJh/bNTQR951cEHRxGybjtXChI1tOdumSn4zz2BeFgJ9IxQkCvJYfnmeDuOKzLMtLKwuDJl1LYI8N
-        vwFxcW6NPg/8RLxznaA/DYHn2DJ78gULAhBFX+dIvf+97VnzAAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

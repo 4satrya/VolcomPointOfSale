@@ -45,6 +45,22 @@ Partial Class FormUser
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlBack = New DevExpress.XtraEditors.PanelControl()
+        Me.XTPProfile = New DevExpress.XtraTab.XtraTabPage()
+        Me.XTPReceipt = New DevExpress.XtraTab.XtraTabPage()
+        Me.XTPServer = New DevExpress.XtraTab.XtraTabPage()
+        Me.BtnSaveProfile = New DevExpress.XtraEditors.SimpleButton()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtCompName = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtTagline = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtOutletName = New DevExpress.XtraEditors.TextEdit()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtOutletId = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtSupervisor = New DevExpress.XtraEditors.TextEdit()
+        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.XTCUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTCUser.SuspendLayout()
         Me.XTPRole.SuspendLayout()
@@ -60,6 +76,12 @@ Partial Class FormUser
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
         CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XTPProfile.SuspendLayout()
+        CType(Me.TxtCompName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtTagline.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtOutletName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtOutletId.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtSupervisor.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'XTCUser
@@ -73,7 +95,7 @@ Partial Class FormUser
         Me.XTCUser.SelectedTabPage = Me.XTPRole
         Me.XTCUser.Size = New System.Drawing.Size(649, 267)
         Me.XTCUser.TabIndex = 0
-        Me.XTCUser.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPRole, Me.XTPUser})
+        Me.XTCUser.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPRole, Me.XTPUser, Me.XTPProfile, Me.XTPReceipt, Me.XTPServer})
         '
         'XTPRole
         '
@@ -300,6 +322,169 @@ Partial Class FormUser
         Me.PanelControlBack.Size = New System.Drawing.Size(40, 45)
         Me.PanelControlBack.TabIndex = 5
         '
+        'XTPProfile
+        '
+        Me.XTPProfile.Controls.Add(Me.SimpleButton2)
+        Me.XTPProfile.Controls.Add(Me.TxtSupervisor)
+        Me.XTPProfile.Controls.Add(Me.LabelControl14)
+        Me.XTPProfile.Controls.Add(Me.TxtOutletId)
+        Me.XTPProfile.Controls.Add(Me.LabelControl12)
+        Me.XTPProfile.Controls.Add(Me.SimpleButton1)
+        Me.XTPProfile.Controls.Add(Me.TxtOutletName)
+        Me.XTPProfile.Controls.Add(Me.LabelControl11)
+        Me.XTPProfile.Controls.Add(Me.TxtTagline)
+        Me.XTPProfile.Controls.Add(Me.LabelControl10)
+        Me.XTPProfile.Controls.Add(Me.TxtCompName)
+        Me.XTPProfile.Controls.Add(Me.LabelControl7)
+        Me.XTPProfile.Controls.Add(Me.BtnSaveProfile)
+        Me.XTPProfile.Name = "XTPProfile"
+        Me.XTPProfile.Size = New System.Drawing.Size(623, 265)
+        Me.XTPProfile.Text = "Profile"
+        '
+        'XTPReceipt
+        '
+        Me.XTPReceipt.Name = "XTPReceipt"
+        Me.XTPReceipt.Size = New System.Drawing.Size(0, 0)
+        Me.XTPReceipt.Text = "Receipt"
+        '
+        'XTPServer
+        '
+        Me.XTPServer.Name = "XTPServer"
+        Me.XTPServer.Size = New System.Drawing.Size(0, 0)
+        Me.XTPServer.Text = "Server"
+        '
+        'BtnSaveProfile
+        '
+        Me.BtnSaveProfile.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BtnSaveProfile.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSaveProfile.Appearance.ForeColor = System.Drawing.Color.White
+        Me.BtnSaveProfile.Appearance.Options.UseBackColor = True
+        Me.BtnSaveProfile.Appearance.Options.UseFont = True
+        Me.BtnSaveProfile.Appearance.Options.UseForeColor = True
+        Me.BtnSaveProfile.Location = New System.Drawing.Point(96, 91)
+        Me.BtnSaveProfile.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
+        Me.BtnSaveProfile.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
+        Me.BtnSaveProfile.LookAndFeel.SkinName = "Metropolis"
+        Me.BtnSaveProfile.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
+        Me.BtnSaveProfile.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.BtnSaveProfile.Name = "BtnSaveProfile"
+        Me.BtnSaveProfile.Size = New System.Drawing.Size(58, 20)
+        Me.BtnSaveProfile.TabIndex = 8
+        Me.BtnSaveProfile.Text = "Save"
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Location = New System.Drawing.Point(15, 16)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(75, 13)
+        Me.LabelControl7.TabIndex = 6
+        Me.LabelControl7.Text = "Company Name"
+        '
+        'TxtCompName
+        '
+        Me.TxtCompName.Location = New System.Drawing.Point(96, 13)
+        Me.TxtCompName.Name = "TxtCompName"
+        Me.TxtCompName.Size = New System.Drawing.Size(266, 20)
+        Me.TxtCompName.TabIndex = 1
+        '
+        'LabelControl10
+        '
+        Me.LabelControl10.Location = New System.Drawing.Point(373, 16)
+        Me.LabelControl10.Name = "LabelControl10"
+        Me.LabelControl10.Size = New System.Drawing.Size(34, 13)
+        Me.LabelControl10.TabIndex = 8
+        Me.LabelControl10.Text = "Tagline"
+        '
+        'TxtTagline
+        '
+        Me.TxtTagline.Location = New System.Drawing.Point(422, 13)
+        Me.TxtTagline.Name = "TxtTagline"
+        Me.TxtTagline.Size = New System.Drawing.Size(190, 20)
+        Me.TxtTagline.TabIndex = 2
+        '
+        'LabelControl11
+        '
+        Me.LabelControl11.Location = New System.Drawing.Point(15, 42)
+        Me.LabelControl11.Name = "LabelControl11"
+        Me.LabelControl11.Size = New System.Drawing.Size(60, 13)
+        Me.LabelControl11.TabIndex = 10
+        Me.LabelControl11.Text = "Outlet Name"
+        '
+        'TxtOutletName
+        '
+        Me.TxtOutletName.Location = New System.Drawing.Point(96, 39)
+        Me.TxtOutletName.Name = "TxtOutletName"
+        Me.TxtOutletName.Size = New System.Drawing.Size(266, 20)
+        Me.TxtOutletName.TabIndex = 3
+        '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.SimpleButton1.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SimpleButton1.Appearance.ForeColor = System.Drawing.Color.White
+        Me.SimpleButton1.Appearance.Options.UseBackColor = True
+        Me.SimpleButton1.Appearance.Options.UseFont = True
+        Me.SimpleButton1.Appearance.Options.UseForeColor = True
+        Me.SimpleButton1.Location = New System.Drawing.Point(581, 39)
+        Me.SimpleButton1.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
+        Me.SimpleButton1.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
+        Me.SimpleButton1.LookAndFeel.SkinName = "Metropolis"
+        Me.SimpleButton1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
+        Me.SimpleButton1.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(31, 20)
+        Me.SimpleButton1.TabIndex = 5
+        Me.SimpleButton1.Text = ". . ."
+        '
+        'LabelControl12
+        '
+        Me.LabelControl12.Location = New System.Drawing.Point(373, 42)
+        Me.LabelControl12.Name = "LabelControl12"
+        Me.LabelControl12.Size = New System.Drawing.Size(43, 13)
+        Me.LabelControl12.TabIndex = 13
+        Me.LabelControl12.Text = "Outlet Id"
+        '
+        'TxtOutletId
+        '
+        Me.TxtOutletId.Location = New System.Drawing.Point(422, 39)
+        Me.TxtOutletId.Name = "TxtOutletId"
+        Me.TxtOutletId.Size = New System.Drawing.Size(155, 20)
+        Me.TxtOutletId.TabIndex = 4
+        '
+        'LabelControl14
+        '
+        Me.LabelControl14.Location = New System.Drawing.Point(15, 68)
+        Me.LabelControl14.Name = "LabelControl14"
+        Me.LabelControl14.Size = New System.Drawing.Size(51, 13)
+        Me.LabelControl14.TabIndex = 15
+        Me.LabelControl14.Text = "Supervisor"
+        '
+        'TxtSupervisor
+        '
+        Me.TxtSupervisor.Location = New System.Drawing.Point(96, 65)
+        Me.TxtSupervisor.Name = "TxtSupervisor"
+        Me.TxtSupervisor.Size = New System.Drawing.Size(229, 20)
+        Me.TxtSupervisor.TabIndex = 6
+        '
+        'SimpleButton2
+        '
+        Me.SimpleButton2.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.SimpleButton2.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SimpleButton2.Appearance.ForeColor = System.Drawing.Color.White
+        Me.SimpleButton2.Appearance.Options.UseBackColor = True
+        Me.SimpleButton2.Appearance.Options.UseFont = True
+        Me.SimpleButton2.Appearance.Options.UseForeColor = True
+        Me.SimpleButton2.Location = New System.Drawing.Point(331, 65)
+        Me.SimpleButton2.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
+        Me.SimpleButton2.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
+        Me.SimpleButton2.LookAndFeel.SkinName = "Metropolis"
+        Me.SimpleButton2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
+        Me.SimpleButton2.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.SimpleButton2.Name = "SimpleButton2"
+        Me.SimpleButton2.Size = New System.Drawing.Size(31, 20)
+        Me.SimpleButton2.TabIndex = 7
+        Me.SimpleButton2.Text = ". . ."
+        '
         'FormUser
         '
         Me.Appearance.Options.UseFont = True
@@ -336,6 +521,13 @@ Partial Class FormUser
         Me.PanelControl3.ResumeLayout(False)
         Me.PanelControl3.PerformLayout()
         CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XTPProfile.ResumeLayout(False)
+        Me.XTPProfile.PerformLayout()
+        CType(Me.TxtCompName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtTagline.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtOutletName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtOutletId.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtSupervisor.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -365,4 +557,20 @@ Partial Class FormUser
     Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControlBack As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents XTPProfile As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents XTPReceipt As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents XTPServer As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents TxtTagline As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TxtCompName As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents BtnSaveProfile As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents TxtOutletId As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents TxtOutletName As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents TxtSupervisor As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl14 As DevExpress.XtraEditors.LabelControl
 End Class
