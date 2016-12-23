@@ -39,6 +39,22 @@ Public Class FormUser
         TxtF2.Text = dopt.Rows(0)("footer_2").ToString
         TxtF3.Text = dopt.Rows(0)("footer_3").ToString
         TxtF4.Text = dopt.Rows(0)("footer_4").ToString
+
+        'sync
+        Dim qs As String = "SELECT *, 'No' as `is_select` FROM tb_sync_data a ORDER BY a.id_sync_data ASC "
+        Dim ds As DataTable = execute_query(qs, -1, True, "", "", "", "")
+        GCData.DataSource = ds
+    End Sub
+
+    Sub logData()
+        Dim id_sync_data = "-1"
+        Try
+            id_sync_data = GVData.GetFocusedRowCellValue("id_sync_data").ToString()
+        Catch ex As Exception
+        End Try
+        Dim query As String = "SELECT *, IF(is_success=1,'Success', 'Failure') AS `status` FROM tb_sync_log WHERE id_sync_data = " + id_sync_data + " ORDER BY sync_time DESC "
+        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        GCLog.DataSource = data
     End Sub
 
     Sub viewRole()
@@ -248,5 +264,33 @@ Public Class FormUser
         Catch ex As Exception
             stopCustom(ex.ToString)
         End Try
+    End Sub
+
+    Private Sub GVData_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GVData.FocusedRowChanged
+        GCLog.DataSource = Nothing
+    End Sub
+
+    Private Sub BtnSync_Click(sender As Object, e As EventArgs) Handles BtnSync.Click
+        GVData.ActiveFilterString = "[is_select]='Yes'"
+        If GVData.RowCount > 0 Then
+            Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want sync these data?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+            If confirm = DialogResult.Yes Then
+                SplashScreenManager1.ShowWaitForm()
+                Dim sy As New ClassSync()
+                sy.splash = "1"
+                For i As Integer = 0 To GVData.RowCount - 1
+                    sy.sync_list.Add(GVData.GetRowCellValue(i, "id_sync_data").ToString)
+                Next
+                sy.synchronize()
+                SplashScreenManager1.CloseWaitForm()
+            End If
+        End If
+        GVData.ActiveFilterString = ""
+    End Sub
+
+    Private Sub BtnView_Click(sender As Object, e As EventArgs) Handles BtnView.Click
+        Cursor = Cursors.WaitCursor
+        logData()
+        Cursor = Cursors.Default
     End Sub
 End Class

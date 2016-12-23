@@ -152,6 +152,7 @@
     Sub payment()
         Cursor = Cursors.WaitCursor
         resetPayment()
+        showDisplay("T  o  t  a  l  :", "-", TxtTotal.Text)
         TxtItemCode.Enabled = False
         TxtDiscount.Enabled = True
         TxtDiscount.Focus()
@@ -709,6 +710,7 @@
                     TxtDiscount.Focus()
                 End If
             End If
+            showDisplay("T  o  t  a  l  :", "-", TxtTotal.Text)
         End If
     End Sub
 
@@ -725,6 +727,7 @@
                 TxtChange.EditValue = pay - TxtTotal.EditValue
                 Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Payment OK ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
                 If confirm = DialogResult.Yes Then
+                    showDisplay("Change  :", "-", TxtChange.Text)
                     TxtCash.Enabled = False
                     paymentOK()
                 Else
@@ -741,6 +744,7 @@
                 End If
             Else
                 'jika kurang sisanya ke card
+                showDisplay("Cash  :", "-", TxtCash.Text)
                 TxtChange.EditValue = Nothing
                 TxtCash.Enabled = False
                 TxtCard.Enabled = True
@@ -906,11 +910,13 @@
                 TxtCard.Enabled = False
                 LECardType.Enabled = True
                 LECardType.Focus()
+                showDisplay("Card  :", "-", TxtCard.Text)
             Else
                 TxtChange.EditValue = Nothing
                 TxtCard.Enabled = False
                 LECardType.Enabled = True
                 LECardType.Focus()
+                showDisplay("Card  :", "-", TxtCard.Text)
             End If
         End If
     End Sub
@@ -1085,6 +1091,7 @@
                         TxtCash.Enabled = True
                         TxtCash.Focus()
                     End If
+                    showDisplay("Voucher  :", "-", TxtVoucher.Text)
                 Else
                     stopCustom("Voucher is not found")
                     TxtVoucherNo.Text = ""

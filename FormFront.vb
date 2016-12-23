@@ -146,7 +146,10 @@ Public Class FormFront
     End Sub
 
     Private Sub PISync_Click(sender As Object, e As EventArgs) Handles PISync.Click
-        syncProcess()
+        Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want sync these data?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+        If confirm = DialogResult.Yes Then
+            syncProcess()
+        End If
     End Sub
 
     Private Sub PanelControl4_MouseDown(sender As Object, e As MouseEventArgs) Handles PanelControl4.MouseDown

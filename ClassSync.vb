@@ -8,6 +8,7 @@ Public Class ClassSync
     Dim username_main As String = ""
     Dim pass_main As String = ""
     Dim db_main As String = ""
+    Public splash As String = "-1"
 
     Public Sub New()
         Dim query As String = "SELECT * FROM tb_opt"
@@ -433,16 +434,32 @@ Public Class ClassSync
     Public Sub startofSync()
         For i As Integer = 0 To sync_list.Count - 1
             If sync_list(i) = "1" Then 'code det
-                FormFront.SplashScreenManager1.SetWaitFormDescription("Sync master data")
+                If splash = "-1" Then
+                    FormFront.SplashScreenManager1.SetWaitFormDescription("Sync master data")
+                ElseIf splash = "1" Then
+                    FormUser.SplashScreenManager1.SetWaitFormDescription("Sync master data")
+                End If
                 syncCodeDet()
             ElseIf sync_list(i) = "2" Then 'comp
-                FormFront.SplashScreenManager1.SetWaitFormDescription("Sync company account")
+                If splash = "-1" Then
+                    FormFront.SplashScreenManager1.SetWaitFormDescription("Sync company account")
+                ElseIf splash = "1" Then
+                    FormUser.SplashScreenManager1.SetWaitFormDescription("Sync company account")
+                End If
                 syncComp()
             ElseIf sync_list(i) = "3" Then 'item
-                FormFront.SplashScreenManager1.SetWaitFormDescription("Sync products")
+                If splash = "-1" Then
+                    FormFront.SplashScreenManager1.SetWaitFormDescription("Sync products")
+                ElseIf splash = "1" Then
+                    FormUser.SplashScreenManager1.SetWaitFormDescription("Sync products")
+                End If
                 syncItem()
             ElseIf sync_list(i) = "4" Then 'emp
-                FormFront.SplashScreenManager1.SetWaitFormDescription("Sync employee")
+                If splash = "-1" Then
+                    FormFront.SplashScreenManager1.SetWaitFormDescription("Sync employee")
+                ElseIf splash = "1" Then
+                    FormUser.SplashScreenManager1.SetWaitFormDescription("Sync employee")
+                End If
                 syncEmp()
             End If
         Next

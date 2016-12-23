@@ -57,6 +57,42 @@ Partial Class FormUser
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.BtnSaveProfile = New DevExpress.XtraEditors.SimpleButton()
         Me.XTPReceipt = New DevExpress.XtraTab.XtraTabPage()
+        Me.BtnSaveRc = New DevExpress.XtraEditors.SimpleButton()
+        Me.LabelControl25 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl26 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtF4 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtF3 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtF2 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl27 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtF1 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl28 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtH6 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl24 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl23 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtH5 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl22 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl21 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtH4 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtH3 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtH2 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl20 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtH1 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl19 = New DevExpress.XtraEditors.LabelControl()
+        Me.XTPSync = New DevExpress.XtraTab.XtraTabPage()
+        Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.GCData = New DevExpress.XtraGrid.GridControl()
+        Me.GVData = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
+        Me.BtnSync = New DevExpress.XtraEditors.SimpleButton()
+        Me.BtnView = New DevExpress.XtraEditors.SimpleButton()
+        Me.GCLog = New DevExpress.XtraGrid.GridControl()
+        Me.GVLog = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
@@ -70,27 +106,7 @@ Partial Class FormUser
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlBack = New DevExpress.XtraEditors.PanelControl()
-        Me.TxtH1 = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl19 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl20 = New DevExpress.XtraEditors.LabelControl()
-        Me.TxtH2 = New DevExpress.XtraEditors.TextEdit()
-        Me.TxtH3 = New DevExpress.XtraEditors.TextEdit()
-        Me.TxtH4 = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl21 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl22 = New DevExpress.XtraEditors.LabelControl()
-        Me.TxtH5 = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl23 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl24 = New DevExpress.XtraEditors.LabelControl()
-        Me.TxtH6 = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl25 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl26 = New DevExpress.XtraEditors.LabelControl()
-        Me.TxtF4 = New DevExpress.XtraEditors.TextEdit()
-        Me.TxtF3 = New DevExpress.XtraEditors.TextEdit()
-        Me.TxtF2 = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl27 = New DevExpress.XtraEditors.LabelControl()
-        Me.TxtF1 = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl28 = New DevExpress.XtraEditors.LabelControl()
-        Me.BtnSaveRc = New DevExpress.XtraEditors.SimpleButton()
+        Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.VolcomPointOfSale.WaitSyncItem), True, True)
         CType(Me.XTCUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTCUser.SuspendLayout()
         Me.XTPRole.SuspendLayout()
@@ -111,6 +127,24 @@ Partial Class FormUser
         CType(Me.TxtTagline.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtCompName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTPReceipt.SuspendLayout()
+        CType(Me.TxtF4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtF3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtF2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtF1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtH6.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtH5.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtH4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtH3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtH2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtH1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XTPSync.SuspendLayout()
+        CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainerControl1.SuspendLayout()
+        CType(Me.GCData, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GVData, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GCLog, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GVLog, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -118,16 +152,6 @@ Partial Class FormUser
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
         CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtH1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtH2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtH3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtH4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtH5.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtH6.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtF4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtF3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtF2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtF1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'XTCUser
@@ -141,7 +165,7 @@ Partial Class FormUser
         Me.XTCUser.SelectedTabPage = Me.XTPRole
         Me.XTCUser.Size = New System.Drawing.Size(649, 267)
         Me.XTCUser.TabIndex = 0
-        Me.XTCUser.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPRole, Me.XTPUser, Me.XTPServer, Me.XTPProfile, Me.XTPReceipt})
+        Me.XTCUser.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPRole, Me.XTPUser, Me.XTPServer, Me.XTPProfile, Me.XTPReceipt, Me.XTPSync})
         '
         'XTPRole
         '
@@ -515,6 +539,349 @@ Partial Class FormUser
         Me.XTPReceipt.Size = New System.Drawing.Size(623, 265)
         Me.XTPReceipt.Text = "Receipt"
         '
+        'BtnSaveRc
+        '
+        Me.BtnSaveRc.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BtnSaveRc.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSaveRc.Appearance.ForeColor = System.Drawing.Color.White
+        Me.BtnSaveRc.Appearance.Options.UseBackColor = True
+        Me.BtnSaveRc.Appearance.Options.UseFont = True
+        Me.BtnSaveRc.Appearance.Options.UseForeColor = True
+        Me.BtnSaveRc.Location = New System.Drawing.Point(64, 146)
+        Me.BtnSaveRc.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
+        Me.BtnSaveRc.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
+        Me.BtnSaveRc.LookAndFeel.SkinName = "Metropolis"
+        Me.BtnSaveRc.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
+        Me.BtnSaveRc.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.BtnSaveRc.Name = "BtnSaveRc"
+        Me.BtnSaveRc.Size = New System.Drawing.Size(58, 20)
+        Me.BtnSaveRc.TabIndex = 34
+        Me.BtnSaveRc.Text = "Save"
+        '
+        'LabelControl25
+        '
+        Me.LabelControl25.Location = New System.Drawing.Point(300, 123)
+        Me.LabelControl25.Name = "LabelControl25"
+        Me.LabelControl25.Size = New System.Drawing.Size(41, 13)
+        Me.LabelControl25.TabIndex = 33
+        Me.LabelControl25.Text = "Footer 4"
+        '
+        'LabelControl26
+        '
+        Me.LabelControl26.Location = New System.Drawing.Point(14, 123)
+        Me.LabelControl26.Name = "LabelControl26"
+        Me.LabelControl26.Size = New System.Drawing.Size(41, 13)
+        Me.LabelControl26.TabIndex = 32
+        Me.LabelControl26.Text = "Footer 3"
+        '
+        'TxtF4
+        '
+        Me.TxtF4.EditValue = ""
+        Me.TxtF4.Location = New System.Drawing.Point(350, 120)
+        Me.TxtF4.Name = "TxtF4"
+        Me.TxtF4.Size = New System.Drawing.Size(230, 20)
+        Me.TxtF4.TabIndex = 31
+        '
+        'TxtF3
+        '
+        Me.TxtF3.EditValue = ""
+        Me.TxtF3.Location = New System.Drawing.Point(64, 120)
+        Me.TxtF3.Name = "TxtF3"
+        Me.TxtF3.Size = New System.Drawing.Size(230, 20)
+        Me.TxtF3.TabIndex = 30
+        '
+        'TxtF2
+        '
+        Me.TxtF2.EditValue = ""
+        Me.TxtF2.Location = New System.Drawing.Point(350, 94)
+        Me.TxtF2.Name = "TxtF2"
+        Me.TxtF2.Size = New System.Drawing.Size(230, 20)
+        Me.TxtF2.TabIndex = 29
+        '
+        'LabelControl27
+        '
+        Me.LabelControl27.Location = New System.Drawing.Point(300, 97)
+        Me.LabelControl27.Name = "LabelControl27"
+        Me.LabelControl27.Size = New System.Drawing.Size(41, 13)
+        Me.LabelControl27.TabIndex = 28
+        Me.LabelControl27.Text = "Footer 2"
+        '
+        'TxtF1
+        '
+        Me.TxtF1.EditValue = ""
+        Me.TxtF1.Location = New System.Drawing.Point(64, 94)
+        Me.TxtF1.Name = "TxtF1"
+        Me.TxtF1.Size = New System.Drawing.Size(230, 20)
+        Me.TxtF1.TabIndex = 26
+        '
+        'LabelControl28
+        '
+        Me.LabelControl28.Location = New System.Drawing.Point(14, 97)
+        Me.LabelControl28.Name = "LabelControl28"
+        Me.LabelControl28.Size = New System.Drawing.Size(41, 13)
+        Me.LabelControl28.TabIndex = 27
+        Me.LabelControl28.Text = "Footer 1"
+        '
+        'TxtH6
+        '
+        Me.TxtH6.EditValue = ""
+        Me.TxtH6.Location = New System.Drawing.Point(350, 68)
+        Me.TxtH6.Name = "TxtH6"
+        Me.TxtH6.Size = New System.Drawing.Size(230, 20)
+        Me.TxtH6.TabIndex = 25
+        '
+        'LabelControl24
+        '
+        Me.LabelControl24.Location = New System.Drawing.Point(300, 71)
+        Me.LabelControl24.Name = "LabelControl24"
+        Me.LabelControl24.Size = New System.Drawing.Size(34, 13)
+        Me.LabelControl24.TabIndex = 24
+        Me.LabelControl24.Text = "Closing"
+        '
+        'LabelControl23
+        '
+        Me.LabelControl23.Location = New System.Drawing.Point(14, 71)
+        Me.LabelControl23.Name = "LabelControl23"
+        Me.LabelControl23.Size = New System.Drawing.Size(44, 13)
+        Me.LabelControl23.TabIndex = 23
+        Me.LabelControl23.Text = "Header 5"
+        '
+        'TxtH5
+        '
+        Me.TxtH5.EditValue = ""
+        Me.TxtH5.Location = New System.Drawing.Point(64, 68)
+        Me.TxtH5.Name = "TxtH5"
+        Me.TxtH5.Size = New System.Drawing.Size(230, 20)
+        Me.TxtH5.TabIndex = 22
+        '
+        'LabelControl22
+        '
+        Me.LabelControl22.Location = New System.Drawing.Point(300, 45)
+        Me.LabelControl22.Name = "LabelControl22"
+        Me.LabelControl22.Size = New System.Drawing.Size(44, 13)
+        Me.LabelControl22.TabIndex = 21
+        Me.LabelControl22.Text = "Header 4"
+        '
+        'LabelControl21
+        '
+        Me.LabelControl21.Location = New System.Drawing.Point(14, 45)
+        Me.LabelControl21.Name = "LabelControl21"
+        Me.LabelControl21.Size = New System.Drawing.Size(44, 13)
+        Me.LabelControl21.TabIndex = 20
+        Me.LabelControl21.Text = "Header 3"
+        '
+        'TxtH4
+        '
+        Me.TxtH4.EditValue = ""
+        Me.TxtH4.Location = New System.Drawing.Point(350, 42)
+        Me.TxtH4.Name = "TxtH4"
+        Me.TxtH4.Size = New System.Drawing.Size(230, 20)
+        Me.TxtH4.TabIndex = 19
+        '
+        'TxtH3
+        '
+        Me.TxtH3.EditValue = ""
+        Me.TxtH3.Location = New System.Drawing.Point(64, 42)
+        Me.TxtH3.Name = "TxtH3"
+        Me.TxtH3.Size = New System.Drawing.Size(230, 20)
+        Me.TxtH3.TabIndex = 18
+        '
+        'TxtH2
+        '
+        Me.TxtH2.EditValue = ""
+        Me.TxtH2.Location = New System.Drawing.Point(350, 16)
+        Me.TxtH2.Name = "TxtH2"
+        Me.TxtH2.Size = New System.Drawing.Size(230, 20)
+        Me.TxtH2.TabIndex = 17
+        '
+        'LabelControl20
+        '
+        Me.LabelControl20.Location = New System.Drawing.Point(300, 19)
+        Me.LabelControl20.Name = "LabelControl20"
+        Me.LabelControl20.Size = New System.Drawing.Size(44, 13)
+        Me.LabelControl20.TabIndex = 16
+        Me.LabelControl20.Text = "Header 2"
+        '
+        'TxtH1
+        '
+        Me.TxtH1.EditValue = ""
+        Me.TxtH1.Location = New System.Drawing.Point(64, 16)
+        Me.TxtH1.Name = "TxtH1"
+        Me.TxtH1.Size = New System.Drawing.Size(230, 20)
+        Me.TxtH1.TabIndex = 9
+        '
+        'LabelControl19
+        '
+        Me.LabelControl19.Location = New System.Drawing.Point(14, 19)
+        Me.LabelControl19.Name = "LabelControl19"
+        Me.LabelControl19.Size = New System.Drawing.Size(44, 13)
+        Me.LabelControl19.TabIndex = 10
+        Me.LabelControl19.Text = "Header 1"
+        '
+        'XTPSync
+        '
+        Me.XTPSync.Controls.Add(Me.SplitContainerControl1)
+        Me.XTPSync.Name = "XTPSync"
+        Me.XTPSync.Size = New System.Drawing.Size(623, 265)
+        Me.XTPSync.Text = "Sync"
+        '
+        'SplitContainerControl1
+        '
+        Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainerControl1.Horizontal = False
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainerControl1.Name = "SplitContainerControl1"
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.BtnView)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.GCData)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.BtnSync)
+        Me.SplitContainerControl1.Panel1.Text = "Panel1"
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.GCLog)
+        Me.SplitContainerControl1.Panel2.Text = "Panel2"
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(623, 265)
+        Me.SplitContainerControl1.SplitterPosition = 147
+        Me.SplitContainerControl1.TabIndex = 0
+        Me.SplitContainerControl1.Text = "SplitContainerControl1"
+        '
+        'GCData
+        '
+        Me.GCData.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GCData.Location = New System.Drawing.Point(0, 0)
+        Me.GCData.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.GCData.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.GCData.MainView = Me.GVData
+        Me.GCData.Name = "GCData"
+        Me.GCData.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
+        Me.GCData.Size = New System.Drawing.Size(623, 127)
+        Me.GCData.TabIndex = 36
+        Me.GCData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVData})
+        '
+        'GVData
+        '
+        Me.GVData.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn4, Me.GridColumn5, Me.GridColumn7})
+        Me.GVData.GridControl = Me.GCData
+        Me.GVData.Name = "GVData"
+        Me.GVData.OptionsView.ShowGroupPanel = False
+        '
+        'GridColumn4
+        '
+        Me.GridColumn4.Caption = "Id"
+        Me.GridColumn4.FieldName = "id_sync_data"
+        Me.GridColumn4.Name = "GridColumn4"
+        Me.GridColumn4.OptionsColumn.AllowEdit = False
+        Me.GridColumn4.Visible = True
+        Me.GridColumn4.VisibleIndex = 0
+        '
+        'GridColumn5
+        '
+        Me.GridColumn5.Caption = "Data"
+        Me.GridColumn5.FieldName = "sync_data"
+        Me.GridColumn5.Name = "GridColumn5"
+        Me.GridColumn5.OptionsColumn.AllowEdit = False
+        Me.GridColumn5.Visible = True
+        Me.GridColumn5.VisibleIndex = 1
+        '
+        'GridColumn7
+        '
+        Me.GridColumn7.Caption = "Select"
+        Me.GridColumn7.ColumnEdit = Me.RepositoryItemCheckEdit1
+        Me.GridColumn7.FieldName = "is_select"
+        Me.GridColumn7.Name = "GridColumn7"
+        Me.GridColumn7.Visible = True
+        Me.GridColumn7.VisibleIndex = 2
+        '
+        'RepositoryItemCheckEdit1
+        '
+        Me.RepositoryItemCheckEdit1.AutoHeight = False
+        Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
+        Me.RepositoryItemCheckEdit1.ValueChecked = "Yes"
+        Me.RepositoryItemCheckEdit1.ValueUnchecked = "No"
+        '
+        'BtnSync
+        '
+        Me.BtnSync.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BtnSync.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSync.Appearance.ForeColor = System.Drawing.Color.White
+        Me.BtnSync.Appearance.Options.UseBackColor = True
+        Me.BtnSync.Appearance.Options.UseFont = True
+        Me.BtnSync.Appearance.Options.UseForeColor = True
+        Me.BtnSync.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.BtnSync.Location = New System.Drawing.Point(0, 127)
+        Me.BtnSync.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
+        Me.BtnSync.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
+        Me.BtnSync.LookAndFeel.SkinName = "Metropolis"
+        Me.BtnSync.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
+        Me.BtnSync.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.BtnSync.Name = "BtnSync"
+        Me.BtnSync.Size = New System.Drawing.Size(623, 20)
+        Me.BtnSync.TabIndex = 35
+        Me.BtnSync.Text = "Sync"
+        '
+        'BtnView
+        '
+        Me.BtnView.Appearance.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.BtnView.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnView.Appearance.ForeColor = System.Drawing.Color.White
+        Me.BtnView.Appearance.Options.UseBackColor = True
+        Me.BtnView.Appearance.Options.UseFont = True
+        Me.BtnView.Appearance.Options.UseForeColor = True
+        Me.BtnView.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.BtnView.Location = New System.Drawing.Point(0, 107)
+        Me.BtnView.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
+        Me.BtnView.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
+        Me.BtnView.LookAndFeel.SkinName = "Metropolis"
+        Me.BtnView.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
+        Me.BtnView.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.BtnView.Name = "BtnView"
+        Me.BtnView.Size = New System.Drawing.Size(623, 20)
+        Me.BtnView.TabIndex = 37
+        Me.BtnView.Text = "View Log"
+        '
+        'GCLog
+        '
+        Me.GCLog.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GCLog.Location = New System.Drawing.Point(0, 0)
+        Me.GCLog.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.GCLog.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.GCLog.MainView = Me.GVLog
+        Me.GCLog.Name = "GCLog"
+        Me.GCLog.Size = New System.Drawing.Size(623, 106)
+        Me.GCLog.TabIndex = 0
+        Me.GCLog.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVLog})
+        '
+        'GVLog
+        '
+        Me.GVLog.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn8, Me.GridColumn9, Me.GridColumn10})
+        Me.GVLog.GridControl = Me.GCLog
+        Me.GVLog.Name = "GVLog"
+        Me.GVLog.OptionsBehavior.Editable = False
+        Me.GVLog.OptionsView.ShowGroupPanel = False
+        '
+        'GridColumn8
+        '
+        Me.GridColumn8.Caption = "Time"
+        Me.GridColumn8.DisplayFormat.FormatString = "dd\/MM\/yyyy HH:mm:ss"
+        Me.GridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.GridColumn8.FieldName = "sync_time"
+        Me.GridColumn8.Name = "GridColumn8"
+        Me.GridColumn8.Visible = True
+        Me.GridColumn8.VisibleIndex = 0
+        '
+        'GridColumn9
+        '
+        Me.GridColumn9.Caption = "Status"
+        Me.GridColumn9.FieldName = "status"
+        Me.GridColumn9.Name = "GridColumn9"
+        Me.GridColumn9.Visible = True
+        Me.GridColumn9.VisibleIndex = 1
+        '
+        'GridColumn10
+        '
+        Me.GridColumn10.Caption = "Remark"
+        Me.GridColumn10.FieldName = "remark"
+        Me.GridColumn10.Name = "GridColumn10"
+        Me.GridColumn10.Visible = True
+        Me.GridColumn10.VisibleIndex = 2
+        '
         'PanelControl1
         '
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
@@ -648,184 +1015,9 @@ Partial Class FormUser
         Me.PanelControlBack.Size = New System.Drawing.Size(40, 45)
         Me.PanelControlBack.TabIndex = 5
         '
-        'TxtH1
+        'SplashScreenManager1
         '
-        Me.TxtH1.EditValue = ""
-        Me.TxtH1.Location = New System.Drawing.Point(64, 16)
-        Me.TxtH1.Name = "TxtH1"
-        Me.TxtH1.Size = New System.Drawing.Size(230, 20)
-        Me.TxtH1.TabIndex = 9
-        '
-        'LabelControl19
-        '
-        Me.LabelControl19.Location = New System.Drawing.Point(14, 19)
-        Me.LabelControl19.Name = "LabelControl19"
-        Me.LabelControl19.Size = New System.Drawing.Size(44, 13)
-        Me.LabelControl19.TabIndex = 10
-        Me.LabelControl19.Text = "Header 1"
-        '
-        'LabelControl20
-        '
-        Me.LabelControl20.Location = New System.Drawing.Point(300, 19)
-        Me.LabelControl20.Name = "LabelControl20"
-        Me.LabelControl20.Size = New System.Drawing.Size(44, 13)
-        Me.LabelControl20.TabIndex = 16
-        Me.LabelControl20.Text = "Header 2"
-        '
-        'TxtH2
-        '
-        Me.TxtH2.EditValue = ""
-        Me.TxtH2.Location = New System.Drawing.Point(350, 16)
-        Me.TxtH2.Name = "TxtH2"
-        Me.TxtH2.Size = New System.Drawing.Size(230, 20)
-        Me.TxtH2.TabIndex = 17
-        '
-        'TxtH3
-        '
-        Me.TxtH3.EditValue = ""
-        Me.TxtH3.Location = New System.Drawing.Point(64, 42)
-        Me.TxtH3.Name = "TxtH3"
-        Me.TxtH3.Size = New System.Drawing.Size(230, 20)
-        Me.TxtH3.TabIndex = 18
-        '
-        'TxtH4
-        '
-        Me.TxtH4.EditValue = ""
-        Me.TxtH4.Location = New System.Drawing.Point(350, 42)
-        Me.TxtH4.Name = "TxtH4"
-        Me.TxtH4.Size = New System.Drawing.Size(230, 20)
-        Me.TxtH4.TabIndex = 19
-        '
-        'LabelControl21
-        '
-        Me.LabelControl21.Location = New System.Drawing.Point(14, 45)
-        Me.LabelControl21.Name = "LabelControl21"
-        Me.LabelControl21.Size = New System.Drawing.Size(44, 13)
-        Me.LabelControl21.TabIndex = 20
-        Me.LabelControl21.Text = "Header 3"
-        '
-        'LabelControl22
-        '
-        Me.LabelControl22.Location = New System.Drawing.Point(300, 45)
-        Me.LabelControl22.Name = "LabelControl22"
-        Me.LabelControl22.Size = New System.Drawing.Size(44, 13)
-        Me.LabelControl22.TabIndex = 21
-        Me.LabelControl22.Text = "Header 4"
-        '
-        'TxtH5
-        '
-        Me.TxtH5.EditValue = ""
-        Me.TxtH5.Location = New System.Drawing.Point(64, 68)
-        Me.TxtH5.Name = "TxtH5"
-        Me.TxtH5.Size = New System.Drawing.Size(230, 20)
-        Me.TxtH5.TabIndex = 22
-        '
-        'LabelControl23
-        '
-        Me.LabelControl23.Location = New System.Drawing.Point(14, 71)
-        Me.LabelControl23.Name = "LabelControl23"
-        Me.LabelControl23.Size = New System.Drawing.Size(44, 13)
-        Me.LabelControl23.TabIndex = 23
-        Me.LabelControl23.Text = "Header 5"
-        '
-        'LabelControl24
-        '
-        Me.LabelControl24.Location = New System.Drawing.Point(300, 71)
-        Me.LabelControl24.Name = "LabelControl24"
-        Me.LabelControl24.Size = New System.Drawing.Size(34, 13)
-        Me.LabelControl24.TabIndex = 24
-        Me.LabelControl24.Text = "Closing"
-        '
-        'TxtH6
-        '
-        Me.TxtH6.EditValue = ""
-        Me.TxtH6.Location = New System.Drawing.Point(350, 68)
-        Me.TxtH6.Name = "TxtH6"
-        Me.TxtH6.Size = New System.Drawing.Size(230, 20)
-        Me.TxtH6.TabIndex = 25
-        '
-        'LabelControl25
-        '
-        Me.LabelControl25.Location = New System.Drawing.Point(300, 123)
-        Me.LabelControl25.Name = "LabelControl25"
-        Me.LabelControl25.Size = New System.Drawing.Size(41, 13)
-        Me.LabelControl25.TabIndex = 33
-        Me.LabelControl25.Text = "Footer 4"
-        '
-        'LabelControl26
-        '
-        Me.LabelControl26.Location = New System.Drawing.Point(14, 123)
-        Me.LabelControl26.Name = "LabelControl26"
-        Me.LabelControl26.Size = New System.Drawing.Size(41, 13)
-        Me.LabelControl26.TabIndex = 32
-        Me.LabelControl26.Text = "Footer 3"
-        '
-        'TxtF4
-        '
-        Me.TxtF4.EditValue = ""
-        Me.TxtF4.Location = New System.Drawing.Point(350, 120)
-        Me.TxtF4.Name = "TxtF4"
-        Me.TxtF4.Size = New System.Drawing.Size(230, 20)
-        Me.TxtF4.TabIndex = 31
-        '
-        'TxtF3
-        '
-        Me.TxtF3.EditValue = ""
-        Me.TxtF3.Location = New System.Drawing.Point(64, 120)
-        Me.TxtF3.Name = "TxtF3"
-        Me.TxtF3.Size = New System.Drawing.Size(230, 20)
-        Me.TxtF3.TabIndex = 30
-        '
-        'TxtF2
-        '
-        Me.TxtF2.EditValue = ""
-        Me.TxtF2.Location = New System.Drawing.Point(350, 94)
-        Me.TxtF2.Name = "TxtF2"
-        Me.TxtF2.Size = New System.Drawing.Size(230, 20)
-        Me.TxtF2.TabIndex = 29
-        '
-        'LabelControl27
-        '
-        Me.LabelControl27.Location = New System.Drawing.Point(300, 97)
-        Me.LabelControl27.Name = "LabelControl27"
-        Me.LabelControl27.Size = New System.Drawing.Size(41, 13)
-        Me.LabelControl27.TabIndex = 28
-        Me.LabelControl27.Text = "Footer 2"
-        '
-        'TxtF1
-        '
-        Me.TxtF1.EditValue = ""
-        Me.TxtF1.Location = New System.Drawing.Point(64, 94)
-        Me.TxtF1.Name = "TxtF1"
-        Me.TxtF1.Size = New System.Drawing.Size(230, 20)
-        Me.TxtF1.TabIndex = 26
-        '
-        'LabelControl28
-        '
-        Me.LabelControl28.Location = New System.Drawing.Point(14, 97)
-        Me.LabelControl28.Name = "LabelControl28"
-        Me.LabelControl28.Size = New System.Drawing.Size(41, 13)
-        Me.LabelControl28.TabIndex = 27
-        Me.LabelControl28.Text = "Footer 1"
-        '
-        'BtnSaveRc
-        '
-        Me.BtnSaveRc.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.BtnSaveRc.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSaveRc.Appearance.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveRc.Appearance.Options.UseBackColor = True
-        Me.BtnSaveRc.Appearance.Options.UseFont = True
-        Me.BtnSaveRc.Appearance.Options.UseForeColor = True
-        Me.BtnSaveRc.Location = New System.Drawing.Point(64, 146)
-        Me.BtnSaveRc.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
-        Me.BtnSaveRc.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
-        Me.BtnSaveRc.LookAndFeel.SkinName = "Metropolis"
-        Me.BtnSaveRc.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
-        Me.BtnSaveRc.LookAndFeel.UseDefaultLookAndFeel = False
-        Me.BtnSaveRc.Name = "BtnSaveRc"
-        Me.BtnSaveRc.Size = New System.Drawing.Size(58, 20)
-        Me.BtnSaveRc.TabIndex = 34
-        Me.BtnSaveRc.Text = "Save"
+        Me.SplashScreenManager1.ClosingDelay = 500
         '
         'FormUser
         '
@@ -870,6 +1062,24 @@ Partial Class FormUser
         CType(Me.TxtCompName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTPReceipt.ResumeLayout(False)
         Me.XTPReceipt.PerformLayout()
+        CType(Me.TxtF4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtF3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtF2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtF1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtH6.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtH5.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtH4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtH3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtH2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtH1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XTPSync.ResumeLayout(False)
+        CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainerControl1.ResumeLayout(False)
+        CType(Me.GCData, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GVData, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GCLog, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GVLog, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -879,16 +1089,6 @@ Partial Class FormUser
         Me.PanelControl3.ResumeLayout(False)
         Me.PanelControl3.PerformLayout()
         CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtH1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtH2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtH3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtH4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtH5.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtH6.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtF4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtF3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtF2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtF1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -964,4 +1164,20 @@ Partial Class FormUser
     Friend WithEvents LabelControl27 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TxtF1 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl28 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents XTPSync As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents SplitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
+    Friend WithEvents BtnSync As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents GCLog As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GVLog As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GCData As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GVData As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumn4 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn5 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn7 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
+    Friend WithEvents GridColumn8 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn9 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn10 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager
+    Friend WithEvents BtnView As DevExpress.XtraEditors.SimpleButton
 End Class
