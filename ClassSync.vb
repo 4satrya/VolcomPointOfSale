@@ -9,6 +9,7 @@ Public Class ClassSync
     Dim pass_main As String = ""
     Dim db_main As String = ""
     Public splash As String = "-1"
+    Dim is_reset_config As String = "-1"
 
     Public Sub New()
         Dim query As String = "SELECT * FROM tb_opt"
@@ -17,6 +18,7 @@ Public Class ClassSync
         username_main = data.Rows(0)("username_main").ToString
         pass_main = data.Rows(0)("pass_main").ToString
         db_main = data.Rows(0)("db_main").ToString
+        is_reset_config = data.Rows(0)("is_reset_config").ToString
     End Sub
 
     Public Sub syncCodeDet()
@@ -467,9 +469,11 @@ Public Class ClassSync
 
 
     Public Sub synchronize()
-        BackupCustomTable()
-        RestoreCustomTable()
-        startofSync()
+        If is_reset_config = "2" Then
+            BackupCustomTable()
+            RestoreCustomTable()
+            startofSync()
+        End If
     End Sub
 
     Public Sub BackupCustomTable()
