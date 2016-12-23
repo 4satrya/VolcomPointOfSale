@@ -70,6 +70,27 @@ Partial Class FormUser
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlBack = New DevExpress.XtraEditors.PanelControl()
+        Me.TxtH1 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl19 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl20 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtH2 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtH3 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtH4 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl21 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl22 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtH5 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl23 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl24 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtH6 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl25 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl26 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtF4 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtF3 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtF2 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl27 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtF1 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl28 = New DevExpress.XtraEditors.LabelControl()
+        Me.BtnSaveRc = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.XTCUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTCUser.SuspendLayout()
         Me.XTPRole.SuspendLayout()
@@ -89,6 +110,7 @@ Partial Class FormUser
         CType(Me.TxtOutletName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtTagline.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtCompName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XTPReceipt.SuspendLayout()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,6 +118,16 @@ Partial Class FormUser
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
         CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtH1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtH2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtH3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtH4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtH5.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtH6.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtF4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtF3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtF2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtF1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'XTCUser
@@ -458,6 +490,27 @@ Partial Class FormUser
         '
         'XTPReceipt
         '
+        Me.XTPReceipt.Controls.Add(Me.BtnSaveRc)
+        Me.XTPReceipt.Controls.Add(Me.LabelControl25)
+        Me.XTPReceipt.Controls.Add(Me.LabelControl26)
+        Me.XTPReceipt.Controls.Add(Me.TxtF4)
+        Me.XTPReceipt.Controls.Add(Me.TxtF3)
+        Me.XTPReceipt.Controls.Add(Me.TxtF2)
+        Me.XTPReceipt.Controls.Add(Me.LabelControl27)
+        Me.XTPReceipt.Controls.Add(Me.TxtF1)
+        Me.XTPReceipt.Controls.Add(Me.LabelControl28)
+        Me.XTPReceipt.Controls.Add(Me.TxtH6)
+        Me.XTPReceipt.Controls.Add(Me.LabelControl24)
+        Me.XTPReceipt.Controls.Add(Me.LabelControl23)
+        Me.XTPReceipt.Controls.Add(Me.TxtH5)
+        Me.XTPReceipt.Controls.Add(Me.LabelControl22)
+        Me.XTPReceipt.Controls.Add(Me.LabelControl21)
+        Me.XTPReceipt.Controls.Add(Me.TxtH4)
+        Me.XTPReceipt.Controls.Add(Me.TxtH3)
+        Me.XTPReceipt.Controls.Add(Me.TxtH2)
+        Me.XTPReceipt.Controls.Add(Me.LabelControl20)
+        Me.XTPReceipt.Controls.Add(Me.TxtH1)
+        Me.XTPReceipt.Controls.Add(Me.LabelControl19)
         Me.XTPReceipt.Name = "XTPReceipt"
         Me.XTPReceipt.Size = New System.Drawing.Size(623, 265)
         Me.XTPReceipt.Text = "Receipt"
@@ -595,6 +648,185 @@ Partial Class FormUser
         Me.PanelControlBack.Size = New System.Drawing.Size(40, 45)
         Me.PanelControlBack.TabIndex = 5
         '
+        'TxtH1
+        '
+        Me.TxtH1.EditValue = ""
+        Me.TxtH1.Location = New System.Drawing.Point(64, 16)
+        Me.TxtH1.Name = "TxtH1"
+        Me.TxtH1.Size = New System.Drawing.Size(230, 20)
+        Me.TxtH1.TabIndex = 9
+        '
+        'LabelControl19
+        '
+        Me.LabelControl19.Location = New System.Drawing.Point(14, 19)
+        Me.LabelControl19.Name = "LabelControl19"
+        Me.LabelControl19.Size = New System.Drawing.Size(44, 13)
+        Me.LabelControl19.TabIndex = 10
+        Me.LabelControl19.Text = "Header 1"
+        '
+        'LabelControl20
+        '
+        Me.LabelControl20.Location = New System.Drawing.Point(300, 19)
+        Me.LabelControl20.Name = "LabelControl20"
+        Me.LabelControl20.Size = New System.Drawing.Size(44, 13)
+        Me.LabelControl20.TabIndex = 16
+        Me.LabelControl20.Text = "Header 2"
+        '
+        'TxtH2
+        '
+        Me.TxtH2.EditValue = ""
+        Me.TxtH2.Location = New System.Drawing.Point(350, 16)
+        Me.TxtH2.Name = "TxtH2"
+        Me.TxtH2.Size = New System.Drawing.Size(230, 20)
+        Me.TxtH2.TabIndex = 17
+        '
+        'TxtH3
+        '
+        Me.TxtH3.EditValue = ""
+        Me.TxtH3.Location = New System.Drawing.Point(64, 42)
+        Me.TxtH3.Name = "TxtH3"
+        Me.TxtH3.Size = New System.Drawing.Size(230, 20)
+        Me.TxtH3.TabIndex = 18
+        '
+        'TxtH4
+        '
+        Me.TxtH4.EditValue = ""
+        Me.TxtH4.Location = New System.Drawing.Point(350, 42)
+        Me.TxtH4.Name = "TxtH4"
+        Me.TxtH4.Size = New System.Drawing.Size(230, 20)
+        Me.TxtH4.TabIndex = 19
+        '
+        'LabelControl21
+        '
+        Me.LabelControl21.Location = New System.Drawing.Point(14, 45)
+        Me.LabelControl21.Name = "LabelControl21"
+        Me.LabelControl21.Size = New System.Drawing.Size(44, 13)
+        Me.LabelControl21.TabIndex = 20
+        Me.LabelControl21.Text = "Header 3"
+        '
+        'LabelControl22
+        '
+        Me.LabelControl22.Location = New System.Drawing.Point(300, 45)
+        Me.LabelControl22.Name = "LabelControl22"
+        Me.LabelControl22.Size = New System.Drawing.Size(44, 13)
+        Me.LabelControl22.TabIndex = 21
+        Me.LabelControl22.Text = "Header 4"
+        '
+        'TxtH5
+        '
+        Me.TxtH5.EditValue = ""
+        Me.TxtH5.Location = New System.Drawing.Point(64, 68)
+        Me.TxtH5.Name = "TxtH5"
+        Me.TxtH5.Size = New System.Drawing.Size(230, 20)
+        Me.TxtH5.TabIndex = 22
+        '
+        'LabelControl23
+        '
+        Me.LabelControl23.Location = New System.Drawing.Point(14, 71)
+        Me.LabelControl23.Name = "LabelControl23"
+        Me.LabelControl23.Size = New System.Drawing.Size(44, 13)
+        Me.LabelControl23.TabIndex = 23
+        Me.LabelControl23.Text = "Header 5"
+        '
+        'LabelControl24
+        '
+        Me.LabelControl24.Location = New System.Drawing.Point(300, 71)
+        Me.LabelControl24.Name = "LabelControl24"
+        Me.LabelControl24.Size = New System.Drawing.Size(34, 13)
+        Me.LabelControl24.TabIndex = 24
+        Me.LabelControl24.Text = "Closing"
+        '
+        'TxtH6
+        '
+        Me.TxtH6.EditValue = ""
+        Me.TxtH6.Location = New System.Drawing.Point(350, 68)
+        Me.TxtH6.Name = "TxtH6"
+        Me.TxtH6.Size = New System.Drawing.Size(230, 20)
+        Me.TxtH6.TabIndex = 25
+        '
+        'LabelControl25
+        '
+        Me.LabelControl25.Location = New System.Drawing.Point(300, 123)
+        Me.LabelControl25.Name = "LabelControl25"
+        Me.LabelControl25.Size = New System.Drawing.Size(41, 13)
+        Me.LabelControl25.TabIndex = 33
+        Me.LabelControl25.Text = "Footer 4"
+        '
+        'LabelControl26
+        '
+        Me.LabelControl26.Location = New System.Drawing.Point(14, 123)
+        Me.LabelControl26.Name = "LabelControl26"
+        Me.LabelControl26.Size = New System.Drawing.Size(41, 13)
+        Me.LabelControl26.TabIndex = 32
+        Me.LabelControl26.Text = "Footer 3"
+        '
+        'TxtF4
+        '
+        Me.TxtF4.EditValue = ""
+        Me.TxtF4.Location = New System.Drawing.Point(350, 120)
+        Me.TxtF4.Name = "TxtF4"
+        Me.TxtF4.Size = New System.Drawing.Size(230, 20)
+        Me.TxtF4.TabIndex = 31
+        '
+        'TxtF3
+        '
+        Me.TxtF3.EditValue = ""
+        Me.TxtF3.Location = New System.Drawing.Point(64, 120)
+        Me.TxtF3.Name = "TxtF3"
+        Me.TxtF3.Size = New System.Drawing.Size(230, 20)
+        Me.TxtF3.TabIndex = 30
+        '
+        'TxtF2
+        '
+        Me.TxtF2.EditValue = ""
+        Me.TxtF2.Location = New System.Drawing.Point(350, 94)
+        Me.TxtF2.Name = "TxtF2"
+        Me.TxtF2.Size = New System.Drawing.Size(230, 20)
+        Me.TxtF2.TabIndex = 29
+        '
+        'LabelControl27
+        '
+        Me.LabelControl27.Location = New System.Drawing.Point(300, 97)
+        Me.LabelControl27.Name = "LabelControl27"
+        Me.LabelControl27.Size = New System.Drawing.Size(41, 13)
+        Me.LabelControl27.TabIndex = 28
+        Me.LabelControl27.Text = "Footer 2"
+        '
+        'TxtF1
+        '
+        Me.TxtF1.EditValue = ""
+        Me.TxtF1.Location = New System.Drawing.Point(64, 94)
+        Me.TxtF1.Name = "TxtF1"
+        Me.TxtF1.Size = New System.Drawing.Size(230, 20)
+        Me.TxtF1.TabIndex = 26
+        '
+        'LabelControl28
+        '
+        Me.LabelControl28.Location = New System.Drawing.Point(14, 97)
+        Me.LabelControl28.Name = "LabelControl28"
+        Me.LabelControl28.Size = New System.Drawing.Size(41, 13)
+        Me.LabelControl28.TabIndex = 27
+        Me.LabelControl28.Text = "Footer 1"
+        '
+        'BtnSaveRc
+        '
+        Me.BtnSaveRc.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BtnSaveRc.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSaveRc.Appearance.ForeColor = System.Drawing.Color.White
+        Me.BtnSaveRc.Appearance.Options.UseBackColor = True
+        Me.BtnSaveRc.Appearance.Options.UseFont = True
+        Me.BtnSaveRc.Appearance.Options.UseForeColor = True
+        Me.BtnSaveRc.Location = New System.Drawing.Point(64, 146)
+        Me.BtnSaveRc.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
+        Me.BtnSaveRc.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
+        Me.BtnSaveRc.LookAndFeel.SkinName = "Metropolis"
+        Me.BtnSaveRc.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
+        Me.BtnSaveRc.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.BtnSaveRc.Name = "BtnSaveRc"
+        Me.BtnSaveRc.Size = New System.Drawing.Size(58, 20)
+        Me.BtnSaveRc.TabIndex = 34
+        Me.BtnSaveRc.Text = "Save"
+        '
         'FormUser
         '
         Me.Appearance.Options.UseFont = True
@@ -636,6 +868,8 @@ Partial Class FormUser
         CType(Me.TxtOutletName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtTagline.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtCompName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XTPReceipt.ResumeLayout(False)
+        Me.XTPReceipt.PerformLayout()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -645,6 +879,16 @@ Partial Class FormUser
         Me.PanelControl3.ResumeLayout(False)
         Me.PanelControl3.PerformLayout()
         CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtH1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtH2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtH3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtH4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtH5.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtH6.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtF4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtF3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtF2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtF1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -699,4 +943,25 @@ Partial Class FormUser
     Friend WithEvents TxtUsername As DevExpress.XtraEditors.TextEdit
     Friend WithEvents TxtHost As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl15 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TxtH6 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl24 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl23 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TxtH5 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl22 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl21 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TxtH4 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtH3 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtH2 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl20 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TxtH1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl19 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents BtnSaveRc As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LabelControl25 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl26 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TxtF4 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtF3 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtF2 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl27 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TxtF1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl28 As DevExpress.XtraEditors.LabelControl
 End Class

@@ -24,10 +24,13 @@
 
 
     Private Sub TileItem10_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIExit.ItemClick
-        Close()
-        FormFront.info()
-        FormFront.Opacity = 100
-        FormFront.BringToFront()
+        Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to sign out your account?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+        If confirm = DialogResult.Yes Then
+            Close()
+            FormFront.info()
+            FormFront.Opacity = 100
+            FormFront.BringToFront()
+        End If
     End Sub
 
     Private Sub TileItem2_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIUser.ItemClick

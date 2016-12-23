@@ -29,6 +29,16 @@ Public Class FormUser
         TxtUsername.Text = dopt.Rows(0)("username_main").ToString
         TxtPass.Text = dopt.Rows(0)("pass_main").ToString
         TxtDB.Text = dopt.Rows(0)("db_main").ToString
+        TxtH1.Text = dopt.Rows(0)("header_1").ToString
+        TxtH2.Text = dopt.Rows(0)("header_2").ToString
+        TxtH3.Text = dopt.Rows(0)("header_3").ToString
+        TxtH4.Text = dopt.Rows(0)("header_4").ToString
+        TxtH5.Text = dopt.Rows(0)("header_5").ToString
+        TxtH6.Text = dopt.Rows(0)("header_closing").ToString
+        TxtF1.Text = dopt.Rows(0)("footer_1").ToString
+        TxtF2.Text = dopt.Rows(0)("footer_2").ToString
+        TxtF3.Text = dopt.Rows(0)("footer_3").ToString
+        TxtF4.Text = dopt.Rows(0)("footer_4").ToString
     End Sub
 
     Sub viewRole()
@@ -209,5 +219,34 @@ Public Class FormUser
         FormBlack.Close()
         BringToFront()
         Cursor = Cursors.Default
+    End Sub
+
+    Private Sub BtnSaveRc_Click(sender As Object, e As EventArgs) Handles BtnSaveRc.Click
+        Dim header_1 As String = addSlashes(TxtH1.Text)
+        Dim header_2 As String = addSlashes(TxtH2.Text)
+        Dim header_3 As String = addSlashes(TxtH3.Text)
+        Dim header_4 As String = addSlashes(TxtH4.Text)
+        Dim header_5 As String = addSlashes(TxtH5.Text)
+        Dim header_closing As String = addSlashes(TxtH6.Text)
+        Dim footer_1 As String = addSlashes(TxtF1.Text)
+        Dim footer_2 As String = addSlashes(TxtF2.Text)
+        Dim footer_3 As String = addSlashes(TxtF3.Text)
+        Dim footer_4 As String = addSlashes(TxtF4.Text)
+        Try
+            Dim query As String = "UPDATE tb_opt SET 
+            header_1  = '" + header_1 + "',
+            header_2  = '" + header_2 + "',
+            header_3  = '" + header_3 + "',
+            header_4  = '" + header_4 + "',
+            header_5  = '" + header_5 + "',
+            header_closing  = '" + header_closing + "',
+            footer_1  = '" + footer_1 + "',
+            footer_2  = '" + footer_2 + "',
+            footer_3  = '" + footer_3 + "',
+            footer_4  = '" + footer_4 + "' "
+            execute_non_query(query, True, "", "", "", "")
+        Catch ex As Exception
+            stopCustom(ex.ToString)
+        End Try
     End Sub
 End Class
