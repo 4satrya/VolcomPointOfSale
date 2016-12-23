@@ -25,6 +25,10 @@ Public Class FormUser
         TxtOutletName.Text = dopt.Rows(0)("outlet_name").ToString
         TxtOutletId.Text = dopt.Rows(0)("id_outlet").ToString
         TxtSupervisor.Text = dopt.Rows(0)("spv").ToString
+        TxtHost.Text = dopt.Rows(0)("host_main").ToString
+        TxtUsername.Text = dopt.Rows(0)("username_main").ToString
+        TxtPass.Text = dopt.Rows(0)("pass_main").ToString
+        TxtDB.Text = dopt.Rows(0)("db_main").ToString
     End Sub
 
     Sub viewRole()
@@ -151,5 +155,59 @@ Public Class FormUser
             SendMessage(Handle, WM_NCLBUTTONDOWN,
                HT_CAPTION, 0)
         End If
+    End Sub
+
+    Private Sub BtnSaveProfile_Click(sender As Object, e As EventArgs) Handles BtnSaveProfile.Click
+        Dim company_name As String = addSlashes(TxtCompName.Text)
+        Dim company_tagline As String = addSlashes(TxtTagline.Text)
+        Dim outlet_name As String = addSlashes(TxtOutletName.Text)
+        Dim id_outlet As String = addSlashes(TxtOutletId.Text)
+        Dim spv As String = addSlashes(TxtSupervisor.Text)
+        Try
+            Dim query As String = "UPDATE tb_opt SET 
+            company_name = '" + company_name + "',
+            company_tagline  = '" + company_tagline + "',
+            outlet_name = '" + outlet_name + "',
+            id_outlet ='" + id_outlet + "',
+            spv='" + spv + "' "
+            execute_non_query(query, True, "", "", "", "")
+        Catch ex As Exception
+            stopCustom(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub BtnSaveSvr_Click(sender As Object, e As EventArgs) Handles BtnSaveSvr.Click
+        Dim host_main As String = addSlashes(TxtHost.Text)
+        Dim username_main As String = addSlashes(TxtUsername.Text)
+        Dim pass_main As String = addSlashes(TxtPass.Text)
+        Dim db_main As String = addSlashes(TxtDB.Text)
+        Try
+            Dim query As String = "UPDATE tb_opt SET 
+            host_main = '" + host_main + "',
+            username_main  = '" + username_main + "',
+            pass_main = '" + pass_main + "',
+            db_main ='" + db_main + "' "
+            execute_non_query(query, True, "", "", "", "")
+        Catch ex As Exception
+            stopCustom(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub BtnOutlet_Click(sender As Object, e As EventArgs) Handles BtnOutlet.Click
+        Cursor = Cursors.WaitCursor
+        FormBlack.Show()
+        FormDept.ShowDialog()
+        FormBlack.Close()
+        BringToFront()
+        Cursor = Cursors.Default
+    End Sub
+
+    Private Sub BtnSPV_Click(sender As Object, e As EventArgs) Handles BtnSPV.Click
+        Cursor = Cursors.WaitCursor
+        FormBlack.Show()
+        FormEmp.ShowDialog()
+        FormBlack.Close()
+        BringToFront()
+        Cursor = Cursors.Default
     End Sub
 End Class

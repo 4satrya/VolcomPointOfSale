@@ -182,6 +182,18 @@
     <Compile Include="FormDatabase.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormDept.Designer.vb">
+      <DependentUpon>FormDept.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormDept.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmp.Designer.vb">
+      <DependentUpon>FormEmp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEmp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormFront.Designer.vb">
       <DependentUpon>FormFront.vb</DependentUpon>
     </Compile>
@@ -550,6 +562,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDatabase.resx">
       <DependentUpon>FormDatabase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDept.resx">
+      <DependentUpon>FormDept.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmp.resx">
+      <DependentUpon>FormEmp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFront.resx">
       <DependentUpon>FormFront.vb</DependentUpon>

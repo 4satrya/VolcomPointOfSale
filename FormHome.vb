@@ -25,6 +25,7 @@
 
     Private Sub TileItem10_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TIExit.ItemClick
         Close()
+        FormFront.info()
         FormFront.Opacity = 100
         FormFront.BringToFront()
     End Sub

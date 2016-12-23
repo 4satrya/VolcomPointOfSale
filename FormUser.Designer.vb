@@ -32,6 +32,16 @@ Partial Class FormUser
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.XTPServer = New DevExpress.XtraTab.XtraTabPage()
+        Me.BtnSaveSvr = New DevExpress.XtraEditors.SimpleButton()
+        Me.LabelControl18 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl17 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtDB = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtPass = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtUsername = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtHost = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl15 = New DevExpress.XtraEditors.LabelControl()
         Me.XTPProfile = New DevExpress.XtraTab.XtraTabPage()
         Me.BtnSPV = New DevExpress.XtraEditors.SimpleButton()
         Me.TxtSupervisor = New DevExpress.XtraEditors.TextEdit()
@@ -47,7 +57,6 @@ Partial Class FormUser
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.BtnSaveProfile = New DevExpress.XtraEditors.SimpleButton()
         Me.XTPReceipt = New DevExpress.XtraTab.XtraTabPage()
-        Me.XTPServer = New DevExpress.XtraTab.XtraTabPage()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
@@ -69,6 +78,11 @@ Partial Class FormUser
         Me.XTPUser.SuspendLayout()
         CType(Me.GCUser, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GVUser, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XTPServer.SuspendLayout()
+        CType(Me.TxtDB.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtPass.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtUsername.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtHost.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTPProfile.SuspendLayout()
         CType(Me.TxtSupervisor.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtOutletId.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -188,6 +202,108 @@ Partial Class FormUser
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 2
+        '
+        'XTPServer
+        '
+        Me.XTPServer.Controls.Add(Me.BtnSaveSvr)
+        Me.XTPServer.Controls.Add(Me.LabelControl18)
+        Me.XTPServer.Controls.Add(Me.LabelControl17)
+        Me.XTPServer.Controls.Add(Me.LabelControl16)
+        Me.XTPServer.Controls.Add(Me.TxtDB)
+        Me.XTPServer.Controls.Add(Me.TxtPass)
+        Me.XTPServer.Controls.Add(Me.TxtUsername)
+        Me.XTPServer.Controls.Add(Me.TxtHost)
+        Me.XTPServer.Controls.Add(Me.LabelControl15)
+        Me.XTPServer.Name = "XTPServer"
+        Me.XTPServer.Size = New System.Drawing.Size(623, 265)
+        Me.XTPServer.Text = "Server"
+        '
+        'BtnSaveSvr
+        '
+        Me.BtnSaveSvr.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BtnSaveSvr.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSaveSvr.Appearance.ForeColor = System.Drawing.Color.White
+        Me.BtnSaveSvr.Appearance.Options.UseBackColor = True
+        Me.BtnSaveSvr.Appearance.Options.UseFont = True
+        Me.BtnSaveSvr.Appearance.Options.UseForeColor = True
+        Me.BtnSaveSvr.Location = New System.Drawing.Point(74, 117)
+        Me.BtnSaveSvr.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
+        Me.BtnSaveSvr.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
+        Me.BtnSaveSvr.LookAndFeel.SkinName = "Metropolis"
+        Me.BtnSaveSvr.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
+        Me.BtnSaveSvr.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.BtnSaveSvr.Name = "BtnSaveSvr"
+        Me.BtnSaveSvr.Size = New System.Drawing.Size(58, 20)
+        Me.BtnSaveSvr.TabIndex = 15
+        Me.BtnSaveSvr.Text = "Save"
+        '
+        'LabelControl18
+        '
+        Me.LabelControl18.Location = New System.Drawing.Point(14, 94)
+        Me.LabelControl18.Name = "LabelControl18"
+        Me.LabelControl18.Size = New System.Drawing.Size(46, 13)
+        Me.LabelControl18.TabIndex = 14
+        Me.LabelControl18.Text = "Database"
+        '
+        'LabelControl17
+        '
+        Me.LabelControl17.Location = New System.Drawing.Point(14, 68)
+        Me.LabelControl17.Name = "LabelControl17"
+        Me.LabelControl17.Size = New System.Drawing.Size(46, 13)
+        Me.LabelControl17.TabIndex = 13
+        Me.LabelControl17.Text = "Password"
+        '
+        'LabelControl16
+        '
+        Me.LabelControl16.Location = New System.Drawing.Point(14, 42)
+        Me.LabelControl16.Name = "LabelControl16"
+        Me.LabelControl16.Size = New System.Drawing.Size(48, 13)
+        Me.LabelControl16.TabIndex = 12
+        Me.LabelControl16.Text = "Username"
+        '
+        'TxtDB
+        '
+        Me.TxtDB.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtDB.Location = New System.Drawing.Point(74, 91)
+        Me.TxtDB.Name = "TxtDB"
+        Me.TxtDB.Size = New System.Drawing.Size(538, 20)
+        Me.TxtDB.TabIndex = 11
+        '
+        'TxtPass
+        '
+        Me.TxtPass.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtPass.Location = New System.Drawing.Point(74, 65)
+        Me.TxtPass.Name = "TxtPass"
+        Me.TxtPass.Size = New System.Drawing.Size(538, 20)
+        Me.TxtPass.TabIndex = 10
+        '
+        'TxtUsername
+        '
+        Me.TxtUsername.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtUsername.Location = New System.Drawing.Point(74, 39)
+        Me.TxtUsername.Name = "TxtUsername"
+        Me.TxtUsername.Size = New System.Drawing.Size(538, 20)
+        Me.TxtUsername.TabIndex = 9
+        '
+        'TxtHost
+        '
+        Me.TxtHost.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtHost.Location = New System.Drawing.Point(74, 13)
+        Me.TxtHost.Name = "TxtHost"
+        Me.TxtHost.Size = New System.Drawing.Size(538, 20)
+        Me.TxtHost.TabIndex = 7
+        '
+        'LabelControl15
+        '
+        Me.LabelControl15.Location = New System.Drawing.Point(14, 16)
+        Me.LabelControl15.Name = "LabelControl15"
+        Me.LabelControl15.Size = New System.Drawing.Size(22, 13)
+        Me.LabelControl15.TabIndex = 8
+        Me.LabelControl15.Text = "Host"
         '
         'XTPProfile
         '
@@ -345,12 +461,6 @@ Partial Class FormUser
         Me.XTPReceipt.Name = "XTPReceipt"
         Me.XTPReceipt.Size = New System.Drawing.Size(623, 265)
         Me.XTPReceipt.Text = "Receipt"
-        '
-        'XTPServer
-        '
-        Me.XTPServer.Name = "XTPServer"
-        Me.XTPServer.Size = New System.Drawing.Size(623, 265)
-        Me.XTPServer.Text = "Server"
         '
         'PanelControl1
         '
@@ -513,6 +623,12 @@ Partial Class FormUser
         Me.XTPUser.ResumeLayout(False)
         CType(Me.GCUser, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GVUser, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XTPServer.ResumeLayout(False)
+        Me.XTPServer.PerformLayout()
+        CType(Me.TxtDB.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtPass.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtUsername.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtHost.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTPProfile.ResumeLayout(False)
         Me.XTPProfile.PerformLayout()
         CType(Me.TxtSupervisor.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -574,4 +690,13 @@ Partial Class FormUser
     Friend WithEvents BtnSPV As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents TxtSupervisor As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl14 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents BtnSaveSvr As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LabelControl18 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl17 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl16 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TxtDB As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtPass As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtUsername As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtHost As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl15 As DevExpress.XtraEditors.LabelControl
 End Class
