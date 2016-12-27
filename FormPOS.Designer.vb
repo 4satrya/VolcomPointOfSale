@@ -264,7 +264,7 @@ Partial Class FormPOS
         'GridColumn4
         '
         Me.GridColumn4.Caption = "Price"
-        Me.GridColumn4.DisplayFormat.FormatString = "N2"
+        Me.GridColumn4.DisplayFormat.FormatString = "N0"
         Me.GridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.GridColumn4.FieldName = "price"
         Me.GridColumn4.Name = "GridColumn4"
@@ -287,11 +287,11 @@ Partial Class FormPOS
         'GridColumn6
         '
         Me.GridColumn6.Caption = "Amount"
-        Me.GridColumn6.DisplayFormat.FormatString = "{0:n2}"
+        Me.GridColumn6.DisplayFormat.FormatString = "{0:n0}"
         Me.GridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.GridColumn6.FieldName = "amount"
         Me.GridColumn6.Name = "GridColumn6"
-        Me.GridColumn6.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", "{0:n2}")})
+        Me.GridColumn6.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "amount", "{0:n0}")})
         Me.GridColumn6.UnboundExpression = "[price] * [qty]"
         Me.GridColumn6.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
         Me.GridColumn6.Visible = True

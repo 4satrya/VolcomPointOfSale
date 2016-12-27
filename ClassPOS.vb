@@ -653,4 +653,19 @@
         End If
     End Sub
 
+
+    Sub vfdDisplayText(ByVal line1 As String, ByVal line2 As String)
+        Dim sp As New IO.Ports.SerialPort()
+
+        sp.PortName = "COM4"
+        sp.BaudRate = 9600
+        sp.Open()
+        sp.Write(Convert.ToString(ChrW(12)))
+        sp.WriteLine(line1)
+        sp.WriteLine(ChrW(13) & line2)
+        sp.Close()
+        sp.Dispose()
+        sp = Nothing
+    End Sub
+
 End Class

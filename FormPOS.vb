@@ -152,7 +152,7 @@
     Sub payment()
         Cursor = Cursors.WaitCursor
         resetPayment()
-        showDisplay("T  o  t  a  l  :", "-", TxtTotal.Text)
+        showDisplay("Total  :", "-", TxtTotal.Text)
         TxtItemCode.Enabled = False
         TxtDiscount.Enabled = True
         TxtDiscount.Focus()
@@ -547,6 +547,8 @@
             LabelInfoLeft.Text = name.Substring(0, 13) + " @" + qty.ToString
         End If
         LabelControlPrice.Text = price.ToString
+        Dim vpos As New ClassPOS()
+        vpos.vfdDisplayText(LabelInfoLeft.Text, LabelControlPrice.Text)
     End Sub
 
     Private Sub TxtQty_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtQty.KeyDown
@@ -710,7 +712,7 @@
                     TxtDiscount.Focus()
                 End If
             End If
-            showDisplay("T  o  t  a  l  :", "-", TxtTotal.Text)
+            showDisplay("Total  :", "-", TxtTotal.Text)
         End If
     End Sub
 

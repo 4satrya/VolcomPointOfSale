@@ -54,7 +54,7 @@ Public Class FormFront
         My.Application.ChangeCulture("en-US")
         My.Application.Culture.NumberFormat.NumberDecimalSeparator = ","
         My.Application.Culture.NumberFormat.NumberGroupSeparator = "."
-        syncProcess()
+        'syncProcess()
     End Sub
 
     Sub syncProcess()
@@ -72,6 +72,18 @@ Public Class FormFront
 
     Private Sub FormFront_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.F1 Then
+            '20x2
+            Dim sp As New IO.Ports.SerialPort()
+
+            sp.PortName = "COM4"
+            sp.BaudRate = 9600
+            sp.Open()
+            sp.WriteLine("                                        ")
+            sp.Close()
+            sp.Dispose()
+            sp = Nothing
+
+
             'Cursor = Cursors.WaitCursor
             'Dim sy As New ClassSync()
             'sy.BackupCustomTable()
@@ -86,10 +98,17 @@ Public Class FormFront
             'Tool.PreviewForm.FormBorderStyle = FormBorderStyle.None
             'Tool.ShowPreviewDialog()
         ElseIf e.KeyCode = Keys.F2 Then
-            'Cursor = Cursors.WaitCursor
-            'Dim sy As New ClassSync()
-            'sy.RestoreCustomTable()
-            'Cursor = Cursors.Default
+            Dim sp As New IO.Ports.SerialPort()
+
+            sp.PortName = "COM4"
+            sp.BaudRate = 9600
+            sp.Open()
+            sp.Write(Convert.ToString(ChrW(12)))
+            sp.WriteLine("1st line")
+            sp.WriteLine(ChrW(13) & "2nd line")
+            sp.Close()
+            sp.Dispose()
+            sp = Nothing
         End If
     End Sub
 
@@ -143,6 +162,10 @@ Public Class FormFront
         End If
         LabelInfo.Text = str
         LabelCsh.Text = csh
+
+        'vfd
+        Dim vpos As New ClassPOS()
+        vpos.vfdDisplayText("WELCOME TO", data.Rows(0)("outlet_name").ToString)
     End Sub
 
     Private Sub PISync_Click(sender As Object, e As EventArgs) Handles PISync.Click
