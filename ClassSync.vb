@@ -181,7 +181,7 @@ Public Class ClassSync
                 JOIN tb_opt o
                 INNER JOIN tb_m_comp nml ON nml.id_comp = o.acc_normal
                 INNER JOIN tb_m_comp sale ON sale.id_comp = o.acc_sale
-            ) src ON src.id_product = i.id_product 
+            ) src ON src.id_product = i.id_product AND src.id_design_cat = i.id_design_cat
             SET i.id_size = src.id_size, 
             i.id_class = src.id_class, 
             i.id_color = src.id_color, 
@@ -214,7 +214,7 @@ Public Class ClassSync
 	            JOIN tb_opt o
 	            INNER JOIN tb_m_comp nml ON nml.id_comp = o.acc_normal
 	            INNER JOIN tb_m_comp sale ON sale.id_comp = o.acc_sale
-            ) ix ON ix.id_product = i.id_product
+            ) ix ON ix.id_product = i.id_product AND ix.id_design_cat = i.id_design_cat
             WHERE ISNULL(i.id_item)  "
             execute_non_query(qins_col, True, "", "", "", "")
         Catch ex As Exception
