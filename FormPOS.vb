@@ -487,7 +487,7 @@
             Else
                 Dim code As String = TxtItemCode.Text
                 Dim i As New ClassItem()
-                Dim query As String = i.queryMain("AND i.is_active=1 AND i.item_code='" + code + "' ", "1", False)
+                Dim query As String = i.queryMainUpd("AND i.is_active=1 AND i.item_code='" + code + "' ")
                 Dim dt As DataTable = execute_query(query, -1, True, "", "", "", "")
                 If dt.Rows.Count > 0 Then
                     'Dim qty_avail As Decimal = dt.Rows(0)("qty_avl")

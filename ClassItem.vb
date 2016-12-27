@@ -37,6 +37,29 @@
         Return query
     End Function
 
+    Public Function queryMainUpd(ByVal condition As String) As String
+        'dengan harga terbaru
+        If condition <> "-1" Then
+            condition = condition
+        Else
+            condition = ""
+        End If
+
+        Dim query As String = "SELECT * FROM( "
+        query += "SELECT i.id_item, i.item_code, i.item_name, CONCAT(i.item_code,' - ', i.item_name) AS `item`, 
+        i.id_comp_sup, i.id_so_type,
+        i.id_size, s.size, i.id_class, cls.class_display, cls.class, i.id_color, col.color, i.price, i.price_date, i.comm, i.id_product, i.is_active
+        FROM tb_item i 
+        INNER JOIN tb_size s ON s.id_size = i.id_size
+        INNER JOIN tb_color col ON col.id_color = i.id_color
+        INNER JOIN tb_class cls ON cls.id_class = i.id_class 
+        WHERE i.id_item>0 "
+        query += condition + " "
+        query += "ORDER BY i.last_updated DESC 
+        ) a GROUP BY a.item_code "
+        Return query
+    End Function
+
     Sub syncItem()
         Dim query As String = "CALL get_product()"
         execute_non_query(query, True, "", "", "", "")
