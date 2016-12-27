@@ -165,7 +165,7 @@ Public Class FormFront
 
         'vfd
         Dim vpos As New ClassPOS()
-        vpos.vfdDisplayText("WELCOME TO", data.Rows(0)("outlet_name").ToString)
+        vpos.vfdDisplayText("WELCOME", data.Rows(0)("outlet_name").ToString)
     End Sub
 
     Private Sub PISync_Click(sender As Object, e As EventArgs) Handles PISync.Click

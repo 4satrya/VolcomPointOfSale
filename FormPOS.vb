@@ -547,8 +547,49 @@
             LabelInfoLeft.Text = name.Substring(0, 13) + " @" + qty.ToString
         End If
         LabelControlPrice.Text = price.ToString
+
+        'vdf
         Dim vpos As New ClassPOS()
-        vpos.vfdDisplayText(LabelInfoLeft.Text, LabelControlPrice.Text)
+        If qty = "-" Then
+            Dim max_val As Integer = 18
+            Dim val As String = LabelControlPrice.Text
+            If val.Length < max_val Then
+                For a = 1 To (max_val - val.Length)
+                    val = " " + val
+                Next
+            Else
+                val = val
+            End If
+            vpos.vfdDisplayText(name.ToString, "RP" + val)
+        Else
+            Dim max_qty As Integer = 3
+            Dim number_qty As String = qty
+            If number_qty.Length < max_qty Then
+                For c = 1 To (max_qty - number_qty.Length)
+                    number_qty += " "
+                Next
+            Else
+                number_qty = number_qty
+            End If
+
+            Dim max_val As Integer = 11
+            Dim val As String = LabelControlPrice.Text
+            If val.Length < max_val Then
+                For a = 1 To (max_val - val.Length)
+                    val = " " + val
+                Next
+            Else
+                val = val
+            End If
+
+            Dim prod_name As String = name
+            If prod_name.Length > 20 Then
+                prod_name = name.Substring(0, 19)
+            End If
+            vpos.vfdDisplayText(prod_name, "QTY:" + number_qty + "RP" + val)
+        End If
+
+
     End Sub
 
     Private Sub TxtQty_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtQty.KeyDown
@@ -866,6 +907,9 @@
             'print
             Dim prn As New ClassPOS()
             prn.printPos(id, False)
+
+            'vfd
+            showDisplay("THANK YOU", "-", "HAVE A NICE DAY")
 
             TxtSales.Enabled = True
             TxtSales.Focus()
