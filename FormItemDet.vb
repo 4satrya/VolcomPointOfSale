@@ -5,6 +5,7 @@
 
     Private Sub FormItemDet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         viewSize()
+        viewCat()
         viewColor()
         viewClass()
         viewSupp()
@@ -16,6 +17,11 @@
     Sub viewSize()
         Dim query As String = "SELECT * FROM tb_size ORDER BY size ASC "
         viewSearchLookupQuery(SLESize, query, "id_size", "size", "id_size")
+    End Sub
+
+    Sub viewCat()
+        Dim query As String = "SELECT * FROM tb_lookup_design_cat ORDER BY design_cat ASC "
+        viewSearchLookupQuery(SLECat, query, "id_design_cat", "design_cat", "id_design_cat")
     End Sub
 
     Sub viewColor()
@@ -31,7 +37,7 @@
 
     Sub viewSupp()
         Dim supp As New ClassComp()
-        Dim query As String = supp.queryMain("AND comp.id_comp_cat=1 ", "1", False)
+        Dim query As String = supp.queryMain("-1", "1", False)
         viewSearchLookupQuery(SLESupplier, query, "id_comp", "comp", "id_comp")
     End Sub
 
@@ -51,6 +57,7 @@
             SLEColor.EditValue = data.Rows(0)("id_color").ToString
             SLEClass.EditValue = data.Rows(0)("id_class").ToString
             SLESize.EditValue = data.Rows(0)("id_size").ToString
+            SLECat.EditValue = data.Rows(0)("id_design_cat").ToString
             SLEType.EditValue = data.Rows(0)("id_so_type").ToString
             SLESupplier.EditValue = data.Rows(0)("id_comp_sup").ToString
             TxtComm.EditValue = data.Rows(0)("comm")
@@ -96,6 +103,7 @@
         Dim item_name As String = addSlashes(TxtDesc.Text)
         Dim price As String = decimalSQL(TxtPrice.EditValue.ToString)
         Dim id_size As String = SLESize.EditValue.ToString
+        Dim id_design_cat As String = SLECat.EditValue.ToString
         Dim id_color As String = SLEColor.EditValue.ToString
         Dim id_class As String = SLEClass.EditValue.ToString
         Dim id_so_type As String = SLEType.EditValue.ToString
@@ -130,8 +138,8 @@
             Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save changes?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
             If confirm = DialogResult.Yes Then
                 If action = "ins" Then
-                    Dim query As String = "INSERT INTO tb_item(item_code, item_name, id_size, price, price_date, id_color, id_class, id_so_type, id_comp_sup, comm, is_active) 
-                                           VALUES('" + item_code + "', '" + item_name + "', '" + id_size + "','" + price + "', NOW(), '" + id_color + "', '" + id_class + "', '" + id_so_type + "', '" + id_comp_sup + "', '" + comm + "', '" + is_active + "'); SELECT LAST_INSERT_ID(); "
+                    Dim query As String = "INSERT INTO tb_item(item_code, item_name, id_size, id_design_cat, price, price_date, id_color, id_class, id_so_type, id_comp_sup, comm, is_active) 
+                                           VALUES('" + item_code + "', '" + item_name + "', '" + id_size + "', '" + id_design_cat + "','" + price + "', NOW(), '" + id_color + "', '" + id_class + "', '" + id_so_type + "', '" + id_comp_sup + "', '" + comm + "', '" + is_active + "'); SELECT LAST_INSERT_ID(); "
                     id = execute_query(query, 0, True, "", "", "", "")
 
                     FormItem.viewItem()
@@ -141,7 +149,7 @@
                     'actionLoad()
                 Else
                     Dim query As String = "UPDATE tb_item SET item_code='" + item_code + "', 
-                    item_name='" + item_name + "', id_size='" + id_size + "', 
+                    item_name='" + item_name + "', id_size='" + id_size + "', id_design_cat ='" + id_design_cat + "', 
                     id_color='" + id_color + "', id_class='" + id_class + "', id_so_type='" + id_so_type + "', id_comp_sup='" + id_comp_sup + "', comm='" + comm + "', is_active='" + is_active + "' "
                     If price <> old_price Then
                         query += ", price='" + price + "', price_date=NOW() "
@@ -212,8 +220,8 @@
 
     Private Sub SLESize_KeyDown(sender As Object, e As KeyEventArgs) Handles SLESize.KeyDown
         If e.KeyCode = Keys.Enter Then
-            SLEType.Focus()
-            SLEType.ShowPopup()
+            SLECat.Focus()
+            SLECat.ShowPopup()
         End If
     End Sub
 
@@ -291,5 +299,16 @@
 
     Private Sub CEActive_CheckedChanged(sender As Object, e As EventArgs) Handles CEActive.CheckedChanged
 
+    End Sub
+
+    Private Sub SLESize_EditValueChanged(sender As Object, e As EventArgs) Handles SLESize.EditValueChanged
+
+    End Sub
+
+    Private Sub SLECat_KeyDown(sender As Object, e As KeyEventArgs) Handles SLECat.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SLEType.Focus()
+            SLEType.ShowPopup()
+        End If
     End Sub
 End Class

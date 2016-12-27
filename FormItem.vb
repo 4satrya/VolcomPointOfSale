@@ -19,6 +19,11 @@
     Sub edit()
         If GVItem.FocusedRowHandle >= 0 Then
             ' FormBlack.Show()
+            Dim id_product As String = GVItem.GetFocusedRowCellValue("id_product").ToString
+            If id_product <> "" Then
+                FormItemDet.BtnSave.Enabled = False
+            End If
+            FormItemDet.GroupControl1.Enabled = False
             FormItemDet.action = "upd"
             FormItemDet.id = GVItem.GetFocusedRowCellValue("id_item").ToString
             FormItemDet.ShowDialog()

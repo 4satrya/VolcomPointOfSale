@@ -71,6 +71,11 @@ Partial Class FormItemDet
         Me.GVPrice = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
+        Me.SLECat = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.GridView5 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.PanelControlBottom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlBottom.SuspendLayout()
         CType(Me.CEActive.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,6 +105,8 @@ Partial Class FormItemDet
         Me.XTPHist.SuspendLayout()
         CType(Me.GCPrice, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GVPrice, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SLECat.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelControlBottom
@@ -197,14 +204,14 @@ Partial Class FormItemDet
         '
         'SLESize
         '
-        Me.SLESize.Location = New System.Drawing.Point(505, 38)
+        Me.SLESize.Location = New System.Drawing.Point(450, 38)
         Me.SLESize.Name = "SLESize"
         Me.SLESize.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SLESize.Properties.Appearance.Options.UseFont = True
         Me.SLESize.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.SLESize.Properties.ShowClearButton = False
         Me.SLESize.Properties.View = Me.SearchLookUpEdit1View
-        Me.SLESize.Size = New System.Drawing.Size(123, 20)
+        Me.SLESize.Size = New System.Drawing.Size(57, 20)
         Me.SLESize.TabIndex = 2
         '
         'SearchLookUpEdit1View
@@ -232,7 +239,7 @@ Partial Class FormItemDet
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(479, 41)
+        Me.LabelControl4.Location = New System.Drawing.Point(424, 41)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(20, 13)
         Me.LabelControl4.TabIndex = 10
@@ -241,6 +248,8 @@ Partial Class FormItemDet
         'GroupControl1
         '
         Me.GroupControl1.CaptionLocation = DevExpress.Utils.Locations.Left
+        Me.GroupControl1.Controls.Add(Me.SLECat)
+        Me.GroupControl1.Controls.Add(Me.LabelControl9)
         Me.GroupControl1.Controls.Add(Me.SLESupplier)
         Me.GroupControl1.Controls.Add(Me.LabelControl8)
         Me.GroupControl1.Controls.Add(Me.SLEType)
@@ -355,7 +364,7 @@ Partial Class FormItemDet
         Me.SLEClass.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.SLEClass.Properties.ShowClearButton = False
         Me.SLEClass.Properties.View = Me.GridView2
-        Me.SLEClass.Size = New System.Drawing.Size(142, 20)
+        Me.SLEClass.Size = New System.Drawing.Size(87, 20)
         Me.SLEClass.TabIndex = 14
         '
         'GridView2
@@ -606,6 +615,49 @@ Partial Class FormItemDet
         Me.GridColumn12.Visible = True
         Me.GridColumn12.VisibleIndex = 1
         '
+        'LabelControl9
+        '
+        Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl9.Location = New System.Drawing.Point(513, 41)
+        Me.LabelControl9.Name = "LabelControl9"
+        Me.LabelControl9.Size = New System.Drawing.Size(46, 13)
+        Me.LabelControl9.TabIndex = 20
+        Me.LabelControl9.Text = "Category"
+        '
+        'SLECat
+        '
+        Me.SLECat.Location = New System.Drawing.Point(561, 38)
+        Me.SLECat.Name = "SLECat"
+        Me.SLECat.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SLECat.Properties.Appearance.Options.UseFont = True
+        Me.SLECat.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.SLECat.Properties.ShowClearButton = False
+        Me.SLECat.Properties.View = Me.GridView5
+        Me.SLECat.Size = New System.Drawing.Size(67, 20)
+        Me.SLECat.TabIndex = 21
+        '
+        'GridView5
+        '
+        Me.GridView5.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn13, Me.GridColumn14})
+        Me.GridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.GridView5.Name = "GridView5"
+        Me.GridView5.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView5.OptionsView.ShowGroupPanel = False
+        '
+        'GridColumn13
+        '
+        Me.GridColumn13.Caption = "Id"
+        Me.GridColumn13.FieldName = "id_design_cat"
+        Me.GridColumn13.Name = "GridColumn13"
+        '
+        'GridColumn14
+        '
+        Me.GridColumn14.Caption = "Category"
+        Me.GridColumn14.FieldName = "design_cat"
+        Me.GridColumn14.Name = "GridColumn14"
+        Me.GridColumn14.Visible = True
+        Me.GridColumn14.VisibleIndex = 0
+        '
         'FormItemDet
         '
         Me.Appearance.Options.UseFont = True
@@ -655,6 +707,8 @@ Partial Class FormItemDet
         Me.XTPHist.ResumeLayout(False)
         CType(Me.GCPrice, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GVPrice, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SLECat.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -710,4 +764,9 @@ Partial Class FormItemDet
     Friend WithEvents GridColumn6 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn11 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn12 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents SLECat As DevExpress.XtraEditors.SearchLookUpEdit
+    Friend WithEvents GridView5 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumn13 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn14 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

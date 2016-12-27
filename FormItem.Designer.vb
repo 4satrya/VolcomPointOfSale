@@ -51,9 +51,11 @@ Partial Class FormItem
         Me.GridColumnSize = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnActive = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnIsActive = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnSupp = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl5 = New DevExpress.XtraEditors.PanelControl()
+        Me.GridColumnCat = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -262,15 +264,15 @@ Partial Class FormItem
         '
         'GVItem
         '
-        Me.GVItem.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnIdItem, Me.GridColumnCode, Me.GridColumnDescription, Me.GridColumnPrice, Me.GridColumnSize, Me.GridColumnActive, Me.GridColumnIsActive})
+        Me.GVItem.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnIdItem, Me.GridColumnCode, Me.GridColumnDescription, Me.GridColumnPrice, Me.GridColumnSize, Me.GridColumnActive, Me.GridColumnIsActive, Me.GridColumnSupp, Me.GridColumnCat})
         Me.GVItem.GridControl = Me.GCItem
-        Me.GVItem.GroupCount = 1
+        Me.GVItem.GroupCount = 2
         Me.GVItem.Name = "GVItem"
         Me.GVItem.OptionsBehavior.AutoExpandAllGroups = True
         Me.GVItem.OptionsBehavior.Editable = False
         Me.GVItem.OptionsFind.AlwaysVisible = True
         Me.GVItem.OptionsView.ShowGroupPanel = False
-        Me.GVItem.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.GridColumnDescription, DevExpress.Data.ColumnSortOrder.Ascending)})
+        Me.GVItem.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.GridColumnSupp, DevExpress.Data.ColumnSortOrder.Ascending), New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.GridColumnDescription, DevExpress.Data.ColumnSortOrder.Ascending)})
         '
         'GridColumnIdItem
         '
@@ -320,13 +322,21 @@ Partial Class FormItem
         Me.GridColumnActive.UnboundExpression = "Iif([is_active] = 1, 'Active', 'Not Active')"
         Me.GridColumnActive.UnboundType = DevExpress.Data.UnboundColumnType.[String]
         Me.GridColumnActive.Visible = True
-        Me.GridColumnActive.VisibleIndex = 3
+        Me.GridColumnActive.VisibleIndex = 4
         '
         'GridColumnIsActive
         '
         Me.GridColumnIsActive.Caption = "IS_ACTIVE"
         Me.GridColumnIsActive.FieldName = "is_active"
         Me.GridColumnIsActive.Name = "GridColumnIsActive"
+        '
+        'GridColumnSupp
+        '
+        Me.GridColumnSupp.Caption = "Supplier"
+        Me.GridColumnSupp.FieldName = "comp_sup"
+        Me.GridColumnSupp.Name = "GridColumnSupp"
+        Me.GridColumnSupp.Visible = True
+        Me.GridColumnSupp.VisibleIndex = 2
         '
         'PanelControl3
         '
@@ -360,6 +370,14 @@ Partial Class FormItem
         Me.PanelControl5.Name = "PanelControl5"
         Me.PanelControl5.Size = New System.Drawing.Size(40, 54)
         Me.PanelControl5.TabIndex = 4
+        '
+        'GridColumnCat
+        '
+        Me.GridColumnCat.Caption = "Category"
+        Me.GridColumnCat.FieldName = "design_cat"
+        Me.GridColumnCat.Name = "GridColumnCat"
+        Me.GridColumnCat.Visible = True
+        Me.GridColumnCat.VisibleIndex = 3
         '
         'FormItem
         '
@@ -427,4 +445,6 @@ Partial Class FormItem
     Friend WithEvents GridColumnActive As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnIsActive As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents PanelControl5 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents GridColumnSupp As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumnCat As DevExpress.XtraGrid.Columns.GridColumn
 End Class
