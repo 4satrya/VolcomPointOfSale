@@ -3,6 +3,7 @@ Public Class FormFront
     Public Const WM_NCLBUTTONDOWN As Integer = &HA1
     Public Const HT_CAPTION As Integer = &H2
     Public connection_problem As Boolean = False
+    Public first_open As Boolean = True
 
     <DllImportAttribute("user32.dll")>
     Public Shared Function SendMessage(ByVal hWnd As IntPtr,
@@ -164,8 +165,15 @@ Public Class FormFront
         LabelCsh.Text = csh
 
         'vfd
-        Dim vpos As New ClassPOS()
-        vpos.vfdDisplayText("WELCOME", data.Rows(0)("outlet_name").ToString)
+        If Not first_open Then
+            Cursor = Cursors.WaitCursor
+            Threading.Thread.Sleep(1000)
+            pos.vfdDisplayText(data.Rows(0)("vfd_greet1").ToString, data.Rows(0)("vfd_greet2").ToString)
+            Cursor = Cursors.Default
+        Else
+            pos.vfdDisplayText(data.Rows(0)("vfd_greet1").ToString, data.Rows(0)("vfd_greet2").ToString)
+        End If
+        first_open = True
     End Sub
 
     Private Sub PISync_Click(sender As Object, e As EventArgs) Handles PISync.Click
@@ -198,5 +206,9 @@ Public Class FormFront
 
     Private Sub PCClose_MouseLeave(sender As Object, e As EventArgs) Handles PCClose.MouseLeave
         Cursor = Cursors.Default
+    End Sub
+
+    Private Sub FormFront_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        info()
     End Sub
 End Class

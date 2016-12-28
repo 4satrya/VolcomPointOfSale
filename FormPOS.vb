@@ -583,7 +583,7 @@
             End If
 
             Dim prod_name As String = name
-            If prod_name.Length > 20 Then
+            If prod_name.Length > 19 Then
                 prod_name = name.Substring(0, 19)
             End If
             vpos.vfdDisplayText(prod_name, "QTY:" + number_qty + "RP" + val)
@@ -768,12 +768,13 @@
             If pay > TxtTotal.EditValue Then
                 'jika lebih ada kembalian
                 TxtChange.EditValue = pay - TxtTotal.EditValue
+                showDisplay("Change  :", "-", TxtChange.Text)
                 Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Payment OK ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
                 If confirm = DialogResult.Yes Then
-                    showDisplay("Change  :", "-", TxtChange.Text)
                     TxtCash.Enabled = False
                     paymentOK()
                 Else
+                    showDisplay("Total  :", "-", TxtTotal.Text)
                     TxtCash.Focus()
                 End If
             ElseIf pay = TxtTotal.EditValue
@@ -908,8 +909,6 @@
             Dim prn As New ClassPOS()
             prn.printPos(id, False)
 
-            'vfd
-            showDisplay("THANK YOU", "-", "HAVE A NICE DAY")
 
             TxtSales.Enabled = True
             TxtSales.Focus()
@@ -1049,6 +1048,12 @@
     End Sub
 
     Sub completed()
+        'vfd
+        Dim vfd As New ClassPOS()
+        Dim query_bye As String = "select * from tb_opt"
+        Dim data_bye As DataTable = execute_query(query_bye, -1, True, "", "", "", "")
+        vfd.vfdDisplayText(data_bye.Rows(0)("vfd_bye1").ToString, data_bye.Rows(0)("vfd_bye2").ToString)
+
         'potong stok
         Dim query_stc As String = "INSERT INTO tb_storage_item(id_comp, id_storage_category, id_item, report_mark_type, id_report, storage_item_qty, storage_item_datetime, id_stock_status) 
         SELECT '" + id_display_default + "', IF(qty>=0,'2', '1'), id_item, '4', '" + id + "', ABS(qty), NOW(), '1' 
@@ -1103,7 +1108,7 @@
     End Sub
 
     Private Sub FormPOS_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        FormFront.info()
+        FormFront.first_open = False
     End Sub
 
     Private Sub TxtVoucherNo_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtVoucherNo.KeyDown
