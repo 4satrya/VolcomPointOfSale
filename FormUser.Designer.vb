@@ -80,6 +80,7 @@ Partial Class FormUser
         Me.LabelControl19 = New DevExpress.XtraEditors.LabelControl()
         Me.XTPSync = New DevExpress.XtraTab.XtraTabPage()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.BtnView = New DevExpress.XtraEditors.SimpleButton()
         Me.GCData = New DevExpress.XtraGrid.GridControl()
         Me.GVData = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -87,12 +88,21 @@ Partial Class FormUser
         Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.BtnSync = New DevExpress.XtraEditors.SimpleButton()
-        Me.BtnView = New DevExpress.XtraEditors.SimpleButton()
         Me.GCLog = New DevExpress.XtraGrid.GridControl()
         Me.GVLog = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.XTPVFD = New DevExpress.XtraTab.XtraTabPage()
+        Me.TxtFW1 = New DevExpress.XtraEditors.TextEdit()
+        Me.BtnVFD = New DevExpress.XtraEditors.SimpleButton()
+        Me.LabelControl29 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl30 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl31 = New DevExpress.XtraEditors.LabelControl()
+        Me.TxtFW2 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtGreet2 = New DevExpress.XtraEditors.TextEdit()
+        Me.TxtGreet1 = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl32 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
@@ -145,6 +155,11 @@ Partial Class FormUser
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GCLog, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GVLog, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XTPVFD.SuspendLayout()
+        CType(Me.TxtFW1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtFW2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtGreet2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtGreet1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,7 +180,7 @@ Partial Class FormUser
         Me.XTCUser.SelectedTabPage = Me.XTPRole
         Me.XTCUser.Size = New System.Drawing.Size(649, 267)
         Me.XTCUser.TabIndex = 0
-        Me.XTCUser.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPRole, Me.XTPUser, Me.XTPServer, Me.XTPProfile, Me.XTPReceipt, Me.XTPSync})
+        Me.XTCUser.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPRole, Me.XTPUser, Me.XTPServer, Me.XTPProfile, Me.XTPReceipt, Me.XTPSync, Me.XTPVFD})
         '
         'XTPRole
         '
@@ -742,6 +757,26 @@ Partial Class FormUser
         Me.SplitContainerControl1.TabIndex = 0
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
         '
+        'BtnView
+        '
+        Me.BtnView.Appearance.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.BtnView.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnView.Appearance.ForeColor = System.Drawing.Color.White
+        Me.BtnView.Appearance.Options.UseBackColor = True
+        Me.BtnView.Appearance.Options.UseFont = True
+        Me.BtnView.Appearance.Options.UseForeColor = True
+        Me.BtnView.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.BtnView.Location = New System.Drawing.Point(0, 107)
+        Me.BtnView.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
+        Me.BtnView.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
+        Me.BtnView.LookAndFeel.SkinName = "Metropolis"
+        Me.BtnView.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
+        Me.BtnView.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.BtnView.Name = "BtnView"
+        Me.BtnView.Size = New System.Drawing.Size(623, 20)
+        Me.BtnView.TabIndex = 37
+        Me.BtnView.Text = "View Log"
+        '
         'GCData
         '
         Me.GCData.Dock = System.Windows.Forms.DockStyle.Fill
@@ -816,26 +851,6 @@ Partial Class FormUser
         Me.BtnSync.TabIndex = 35
         Me.BtnSync.Text = "Sync"
         '
-        'BtnView
-        '
-        Me.BtnView.Appearance.BackColor = System.Drawing.Color.LightSeaGreen
-        Me.BtnView.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnView.Appearance.ForeColor = System.Drawing.Color.White
-        Me.BtnView.Appearance.Options.UseBackColor = True
-        Me.BtnView.Appearance.Options.UseFont = True
-        Me.BtnView.Appearance.Options.UseForeColor = True
-        Me.BtnView.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BtnView.Location = New System.Drawing.Point(0, 107)
-        Me.BtnView.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
-        Me.BtnView.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
-        Me.BtnView.LookAndFeel.SkinName = "Metropolis"
-        Me.BtnView.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
-        Me.BtnView.LookAndFeel.UseDefaultLookAndFeel = False
-        Me.BtnView.Name = "BtnView"
-        Me.BtnView.Size = New System.Drawing.Size(623, 20)
-        Me.BtnView.TabIndex = 37
-        Me.BtnView.Text = "View Log"
-        '
         'GCLog
         '
         Me.GCLog.Dock = System.Windows.Forms.DockStyle.Fill
@@ -881,6 +896,112 @@ Partial Class FormUser
         Me.GridColumn10.Name = "GridColumn10"
         Me.GridColumn10.Visible = True
         Me.GridColumn10.VisibleIndex = 2
+        '
+        'XTPVFD
+        '
+        Me.XTPVFD.Controls.Add(Me.TxtFW1)
+        Me.XTPVFD.Controls.Add(Me.BtnVFD)
+        Me.XTPVFD.Controls.Add(Me.LabelControl29)
+        Me.XTPVFD.Controls.Add(Me.LabelControl30)
+        Me.XTPVFD.Controls.Add(Me.LabelControl31)
+        Me.XTPVFD.Controls.Add(Me.TxtFW2)
+        Me.XTPVFD.Controls.Add(Me.TxtGreet2)
+        Me.XTPVFD.Controls.Add(Me.TxtGreet1)
+        Me.XTPVFD.Controls.Add(Me.LabelControl32)
+        Me.XTPVFD.Name = "XTPVFD"
+        Me.XTPVFD.Size = New System.Drawing.Size(623, 265)
+        Me.XTPVFD.Text = "VFD"
+        '
+        'TxtFW1
+        '
+        Me.TxtFW1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtFW1.Location = New System.Drawing.Point(88, 66)
+        Me.TxtFW1.Name = "TxtFW1"
+        Me.TxtFW1.Properties.MaxLength = 19
+        Me.TxtFW1.Size = New System.Drawing.Size(524, 20)
+        Me.TxtFW1.TabIndex = 3
+        '
+        'BtnVFD
+        '
+        Me.BtnVFD.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BtnVFD.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnVFD.Appearance.ForeColor = System.Drawing.Color.White
+        Me.BtnVFD.Appearance.Options.UseBackColor = True
+        Me.BtnVFD.Appearance.Options.UseFont = True
+        Me.BtnVFD.Appearance.Options.UseForeColor = True
+        Me.BtnVFD.Location = New System.Drawing.Point(88, 118)
+        Me.BtnVFD.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
+        Me.BtnVFD.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
+        Me.BtnVFD.LookAndFeel.SkinName = "Metropolis"
+        Me.BtnVFD.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
+        Me.BtnVFD.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.BtnVFD.Name = "BtnVFD"
+        Me.BtnVFD.Size = New System.Drawing.Size(58, 20)
+        Me.BtnVFD.TabIndex = 5
+        Me.BtnVFD.Text = "Save"
+        '
+        'LabelControl29
+        '
+        Me.LabelControl29.Location = New System.Drawing.Point(14, 95)
+        Me.LabelControl29.Name = "LabelControl29"
+        Me.LabelControl29.Size = New System.Drawing.Size(49, 13)
+        Me.LabelControl29.TabIndex = 23
+        Me.LabelControl29.Text = "Farewell 2"
+        '
+        'LabelControl30
+        '
+        Me.LabelControl30.Location = New System.Drawing.Point(14, 69)
+        Me.LabelControl30.Name = "LabelControl30"
+        Me.LabelControl30.Size = New System.Drawing.Size(49, 13)
+        Me.LabelControl30.TabIndex = 22
+        Me.LabelControl30.Text = "Farewell 1"
+        '
+        'LabelControl31
+        '
+        Me.LabelControl31.Location = New System.Drawing.Point(14, 43)
+        Me.LabelControl31.Name = "LabelControl31"
+        Me.LabelControl31.Size = New System.Drawing.Size(50, 13)
+        Me.LabelControl31.TabIndex = 21
+        Me.LabelControl31.Text = "Greeting 2"
+        '
+        'TxtFW2
+        '
+        Me.TxtFW2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtFW2.Location = New System.Drawing.Point(88, 92)
+        Me.TxtFW2.Name = "TxtFW2"
+        Me.TxtFW2.Properties.MaxLength = 20
+        Me.TxtFW2.Size = New System.Drawing.Size(524, 20)
+        Me.TxtFW2.TabIndex = 4
+        '
+        'TxtGreet2
+        '
+        Me.TxtGreet2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtGreet2.Location = New System.Drawing.Point(88, 40)
+        Me.TxtGreet2.Name = "TxtGreet2"
+        Me.TxtGreet2.Properties.MaxLength = 20
+        Me.TxtGreet2.Size = New System.Drawing.Size(524, 20)
+        Me.TxtGreet2.TabIndex = 2
+        '
+        'TxtGreet1
+        '
+        Me.TxtGreet1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtGreet1.Location = New System.Drawing.Point(88, 14)
+        Me.TxtGreet1.Name = "TxtGreet1"
+        Me.TxtGreet1.Properties.MaxLength = 19
+        Me.TxtGreet1.Size = New System.Drawing.Size(524, 20)
+        Me.TxtGreet1.TabIndex = 1
+        '
+        'LabelControl32
+        '
+        Me.LabelControl32.Location = New System.Drawing.Point(14, 17)
+        Me.LabelControl32.Name = "LabelControl32"
+        Me.LabelControl32.Size = New System.Drawing.Size(50, 13)
+        Me.LabelControl32.TabIndex = 17
+        Me.LabelControl32.Text = "Greeting 1"
         '
         'PanelControl1
         '
@@ -1080,6 +1201,12 @@ Partial Class FormUser
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GCLog, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GVLog, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XTPVFD.ResumeLayout(False)
+        Me.XTPVFD.PerformLayout()
+        CType(Me.TxtFW1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtFW2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtGreet2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtGreet1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1180,4 +1307,14 @@ Partial Class FormUser
     Friend WithEvents GridColumn10 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager
     Friend WithEvents BtnView As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents XTPVFD As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents TxtFW1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents BtnVFD As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LabelControl29 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl30 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl31 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TxtFW2 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtGreet2 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TxtGreet1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl32 As DevExpress.XtraEditors.LabelControl
 End Class

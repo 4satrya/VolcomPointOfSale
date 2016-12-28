@@ -39,6 +39,10 @@ Public Class FormUser
         TxtF2.Text = dopt.Rows(0)("footer_2").ToString
         TxtF3.Text = dopt.Rows(0)("footer_3").ToString
         TxtF4.Text = dopt.Rows(0)("footer_4").ToString
+        TxtGreet1.Text = dopt.Rows(0)("vfd_greet1").ToString
+        TxtGreet2.Text = dopt.Rows(0)("vfd_greet2").ToString
+        TxtFW1.Text = dopt.Rows(0)("vfd_bye1").ToString
+        TxtFW2.Text = dopt.Rows(0)("vfd_bye2").ToString
 
         'sync
         Dim qs As String = "SELECT *, 'No' as `is_select` FROM tb_sync_data a ORDER BY a.id_sync_data ASC "
@@ -292,5 +296,22 @@ Public Class FormUser
         Cursor = Cursors.WaitCursor
         logData()
         Cursor = Cursors.Default
+    End Sub
+
+    Private Sub BtnVFD_Click(sender As Object, e As EventArgs) Handles BtnVFD.Click
+        Dim vfd_greet1 As String = addSlashes(TxtGreet1.Text)
+        Dim vfd_greet2 As String = addSlashes(TxtGreet2.Text)
+        Dim vfd_bye1 As String = addSlashes(TxtFW1.Text)
+        Dim vfd_bye2 As String = addSlashes(TxtFW2.Text)
+        Try
+            Dim query As String = "UPDATE tb_opt SET 
+            vfd_greet1  = '" + vfd_greet1 + "',
+            vfd_greet2  = '" + vfd_greet2 + "',
+            vfd_bye1  = '" + vfd_bye1 + "',
+            vfd_bye2  = '" + vfd_bye2 + "' "
+            execute_non_query(query, True, "", "", "", "")
+        Catch ex As Exception
+            stopCustom(ex.ToString)
+        End Try
     End Sub
 End Class
