@@ -65,7 +65,7 @@
     Private Sub FormPOS_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.F1 Then
             help()
-        ElseIf e.KeyCode = Keys.F2 Then
+        ElseIf e.KeyCode = Keys.F2 And new_trans = True Then
             payment()
         ElseIf e.KeyCode = Keys.F3 Then
             'price()
@@ -150,13 +150,15 @@
     End Sub
 
     Sub payment()
-        Cursor = Cursors.WaitCursor
-        resetPayment()
-        showDisplay("Total  :", "-", TxtTotal.Text)
-        TxtItemCode.Enabled = False
-        TxtDiscount.Enabled = True
-        TxtDiscount.Focus()
-        Cursor = Cursors.Default
+        If TxtTotal.EditValue > 0 Then
+            Cursor = Cursors.WaitCursor
+            resetPayment()
+            showDisplay("Total  :", "-", TxtTotal.Text)
+            TxtItemCode.Enabled = False
+            TxtDiscount.Enabled = True
+            TxtDiscount.Focus()
+            Cursor = Cursors.Default
+        End If
     End Sub
 
     Sub price()
