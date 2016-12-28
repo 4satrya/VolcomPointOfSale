@@ -314,4 +314,16 @@ Public Class FormUser
             stopCustom(ex.ToString)
         End Try
     End Sub
+
+    Private Sub GCData_Click(sender As Object, e As EventArgs) Handles GCData.Click
+
+    End Sub
+
+    Private Sub BtnOff_Click(sender As Object, e As EventArgs) Handles BtnOff.Click
+        execute_non_query("UPDATE tb_opt SET sync_startup=2", True, "", "", "", "")
+    End Sub
+
+    Private Sub BtnOn_Click(sender As Object, e As EventArgs) Handles BtnOn.Click
+        execute_non_query("UPDATE tb_opt SET sync_startup=1", True, "", "", "", "")
+    End Sub
 End Class

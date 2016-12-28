@@ -80,13 +80,15 @@ Partial Class FormUser
         Me.LabelControl19 = New DevExpress.XtraEditors.LabelControl()
         Me.XTPSync = New DevExpress.XtraTab.XtraTabPage()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
-        Me.BtnView = New DevExpress.XtraEditors.SimpleButton()
         Me.GCData = New DevExpress.XtraGrid.GridControl()
         Me.GVData = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
+        Me.BtnOn = New DevExpress.XtraEditors.SimpleButton()
+        Me.BtnOff = New DevExpress.XtraEditors.SimpleButton()
+        Me.BtnView = New DevExpress.XtraEditors.SimpleButton()
         Me.BtnSync = New DevExpress.XtraEditors.SimpleButton()
         Me.GCLog = New DevExpress.XtraGrid.GridControl()
         Me.GVLog = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -178,7 +180,7 @@ Partial Class FormUser
         Me.XTCUser.LookAndFeel.UseDefaultLookAndFeel = False
         Me.XTCUser.Name = "XTCUser"
         Me.XTCUser.SelectedTabPage = Me.XTPRole
-        Me.XTCUser.Size = New System.Drawing.Size(649, 267)
+        Me.XTCUser.Size = New System.Drawing.Size(717, 322)
         Me.XTCUser.TabIndex = 0
         Me.XTCUser.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPRole, Me.XTPUser, Me.XTPServer, Me.XTPProfile, Me.XTPReceipt, Me.XTPSync, Me.XTPVFD})
         '
@@ -186,7 +188,7 @@ Partial Class FormUser
         '
         Me.XTPRole.Controls.Add(Me.GCRole)
         Me.XTPRole.Name = "XTPRole"
-        Me.XTPRole.Size = New System.Drawing.Size(623, 265)
+        Me.XTPRole.Size = New System.Drawing.Size(691, 320)
         Me.XTPRole.Text = "Role"
         '
         'GCRole
@@ -197,7 +199,7 @@ Partial Class FormUser
         Me.GCRole.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCRole.MainView = Me.GVRole
         Me.GCRole.Name = "GCRole"
-        Me.GCRole.Size = New System.Drawing.Size(623, 265)
+        Me.GCRole.Size = New System.Drawing.Size(691, 320)
         Me.GCRole.TabIndex = 1
         Me.GCRole.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVRole})
         '
@@ -227,7 +229,7 @@ Partial Class FormUser
         '
         Me.XTPUser.Controls.Add(Me.GCUser)
         Me.XTPUser.Name = "XTPUser"
-        Me.XTPUser.Size = New System.Drawing.Size(623, 265)
+        Me.XTPUser.Size = New System.Drawing.Size(691, 320)
         Me.XTPUser.Text = "User"
         '
         'GCUser
@@ -238,7 +240,7 @@ Partial Class FormUser
         Me.GCUser.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCUser.MainView = Me.GVUser
         Me.GCUser.Name = "GCUser"
-        Me.GCUser.Size = New System.Drawing.Size(623, 265)
+        Me.GCUser.Size = New System.Drawing.Size(691, 320)
         Me.GCUser.TabIndex = 0
         Me.GCUser.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVUser})
         '
@@ -286,7 +288,7 @@ Partial Class FormUser
         Me.XTPServer.Controls.Add(Me.TxtHost)
         Me.XTPServer.Controls.Add(Me.LabelControl15)
         Me.XTPServer.Name = "XTPServer"
-        Me.XTPServer.Size = New System.Drawing.Size(623, 265)
+        Me.XTPServer.Size = New System.Drawing.Size(691, 320)
         Me.XTPServer.Text = "Server"
         '
         'BtnSaveSvr
@@ -392,7 +394,7 @@ Partial Class FormUser
         Me.XTPProfile.Controls.Add(Me.LabelControl7)
         Me.XTPProfile.Controls.Add(Me.BtnSaveProfile)
         Me.XTPProfile.Name = "XTPProfile"
-        Me.XTPProfile.Size = New System.Drawing.Size(623, 265)
+        Me.XTPProfile.Size = New System.Drawing.Size(691, 320)
         Me.XTPProfile.Text = "Profile"
         '
         'BtnSPV
@@ -551,7 +553,7 @@ Partial Class FormUser
         Me.XTPReceipt.Controls.Add(Me.TxtH1)
         Me.XTPReceipt.Controls.Add(Me.LabelControl19)
         Me.XTPReceipt.Name = "XTPReceipt"
-        Me.XTPReceipt.Size = New System.Drawing.Size(623, 265)
+        Me.XTPReceipt.Size = New System.Drawing.Size(691, 320)
         Me.XTPReceipt.Text = "Receipt"
         '
         'BtnSaveRc
@@ -737,7 +739,7 @@ Partial Class FormUser
         '
         Me.XTPSync.Controls.Add(Me.SplitContainerControl1)
         Me.XTPSync.Name = "XTPSync"
-        Me.XTPSync.Size = New System.Drawing.Size(623, 265)
+        Me.XTPSync.Size = New System.Drawing.Size(691, 320)
         Me.XTPSync.Text = "Sync"
         '
         'SplitContainerControl1
@@ -746,36 +748,18 @@ Partial Class FormUser
         Me.SplitContainerControl1.Horizontal = False
         Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
-        Me.SplitContainerControl1.Panel1.Controls.Add(Me.BtnView)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.GCData)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.BtnOn)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.BtnOff)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.BtnView)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.BtnSync)
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GCLog)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(623, 265)
-        Me.SplitContainerControl1.SplitterPosition = 147
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(691, 320)
+        Me.SplitContainerControl1.SplitterPosition = 243
         Me.SplitContainerControl1.TabIndex = 0
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
-        '
-        'BtnView
-        '
-        Me.BtnView.Appearance.BackColor = System.Drawing.Color.LightSeaGreen
-        Me.BtnView.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnView.Appearance.ForeColor = System.Drawing.Color.White
-        Me.BtnView.Appearance.Options.UseBackColor = True
-        Me.BtnView.Appearance.Options.UseFont = True
-        Me.BtnView.Appearance.Options.UseForeColor = True
-        Me.BtnView.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BtnView.Location = New System.Drawing.Point(0, 107)
-        Me.BtnView.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
-        Me.BtnView.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
-        Me.BtnView.LookAndFeel.SkinName = "Metropolis"
-        Me.BtnView.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
-        Me.BtnView.LookAndFeel.UseDefaultLookAndFeel = False
-        Me.BtnView.Name = "BtnView"
-        Me.BtnView.Size = New System.Drawing.Size(623, 20)
-        Me.BtnView.TabIndex = 37
-        Me.BtnView.Text = "View Log"
         '
         'GCData
         '
@@ -786,7 +770,7 @@ Partial Class FormUser
         Me.GCData.MainView = Me.GVData
         Me.GCData.Name = "GCData"
         Me.GCData.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
-        Me.GCData.Size = New System.Drawing.Size(623, 127)
+        Me.GCData.Size = New System.Drawing.Size(691, 163)
         Me.GCData.TabIndex = 36
         Me.GCData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVData})
         '
@@ -831,6 +815,66 @@ Partial Class FormUser
         Me.RepositoryItemCheckEdit1.ValueChecked = "Yes"
         Me.RepositoryItemCheckEdit1.ValueUnchecked = "No"
         '
+        'BtnOn
+        '
+        Me.BtnOn.Appearance.BackColor = System.Drawing.Color.DarkOrange
+        Me.BtnOn.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnOn.Appearance.ForeColor = System.Drawing.Color.White
+        Me.BtnOn.Appearance.Options.UseBackColor = True
+        Me.BtnOn.Appearance.Options.UseFont = True
+        Me.BtnOn.Appearance.Options.UseForeColor = True
+        Me.BtnOn.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.BtnOn.Location = New System.Drawing.Point(0, 163)
+        Me.BtnOn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
+        Me.BtnOn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
+        Me.BtnOn.LookAndFeel.SkinName = "Metropolis"
+        Me.BtnOn.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
+        Me.BtnOn.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.BtnOn.Name = "BtnOn"
+        Me.BtnOn.Size = New System.Drawing.Size(691, 20)
+        Me.BtnOn.TabIndex = 39
+        Me.BtnOn.Text = "Enable sync on startup"
+        '
+        'BtnOff
+        '
+        Me.BtnOff.Appearance.BackColor = System.Drawing.Color.Crimson
+        Me.BtnOff.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnOff.Appearance.ForeColor = System.Drawing.Color.White
+        Me.BtnOff.Appearance.Options.UseBackColor = True
+        Me.BtnOff.Appearance.Options.UseFont = True
+        Me.BtnOff.Appearance.Options.UseForeColor = True
+        Me.BtnOff.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.BtnOff.Location = New System.Drawing.Point(0, 183)
+        Me.BtnOff.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
+        Me.BtnOff.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
+        Me.BtnOff.LookAndFeel.SkinName = "Metropolis"
+        Me.BtnOff.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
+        Me.BtnOff.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.BtnOff.Name = "BtnOff"
+        Me.BtnOff.Size = New System.Drawing.Size(691, 20)
+        Me.BtnOff.TabIndex = 38
+        Me.BtnOff.Text = "Disable sync on startup"
+        '
+        'BtnView
+        '
+        Me.BtnView.Appearance.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.BtnView.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnView.Appearance.ForeColor = System.Drawing.Color.White
+        Me.BtnView.Appearance.Options.UseBackColor = True
+        Me.BtnView.Appearance.Options.UseFont = True
+        Me.BtnView.Appearance.Options.UseForeColor = True
+        Me.BtnView.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.BtnView.Location = New System.Drawing.Point(0, 203)
+        Me.BtnView.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
+        Me.BtnView.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
+        Me.BtnView.LookAndFeel.SkinName = "Metropolis"
+        Me.BtnView.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
+        Me.BtnView.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.BtnView.Name = "BtnView"
+        Me.BtnView.Size = New System.Drawing.Size(691, 20)
+        Me.BtnView.TabIndex = 37
+        Me.BtnView.Text = "View Log"
+        '
         'BtnSync
         '
         Me.BtnSync.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue
@@ -840,14 +884,14 @@ Partial Class FormUser
         Me.BtnSync.Appearance.Options.UseFont = True
         Me.BtnSync.Appearance.Options.UseForeColor = True
         Me.BtnSync.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BtnSync.Location = New System.Drawing.Point(0, 127)
+        Me.BtnSync.Location = New System.Drawing.Point(0, 223)
         Me.BtnSync.LookAndFeel.SkinMaskColor = System.Drawing.Color.Blue
         Me.BtnSync.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red
         Me.BtnSync.LookAndFeel.SkinName = "Metropolis"
         Me.BtnSync.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat
         Me.BtnSync.LookAndFeel.UseDefaultLookAndFeel = False
         Me.BtnSync.Name = "BtnSync"
-        Me.BtnSync.Size = New System.Drawing.Size(623, 20)
+        Me.BtnSync.Size = New System.Drawing.Size(691, 20)
         Me.BtnSync.TabIndex = 35
         Me.BtnSync.Text = "Sync"
         '
@@ -859,7 +903,7 @@ Partial Class FormUser
         Me.GCLog.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCLog.MainView = Me.GVLog
         Me.GCLog.Name = "GCLog"
-        Me.GCLog.Size = New System.Drawing.Size(623, 106)
+        Me.GCLog.Size = New System.Drawing.Size(691, 65)
         Me.GCLog.TabIndex = 0
         Me.GCLog.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVLog})
         '
@@ -909,7 +953,7 @@ Partial Class FormUser
         Me.XTPVFD.Controls.Add(Me.TxtGreet1)
         Me.XTPVFD.Controls.Add(Me.LabelControl32)
         Me.XTPVFD.Name = "XTPVFD"
-        Me.XTPVFD.Size = New System.Drawing.Size(623, 265)
+        Me.XTPVFD.Size = New System.Drawing.Size(691, 320)
         Me.XTPVFD.Text = "VFD"
         '
         'TxtFW1
@@ -1008,9 +1052,9 @@ Partial Class FormUser
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl1.Controls.Add(Me.PanelControl2)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl1.Location = New System.Drawing.Point(20, 332)
+        Me.PanelControl1.Location = New System.Drawing.Point(20, 387)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(649, 35)
+        Me.PanelControl1.Size = New System.Drawing.Size(717, 35)
         Me.PanelControl1.TabIndex = 0
         '
         'PanelControl2
@@ -1025,7 +1069,7 @@ Partial Class FormUser
         Me.PanelControl2.Controls.Add(Me.LabelControl2)
         Me.PanelControl2.Controls.Add(Me.LabelControl1)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControl2.Location = New System.Drawing.Point(372, 0)
+        Me.PanelControl2.Location = New System.Drawing.Point(440, 0)
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Size = New System.Drawing.Size(277, 35)
         Me.PanelControl2.TabIndex = 7
@@ -1110,7 +1154,7 @@ Partial Class FormUser
         Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControl3.Location = New System.Drawing.Point(20, 20)
         Me.PanelControl3.Name = "PanelControl3"
-        Me.PanelControl3.Size = New System.Drawing.Size(649, 45)
+        Me.PanelControl3.Size = New System.Drawing.Size(717, 45)
         Me.PanelControl3.TabIndex = 5
         '
         'LabelControl13
@@ -1145,7 +1189,7 @@ Partial Class FormUser
         Me.Appearance.Options.UseFont = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(689, 387)
+        Me.ClientSize = New System.Drawing.Size(757, 442)
         Me.Controls.Add(Me.XTCUser)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.PanelControl3)
@@ -1317,4 +1361,6 @@ Partial Class FormUser
     Friend WithEvents TxtGreet2 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents TxtGreet1 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl32 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents BtnOn As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents BtnOff As DevExpress.XtraEditors.SimpleButton
 End Class

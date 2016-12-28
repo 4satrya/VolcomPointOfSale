@@ -55,7 +55,12 @@ Public Class FormFront
         My.Application.ChangeCulture("en-US")
         My.Application.Culture.NumberFormat.NumberDecimalSeparator = ","
         My.Application.Culture.NumberFormat.NumberGroupSeparator = "."
-        'syncProcess()
+
+        'sync startup
+        Dim check_sync_startup As String = execute_query("SELECT sync_startup FROM tb_opt", 0, True, "", "", "", "")
+        If check_sync_startup = "1" Then
+            syncProcess()
+        End If
     End Sub
 
     Sub syncProcess()
