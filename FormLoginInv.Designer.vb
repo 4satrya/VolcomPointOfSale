@@ -83,8 +83,8 @@ Partial Class FormLoginInv
         '
         'SimpleButton1
         '
-        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.DarkSlateBlue
-        Me.SimpleButton1.Appearance.BorderColor = System.Drawing.Color.DarkSlateBlue
+        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.SlateBlue
+        Me.SimpleButton1.Appearance.BorderColor = System.Drawing.Color.SlateBlue
         Me.SimpleButton1.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SimpleButton1.Appearance.ForeColor = System.Drawing.Color.White
         Me.SimpleButton1.Appearance.Options.UseBackColor = True
@@ -104,8 +104,8 @@ Partial Class FormLoginInv
         '
         'BtnSignIn
         '
-        Me.BtnSignIn.Appearance.BackColor = System.Drawing.Color.DarkSlateBlue
-        Me.BtnSignIn.Appearance.BorderColor = System.Drawing.Color.DarkSlateBlue
+        Me.BtnSignIn.Appearance.BackColor = System.Drawing.Color.SlateBlue
+        Me.BtnSignIn.Appearance.BorderColor = System.Drawing.Color.SlateBlue
         Me.BtnSignIn.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSignIn.Appearance.ForeColor = System.Drawing.Color.White
         Me.BtnSignIn.Appearance.Options.UseBackColor = True
@@ -125,7 +125,8 @@ Partial Class FormLoginInv
         '
         'FormLoginInv
         '
-        Me.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Appearance.BackColor = System.Drawing.Color.MidnightBlue
+        Me.Appearance.BackColor2 = System.Drawing.Color.LightSeaGreen
         Me.Appearance.Options.UseBackColor = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
