@@ -695,6 +695,7 @@ Partial Class FormHome
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "FormHome"
         Me.Opacity = 0R
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.PanelControlTop, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlTop.ResumeLayout(False)

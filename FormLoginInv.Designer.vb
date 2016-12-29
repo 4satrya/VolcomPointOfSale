@@ -83,8 +83,8 @@ Partial Class FormLoginInv
         '
         'SimpleButton1
         '
-        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.SlateBlue
-        Me.SimpleButton1.Appearance.BorderColor = System.Drawing.Color.SlateBlue
+        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.DodgerBlue
+        Me.SimpleButton1.Appearance.BorderColor = System.Drawing.Color.DodgerBlue
         Me.SimpleButton1.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SimpleButton1.Appearance.ForeColor = System.Drawing.Color.White
         Me.SimpleButton1.Appearance.Options.UseBackColor = True
@@ -104,8 +104,8 @@ Partial Class FormLoginInv
         '
         'BtnSignIn
         '
-        Me.BtnSignIn.Appearance.BackColor = System.Drawing.Color.SlateBlue
-        Me.BtnSignIn.Appearance.BorderColor = System.Drawing.Color.SlateBlue
+        Me.BtnSignIn.Appearance.BackColor = System.Drawing.Color.DodgerBlue
+        Me.BtnSignIn.Appearance.BorderColor = System.Drawing.Color.DodgerBlue
         Me.BtnSignIn.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSignIn.Appearance.ForeColor = System.Drawing.Color.White
         Me.BtnSignIn.Appearance.Options.UseBackColor = True
@@ -145,6 +145,7 @@ Partial Class FormLoginInv
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormLoginInv"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         CType(Me.TxtUsername.Properties, System.ComponentModel.ISupportInitialize).EndInit()
