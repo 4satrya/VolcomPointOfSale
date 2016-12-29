@@ -88,21 +88,6 @@ Partial Class FormPOS
         Me.LabelInfoLeft = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlBottom = New DevExpress.XtraEditors.PanelControl()
         Me.DECreated = New DevExpress.XtraEditors.DateEdit()
-        Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.LabelControl48 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl49 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl35 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl34 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl33 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl41 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl32 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl31 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl43 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl30 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl44 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl29 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl45 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl28 = New DevExpress.XtraEditors.LabelControl()
         Me.TxtCashierName = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl21 = New DevExpress.XtraEditors.LabelControl()
@@ -114,6 +99,9 @@ Partial Class FormPOS
         Me.TxtNumber = New DevExpress.XtraEditors.TextEdit()
         Me.TxtShift = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl23 = New DevExpress.XtraEditors.LabelControl()
+        Me.PanelControlInfo = New DevExpress.XtraEditors.PanelControl()
+        Me.LabelFooter = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.PanelControlMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlMain.SuspendLayout()
         CType(Me.PanelControlMiddle, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -164,14 +152,14 @@ Partial Class FormPOS
         Me.PanelControlBottom.SuspendLayout()
         CType(Me.DECreated.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DECreated.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControl1.SuspendLayout()
         CType(Me.TxtCashierName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LEStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtCashierUser.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtPOS.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtNumber.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtShift.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PanelControlInfo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControlInfo.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelControlMain
@@ -180,10 +168,11 @@ Partial Class FormPOS
         Me.PanelControlMain.Controls.Add(Me.PanelControlMiddle)
         Me.PanelControlMain.Controls.Add(Me.PanelControlnfo)
         Me.PanelControlMain.Controls.Add(Me.PanelControlBottom)
+        Me.PanelControlMain.Controls.Add(Me.PanelControlInfo)
         Me.PanelControlMain.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControlMain.Location = New System.Drawing.Point(0, 0)
         Me.PanelControlMain.Name = "PanelControlMain"
-        Me.PanelControlMain.Size = New System.Drawing.Size(850, 700)
+        Me.PanelControlMain.Size = New System.Drawing.Size(850, 730)
         Me.PanelControlMain.TabIndex = 12
         '
         'PanelControlMiddle
@@ -194,7 +183,7 @@ Partial Class FormPOS
         Me.PanelControlMiddle.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControlMiddle.Location = New System.Drawing.Point(0, 57)
         Me.PanelControlMiddle.Name = "PanelControlMiddle"
-        Me.PanelControlMiddle.Size = New System.Drawing.Size(850, 579)
+        Me.PanelControlMiddle.Size = New System.Drawing.Size(850, 593)
         Me.PanelControlMiddle.TabIndex = 46
         '
         'PanelControlMiddleData
@@ -205,7 +194,7 @@ Partial Class FormPOS
         Me.PanelControlMiddleData.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControlMiddleData.Location = New System.Drawing.Point(0, 0)
         Me.PanelControlMiddleData.Name = "PanelControlMiddleData"
-        Me.PanelControlMiddleData.Size = New System.Drawing.Size(598, 579)
+        Me.PanelControlMiddleData.Size = New System.Drawing.Size(598, 593)
         Me.PanelControlMiddleData.TabIndex = 4
         '
         'GCPOS
@@ -216,7 +205,7 @@ Partial Class FormPOS
         Me.GCPOS.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCPOS.MainView = Me.GVPOS
         Me.GCPOS.Name = "GCPOS"
-        Me.GCPOS.Size = New System.Drawing.Size(598, 542)
+        Me.GCPOS.Size = New System.Drawing.Size(598, 556)
         Me.GCPOS.TabIndex = 1
         Me.GCPOS.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVPOS})
         '
@@ -341,7 +330,7 @@ Partial Class FormPOS
         Me.PanelControlCode.Controls.Add(Me.TxtItemCode)
         Me.PanelControlCode.Controls.Add(Me.LabelControl17)
         Me.PanelControlCode.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControlCode.Location = New System.Drawing.Point(0, 542)
+        Me.PanelControlCode.Location = New System.Drawing.Point(0, 556)
         Me.PanelControlCode.Name = "PanelControlCode"
         Me.PanelControlCode.Size = New System.Drawing.Size(598, 37)
         Me.PanelControlCode.TabIndex = 3
@@ -439,7 +428,7 @@ Partial Class FormPOS
         Me.PanelControlMainLeft.Dock = System.Windows.Forms.DockStyle.Right
         Me.PanelControlMainLeft.Location = New System.Drawing.Point(598, 0)
         Me.PanelControlMainLeft.Name = "PanelControlMainLeft"
-        Me.PanelControlMainLeft.Size = New System.Drawing.Size(252, 579)
+        Me.PanelControlMainLeft.Size = New System.Drawing.Size(252, 593)
         Me.PanelControlMainLeft.TabIndex = 2
         '
         'GroupControl1
@@ -451,7 +440,7 @@ Partial Class FormPOS
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl1.Location = New System.Drawing.Point(0, 435)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(252, 144)
+        Me.GroupControl1.Size = New System.Drawing.Size(252, 158)
         Me.GroupControl1.TabIndex = 34
         Me.GroupControl1.Text = "Additional"
         '
@@ -1036,7 +1025,6 @@ Partial Class FormPOS
         '
         Me.PanelControlBottom.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControlBottom.Controls.Add(Me.DECreated)
-        Me.PanelControlBottom.Controls.Add(Me.PanelControl1)
         Me.PanelControlBottom.Controls.Add(Me.TxtCashierName)
         Me.PanelControlBottom.Controls.Add(Me.LabelControl1)
         Me.PanelControlBottom.Controls.Add(Me.LabelControl21)
@@ -1049,9 +1037,9 @@ Partial Class FormPOS
         Me.PanelControlBottom.Controls.Add(Me.TxtShift)
         Me.PanelControlBottom.Controls.Add(Me.LabelControl23)
         Me.PanelControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControlBottom.Location = New System.Drawing.Point(0, 636)
+        Me.PanelControlBottom.Location = New System.Drawing.Point(0, 650)
         Me.PanelControlBottom.Name = "PanelControlBottom"
-        Me.PanelControlBottom.Size = New System.Drawing.Size(850, 64)
+        Me.PanelControlBottom.Size = New System.Drawing.Size(850, 61)
         Me.PanelControlBottom.TabIndex = 47
         '
         'DECreated
@@ -1073,163 +1061,6 @@ Partial Class FormPOS
         Me.DECreated.Size = New System.Drawing.Size(177, 20)
         Me.DECreated.TabIndex = 103
         Me.DECreated.TabStop = False
-        '
-        'PanelControl1
-        '
-        Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PanelControl1.Controls.Add(Me.LabelControl48)
-        Me.PanelControl1.Controls.Add(Me.LabelControl49)
-        Me.PanelControl1.Controls.Add(Me.LabelControl35)
-        Me.PanelControl1.Controls.Add(Me.LabelControl34)
-        Me.PanelControl1.Controls.Add(Me.LabelControl33)
-        Me.PanelControl1.Controls.Add(Me.LabelControl41)
-        Me.PanelControl1.Controls.Add(Me.LabelControl32)
-        Me.PanelControl1.Controls.Add(Me.LabelControl31)
-        Me.PanelControl1.Controls.Add(Me.LabelControl43)
-        Me.PanelControl1.Controls.Add(Me.LabelControl30)
-        Me.PanelControl1.Controls.Add(Me.LabelControl44)
-        Me.PanelControl1.Controls.Add(Me.LabelControl29)
-        Me.PanelControl1.Controls.Add(Me.LabelControl45)
-        Me.PanelControl1.Controls.Add(Me.LabelControl28)
-        Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControl1.Location = New System.Drawing.Point(547, 0)
-        Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(303, 64)
-        Me.PanelControl1.TabIndex = 101
-        Me.PanelControl1.Visible = False
-        '
-        'LabelControl48
-        '
-        Me.LabelControl48.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl48.Location = New System.Drawing.Point(248, 11)
-        Me.LabelControl48.Name = "LabelControl48"
-        Me.LabelControl48.Size = New System.Drawing.Size(43, 13)
-        Me.LabelControl48.TabIndex = 88
-        Me.LabelControl48.Text = "Voucher"
-        '
-        'LabelControl49
-        '
-        Me.LabelControl49.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl49.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl49.Location = New System.Drawing.Point(224, 11)
-        Me.LabelControl49.Name = "LabelControl49"
-        Me.LabelControl49.Size = New System.Drawing.Size(18, 13)
-        Me.LabelControl49.TabIndex = 87
-        Me.LabelControl49.Text = "F11"
-        '
-        'LabelControl35
-        '
-        Me.LabelControl35.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl35.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl35.Location = New System.Drawing.Point(87, 11)
-        Me.LabelControl35.Name = "LabelControl35"
-        Me.LabelControl35.Size = New System.Drawing.Size(12, 13)
-        Me.LabelControl35.TabIndex = 67
-        Me.LabelControl35.Text = "F3"
-        '
-        'LabelControl34
-        '
-        Me.LabelControl34.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl34.Location = New System.Drawing.Point(105, 11)
-        Me.LabelControl34.Name = "LabelControl34"
-        Me.LabelControl34.Size = New System.Drawing.Size(24, 13)
-        Me.LabelControl34.TabIndex = 68
-        Me.LabelControl34.Text = "Price"
-        '
-        'LabelControl33
-        '
-        Me.LabelControl33.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl33.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl33.Location = New System.Drawing.Point(155, 10)
-        Me.LabelControl33.Name = "LabelControl33"
-        Me.LabelControl33.Size = New System.Drawing.Size(12, 13)
-        Me.LabelControl33.TabIndex = 71
-        Me.LabelControl33.Text = "F7"
-        '
-        'LabelControl41
-        '
-        Me.LabelControl41.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl41.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl41.Location = New System.Drawing.Point(12, 35)
-        Me.LabelControl41.Name = "LabelControl41"
-        Me.LabelControl41.Size = New System.Drawing.Size(12, 13)
-        Me.LabelControl41.TabIndex = 79
-        Me.LabelControl41.Text = "F2"
-        '
-        'LabelControl32
-        '
-        Me.LabelControl32.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl32.Location = New System.Drawing.Point(173, 10)
-        Me.LabelControl32.Name = "LabelControl32"
-        Me.LabelControl32.Size = New System.Drawing.Size(37, 13)
-        Me.LabelControl32.TabIndex = 72
-        Me.LabelControl32.Text = "Drawer"
-        '
-        'LabelControl31
-        '
-        Me.LabelControl31.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl31.Location = New System.Drawing.Point(30, 11)
-        Me.LabelControl31.Name = "LabelControl31"
-        Me.LabelControl31.Size = New System.Drawing.Size(27, 13)
-        Me.LabelControl31.TabIndex = 70
-        Me.LabelControl31.Text = "Trans"
-        '
-        'LabelControl43
-        '
-        Me.LabelControl43.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl43.Location = New System.Drawing.Point(30, 35)
-        Me.LabelControl43.Name = "LabelControl43"
-        Me.LabelControl43.Size = New System.Drawing.Size(43, 13)
-        Me.LabelControl43.TabIndex = 80
-        Me.LabelControl43.Text = "Payment"
-        '
-        'LabelControl30
-        '
-        Me.LabelControl30.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl30.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl30.Location = New System.Drawing.Point(87, 35)
-        Me.LabelControl30.Name = "LabelControl30"
-        Me.LabelControl30.Size = New System.Drawing.Size(12, 13)
-        Me.LabelControl30.TabIndex = 73
-        Me.LabelControl30.Text = "F5"
-        '
-        'LabelControl44
-        '
-        Me.LabelControl44.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl44.Location = New System.Drawing.Point(173, 35)
-        Me.LabelControl44.Name = "LabelControl44"
-        Me.LabelControl44.Size = New System.Drawing.Size(39, 13)
-        Me.LabelControl44.TabIndex = 82
-        Me.LabelControl44.Text = "Closing"
-        '
-        'LabelControl29
-        '
-        Me.LabelControl29.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl29.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl29.Location = New System.Drawing.Point(12, 11)
-        Me.LabelControl29.Name = "LabelControl29"
-        Me.LabelControl29.Size = New System.Drawing.Size(15, 13)
-        Me.LabelControl29.TabIndex = 69
-        Me.LabelControl29.Text = "Ins"
-        '
-        'LabelControl45
-        '
-        Me.LabelControl45.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl45.Appearance.ForeColor = System.Drawing.Color.BlueViolet
-        Me.LabelControl45.Location = New System.Drawing.Point(155, 35)
-        Me.LabelControl45.Name = "LabelControl45"
-        Me.LabelControl45.Size = New System.Drawing.Size(12, 13)
-        Me.LabelControl45.TabIndex = 81
-        Me.LabelControl45.Text = "F8"
-        '
-        'LabelControl28
-        '
-        Me.LabelControl28.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl28.Location = New System.Drawing.Point(105, 35)
-        Me.LabelControl28.Name = "LabelControl28"
-        Me.LabelControl28.Size = New System.Drawing.Size(38, 13)
-        Me.LabelControl28.TabIndex = 74
-        Me.LabelControl28.Text = "Refund"
         '
         'TxtCashierName
         '
@@ -1364,12 +1195,51 @@ Partial Class FormPOS
         Me.LabelControl23.TabIndex = 95
         Me.LabelControl23.Text = "POS#"
         '
+        'PanelControlInfo
+        '
+        Me.PanelControlInfo.Appearance.BackColor = System.Drawing.Color.SteelBlue
+        Me.PanelControlInfo.Appearance.Options.UseBackColor = True
+        Me.PanelControlInfo.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
+        Me.PanelControlInfo.Controls.Add(Me.LabelFooter)
+        Me.PanelControlInfo.Controls.Add(Me.LabelControl7)
+        Me.PanelControlInfo.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PanelControlInfo.Location = New System.Drawing.Point(0, 711)
+        Me.PanelControlInfo.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat
+        Me.PanelControlInfo.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.PanelControlInfo.Name = "PanelControlInfo"
+        Me.PanelControlInfo.Size = New System.Drawing.Size(850, 19)
+        Me.PanelControlInfo.TabIndex = 48
+        '
+        'LabelFooter
+        '
+        Me.LabelFooter.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelFooter.Appearance.ForeColor = System.Drawing.Color.White
+        Me.LabelFooter.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.LabelFooter.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical
+        Me.LabelFooter.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LabelFooter.Location = New System.Drawing.Point(2, 2)
+        Me.LabelFooter.Name = "LabelFooter"
+        Me.LabelFooter.Padding = New System.Windows.Forms.Padding(5, 3, 0, 0)
+        Me.LabelFooter.Size = New System.Drawing.Size(846, 16)
+        Me.LabelFooter.TabIndex = 3
+        Me.LabelFooter.Text = "VOLCOM POS MENU  |  Ins Trans    F2 Payment    F3 Price    F5 Refund    F7 Drawer" &
+    "    F8 Closing Shift    F11 Voucher"
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl7.Appearance.ForeColor = System.Drawing.Color.Gray
+        Me.LabelControl7.Location = New System.Drawing.Point(591, 14)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(0, 13)
+        Me.LabelControl7.TabIndex = 2
+        '
         'FormPOS
         '
         Me.Appearance.Options.UseFont = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(850, 700)
+        Me.ClientSize = New System.Drawing.Size(850, 730)
         Me.Controls.Add(Me.PanelControlMain)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -1439,15 +1309,15 @@ Partial Class FormPOS
         Me.PanelControlBottom.PerformLayout()
         CType(Me.DECreated.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DECreated.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl1.ResumeLayout(False)
-        Me.PanelControl1.PerformLayout()
         CType(Me.TxtCashierName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LEStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtCashierUser.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtPOS.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtNumber.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtShift.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PanelControlInfo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControlInfo.ResumeLayout(False)
+        Me.PanelControlInfo.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1524,21 +1394,6 @@ Partial Class FormPOS
     Friend WithEvents TxtNumber As DevExpress.XtraEditors.TextEdit
     Friend WithEvents TxtShift As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl23 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
-    Friend WithEvents LabelControl35 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl34 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl33 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl41 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl32 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl31 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl43 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl30 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl44 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl29 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl45 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl28 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl48 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl49 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents DECreated As DevExpress.XtraEditors.DateEdit
     Friend WithEvents GridColumnidItem As DevExpress.XtraGrid.Columns.GridColumn
@@ -1546,4 +1401,7 @@ Partial Class FormPOS
     Friend WithEvents GridColumnComm As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnId As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnIdStorage As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents PanelControlInfo As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelFooter As DevExpress.XtraEditors.LabelControl
 End Class
