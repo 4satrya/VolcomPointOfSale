@@ -56,9 +56,9 @@ Partial Class FormHome
         Me.TIStock = New DevExpress.XtraEditors.TileItem()
         Me.TITransDetail = New DevExpress.XtraEditors.TileItem()
         Me.TICopyReceipt = New DevExpress.XtraEditors.TileItem()
-        Me.TIAccount = New DevExpress.XtraEditors.TileItem()
         Me.TICompany = New DevExpress.XtraEditors.TileItem()
         Me.TIUser = New DevExpress.XtraEditors.TileItem()
+        Me.TIAccount = New DevExpress.XtraEditors.TileItem()
         Me.TIExit = New DevExpress.XtraEditors.TileItem()
         Me.NavButton2 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.NavButton4 = New DevExpress.XtraBars.Navigation.NavButton()
@@ -145,9 +145,9 @@ Partial Class FormHome
         Me.TGGeneral.Items.Add(Me.TIStock)
         Me.TGGeneral.Items.Add(Me.TITransDetail)
         Me.TGGeneral.Items.Add(Me.TICopyReceipt)
-        Me.TGGeneral.Items.Add(Me.TIAccount)
         Me.TGGeneral.Items.Add(Me.TICompany)
         Me.TGGeneral.Items.Add(Me.TIUser)
+        Me.TGGeneral.Items.Add(Me.TIAccount)
         Me.TGGeneral.Items.Add(Me.TIExit)
         Me.TGGeneral.Name = "TGGeneral"
         Me.TGGeneral.Text = "General"
@@ -304,28 +304,17 @@ Partial Class FormHome
         Me.TICopyReceipt.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TICopyReceipt.Name = "TICopyReceipt"
         '
-        'TIAccount
-        '
-        Me.TIAccount.BackgroundImage = CType(resources.GetObject("TIAccount.BackgroundImage"), System.Drawing.Image)
-        Me.TIAccount.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement12.Text = "Login Setting"
-        TileItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TIAccount.Elements.Add(TileItemElement12)
-        Me.TIAccount.Id = 14
-        Me.TIAccount.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
-        Me.TIAccount.Name = "TIAccount"
-        '
         'TICompany
         '
-        Me.TICompany.AppearanceItem.Normal.BackColor = System.Drawing.Color.OrangeRed
-        Me.TICompany.AppearanceItem.Normal.BorderColor = System.Drawing.Color.OrangeRed
+        Me.TICompany.AppearanceItem.Normal.BackColor = System.Drawing.Color.SteelBlue
+        Me.TICompany.AppearanceItem.Normal.BorderColor = System.Drawing.Color.SteelBlue
         Me.TICompany.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TICompany.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TICompany.BackgroundImage = CType(resources.GetObject("TICompany.BackgroundImage"), System.Drawing.Image)
         Me.TICompany.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement13.Text = "Company"
-        TileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TICompany.Elements.Add(TileItemElement13)
+        TileItemElement12.Text = "Company"
+        TileItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TICompany.Elements.Add(TileItemElement12)
         Me.TICompany.Id = 27
         Me.TICompany.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TICompany.Name = "TICompany"
@@ -338,12 +327,23 @@ Partial Class FormHome
         Me.TIUser.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIUser.BackgroundImage = CType(resources.GetObject("TIUser.BackgroundImage"), System.Drawing.Image)
         Me.TIUser.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement14.Text = "Setting"
-        TileItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TIUser.Elements.Add(TileItemElement14)
+        TileItemElement13.Text = "Setting"
+        TileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TIUser.Elements.Add(TileItemElement13)
         Me.TIUser.Id = 5
-        Me.TIUser.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
+        Me.TIUser.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TIUser.Name = "TIUser"
+        '
+        'TIAccount
+        '
+        Me.TIAccount.BackgroundImage = CType(resources.GetObject("TIAccount.BackgroundImage"), System.Drawing.Image)
+        Me.TIAccount.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        TileItemElement14.Text = "Login Setting"
+        TileItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TIAccount.Elements.Add(TileItemElement14)
+        Me.TIAccount.Id = 14
+        Me.TIAccount.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
+        Me.TIAccount.Name = "TIAccount"
         '
         'TIExit
         '
