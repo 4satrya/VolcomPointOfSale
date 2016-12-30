@@ -285,21 +285,38 @@
         Dim query_sal As String = sal.querySal("AND  p.id_shift=" + id_shift + " AND p.id_pos_status=2", "p.id_pos ASC", "p.id_shift")
         Dim dt_sal As DataTable = execute_query(query_sal, -1, True, "", "", "", "")
 
+        Dim subtotal As String = "0"
+        Dim discount As String = "0"
+        Dim after_discount As String = "0"
+        Dim tax As String = "0"
+        Dim netto As String = "0"
+        Dim card As String = "0"
+        Dim voucher As String = "0"
+        Dim cash_in_drawer As String = "0"
+
         If dt_sal.Rows.Count > 0 Then
-            Print(eLeft + "a. Gross Sale Before Disc.." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("subtotal").ToString()).ToString("N0"))
-            Print(eLeft + "b. Discount................" + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("discount").ToString()).ToString("N0"))
-            Print(eRight + "----------")
-            Print(eLeft + "c. Gross Sale After Disc..." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("after_discount").ToString()).ToString("N0"))
-            Print(eLeft + "d. Tax....................." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("tax").ToString()).ToString("N0"))
-            Print(eRight + "----------")
-            Print(eLeft + "e. Netto..................." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("total").ToString()).ToString("N0"))
-            Print(eLeft + "")
-            Print(eLeft + "f. Card...................." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("card").ToString()).ToString("N0"))
-            Print(eLeft + "g. Voucher................." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("voucher").ToString()).ToString("N0"))
-            Print(eRight + "----------")
-            Print(eLeft + "h. Cash in Drawer.........." + Chr(13) + eRight + Decimal.Parse(dt_sal.Rows(0)("cash_in_drawer").ToString()).ToString("N0"))
-            Print(eLeft + "")
+            subtotal = Decimal.Parse(dt_sal.Rows(0)("subtotal").ToString()).ToString("N0")
+            discount = Decimal.Parse(dt_sal.Rows(0)("discount").ToString()).ToString("N0")
+            after_discount = Decimal.Parse(dt_sal.Rows(0)("after_discount").ToString()).ToString("N0")
+            tax = Decimal.Parse(dt_sal.Rows(0)("tax").ToString()).ToString("N0")
+            netto = Decimal.Parse(dt_sal.Rows(0)("total").ToString()).ToString("N0")
+            card = Decimal.Parse(dt_sal.Rows(0)("card").ToString()).ToString("N0")
+            voucher = Decimal.Parse(dt_sal.Rows(0)("voucher").ToString()).ToString("N0")
+            cash_in_drawer = Decimal.Parse(dt_sal.Rows(0)("cash_in_drawer").ToString()).ToString("N0")
         End If
+        Print(eLeft + "a. Gross Sale Before Disc.." + Chr(13) + eRight + subtotal)
+        Print(eLeft + "b. Discount................" + Chr(13) + eRight + discount)
+        Print(eRight + "----------")
+        Print(eLeft + "c. Gross Sale After Disc..." + Chr(13) + eRight + after_discount)
+        Print(eLeft + "d. Tax....................." + Chr(13) + eRight + tax)
+        Print(eRight + "----------")
+        Print(eLeft + "e. Netto..................." + Chr(13) + eRight + netto)
+        Print(eLeft + "")
+        Print(eLeft + "f. Card...................." + Chr(13) + eRight + card)
+        Print(eLeft + "g. Voucher................." + Chr(13) + eRight + voucher)
+        Print(eRight + "----------")
+        Print(eLeft + "h. Cash in Drawer.........." + Chr(13) + eRight + cash_in_drawer)
+        Print(eLeft + "")
 
         'refund
         Print(eLeft + "i. Refund List :")

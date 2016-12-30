@@ -596,7 +596,7 @@ Partial Class FormPOSDrawerInfo
         Me.LabelCashDrawer.Name = "LabelCashDrawer"
         Me.LabelCashDrawer.Size = New System.Drawing.Size(104, 15)
         Me.LabelCashDrawer.TabIndex = 16
-        Me.LabelCashDrawer.Text = "100.0000"
+        Me.LabelCashDrawer.Text = "0"
         '
         'LabelShift
         '
@@ -636,7 +636,7 @@ Partial Class FormPOSDrawerInfo
         Me.LabelVoucher.Name = "LabelVoucher"
         Me.LabelVoucher.Size = New System.Drawing.Size(104, 15)
         Me.LabelVoucher.TabIndex = 14
-        Me.LabelVoucher.Text = "100.0000"
+        Me.LabelVoucher.Text = "0"
         '
         'LabelCashier
         '
@@ -676,7 +676,7 @@ Partial Class FormPOSDrawerInfo
         Me.LabelCard.Name = "LabelCard"
         Me.LabelCard.Size = New System.Drawing.Size(104, 15)
         Me.LabelCard.TabIndex = 12
-        Me.LabelCard.Text = "100.0000"
+        Me.LabelCard.Text = "0"
         '
         'LabelDateShift
         '
@@ -705,7 +705,7 @@ Partial Class FormPOSDrawerInfo
         Me.LabelNetto.Name = "LabelNetto"
         Me.LabelNetto.Size = New System.Drawing.Size(104, 15)
         Me.LabelNetto.TabIndex = 10
-        Me.LabelNetto.Text = "100.0000"
+        Me.LabelNetto.Text = "0"
         '
         'LabelPOS
         '
@@ -743,7 +743,7 @@ Partial Class FormPOSDrawerInfo
         Me.LabelTax.Name = "LabelTax"
         Me.LabelTax.Size = New System.Drawing.Size(104, 15)
         Me.LabelTax.TabIndex = 8
-        Me.LabelTax.Text = "100.0000"
+        Me.LabelTax.Text = "0"
         '
         'LabelControl8
         '
@@ -772,7 +772,7 @@ Partial Class FormPOSDrawerInfo
         Me.LabelAfter.Name = "LabelAfter"
         Me.LabelAfter.Size = New System.Drawing.Size(104, 15)
         Me.LabelAfter.TabIndex = 6
-        Me.LabelAfter.Text = "100.0000"
+        Me.LabelAfter.Text = "0"
         '
         'LabelControl7
         '
@@ -810,7 +810,7 @@ Partial Class FormPOSDrawerInfo
         Me.LabelDiscount.Name = "LabelDiscount"
         Me.LabelDiscount.Size = New System.Drawing.Size(104, 15)
         Me.LabelDiscount.TabIndex = 4
-        Me.LabelDiscount.Text = "100.0000"
+        Me.LabelDiscount.Text = "0"
         '
         'LabelControl5
         '
@@ -848,7 +848,7 @@ Partial Class FormPOSDrawerInfo
         Me.LabelBefore.Name = "LabelBefore"
         Me.LabelBefore.Size = New System.Drawing.Size(104, 15)
         Me.LabelBefore.TabIndex = 2
-        Me.LabelBefore.Text = "100.0000"
+        Me.LabelBefore.Text = "0"
         '
         'PanelControl2
         '
