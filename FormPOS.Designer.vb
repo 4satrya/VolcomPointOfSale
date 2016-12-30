@@ -183,7 +183,7 @@ Partial Class FormPOS
         Me.PanelControlMiddle.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControlMiddle.Location = New System.Drawing.Point(0, 57)
         Me.PanelControlMiddle.Name = "PanelControlMiddle"
-        Me.PanelControlMiddle.Size = New System.Drawing.Size(850, 593)
+        Me.PanelControlMiddle.Size = New System.Drawing.Size(850, 585)
         Me.PanelControlMiddle.TabIndex = 46
         '
         'PanelControlMiddleData
@@ -194,7 +194,7 @@ Partial Class FormPOS
         Me.PanelControlMiddleData.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControlMiddleData.Location = New System.Drawing.Point(0, 0)
         Me.PanelControlMiddleData.Name = "PanelControlMiddleData"
-        Me.PanelControlMiddleData.Size = New System.Drawing.Size(598, 593)
+        Me.PanelControlMiddleData.Size = New System.Drawing.Size(598, 585)
         Me.PanelControlMiddleData.TabIndex = 4
         '
         'GCPOS
@@ -205,7 +205,7 @@ Partial Class FormPOS
         Me.GCPOS.LookAndFeel.UseDefaultLookAndFeel = False
         Me.GCPOS.MainView = Me.GVPOS
         Me.GCPOS.Name = "GCPOS"
-        Me.GCPOS.Size = New System.Drawing.Size(598, 556)
+        Me.GCPOS.Size = New System.Drawing.Size(598, 548)
         Me.GCPOS.TabIndex = 1
         Me.GCPOS.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVPOS})
         '
@@ -330,7 +330,7 @@ Partial Class FormPOS
         Me.PanelControlCode.Controls.Add(Me.TxtItemCode)
         Me.PanelControlCode.Controls.Add(Me.LabelControl17)
         Me.PanelControlCode.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControlCode.Location = New System.Drawing.Point(0, 556)
+        Me.PanelControlCode.Location = New System.Drawing.Point(0, 548)
         Me.PanelControlCode.Name = "PanelControlCode"
         Me.PanelControlCode.Size = New System.Drawing.Size(598, 37)
         Me.PanelControlCode.TabIndex = 3
@@ -428,7 +428,7 @@ Partial Class FormPOS
         Me.PanelControlMainLeft.Dock = System.Windows.Forms.DockStyle.Right
         Me.PanelControlMainLeft.Location = New System.Drawing.Point(598, 0)
         Me.PanelControlMainLeft.Name = "PanelControlMainLeft"
-        Me.PanelControlMainLeft.Size = New System.Drawing.Size(252, 593)
+        Me.PanelControlMainLeft.Size = New System.Drawing.Size(252, 585)
         Me.PanelControlMainLeft.TabIndex = 2
         '
         'GroupControl1
@@ -440,7 +440,7 @@ Partial Class FormPOS
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl1.Location = New System.Drawing.Point(0, 435)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(252, 158)
+        Me.GroupControl1.Size = New System.Drawing.Size(252, 150)
         Me.GroupControl1.TabIndex = 34
         Me.GroupControl1.Text = "Additional"
         '
@@ -1037,16 +1037,16 @@ Partial Class FormPOS
         Me.PanelControlBottom.Controls.Add(Me.TxtShift)
         Me.PanelControlBottom.Controls.Add(Me.LabelControl23)
         Me.PanelControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControlBottom.Location = New System.Drawing.Point(0, 650)
+        Me.PanelControlBottom.Location = New System.Drawing.Point(0, 642)
         Me.PanelControlBottom.Name = "PanelControlBottom"
-        Me.PanelControlBottom.Size = New System.Drawing.Size(850, 61)
+        Me.PanelControlBottom.Size = New System.Drawing.Size(850, 68)
         Me.PanelControlBottom.TabIndex = 47
         '
         'DECreated
         '
         Me.DECreated.EditValue = Nothing
         Me.DECreated.Enabled = False
-        Me.DECreated.Location = New System.Drawing.Point(131, 32)
+        Me.DECreated.Location = New System.Drawing.Point(131, 35)
         Me.DECreated.Name = "DECreated"
         Me.DECreated.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DECreated.Properties.Appearance.Options.UseFont = True
@@ -1065,7 +1065,7 @@ Partial Class FormPOS
         'TxtCashierName
         '
         Me.TxtCashierName.Enabled = False
-        Me.TxtCashierName.Location = New System.Drawing.Point(131, 7)
+        Me.TxtCashierName.Location = New System.Drawing.Point(131, 10)
         Me.TxtCashierName.Name = "TxtCashierName"
         Me.TxtCashierName.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCashierName.Properties.Appearance.Options.UseFont = True
@@ -1079,7 +1079,7 @@ Partial Class FormPOS
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(314, 36)
+        Me.LabelControl1.Location = New System.Drawing.Point(314, 39)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(32, 13)
         Me.LabelControl1.TabIndex = 98
@@ -1088,7 +1088,7 @@ Partial Class FormPOS
         'LabelControl21
         '
         Me.LabelControl21.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl21.Location = New System.Drawing.Point(13, 10)
+        Me.LabelControl21.Location = New System.Drawing.Point(13, 13)
         Me.LabelControl21.Name = "LabelControl21"
         Me.LabelControl21.Size = New System.Drawing.Size(38, 13)
         Me.LabelControl21.TabIndex = 91
@@ -1097,7 +1097,7 @@ Partial Class FormPOS
         'LabelControl20
         '
         Me.LabelControl20.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl20.Location = New System.Drawing.Point(13, 35)
+        Me.LabelControl20.Location = New System.Drawing.Point(13, 38)
         Me.LabelControl20.Name = "LabelControl20"
         Me.LabelControl20.Size = New System.Drawing.Size(27, 13)
         Me.LabelControl20.TabIndex = 88
@@ -1106,7 +1106,7 @@ Partial Class FormPOS
         'LEStatus
         '
         Me.LEStatus.Enabled = False
-        Me.LEStatus.Location = New System.Drawing.Point(351, 33)
+        Me.LEStatus.Location = New System.Drawing.Point(351, 36)
         Me.LEStatus.Name = "LEStatus"
         Me.LEStatus.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LEStatus.Properties.Appearance.Options.UseFont = True
@@ -1123,7 +1123,7 @@ Partial Class FormPOS
         'TxtCashierUser
         '
         Me.TxtCashierUser.Enabled = False
-        Me.TxtCashierUser.Location = New System.Drawing.Point(57, 7)
+        Me.TxtCashierUser.Location = New System.Drawing.Point(57, 10)
         Me.TxtCashierUser.Name = "TxtCashierUser"
         Me.TxtCashierUser.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCashierUser.Properties.Appearance.Options.UseFont = True
@@ -1137,7 +1137,7 @@ Partial Class FormPOS
         'LabelControl22
         '
         Me.LabelControl22.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl22.Location = New System.Drawing.Point(314, 10)
+        Me.LabelControl22.Location = New System.Drawing.Point(314, 13)
         Me.LabelControl22.Name = "LabelControl22"
         Me.LabelControl22.Size = New System.Drawing.Size(31, 13)
         Me.LabelControl22.TabIndex = 93
@@ -1146,7 +1146,7 @@ Partial Class FormPOS
         'TxtPOS
         '
         Me.TxtPOS.Enabled = False
-        Me.TxtPOS.Location = New System.Drawing.Point(418, 7)
+        Me.TxtPOS.Location = New System.Drawing.Point(418, 10)
         Me.TxtPOS.Name = "TxtPOS"
         Me.TxtPOS.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtPOS.Properties.Appearance.Options.UseFont = True
@@ -1161,7 +1161,7 @@ Partial Class FormPOS
         '
         Me.TxtNumber.EditValue = ""
         Me.TxtNumber.Enabled = False
-        Me.TxtNumber.Location = New System.Drawing.Point(57, 33)
+        Me.TxtNumber.Location = New System.Drawing.Point(57, 36)
         Me.TxtNumber.Name = "TxtNumber"
         Me.TxtNumber.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtNumber.Properties.Appearance.Options.UseFont = True
@@ -1175,7 +1175,7 @@ Partial Class FormPOS
         'TxtShift
         '
         Me.TxtShift.Enabled = False
-        Me.TxtShift.Location = New System.Drawing.Point(351, 7)
+        Me.TxtShift.Location = New System.Drawing.Point(351, 10)
         Me.TxtShift.Name = "TxtShift"
         Me.TxtShift.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtShift.Properties.Appearance.Options.UseFont = True
@@ -1189,7 +1189,7 @@ Partial Class FormPOS
         'LabelControl23
         '
         Me.LabelControl23.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl23.Location = New System.Drawing.Point(386, 10)
+        Me.LabelControl23.Location = New System.Drawing.Point(386, 13)
         Me.LabelControl23.Name = "LabelControl23"
         Me.LabelControl23.Size = New System.Drawing.Size(28, 13)
         Me.LabelControl23.TabIndex = 95
@@ -1203,27 +1203,27 @@ Partial Class FormPOS
         Me.PanelControlInfo.Controls.Add(Me.LabelFooter)
         Me.PanelControlInfo.Controls.Add(Me.LabelControl7)
         Me.PanelControlInfo.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControlInfo.Location = New System.Drawing.Point(0, 711)
+        Me.PanelControlInfo.Location = New System.Drawing.Point(0, 710)
         Me.PanelControlInfo.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat
         Me.PanelControlInfo.LookAndFeel.UseDefaultLookAndFeel = False
         Me.PanelControlInfo.Name = "PanelControlInfo"
-        Me.PanelControlInfo.Size = New System.Drawing.Size(850, 19)
+        Me.PanelControlInfo.Size = New System.Drawing.Size(850, 20)
         Me.PanelControlInfo.TabIndex = 48
         '
         'LabelFooter
         '
         Me.LabelFooter.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelFooter.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelFooter.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.LabelFooter.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.LabelFooter.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical
-        Me.LabelFooter.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LabelFooter.Location = New System.Drawing.Point(2, 2)
+        Me.LabelFooter.Dock = System.Windows.Forms.DockStyle.Right
+        Me.LabelFooter.Location = New System.Drawing.Point(293, 2)
         Me.LabelFooter.Name = "LabelFooter"
-        Me.LabelFooter.Padding = New System.Windows.Forms.Padding(5, 3, 0, 0)
-        Me.LabelFooter.Size = New System.Drawing.Size(846, 16)
+        Me.LabelFooter.Padding = New System.Windows.Forms.Padding(5, 1, 5, 0)
+        Me.LabelFooter.Size = New System.Drawing.Size(555, 14)
         Me.LabelFooter.TabIndex = 3
-        Me.LabelFooter.Text = "VOLCOM POS MENU  |  Ins Trans    F2 Payment    F3 Price    F5 Refund    F7 Drawer" &
-    "    F8 Closing Shift    F11 Voucher"
+        Me.LabelFooter.Text = "POS MENU  |  Ins Trans    F2 Payment    F3 Price    F5 Refund    F7 Drawer    F8 " &
+    "Closing Shift    F11 Voucher"
         '
         'LabelControl7
         '
