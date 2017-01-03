@@ -16,6 +16,7 @@ Public Class FormUser
         GVRole.Focus()
         viewRole()
         viewUser()
+        viewPOS()
 
         'opt
         Dim qopt As String = "SELECT * FROM tb_opt"
@@ -68,6 +69,12 @@ Public Class FormUser
         GCRole.DataSource = data
     End Sub
 
+    Sub viewPOS()
+        Dim query As String = "SELECT * FROM tb_pos_dev pd ORDER BY pd.id_pos_dev ASC"
+        Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
+        GCPOS.DataSource = data
+    End Sub
+
     Sub viewUser()
         Dim user As New ClassUser()
         Dim query As String = user.queryMain("-1", "2")
@@ -101,21 +108,25 @@ Public Class FormUser
         Cursor = Cursors.WaitCursor
         If e.KeyCode = Keys.Escape Then 'close
             Close()
-        ElseIf e.KeyCode = Keys.Insert Then 'new
+        ElseIf e.KeyCode = Keys.F8 Then 'new
             If XTCUser.SelectedTabPageIndex = 0 Then 'role
                 FormUserRole.action = "ins"
                 FormUserRole.ShowDialog()
-            Else
+            ElseIf XTCUser.SelectedTabPageIndex = 1 Then
                 FormUserDet.action = "ins"
                 FormUserDet.ShowDialog()
+            ElseIf XTCUser.SelectedTabPageIndex = 1 Then
+                TxtPOS.Text = ""
+                TxtMac.Text = ""
+                TxtPOS.Focus()
             End If
-        ElseIf e.KeyCode = Keys.Enter Then 'edit
+        ElseIf e.KeyCode = Keys.F7 Then 'edit
             If XTCUser.SelectedTabPageIndex = 0 Then 'role
                 editRole()
-            Else 'user
+            ElseIf XTCUser.SelectedTabPageIndex = 1 Then
                 editUser()
             End If
-        ElseIf e.KeyCode = Keys.Delete Then 'delete
+        ElseIf e.KeyCode = Keys.F9 Then 'delete
             If XTCUser.SelectedTabPageIndex = 0 Then 'role
                 If GVRole.FocusedRowHandle >= 0 Then
                     Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
@@ -130,7 +141,7 @@ Public Class FormUser
                         End Try
                     End If
                 End If
-            Else 'user
+            ElseIf XTCUser.SelectedTabPageIndex = 1 Then
                 If GVUser.FocusedRowHandle >= 0 Then
                     Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
                     If confirm = DialogResult.Yes Then
@@ -325,5 +336,29 @@ Public Class FormUser
 
     Private Sub BtnOn_Click(sender As Object, e As EventArgs) Handles BtnOn.Click
         execute_non_query("UPDATE tb_opt SET sync_startup=1", True, "", "", "", "")
+    End Sub
+
+    Private Sub TextEdit1_EditValueChanged(sender As Object, e As EventArgs) Handles TxtPOS.EditValueChanged
+
+    End Sub
+
+    Private Sub GroupControl1_Paint(sender As Object, e As PaintEventArgs) Handles GroupControl1.Paint
+
+    End Sub
+
+    Private Sub TxtPOSID_EditValueChanged(sender As Object, e As EventArgs) Handles TxtPOSID.EditValueChanged
+
+    End Sub
+
+    Private Sub TxtPOS_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtPOS.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            TxtMac.Focus()
+        End If
+    End Sub
+
+    Private Sub TxtMac_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtMac.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            BtnPOS.Focus()
+        End If
     End Sub
 End Class

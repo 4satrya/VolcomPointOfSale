@@ -25,8 +25,6 @@ Partial Class FormItem
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
@@ -35,6 +33,8 @@ Partial Class FormItem
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.GCItem = New DevExpress.XtraGrid.GridControl()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -52,10 +52,10 @@ Partial Class FormItem
         Me.GridColumnActive = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnIsActive = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnSupp = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnCat = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl5 = New DevExpress.XtraEditors.PanelControl()
-        Me.GridColumnCat = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,6 +72,8 @@ Partial Class FormItem
         '
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl1.Controls.Add(Me.PanelControl2)
+        Me.PanelControl1.Controls.Add(Me.LabelControl5)
+        Me.PanelControl1.Controls.Add(Me.LabelControl6)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelControl1.Location = New System.Drawing.Point(20, 445)
         Me.PanelControl1.Name = "PanelControl1"
@@ -83,8 +85,6 @@ Partial Class FormItem
         Me.PanelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PanelControl2.Controls.Add(Me.LabelControl7)
         Me.PanelControl2.Controls.Add(Me.LabelControl10)
-        Me.PanelControl2.Controls.Add(Me.LabelControl5)
-        Me.PanelControl2.Controls.Add(Me.LabelControl6)
         Me.PanelControl2.Controls.Add(Me.LabelControl11)
         Me.PanelControl2.Controls.Add(Me.LabelControl4)
         Me.PanelControl2.Controls.Add(Me.LabelControl12)
@@ -94,9 +94,9 @@ Partial Class FormItem
         Me.PanelControl2.Controls.Add(Me.LabelControl2)
         Me.PanelControl2.Controls.Add(Me.LabelControl1)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PanelControl2.Location = New System.Drawing.Point(238, 0)
+        Me.PanelControl2.Location = New System.Drawing.Point(333, 0)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(422, 35)
+        Me.PanelControl2.Size = New System.Drawing.Size(327, 35)
         Me.PanelControl2.TabIndex = 8
         '
         'LabelControl7
@@ -116,24 +116,6 @@ Partial Class FormItem
         Me.LabelControl10.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl10.TabIndex = 22
         Me.LabelControl10.Text = "F9"
-        '
-        'LabelControl5
-        '
-        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(286, 11)
-        Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(62, 13)
-        Me.LabelControl5.TabIndex = 21
-        Me.LabelControl5.Text = "Import Excel"
-        '
-        'LabelControl6
-        '
-        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(262, 11)
-        Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(18, 13)
-        Me.LabelControl6.TabIndex = 20
-        Me.LabelControl6.Text = "F11"
         '
         'LabelControl11
         '
@@ -174,7 +156,7 @@ Partial Class FormItem
         'LabelControl8
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(385, 11)
+        Me.LabelControl8.Location = New System.Drawing.Point(288, 11)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(28, 13)
         Me.LabelControl8.TabIndex = 15
@@ -183,7 +165,7 @@ Partial Class FormItem
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(363, 11)
+        Me.LabelControl9.Location = New System.Drawing.Point(266, 11)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(16, 13)
         Me.LabelControl9.TabIndex = 14
@@ -206,6 +188,26 @@ Partial Class FormItem
         Me.LabelControl1.Size = New System.Drawing.Size(12, 13)
         Me.LabelControl1.TabIndex = 7
         Me.LabelControl1.Text = "F8"
+        '
+        'LabelControl5
+        '
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Location = New System.Drawing.Point(31, 11)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(62, 13)
+        Me.LabelControl5.TabIndex = 21
+        Me.LabelControl5.Text = "Import Excel"
+        Me.LabelControl5.Visible = False
+        '
+        'LabelControl6
+        '
+        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl6.Location = New System.Drawing.Point(7, 11)
+        Me.LabelControl6.Name = "LabelControl6"
+        Me.LabelControl6.Size = New System.Drawing.Size(18, 13)
+        Me.LabelControl6.TabIndex = 20
+        Me.LabelControl6.Text = "F11"
+        Me.LabelControl6.Visible = False
         '
         'GCItem
         '
@@ -338,6 +340,14 @@ Partial Class FormItem
         Me.GridColumnSupp.Visible = True
         Me.GridColumnSupp.VisibleIndex = 2
         '
+        'GridColumnCat
+        '
+        Me.GridColumnCat.Caption = "Category"
+        Me.GridColumnCat.FieldName = "design_cat"
+        Me.GridColumnCat.Name = "GridColumnCat"
+        Me.GridColumnCat.Visible = True
+        Me.GridColumnCat.VisibleIndex = 3
+        '
         'PanelControl3
         '
         Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
@@ -371,14 +381,6 @@ Partial Class FormItem
         Me.PanelControl5.Size = New System.Drawing.Size(40, 54)
         Me.PanelControl5.TabIndex = 4
         '
-        'GridColumnCat
-        '
-        Me.GridColumnCat.Caption = "Category"
-        Me.GridColumnCat.FieldName = "design_cat"
-        Me.GridColumnCat.Name = "GridColumnCat"
-        Me.GridColumnCat.Visible = True
-        Me.GridColumnCat.VisibleIndex = 3
-        '
         'FormItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -398,6 +400,7 @@ Partial Class FormItem
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
+        Me.PanelControl1.PerformLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()

@@ -749,7 +749,7 @@ Module Common
         DevExpress.Skins.SkinManager.EnableFormSkins()
         DevExpress.UserSkins.BonusSkins.Register()
         UserLookAndFeel.Default.UseWindowsXPTheme = False
-        UserLookAndFeel.Default.SkinName = "Office 2010 Blue"
+        UserLookAndFeel.Default.SkinName = "Visual Studio 2013 Blue"
     End Sub
 
     Sub apply_skin_print()

@@ -48,8 +48,8 @@
     End Sub
 
     Sub importExcel()
-        FormImportExcel.id_pop_up = "1"
-        FormImportExcel.ShowDialog()
+        ' FormImportExcel.id_pop_up = "1"
+        'FormImportExcel.ShowDialog()
     End Sub
 
     Sub exitForm()
@@ -120,4 +120,5 @@
     Private Sub PanelControl5_Click(sender As Object, e As EventArgs) Handles PanelControl5.Click
         exitForm()
     End Sub
+
 End Class
