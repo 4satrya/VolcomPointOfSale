@@ -36,6 +36,7 @@ Partial Class FormUser
         Me.GCPOS = New DevExpress.XtraGrid.GridControl()
         Me.GVPOS = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.TxtPOSID = New DevExpress.XtraEditors.TextEdit()
         Me.BtnPOS = New DevExpress.XtraEditors.SimpleButton()
         Me.TxtMac = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl34 = New DevExpress.XtraEditors.LabelControl()
@@ -128,7 +129,6 @@ Partial Class FormUser
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControlBack = New DevExpress.XtraEditors.PanelControl()
         Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.VolcomPointOfSale.WaitSyncItem), True, True)
-        Me.TxtPOSID = New DevExpress.XtraEditors.TextEdit()
         CType(Me.XTCUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTCUser.SuspendLayout()
         Me.XTPRole.SuspendLayout()
@@ -142,6 +142,7 @@ Partial Class FormUser
         CType(Me.GVPOS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        CType(Me.TxtPOSID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtMac.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtPOS.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTPServer.SuspendLayout()
@@ -186,7 +187,6 @@ Partial Class FormUser
         CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl3.SuspendLayout()
         CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtPOSID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'XTCUser
@@ -335,6 +335,14 @@ Partial Class FormUser
         Me.GroupControl1.Size = New System.Drawing.Size(691, 55)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "Data management"
+        '
+        'TxtPOSID
+        '
+        Me.TxtPOSID.Enabled = False
+        Me.TxtPOSID.Location = New System.Drawing.Point(47, 25)
+        Me.TxtPOSID.Name = "TxtPOSID"
+        Me.TxtPOSID.Size = New System.Drawing.Size(30, 20)
+        Me.TxtPOSID.TabIndex = 20
         '
         'BtnPOS
         '
@@ -1293,14 +1301,6 @@ Partial Class FormUser
         '
         Me.SplashScreenManager1.ClosingDelay = 500
         '
-        'TxtPOSID
-        '
-        Me.TxtPOSID.Enabled = False
-        Me.TxtPOSID.Location = New System.Drawing.Point(47, 25)
-        Me.TxtPOSID.Name = "TxtPOSID"
-        Me.TxtPOSID.Size = New System.Drawing.Size(30, 20)
-        Me.TxtPOSID.TabIndex = 20
-        '
         'FormUser
         '
         Me.Appearance.Options.UseFont = True
@@ -1335,6 +1335,7 @@ Partial Class FormUser
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
+        CType(Me.TxtPOSID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtMac.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtPOS.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTPServer.ResumeLayout(False)
@@ -1385,7 +1386,6 @@ Partial Class FormUser
         Me.PanelControl3.ResumeLayout(False)
         Me.PanelControl3.PerformLayout()
         CType(Me.PanelControlBack, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtPOSID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -115,7 +115,8 @@ Public Class FormUser
             ElseIf XTCUser.SelectedTabPageIndex = 1 Then
                 FormUserDet.action = "ins"
                 FormUserDet.ShowDialog()
-            ElseIf XTCUser.SelectedTabPageIndex = 1 Then
+            ElseIf XTCUser.SelectedTabPageIndex = 2 Then
+                TxtPOSID.Text = ""
                 TxtPOS.Text = ""
                 TxtMac.Text = ""
                 TxtPOS.Focus()
@@ -125,6 +126,11 @@ Public Class FormUser
                 editRole()
             ElseIf XTCUser.SelectedTabPageIndex = 1 Then
                 editUser()
+            ElseIf XTCUser.SelectedTabPageIndex = 2 Then
+                TxtPOSID.Text = GVPOS.GetFocusedRowCellValue("id_pos_dev").ToString
+                TxtPOS.Text = GVPOS.GetFocusedRowCellValue("pos_dev").ToString
+                TxtMac.Text = GVPOS.GetFocusedRowCellValue("mac_address").ToString
+                TxtPOS.Focus()
             End If
         ElseIf e.KeyCode = Keys.F9 Then 'delete
             If XTCUser.SelectedTabPageIndex = 0 Then 'role
@@ -150,6 +156,20 @@ Public Class FormUser
                             Dim query As String = "DELETE FROM tb_user WHERE id_user=" + id + " "
                             execute_non_query(query, True, "", "", "", "")
                             viewUser()
+                        Catch ex As Exception
+                            errorDelete()
+                        End Try
+                    End If
+                End If
+            ElseIf XTCUser.SelectedTabPageIndex = 2 Then
+                If GVPOS.FocusedRowHandle >= 0 Then
+                    Dim confirm As DialogResult = DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                    If confirm = DialogResult.Yes Then
+                        Try
+                            Dim id As String = GVPOS.GetFocusedRowCellValue("id_pos_dev").ToString
+                            Dim query As String = "DELETE FROM tb_pos_dev WHERE id_pos_dev=" + id + " "
+                            execute_non_query(query, True, "", "", "", "")
+                            viewPOS()
                         Catch ex As Exception
                             errorDelete()
                         End Try
@@ -360,5 +380,24 @@ Public Class FormUser
         If e.KeyCode = Keys.Enter Then
             BtnPOS.Focus()
         End If
+    End Sub
+
+    Private Sub BtnPOS_Click(sender As Object, e As EventArgs) Handles BtnPOS.Click
+        Cursor = Cursors.WaitCursor
+        Dim id As String = TxtPOSID.Text
+        Dim pos_dev As String = addSlashes(TxtPOS.Text)
+        Dim mac_address As String = addSlashes(TxtMac.Text)
+        If id = "" Then
+            Dim query As String = "INSERT INTO tb_pos_dev(pos_dev, mac_address) VALUES('" + pos_dev + "', '" + mac_address + "') "
+            execute_non_query(query, True, "", "", "", "")
+        Else
+            Dim query As String = "UPDATE tb_pos_dev SET pos_dev='" + pos_dev + "', mac_address='" + mac_address + "' WHERE id_pos_dev=" + id + ""
+            execute_non_query(query, True, "", "", "", "")
+        End If
+        TxtPOSID.Text = ""
+        TxtPOS.Text = ""
+        TxtMac.Text = ""
+        viewPOS()
+        Cursor = Cursors.Default
     End Sub
 End Class
