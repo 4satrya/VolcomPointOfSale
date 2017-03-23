@@ -42,6 +42,7 @@ Partial Class FormHome
         Dim TileItemElement19 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement20 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement21 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement22 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Me.NavButton3 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.TileControl1 = New DevExpress.XtraEditors.TileControl()
         Me.TGGeneral = New DevExpress.XtraEditors.TileGroup()
@@ -56,9 +57,10 @@ Partial Class FormHome
         Me.TIStock = New DevExpress.XtraEditors.TileItem()
         Me.TITransDetail = New DevExpress.XtraEditors.TileItem()
         Me.TICopyReceipt = New DevExpress.XtraEditors.TileItem()
-        Me.TIAccount = New DevExpress.XtraEditors.TileItem()
         Me.TICompany = New DevExpress.XtraEditors.TileItem()
         Me.TIUser = New DevExpress.XtraEditors.TileItem()
+        Me.TINotif = New DevExpress.XtraEditors.TileItem()
+        Me.TIAccount = New DevExpress.XtraEditors.TileItem()
         Me.TIExit = New DevExpress.XtraEditors.TileItem()
         Me.NavButton2 = New DevExpress.XtraBars.Navigation.NavButton()
         Me.NavButton4 = New DevExpress.XtraBars.Navigation.NavButton()
@@ -126,7 +128,7 @@ Partial Class FormHome
         Me.TileControl1.Groups.Add(Me.TGGeneral)
         Me.TileControl1.ItemSize = 125
         Me.TileControl1.Location = New System.Drawing.Point(0, 81)
-        Me.TileControl1.MaxId = 41
+        Me.TileControl1.MaxId = 43
         Me.TileControl1.Name = "TileControl1"
         Me.TileControl1.Size = New System.Drawing.Size(1366, 687)
         Me.TileControl1.TabIndex = 0
@@ -145,9 +147,10 @@ Partial Class FormHome
         Me.TGGeneral.Items.Add(Me.TIStock)
         Me.TGGeneral.Items.Add(Me.TITransDetail)
         Me.TGGeneral.Items.Add(Me.TICopyReceipt)
-        Me.TGGeneral.Items.Add(Me.TIAccount)
         Me.TGGeneral.Items.Add(Me.TICompany)
         Me.TGGeneral.Items.Add(Me.TIUser)
+        Me.TGGeneral.Items.Add(Me.TINotif)
+        Me.TGGeneral.Items.Add(Me.TIAccount)
         Me.TGGeneral.Items.Add(Me.TIExit)
         Me.TGGeneral.Name = "TGGeneral"
         Me.TGGeneral.Text = "General"
@@ -209,6 +212,10 @@ Partial Class FormHome
         '
         'TIAdj
         '
+        Me.TIAdj.AppearanceItem.Normal.BackColor = System.Drawing.Color.SteelBlue
+        Me.TIAdj.AppearanceItem.Normal.BorderColor = System.Drawing.Color.SteelBlue
+        Me.TIAdj.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TIAdj.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIAdj.BackgroundImage = CType(resources.GetObject("TIAdj.BackgroundImage"), System.Drawing.Image)
         Me.TIAdj.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
         TileItemElement5.Text = "Adjustment"
@@ -304,30 +311,19 @@ Partial Class FormHome
         Me.TICopyReceipt.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TICopyReceipt.Name = "TICopyReceipt"
         '
-        'TIAccount
-        '
-        Me.TIAccount.BackgroundImage = CType(resources.GetObject("TIAccount.BackgroundImage"), System.Drawing.Image)
-        Me.TIAccount.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement12.Text = "Login Setting"
-        TileItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TIAccount.Elements.Add(TileItemElement12)
-        Me.TIAccount.Id = 14
-        Me.TIAccount.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
-        Me.TIAccount.Name = "TIAccount"
-        '
         'TICompany
         '
-        Me.TICompany.AppearanceItem.Normal.BackColor = System.Drawing.Color.OrangeRed
-        Me.TICompany.AppearanceItem.Normal.BorderColor = System.Drawing.Color.OrangeRed
+        Me.TICompany.AppearanceItem.Normal.BackColor = System.Drawing.Color.SteelBlue
+        Me.TICompany.AppearanceItem.Normal.BorderColor = System.Drawing.Color.SteelBlue
         Me.TICompany.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TICompany.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TICompany.BackgroundImage = CType(resources.GetObject("TICompany.BackgroundImage"), System.Drawing.Image)
         Me.TICompany.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement13.Text = "Company"
-        TileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TICompany.Elements.Add(TileItemElement13)
+        TileItemElement12.Text = "Company"
+        TileItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TICompany.Elements.Add(TileItemElement12)
         Me.TICompany.Id = 27
-        Me.TICompany.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
+        Me.TICompany.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TICompany.Name = "TICompany"
         '
         'TIUser
@@ -338,12 +334,38 @@ Partial Class FormHome
         Me.TIUser.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIUser.BackgroundImage = CType(resources.GetObject("TIUser.BackgroundImage"), System.Drawing.Image)
         Me.TIUser.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement14.Text = "Setting"
-        TileItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TIUser.Elements.Add(TileItemElement14)
+        TileItemElement13.Text = "Setting"
+        TileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TIUser.Elements.Add(TileItemElement13)
         Me.TIUser.Id = 5
         Me.TIUser.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TIUser.Name = "TIUser"
+        '
+        'TINotif
+        '
+        Me.TINotif.AppearanceItem.Normal.BackColor = System.Drawing.Color.SlateBlue
+        Me.TINotif.AppearanceItem.Normal.BorderColor = System.Drawing.Color.SlateBlue
+        Me.TINotif.AppearanceItem.Normal.Options.UseBackColor = True
+        Me.TINotif.AppearanceItem.Normal.Options.UseBorderColor = True
+        Me.TINotif.BackgroundImage = CType(resources.GetObject("TINotif.BackgroundImage"), System.Drawing.Image)
+        Me.TINotif.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        TileItemElement14.Text = "Notification"
+        TileItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TINotif.Elements.Add(TileItemElement14)
+        Me.TINotif.Id = 42
+        Me.TINotif.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
+        Me.TINotif.Name = "TINotif"
+        '
+        'TIAccount
+        '
+        Me.TIAccount.BackgroundImage = CType(resources.GetObject("TIAccount.BackgroundImage"), System.Drawing.Image)
+        Me.TIAccount.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        TileItemElement15.Text = "Login Setting"
+        TileItemElement15.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TIAccount.Elements.Add(TileItemElement15)
+        Me.TIAccount.Id = 14
+        Me.TIAccount.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
+        Me.TIAccount.Name = "TIAccount"
         '
         'TIExit
         '
@@ -353,9 +375,9 @@ Partial Class FormHome
         Me.TIExit.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIExit.BackgroundImage = CType(resources.GetObject("TIExit.BackgroundImage"), System.Drawing.Image)
         Me.TIExit.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement15.Text = "Sign out"
-        TileItemElement15.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
-        Me.TIExit.Elements.Add(TileItemElement15)
+        TileItemElement16.Text = "Sign out"
+        TileItemElement16.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TIExit.Elements.Add(TileItemElement16)
         Me.TIExit.Id = 29
         Me.TIExit.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TIExit.Name = "TIExit"
@@ -551,46 +573,26 @@ Partial Class FormHome
         Me.TIDB.AppearanceItem.Normal.BorderColor = System.Drawing.Color.DodgerBlue
         Me.TIDB.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TIDB.AppearanceItem.Normal.Options.UseBorderColor = True
-        TileItemElement16.Appearance.Hovered.Font = New System.Drawing.Font("Segoe UI Light", 17.70833!)
-        TileItemElement16.Appearance.Hovered.Options.UseFont = True
-        TileItemElement16.Appearance.Hovered.Options.UseTextOptions = True
-        TileItemElement16.Appearance.Hovered.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter
-        TileItemElement16.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
-        TileItemElement16.Appearance.Normal.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        TileItemElement16.Appearance.Normal.Options.UseFont = True
-        TileItemElement16.Appearance.Normal.Options.UseTextOptions = True
-        TileItemElement16.Appearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter
-        TileItemElement16.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
-        TileItemElement16.Appearance.Selected.Font = New System.Drawing.Font("Segoe UI Light", 17.70833!)
-        TileItemElement16.Appearance.Selected.Options.UseFont = True
-        TileItemElement16.Appearance.Selected.Options.UseTextOptions = True
-        TileItemElement16.Appearance.Selected.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter
-        TileItemElement16.Appearance.Selected.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
-        TileItemElement16.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual
-        TileItemElement16.MaxWidth = 166
-        TileItemElement16.Text = "Database"
-        TileItemElement16.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual
-        TileItemElement16.TextLocation = New System.Drawing.Point(78, 7)
-        TileItemElement17.Appearance.Hovered.Font = New System.Drawing.Font("Segoe UI", 9.375!)
+        TileItemElement17.Appearance.Hovered.Font = New System.Drawing.Font("Segoe UI Light", 17.70833!)
         TileItemElement17.Appearance.Hovered.Options.UseFont = True
         TileItemElement17.Appearance.Hovered.Options.UseTextOptions = True
         TileItemElement17.Appearance.Hovered.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter
         TileItemElement17.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
-        TileItemElement17.Appearance.Normal.Font = New System.Drawing.Font("Segoe UI", 9.375!)
+        TileItemElement17.Appearance.Normal.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         TileItemElement17.Appearance.Normal.Options.UseFont = True
         TileItemElement17.Appearance.Normal.Options.UseTextOptions = True
         TileItemElement17.Appearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter
         TileItemElement17.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
-        TileItemElement17.Appearance.Selected.Font = New System.Drawing.Font("Segoe UI", 9.375!)
+        TileItemElement17.Appearance.Selected.Font = New System.Drawing.Font("Segoe UI Light", 17.70833!)
         TileItemElement17.Appearance.Selected.Options.UseFont = True
         TileItemElement17.Appearance.Selected.Options.UseTextOptions = True
         TileItemElement17.Appearance.Selected.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter
         TileItemElement17.Appearance.Selected.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
         TileItemElement17.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual
         TileItemElement17.MaxWidth = 166
-        TileItemElement17.Text = "Text2"
+        TileItemElement17.Text = "Database"
         TileItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual
-        TileItemElement17.TextLocation = New System.Drawing.Point(78, 35)
+        TileItemElement17.TextLocation = New System.Drawing.Point(78, 7)
         TileItemElement18.Appearance.Hovered.Font = New System.Drawing.Font("Segoe UI", 9.375!)
         TileItemElement18.Appearance.Hovered.Options.UseFont = True
         TileItemElement18.Appearance.Hovered.Options.UseTextOptions = True
@@ -608,24 +610,43 @@ Partial Class FormHome
         TileItemElement18.Appearance.Selected.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
         TileItemElement18.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual
         TileItemElement18.MaxWidth = 166
-        TileItemElement18.Text = "Text3"
+        TileItemElement18.Text = "Text2"
         TileItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual
-        TileItemElement18.TextLocation = New System.Drawing.Point(78, 50)
-        TileItemElement19.Appearance.Hovered.Font = New System.Drawing.Font("Tahoma", 8.59375!)
+        TileItemElement18.TextLocation = New System.Drawing.Point(78, 35)
+        TileItemElement19.Appearance.Hovered.Font = New System.Drawing.Font("Segoe UI", 9.375!)
         TileItemElement19.Appearance.Hovered.Options.UseFont = True
-        TileItemElement19.Appearance.Normal.Font = New System.Drawing.Font("Tahoma", 8.59375!)
+        TileItemElement19.Appearance.Hovered.Options.UseTextOptions = True
+        TileItemElement19.Appearance.Hovered.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter
+        TileItemElement19.Appearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        TileItemElement19.Appearance.Normal.Font = New System.Drawing.Font("Segoe UI", 9.375!)
         TileItemElement19.Appearance.Normal.Options.UseFont = True
-        TileItemElement19.Appearance.Selected.Font = New System.Drawing.Font("Tahoma", 8.59375!)
+        TileItemElement19.Appearance.Normal.Options.UseTextOptions = True
+        TileItemElement19.Appearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter
+        TileItemElement19.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
+        TileItemElement19.Appearance.Selected.Font = New System.Drawing.Font("Segoe UI", 9.375!)
         TileItemElement19.Appearance.Selected.Options.UseFont = True
-        TileItemElement19.Image = CType(resources.GetObject("TileItemElement19.Image"), System.Drawing.Image)
+        TileItemElement19.Appearance.Selected.Options.UseTextOptions = True
+        TileItemElement19.Appearance.Selected.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisCharacter
+        TileItemElement19.Appearance.Selected.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap
         TileItemElement19.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual
-        TileItemElement19.ImageLocation = New System.Drawing.Point(4, 8)
-        TileItemElement19.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomOutside
-        TileItemElement19.ImageSize = New System.Drawing.Size(66, 66)
-        Me.TIDB.Elements.Add(TileItemElement16)
+        TileItemElement19.MaxWidth = 166
+        TileItemElement19.Text = "Text3"
+        TileItemElement19.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual
+        TileItemElement19.TextLocation = New System.Drawing.Point(78, 50)
+        TileItemElement20.Appearance.Hovered.Font = New System.Drawing.Font("Tahoma", 8.59375!)
+        TileItemElement20.Appearance.Hovered.Options.UseFont = True
+        TileItemElement20.Appearance.Normal.Font = New System.Drawing.Font("Tahoma", 8.59375!)
+        TileItemElement20.Appearance.Normal.Options.UseFont = True
+        TileItemElement20.Appearance.Selected.Font = New System.Drawing.Font("Tahoma", 8.59375!)
+        TileItemElement20.Appearance.Selected.Options.UseFont = True
+        TileItemElement20.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual
+        TileItemElement20.ImageLocation = New System.Drawing.Point(4, 8)
+        TileItemElement20.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomOutside
+        TileItemElement20.ImageSize = New System.Drawing.Size(66, 66)
         Me.TIDB.Elements.Add(TileItemElement17)
         Me.TIDB.Elements.Add(TileItemElement18)
         Me.TIDB.Elements.Add(TileItemElement19)
+        Me.TIDB.Elements.Add(TileItemElement20)
         Me.TIDB.Id = 34
         Me.TIDB.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TIDB.Name = "TIDB"
@@ -638,9 +659,9 @@ Partial Class FormHome
         Me.TISetup.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TISetup.BackgroundImage = CType(resources.GetObject("TISetup.BackgroundImage"), System.Drawing.Image)
         Me.TISetup.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement20.Text = "General Setup"
-        TileItemElement20.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TISetup.Elements.Add(TileItemElement20)
+        TileItemElement21.Text = "General Setup"
+        TileItemElement21.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TISetup.Elements.Add(TileItemElement21)
         Me.TISetup.Id = 30
         Me.TISetup.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TISetup.Name = "TISetup"
@@ -655,9 +676,9 @@ Partial Class FormHome
         '
         Me.TILogout.BackgroundImage = CType(resources.GetObject("TILogout.BackgroundImage"), System.Drawing.Image)
         Me.TILogout.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement21.Text = "Logout"
-        TileItemElement21.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
-        Me.TILogout.Elements.Add(TileItemElement21)
+        TileItemElement22.Text = "Logout"
+        TileItemElement22.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TILogout.Elements.Add(TileItemElement22)
         Me.TILogout.Id = 28
         Me.TILogout.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TILogout.Name = "TILogout"
@@ -695,6 +716,7 @@ Partial Class FormHome
         Me.LookAndFeel.UseDefaultLookAndFeel = False
         Me.Name = "FormHome"
         Me.Opacity = 0R
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.PanelControlTop, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlTop.ResumeLayout(False)
@@ -759,4 +781,5 @@ Partial Class FormHome
     Friend WithEvents TIStockOpname As DevExpress.XtraEditors.TileItem
     Friend WithEvents TIAdj As DevExpress.XtraEditors.TileItem
     Friend WithEvents TileGroup3 As DevExpress.XtraEditors.TileGroup
+    Friend WithEvents TINotif As DevExpress.XtraEditors.TileItem
 End Class

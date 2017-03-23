@@ -1,10 +1,9 @@
 ﻿Public Class FormUserDet
     Public action As String = "-1"
     Public id As String = "-1"
-    Dim db_main As String = get_setup_field("db_main")
 
     Sub viewEmployee()
-        Dim query As String = "SELECT * FROM " + db_main + ".tb_m_employee "
+        Dim query As String = "SELECT * FROM tb_m_employee "
         Dim data As DataTable = execute_query(query, -1, True, "", "", "", "")
         SLEEmployee.Properties.DataSource = Nothing
         SLEEmployee.Properties.DataSource = data
@@ -18,7 +17,7 @@
     End Sub
 
     Sub getEmp()
-        Dim q As String = "SELECT employee_code FROM " + db_main + ".tb_m_employee WHERE id_employee = '" + SLEEmployee.EditValue.ToString + "' "
+        Dim q As String = "SELECT employee_code FROM tb_m_employee WHERE id_employee = '" + SLEEmployee.EditValue.ToString + "' "
         Dim d As DataTable = execute_query(q, -1, True, "", "", "", "")
         TxtUsername.Text = d.Rows(0)("employee_code").ToString
     End Sub
@@ -69,7 +68,7 @@
         If jum_cek <= 0 Then
             'insert employee
             Dim query_employee As String = "INSERT INTO tb_m_employee 
-            SELECT * FROM " + db_main + ".tb_m_employee WHERE " + db_main + ".tb_m_employee.id_employee='" + id_employee + "' "
+            SELECT * FROM tb_m_employee WHERE tb_m_employee.id_employee='" + id_employee + "' "
             execute_non_query(query_employee, True, "", "", "", "")
         End If
     End Sub

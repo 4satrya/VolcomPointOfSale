@@ -91,7 +91,7 @@ Partial Class FormFront
         'PanelBasic
         '
         Me.PanelBasic.Appearance.BackColor = System.Drawing.Color.SteelBlue
-        Me.PanelBasic.Appearance.BackColor2 = System.Drawing.Color.LightSeaGreen
+        Me.PanelBasic.Appearance.BackColor2 = System.Drawing.Color.DeepSkyBlue
         Me.PanelBasic.Appearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.PanelBasic.Appearance.Options.UseBackColor = True
         Me.PanelBasic.Appearance.Options.UseBorderColor = True
@@ -115,7 +115,7 @@ Partial Class FormFront
         '
         Me.LabelCsh.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelCsh.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelCsh.Location = New System.Drawing.Point(32, 110)
+        Me.LabelCsh.Location = New System.Drawing.Point(32, 107)
         Me.LabelCsh.Name = "LabelCsh"
         Me.LabelCsh.Size = New System.Drawing.Size(114, 17)
         Me.LabelCsh.TabIndex = 5
@@ -125,7 +125,7 @@ Partial Class FormFront
         '
         Me.LabelDate.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelDate.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelDate.Location = New System.Drawing.Point(32, 136)
+        Me.LabelDate.Location = New System.Drawing.Point(32, 130)
         Me.LabelDate.Name = "LabelDate"
         Me.LabelDate.Size = New System.Drawing.Size(194, 17)
         Me.LabelDate.TabIndex = 3
@@ -337,6 +337,7 @@ Partial Class FormFront
         Me.Controls.Add(Me.PanelBasic)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.LookAndFeel.UseDefaultLookAndFeel = False
@@ -344,7 +345,6 @@ Partial Class FormFront
         Me.MinimizeBox = False
         Me.Name = "FormFront"
         Me.Opacity = 0R
-        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Point of Sale"
         CType(Me.PanelBasic, System.ComponentModel.ISupportInitialize).EndInit()

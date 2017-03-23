@@ -84,7 +84,7 @@
             For i As Integer = 0 To group.Items.Count - 1
                 If TypeOf group.Items(i) Is DevExpress.XtraEditors.TileItem Then
                     Dim item As DevExpress.XtraEditors.TileItem = TryCast(group.Items(i), DevExpress.XtraEditors.TileItem)
-                    If item.Name.ToString <> "TIExit" And item.Name.ToString <> "TIAccount" Then
+                    If item.Name.ToString <> "TIExit" And item.Name.ToString <> "TIAccount" And item.Name.ToString <> "TINotif" Then
                         item.Visible = False
                     End If
                 End If
@@ -103,7 +103,7 @@
             For i As Integer = 0 To group.Items.Count - 1
                 If TypeOf group.Items(i) Is DevExpress.XtraEditors.TileItem Then
                     Dim item As DevExpress.XtraEditors.TileItem = TryCast(group.Items(i), DevExpress.XtraEditors.TileItem)
-                    If item.Name.ToString <> "TIExit" And item.Name.ToString <> "TIAccount" Then
+                    If item.Name.ToString <> "TIExit" And item.Name.ToString <> "TIAccount" And item.Name.ToString <> "TINotif" Then
                         Dim dtf As DataRow() = dt.Select("[menu_tile]='" + item.Name.ToString + "'")
                         If dtf.Length > 0 Then
                             item.Visible = True
