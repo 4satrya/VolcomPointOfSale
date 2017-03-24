@@ -64,7 +64,8 @@
 
     Private Sub FormPOS_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.F1 Then
-            help()
+            'help()
+            stock_info()
         ElseIf e.KeyCode = Keys.F2 And new_trans = True Then
             payment()
         ElseIf e.KeyCode = Keys.F3 Then
@@ -90,6 +91,12 @@
         ElseIf e.KeyCode = Keys.Escape Then
             exitForm()
         End If
+    End Sub
+
+    Sub stock_info()
+        Cursor = Cursors.WaitCursor
+        FormStock.ShowDialog()
+        Cursor = Cursors.Default
     End Sub
 
     Sub closing_shift()

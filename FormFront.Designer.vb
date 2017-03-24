@@ -20,8 +20,8 @@ Partial Class FormFront
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormFront))
-        Dim TileItemElement1 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement2 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement9 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement10 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Me.TIExit = New DevExpress.XtraEditors.TileItem()
         Me.TileItem2 = New DevExpress.XtraEditors.TileItem()
         Me.PanelBasic = New DevExpress.XtraEditors.PanelControl()
@@ -33,17 +33,19 @@ Partial Class FormFront
         Me.PCClose = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
+        Me.PIStock = New DevExpress.XtraEditors.PictureEdit()
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.PISync = New DevExpress.XtraEditors.PictureEdit()
         Me.PIPOS = New DevExpress.XtraEditors.PictureEdit()
-        Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.PIInv = New DevExpress.XtraEditors.PictureEdit()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelFooter = New DevExpress.XtraEditors.LabelControl()
         Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.VolcomPointOfSale.WaitSyncItem), True, True)
+        Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         CType(Me.PanelBasic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBasic.SuspendLayout()
         CType(Me.PanelControl4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,12 +53,14 @@ Partial Class FormFront
         CType(Me.PCClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
+        CType(Me.PIStock.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PISync.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PIPOS.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PIInv.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl3.SuspendLayout()
         Me.SuspendLayout()
         '
         'TIExit
@@ -66,9 +70,9 @@ Partial Class FormFront
         Me.TIExit.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TIExit.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIExit.BackgroundImage = CType(resources.GetObject("TIExit.BackgroundImage"), System.Drawing.Image)
-        TileItemElement1.Text = "Exit"
-        TileItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
-        Me.TIExit.Elements.Add(TileItemElement1)
+        TileItemElement9.Text = "Exit"
+        TileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TIExit.Elements.Add(TileItemElement9)
         Me.TIExit.Id = 29
         Me.TIExit.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TIExit.Name = "TIExit"
@@ -81,9 +85,9 @@ Partial Class FormFront
         Me.TileItem2.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TileItem2.BackgroundImage = CType(resources.GetObject("TileItem2.BackgroundImage"), System.Drawing.Image)
         Me.TileItem2.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement2.Text = "Exit Program"
-        TileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem2.Elements.Add(TileItemElement2)
+        TileItemElement10.Text = "Exit Program"
+        TileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem2.Elements.Add(TileItemElement10)
         Me.TileItem2.Id = 45
         Me.TileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TileItem2.Name = "TileItem2"
@@ -96,8 +100,8 @@ Partial Class FormFront
         Me.PanelBasic.Appearance.Options.UseBackColor = True
         Me.PanelBasic.Appearance.Options.UseBorderColor = True
         Me.PanelBasic.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
+        Me.PanelBasic.Controls.Add(Me.PanelControl3)
         Me.PanelBasic.Controls.Add(Me.LabelCsh)
-        Me.PanelBasic.Controls.Add(Me.LabelDate)
         Me.PanelBasic.Controls.Add(Me.LabelInfo)
         Me.PanelBasic.Controls.Add(Me.LabelStoreName)
         Me.PanelBasic.Controls.Add(Me.PanelControl4)
@@ -113,31 +117,33 @@ Partial Class FormFront
         '
         'LabelCsh
         '
-        Me.LabelCsh.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCsh.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelCsh.Appearance.ForeColor = System.Drawing.Color.White
         Me.LabelCsh.Location = New System.Drawing.Point(32, 107)
         Me.LabelCsh.Name = "LabelCsh"
-        Me.LabelCsh.Size = New System.Drawing.Size(114, 17)
+        Me.LabelCsh.Size = New System.Drawing.Size(134, 21)
         Me.LabelCsh.TabIndex = 5
         Me.LabelCsh.Text = "CASHIER ACTIVE : "
         '
         'LabelDate
         '
-        Me.LabelDate.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelDate.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelDate.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelDate.Location = New System.Drawing.Point(32, 130)
+        Me.LabelDate.Dock = System.Windows.Forms.DockStyle.Right
+        Me.LabelDate.Location = New System.Drawing.Point(16, 0)
         Me.LabelDate.Name = "LabelDate"
-        Me.LabelDate.Size = New System.Drawing.Size(194, 17)
+        Me.LabelDate.Padding = New System.Windows.Forms.Padding(0, 22, 15, 0)
+        Me.LabelDate.Size = New System.Drawing.Size(205, 39)
         Me.LabelDate.TabIndex = 3
         Me.LabelDate.Text = "THURSDAY, 22 DECEMBER 2016"
         '
         'LabelInfo
         '
-        Me.LabelInfo.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelInfo.Appearance.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelInfo.Appearance.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.LabelInfo.Location = New System.Drawing.Point(32, 84)
+        Me.LabelInfo.Location = New System.Drawing.Point(32, 80)
         Me.LabelInfo.Name = "LabelInfo"
-        Me.LabelInfo.Size = New System.Drawing.Size(101, 17)
+        Me.LabelInfo.Size = New System.Drawing.Size(119, 21)
         Me.LabelInfo.TabIndex = 1
         Me.LabelInfo.Text = "POS#1 / SHIFT 1"
         '
@@ -189,11 +195,12 @@ Partial Class FormFront
         Me.PanelControl2.Appearance.BackColor = System.Drawing.Color.White
         Me.PanelControl2.Appearance.Options.UseBackColor = True
         Me.PanelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl2.Controls.Add(Me.LabelControl2)
+        Me.PanelControl2.Controls.Add(Me.PIStock)
         Me.PanelControl2.Controls.Add(Me.LabelControl9)
         Me.PanelControl2.Controls.Add(Me.LabelControl8)
         Me.PanelControl2.Controls.Add(Me.PISync)
         Me.PanelControl2.Controls.Add(Me.PIPOS)
-        Me.PanelControl2.Controls.Add(Me.PictureEdit1)
         Me.PanelControl2.Controls.Add(Me.LabelControl7)
         Me.PanelControl2.Controls.Add(Me.PIInv)
         Me.PanelControl2.Controls.Add(Me.PanelControl1)
@@ -203,11 +210,33 @@ Partial Class FormFront
         Me.PanelControl2.Size = New System.Drawing.Size(676, 274)
         Me.PanelControl2.TabIndex = 1
         '
+        'LabelControl2
+        '
+        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl2.Appearance.ForeColor = System.Drawing.Color.SteelBlue
+        Me.LabelControl2.Location = New System.Drawing.Point(237, 183)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(51, 21)
+        Me.LabelControl2.TabIndex = 10
+        Me.LabelControl2.Text = "STOCK"
+        '
+        'PIStock
+        '
+        Me.PIStock.EditValue = CType(resources.GetObject("PIStock.EditValue"), Object)
+        Me.PIStock.Location = New System.Drawing.Point(182, 45)
+        Me.PIStock.Name = "PIStock"
+        Me.PIStock.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
+        Me.PIStock.Properties.Appearance.Options.UseBackColor = True
+        Me.PIStock.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PIStock.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.[Auto]
+        Me.PIStock.Size = New System.Drawing.Size(159, 132)
+        Me.PIStock.TabIndex = 9
+        '
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl9.Appearance.ForeColor = System.Drawing.Color.SteelBlue
-        Me.LabelControl9.Location = New System.Drawing.Point(280, 183)
+        Me.LabelControl9.Location = New System.Drawing.Point(370, 183)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(114, 21)
         Me.LabelControl9.TabIndex = 8
@@ -217,7 +246,7 @@ Partial Class FormFront
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl8.Appearance.ForeColor = System.Drawing.Color.SteelBlue
-        Me.LabelControl8.Location = New System.Drawing.Point(516, 183)
+        Me.LabelControl8.Location = New System.Drawing.Point(528, 183)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(113, 21)
         Me.LabelControl8.TabIndex = 7
@@ -226,7 +255,7 @@ Partial Class FormFront
         'PISync
         '
         Me.PISync.EditValue = CType(resources.GetObject("PISync.EditValue"), Object)
-        Me.PISync.Location = New System.Drawing.Point(490, 45)
+        Me.PISync.Location = New System.Drawing.Point(502, 45)
         Me.PISync.Name = "PISync"
         Me.PISync.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
         Me.PISync.Properties.Appearance.Options.UseBackColor = True
@@ -238,7 +267,7 @@ Partial Class FormFront
         'PIPOS
         '
         Me.PIPOS.EditValue = CType(resources.GetObject("PIPOS.EditValue"), Object)
-        Me.PIPOS.Location = New System.Drawing.Point(257, 45)
+        Me.PIPOS.Location = New System.Drawing.Point(347, 45)
         Me.PIPOS.Name = "PIPOS"
         Me.PIPOS.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
         Me.PIPOS.Properties.Appearance.Options.UseBackColor = True
@@ -247,24 +276,11 @@ Partial Class FormFront
         Me.PIPOS.Size = New System.Drawing.Size(159, 132)
         Me.PIPOS.TabIndex = 5
         '
-        'PictureEdit1
-        '
-        Me.PictureEdit1.EditValue = CType(resources.GetObject("PictureEdit1.EditValue"), Object)
-        Me.PictureEdit1.Location = New System.Drawing.Point(183, 29)
-        Me.PictureEdit1.Name = "PictureEdit1"
-        Me.PictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
-        Me.PictureEdit1.Properties.Appearance.Options.UseBackColor = True
-        Me.PictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.PictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.[Auto]
-        Me.PictureEdit1.Size = New System.Drawing.Size(68, 116)
-        Me.PictureEdit1.TabIndex = 2
-        Me.PictureEdit1.Visible = False
-        '
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl7.Appearance.ForeColor = System.Drawing.Color.SteelBlue
-        Me.LabelControl7.Location = New System.Drawing.Point(25, 183)
+        Me.LabelControl7.Location = New System.Drawing.Point(16, 183)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(170, 21)
         Me.LabelControl7.TabIndex = 1
@@ -273,7 +289,7 @@ Partial Class FormFront
         'PIInv
         '
         Me.PIInv.EditValue = CType(resources.GetObject("PIInv.EditValue"), Object)
-        Me.PIInv.Location = New System.Drawing.Point(25, 45)
+        Me.PIInv.Location = New System.Drawing.Point(16, 45)
         Me.PIInv.Name = "PIInv"
         Me.PIInv.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
         Me.PIInv.Properties.Appearance.Options.UseBackColor = True
@@ -324,6 +340,18 @@ Partial Class FormFront
         '
         Me.SplashScreenManager1.ClosingDelay = 500
         '
+        'PanelControl3
+        '
+        Me.PanelControl3.Appearance.BackColor = System.Drawing.Color.Transparent
+        Me.PanelControl3.Appearance.Options.UseBackColor = True
+        Me.PanelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.PanelControl3.Controls.Add(Me.LabelDate)
+        Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PanelControl3.Location = New System.Drawing.Point(457, 28)
+        Me.PanelControl3.Name = "PanelControl3"
+        Me.PanelControl3.Size = New System.Drawing.Size(221, 161)
+        Me.PanelControl3.TabIndex = 6
+        '
         'FormFront
         '
         Me.Appearance.BackColor = System.Drawing.Color.Black
@@ -357,13 +385,16 @@ Partial Class FormFront
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()
+        CType(Me.PIStock.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PISync.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PIPOS.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PIInv.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         Me.PanelControl1.PerformLayout()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl3.ResumeLayout(False)
+        Me.PanelControl3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -374,7 +405,6 @@ Partial Class FormFront
     Friend WithEvents PanelControl4 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelStoreName As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents PictureEdit1 As DevExpress.XtraEditors.PictureEdit
     Friend WithEvents LabelInfo As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelDate As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
@@ -389,4 +419,7 @@ Partial Class FormFront
     Friend WithEvents PCClose As DevExpress.XtraEditors.PanelControl
     Friend WithEvents LabelCsh As DevExpress.XtraEditors.LabelControl
     Friend WithEvents SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager
+    Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents PIStock As DevExpress.XtraEditors.PictureEdit
+    Friend WithEvents PanelControl3 As DevExpress.XtraEditors.PanelControl
 End Class

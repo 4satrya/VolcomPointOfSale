@@ -216,4 +216,10 @@ Public Class FormFront
     Private Sub FormFront_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         info()
     End Sub
+
+    Private Sub PictureEdit1_Click(sender As Object, e As EventArgs) Handles PIStock.Click
+        Cursor = Cursors.WaitCursor
+        FormStock.ShowDialog()
+        Cursor = Cursors.Default
+    End Sub
 End Class

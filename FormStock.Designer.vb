@@ -33,6 +33,16 @@ Partial Class FormStock
         Me.PrintPreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.XTCStock = New DevExpress.XtraTab.XtraTabControl()
+        Me.XTPSum = New DevExpress.XtraTab.XtraTabPage()
+        Me.GCSum = New DevExpress.XtraGrid.GridControl()
+        Me.GVSum = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn27 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn28 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn29 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn30 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn31 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn33 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn34 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.XTPStock = New DevExpress.XtraTab.XtraTabPage()
         Me.GCStock = New DevExpress.XtraGrid.GridControl()
         Me.GVStock = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -104,6 +114,9 @@ Partial Class FormStock
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.XTCStock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTCStock.SuspendLayout()
+        Me.XTPSum.SuspendLayout()
+        CType(Me.GCSum, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GVSum, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTPStock.SuspendLayout()
         CType(Me.GCStock, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GVStock, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -239,10 +252,105 @@ Partial Class FormStock
         Me.XTCStock.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Left
         Me.XTCStock.Location = New System.Drawing.Point(20, 81)
         Me.XTCStock.Name = "XTCStock"
-        Me.XTCStock.SelectedTabPage = Me.XTPStock
+        Me.XTCStock.SelectedTabPage = Me.XTPSum
         Me.XTCStock.Size = New System.Drawing.Size(842, 464)
         Me.XTCStock.TabIndex = 9
-        Me.XTCStock.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPStock, Me.XTPStockCard})
+        Me.XTCStock.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTPSum, Me.XTPStock, Me.XTPStockCard})
+        '
+        'XTPSum
+        '
+        Me.XTPSum.Controls.Add(Me.GCSum)
+        Me.XTPSum.Name = "XTPSum"
+        Me.XTPSum.Size = New System.Drawing.Size(816, 462)
+        Me.XTPSum.Text = "Summary"
+        '
+        'GCSum
+        '
+        Me.GCSum.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GCSum.Location = New System.Drawing.Point(0, 0)
+        Me.GCSum.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.GCSum.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.GCSum.MainView = Me.GVSum
+        Me.GCSum.Name = "GCSum"
+        Me.GCSum.Size = New System.Drawing.Size(816, 462)
+        Me.GCSum.TabIndex = 2
+        Me.GCSum.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GVSum})
+        '
+        'GVSum
+        '
+        Me.GVSum.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn27, Me.GridColumn28, Me.GridColumn29, Me.GridColumn30, Me.GridColumn31, Me.GridColumn33, Me.GridColumn34})
+        Me.GVSum.GridControl = Me.GCSum
+        Me.GVSum.GroupCount = 1
+        Me.GVSum.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "stocker", Me.GridColumn33, "{0:n0}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "display", Me.GridColumn34, "{0:n0}")})
+        Me.GVSum.Name = "GVSum"
+        Me.GVSum.OptionsBehavior.AutoExpandAllGroups = True
+        Me.GVSum.OptionsView.ShowFooter = True
+        Me.GVSum.OptionsView.ShowGroupPanel = False
+        Me.GVSum.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.GridColumn29, DevExpress.Data.ColumnSortOrder.Ascending)})
+        '
+        'GridColumn27
+        '
+        Me.GridColumn27.Caption = "Id Item"
+        Me.GridColumn27.FieldName = "id_item"
+        Me.GridColumn27.Name = "GridColumn27"
+        '
+        'GridColumn28
+        '
+        Me.GridColumn28.Caption = "Code"
+        Me.GridColumn28.FieldName = "item_code"
+        Me.GridColumn28.Name = "GridColumn28"
+        Me.GridColumn28.Visible = True
+        Me.GridColumn28.VisibleIndex = 0
+        Me.GridColumn28.Width = 706
+        '
+        'GridColumn29
+        '
+        Me.GridColumn29.Caption = "Description"
+        Me.GridColumn29.FieldName = "item_name"
+        Me.GridColumn29.Name = "GridColumn29"
+        Me.GridColumn29.Visible = True
+        Me.GridColumn29.VisibleIndex = 1
+        '
+        'GridColumn30
+        '
+        Me.GridColumn30.Caption = "Size"
+        Me.GridColumn30.FieldName = "size"
+        Me.GridColumn30.Name = "GridColumn30"
+        Me.GridColumn30.Visible = True
+        Me.GridColumn30.VisibleIndex = 2
+        Me.GridColumn30.Width = 56
+        '
+        'GridColumn31
+        '
+        Me.GridColumn31.Caption = "Class"
+        Me.GridColumn31.FieldName = "class"
+        Me.GridColumn31.Name = "GridColumn31"
+        Me.GridColumn31.Visible = True
+        Me.GridColumn31.VisibleIndex = 1
+        '
+        'GridColumn33
+        '
+        Me.GridColumn33.Caption = "Stocker"
+        Me.GridColumn33.DisplayFormat.FormatString = "{0:n0}"
+        Me.GridColumn33.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.GridColumn33.FieldName = "stocker"
+        Me.GridColumn33.Name = "GridColumn33"
+        Me.GridColumn33.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "stocker", "{0:n0}")})
+        Me.GridColumn33.Visible = True
+        Me.GridColumn33.VisibleIndex = 3
+        Me.GridColumn33.Width = 148
+        '
+        'GridColumn34
+        '
+        Me.GridColumn34.Caption = "Display"
+        Me.GridColumn34.DisplayFormat.FormatString = "{0:n0}"
+        Me.GridColumn34.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.GridColumn34.FieldName = "display"
+        Me.GridColumn34.Name = "GridColumn34"
+        Me.GridColumn34.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "display", "{0:n0}")})
+        Me.GridColumn34.Visible = True
+        Me.GridColumn34.VisibleIndex = 4
+        Me.GridColumn34.Width = 152
         '
         'XTPStock
         '
@@ -900,6 +1008,9 @@ Partial Class FormStock
         Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.XTCStock, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTCStock.ResumeLayout(False)
+        Me.XTPSum.ResumeLayout(False)
+        CType(Me.GCSum, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GVSum, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTPStock.ResumeLayout(False)
         CType(Me.GCStock, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GVStock, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1012,4 +1123,14 @@ Partial Class FormStock
     Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PanelControlBack As DevExpress.XtraEditors.PanelControl
     Friend WithEvents CEActive As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents XTPSum As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents GCSum As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GVSum As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumn27 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn28 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn29 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn30 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn31 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn33 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn34 As DevExpress.XtraGrid.Columns.GridColumn
 End Class
