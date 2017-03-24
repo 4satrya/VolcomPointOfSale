@@ -20,8 +20,8 @@ Partial Class FormFront
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormFront))
-        Dim TileItemElement7 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
-        Dim TileItemElement8 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement9 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement10 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Me.TIExit = New DevExpress.XtraEditors.TileItem()
         Me.TileItem2 = New DevExpress.XtraEditors.TileItem()
         Me.PanelBasic = New DevExpress.XtraEditors.PanelControl()
@@ -70,9 +70,9 @@ Partial Class FormFront
         Me.TIExit.AppearanceItem.Normal.Options.UseBackColor = True
         Me.TIExit.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TIExit.BackgroundImage = CType(resources.GetObject("TIExit.BackgroundImage"), System.Drawing.Image)
-        TileItemElement7.Text = "Exit"
-        TileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
-        Me.TIExit.Elements.Add(TileItemElement7)
+        TileItemElement9.Text = "Exit"
+        TileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter
+        Me.TIExit.Elements.Add(TileItemElement9)
         Me.TIExit.Id = 29
         Me.TIExit.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TIExit.Name = "TIExit"
@@ -85,9 +85,9 @@ Partial Class FormFront
         Me.TileItem2.AppearanceItem.Normal.Options.UseBorderColor = True
         Me.TileItem2.BackgroundImage = CType(resources.GetObject("TileItem2.BackgroundImage"), System.Drawing.Image)
         Me.TileItem2.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement8.Text = "Exit Program"
-        TileItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
-        Me.TileItem2.Elements.Add(TileItemElement8)
+        TileItemElement10.Text = "Exit Program"
+        TileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft
+        Me.TileItem2.Elements.Add(TileItemElement10)
         Me.TileItem2.Id = 45
         Me.TileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide
         Me.TileItem2.Name = "TileItem2"
@@ -214,7 +214,7 @@ Partial Class FormFront
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl2.Appearance.ForeColor = System.Drawing.Color.SteelBlue
-        Me.LabelControl2.Location = New System.Drawing.Point(234, 183)
+        Me.LabelControl2.Location = New System.Drawing.Point(237, 183)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(51, 21)
         Me.LabelControl2.TabIndex = 10
@@ -223,7 +223,7 @@ Partial Class FormFront
         'PIStock
         '
         Me.PIStock.EditValue = CType(resources.GetObject("PIStock.EditValue"), Object)
-        Me.PIStock.Location = New System.Drawing.Point(179, 45)
+        Me.PIStock.Location = New System.Drawing.Point(182, 45)
         Me.PIStock.Name = "PIStock"
         Me.PIStock.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
         Me.PIStock.Properties.Appearance.Options.UseBackColor = True
@@ -236,7 +236,7 @@ Partial Class FormFront
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl9.Appearance.ForeColor = System.Drawing.Color.SteelBlue
-        Me.LabelControl9.Location = New System.Drawing.Point(367, 183)
+        Me.LabelControl9.Location = New System.Drawing.Point(370, 183)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(114, 21)
         Me.LabelControl9.TabIndex = 8
@@ -246,7 +246,7 @@ Partial Class FormFront
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl8.Appearance.ForeColor = System.Drawing.Color.SteelBlue
-        Me.LabelControl8.Location = New System.Drawing.Point(525, 183)
+        Me.LabelControl8.Location = New System.Drawing.Point(528, 183)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(113, 21)
         Me.LabelControl8.TabIndex = 7
@@ -255,7 +255,7 @@ Partial Class FormFront
         'PISync
         '
         Me.PISync.EditValue = CType(resources.GetObject("PISync.EditValue"), Object)
-        Me.PISync.Location = New System.Drawing.Point(499, 45)
+        Me.PISync.Location = New System.Drawing.Point(502, 45)
         Me.PISync.Name = "PISync"
         Me.PISync.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
         Me.PISync.Properties.Appearance.Options.UseBackColor = True
@@ -267,7 +267,7 @@ Partial Class FormFront
         'PIPOS
         '
         Me.PIPOS.EditValue = CType(resources.GetObject("PIPOS.EditValue"), Object)
-        Me.PIPOS.Location = New System.Drawing.Point(344, 45)
+        Me.PIPOS.Location = New System.Drawing.Point(347, 45)
         Me.PIPOS.Name = "PIPOS"
         Me.PIPOS.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
         Me.PIPOS.Properties.Appearance.Options.UseBackColor = True
@@ -280,7 +280,7 @@ Partial Class FormFront
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl7.Appearance.ForeColor = System.Drawing.Color.SteelBlue
-        Me.LabelControl7.Location = New System.Drawing.Point(13, 183)
+        Me.LabelControl7.Location = New System.Drawing.Point(16, 183)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(170, 21)
         Me.LabelControl7.TabIndex = 1
@@ -289,7 +289,7 @@ Partial Class FormFront
         'PIInv
         '
         Me.PIInv.EditValue = CType(resources.GetObject("PIInv.EditValue"), Object)
-        Me.PIInv.Location = New System.Drawing.Point(13, 45)
+        Me.PIInv.Location = New System.Drawing.Point(16, 45)
         Me.PIInv.Name = "PIInv"
         Me.PIInv.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
         Me.PIInv.Properties.Appearance.Options.UseBackColor = True
