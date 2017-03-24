@@ -1217,13 +1217,13 @@ Partial Class FormPOS
         Me.LabelFooter.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.LabelFooter.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical
         Me.LabelFooter.Dock = System.Windows.Forms.DockStyle.Right
-        Me.LabelFooter.Location = New System.Drawing.Point(293, 2)
+        Me.LabelFooter.Location = New System.Drawing.Point(235, 2)
         Me.LabelFooter.Name = "LabelFooter"
         Me.LabelFooter.Padding = New System.Windows.Forms.Padding(5, 1, 5, 0)
-        Me.LabelFooter.Size = New System.Drawing.Size(555, 14)
+        Me.LabelFooter.Size = New System.Drawing.Size(613, 14)
         Me.LabelFooter.TabIndex = 3
-        Me.LabelFooter.Text = "POS MENU  |  Ins Trans    F2 Payment    F3 Price    F5 Refund    F7 Drawer    F8 " &
-    "Closing Shift    F11 Voucher"
+        Me.LabelFooter.Text = "POS MENU  |  Ins Trans    F1 Stock    F2 Payment    F3 Price    F5 Refund    F7 D" &
+    "rawer    F8 Closing Shift    F11 Voucher"
         '
         'LabelControl7
         '
